@@ -86,7 +86,7 @@ export default function HomePage() {
 
       {/* Journey Sections */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 my-16">
-        <Link href="/exploration" className="card group hover:border-primary-500 transition-colors">
+        <Link href="/story/hunch" className="card group hover:border-primary-500 transition-colors">
           <div className="text-primary-400 mb-4 text-3xl font-bold">01</div>
           <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-400 transition-colors">
             The Hunch
@@ -97,10 +97,10 @@ export default function HomePage() {
           </p>
         </Link>
 
-        <Link href="/ai-journey" className="card group hover:border-accent-500 transition-colors">
+        <Link href="/story/audits" className="card group hover:border-accent-500 transition-colors">
           <div className="text-accent-400 mb-4 text-3xl font-bold">02</div>
           <h3 className="text-xl font-semibold mb-2 group-hover:text-accent-400 transition-colors">
-            AI Hype & Audits
+            AI Hype &amp; Audits
           </h3>
           <p className="text-gray-400 text-sm">
             The honest story of AI over-promising, the need for rigorous audits,
@@ -108,14 +108,14 @@ export default function HomePage() {
           </p>
         </Link>
 
-        <Link href="/validation" className="card group hover:border-primary-500 transition-colors">
-          <div className="text-primary-400 mb-4 text-3xl font-bold">03</div>
-          <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-400 transition-colors">
-            Rigorous Validation
+        <Link href="/story/quantum" className="card group hover:border-blue-500 transition-colors">
+          <div className="text-blue-400 mb-4 text-3xl font-bold">03</div>
+          <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-400 transition-colors">
+            Quantum Tests
           </h3>
           <p className="text-gray-400 text-sm">
-            Multi-objective optimization, Pareto frontiers, and computational
-            verification of scheme-robust observables.
+            Testing meta-calculus against quantum mechanics. Which modifications
+            preserve quantum structure?
           </p>
         </Link>
 
@@ -131,35 +131,29 @@ export default function HomePage() {
         </Link>
       </div>
 
-      {/* Progress & Documentation Section */}
+      {/* Learning Resources Section */}
       <div className="mx-auto max-w-4xl my-16">
-        <h2 className="text-3xl font-bold text-center mb-8">Development Progress</h2>
+        <h2 className="text-3xl font-bold text-center mb-8">Learning Resources</h2>
         <p className="text-gray-400 text-center mb-8 max-w-2xl mx-auto">
           Real research is messy. We document the full journey - including failures, pivots, and lessons learned.
         </p>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <Link href="/math-history/timeline" className="card group hover:border-primary-500 transition-colors text-center">
-            <div className="text-primary-400 mb-2 text-2xl">&#128197;</div>
-            <h3 className="font-semibold mb-1 group-hover:text-primary-400 transition-colors">Timeline</h3>
-            <p className="text-gray-500 text-xs">Chronological development</p>
+        <div className="grid gap-6 md:grid-cols-3">
+          <Link href="/learn/textbook" className="card group hover:border-primary-500 transition-colors text-center">
+            <div className="text-primary-400 mb-2 text-2xl">&#128214;</div>
+            <h3 className="font-semibold mb-1 group-hover:text-primary-400 transition-colors">Textbook</h3>
+            <p className="text-gray-500 text-xs">Complete 9-chapter guide</p>
           </Link>
 
-          <Link href="/math-history/derivations" className="card group hover:border-blue-500 transition-colors text-center">
+          <Link href="/learn/proofs" className="card group hover:border-blue-500 transition-colors text-center">
             <div className="text-blue-400 mb-2 text-2xl">&#8747;</div>
-            <h3 className="font-semibold mb-1 group-hover:text-blue-400 transition-colors">Derivations</h3>
-            <p className="text-gray-500 text-xs">Mathematical proofs</p>
+            <h3 className="font-semibold mb-1 group-hover:text-blue-400 transition-colors">Proofs</h3>
+            <p className="text-gray-500 text-xs">Mathematical derivations</p>
           </Link>
 
-          <Link href="/math-history/failures" className="card group hover:border-red-500 transition-colors text-center">
+          <Link href="/learn/lessons" className="card group hover:border-red-500 transition-colors text-center">
             <div className="text-red-400 mb-2 text-2xl">&#10060;</div>
-            <h3 className="font-semibold mb-1 group-hover:text-red-400 transition-colors">Failures & Pivots</h3>
-            <p className="text-gray-500 text-xs">What didn't work</p>
-          </Link>
-
-          <Link href="/math-history/experiments" className="card group hover:border-green-500 transition-colors text-center">
-            <div className="text-green-400 mb-2 text-2xl">&#128300;</div>
-            <h3 className="font-semibold mb-1 group-hover:text-green-400 transition-colors">Experiments</h3>
-            <p className="text-gray-500 text-xs">Computational tests</p>
+            <h3 className="font-semibold mb-1 group-hover:text-red-400 transition-colors">Lessons Learned</h3>
+            <p className="text-gray-500 text-xs">What did not work</p>
           </Link>
         </div>
       </div>
@@ -169,7 +163,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-center mb-8">Key Findings</h2>
         <div className="grid gap-6 md:grid-cols-3">
           <div className="card text-center">
-            <div className="text-4xl font-bold text-primary-400 mb-2">12</div>
+            <div className="text-4xl font-bold text-primary-400 mb-2">26</div>
             <h3 className="font-semibold text-lg mb-2">Pareto Solutions</h3>
             <p className="text-gray-400 text-sm">
               Optimal configurations found via NSGA-II optimization
@@ -223,7 +217,7 @@ export default function HomePage() {
             All the Python modules, optimization scripts, and analysis tools
             are available. See how we went from theory to validation.
           </p>
-          <Link href="/code" className="btn-primary">
+          <Link href="/tools/code" className="btn-primary">
             View Source Code
           </Link>
         </div>
