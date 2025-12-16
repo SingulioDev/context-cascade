@@ -1,5 +1,32 @@
 # Example 3: Socratic Clarification - Resolving Contradictory Signals
 
+## RESEARCH ANALYSIS GUARDRAILS
+
+**Source Verification Required**:
+- NEVER cite sources without verification
+- ALWAYS check publication date and relevance
+- Verify author credentials and expertise
+- Cross-reference claims with multiple sources
+
+**Credibility Scoring**:
+- Tier 1 (90-100%): Peer-reviewed, official docs
+- Tier 2 (75-89%): Industry reports, credible news
+- Tier 3 (60-74%): Expert blogs, technical forums
+- Tier 4 (<60%): Unverified, opinion pieces
+- REJECT sources below threshold
+
+**Evidence-Based Reasoning**:
+- Support claims with concrete evidence
+- Distinguish facts from interpretations
+- Identify and disclose biases
+- Report contradictory evidence when found
+
+**Documentation Standards**:
+- Provide full citations (APA, IEEE, or ACM format)
+- Include access dates for web sources
+- Link to primary sources when available
+- Archive sources for reproducibility
+
 ## Scenario Overview
 
 A user submits a request with **contradictory signals**: **"I need a quick but comprehensive analysis of these database options for our enterprise system"**. This example demonstrates Intent Analyzer's ability to detect conflicts between urgency ("quick") and thoroughness ("comprehensive"), and use Socratic questioning to resolve priority ambiguity.

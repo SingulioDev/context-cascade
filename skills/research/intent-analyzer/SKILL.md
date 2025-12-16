@@ -1,4 +1,49 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Vague or ambiguous user requests requiring clarification
+- Multi-step workflows where underlying intent is unclear
+- First principles decomposition of complex requests
+- Socratic questioning to uncover hidden constraints
+- Probabilistic intent mapping with <80% confidence requiring clarification
+
+### When NOT to Use This Skill
+- Clear, actionable requests with explicit requirements (>90% confidence)
+- Simple single-step tasks with no ambiguity
+- When speed is prioritized over thorough understanding
+- Follow-up questions where context already established
+
+### Success Criteria
+- Understood intent with 85%+ confidence score
+- Explicit and implicit constraints identified
+- Ambiguities resolved through Socratic clarification
+- User confirms optimized request matches true intent
+- First principles decomposition reveals underlying goals
+
+### Edge Cases & Limitations
+- User says 'just do it': flag low confidence, proceed with caveats
+- Contradictory requirements: surface conflict, request prioritization
+- Unstated assumptions: probe with questions, validate inferences
+- Multiple valid interpretations: present options, ask user to choose
+- Domain-specific jargon: verify technical terms match user's mental model
+
+### Critical Guardrails
+- NEVER proceed with <80% confidence without clarification
+- ALWAYS distinguish explicit constraints (stated) from implicit (inferred)
+- NEVER assume user's technical level (ask if terminology unclear)
+- ALWAYS present optimized request for user confirmation
+- NEVER skip first principles decomposition for complex requests
+
+### Evidence-Based Validation
+- Validate confidence score: recompute from constraint clarity, goal specificity
+- Cross-check assumptions: ask follow-up targeting low-confidence areas
+- Test optimized request: does it capture all explicit + implicit constraints?
+- Verify first principles: can you explain WHY each requirement exists?
+- Confirm user alignment: show decomposition, get explicit approval
+
+---
 name: intent-analyzer
 description: Advanced intent interpretation system that analyzes user requests using
   cognitive science principles and extrapolates logical volition. Use when user requests

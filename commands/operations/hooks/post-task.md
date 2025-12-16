@@ -1,4 +1,10 @@
 # hook post-task
+n## Command-Specific Context
+- Deployment target requirements
+- Pre/post hook execution order
+- Rollback procedures
+- Health check integration
+
 
 <!-- META-LOOP v2.1 INTEGRATION -->
 ## Phase 0: Expertise Loading

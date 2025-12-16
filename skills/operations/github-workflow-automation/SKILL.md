@@ -1,4 +1,34 @@
 ---
+
+## CRITICAL: CI/CD SAFETY GUARDRAILS
+
+**BEFORE any CI/CD operation, validate**:
+- [ ] Rollback plan documented and tested
+- [ ] Deployment window approved (avoid peak hours)
+- [ ] Health checks configured (readiness + liveness probes)
+- [ ] Monitoring alerts active for deployment metrics
+- [ ] Incident response team notified
+
+**NEVER**:
+- Deploy without rollback capability
+- Skip environment-specific validation (dev -> staging -> prod)
+- Ignore test failures in pipeline
+- Deploy outside approved maintenance windows
+- Bypass approval gates in production pipelines
+
+**ALWAYS**:
+- Use blue-green or canary deployments for zero-downtime
+- Implement circuit breakers for cascading failure prevention
+- Document deployment state changes in incident log
+- Validate infrastructure drift before deployment
+- Retain audit trail of all pipeline executions
+
+**Evidence-Based Techniques for CI/CD**:
+- **Plan-and-Solve**: Break deployment into phases (build -> test -> stage -> prod)
+- **Self-Consistency**: Run identical tests across environments (consistency = reliability)
+- **Least-to-Most**: Start with smallest scope (single pod -> shard -> region -> global)
+- **Verification Loop**: After each phase, verify expected state before proceeding
+
 name: github-workflow-automation
 version: 1.0.0
 category: github

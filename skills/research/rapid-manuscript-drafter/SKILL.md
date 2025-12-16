@@ -1,4 +1,50 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Drafting academic papers for NeurIPS/ICML/CVPR submission
+- Generating research papers from completed Deep Research SOP pipelines
+- Creating reproducibility reports with ACM artifact badging
+- Writing technical reports with comprehensive methodology documentation
+- Preparing grant proposals requiring academic rigor
+
+### When NOT to Use This Skill
+- Blog posts or non-academic writing (use documentation skills)
+- When full Deep Research SOP has not been completed
+- Informal technical documentation (use comprehensive-documentation)
+- When peer review is not the target venue
+
+### Success Criteria
+- Complete manuscript with standard sections (Abstract, Intro, Related Work, Methods, Results, Discussion, Conclusion)
+- All claims cited with proper references (BibTeX generated)
+- Figures and tables properly formatted (captions, labels)
+- Reproducibility section included (code, data, hyperparameters)
+- Word count matches venue requirements (8 pages NeurIPS, 12 CVPR)
+- LaTeX source compiles without errors
+
+### Edge Cases & Limitations
+- Over page limit: prioritize core contributions, move details to appendix
+- Missing experimental results: flag incomplete sections, suggest placeholder data
+- Weak related work: expand literature synthesis, add 10+ recent papers
+- Unclear methodology: add algorithmic pseudocode, detailed architecture diagrams
+- Insufficient ablations: document need for additional experiments
+
+### Critical Guardrails
+- NEVER submit drafts with uncited claims (verify all assertions have references)
+- ALWAYS include reproducibility section (code, data, hyperparameters, seeds)
+- NEVER fabricate experimental results (use real data from method-development)
+- ALWAYS verify venue formatting guidelines (check template, page limits)
+- NEVER skip statistical validation (p-values, CIs, effect sizes)
+
+### Evidence-Based Validation
+- Validate citation completeness: search for all claims, verify references exist
+- Cross-check reproducibility: can experiments be rerun from manuscript alone?
+- Test figure quality: are plots high-resolution (300+ DPI), axes labeled, legends clear?
+- Verify statistical rigor: are all p-values, CIs, effect sizes reported?
+- Confirm template compliance: does LaTeX compile, match venue style exactly?
+
+---
 name: rapid-manuscript-drafter
 description: Generate structured research manuscript drafts in 10-15 minutes with
   proper academic sections (Abstract, Introduction, Methods, Results, Discussion).

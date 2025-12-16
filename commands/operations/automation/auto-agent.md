@@ -1,5 +1,10 @@
 # auto agent
 
+## Command Context
+- GitHub API integration requirements: May require GitHub CLI or API for repository operations and workflow management
+- Authentication/token requirements: GITHUB_TOKEN for API access, service account credentials for automated operations
+- Expected PR/issue/workflow outputs: Automation logs, agent spawn confirmations, workflow execution results, health check statuses
+- Automation trigger conditions: System events, threshold violations, scheduled intervals, manual triggers, agent lifecycle events
 <!-- META-LOOP v2.1 INTEGRATION -->
 ## Phase 0: Expertise Loading
 expertise_check:

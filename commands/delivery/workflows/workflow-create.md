@@ -1,5 +1,26 @@
 # workflow-create
 
+## Command Purpose
+[Define what this command does - the specific action it triggers]
+
+## Input Requirements
+[Parameters and prerequisites needed to execute this command]
+
+## Expected Output
+[What artifacts, results, or state changes this command produces]
+
+## Success Indicators
+[How to verify the command executed successfully]
+
+## Error Handling
+[Common failures and recovery procedures]
+
+## Related Commands
+[Commands that work together with this one in typical workflows]
+
+---
+
+
 <!-- META-LOOP v2.1 INTEGRATION -->
 ## Phase 0: Expertise Loading
 expertise_check:

@@ -13,6 +13,61 @@ author: ruv
 
 # SOP: REST API Development
 
+
+## When to Use This Skill
+
+- **Domain-Specific Work**: Tasks requiring specialized domain knowledge
+- **Complex Problems**: Multi-faceted challenges needing systematic approach
+- **Best Practice Implementation**: Following industry-standard methodologies
+- **Quality-Critical Work**: Production code requiring high standards
+- **Team Collaboration**: Coordinated work following shared processes
+
+## When NOT to Use This Skill
+
+- **Outside Domain**: Tasks outside this skill specialty area
+- **Incompatible Tech Stack**: Technologies not covered by this skill
+- **Simple Tasks**: Trivial work not requiring specialized knowledge
+- **Exploratory Work**: Experimental code without production requirements
+
+## Success Criteria
+
+- [ ] Implementation complete and functional
+- [ ] Tests passing with adequate coverage
+- [ ] Code reviewed and approved
+- [ ] Documentation updated
+- [ ] Performance benchmarks met
+- [ ] Security considerations addressed
+- [ ] Deployed or integrated successfully
+
+## Edge Cases to Handle
+
+- **Legacy Integration**: Working with older codebases or deprecated APIs
+- **Missing Dependencies**: Unavailable libraries or external services
+- **Version Conflicts**: Dependency version incompatibilities
+- **Data Issues**: Malformed input or edge case data
+- **Concurrency**: Race conditions or synchronization challenges
+- **Error Handling**: Graceful degradation and recovery
+
+## Guardrails
+
+- **NEVER** skip testing to ship faster
+- **ALWAYS** follow domain-specific best practices
+- **NEVER** commit untested or broken code
+- **ALWAYS** document complex logic and decisions
+- **NEVER** hardcode sensitive data or credentials
+- **ALWAYS** validate input and handle errors gracefully
+- **NEVER** deploy without reviewing changes
+
+## Evidence-Based Validation
+
+- [ ] Automated tests passing
+- [ ] Code linter/formatter passing
+- [ ] Security scan completed
+- [ ] Performance within acceptable range
+- [ ] Manual testing completed
+- [ ] Peer review approved
+- [ ] Documentation reviewed
+
 Complete REST API development using Test-Driven Development and multi-agent coordination.
 
 ## Timeline: 2 Weeks

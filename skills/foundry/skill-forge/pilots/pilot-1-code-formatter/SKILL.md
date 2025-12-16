@@ -12,6 +12,48 @@ tags:
 - meta-tools
 ---
 
+<!-- SKILL SOP IMPROVEMENT v1.0 -->
+## Skill Execution Criteria
+
+### When to Use This Skill
+- [AUTO-EXTRACTED from skill description and content]
+- [Task patterns this skill is optimized for]
+- [Workflow contexts where this skill excels]
+
+### When NOT to Use This Skill
+- [Situations where alternative skills are better suited]
+- [Anti-patterns that indicate wrong skill choice]
+- [Edge cases this skill doesn't handle well]
+
+### Success Criteria
+- primary_outcome: "[SKILL-SPECIFIC measurable result based on skill purpose]"
+- quality_threshold: 0.85
+- verification_method: "[How to validate skill executed correctly and produced expected outcome]"
+
+### Edge Cases
+- case: "Ambiguous or incomplete input"
+  handling: "Request clarification, document assumptions, proceed with explicit constraints"
+- case: "Conflicting requirements or constraints"
+  handling: "Surface conflict to user, propose resolution options, document trade-offs"
+- case: "Insufficient context for quality execution"
+  handling: "Flag missing information, provide template for needed context, proceed with documented limitations"
+
+### Skill Guardrails
+NEVER:
+  - "[SKILL-SPECIFIC anti-pattern that breaks methodology]"
+  - "[Common mistake that degrades output quality]"
+  - "[Shortcut that compromises skill effectiveness]"
+ALWAYS:
+  - "[SKILL-SPECIFIC requirement for successful execution]"
+  - "[Critical step that must not be skipped]"
+  - "[Quality check that ensures reliable output]"
+
+### Evidence-Based Execution
+self_consistency: "After completing this skill, verify output quality by [SKILL-SPECIFIC validation approach]"
+program_of_thought: "Decompose this skill execution into: [SKILL-SPECIFIC sequential steps]"
+plan_and_solve: "Plan: [SKILL-SPECIFIC planning phase] -> Execute: [SKILL-SPECIFIC execution phase] -> Verify: [SKILL-SPECIFIC verification phase]"
+<!-- END SKILL SOP IMPROVEMENT -->
+
 # Code Formatter
 
 Automatically format code files using language-specific formatters with comprehensive error handling.

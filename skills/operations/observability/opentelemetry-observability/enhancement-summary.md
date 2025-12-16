@@ -1,5 +1,35 @@
 # Observability Skill Enhancement Summary
 
+## CRITICAL: OBSERVABILITY SAFETY GUARDRAILS
+
+**BEFORE implementing observability, validate**:
+- [ ] Structured logging with correlation IDs
+- [ ] Metrics instrumentation (RED: Rate, Errors, Duration)
+- [ ] Distributed tracing configured (OpenTelemetry)
+- [ ] Alerting thresholds tuned (avoid alert fatigue)
+- [ ] Dashboards for all critical services
+
+**NEVER**:
+- Log sensitive data (PII, passwords, API keys)
+- Ignore high cardinality metrics (causes storage explosion)
+- Alert on symptoms without root cause investigation
+- Deploy without service-level objectives (SLOs)
+- Skip log retention and archival policies
+
+**ALWAYS**:
+- Use semantic conventions (OpenTelemetry standard attributes)
+- Implement sampling for high-volume traces
+- Correlate logs, metrics, and traces (unified observability)
+- Document runbooks linked from alerts
+- Review and optimize observability costs quarterly
+
+**Evidence-Based Techniques for Observability**:
+- **Chain-of-Thought**: Trace request flow across distributed services
+- **Program-of-Thought**: Model telemetry pipeline (collect -> process -> store -> query -> alert)
+- **Retrieval-Augmented**: Query historical incidents for similar patterns
+- **Self-Consistency**: Apply same instrumentation across all services
+
+
 ## Enhancement Status: ✅ COMPLETE - Enhanced Tier
 
 **Date**: 2025-11-02

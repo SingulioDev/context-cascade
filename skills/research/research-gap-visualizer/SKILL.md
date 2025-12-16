@@ -1,4 +1,49 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Visualizing research gaps identified from literature synthesis
+- Creating 2D/3D plots of method vs. dataset coverage
+- Generating heatmaps showing unexplored method combinations
+- Producing publication-ready figures for grant proposals
+- Analyzing trends in research focus over time
+
+### When NOT to Use This Skill
+- When raw text descriptions are sufficient (no visualization needed)
+- Single-dimensional gaps (simple list format works)
+- When time constrained (<30 min, skip visualization)
+- Non-academic audiences unfamiliar with research visualizations
+
+### Success Criteria
+- High-resolution publication-ready figures (300+ DPI)
+- Clear axis labels, legends, and titles
+- Color scheme accessible (colorblind-friendly)
+- Gap areas clearly highlighted (red for unexplored, green for saturated)
+- Source data included (CSV/JSON for reproducibility)
+
+### Edge Cases & Limitations
+- Too many dimensions: use PCA/t-SNE for dimensionality reduction
+- Sparse data: adjust visualization type (scatter plot vs heatmap)
+- Unclear gaps: add annotations explaining why areas unexplored
+- Complex taxonomy: simplify groupings, use hierarchical clustering
+- Overlapping labels: increase figure size, rotate text, use abbreviations
+
+### Critical Guardrails
+- NEVER use misleading visualizations (cherry-picked axes, truncated scales)
+- ALWAYS include colorblind-friendly palettes (viridis, not rainbow)
+- NEVER omit axis labels, units, or legends
+- ALWAYS provide source data for reproducibility
+- NEVER use 3D when 2D suffices (avoid chart junk)
+
+### Evidence-Based Validation
+- Validate data accuracy: cross-check plotted values against source tables
+- Test colorblind accessibility: use simulators (Coblis, Color Oracle)
+- Verify label clarity: are all abbreviations explained in caption?
+- Check resolution: export at 300+ DPI, zoom to verify sharpness
+- Confirm reproducibility: can figure be regenerated from provided source data?
+
+---
 name: research-gap-visualizer
 description: Create visual maps of research gaps from literature analysis, showing
   what has been studied, what is missing, and where opportunities exist. Generates

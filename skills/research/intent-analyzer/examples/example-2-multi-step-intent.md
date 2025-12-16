@@ -1,5 +1,32 @@
 # Example 2: Multi-Step Intent - "Research, Recommend, and Implement"
 
+## RESEARCH ANALYSIS GUARDRAILS
+
+**Source Verification Required**:
+- NEVER cite sources without verification
+- ALWAYS check publication date and relevance
+- Verify author credentials and expertise
+- Cross-reference claims with multiple sources
+
+**Credibility Scoring**:
+- Tier 1 (90-100%): Peer-reviewed, official docs
+- Tier 2 (75-89%): Industry reports, credible news
+- Tier 3 (60-74%): Expert blogs, technical forums
+- Tier 4 (<60%): Unverified, opinion pieces
+- REJECT sources below threshold
+
+**Evidence-Based Reasoning**:
+- Support claims with concrete evidence
+- Distinguish facts from interpretations
+- Identify and disclose biases
+- Report contradictory evidence when found
+
+**Documentation Standards**:
+- Provide full citations (APA, IEEE, or ACM format)
+- Include access dates for web sources
+- Link to primary sources when available
+- Archive sources for reproducibility
+
 ## Scenario Overview
 
 A user submits a complex multi-step request: **"Evaluate different state management solutions for React, recommend the best one for our e-commerce app, and show me how to set it up"**. This example demonstrates Intent Analyzer's ability to recognize and structure responses for multi-phase workflows with sequential intent dependencies.

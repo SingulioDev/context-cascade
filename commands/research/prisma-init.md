@@ -1,4 +1,25 @@
 ---
+## Command-Specific Requirements
+
+### Agent Creation Parameters
+- Define agent role, expertise domain, and capability boundaries
+- Specify required tools, skills, and MCP integrations
+- Set performance metrics and success criteria
+
+### Research Methodology Requirements
+- Document research questions and hypotheses
+- Specify data sources and validation criteria
+- Define experimental design and control conditions
+
+### Expertise File Integration
+- Reference relevant expertise files from .claude/
+- Link to domain-specific knowledge bases
+- Specify required background reading
+
+### Output Artifact Specifications
+- Define deliverable format and structure
+- Specify validation requirements
+- Set quality gates and acceptance criteria
 <!-- META-LOOP v2.1 INTEGRATION -->## Phase 0: Expertise Loadingexpertise_check:  domain: research  file: .claude/expertise/research.yaml  fallback: discovery_mode## Recursive Improvement Integration (v2.1)benchmark: prisma-init-benchmark-v1  tests:    - command_execution_success    - domain_validation  success_threshold: 0.9namespace: "commands/research/./prisma-init/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  related_skills: [literature-synthesis, deep-research-orchestrator]  related_agents: [researcher, evaluator]## COMMAND COMPLETION VERIFICATIONsuccess_metrics:  execution_success: ">95%"<!-- END META-LOOP -->
 name: prisma-init
 description: Initialize PRISMA 2020 systematic literature review protocol with search strategies

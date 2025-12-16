@@ -14,6 +14,55 @@ tags:
 author: ruv
 ---
 
+<!-- SKILL SOP IMPROVEMENT v1.0 -->
+## Skill Execution Criteria
+
+### When to Use This Skill
+- Creating prompts for repeated or programmatic use
+- Improving inconsistent or underperforming prompts
+- Building prompt libraries or templates for teams
+- Optimizing high-stakes prompts where quality impacts outcomes
+- Debugging why prompts aren't producing expected results
+- Applying evidence-based prompt engineering techniques
+
+### When NOT to Use This Skill
+- For casual one-off conversational queries
+- When prompt is already performing optimally
+- For simple requests without quality requirements
+- When task doesn't benefit from structured prompting
+
+### Success Criteria
+- primary_outcome: "Optimized prompt using evidence-based techniques with clear intent, proper structure, sufficient context, and appropriate methodology"
+- quality_threshold: 0.92
+- verification_method: "Prompt produces consistent high-quality responses across diverse test cases, passes anti-pattern detection, demonstrates structural optimization"
+
+### Edge Cases
+- case: "Prompt is ambiguous or multi-interpretable"
+  handling: "Apply intent analysis framework, clarify core objective, add explicit success criteria"
+- case: "Prompt produces inconsistent outputs"
+  handling: "Add self-consistency mechanisms, few-shot examples, explicit reasoning steps"
+- case: "Prompt fails on edge cases"
+  handling: "Add constraint specification, edge case handling instructions, validation criteria"
+
+### Skill Guardrails
+NEVER:
+  - "Skip intent and clarity assessment (ambiguous prompts produce unreliable results)"
+  - "Ignore structural organization (poor structure degrades AI comprehension)"
+  - "Assume context without making it explicit (implied assumptions cause failures)"
+  - "Apply wrong technique for task type (e.g., plan-and-solve for factual lookup)"
+ALWAYS:
+  - "Evaluate prompts across all dimensions: intent, structure, context, techniques"
+  - "Apply evidence-based patterns: self-consistency for facts, program-of-thought for logic, plan-and-solve for complexity"
+  - "Use clear delimiters, hierarchical structure, and primacy/recency positioning"
+  - "Make constraints, requirements, and edge cases explicit"
+  - "Detect and eliminate anti-patterns (vagueness, assumption overload, technique mismatch)"
+
+### Evidence-Based Execution
+self_consistency: "After prompt optimization, test with multiple paraphrased versions of same request to verify consistent interpretation and response quality"
+program_of_thought: "Decompose prompt analysis into: 1) Intent evaluation, 2) Structure assessment, 3) Context sufficiency, 4) Technique application, 5) Anti-pattern detection, 6) Optimization implementation"
+plan_and_solve: "Plan: Analyze existing prompt across 5 dimensions -> Execute: Apply structural optimization + evidence-based techniques -> Verify: Test across diverse inputs + edge cases"
+<!-- END SKILL SOP IMPROVEMENT -->
+
 # Prompt Architect
 
 A comprehensive framework for creating, analyzing, and refining prompts for AI language models using evidence-based techniques, structural optimization principles, and systematic anti-pattern detection.

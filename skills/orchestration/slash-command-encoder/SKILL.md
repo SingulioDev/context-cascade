@@ -16,6 +16,50 @@ category: orchestration
 author: ruv
 ---
 
+## Orchestration Skill Guidelines
+
+### When to Use This Skill
+- **Multi-stage workflows** requiring sequential, parallel, or conditional execution
+- **Complex pipelines** coordinating multiple micro-skills or agents
+- **Iterative processes** with Codex sandbox testing and auto-fix loops
+- **Multi-model routing** requiring intelligent AI selection per stage
+- **Production workflows** needing GitHub integration and memory persistence
+
+### When NOT to Use This Skill
+- **Single-agent tasks** with no coordination requirements
+- **Simple sequential work** that doesn't need stage management
+- **Trivial operations** completing in <5 minutes
+- **Pure research** without implementation stages
+
+### Success Criteria
+- **All stages complete** with 100% success rate
+- **Dependency resolution** with no circular dependencies
+- **Model routing optimal** for each stage (Gemini/Codex/Claude)
+- **Memory persistence** maintained across all stages
+- **No orphaned stages** - all stages tracked and completed
+
+### Edge Cases to Handle
+- **Stage failure mid-cascade** - Implement retry with exponential backoff
+- **Circular dependencies** - Validate DAG structure before execution
+- **Model unavailability** - Have fallback model selection per stage
+- **Memory overflow** - Implement stage result compression
+- **Timeout on long stages** - Configure per-stage timeout limits
+
+### Guardrails (NEVER Violate)
+- **NEVER lose stage state** - Persist after each stage completion
+- **ALWAYS validate dependencies** - Check DAG acyclic before execution
+- **ALWAYS track cascade progress** - Update memory with real-time status
+- **NEVER skip error handling** - Every stage needs try/catch with fallback
+- **ALWAYS cleanup on failure** - Release resources, clear temp state
+
+### Evidence-Based Validation
+- **Verify stage outputs** - Check actual results vs expected schema
+- **Validate data flow** - Confirm outputs passed correctly to next stage
+- **Check model routing** - Verify correct AI used per stage requirements
+- **Measure cascade performance** - Track execution time vs estimates
+- **Audit memory usage** - Ensure no memory leaks across stages
+
+
 # Slash Command Encoder (Enhanced)
 
 ## Overview

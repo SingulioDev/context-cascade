@@ -1,4 +1,60 @@
 # Driver-Navigator Mode Example
+
+
+## When to Use This Skill
+
+- **Learning Sessions**: Teaching or learning new technologies, patterns, or codebases
+- **Complex Features**: Tackling features requiring deep collaboration
+- **Debugging Sessions**: Pair debugging to solve difficult bugs faster
+- **Code Reviews**: Real-time collaborative code review and refactoring
+- **Knowledge Transfer**: Onboarding new team members or sharing expertise
+- **TDD Sessions**: Test-driven development with navigator/driver roles
+
+## When NOT to Use This Skill
+
+- **Simple Tasks**: Trivial changes or routine maintenance
+- **Independent Work**: Tasks requiring deep focus without interruption
+- **Different Timezones**: Async code review more appropriate
+- **Solo Learning**: Self-paced tutorials or experimentation
+
+## Success Criteria
+
+- [ ] Both participants understand the implementation
+- [ ] Code meets team quality standards
+- [ ] Tests written and passing
+- [ ] Knowledge successfully shared
+- [ ] Documentation updated if needed
+- [ ] Both participants satisfied with collaboration
+- [ ] No blockers remaining
+
+## Edge Cases to Handle
+
+- **Skill Imbalance**: Significant experience gap between pair members
+- **Disagreement**: Conflicting approaches or opinions
+- **Fatigue**: Long sessions reducing effectiveness
+- **Tool Differences**: Different IDE preferences or setups
+- **Communication Styles**: Different working or communication preferences
+- **Remote Pairing**: Latency, screen sharing issues, or connectivity problems
+
+## Guardrails
+
+- **NEVER** dominate the keyboard without switching roles
+- **ALWAYS** switch driver/navigator roles every 25-30 minutes
+- **NEVER** criticize or dismiss partner ideas
+- **ALWAYS** explain reasoning for technical decisions
+- **NEVER** skip breaks - take 5-10 minute breaks hourly
+- **ALWAYS** commit working code at session end
+- **NEVER** pair for more than 4-5 hours continuously
+
+## Evidence-Based Validation
+
+- [ ] Code compiles and runs successfully
+- [ ] All tests passing (unit, integration)
+- [ ] Both participants can explain implementation
+- [ ] Code reviewed against team style guide
+- [ ] Git commits follow team conventions
+- [ ] Documentation reflects changes
+- [ ] Security considerations addressed
 Comprehensive example of using driver-navigator pattern in pair programming
 
 ## Scenario: Building User Authentication Feature

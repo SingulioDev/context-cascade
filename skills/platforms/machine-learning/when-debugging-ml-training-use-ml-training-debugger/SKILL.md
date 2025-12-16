@@ -39,6 +39,50 @@ triggers:
 author: ruv
 ---
 
+
+## When NOT to Use This Skill
+
+- Simple data preprocessing without model training
+- Statistical analysis that does not require ML models
+- Rule-based systems without learning components
+- Operations that do not involve model training or inference
+
+## Success Criteria
+
+- Model training convergence: Loss decreasing consistently
+- Validation accuracy: Meeting or exceeding baseline targets
+- Training time: Within expected bounds for dataset size
+- GPU utilization: >80% during training
+- Model export success: 100% successful saves
+- Inference latency: <100ms for real-time applications
+
+## Edge Cases & Error Handling
+
+- **GPU Memory Overflow**: Reduce batch size, use gradient accumulation, or mixed precision
+- **Divergent Training**: Implement learning rate scheduling, gradient clipping
+- **Data Pipeline Failures**: Validate data integrity, handle missing/corrupted files
+- **Version Mismatches**: Lock dependency versions, use containerization
+- **Checkpoint Corruption**: Save multiple checkpoints, validate before loading
+- **Distributed Training Failures**: Handle node failures, implement fault tolerance
+
+## Guardrails & Safety
+
+- NEVER train on unvalidated or uncleaned data
+- ALWAYS validate model outputs before deployment
+- ALWAYS implement reproducibility (random seeds, version pinning)
+- NEVER expose training data in model artifacts or logs
+- ALWAYS monitor for bias and fairness issues
+- ALWAYS implement model versioning and rollback capabilities
+
+## Evidence-Based Validation
+
+- Verify hardware availability: Check GPU/TPU status before training
+- Validate data quality: Run data integrity checks and statistics
+- Monitor training: Track loss curves, gradients, and metrics
+- Test model performance: Evaluate on held-out test set
+- Benchmark inference: Measure latency and throughput under load
+
+
 # ML Training Debugger - Diagnose and Fix Training Issues
 
 ## Overview

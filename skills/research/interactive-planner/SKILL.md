@@ -1,4 +1,49 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Gathering comprehensive requirements through structured multi-select questions
+- Architecture decisions requiring user input on frameworks, databases, deployment
+- Feature planning when user preferences unknown (auth methods, UI libraries)
+- Reducing assumption-based planning by collecting explicit choices upfront
+- When playbook routing requires clarification of technical stack
+
+### When NOT to Use This Skill
+- Requirements already well-defined (skip to planner skill)
+- Single-choice decisions (not multi-select scenarios)
+- When speed prioritized over comprehensive gathering
+- Follow-up planning where context established
+
+### Success Criteria
+- User answers 5-10 multi-select questions covering key decisions
+- All critical choices captured (framework, database, auth, deployment, testing)
+- Plan generated reflects user selections (no misaligned assumptions)
+- User confirms plan matches intent before execution
+- Requirements document exported with all selections
+
+### Edge Cases & Limitations
+- User unsure of options: provide explanations, suggest defaults
+- Too many questions: group related choices, prioritize critical decisions
+- Contradictory selections: flag conflicts, ask for resolution
+- Missing options: allow custom user input for unlisted choices
+- Technical jargon: simplify language, provide examples
+
+### Critical Guardrails
+- NEVER assume technical choices without asking (framework, database, cloud provider)
+- ALWAYS provide option explanations for non-experts
+- NEVER overwhelm with >15 questions (prioritize top 5-10)
+- ALWAYS export requirements document after gathering
+- NEVER proceed to planning without user confirmation of selections
+
+### Evidence-Based Validation
+- Validate coverage: did questions capture all critical decisions?
+- Cross-check consistency: are selections compatible (e.g., React + Express)?
+- Test plan alignment: does generated plan use selected options?
+- Verify user understanding: were explanations clear, choices informed?
+- Confirm completeness: are there unstated requirements still missing?
+
+---
 name: interactive-planner
 description: Use Claude Code's interactive question tool to gather comprehensive requirements
   through structured multi-select questions

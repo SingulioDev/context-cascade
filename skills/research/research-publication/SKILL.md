@@ -1,4 +1,49 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Submitting papers to NeurIPS/ICML/CVPR/ICCV/ECCV conferences
+- Managing peer review process (responding to reviewers)
+- Preparing camera-ready versions with final formatting
+- Publishing reproducibility packages (ACM artifact badging)
+- Archiving research artifacts for long-term availability
+
+### When NOT to Use This Skill
+- Preprint-only publications (use arXiv upload directly)
+- Industry blog posts (use documentation skills)
+- Internal technical reports (use rapid-manuscript-drafter)
+- When full peer review not required
+
+### Success Criteria
+- Paper submitted to target venue with all required files (PDF, source, supplementary)
+- Reproducibility package published (GitHub, Zenodo, ACM DL)
+- Reviewer responses drafted addressing all comments
+- Camera-ready version uploaded meeting all formatting requirements
+- Artifacts archived with permanent DOIs (Zenodo, FigShare)
+
+### Edge Cases & Limitations
+- Desk rejection: verify venue fit, check submission guidelines, resubmit elsewhere
+- Major revisions: address all reviewer concerns, add requested experiments
+- Missing reproducibility materials: package code, data, hyperparameters retroactively
+- Formatting errors: use venue template exactly, validate with LaTeXdiff
+- License conflicts: clarify data licensing, use permissive licenses (MIT, Apache 2.0)
+
+### Critical Guardrails
+- NEVER ignore reviewer comments (address every point explicitly)
+- ALWAYS publish reproducibility packages (code, data, pre-trained models)
+- NEVER violate venue anonymity requirements (blind submissions, no self-citations)
+- ALWAYS archive with permanent identifiers (DOI, arXiv ID)
+- NEVER use proprietary data without clearance (verify licensing)
+
+### Evidence-Based Validation
+- Validate submission completeness: checklist includes PDF, source, supplementary, metadata
+- Cross-check reviewer responses: did you address all comments point-by-point?
+- Test reproducibility package: can independent party rerun experiments from package alone?
+- Verify camera-ready formatting: does LaTeX compile, match template exactly?
+- Confirm archival: are DOIs permanent, artifacts publicly accessible?
+
+---
 name: research-publication
 description: Academic publication preparation for Deep Research SOP Pipeline I including
   paper writing, reproducibility artifacts, and venue submission. Use when preparing

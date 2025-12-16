@@ -1,4 +1,10 @@
 # hive-mind-wizard
+n## Key orchestration command improvements:
+- Swarm initialization requirements
+- Coordination protocol selection
+- Agent spawning parameters
+- Consensus requirements
+
 
 <!-- META-LOOP v2.1 INTEGRATION -->
 ## Phase 0: Expertise Loading

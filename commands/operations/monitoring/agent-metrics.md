@@ -1,4 +1,10 @@
 # agent-metrics
+nKey memory/monitoring/optimization command improvements:
+- Memory MCP integration
+- Metric collection requirements
+- Performance thresholds
+- Optimization targets
+
 
 <!-- META-LOOP v2.1 INTEGRATION -->
 ## Phase 0: Expertise Loading

@@ -1,5 +1,32 @@
 # Test 1: Ambiguous Request Analysis
 
+## RESEARCH ANALYSIS GUARDRAILS
+
+**Source Verification Required**:
+- NEVER cite sources without verification
+- ALWAYS check publication date and relevance
+- Verify author credentials and expertise
+- Cross-reference claims with multiple sources
+
+**Credibility Scoring**:
+- Tier 1 (90-100%): Peer-reviewed, official docs
+- Tier 2 (75-89%): Industry reports, credible news
+- Tier 3 (60-74%): Expert blogs, technical forums
+- Tier 4 (<60%): Unverified, opinion pieces
+- REJECT sources below threshold
+
+**Evidence-Based Reasoning**:
+- Support claims with concrete evidence
+- Distinguish facts from interpretations
+- Identify and disclose biases
+- Report contradictory evidence when found
+
+**Documentation Standards**:
+- Provide full citations (APA, IEEE, or ACM format)
+- Include access dates for web sources
+- Link to primary sources when available
+- Archive sources for reproducibility
+
 ## Test Overview
 Validates Intent Analyzer's ability to detect and handle ambiguous user requests where multiple interpretations have significant probability. Tests disambiguation strategy, clarification question generation, and appropriate confidence thresholds.
 

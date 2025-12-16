@@ -1,5 +1,63 @@
 # Feature Development Automation Scripts
 
+
+## When to Use This Skill
+
+- **Full Feature Development**: Complete end-to-end feature implementation
+- **Greenfield Features**: Building new functionality from scratch
+- **Research Required**: Features needing best practice research
+- **Multi-Layer Changes**: Features spanning frontend, backend, database
+- **Production Deployment**: Features requiring full testing and documentation
+- **Architecture Design**: Features needing upfront design decisions
+
+## When NOT to Use This Skill
+
+- **Bug Fixes**: Use debugging or smart-bug-fix skills instead
+- **Quick Prototypes**: Exploratory coding without production requirements
+- **Refactoring**: Code restructuring without new features
+- **Documentation Only**: Pure documentation tasks
+
+## Success Criteria
+
+- [ ] Feature fully implemented across all layers
+- [ ] Unit tests passing with >80% coverage
+- [ ] Integration tests passing
+- [ ] E2E tests passing (if applicable)
+- [ ] Code reviewed and approved
+- [ ] Documentation complete (API docs, user guides)
+- [ ] Performance benchmarks met
+- [ ] Security review passed
+- [ ] Deployed to staging and validated
+
+## Edge Cases to Handle
+
+- **Legacy Integration**: Interfacing with old code or deprecated APIs
+- **Breaking Changes**: Features requiring API versioning or migrations
+- **Feature Flags**: Gradual rollout or A/B testing requirements
+- **Data Migration**: Schema changes requiring backfill scripts
+- **Third-Party Dependencies**: External API rate limits or availability
+- **Browser Compatibility**: Cross-browser testing requirements
+
+## Guardrails
+
+- **NEVER** skip testing phases to ship faster
+- **ALWAYS** research best practices before implementing
+- **NEVER** commit directly to main - use feature branches
+- **ALWAYS** write tests before or during implementation (TDD)
+- **NEVER** hardcode configuration - use environment variables
+- **ALWAYS** document architectural decisions (ADRs)
+- **NEVER** deploy without staging validation
+
+## Evidence-Based Validation
+
+- [ ] All automated tests passing (npm test / pytest)
+- [ ] Code coverage reports reviewed
+- [ ] Lighthouse score meets thresholds (if web)
+- [ ] Load testing validates performance targets
+- [ ] Security scan shows no critical vulnerabilities
+- [ ] Accessibility audit passes (axe, WAVE)
+- [ ] Manual testing on target devices/browsers
+
 This directory contains 4 production-ready automation scripts for the complete 12-stage feature development lifecycle.
 
 ---

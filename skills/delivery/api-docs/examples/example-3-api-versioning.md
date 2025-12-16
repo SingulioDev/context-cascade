@@ -1,5 +1,58 @@
 # Example 3: API Versioning Strategies & Documentation
 
+
+## When to Use This Skill
+
+- **API Development**: Building or documenting REST APIs, GraphQL APIs, or other web services
+- **API Versioning**: Managing multiple API versions or migration strategies
+- **Developer Experience**: Creating interactive documentation for API consumers
+- **OpenAPI/Swagger**: Generating or maintaining OpenAPI specifications
+- **Integration Work**: Helping external teams understand and use your APIs
+
+## When NOT to Use This Skill
+
+- **Non-API Documentation**: General code documentation, user manuals, or internal wikis
+- **No API Surface**: Pure frontend apps, CLI tools, or embedded systems without APIs
+- **Legacy Systems**: APIs without code access or with undocumented proprietary protocols
+- **Incompatible Stacks**: Non-HTTP protocols (MQTT, gRPC) requiring specialized tooling
+
+## Success Criteria
+
+- [ ] API endpoints fully documented with request/response schemas
+- [ ] Authentication and authorization flows clearly explained
+- [ ] Interactive API explorer (Swagger UI/GraphQL Playground) functional
+- [ ] Error codes and handling strategies documented
+- [ ] Rate limiting and usage guidelines specified
+- [ ] Code examples provided for common use cases
+- [ ] Versioning strategy documented if applicable
+
+## Edge Cases to Handle
+
+- **Missing Type Annotations**: Infer schemas from runtime behavior or database models
+- **Dynamic Routes**: Document parameterized endpoints and path variables
+- **Nested Resources**: Handle complex resource hierarchies and relationships
+- **File Uploads**: Document multipart/form-data and binary payloads
+- **Webhooks**: Document callback URLs and event payloads
+- **Deprecated Endpoints**: Mark sunset dates and migration paths
+
+## Guardrails
+
+- **NEVER** expose internal implementation details or security vulnerabilities in public docs
+- **ALWAYS** validate generated specs against OpenAPI/GraphQL schema validators
+- **NEVER** ship documentation without testing example requests
+- **ALWAYS** include authentication requirements for protected endpoints
+- **NEVER** assume default values - explicitly document all parameters
+- **ALWAYS** document error responses, not just success cases
+
+## Evidence-Based Validation
+
+- [ ] Run generated OpenAPI spec through swagger-cli validate
+- [ ] Test all documented endpoints with actual HTTP requests
+- [ ] Verify GraphQL schema with graphql-schema-linter
+- [ ] Check accessibility of interactive docs with axe-core
+- [ ] Validate examples compile and execute successfully
+- [ ] Review documentation with API consumers for clarity
+
 **Scenario**: Implement and document multiple API versioning strategies (URL, header, query parameter) with deprecation notices, migration guides, and version-specific documentation.
 
 **Difficulty**: Advanced

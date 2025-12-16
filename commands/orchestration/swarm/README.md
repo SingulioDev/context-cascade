@@ -1,4 +1,10 @@
 # Swarm Commands
+n## Key orchestration command improvements:
+- Swarm initialization requirements
+- Coordination protocol selection
+- Agent spawning parameters
+- Consensus requirements
+
 
 Commands for swarm operations in Claude Flow.
 

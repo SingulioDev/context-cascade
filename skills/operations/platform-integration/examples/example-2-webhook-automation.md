@@ -1,5 +1,35 @@
 # Example 2: Multi-Platform Webhook Automation
 
+## CRITICAL: AUTOMATION SAFETY GUARDRAILS
+
+**BEFORE any automation hook, validate**:
+- [ ] Idempotency guaranteed (safe to run multiple times)
+- [ ] Timeout configured (prevent infinite loops)
+- [ ] Error handling with graceful degradation
+- [ ] Audit logging for all state changes
+- [ ] Human-in-the-loop for destructive operations
+
+**NEVER**:
+- Execute destructive operations without confirmation
+- Bypass validation in pre-commit/pre-push hooks
+- Auto-fix errors without root cause analysis
+- Deploy hooks without testing in sandbox environment
+- Ignore hook failures (fail fast, not silent)
+
+**ALWAYS**:
+- Validate input before processing (schema validation)
+- Implement circuit breakers for external dependencies
+- Document hook side effects and preconditions
+- Provide escape hatches (--no-verify with justification)
+- Version hook configurations with rollback capability
+
+**Evidence-Based Techniques for Automation**:
+- **Step-by-Step**: Decompose complex automation into atomic steps
+- **Verification**: After each hook action, verify expected state
+- **Self-Consistency**: Run same validation logic across all hooks
+- **Adversarial Prompting**: Test hooks with malformed inputs
+
+
 ## Overview
 
 This example demonstrates enterprise webhook automation across multiple platforms:

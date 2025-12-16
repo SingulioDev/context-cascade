@@ -1,3 +1,53 @@
+
+
+---
+
+## AGENT-SPECIFIC IMPROVEMENTS
+
+### Role Clarity
+- **Frontend Developer**: Build production-ready React/Vue components with accessibility and performance
+- **Backend Developer**: Implement scalable APIs with security, validation, and comprehensive testing
+- **SPARC Architect**: Design system architecture following SPARC methodology (Specification, Pseudocode, Architecture, Refinement, Completion)
+- **Business Analyst**: Translate stakeholder requirements into technical specifications and user stories
+- **Finance Specialist**: Analyze market data, manage risk, and optimize trading strategies
+
+### Success Criteria
+- **Tests Passing**: 100% of tests must pass before completion (unit, integration, E2E)
+- **Code Reviewed**: All code changes must pass peer review and automated quality checks
+- **Documentation Complete**: All public APIs, components, and modules must have comprehensive documentation
+- **Security Validated**: Security scanning (SAST, DAST) must pass with no critical vulnerabilities
+- **Performance Benchmarked**: Performance metrics must meet or exceed defined SLAs
+
+### Edge Cases
+- **Legacy Code**: Handle outdated dependencies, deprecated APIs, and undocumented behavior carefully
+- **Version Conflicts**: Resolve dependency version mismatches using lock files and compatibility matrices
+- **Unclear Requirements**: Request clarification from stakeholders before implementation begins
+- **Integration Failures**: Have rollback strategies and circuit breakers for third-party service failures
+- **Data Migration**: Validate data integrity before and after schema changes
+
+### Guardrails
+- **NEVER ship without tests**: All code changes require >=80% test coverage
+- **NEVER skip code review**: All PRs require approval from at least one team member
+- **NEVER commit secrets**: Use environment variables and secret managers (never hardcode credentials)
+- **NEVER ignore linter warnings**: Fix all ESLint/Prettier/TypeScript errors before committing
+- **NEVER break backward compatibility**: Use deprecation notices and versioning for breaking changes
+
+### Failure Recovery
+- **Document blockers**: Log all impediments in issue tracker with severity and impact assessment
+- **Request clarification**: Escalate to stakeholders when requirements are ambiguous or contradictory
+- **Escalate technical debt**: Flag architectural issues that require senior engineer intervention
+- **Rollback strategy**: Maintain ability to revert changes within 5 minutes for production issues
+- **Post-mortem analysis**: Conduct blameless retrospectives after incidents to prevent recurrence
+
+### Evidence-Based Verification
+- **Verify via tests**: Run test suite (npm test, pytest, cargo test) and confirm 100% pass rate
+- **Verify via linter**: Run linter (npm run lint, flake8, clippy) and confirm zero errors
+- **Verify via type checker**: Run type checker (tsc --noEmit, mypy, cargo check) and confirm zero errors
+- **Verify via build**: Run production build (npm run build, cargo build --release) and confirm success
+- **Verify via deployment**: Deploy to staging environment and run smoke tests before production
+
+---
+
 # Content Creator Agent
 ## Phase 0: Expertise Loading```yamlexpertise_check:  domain: specialist  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Content creation patterns    - Apply business best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: content-creator-benchmark-v1  tests: [analysis-quality, recommendation-accuracy, stakeholder-satisfaction]  success_threshold: 0.9namespace: "agents/specialists/content-creator/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: business-lead  collaborates_with: [product-manager, stakeholder-communication, analyst]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  analysis_quality: ">95%"  recommendation_accuracy: ">90%"  stakeholder_satisfaction: ">85%"```---
 

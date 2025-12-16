@@ -1,5 +1,61 @@
 # ML Development Skill - Gold Tier
 
+
+## When to Use This Skill
+
+- **Model Training**: Training neural networks or ML models
+- **Hyperparameter Tuning**: Optimizing model performance
+- **Model Debugging**: Diagnosing training issues (overfitting, vanishing gradients)
+- **Data Pipeline**: Building training/validation data pipelines
+- **Experiment Tracking**: Managing ML experiments and metrics
+- **Model Deployment**: Serving models in production
+
+## When NOT to Use This Skill
+
+- **Data Analysis**: Exploratory data analysis or statistics (use data scientist)
+- **Data Engineering**: Large-scale ETL or data warehouse (use data engineer)
+- **Research**: Novel algorithm development (use research specialist)
+- **Simple Rules**: Heuristic-based logic without ML
+
+## Success Criteria
+
+- [ ] Model achieves target accuracy/F1/RMSE on validation set
+- [ ] Training/validation curves show healthy convergence
+- [ ] No overfitting (train/val gap <5%)
+- [ ] Inference latency meets production requirements
+- [ ] Model size within deployment constraints
+- [ ] Experiment tracked with metrics and artifacts (MLflow, Weights & Biases)
+- [ ] Reproducible results (fixed random seeds, versioned data)
+
+## Edge Cases to Handle
+
+- **Class Imbalance**: Unequal class distribution requiring resampling
+- **Data Leakage**: Information from validation/test leaking into training
+- **Catastrophic Forgetting**: Model forgetting old tasks when learning new ones
+- **Adversarial Examples**: Model vulnerable to adversarial attacks
+- **Distribution Shift**: Training data differs from production data
+- **Hardware Constraints**: GPU memory limitations or mixed precision training
+
+## Guardrails
+
+- **NEVER** evaluate on training data
+- **ALWAYS** use separate train/validation/test splits
+- **NEVER** touch test set until final evaluation
+- **ALWAYS** version datasets and models
+- **NEVER** deploy without monitoring for data drift
+- **ALWAYS** document model assumptions and limitations
+- **NEVER** train on biased or unrepresentative data
+
+## Evidence-Based Validation
+
+- [ ] Confusion matrix reviewed for class-wise performance
+- [ ] Learning curves plotted (loss vs epochs)
+- [ ] Validation metrics tracked across experiments
+- [ ] Model profiled for inference time (TensorBoard, PyTorch Profiler)
+- [ ] Ablation studies conducted for architecture choices
+- [ ] Cross-validation performed for robust evaluation
+- [ ] Statistical significance tested (t-test, bootstrap)
+
 Enterprise-grade machine learning development workflow with comprehensive experiment tracking, automated hyperparameter optimization, and production MLOps capabilities.
 
 ## 🏆 Gold Tier Features

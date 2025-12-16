@@ -1,4 +1,49 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Creating publication-ready figures for academic papers
+- Generating architecture diagrams for neural network models
+- Producing workflow visualizations for methodology sections
+- Designing infographics for grant proposals or presentations
+- Creating high-resolution plots for experimental results
+
+### When NOT to Use This Skill
+- Quick sketches or whiteboard diagrams (use manual drawing)
+- When existing templates suffice (use standard matplotlib/seaborn)
+- Non-academic visualizations (use general design tools)
+- When time constrained (<1 hour, use pre-made assets)
+
+### Success Criteria
+- High-resolution publication-ready assets (300+ DPI, vector formats)
+- Clear labels, legends, and captions
+- Colorblind-friendly palettes (viridis, cividis)
+- Consistent style across all figures (fonts, colors, line widths)
+- Source files included (SVG, PDF, Python/R scripts)
+
+### Edge Cases & Limitations
+- Complex architectures: use hierarchical layouts, group related components
+- Too much detail: simplify non-critical elements, use zoomed insets
+- Unclear flow: add arrows, numbers, or annotations guiding reader
+- Overlapping elements: adjust spacing, use semi-transparency
+- Inconsistent styling: create style guide, apply globally
+
+### Critical Guardrails
+- NEVER use raster formats for diagrams (use SVG, PDF, not PNG/JPG)
+- ALWAYS include captions explaining what figure shows
+- NEVER use default matplotlib colors (not colorblind-friendly)
+- ALWAYS provide source code for reproducibility (Python, R, TikZ)
+- NEVER omit scale bars, axis units, or legends
+
+### Evidence-Based Validation
+- Validate resolution: export at 300+ DPI, zoom to verify sharpness
+- Test colorblind accessibility: use simulators (Coblis, Color Oracle)
+- Verify label clarity: are all abbreviations explained in caption?
+- Check consistency: do all figures use same fonts, colors, styles?
+- Confirm reproducibility: can figure be regenerated from provided source code?
+
+---
 name: visual-asset-generator
 description: Automatically generate research diagrams, charts, tables, and visualizations
   from data or descriptions. Creates publication-ready visual assets including PRISMA

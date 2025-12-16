@@ -1,4 +1,50 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Developing novel ML methods after baseline replication (Deep Research SOP Pipeline D)
+- Conducting ablation studies (5+ ablations for Quality Gate 2)
+- Hyperparameter optimization with statistical validation
+- Proposing architectural innovations with rigorous experimental validation
+- Publishing research requiring reproducibility and statistical rigor
+
+### When NOT to Use This Skill
+- Before baseline replication complete (Quality Gate 1 required)
+- Quick prototyping without rigorous validation
+- When ablation studies not feasible (<5 components)
+- Industry projects without academic-level rigor
+
+### Success Criteria
+- Novel method outperforms baseline (p < 0.05)
+- 5+ ablation studies isolate component contributions
+- Effect sizes reported (Cohen's d >= 0.5)
+- 95% confidence intervals for all metrics
+- Multiple comparison corrections (Bonferroni, FDR)
+- Statistical power verified (1-beta >= 0.8)
+
+### Edge Cases & Limitations
+- Small datasets: use bootstrapping (1000+ samples) for robust CI
+- High variance: increase runs (10+ seeds), report full distribution
+- Multiple metrics: apply Bonferroni correction (alpha = 0.05 / k)
+- Negative results: report faithfully, analyze failure modes
+- Computational limits: use smaller ablation sets, document constraints
+
+### Critical Guardrails
+- NEVER claim novelty without ablation studies isolating contributions
+- ALWAYS report effect sizes (not just p-values, avoid p-hacking)
+- NEVER cherry-pick best results (report all runs, use median/mean appropriately)
+- ALWAYS apply multiple comparison corrections (k > 1 hypotheses)
+- NEVER skip statistical power analysis (verify sufficient N)
+
+### Evidence-Based Validation
+- Validate significance: recompute p-values, verify assumptions (normality, homoscedasticity)
+- Cross-validate ablations: ensure component removal changes behavior
+- Test generalization: validate on held-out datasets, check distribution shift
+- Verify effect size: compute Cohen's d, confirm practical significance (d >= 0.5)
+- Confirm reproducibility: rerun with different seeds, verify consistency
+
+---
 name: method-development
 description: Develop novel machine learning methods with rigorous ablation studies
   for Deep Research SOP Pipeline D. Use after baseline replication passes Quality

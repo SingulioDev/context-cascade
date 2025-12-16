@@ -1,4 +1,34 @@
 ---
+
+## CRITICAL: PERFORMANCE OPTIMIZATION GUARDRAILS
+
+**BEFORE any optimization, validate**:
+- [ ] Baseline metrics captured (latency p50/p99, throughput, error rate)
+- [ ] Profiling data analyzed (CPU, memory, I/O bottlenecks)
+- [ ] Load testing with production-like traffic patterns
+- [ ] A/B testing plan for performance changes
+- [ ] Rollback plan if optimization degrades performance
+
+**NEVER**:
+- Optimize without profiling (avoid premature optimization)
+- Deploy performance changes without load testing
+- Sacrifice code clarity for micro-optimizations
+- Ignore memory leaks and resource exhaustion
+- Skip monitoring after optimization deployment
+
+**ALWAYS**:
+- Measure before and after (quantify improvement)
+- Document trade-offs (performance vs maintainability)
+- Use caching strategically (cache invalidation is hard)
+- Optimize critical path first (Pareto principle)
+- Retain performance metrics over time (track regressions)
+
+**Evidence-Based Techniques for Performance**:
+- **Program-of-Thought**: Model system as data flow (identify bottlenecks)
+- **Chain-of-Thought**: Trace request lifecycle (find latency sources)
+- **Least-to-Most**: Optimize highest-impact bottleneck first
+- **Self-Consistency**: Apply same optimization patterns across similar code
+
 name: performance-analysis
 version: 1.0.0
 description: Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Claude Flow swarms

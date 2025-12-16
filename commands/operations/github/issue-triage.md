@@ -1,5 +1,10 @@
 # issue-triage
 
+## Command Context
+- GitHub API integration requirements: Requires GitHub CLI (gh) or GitHub API token for authentication
+- Authentication/token requirements: Use GITHUB_TOKEN env var or gh auth login for GitHub operations
+- Expected PR/issue/workflow outputs: JSON responses, PR/issue URLs, workflow run IDs, status codes
+- Automation trigger conditions: Webhook events, schedule triggers, manual dispatch, PR/issue state changes
 <!-- META-LOOP v2.1 INTEGRATION -->
 ## Phase 0: Expertise Loading
 expertise_check:

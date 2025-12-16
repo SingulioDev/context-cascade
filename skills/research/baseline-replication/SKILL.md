@@ -1,4 +1,50 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Validating ML baselines before novel methods (Deep Research SOP Pipeline D)
+- Reproducing experiments for NeurIPS/ICML challenges
+- Verifying SOTA claims before building on prior work
+- Creating reproducibility packages for Quality Gate 1
+- Debugging performance gaps between published and reproduced results
+
+### When NOT to Use This Skill
+- Quick proof-of-concept implementations (use prototyping)
+- When exact reproducibility not critical (demo projects)
+- Papers without code or detailed methodology
+- Industry benchmarks without academic rigor
+
+### Success Criteria
+- Results within +/- 1% of published metrics
+- 3+ successful reproductions in fresh Docker
+- All 47+ hyperparameters documented
+- Reproducibility package tested independently
+- Dataset checksums verified (SHA256)
+- Random seeds documented, deterministic results
+
+### Edge Cases & Limitations
+- Missing hyperparameters: GitHub issues, contact authors, supplements
+- Framework version mismatches: test PyTorch 1.7 vs 1.13, document differences
+- Hardware differences: V100 vs A100 precision, document in notes
+- Non-deterministic operations: force torch.use_deterministic_algorithms(True)
+- Dataset preprocessing: compare sample outputs, validate checksums
+
+### Critical Guardrails
+- NEVER claim reproduction without statistical validation (t-test, CI)
+- ALWAYS document exact framework versions (pip freeze, conda export)
+- NEVER skip random seed validation (test 3+ runs)
+- ALWAYS verify dataset integrity (SHA256, sample counts, splits)
+- NEVER assume default hyperparameters (extract from paper/code)
+
+### Evidence-Based Validation
+- Validate determinism: run 3x, verify identical results (variance = 0)
+- Cross-validate metrics: recompute from saved outputs
+- Test fresh environment: Docker from scratch, no cached deps
+- Verify statistical power: calculate required N, check reported N
+- Confirm effect size: compute Cohen's d, verify significance
+
+---
 name: baseline-replication
 description: "Replicate published ML baseline experiments with exact reproducibility\
   \ (\xB11% tolerance) for Deep Research SOP Pipeline D. Use when validating baselines,\

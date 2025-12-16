@@ -33,6 +33,61 @@ tags:
 author: ruv
 ---
 
+## When to Use This Skill
+
+Use this skill when conducting comprehensive security audits, performing vulnerability assessments, analyzing application security posture, identifying security misconfigurations, validating security controls, or preparing for penetration testing engagements.
+
+## When NOT to Use This Skill
+
+Do NOT use for compliance audits (use compliance skill instead), unauthorized security testing, production system scanning without approval, vulnerability exploitation (only identification), or automated scanning without manual validation. Avoid for code quality audits unrelated to security.
+
+## Success Criteria
+
+- All security vulnerabilities identified with CVSS scores and remediation guidance
+- Security misconfigurations documented with severity ratings
+- Attack surface mapped (exposed services, authentication mechanisms, data flows)
+- Security controls validated (authentication, authorization, encryption, logging)
+- Vulnerability remediation plan created with prioritization
+- Zero critical/high vulnerabilities remaining after remediation
+- Security findings validated through manual testing (not just automated scans)
+- Penetration testing readiness achieved (all low-hanging fruit addressed)
+
+## Edge Cases & Challenges
+
+- False positives from automated security scanners
+- Zero-day vulnerabilities without CVE mappings
+- Business logic vulnerabilities requiring manual analysis
+- Authentication bypass through indirect paths
+- Encrypted communications requiring SSL interception
+- Cloud-specific security misconfigurations (S3 buckets, IAM roles)
+- Supply chain vulnerabilities in dependencies
+- Time-of-check to time-of-use (TOCTOU) race conditions
+
+## Guardrails (CRITICAL SECURITY RULES)
+
+- NEVER exploit vulnerabilities beyond proof-of-concept validation
+- NEVER conduct security testing on unauthorized systems
+- NEVER exfiltrate sensitive data during security assessments
+- NEVER cause denial-of-service or system instability
+- NEVER share vulnerability details publicly before responsible disclosure
+- ALWAYS obtain written authorization before security testing
+- ALWAYS document findings with remediation guidance
+- ALWAYS validate vulnerabilities through manual testing
+- ALWAYS follow responsible disclosure timelines (90 days standard)
+- ALWAYS maintain confidentiality of security findings
+- ALWAYS use non-destructive testing methods where possible
+- ALWAYS preserve audit trails of security testing activities
+
+## Evidence-Based Validation
+
+All security findings MUST be validated through:
+1. **Automated scanning** - Multiple tools confirm vulnerability (Nessus, Burp, OWASP ZAP)
+2. **Manual validation** - Security analyst reproduces finding independently
+3. **Proof-of-concept** - Demonstrate exploitability without causing harm
+4. **Code review** - Validate vulnerability at source code level
+5. **Attack path analysis** - Document complete attack chain from entry to impact
+6. **Remediation testing** - Verify fix resolves vulnerability without introducing new issues
+
 # Security Analyzer - Comprehensive Security Auditing Skill
 
 ## Overview

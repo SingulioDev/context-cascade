@@ -13,6 +13,50 @@ tags:
 author: ruv
 ---
 
+## Orchestration Skill Guidelines
+
+### When to Use This Skill
+- **Multi-agent coordination** requiring topology-aware task distribution
+- **Cloud-based orchestration** with Flow Nexus platform integration
+- **Event-driven workflows** needing message-based coordination
+- **Distributed systems** spanning multiple execution environments
+- **Scalable swarms** with adaptive topology management
+
+### When NOT to Use This Skill
+- **Single-agent tasks** with no coordination overhead
+- **Local-only execution** not using cloud features
+- **Simple sequential work** without event-driven needs
+- **Static topologies** not requiring adaptive scaling
+
+### Success Criteria
+- **Coordination topology established** (mesh/hierarchical/star)
+- **All agents registered** in coordination namespace
+- **Event routing functional** with <50ms message latency
+- **No coordination deadlocks** - All agents progressing
+- **Scalability validated** - Handles target agent count
+
+### Edge Cases to Handle
+- **Network partitions** - Implement partition tolerance with eventual consistency
+- **Message loss** - Add message acknowledgment and retry logic
+- **Agent disconnection** - Detect disconnects, redistribute work
+- **Topology reconfiguration** - Support live topology changes without restart
+- **Rate limiting** - Handle cloud API rate limits with backoff
+
+### Guardrails (NEVER Violate)
+- **NEVER lose coordination state** - Persist topology and agent registry
+- **ALWAYS validate topology** - Check for cycles, orphaned nodes
+- **ALWAYS monitor message queues** - Prevent queue overflow
+- **NEVER skip health checks** - Continuous agent liveness monitoring
+- **ALWAYS handle failures gracefully** - No cascading failures
+
+### Evidence-Based Validation
+- **Verify topology structure** - Validate graph properties (connected, acyclic if needed)
+- **Check message delivery** - Confirm all messages reached targets
+- **Measure coordination overhead** - Calculate % time spent on coordination vs work
+- **Validate agent reachability** - Ping all agents, verify responses
+- **Audit scalability** - Test with max agent count, measure performance
+
+
 # Advanced Coordination - Distributed Agent Management
 
 Sophisticated coordination protocols for large-scale multi-agent systems with fault tolerance and consensus requirements.

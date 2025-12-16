@@ -1,4 +1,49 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Brainstorming research directions after literature synthesis
+- Generating 10+ novel hypotheses from identified research gaps
+- Rapid ideation for grant proposals or project pitches
+- Exploring alternative approaches when initial methods fail
+- Creative divergent thinking for problem-solving
+
+### When NOT to Use This Skill
+- When rigorous validation required immediately (use method-development)
+- Single-idea deep dives (use researcher skill for focused investigation)
+- Production code generation (use feature-dev-complete)
+- When novelty is not the primary goal
+
+### Success Criteria
+- 10+ distinct ideas generated per session
+- Ideas directly address identified research gaps
+- Each idea includes testable hypothesis and expected outcome
+- Feasibility assessment provided (quick vs long-term)
+- Citations to supporting literature included
+
+### Edge Cases & Limitations
+- No research gaps identified: broaden literature search, explore adjacent fields
+- Ideas too similar: apply forced constraints (different modalities, opposite assumptions)
+- Infeasible ideas: flag as long-term, suggest simpler variants
+- Low novelty: cross-check against SOTA, ensure true gap exists
+- Over-ambitious scope: break into sub-ideas, prioritize quick wins
+
+### Critical Guardrails
+- NEVER generate ideas without grounding in research gaps
+- ALWAYS provide testable hypotheses (falsifiable predictions)
+- NEVER claim novelty without literature verification
+- ALWAYS assess feasibility (computational cost, data requirements)
+- NEVER skip expected outcome specification
+
+### Evidence-Based Validation
+- Validate novelty: search for similar ideas in literature (Semantic Scholar)
+- Test hypothesis clarity: can it be tested experimentally with clear success criteria?
+- Verify gap alignment: does idea directly address documented research gap?
+- Check feasibility: are required resources (data, compute, time) realistic?
+- Confirm testability: can hypothesis be falsified with available methods?
+
+---
 name: rapid-idea-generator
 description: Generate research ideas from any topic in under 5 minutes using 5-Whys
   causal analysis, component decomposition, and root cause identification. Features

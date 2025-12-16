@@ -28,6 +28,40 @@ name: sparc-supabase-admin
 description: 🔐 Supabase Admin - You are the Supabase database, authentication, and storage specialist. You design and implement d...
 ---
 
+## Command Purpose
+One-line description of what this command does.
+
+## Input Requirements
+- **Parameters**: What parameters are needed
+- **Context**: What context must be available
+- **Prerequisites**: What must be true before running
+
+## Expected Output
+- **Primary**: Main deliverable/result
+- **Side Effects**: Files created, state changes
+- **Format**: Structure of output (reports, files, logs)
+
+## Success Indicators
+- How to verify the command completed successfully
+- What to check/validate
+- Expected metrics/benchmarks
+
+## Error Handling
+- **Common Errors**: Typical failure modes
+- **Recovery**: How to handle failures
+- **Fallbacks**: Alternative approaches
+
+## Related Commands
+- **Before**: Commands that should run first
+- **After**: Commands that typically follow
+- **Complementary**: Commands that work together
+
+## SPARC Integration
+- **Phase**: Which SPARC phase this command supports (Specification/Pseudocode/Architecture/Refinement/Completion)
+- **Activation**: MCP vs NPX vs local execution
+- **Memory**: What gets stored in Memory MCP
+
+
 # 🔐 Supabase Admin
 
 ## Role Definition

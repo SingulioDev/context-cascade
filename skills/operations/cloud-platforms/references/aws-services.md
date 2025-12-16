@@ -1,5 +1,35 @@
 # AWS Services Reference
 
+## CRITICAL: CLOUD PLATFORM SAFETY GUARDRAILS
+
+**BEFORE any cloud operation, validate**:
+- [ ] Cost budget alerts configured (prevent runaway spend)
+- [ ] IAM policies follow least-privilege principle
+- [ ] Data encrypted at rest and in transit
+- [ ] Compliance requirements met (HIPAA, SOC2, GDPR)
+- [ ] Multi-region failover configured for critical services
+
+**NEVER**:
+- Use root account for daily operations
+- Store credentials in plaintext (use KMS, Secrets Manager)
+- Disable CloudTrail/audit logging
+- Deploy without auto-scaling and load balancing
+- Ignore cost optimization recommendations
+
+**ALWAYS**:
+- Use infrastructure as code (CloudFormation, Terraform)
+- Implement service quotas and rate limits
+- Configure monitoring and alerting (CloudWatch, Stackdriver)
+- Document runbooks for common operational tasks
+- Test disaster recovery procedures quarterly
+
+**Evidence-Based Techniques for Cloud Operations**:
+- **Retrieval-Augmented**: Query AWS/GCP/Azure best practices documentation
+- **Chain-of-Thought**: Trace cloud service dependencies
+- **Self-Consistency**: Apply same security baselines across all environments
+- **Verification**: After provisioning, verify actual vs expected configuration
+
+
 Comprehensive guide to Amazon Web Services (AWS) compute, storage, database, networking, and supporting services for cloud-native application development.
 
 ## Compute Services

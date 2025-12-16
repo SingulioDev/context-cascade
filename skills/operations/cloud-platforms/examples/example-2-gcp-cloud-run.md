@@ -1,5 +1,35 @@
 # Example 2: GCP Cloud Run Container Deployment
 
+## CRITICAL: DEPLOYMENT SAFETY GUARDRAILS
+
+**BEFORE any deployment, validate**:
+- [ ] All tests passing (unit, integration, E2E, load)
+- [ ] Security scan completed (SAST, DAST, dependency audit)
+- [ ] Infrastructure capacity verified (CPU, memory, disk, network)
+- [ ] Database migrations tested on production-like data volume
+- [ ] Rollback procedure documented with time estimates
+
+**NEVER**:
+- Deploy without comprehensive monitoring (metrics, logs, traces)
+- Skip load testing for high-traffic services
+- Deploy breaking changes without backward compatibility
+- Ignore security vulnerabilities in production dependencies
+- Deploy without incident response plan
+
+**ALWAYS**:
+- Validate deployment checklist before proceeding
+- Use feature flags for risky changes (gradual rollout)
+- Monitor error rates, latency p99, and saturation metrics
+- Document deployment in runbook with troubleshooting steps
+- Retain deployment artifacts for forensic analysis
+
+**Evidence-Based Techniques for Deployment**:
+- **Chain-of-Thought**: Trace deployment flow (code -> artifact -> registry -> cluster -> pods)
+- **Program-of-Thought**: Model deployment as state machine (pre-deploy -> deploy -> post-deploy -> verify)
+- **Reflection**: After deployment, analyze what worked vs assumptions
+- **Retrieval-Augmented**: Query past incidents for similar deployment patterns
+
+
 Deploy a containerized web application using Google Cloud Run with Cloud SQL for a production-ready, fully managed serverless platform.
 
 ## Architecture Overview

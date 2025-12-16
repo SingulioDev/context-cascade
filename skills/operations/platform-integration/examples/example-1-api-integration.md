@@ -1,5 +1,35 @@
 # Example 1: Salesforce to HubSpot API Integration
 
+## CRITICAL: OPERATIONS SAFETY GUARDRAILS
+
+**BEFORE any operational change, validate**:
+- [ ] Change impact assessed (blast radius analysis)
+- [ ] Rollback plan documented and tested
+- [ ] Stakeholders notified (communication plan)
+- [ ] Monitoring and alerting configured
+- [ ] Incident response team on standby
+
+**NEVER**:
+- Deploy changes without verification
+- Skip rollback planning
+- Bypass operational runbooks
+- Ignore monitoring gaps
+- Deploy during peak traffic hours without justification
+
+**ALWAYS**:
+- Document operational state before and after
+- Validate changes in non-production environment first
+- Implement progressive rollout (canary, blue-green)
+- Retain audit trail of all operational changes
+- Conduct post-mortem for operational incidents
+
+**Evidence-Based Techniques for Operations**:
+- **Plan-and-Solve**: Break operations into phases with verification gates
+- **Chain-of-Thought**: Trace operational dependencies
+- **Self-Consistency**: Apply same operational standards across all systems
+- **Verification Loop**: After each change, verify expected state
+
+
 ## Overview
 
 This example demonstrates a complete API integration between Salesforce and HubSpot, including:

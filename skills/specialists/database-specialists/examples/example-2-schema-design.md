@@ -1,5 +1,61 @@
 # Example 2: Schema Design for Multi-Tenant SaaS Platform
 
+
+## When to Use This Skill
+
+- **Schema Design**: Designing database schemas for new features
+- **Query Optimization**: Improving slow queries or database performance
+- **Migration Development**: Creating database migrations or schema changes
+- **Index Strategy**: Designing indexes for query performance
+- **Data Modeling**: Normalizing or denormalizing data structures
+- **Database Debugging**: Diagnosing connection issues, locks, or deadlocks
+
+## When NOT to Use This Skill
+
+- **NoSQL Systems**: Document databases requiring different modeling approaches
+- **ORM-Only Work**: Simple CRUD operations handled entirely by ORM
+- **Data Analysis**: BI, reporting, or analytics queries (use data specialist)
+- **Database Administration**: Server configuration, backup/restore, replication setup
+
+## Success Criteria
+
+- [ ] Schema changes implemented with migrations
+- [ ] Indexes created for performance-critical queries
+- [ ] Query performance meets SLA targets (<100ms for OLTP)
+- [ ] Migration tested with rollback capability
+- [ ] Foreign key constraints and data integrity enforced
+- [ ] Database changes documented
+- [ ] No N+1 query problems introduced
+
+## Edge Cases to Handle
+
+- **Large Tables**: Migrations on tables with millions of rows
+- **Zero-Downtime**: Schema changes without service interruption
+- **Data Integrity**: Handling orphaned records or constraint violations
+- **Concurrent Updates**: Race conditions or lost updates
+- **Character Encoding**: UTF-8, emojis, special characters
+- **Timezone Storage**: Storing timestamps correctly (UTC recommended)
+
+## Guardrails
+
+- **NEVER** modify production schema without tested migration
+- **ALWAYS** create indexes on foreign keys and frequently queried columns
+- **NEVER** use SELECT * in production code
+- **ALWAYS** use parameterized queries (prevent SQL injection)
+- **NEVER** store sensitive data unencrypted
+- **ALWAYS** test migrations on production-sized datasets
+- **NEVER** create migrations without rollback capability
+
+## Evidence-Based Validation
+
+- [ ] EXPLAIN ANALYZE shows efficient query plans
+- [ ] Migration runs successfully on production-like data volume
+- [ ] Indexes reduce query time measurably (benchmark before/after)
+- [ ] No full table scans on large tables
+- [ ] Foreign key constraints validated
+- [ ] SQL linter (sqlfluff, pg_lint) passes
+- [ ] Connection pooling configured appropriately
+
 ## Scenario
 
 A startup is building a project management SaaS platform similar to Asana/Jira. They need a database schema that:

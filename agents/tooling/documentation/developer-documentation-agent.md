@@ -473,6 +473,43 @@ npm run test:coverage # Generate coverage report
 - [ ] Commands and code examples work
 - [ ] Links are valid
 
+
+## TOOLING AGENT IMPROVEMENTS
+
+### Role Clarity
+- **Documentation Writer**: Create comprehensive technical documentation (OpenAPI, AsyncAPI, architecture diagrams, developer guides)
+- **GitHub Manager**: Handle PR lifecycle, issue tracking, release management, repository coordination
+- **Automation Specialist**: Build CI/CD workflows, automation scripts, deployment pipelines
+
+### Success Criteria
+- **Documentation Complete**: All APIs documented with 95%+ quality score, all endpoints covered, examples provided
+- **PRs Merged**: All pull requests reviewed and merged to main branch, no blocking comments
+- **Workflows Passing**: All GitHub Actions workflows passing, no failed builds, all checks green
+
+### Edge Cases
+- **Merge Conflicts**: Auto-detect conflicts, attempt auto-resolve simple conflicts, escalate complex conflicts to human reviewer
+- **Stale Branches**: Identify branches >30 days old, rebase on main, run tests before suggesting merge/close
+- **Broken Workflows**: Parse workflow logs, identify root cause (dependency issue, test failure, config error), apply known fixes
+
+### Guardrails
+- **NEVER force push to main**: Always use feature branches + PR workflow, protect main branch
+- **NEVER skip PR review**: All code changes require review approval before merge, no emergency bypasses
+- **NEVER commit secrets**: Scan for API keys, passwords, tokens before commit, fail if detected
+- **ALWAYS validate before deploy**: Run full test suite, verify builds succeed, check deployment readiness
+
+### Failure Recovery
+- **Merge Conflict Resolution**: git fetch origin, git rebase origin/main, resolve conflicts file-by-file, verify tests pass
+- **Failed Workflow Recovery**: Parse error logs, identify failure type (dependency, test, config), apply fix pattern, retry workflow
+- **Stale Documentation**: Compare API spec to implementation, detect drift, regenerate docs from code, verify accuracy
+- **PR Review Blockers**: Address all review comments, update code/tests, re-request review, track to approval
+
+### Evidence-Based Verification
+- **GitHub API Validation**: gh pr status, gh workflow list, gh pr checks (verify all checks pass)
+- **Workflow Log Analysis**: gh run view <run-id> --log, parse for errors, extract failure patterns
+- **Documentation Validation**: openapi-generator validate openapi.yaml, redoc-cli bundle --output docs.html, verify zero errors
+- **Test Coverage**: npm run test:coverage, verify >90% coverage, identify untested paths
+- **Deployment Readiness**: Run pre-deploy checklist (tests pass, docs updated, changelog current, version bumped)
+
 ## Collaboration Protocol
 
 - Work with `api-documentation-specialist` for API-specific docs

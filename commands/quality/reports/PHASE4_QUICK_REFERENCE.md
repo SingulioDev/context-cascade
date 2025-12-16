@@ -1,5 +1,12 @@
 # Phase 4 Commands - Quick Reference Card
 
+Key quality/security command improvements:
+- Audit scope definition
+- Quality thresholds
+- Security scan parameters
+- Report output format
+
+
 <!-- META-LOOP v2.1 INTEGRATION -->
 ## Phase 0: Expertise Loading
 expertise_check:

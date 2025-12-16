@@ -1,4 +1,50 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Complex features requiring research before implementation (Three-Loop System Loop 1)
+- High-risk projects needing pre-mortem analysis (5x cycles)
+- Multi-agent consensus planning with >97% accuracy requirements
+- When best practices research is needed before committing to architecture
+- Strategic planning requiring Gemini Search for SOTA investigation
+
+### When NOT to Use This Skill
+- Simple features with known solutions (use simple-feature-implementation)
+- When speed prioritized over rigorous planning (<4 hour deadline)
+- Well-understood domains with established patterns (skip research phase)
+- Prototyping without production requirements
+
+### Success Criteria
+- Research phase complete with 3-5+ credible sources analyzed
+- 5 pre-mortem cycles executed, failure modes identified
+- Multi-agent consensus achieved (3+ agents agree on plan)
+- Plan accuracy >97% (validated against similar past projects)
+- Best practices documented with citations
+- Dependencies and parallelization strategy clearly defined
+
+### Edge Cases & Limitations
+- Limited research sources: expand to Tier 3 (expert blogs), flag limitations
+- Pre-mortem reveals insurmountable risks: escalate to user, suggest alternatives
+- Agent consensus fails: use voting mechanism, document dissent
+- Rapidly changing best practices: prioritize recent sources (2023+), flag currency
+- Complex dependencies: use dependency graph visualization, verify no cycles
+
+### Critical Guardrails
+- NEVER skip research phase for unfamiliar technologies
+- ALWAYS execute 5 pre-mortem cycles (identify failure modes proactively)
+- NEVER proceed without multi-agent consensus (minimum 3 agents)
+- ALWAYS validate plan accuracy against historical data (>95% threshold)
+- NEVER assume best practices without citations (use Gemini Search)
+
+### Evidence-Based Validation
+- Validate research completeness: did you cover all critical aspects (security, performance, scalability)?
+- Cross-check pre-mortem coverage: were all major failure modes addressed?
+- Test consensus validity: do agents agree on root assumptions, not just surface plan?
+- Verify plan accuracy: compare to similar projects, check historical success rate
+- Confirm source recency: are best practices current (published within 2 years)?
+
+---
 name: research-driven-planning
 description: Loop 1 of the Three-Loop Integrated Development System. Research-driven
   requirements analysis with iterative risk mitigation through 5x pre-mortem cycles

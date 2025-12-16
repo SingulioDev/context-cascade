@@ -1,4 +1,10 @@
 # Training Commands
+Key platform/tooling/training command improvements:
+- Platform API requirements
+- Tool configuration
+- Training data requirements
+- Workflow chaining
+
 
 Commands for training operations in Claude Flow.
 

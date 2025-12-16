@@ -1,5 +1,44 @@
 # Example 1: Basic Baseline Replication - BERT on SQuAD 2.0
 
+## CRITICAL RESEARCH GUARDRAILS (EVIDENCE-BASED)
+
+**NEVER** claim facts without citations. Every claim MUST include:
+- Source identification (author, publication, date)
+- Direct quote or paraphrased evidence
+- Page/section number when applicable
+- URL or DOI for digital sources
+
+**ALWAYS** verify source credibility before citing:
+- Check author credentials and institutional affiliation
+- Verify publication venue (peer-reviewed journal, conference tier)
+- Cross-reference with multiple independent sources
+- Apply 90%+ credibility threshold for academic work
+
+**NEVER** skip methodology documentation:
+- Document search strategy (databases, keywords, date ranges)
+- Record inclusion/exclusion criteria explicitly
+- Report sample sizes and statistical power
+- Include reproducibility details (random seeds, versions)
+
+**ALWAYS** acknowledge limitations:
+- Report conflicts of interest or funding sources
+- Identify gaps in data or methodology
+- Disclose assumptions and their implications
+- Note generalization boundaries
+
+**Statistical Rigor Required**:
+- Report effect sizes (Cohen's d, eta-squared)
+- Include confidence intervals (95% CI)
+- Apply multiple comparison corrections (Bonferroni, FDR)
+- Verify statistical power (1-beta >= 0.8)
+
+**Reproducibility Standards**:
+- Exact hyperparameter specifications
+- Random seed documentation
+- Framework version pinning
+- Hardware specifications
+- Dataset checksums (SHA256)
+
 **Baseline**: BERT-base-uncased
 **Dataset**: SQuAD 2.0 (Stanford Question Answering Dataset)
 **Published Result**: 0.948 accuracy (Devlin et al., 2019)

@@ -1,5 +1,35 @@
 # GitHub Multi-Repository Skill - Gold Tier
 
+## CRITICAL: GITHUB OPERATIONS SAFETY GUARDRAILS
+
+**BEFORE any GitHub operation, validate**:
+- [ ] Branch protection rules respected (required reviews, status checks)
+- [ ] No force-push to protected branches (main, master, release/*)
+- [ ] PR template completed (description, tests, screenshots)
+- [ ] CI checks passing (build, lint, test, security scan)
+- [ ] Code review approved by domain experts
+
+**NEVER**:
+- Merge without passing CI checks
+- Delete branches with unmerged commits
+- Bypass CODEOWNERS approval requirements
+- Commit secrets or sensitive data (use .gitignore + pre-commit hooks)
+- Force-push to shared branches
+
+**ALWAYS**:
+- Use conventional commits (feat:, fix:, refactor:, docs:)
+- Link PRs to issues for traceability
+- Update CHANGELOG.md with user-facing changes
+- Tag releases with semantic versioning (vX.Y.Z)
+- Document breaking changes in PR description
+
+**Evidence-Based Techniques for GitHub Operations**:
+- **Program-of-Thought**: Model PR workflow as state machine (draft -> review -> approved -> merged)
+- **Retrieval-Augmented**: Query similar PRs for review patterns
+- **Chain-of-Thought**: Trace commit history for root cause analysis
+- **Self-Consistency**: Apply same review checklist across all PRs
+
+
 **Tier**: Gold (12+ files)
 **Version**: 2.0.0
 **Status**: Production Ready

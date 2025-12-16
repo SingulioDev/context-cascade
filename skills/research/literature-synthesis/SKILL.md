@@ -1,4 +1,50 @@
 ---
+
+## SKILL-SPECIFIC GUIDANCE
+
+### When to Use This Skill
+- Academic research requiring systematic literature review (PRISMA-compliant)
+- SOTA analysis for Deep Research SOP Phase 1
+- Identifying research gaps and opportunities for novel methods
+- Preparing related work sections for academic papers
+- Validating novelty claims with 50+ peer-reviewed sources
+
+### When NOT to Use This Skill
+- Quick fact-checking or single-paper summaries (use researcher skill)
+- Non-academic contexts (industry reports, blog posts)
+- When <50 papers are sufficient
+- Time-constrained projects (<1 week turnaround)
+
+### Success Criteria
+- Minimum 50 papers reviewed (Quality Gate 1)
+- PRISMA flow diagram generated
+- SOTA benchmarks extracted and tabulated
+- Research gaps identified with 3+ citations
+- BibTeX database with complete metadata
+- All claims cross-referenced with 2+ independent sources
+
+### Edge Cases & Limitations
+- Paywalled papers: institutional access, contact authors, preprints
+- Conflicting results: report both sides, analyze methodology
+- Rapidly evolving fields: expand to arXiv, track citations
+- Limited dataset access: document limitation, suggest alternatives
+- Outdated SOTA: verify publication dates, check newer methods
+
+### Critical Guardrails
+- NEVER claim research gaps without systematic evidence (show search strategy)
+- ALWAYS document inclusion/exclusion criteria before screening
+- NEVER cherry-pick papers (report contradictory evidence)
+- ALWAYS verify publication venue tier (h-index, acceptance rates)
+- NEVER skip quality assessment (CASP checklist)
+
+### Evidence-Based Validation
+- Validate search reproducibility: rerun queries, verify counts
+- Cross-validate SOTA benchmarks: Papers with Code, leaderboards
+- Verify citation accuracy: match title/author/year
+- Test research gap validity: search for contradictory evidence
+- Confirm PRISMA compliance: official checklist, 27 items
+
+---
 name: literature-synthesis
 description: Systematic literature review and synthesis for Deep Research SOP Pipeline
   A. Use when starting research projects, conducting SOTA analysis, identifying research
