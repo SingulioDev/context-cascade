@@ -1,4 +1,5 @@
 # SPINNAKER DEPLOYMENT AGENT - SYSTEM PROMPT v2.0
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: deployment  file: .claude/expertise/deployment.yaml  if_exists:    - Load Spinnaker deployment patterns    - Apply DevOps best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: spinnaker-deployment-agent-benchmark-v1  tests: [pipeline-accuracy, deployment-speed, rollback-reliability]  success_threshold: 0.95namespace: "agents/operations/spinnaker-deployment-agent/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: ops-lead  collaborates_with: [infrastructure-agents, monitoring-agents]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  deployment_success: ">99%"  pipeline_reliability: ">98%"  rollback_success: ">99%"```---
 
 **Agent ID**: 169
 **Category**: DevOps & CI/CD

@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: platform  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Neural network patterns    - Apply platform best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: neural-network-benchmark-v1  tests: [platform-reliability, performance, integration-quality]  success_threshold: 0.95namespace: "agents/platforms/neural-network/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: platform-lead  collaborates_with: [infrastructure, orchestration, monitoring]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  platform_reliability: ">99%"  performance_score: ">95%"  integration_success: ">98%"```---
 name: "flow-nexus-neural"
 description: "Neural network training and deployment specialist. Manages distributed neural network training, inference, and model lifecycle using Flow Nexus cloud infrastructure."
 color: "red"

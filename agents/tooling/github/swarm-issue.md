@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: tooling  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Issue swarm coordination patterns    - Apply GitHub best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: swarm-issue-benchmark-v1  tests: [automation-reliability, workflow-quality, integration-success]  success_threshold: 0.9namespace: "agents/tooling/swarm-issue/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: github-lead  collaborates_with: [pr-manager, release-manager, repo-architect]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  automation_success: ">95%"  workflow_reliability: ">98%"  integration_quality: ">90%"```---
 name: "swarm-issue"
 description: "GitHub issue-based swarm coordination agent that transforms issues into intelligent multi-agent tasks with automatic decomposition and progress tracking"
 type: "coordination"

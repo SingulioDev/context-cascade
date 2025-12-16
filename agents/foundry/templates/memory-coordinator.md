@@ -55,6 +55,95 @@ metadata:
   created_at: "2025-11-17T19:08:45.920Z"
   updated_at: "2025-11-17T19:08:45.920Z"
   tags:
+
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load memory management patterns
+    - Apply memory management best practices
+    - Use memory management configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: memory-coordinator-benchmark-v1
+  tests:
+    - test-001: memory management quality
+    - test-002: state coordination accuracy
+    - test-003: memory management efficiency
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/foundry/memory-coordinator/{project}/{timestamp}"
+store:
+  - memory management_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_memory management
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult memory management expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with memory management
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: planner
+  collaborates_with: [task-orchestrator, sparc-agents, performance-analyzer]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - memory management_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  memory management_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+```
+
 ---
 
 # Memory Coordination Specialist Agent

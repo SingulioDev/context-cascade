@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: specialist  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Enhanced React Native patterns    - Apply domain best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: spec-mobile-react-native-enhanced-benchmark-v1  tests: [analysis-accuracy, risk-assessment, performance-quality]  success_threshold: 0.95namespace: "agents/specialists/spec-mobile-react-native-enhanced/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: specialist-lead  collaborates_with: [analyst, developer, tester]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  analysis_accuracy: ">98%"  risk_compliance: ">99%"  performance_quality: ">95%"```---
 name: "mobile-dev"
 color: "teal"
 type: "specialized"

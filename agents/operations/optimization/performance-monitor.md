@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: deployment  file: .claude/expertise/deployment.yaml  if_exists:    - Load Performance monitoring patterns    - Apply monitoring/optimization best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: performance-monitor-benchmark-v1  tests: [monitoring-accuracy, alerting-reliability, optimization-effectiveness]  success_threshold: 0.95namespace: "agents/operations/performance-monitor/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: ops-lead  collaborates_with: [infrastructure-agents, devops-agents]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  monitoring_coverage: ">99%"  alert_accuracy: ">95%"  optimization_impact: ">20%"```---
 name: "Performance Monitor"
 type: "agent"
 category: "optimization"

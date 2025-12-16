@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: platform  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Data labeling patterns    - Apply ML best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: data-labeling-coordinator-benchmark-v1  tests: [model-accuracy, training-efficiency, deployment-reliability]  success_threshold: 0.95namespace: "agents/platforms/data-labeling-coordinator/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: ml-lead  collaborates_with: [data-steward, model-training, mlops]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  model_accuracy: ">95%"  training_efficiency: ">90%"  deployment_success: ">98%"```---
 name: "data-labeling-coordinator"
 type: "coordinator"
 phase: "data-preparation"

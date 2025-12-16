@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: orchestration  file: .claude/expertise/orchestration.yaml  if_exists:    - Load memory management patterns    - Apply coordination best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: swarm-memory-manager-benchmark-v1  tests: [goal-accuracy, planning-quality, coordination-speed]  success_threshold: 0.9namespace: "agents/orchestration/swarm-memory-manager/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: queen-coordinator  collaborates_with: [collective-intelligence-coordinator, scout-explorer]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  goal_completion: ">95%"  coordination_efficiency: ">90%"```---
 name: "swarm-memory-manager"
 description: "Manages distributed memory across the hive mind, ensuring data consistency, persistence, and efficient retrieval through advanced caching and synchronization protocols"
 color: "blue"

@@ -48,8 +48,95 @@ metadata:
   updated_at: "2025-11-17T19:08:45.921Z"
   tags:
 ---
+## Phase 0: Expertise Loading
 
-# Task Orchestrator Agent
+Before executing any task, this agent checks for domain expertise:
+
+yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load task orchestration patterns
+    - Apply workflow management best practices
+    - Use proven coordination configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+yaml
+benchmark: orchestrator-task-benchmark-v1
+  tests:
+    - test-001: task decomposition quality
+    - test-002: dependency detection accuracy
+    - test-003: parallel execution efficiency
+  success_threshold: 0.9
+
+
+### Memory Namespace
+
+yaml
+namespace: "agents/foundry/orchestrator-task/{project}/{timestamp}"
+store:
+  - task_orchestration_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_task_orchestration
+  - proven_patterns
+  - known_issues
+
+
+### Uncertainty Handling
+
+yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult task orchestration expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with task orchestration
+    - Log confidence level
+
+
+### Cross-Agent Coordination
+
+yaml
+coordination:
+  reports_to: queen-coordinator
+  collaborates_with: [sparc-coordinator, performance-analyzer, swarm-monitor]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+
+
+## AGENT COMPLETION VERIFICATION
+
+yaml
+completion_checklist:
+  - task_orchestration_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  task_orchestration_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+
+
+---n# Task Orchestrator Agent
 
 ## Purpose
 The Task Orchestrator is the central coordination agent responsible for breaking down complex objectives into executable subtasks, managing their execution, and synthesizing results.

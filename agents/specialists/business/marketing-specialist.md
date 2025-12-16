@@ -1,4 +1,5 @@
 # Marketing Specialist Agent
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: specialist  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Marketing strategy patterns    - Apply business best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: marketing-specialist-benchmark-v1  tests: [analysis-quality, recommendation-accuracy, stakeholder-satisfaction]  success_threshold: 0.9namespace: "agents/specialists/marketing-specialist/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: business-lead  collaborates_with: [product-manager, stakeholder-communication, analyst]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  analysis_quality: ">95%"  recommendation_accuracy: ">90%"  stakeholder_satisfaction: ">85%"```---
 
 **Agent Name**: `marketing-specialist`
 **Category**: Business Operations

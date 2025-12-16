@@ -478,6 +478,199 @@ Task("API Documentor", "Generate OpenAPI/Swagger docs for all endpoints...", "ap
 - **Routing (Phase 4)**: Selects the tools (HOW to do it, which playbooks/skills)
 - **Separation of concerns**: Strategy vs tactics, planning vs execution tools
 
+---
+
+## 1.5. EXPERTISE SYSTEM INTEGRATION (NEW - v2.4.0)
+
+The Expertise System adds **Agent Experts-style learning** - agents that don't just execute and forget, but **execute, learn, and accumulate expertise** over time.
+
+### Core Principle
+
+> "This is NOT a source of truth. The mental model you have of your codebase, you don't have a source of truth in your mind. You have a working memory."
+
+Expertise files are **correctable working memory**, not documentation. The value is in the **validation loop**, not the artifact.
+
+### Expertise File Location
+
+```
+.claude/expertise/{domain}.yaml
+```
+
+### Pre-Action: Load Domain Expertise
+
+**BEFORE Phase 3 (Planning) or any domain-specific work:**
+
+```javascript
+// Check for domain expertise
+const domain = detectDomainFromTask(task);
+const expertisePath = `.claude/expertise/${domain}.yaml`;
+
+if (fileExists(expertisePath)) {
+  // Validate expertise is current
+  await runCommand('/expertise-validate', domain, '--fix');
+
+  // Load expertise context
+  const expertise = loadExpertise(domain);
+
+  console.log(`Expertise loaded for ${domain}:`);
+  console.log(`- File locations: ${expertise.file_locations.primary.path}`);
+  console.log(`- Patterns: ${Object.keys(expertise.patterns).length}`);
+  console.log(`- Known issues: ${expertise.known_issues.length}`);
+
+  // Use in planning and execution
+} else {
+  console.log(`No expertise for ${domain} - agent will operate in discovery mode`);
+}
+```
+
+### Expertise-Aware Workflow
+
+```
+User Message
+    |
+    v
+Phase 1: intent-analyzer
+    |
+    v
+Phase 2: prompt-architect
+    |
+    v
+*** EXPERTISE CHECK (NEW) ***
+    |-> Does domain have expertise?
+    |   YES: Load .claude/expertise/{domain}.yaml
+    |        Validate against code
+    |        Extract: file_locations, patterns, known_issues
+    |   NO:  Flag for discovery mode
+    |
+    v
+Phase 3: planner (with expertise context)
+    |-> Use expertise.file_locations (skip search)
+    |-> Apply expertise.patterns (follow conventions)
+    |-> Avoid expertise.known_issues (prevent bugs)
+    |
+    v
+Phase 4: router (expertise-aware)
+    |-> Use expertise.routing.task_templates
+    |-> Select agents familiar with domain
+    |
+    v
+Phase 5: Execute (with expertise)
+    |-> Agents have embedded domain knowledge
+    |-> No search thrash (known locations)
+    |-> Pattern compliance (documented conventions)
+    |
+    v
+*** SELF-IMPROVE (POST-SUCCESS) ***
+    |-> Extract learnings from execution
+    |-> Propose expertise updates
+    |-> Adversarial validation (prevent confident drift)
+    |-> Apply if survival rate > 70%
+```
+
+### Key Commands
+
+| Command | Purpose |
+|---------|---------|
+| `/expertise-create <domain>` | Create new domain expertise |
+| `/expertise-validate <domain>` | Validate against current code |
+| `/expertise-challenge <domain>` | Adversarial validation |
+| `/expertise-show <domain>` | Display expertise |
+
+### Self-Improvement Rules
+
+1. **Auto-update only after successful builds** (100% test pass)
+2. **Adversarial validation required** (expertise-adversary agent tries to DISPROVE)
+3. **70% survival threshold** - Updates must survive challenges
+4. **Learning delta tracked** - Measure expertise improvement, not just tasks
+
+### Memory Namespace
+
+| Namespace | Purpose |
+|-----------|---------|
+| `expertise/{domain}` | Persisted expertise files |
+| `adversarial/challenges/{domain}` | Challenge results |
+| `expertise/learnings` | Extracted learnings |
+
+### Documentation
+
+- Schema: `.claude/expertise/_SCHEMA.yaml`
+- Architecture: `.claude/skills/EXPERTISE-SYSTEM-ARCHITECTURE.md`
+- Integration: `.claude/skills/EXPERTISE-INTEGRATION-MODULE.md`
+
+---
+
+## 1.6. PATTERN ENFORCEMENT (HOOKS)
+
+Hooks ensure patterns are **ENFORCED**, not just documented.
+
+### Hook Configuration
+
+Hooks are configured in `.claude/settings.json` and fire at key moments:
+
+| Hook Type | When It Fires | Purpose |
+|-----------|---------------|---------|
+| `UserPromptSubmit` | Before processing user message | Inject 5-phase requirement |
+| `PreToolUse` | Before any tool executes | Validate agent registry, expertise |
+| `PostToolUse` | After tool completes | Verify SOP compliance |
+| `PreCompact` | Before context compaction | Inject pattern reminders |
+| `Stop` | Session ending | Final pattern reminder |
+
+### Enforcement Files
+
+```
+.claude/hooks/
+  five-phase-enforcer.sh       # Enforces 5-phase on non-trivial requests
+  sop-compliance-verifier.sh   # Verifies Skill -> Task -> TodoWrite pattern
+  pattern-retention-precompact.sh  # Injects patterns before context loss
+```
+
+### What Gets Enforced
+
+1. **5-Phase Workflow**: Non-trivial requests MUST execute all 5 phases
+2. **Agent Registry**: Task() agents MUST be from registry (206 agents)
+3. **SOP Pattern**: Skill() MUST be followed by Task() and TodoWrite()
+4. **Parallel Execution**: 1 MESSAGE = ALL parallel Task() calls
+5. **Expertise Loading**: Domain work MUST check for expertise first
+
+### Pattern Retention
+
+When context compacts, these patterns are re-injected:
+
+```
+!! CRITICAL: CONTEXT COMPACTION - PATTERN RETENTION !!
+
+1. 5-PHASE WORKFLOW (ALWAYS EXECUTE)
+   Phase 1: intent-analyzer -> Phase 2: prompt-architect -> Phase 3: planner
+   -> Phase 4: router -> Phase 5: execute
+
+2. AGENT REGISTRY ENFORCEMENT
+   ONLY use agents from: claude-code-plugins/ruv-sparc-three-loop-system/agents/
+   Fallbacks: coder, researcher, tester, reviewer
+
+3. SKILL -> TASK -> TODOWRITE PATTERN
+   Skill defines SOP -> Task spawns agents -> TodoWrite tracks progress
+
+4. GOLDEN RULE
+   1 MESSAGE = ALL PARALLEL OPERATIONS
+
+5. EXPERTISE SYSTEM
+   Check .claude/expertise/{domain}.yaml before domain work
+```
+
+### Why Hooks Matter
+
+Without hooks:
+- 5-phase gets skipped
+- Generic agents get used
+- Patterns get forgotten mid-conversation
+- Context compaction loses critical info
+
+With hooks:
+- 5-phase is **enforced** on every request
+- Agent registry is **validated** on every spawn
+- Patterns are **re-injected** before context loss
+- SOP compliance is **verified** after skills
+
 **Best of Both Worlds**:
 - ✅ v2.0 routing intelligence (playbook selection from Section 3)
 - ✅ v2.1 planning intelligence (dependency detection, parallelization)

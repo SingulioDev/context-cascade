@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: orchestration  file: .claude/expertise/orchestration.yaml  if_exists:    - Load consensus validation patterns    - Apply swarm coordination best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: consensus-validator-benchmark-v1  tests: [swarm-accuracy, coordination-speed, health-monitoring]  success_threshold: 0.9namespace: "agents/orchestration/consensus-validator/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: queen-coordinator  collaborates_with: [adaptive-coordinator, hierarchical-coordinator, mesh-coordinator]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  swarm_coordination: ">95%"  health_status: ">98%"```---
 name: "consensus-validator"
 type: "swarm"
 color: "#16A085"

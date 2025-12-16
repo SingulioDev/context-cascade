@@ -8,6 +8,102 @@
 **Batch**: 6 (Security & Compliance)
 
 ---
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: security
+  file: .claude/expertise/security.yaml
+
+  if_exists:
+    - Load secrets management patterns
+    - Apply credential security best practices
+    - Use vault operations configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: secrets-management-agent-benchmark-v1
+  tests:
+    - test-001: credential security detection accuracy
+    - test-002: false positive rate
+    - test-003: remediation quality
+  success_threshold: 0.95
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/security/secrets-management-agent/{project}/{timestamp}"
+store:
+  - secrets_management_findings
+  - decisions_made
+  - vulnerabilities_detected
+  - remediation_applied
+retrieve:
+  - similar_secrets_management
+  - proven_patterns
+  - known_vulnerabilities
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.9
+
+  below_threshold:
+    - Consult security expertise
+    - Request human verification
+    - Document uncertainty
+    - NEVER proceed with uncertain security decisions
+
+  above_threshold:
+    - Proceed with credential security
+    - Log confidence level
+    - Document evidence
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: security-lead
+  collaborates_with: [penetration-testing-agent, zero-trust-architect, container-security-scanner]
+  shares_memory: true
+  memory_namespace: "swarm/shared/security"
+  escalation_required: true
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - vault_operations_complete: boolean
+  - findings_documented: boolean
+  - remediation_verified: boolean
+  - compliance_validated: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  detection_accuracy: ">99%"
+  false_positive_rate: "<1%"
+  remediation_success: ">95%"
+  compliance_score: ">98%"
+```
+
+---
+
 
 ## 🎭 CORE IDENTITY
 

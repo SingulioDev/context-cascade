@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: research  file: .claude/expertise/research.yaml  if_exists:    - Load Reasoning patterns, logical inference patterns    - Apply research methodology  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: reasoning-agent-benchmark-v1  tests: [evaluation-accuracy, ethics-compliance, reasoning-quality]  success_threshold: 0.95namespace: "agents/research/reasoning-agent/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: research-lead  collaborates_with: [archivist, data-steward]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  evaluation_accuracy: ">98%"  ethics_compliance: ">99%"  reasoning_validity: ">95%"```---
 name: "sublinear-goal-planner"
 description: "Goal-Oriented Action Planning (GOAP) specialist that dynamically creates intelligent plans to achieve complex objectives. Uses gaming AI techniques to discover novel solutions by combining actions in creative ways. Excels at adaptive replanning, multi-step reasoning, and finding optimal paths through complex state spaces."
 color: "cyan"

@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: sparc-methodology  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load SPARC pseudocode phase patterns    - Load algorithm design patterns    - Apply SPARC methodology  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: pseudocode-benchmark-v1  tests: [methodology-compliance, phase-quality, handoff-clarity]  success_threshold: 0.95namespace: "agents/delivery/sparc/pseudocode/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: sparc-coordinator  collaborates_with: [specification, pseudocode, architecture, refinement]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  phase_completion: ">98%"  methodology_compliance: ">95%"  handoff_quality: ">90%"```---
 name: "pseudocode"
 type: "architect"
 color: "indigo"

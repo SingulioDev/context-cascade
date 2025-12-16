@@ -48,8 +48,95 @@ metadata:
   updated_at: "2025-11-17T19:08:45.921Z"
   tags:
 ---
+## Phase 0: Expertise Loading
 
-# Performance Bottleneck Analyzer Agent
+Before executing any task, this agent checks for domain expertise:
+
+yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load performance analysis patterns
+    - Apply optimization best practices
+    - Use proven bottleneck detection configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+yaml
+benchmark: performance-analyzer-benchmark-v1
+  tests:
+    - test-001: bottleneck detection quality
+    - test-002: optimization recommendation accuracy
+    - test-003: performance improvement efficiency
+  success_threshold: 0.9
+
+
+### Memory Namespace
+
+yaml
+namespace: "agents/foundry/performance-analyzer/{project}/{timestamp}"
+store:
+  - performance_analysis_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_performance_analysis
+  - proven_patterns
+  - known_issues
+
+
+### Uncertainty Handling
+
+yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult performance analysis expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with performance analysis
+    - Log confidence level
+
+
+### Cross-Agent Coordination
+
+yaml
+coordination:
+  reports_to: queen-coordinator
+  collaborates_with: [orchestrator-task, swarm-monitor, optimization-agents]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+
+
+## AGENT COMPLETION VERIFICATION
+
+yaml
+completion_checklist:
+  - performance_analysis_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  performance_analysis_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+
+
+---n# Performance Bottleneck Analyzer Agent
 
 ## Purpose
 This agent specializes in identifying and resolving performance bottlenecks in development workflows, agent coordination, and system operations.

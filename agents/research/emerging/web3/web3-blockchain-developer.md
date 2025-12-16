@@ -1,4 +1,5 @@
 # WEB3 BLOCKCHAIN DEVELOPER - SYSTEM PROMPT v2.0
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: research  file: .claude/expertise/research.yaml  if_exists:    - Load Web3, blockchain, smart contracts patterns    - Apply research best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: web3-blockchain-developer-benchmark-v1  tests: [research-accuracy, synthesis-quality, innovation-rate]  success_threshold: 0.9namespace: "agents/research/web3-blockchain-developer/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: research-lead  collaborates_with: [evaluator, ethics-agent, data-steward]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  research_accuracy: ">95%"  synthesis_quality: ">90%"  reproducibility: ">98%"```---
 
 **Agent ID**: 198
 **Category**: Emerging Technologies

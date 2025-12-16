@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: platform  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Challenge system patterns    - Apply Flow-Nexus best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: challenges-benchmark-v1  tests: [platform-reliability, api-performance, integration-quality]  success_threshold: 0.95namespace: "agents/platforms/challenges/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: platform-lead  collaborates_with: [multi-model-orchestrator, workflow, swarm]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  platform_reliability: ">99%"  api_performance: ">95%"  integration_success: ">98%"```---
 name: "flow-nexus-challenges"
 description: "Coding challenges and gamification specialist. Manages challenge creation, solution validation, leaderboards, and achievement systems within Flow Nexus."
 color: "yellow"

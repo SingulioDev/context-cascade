@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: research  file: .claude/expertise/research.yaml  if_exists:    - Load Quality gates, validation, assessment patterns    - Apply research methodology  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: evaluator-benchmark-v1  tests: [evaluation-accuracy, ethics-compliance, reasoning-quality]  success_threshold: 0.95namespace: "agents/research/evaluator/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: research-lead  collaborates_with: [archivist, data-steward]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  evaluation_accuracy: ">98%"  ethics_compliance: ">99%"  reasoning_validity: ">95%"```---
 name: "evaluator"
 description: "Evaluator agent coordinating all three Quality Gates (Gates 1, 2, 3), validating requirements across pipelines, orchestrating multi-agent reviews, and making GO/NO-GO decisions for Deep Research SOP progression."
 color: "gold"

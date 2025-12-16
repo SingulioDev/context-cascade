@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: orchestration  file: .claude/expertise/orchestration.yaml  if_exists:    - Load exploration patterns    - Load discovery patterns    - Apply coordination best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: scout-explorer-benchmark-v1  tests: [goal-accuracy, planning-quality, coordination-speed]  success_threshold: 0.9namespace: "agents/orchestration/scout-explorer/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: queen-coordinator  collaborates_with: [collective-intelligence-coordinator, swarm-memory-manager]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  goal_completion: ">95%"  coordination_efficiency: ">90%"```---
 name: "scout-explorer"
 description: "Information reconnaissance specialist that explores unknown territories, gathers intelligence, and reports findings to the hive mind through continuous memory updates"
 color: "cyan"

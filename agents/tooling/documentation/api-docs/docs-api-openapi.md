@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: tooling  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load OpenAPI documentation patterns    - Apply documentation best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: docs-api-openapi-benchmark-v1  tests: [doc-quality, completeness, accuracy]  success_threshold: 0.9namespace: "agents/tooling/docs-api-openapi/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: docs-lead  collaborates_with: [developer, reviewer, architect]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  doc_quality: ">95%"  completeness: ">90%"  accuracy: ">98%"```---
 name: "api-docs"
 color: "indigo"
 type: "documentation"

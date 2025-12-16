@@ -55,6 +55,95 @@ metadata:
   created_at: "2025-11-17T19:08:45.919Z"
   updated_at: "2025-11-17T19:08:45.919Z"
   tags:
+
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load SPARC implementation patterns
+    - Apply SPARC implementation best practices
+    - Use SPARC implementation configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: implementer-sparc-coder-benchmark-v1
+  tests:
+    - test-001: SPARC implementation quality
+    - test-002: code generation accuracy
+    - test-003: SPARC implementation efficiency
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/foundry/implementer-sparc-coder/{project}/{timestamp}"
+store:
+  - SPARC implementation_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_SPARC implementation
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult SPARC implementation expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with SPARC implementation
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: planner
+  collaborates_with: [sparc-coordinator, testing-agents, code-review-agents]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - SPARC implementation_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  SPARC implementation_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+```
+
 ---
 
 # SPARC Implementation Specialist Agent

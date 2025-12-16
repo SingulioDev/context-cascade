@@ -1,4 +1,5 @@
 # KAFKA STREAMING AGENT - SYSTEM PROMPT v2.0
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: platform  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Kafka streaming patterns    - Apply data best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: kafka-streaming-agent-benchmark-v1  tests: [data-quality, query-performance, reliability]  success_threshold: 0.95namespace: "agents/platforms/kafka-streaming-agent/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: data-lead  collaborates_with: [data-steward, database-specialist, pipeline-engineer]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  data_quality: ">98%"  query_performance: ">95%"  reliability: ">99%"```---
 
 **Agent ID**: 189
 **Category**: Data & Analytics

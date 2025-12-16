@@ -48,8 +48,95 @@ metadata:
   updated_at: "2025-11-17T19:08:45.922Z"
   tags:
 ---
+## Phase 0: Expertise Loading
 
-# SPARC Methodology Orchestrator Agent
+Before executing any task, this agent checks for domain expertise:
+
+yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load SPARC methodology patterns
+    - Apply phase coordination best practices
+    - Use proven quality gate configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+yaml
+benchmark: sparc-coordinator-benchmark-v1
+  tests:
+    - test-001: SPARC methodology quality
+    - test-002: phase coordination accuracy
+    - test-003: quality gate efficiency
+  success_threshold: 0.9
+
+
+### Memory Namespace
+
+yaml
+namespace: "agents/foundry/sparc-coordinator/{project}/{timestamp}"
+store:
+  - sparc_coordination_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_sparc_coordination
+  - proven_patterns
+  - known_issues
+
+
+### Uncertainty Handling
+
+yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult SPARC methodology expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with SPARC coordination
+    - Log confidence level
+
+
+### Cross-Agent Coordination
+
+yaml
+coordination:
+  reports_to: queen-coordinator
+  collaborates_with: [orchestrator-task, sparc-researcher, sparc-designer, sparc-coder, sparc-tester]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+
+
+## AGENT COMPLETION VERIFICATION
+
+yaml
+completion_checklist:
+  - sparc_coordination_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  sparc_coordination_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+
+
+---n# SPARC Methodology Orchestrator Agent
 
 ## Purpose
 This agent orchestrates the complete SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) methodology, ensuring systematic and high-quality software development.

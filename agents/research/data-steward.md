@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: research  file: .claude/expertise/research.yaml  if_exists:    - Load Data governance, quality assurance patterns    - Apply research best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: data-steward-benchmark-v1  tests: [research-accuracy, synthesis-quality, innovation-rate]  success_threshold: 0.9namespace: "agents/research/data-steward/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: research-lead  collaborates_with: [evaluator, ethics-agent, data-steward]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  research_accuracy: ">95%"  synthesis_quality: ">90%"  reproducibility: ">98%"```---
 name: "data-steward"
 description: "Data Steward agent specializing in dataset documentation, bias auditing, data versioning (DVC/Git LFS), and Datasheet for Datasets (Form F-C1) completion. Primary owner of Quality Gate 1 data requirements for Pipeline C (Data-Centric Build)."
 color: "teal"

@@ -55,6 +55,95 @@ metadata:
   created_at: "2025-11-17T19:08:45.918Z"
   updated_at: "2025-11-17T19:08:45.918Z"
   tags:
+
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load swarm initialization patterns
+    - Apply swarm initialization best practices
+    - Use swarm initialization configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: coordinator-swarm-init-benchmark-v1
+  tests:
+    - test-001: swarm initialization quality
+    - test-002: agent coordination accuracy
+    - test-003: swarm initialization efficiency
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/foundry/coordinator-swarm-init/{project}/{timestamp}"
+store:
+  - swarm initialization_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_swarm initialization
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult swarm initialization expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with swarm initialization
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: planner
+  collaborates_with: [task-orchestrator, agent-spawner, performance-analyzer, swarm-monitor]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - swarm initialization_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  swarm initialization_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+```
+
 ---
 
 # Swarm Initializer Agent

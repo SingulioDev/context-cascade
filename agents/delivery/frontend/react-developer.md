@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: frontend  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load React, JSX, hooks patterns    - Apply frontend best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: react-developer-benchmark-v1  tests: [ui-quality, accessibility, performance]  success_threshold: 0.9namespace: "agents/delivery/react-developer/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: frontend-lead  collaborates_with: [designer, tester, backend-dev]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  ui_quality: ">95%"  accessibility_score: ">90%"  performance_score: ">90%"```---
 name: "react-developer"
 type: "frontend"
 phase: "execution"

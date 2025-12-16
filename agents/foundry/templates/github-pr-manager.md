@@ -55,6 +55,95 @@ metadata:
   created_at: "2025-11-17T19:08:45.919Z"
   updated_at: "2025-11-17T19:08:45.919Z"
   tags:
+
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load PR management patterns
+    - Apply PR management best practices
+    - Use PR management configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: github-pr-manager-benchmark-v1
+  tests:
+    - test-001: PR management quality
+    - test-002: code review coordination accuracy
+    - test-003: PR management efficiency
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/foundry/github-pr-manager/{project}/{timestamp}"
+store:
+  - PR management_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_PR management
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult PR management expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with PR management
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: planner
+  collaborates_with: [code-review-coordinator, release-manager, issue-tracker, cicd-orchestrator]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - PR management_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  PR management_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+```
+
 ---
 
 # Pull Request Manager Agent

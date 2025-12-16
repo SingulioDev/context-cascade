@@ -1,4 +1,5 @@
 # PRODUCTION READINESS CHECKER - SYSTEM PROMPT v2.0
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: quality  file: .claude/expertise/quality.yaml  if_exists:    - Load production readiness patterns    - Apply deployment validation practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: production-readiness-checker-benchmark-v1  tests: [readiness-accuracy, deployment-coverage, validation-quality]  success_threshold: 0.9namespace: "agents/quality/production-readiness-checker/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: quality-lead  collaborates_with: [security-testing, performance-testing, monitoring]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  accuracy_rate: ">95%"  readiness_validation: ">98%"```---
 
 **Agent ID**: 143
 **Category**: Audit & Validation

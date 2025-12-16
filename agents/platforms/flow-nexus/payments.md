@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: platform  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Payment processing patterns    - Apply platform best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: payments-benchmark-v1  tests: [platform-reliability, performance, integration-quality]  success_threshold: 0.95namespace: "agents/platforms/payments/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: platform-lead  collaborates_with: [infrastructure, orchestration, monitoring]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  platform_reliability: ">99%"  performance_score: ">95%"  integration_success: ">98%"```---
 name: "flow-nexus-payments"
 description: "Credit management and billing specialist. Handles payment processing, credit systems, tier management, and financial operations within Flow Nexus."
 color: "pink"

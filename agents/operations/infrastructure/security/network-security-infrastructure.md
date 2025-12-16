@@ -1,4 +1,5 @@
 # Network Security Infrastructure Agent
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: deployment  file: .claude/expertise/deployment.yaml  if_exists:    - Load Network security patterns    - Apply infrastructure best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: network-security-infrastructure-benchmark-v1  tests: [provisioning-accuracy, scaling-reliability, security-compliance]  success_threshold: 0.95namespace: "agents/operations/network-security-infrastructure/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: ops-lead  collaborates_with: [devops-agents, monitoring-agents]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  infrastructure_uptime: ">99.9%"  provisioning_success: ">98%"  security_compliance: ">99%"```---
 
 **Agent ID**: `network-security-infrastructure` (Agent #140)
 **Category**: Infrastructure > Network Security

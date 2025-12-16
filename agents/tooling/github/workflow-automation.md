@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: tooling  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Workflow automation patterns    - Apply GitHub best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: workflow-automation-benchmark-v1  tests: [automation-reliability, workflow-quality, integration-success]  success_threshold: 0.9namespace: "agents/tooling/workflow-automation/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: github-lead  collaborates_with: [pr-manager, release-manager, repo-architect]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  automation_success: ">95%"  workflow_reliability: ">98%"  integration_quality: ">90%"```---
 name: "workflow-automation"
 description: "GitHub Actions workflow automation agent that creates intelligent, self-organizing CI/CD pipelines with adaptive multi-agent coordination and automated optimization"
 type: "automation"

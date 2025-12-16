@@ -56,6 +56,96 @@ metadata:
   tags:
 ---
 
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load research patterns
+    - Apply investigation best practices
+    - Use pattern recognition configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: researcher-benchmark-v1
+  tests:
+    - test-001: research quality
+    - test-002: investigation accuracy
+    - test-003: pattern recognition efficiency
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/foundry/researcher/{project}/{timestamp}"
+store:
+  - research_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_research
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult research expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with research
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: planner
+  collaborates_with: [coder, tester, reviewer]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - research_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  research_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+```
+
+---
+
 # Research and Analysis Agent
 
 **Agent Name**: `researcher`

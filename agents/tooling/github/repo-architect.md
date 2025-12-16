@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: tooling  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Repository architecture patterns    - Apply GitHub best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: repo-architect-benchmark-v1  tests: [automation-reliability, workflow-quality, integration-success]  success_threshold: 0.9namespace: "agents/tooling/repo-architect/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: github-lead  collaborates_with: [pr-manager, release-manager, repo-architect]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  automation_success: ">95%"  workflow_reliability: ">98%"  integration_quality: ">90%"```---
 name: "repo-architect"
 description: "Repository structure optimization and multi-repo management with ruv-swarm coordination for scalable project architecture and development workflows"
 type: "architecture"

@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: deployment  file: .claude/expertise/deployment.yaml  if_exists:    - Load GitHub Actions CI/CD patterns    - Apply DevOps best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: ops-cicd-github-benchmark-v1  tests: [pipeline-accuracy, deployment-speed, rollback-reliability]  success_threshold: 0.95namespace: "agents/operations/ops-cicd-github/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: ops-lead  collaborates_with: [infrastructure-agents, monitoring-agents]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  deployment_success: ">99%"  pipeline_reliability: ">98%"  rollback_success: ">99%"```---
 name: "cicd-engineer"
 type: "devops"
 color: "cyan"

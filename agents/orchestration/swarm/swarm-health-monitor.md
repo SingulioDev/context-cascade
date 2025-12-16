@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: orchestration  file: .claude/expertise/orchestration.yaml  if_exists:    - Load health monitoring patterns    - Apply swarm coordination best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: swarm-health-monitor-benchmark-v1  tests: [swarm-accuracy, coordination-speed, health-monitoring]  success_threshold: 0.9namespace: "agents/orchestration/swarm-health-monitor/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: queen-coordinator  collaborates_with: [adaptive-coordinator, consensus-validator, hierarchical-coordinator, mesh-coordinator]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  swarm_coordination: ">95%"  health_status: ">98%"```---
 name: "swarm-health-monitor"
 type: "swarm"
 color: "#27AE60"

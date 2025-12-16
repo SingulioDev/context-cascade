@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: orchestration  file: .claude/expertise/orchestration.yaml  if_exists:    - Load gossip protocol patterns    - Load epidemic dissemination patterns    - Apply coordination best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: gossip-coordinator-benchmark-v1  tests: [consensus-accuracy, coordination-speed, fault-tolerance]  success_threshold: 0.9namespace: "agents/orchestration/gossip-coordinator/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: queen-coordinator  collaborates_with: [crdt-synchronizer, byzantine-coordinator]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  consensus_rate: ">95%"  coordination_efficiency: ">90%"```---
 name: "gossip-coordinator"
 type: "coordinator"
 color: "#FF9800"

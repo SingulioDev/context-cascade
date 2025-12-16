@@ -1,4 +1,90 @@
 ---
+
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: quality
+  file: .claude/expertise/quality.yaml
+
+  if_exists:
+    - Load code analysis patterns
+    - Apply static analysis best practices
+    - Use quality configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: code-analyzer-benchmark-v1
+  tests:
+    - test-001: Code analysis accuracy
+    - test-002: Issue detection coverage
+    - test-003: Recommendation quality
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/quality/code-analyzer/{project}/{timestamp}"
+store:
+  - analysis_findings
+  - decisions_made
+  - issues_detected
+retrieve:
+  - similar_findings
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.85
+  below_threshold:
+    - Consult quality expertise
+    - Request human review
+  above_threshold:
+    - Proceed with analysis
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: quality-lead
+  collaborates_with: [reviewer, tester, code-audit-specialist]
+  shares_memory: true
+  memory_namespace: "swarm/shared/quality"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - analysis_complete: boolean
+  - findings_documented: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  accuracy_rate: ">95%"
+  coverage_rate: ">90%"
+  error_rate: "<5%"
+```
+
+---
 name: "analyst"
 type: "code-analyzer"
 color: "indigo"
@@ -59,6 +145,92 @@ budget:
   max_tokens_per_session: 200000
   max_cost_per_day: 30
   currency: "USD"
+---
+
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: quality
+  file: .claude/expertise/quality.yaml
+
+  if_exists:
+    - Load code analysis patterns
+    - Apply static analysis best practices
+    - Use quality configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: code-analyzer-benchmark-v1
+  tests:
+    - test-001: Code analysis accuracy
+    - test-002: Issue detection coverage
+    - test-003: Recommendation quality
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/quality/code-analyzer/{project}/{timestamp}"
+store:
+  - analysis_findings
+  - decisions_made
+  - issues_detected
+retrieve:
+  - similar_findings
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.85
+  below_threshold:
+    - Consult quality expertise
+    - Request human review
+  above_threshold:
+    - Proceed with analysis
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: quality-lead
+  collaborates_with: [reviewer, tester, code-audit-specialist]
+  shares_memory: true
+  memory_namespace: "swarm/shared/quality"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - analysis_complete: boolean
+  - findings_documented: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  accuracy_rate: ">95%"
+  coverage_rate: ">90%"
+  error_rate: "<5%"
+```
+
 ---
 
 # Code Analyzer Agent
@@ -343,6 +515,92 @@ This agent ensures code quality remains high throughout the development lifecycl
 
 ---
 
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: quality
+  file: .claude/expertise/quality.yaml
+
+  if_exists:
+    - Load code analysis patterns
+    - Apply static analysis best practices
+    - Use quality configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: code-analyzer-benchmark-v1
+  tests:
+    - test-001: Code analysis accuracy
+    - test-002: Issue detection coverage
+    - test-003: Recommendation quality
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/quality/code-analyzer/{project}/{timestamp}"
+store:
+  - analysis_findings
+  - decisions_made
+  - issues_detected
+retrieve:
+  - similar_findings
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.85
+  below_threshold:
+    - Consult quality expertise
+    - Request human review
+  above_threshold:
+    - Proceed with analysis
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: quality-lead
+  collaborates_with: [reviewer, tester, code-audit-specialist]
+  shares_memory: true
+  memory_namespace: "swarm/shared/quality"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - analysis_complete: boolean
+  - findings_documented: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  accuracy_rate: ">95%"
+  coverage_rate: ">90%"
+  error_rate: "<5%"
+```
+
+---
+
 ## MCP Server Setup
 
 Before using MCP tools, ensure servers are connected:
@@ -404,6 +662,92 @@ Explicitly plan before execution and validate at each stage:
 
 ---
 
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: quality
+  file: .claude/expertise/quality.yaml
+
+  if_exists:
+    - Load code analysis patterns
+    - Apply static analysis best practices
+    - Use quality configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: code-analyzer-benchmark-v1
+  tests:
+    - test-001: Code analysis accuracy
+    - test-002: Issue detection coverage
+    - test-003: Recommendation quality
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/quality/code-analyzer/{project}/{timestamp}"
+store:
+  - analysis_findings
+  - decisions_made
+  - issues_detected
+retrieve:
+  - similar_findings
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.85
+  below_threshold:
+    - Consult quality expertise
+    - Request human review
+  above_threshold:
+    - Proceed with analysis
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: quality-lead
+  collaborates_with: [reviewer, tester, code-audit-specialist]
+  shares_memory: true
+  memory_namespace: "swarm/shared/quality"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - analysis_complete: boolean
+  - findings_documented: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  accuracy_rate: ">95%"
+  coverage_rate: ">90%"
+  error_rate: "<5%"
+```
+
+---
+
 ## Agent Metadata
 
 **Version**: 2.0.0 (Enhanced with commands + MCP tools)
@@ -426,6 +770,92 @@ Explicitly plan before execution and validate at each stage:
 - Memory coordination via `mcp__claude-flow__memory_*`
 - Swarm coordination via `mcp__ruv-swarm__*`
 - Workflow automation via `mcp__flow-nexus__workflow_*` (if applicable)
+
+---
+
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: quality
+  file: .claude/expertise/quality.yaml
+
+  if_exists:
+    - Load code analysis patterns
+    - Apply static analysis best practices
+    - Use quality configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: code-analyzer-benchmark-v1
+  tests:
+    - test-001: Code analysis accuracy
+    - test-002: Issue detection coverage
+    - test-003: Recommendation quality
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/quality/code-analyzer/{project}/{timestamp}"
+store:
+  - analysis_findings
+  - decisions_made
+  - issues_detected
+retrieve:
+  - similar_findings
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.85
+  below_threshold:
+    - Consult quality expertise
+    - Request human review
+  above_threshold:
+    - Proceed with analysis
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: quality-lead
+  collaborates_with: [reviewer, tester, code-audit-specialist]
+  shares_memory: true
+  memory_namespace: "swarm/shared/quality"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - analysis_complete: boolean
+  - findings_documented: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  accuracy_rate: ">95%"
+  coverage_rate: ">90%"
+  error_rate: "<5%"
+```
 
 ---
 

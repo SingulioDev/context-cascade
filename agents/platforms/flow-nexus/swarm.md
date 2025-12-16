@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: platform  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Swarm coordination patterns    - Apply platform best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: swarm-benchmark-v1  tests: [platform-reliability, performance, integration-quality]  success_threshold: 0.95namespace: "agents/platforms/swarm/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: platform-lead  collaborates_with: [infrastructure, orchestration, monitoring]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  platform_reliability: ">99%"  performance_score: ">95%"  integration_success: ">98%"```---
 name: "flow-nexus-swarm"
 description: "AI swarm orchestration and management specialist. Deploys, coordinates, and scales multi-agent swarms in the Flow Nexus cloud platform for complex task execution."
 color: "purple"

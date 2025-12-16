@@ -49,6 +49,95 @@ metadata:
   tags:
 ---
 
+## Phase 0: Expertise Loading
+
+Before executing any task, this agent checks for domain expertise:
+
+```yaml
+expertise_check:
+  domain: agent-creation
+  file: .claude/expertise/agent-creation.yaml
+
+  if_exists:
+    - Load migration planning patterns
+    - Apply migration planning best practices
+    - Use migration planning configurations
+
+  if_not_exists:
+    - Flag discovery mode
+    - Document patterns learned
+    - Create expertise file after successful task
+```
+
+## Recursive Improvement Integration (v2.1)
+
+### Eval Harness Integration
+
+```yaml
+benchmark: migration-plan-benchmark-v1
+  tests:
+    - test-001: migration planning quality
+    - test-002: upgrade strategy accuracy
+    - test-003: migration planning efficiency
+  success_threshold: 0.9
+```
+
+### Memory Namespace
+
+```yaml
+namespace: "agents/foundry/migration-plan/{project}/{timestamp}"
+store:
+  - migration planning_completed
+  - decisions_made
+  - patterns_applied
+retrieve:
+  - similar_migration planning
+  - proven_patterns
+  - known_issues
+```
+
+### Uncertainty Handling
+
+```yaml
+uncertainty_protocol:
+  confidence_threshold: 0.8
+
+  below_threshold:
+    - Consult migration planning expertise
+    - Request human clarification
+    - Document uncertainty
+
+  above_threshold:
+    - Proceed with migration planning
+    - Log confidence level
+```
+
+### Cross-Agent Coordination
+
+```yaml
+coordination:
+  reports_to: planner
+  collaborates_with: [system-architect, release-manager, deployment-coordinator]
+  shares_memory: true
+  memory_namespace: "swarm/shared/foundry"
+```
+
+## AGENT COMPLETION VERIFICATION
+
+```yaml
+completion_checklist:
+  - migration planning_complete: boolean
+  - outputs_validated: boolean
+  - quality_gates_passed: boolean
+  - memory_updated: boolean
+
+success_metrics:
+  migration planning_rate: ">95%"
+  quality_score: ">85%"
+  error_rate: "<5%"
+```
+
+---
 # Claude Flow Commands to Agent System Migration Plan
 
 

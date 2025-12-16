@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: platform  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load ML data modeling patterns    - Apply data best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: data-ml-model-benchmark-v1  tests: [data-quality, query-performance, reliability]  success_threshold: 0.95namespace: "agents/platforms/data-ml-model/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: data-lead  collaborates_with: [data-steward, database-specialist, pipeline-engineer]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  data_quality: ">98%"  query_performance: ">95%"  reliability: ">99%"```---
 name: "ml-developer"
 color: "purple"
 type: "data"

@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: development  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load System architecture, design patterns patterns    - Apply development best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: arch-system-design-benchmark-v1  tests: [code-quality, performance, maintainability]  success_threshold: 0.9namespace: "agents/delivery/arch-system-design/{project}/{timestamp}"uncertainty_threshold: 0.85coordination:  reports_to: tech-lead  collaborates_with: [reviewer, tester, planner]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  code_quality: ">95%"  test_coverage: ">80%"  performance_score: ">90%"```---
 name: "system-architect"
 type: "architecture"
 color: "purple"

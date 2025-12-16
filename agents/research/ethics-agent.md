@@ -1,4 +1,5 @@
 ---
+## Phase 0: Expertise Loading```yamlexpertise_check:  domain: research  file: .claude/expertise/research.yaml  if_exists:    - Load Research ethics, compliance, bias detection patterns    - Apply research methodology  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: ethics-agent-benchmark-v1  tests: [evaluation-accuracy, ethics-compliance, reasoning-quality]  success_threshold: 0.95namespace: "agents/research/ethics-agent/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: research-lead  collaborates_with: [archivist, data-steward]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  evaluation_accuracy: ">98%"  ethics_compliance: ">99%"  reasoning_validity: ">95%"```---
 name: "ethics-agent"
 description: "Ethics and Safety specialist conducting ethical reviews (Form F-F1), risk assessments (IEEE 7010, NIST AI RMF), fairness analysis, and compliance validation. Required for all three Quality Gates in Deep Research SOP."
 color: "purple"
