@@ -122,3 +122,51 @@ Use when coordinating complex multi-agent workflows with 5+ concurrent agents, i
 - **Claude-Flow**: `npx claude-flow@alpha swarm init --topology mesh`
 - **Monitoring**: Real-time coordination metrics
 - **Memory-MCP**: Cross-agent state persistence
+## Core Principles
+
+Advanced Coordination operates on 3 fundamental principles:
+
+### Principle 1: Consensus Protocols Provide Fault-Tolerant Distributed Agreement
+Different coordination strategies (RAFT, Gossip, Byzantine) trade off consistency, availability, and partition tolerance based on system requirements.
+
+In practice:
+- RAFT for strong consistency with leader election (financial transactions, critical state machines)
+- Gossip protocol for eventual consistency with high scalability (service discovery, distributed caching)
+- Byzantine Fault Tolerance for malicious agent detection (security-critical systems, 3F+1 redundancy)
+- Hybrid approaches combine protocols (RAFT for critical operations, Gossip for metrics aggregation)
+
+### Principle 2: Network Partition Tolerance Requires Graceful Degradation
+Distributed systems must detect partitions, operate with reduced functionality, and heal automatically when network connectivity restores.
+
+In practice:
+- Heartbeat monitoring detects agent disconnections within 5-10 seconds
+- Partition-tolerant state replication continues local writes, syncs on reconnection
+- Quorum-based decisions adapt thresholds during partitions (5/7 agents -> 3/4 remaining agents)
+- Eventual consistency healing reconciles divergent state when partition resolves
+
+### Principle 3: Dynamic Task Dependencies Require Real-Time Coordination
+Agent work must adapt to runtime conditions, with task graphs updated dynamically based on intermediate results and changing requirements.
+
+In practice:
+- Task scheduler maintains DAG (directed acyclic graph) of dependencies
+- Completed tasks unblock dependent tasks automatically (cascading execution)
+- Failed tasks trigger fallback chains or alternative execution paths
+- Conditional branching based on agent results (if quality_score > 0.8 -> fast_path else -> comprehensive_audit)
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **No partition detection** | Network partition occurs, system continues assuming all agents healthy, writes diverge, data corruption after partition heals. | Implement heartbeat monitoring (5s interval). Detect missing heartbeats within 15s. Trigger partition protocol (quorum adjustment, read-only mode). |
+| **RAFT for >100 agents** | Leader election overhead dominates, message complexity O(n^2), system spends 80% time coordinating instead of working. | Use Gossip protocol for large swarms (scales to 1000+ agents). Reserve RAFT for critical subsystems with <10 agents. |
+| **Circular task dependencies** | Task A depends on B, B depends on C, C depends on A. Scheduler deadlocks, no task can start, system hangs indefinitely. | Validate task graph as DAG before execution. Reject circular dependencies at design time. Use topological sort for execution order. |
+| **No Byzantine agent detection** | Malicious agent submits false results, corrupts shared state, other agents trust blindly, system produces incorrect output. | Implement Byzantine consensus with cryptographic verification. Require 2/3 agreement for critical operations. Blacklist agents with <60% agreement rate. |
+| **Message queue overflow** | Agents generate messages faster than consumers process them, queue grows unbounded, memory exhausted, system crashes. | Set max queue size with backpressure. Block producers when queue full. Implement message priority (critical > normal > low). |
+
+## Conclusion
+
+Advanced Coordination provides the distributed systems foundation for large-scale multi-agent orchestration, implementing battle-tested consensus protocols (RAFT, Gossip, Byzantine) with fault tolerance, partition handling, and dynamic task dependency management. The skill enables production-grade distributed AI systems that maintain correctness and availability despite agent failures, network partitions, and malicious behavior.
+
+The core contributions are: (1) consensus protocol selection (RAFT/Gossip/Byzantine) optimizes the consistency-availability-partition tolerance tradeoff for specific system requirements, (2) partition tolerance with graceful degradation enables continued operation during network failures and automatic healing on reconnection, and (3) dynamic task dependency graphs adapt execution plans in real-time based on intermediate results and runtime conditions.
+
+Use Advanced Coordination when building distributed systems with 20+ agents spanning multiple execution environments, implementing security-critical workflows requiring Byzantine fault tolerance, or managing complex task graphs with dynamic dependencies determined at runtime. The architecture scales from small clusters (5-10 agents with RAFT) to massive swarms (1000+ agents with Gossip). The key insight: coordination is the hard problem in distributed systems - consensus protocols, partition tolerance, and dynamic scheduling are not optional features but fundamental requirements for correctness at scale.

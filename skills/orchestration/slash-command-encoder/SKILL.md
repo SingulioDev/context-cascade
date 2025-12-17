@@ -740,3 +740,53 @@ done
 - Comprehensive command catalog generation
 - Integration with Gemini/Codex CLIs
 - Enhanced help and documentation generation
+## Core Principles
+
+Slash Command Encoder operates on 3 fundamental principles:
+
+### Principle 1: Expert Efficiency Through Command Line UX
+Command-line interfaces provide power users with fast, precise, and scriptable access to complex AI operations, prioritizing muscle memory over natural language ambiguity.
+
+In practice:
+- Design commands with verb-noun patterns for immediate recognition
+- Enable command chaining for pipeline composition
+- Provide comprehensive auto-completion for parameter discovery
+- Maintain consistent naming across all command categories
+
+### Principle 2: Auto-Discovery and Intelligent Routing
+Commands are automatically generated from installed skills, with intelligent routing to optimal AI models and agents based on task requirements.
+
+In practice:
+- Scan skill directories on startup to build comprehensive command catalogs
+- Map command parameters directly to skill inputs for seamless binding
+- Route commands to appropriate models (Claude, Gemini, Codex) based on capability needs
+- Update command registry automatically when skills are added or modified
+
+### Principle 3: Type Safety and Composability
+Commands enforce type-safe parameters with validation and support compositional patterns for complex workflows.
+
+In practice:
+- Validate all parameters against defined schemas before execution
+- Enable pipeline composition with standardized input/output formats
+- Support parallel execution patterns for independent operations
+- Provide clear error messages when validation fails
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Natural Language Commands** | Commands like `/please analyze this file carefully` defeat muscle memory and scriptability, creating ambiguous interfaces that cannot be chained or automated | Use precise verb-noun patterns like `/analyze-code src/file.js --strict` with explicit parameters for fast, scriptable invocation |
+| **Manual Command Registration** | Manually writing command definitions for each skill creates maintenance burden, drift from source skills, and missing commands when skills are added | Use auto-discovery scanning skill directories on startup, generating commands from SKILL.md metadata with automatic registry updates |
+| **Stringly-Typed Parameters** | Accepting arbitrary string parameters without validation causes runtime errors, confusing failure modes, and prevents auto-completion assistance | Implement TypeScript-style schemas with enum constraints, file path validation, and type checking before execution with helpful error messages |
+
+## Conclusion
+
+Slash Command Encoder provides fast, scriptable interfaces for micro-skills, cascades, and agents through ergonomic command design.
+
+Key takeaways:
+- Expert users benefit from command-line efficiency over natural language for repeated operations
+- Auto-discovery eliminates manual command registration and keeps catalogs current
+- Type-safe parameters with validation prevent runtime errors and improve reliability
+- Command chaining enables powerful workflow composition from simple building blocks
+
+Use this skill when operations are performed repeatedly, require exact parameters, or need to be composed into automated pipelines. Avoid for one-off exploratory tasks or operations requiring natural language nuance.

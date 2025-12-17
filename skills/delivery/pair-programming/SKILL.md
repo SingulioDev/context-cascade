@@ -1267,3 +1267,50 @@ Default shortcuts:
 - `claude-flow pair profile` - Manage profiles
 - `claude-flow pair templates` - List templates
 - `claude-flow pair agents` - List available agents
+
+## Core Principles
+
+Pair Programming operates on 3 fundamental principles:
+
+### Principle 1: Role Rotation for Knowledge Transfer
+Regularly switching between driver (writes code) and navigator (provides guidance) ensures both participants understand the implementation. Rotation every 25-30 minutes prevents fatigue and maintains engagement.
+
+In practice:
+- Use Switch mode with 10-minute intervals for balanced collaboration
+- Automatic role handoff with context summary prevents disorientation
+- Both participants can explain implementation after session (proof of knowledge transfer)
+
+### Principle 2: Real-Time Quality Verification
+Continuous code review, security scanning, and truth-score verification during development catches issues before they compound. Prevention is faster than remediation.
+
+In practice:
+- Enable verification with threshold 0.95+ for production-critical code
+- Auto-rollback on truth-score failures prevents broken code from advancing
+- Security scanning runs continuously, not just at PR time
+
+### Principle 3: Collaborative Problem-Solving
+Combining human intuition with AI expertise creates solutions neither could achieve alone. The AI provides systematic analysis and pattern knowledge while humans provide context and creativity.
+
+In practice:
+- Use Mentor mode when learning new technologies for detailed explanations
+- Use Debug mode for systematic problem-solving with root cause analysis
+- Use TDD mode for test-first development with red-green-refactor cycles
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Keyboard Hogging** | Driver dominates without switching roles, navigator disengages | Use Switch mode with enforced 10-25 minute intervals |
+| **Passive Navigating** | Navigator stays silent, becomes glorified code reviewer | Use /suggest and /explain commands actively, not just observe |
+| **Marathon Sessions** | Pairing for 6+ hours without breaks leads to fatigue and errors | Take 5-10 minute breaks every hour, max 4-5 hour sessions |
+| **Skipping Testing** | Implementing features without tests to move faster | Use TDD mode for test-first development with automated coverage tracking |
+| **Ignoring Quality Scores** | Committing code despite low truth scores or failing security scans | Enable auto-rollback on verification failures, enforce threshold 0.95+ |
+| **Tool Mismatch** | Fighting over IDE preferences disrupts flow | Agree on shared environment or use /config to match AI partner style |
+
+## Conclusion
+
+Pair Programming with AI transforms collaborative development from an occasional practice into a systematic workflow with measurable quality outcomes. By combining role rotation, real-time verification, and specialized modes (TDD, Debug, Review, Mentor), this skill ensures code quality is built in, not bolted on.
+
+Use this skill when learning new technologies (Mentor mode), tackling complex features (Switch mode for balanced collaboration), or debugging difficult issues (Debug mode for systematic analysis). The truth-score verification and auto-rollback features provide safety nets that manual pairing lacks, while session persistence allows resuming work without context loss.
+
+The result is a development practice that consistently delivers high-quality code (truth score >0.95), comprehensive test coverage (90%+ targets), and genuine knowledge transfer (both participants can explain implementation). When collaboration needs structure and quality needs verification, Pair Programming provides the framework that makes excellence repeatable.

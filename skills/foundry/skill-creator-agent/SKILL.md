@@ -686,3 +686,44 @@ To use this skill effectively, provide information about the skill you want to c
 The skill-creator-agent will guide you through designing both the skill layer and the specialist agent using Claude Agent SDK patterns. It will help you establish the communication protocol, create necessary resources including SDK implementations, configure proper agent lifecycle management, implement custom tools if needed, and test the complete integration.
 
 The result is a professional-grade skill that leverages specialist agent expertise through production-ready Claude Agent SDK infrastructure. Skills created this way provide measurably better results than traditional skills for complex domains while maintaining reliability, security, and maintainability.
+## Core Principles
+
+Skill Creator with Agent Specialization operates on 3 fundamental principles:
+
+### Principle 1: Separation of Concerns
+Skills handle triggering and context preparation while agents handle domain execution. This architectural boundary ensures clean interfaces and independent evolution of each layer.
+
+In practice:
+- Skills remain lightweight with clear triggering logic and resource management
+- Agents contain deep domain expertise without infrastructure concerns
+- Changes to detection logic do not affect agent execution and vice versa
+
+### Principle 2: Consistent Expertise Through Identity
+Specialist agents maintain stable identity and methodology across invocations, providing predictable high-quality outputs regardless of conversation context or recent history.
+
+In practice:
+- Each agent spawns with identical system prompt and cognitive framework
+- Evidence-based prompting techniques are deeply embedded in agent identity
+- Quality standards remain consistent across all skill invocations
+
+### Principle 3: Explicit Communication Contracts
+The skill-agent interface uses well-defined protocols for context handoff, progress reporting, and result formatting, eliminating ambiguity and integration failures.
+
+In practice:
+- Context packages follow documented schemas with typed fields
+- Progress reports use standardized checkpoint definitions
+- Result formats include metadata for programmatic processing
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Heavyweight Skill Layer** | Embedding execution logic in skill instead of agent reduces maintainability and creates duplication | Move all domain logic to agent system prompt, keep skill focused on triggering and coordination |
+| **Ambiguous Communication Protocol** | Undefined or informal handoff formats cause integration failures and inconsistent behavior | Document exact schemas for context packages and results with examples, validate in both skill and agent |
+| **Generic Agent Identity** | Agent lacks deep domain expertise, behaving like general assistant rather than specialist | Invest in comprehensive agent system prompt with domain knowledge, failure modes, and quality standards |
+
+## Conclusion
+
+The skill-creator-agent approach represents a fundamental shift from instruction-following to agent-spawning architecture. By cleanly separating skills (triggering and coordination) from agents (domain execution), this pattern enables professional-grade tooling with consistent quality, maintainable codebases, and reliable integration across complex workflows.
+
+Use this skill when building tools for domains where specialist expertise significantly impacts outcomes, when quality consistency matters across many invocations, or when creating reusable components for team use. The additional architectural complexity pays dividends through measurably better results, easier maintenance, and more robust error handling compared to traditional single-layer skills.

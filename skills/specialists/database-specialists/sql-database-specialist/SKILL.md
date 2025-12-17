@@ -1,87 +1,12 @@
 ---
 name: sql-database-specialist
-description: SQL database specialist for PostgreSQL/MySQL optimization, EXPLAIN plan
-  analysis, index optimization, query rewriting, partitioning strategies, connection
-  pooling, and database performance tuning. Use when optimizing slow queries, designing
-  efficient database schemas, implementing replication/HA, or requiring SQL best practices.
-  Handles JSONB queries, full-text search, vacuum maintenance, and migration strategies.
+description: SQL database specialist for PostgreSQL/MySQL optimization, EXPLAIN plan analysis, index optimization, query rewriting, partitioning strategies, connection pooling, and database performance tuning. Use when optimizing slow queries, designing efficient database schemas, implementing replication/HA, or requiring SQL best practices. Handles JSONB queries, full-text search, vacuum maintenance, and migration strategies.
 category: Database Specialists
 complexity: High
-triggers:
-- sql
-- postgresql
-- mysql
-- database optimization
-- query optimization
-- indexes
-- explain plan
-- database performance
-- postgres
-- mariadb
-version: 1.0.0
-tags:
-- specialists
-- domain-expert
-author: ruv
+triggers: ["sql", "postgresql", "mysql", "database optimization", "query optimization", "indexes", "explain plan", "database performance", "postgres", "mariadb"]
 ---
 
 # SQL Database Specialist
-
-
-## When to Use This Skill
-
-- **Schema Design**: Designing database schemas for new features
-- **Query Optimization**: Improving slow queries or database performance
-- **Migration Development**: Creating database migrations or schema changes
-- **Index Strategy**: Designing indexes for query performance
-- **Data Modeling**: Normalizing or denormalizing data structures
-- **Database Debugging**: Diagnosing connection issues, locks, or deadlocks
-
-## When NOT to Use This Skill
-
-- **NoSQL Systems**: Document databases requiring different modeling approaches
-- **ORM-Only Work**: Simple CRUD operations handled entirely by ORM
-- **Data Analysis**: BI, reporting, or analytics queries (use data specialist)
-- **Database Administration**: Server configuration, backup/restore, replication setup
-
-## Success Criteria
-
-- [ ] Schema changes implemented with migrations
-- [ ] Indexes created for performance-critical queries
-- [ ] Query performance meets SLA targets (<100ms for OLTP)
-- [ ] Migration tested with rollback capability
-- [ ] Foreign key constraints and data integrity enforced
-- [ ] Database changes documented
-- [ ] No N+1 query problems introduced
-
-## Edge Cases to Handle
-
-- **Large Tables**: Migrations on tables with millions of rows
-- **Zero-Downtime**: Schema changes without service interruption
-- **Data Integrity**: Handling orphaned records or constraint violations
-- **Concurrent Updates**: Race conditions or lost updates
-- **Character Encoding**: UTF-8, emojis, special characters
-- **Timezone Storage**: Storing timestamps correctly (UTC recommended)
-
-## Guardrails
-
-- **NEVER** modify production schema without tested migration
-- **ALWAYS** create indexes on foreign keys and frequently queried columns
-- **NEVER** use SELECT * in production code
-- **ALWAYS** use parameterized queries (prevent SQL injection)
-- **NEVER** store sensitive data unencrypted
-- **ALWAYS** test migrations on production-sized datasets
-- **NEVER** create migrations without rollback capability
-
-## Evidence-Based Validation
-
-- [ ] EXPLAIN ANALYZE shows efficient query plans
-- [ ] Migration runs successfully on production-like data volume
-- [ ] Indexes reduce query time measurably (benchmark before/after)
-- [ ] No full table scans on large tables
-- [ ] Foreign key constraints validated
-- [ ] SQL linter (sqlfluff, pg_lint) passes
-- [ ] Connection pooling configured appropriately
 
 Expert SQL database optimization, schema design, and performance tuning for PostgreSQL and MySQL.
 
@@ -517,3 +442,27 @@ LIMIT 10;
 
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
+
+## Core Principles
+
+1. **Query Performance is Data Distribution Dependent**: The optimal query plan depends entirely on data distribution, cardinality, and statistics - not on abstract rules. A query that performs well with 1000 rows may fail catastrophically with 1 million rows. This means EXPLAIN ANALYZE is mandatory, not optional - you cannot optimize queries without understanding actual execution plans and row counts. Index selection depends on cardinality (high cardinality columns like email benefit from B-tree indexes, low cardinality like status may not), data skew (non-uniform distributions break planner assumptions), and correlation between columns (multi-column indexes work best when columns are queried together). Never apply generic optimization advice without analyzing the specific workload, data distribution, and EXPLAIN output for your database.
+
+2. **Indexes are Not Free - They Have Costs and Trade-offs**: Every index speeds up reads but slows down writes, consumes disk space, and requires maintenance (vacuum, statistics updates). Over-indexing is as problematic as under-indexing. This requires thoughtful index design based on query patterns: create indexes for frequently queried columns with high cardinality, use covering indexes to eliminate table lookups for hot queries, implement partial indexes for filtered queries to reduce index size, and avoid redundant indexes (an index on (user_id, created_at) makes a separate index on (user_id) redundant in PostgreSQL). Monitor index usage with pg_stat_user_indexes and drop unused indexes. For write-heavy workloads, fewer indexes with higher query impact beats many indexes with marginal benefits.
+
+3. **Transactions and Isolation Levels Must Match Business Requirements**: Transaction isolation levels (Read Uncommitted, Read Committed, Repeatable Read, Serializable) trade consistency for concurrency. The default (Read Committed in PostgreSQL) is not always correct - it allows non-repeatable reads and phantom reads. Financial transactions require Serializable isolation to prevent lost updates, reporting queries may accept Read Uncommitted for better performance, and most OLTP workloads work with Read Committed. Understanding isolation levels prevents subtle bugs like double-charging users or inventory overselling. This means explicitly setting isolation levels for critical transactions, using SELECT FOR UPDATE for pessimistic locking when needed, implementing optimistic locking with version columns for high-concurrency updates, and testing transaction behavior under concurrent load to verify isolation guarantees hold.
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Better Approach |
+|-------------|--------------|-----------------|
+| **SELECT * in Production Code** | Selecting all columns when only a few are needed wastes bandwidth, memory, and prevents covering indexes from working. If table schema changes (columns added), application code breaks silently or starts transferring unnecessary data. Large JSONB or TEXT columns in SELECT * can make queries 100x slower. | Explicitly select only needed columns: SELECT id, email, name FROM users WHERE id = $1. This enables covering indexes (index contains all selected columns, no table lookup needed), reduces network transfer, and makes schema changes explicit. For APIs, define specific result shapes with TypeScript interfaces or Pydantic models that map to explicit SELECT lists. |
+| **Using OFFSET for Deep Pagination** | OFFSET forces database to scan and discard all skipped rows. Paginating to page 1000 with LIMIT 20 OFFSET 20000 requires scanning 20,020 rows, making deep pagination exponentially slower. This breaks user experience as users navigate to later pages and causes database load spikes. | Use cursor-based pagination with WHERE id > last_seen_id ORDER BY id LIMIT 20. This uses the index efficiently (seeks to starting point, no scanning skipped rows) and maintains constant performance regardless of page depth. For timestamp-based pagination, use WHERE created_at < last_timestamp ORDER BY created_at DESC LIMIT 20. Store cursor token (last ID or timestamp) in API response for next page. |
+| **Ignoring Connection Pool Exhaustion** | Running out of database connections causes cascading failures where application servers queue requests, timeouts propagate, and service degrades catastrophically. Common causes: connections leaked (not released), pool sized too small for load, slow queries holding connections too long, or connection storms during traffic spikes. | Configure connection pools appropriately: pool size = (core_count * 2) + effective_spindle_count is a starting point. Monitor pool utilization (should be 60-80% under normal load). Implement connection timeouts and health checks. Use transaction-level pooling (PgBouncer in transaction mode) for microservices with bursty traffic. Add circuit breakers to prevent connection storms. Log slow queries holding connections >1 second. |
+
+## Conclusion
+
+The SQL Database Specialist skill provides comprehensive expertise in database performance optimization, schema design, and operational excellence for PostgreSQL and MySQL. By combining systematic query analysis through EXPLAIN plans, strategic index design, and production-proven optimization techniques, this skill enables building database systems that scale reliably from thousands to millions of queries per second.
+
+Success with SQL databases requires moving beyond generic best practices to data-driven optimization based on actual workload characteristics, query patterns, and performance metrics. The workflows provided - from EXPLAIN analysis to partitioning strategies to zero-downtime migrations - represent battle-tested patterns that work in production environments under real load. The emphasis on measurement (EXPLAIN ANALYZE, pg_stat_statements, connection pool metrics) ensures that optimization decisions are based on evidence rather than assumptions.
+
+Whether optimizing slow queries that are impacting user experience, designing schemas that will scale to billions of rows, implementing high-availability architectures, or debugging mysterious performance degradations, this skill provides the methodology and tooling to diagnose issues systematically and implement solutions confidently. The combination of PostgreSQL-specific features (JSONB, full-text search, partitioning) with universal SQL optimization principles creates a comprehensive foundation for database excellence that applies across relational database systems while leveraging the unique strengths of PostgreSQL when available.

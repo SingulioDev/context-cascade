@@ -695,3 +695,50 @@ def custom_transform(data):
 
 transformer.register_custom('my_transform', custom_transform)
 ```
+---
+
+## Core Principles
+
+Platform Integration operates on 3 fundamental principles:
+
+### Principle 1: Event-Driven Architecture Over Polling
+Polling APIs for changes creates latency, wastes API quota, and misses real-time updates. Event-driven webhooks provide immediate notifications with zero polling overhead.
+
+In practice:
+- Webhook handlers for real-time events (order placed, user updated, payment completed)
+- Message queues for reliable event processing with retry logic
+- WebSockets for bidirectional real-time communication (chat, live updates)
+
+### Principle 2: Idempotent Operations Prevent Duplicate Processing
+Network failures and retry logic can cause duplicate events. Without idempotency, webhooks can trigger duplicate orders, double charges, or inconsistent data states.
+
+In practice:
+- Webhook handlers use idempotency keys to deduplicate events
+- Database operations use unique constraints to prevent duplicate records
+- API calls include idempotency tokens for safe retries
+
+### Principle 3: Circuit Breakers Prevent Cascading Failures
+When an integrated platform fails, naive retry logic can amplify failures across your entire system. Circuit breakers isolate failures and enable graceful degradation.
+
+In practice:
+- After 5 consecutive API failures, circuit opens (stop calling failing service)
+- Fallback to cached data or default behavior during circuit open state
+- Exponential backoff with jitter prevents thundering herd on recovery
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Poll Every N Seconds** | Polling Stripe API every 10s for payment updates. Wastes 99% of API calls on "no changes". Hits rate limits during high traffic. | Use Stripe webhooks for payment events. Only poll as fallback for missed webhooks (check once after 5 minutes if webhook not received). |
+| **Retry Forever** | API call fails, retry immediately forever. Downstream service outage causes infinite retry storm, exhausting database connections and amplifying failures. | Implement exponential backoff with max retries (3-5). After max retries, send to dead letter queue for manual review. Use circuit breaker to stop retries during sustained outages. |
+| **No Webhook Verification** | Accept webhooks without signature verification. Attacker sends fake "payment completed" webhooks, triggering order fulfillment for unpaid orders. | Verify webhook signatures using HMAC-SHA256 with shared secret. Reject webhooks with invalid signatures. Verify timestamp to prevent replay attacks (max age 5 minutes). |
+
+## Conclusion
+
+Platform Integration provides a comprehensive framework for building production-grade integrations with external platforms (SaaS APIs, payment gateways, cloud services). The skill generates API connectors, webhook handlers, data transformation pipelines, and synchronization engines with built-in error handling, monitoring, and security.
+
+Use this skill when integrating with external platforms (Stripe, Salesforce, Shopify, AWS, etc.) requiring bidirectional data flow, real-time event processing, or complex data transformations. The framework supports REST, GraphQL, WebSockets, and message queue patterns, with automatic retry logic, circuit breakers, and observability.
+
+The key architectural principle is event-driven design - webhooks and message queues provide real-time updates with better reliability and lower latency than polling. All webhook handlers include signature verification, idempotency checks, and dead letter queues for failed events.
+
+Success requires understanding the target platform's API patterns (REST vs GraphQL, webhook formats, rate limits, authentication methods) and designing integration architecture that handles failures gracefully. The framework provides production-ready templates for common platforms, reducing integration time from weeks to days while avoiding common pitfalls like duplicate processing, cascading failures, and security vulnerabilities.

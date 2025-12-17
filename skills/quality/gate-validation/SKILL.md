@@ -2405,3 +2405,35 @@ This skill integrates with:
 - NeurIPS Reproducibility Checklist
 - ACM Artifact Evaluation Badging
 - IEEE Software Quality Assurance Standards
+---
+
+## Core Principles
+
+### 1. GO/NO-GO Decisions Require Quantitative Evidence
+Quality gate validation is not a rubber-stamp approval process - it is a rigorous GO/NO-GO decision framework backed by quantitative evidence. Every gate requirement has explicit pass/fail criteria with numerical thresholds (e.g., baseline replication within 1% tolerance, demographic parity < 10%, test coverage >= 90%). Subjective assessments ("looks good enough") are rejected. This principle ensures that phase transitions are defensible under academic peer review, regulatory audit, and production incident retrospectives.
+
+### 2. Multiple Comparison Correction Prevents Statistical Illusions
+Testing multiple hypotheses without correction inflates false positive rates exponentially. Gate validation implements Bonferroni correction to control family-wise error rate, ensuring that approval decisions maintain statistical rigor across dozens of simultaneous checks. A Gate 2 validation testing 30 requirements at p<0.05 would have 78% chance of false positive without correction - Bonferroni reduces this to 5%. This principle prevents the approval of models that pass gates by statistical luck rather than genuine quality.
+
+### 3. Phase Transitions Require Cross-Agent Consensus
+No single agent has complete view of production readiness. Gate validation coordinates evaluator, ethics-agent, data-steward, and archivist for multi-perspective assessment. Gate 1 cannot approve without data-steward datasheet validation AND ethics-agent risk assessment. Gate 2 requires evaluator holistic evaluation AND ethics-agent safety review. This principle prevents blind spots where technical excellence masks ethical risks or where comprehensive documentation hides functionality gaps.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|--------------|--------------|------------------|
+| **Checkbox Compliance Without Verification** | Marking gate requirements as "complete" without executing validation scripts leads to false approvals. A baseline replication marked complete without running tolerance checks may have 15% error instead of required 1%. Leads to reproducibility failures and rejected publications. | Execute validation scripts for EVERY gate requirement. Baseline replication: Run experiments/scripts/validate_baseline.py with tolerance checks. Datasheet: Parse form and calculate completion percentage. Store validation evidence in Memory MCP with WHO/WHEN/PROJECT/WHY tags. Require automated pass/fail, not manual judgment. |
+| **Skipping Gates Under Time Pressure** | Proceeding to method development before Gate 1 approval ("we'll validate the baseline later") leads to wasted effort building on flawed foundations. Method development on un-validated datasets or misunderstood baselines produces unpublishable results. Common in industry where shipping pressure overrides rigor. | Enforce strict gate blocking: Phase 2 skills refuse to execute until Gate 1 APPROVED status confirmed in Memory MCP. Use npx claude-flow@alpha memory retrieve --key "sop/gate-1/status" before method-development. Coordinate with evaluator agent to validate gate completion. No exceptions for deadlines - failed gates require remediation, not bypass. |
+| **Ignoring CONDITIONAL Approvals** | Treating CONDITIONAL gate status as equivalent to APPROVED ignores required mitigation plans. Gate 2 CONDITIONAL with "adversarial robustness mitigation required" means deployment ONLY in non-adversarial environments until mitigation complete. Ignoring conditions leads to production failures. | Document all conditions in gate validation report with explicit deployment restrictions. Store conditions in Memory MCP: memory_store("sop/gate-2/conditions", "adversarial mitigation required before high-risk deployment"). Coordinate with deployment-readiness skill to enforce restrictions. Track mitigation completion before upgrading CONDITIONAL to APPROVED. |
+
+---
+
+## Conclusion
+
+Gate validation transforms research phase transitions from arbitrary milestones into rigorous GO/NO-GO decision points backed by quantitative evidence and multi-agent consensus. By implementing statistical rigor (Bonferroni correction, effect size calculation, power analysis), this skill ensures that models advancing through Deep Research SOP phases meet production-ready standards at each gate. The three-gate system prevents wasted effort: Gate 1 catches data quality issues and baseline replication failures before method development, Gate 2 catches evaluation gaps before production preparation, and Gate 3 catches reproducibility failures before archival and deployment.
+
+The value of gate validation extends beyond risk mitigation - it provides clear feedback loops for continuous improvement. A Gate 1 REJECTED decision with specific datasheet gaps (85% complete, missing distribution plan) provides actionable remediation guidance rather than vague "needs improvement" feedback. This precision enables rapid iteration: fix the specific gaps, re-validate, proceed. The integration with Memory MCP ensures that gate decisions persist across sessions, preventing teams from re-litigating completed validations or bypassing failed gates.
+
+For academic ML research, gate validation is the difference between publishable and rejected work. NeurIPS, ICML, and ACM conferences increasingly require reproducibility artifacts, ethics statements, and comprehensive evaluation - requirements directly mapped to Gates 1, 2, and 3. Models passing all three gates have systematically validated data quality, baseline replication, novel methods, holistic evaluation, reproducibility, and production readiness. This rigorous validation framework ensures that research outputs meet or exceed venue requirements, reducing desk rejection rates and increasing acceptance probability.

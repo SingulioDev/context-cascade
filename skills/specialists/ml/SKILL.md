@@ -248,3 +248,65 @@ For issues or questions:
 - Review test files for usage patterns
 - Consult MLflow/Optuna documentation
 - Use `functionality-audit` skill for validation
+
+---
+
+## Core Principles
+
+### 1. Reproducibility First
+Reproducibility is the foundation of scientific machine learning. Every experiment must be independently verifiable by other researchers.
+
+**In practice:**
+- Version control all training code, data, and model artifacts with Git LFS
+- Pin all dependency versions (TensorFlow 2.13.0, not >=2.0)
+- Set deterministic random seeds across all libraries (Python, NumPy, TensorFlow/PyTorch)
+- Document hardware specifications and environment configuration
+- Track hyperparameters, data splits, and preprocessing steps in experiment tracker
+- Store data checksums to verify dataset integrity
+
+### 2. Evidence-Based Validation
+Claims about model performance require rigorous statistical evidence, not cherry-picked metrics.
+
+**In practice:**
+- Use separate train/validation/test splits with no data leakage
+- Perform k-fold cross-validation for robust performance estimates
+- Report confidence intervals using bootstrapping or statistical tests
+- Analyze confusion matrices for per-class performance
+- Conduct ablation studies to validate architectural choices
+- Test statistical significance of improvements (paired t-test, p < 0.05)
+- Never evaluate on training data or touch test set until final evaluation
+
+### 3. Production Readiness from Day One
+Models must be deployable, not just accurate. Production constraints shape development decisions.
+
+**In practice:**
+- Profile inference latency and memory usage during development
+- Design for deployment constraints (model size, hardware availability)
+- Implement monitoring for data drift and performance degradation
+- Document model assumptions, limitations, and failure modes
+- Set up automated retraining pipelines for continuous learning
+- Plan rollback strategies before deployment
+- Test on production-like data distributions
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Training on test data** | Inflates accuracy metrics, model fails in production due to overfitting to test distribution | Use strict train/val/test splits. Never touch test set until final evaluation. Use cross-validation on training data only. |
+| **Ignoring class imbalance** | Model achieves high accuracy by predicting majority class, fails on minority classes | Apply class weights, resampling (SMOTE), or stratified sampling. Evaluate with F1-score, precision-recall curves, not just accuracy. |
+| **Deploying without monitoring** | Model degrades silently as production data drifts from training distribution | Implement data drift detection (KL divergence, PSI). Monitor prediction confidence distributions. Set up automated alerts for performance degradation. |
+| **Hyperparameter tuning on test set** | Leaks test information into model selection, overestimates generalization | Tune hyperparameters only on validation set. Reserve test set for final evaluation after all decisions are made. |
+| **No experiment tracking** | Cannot reproduce results or compare experiments, wastes time re-running experiments | Use MLflow/W&B from day one. Track all hyperparameters, metrics, and artifacts. Tag experiments with meaningful names. |
+| **Premature optimization** | Spending weeks optimizing model before validating basic approach works | Start with simple baseline (logistic regression, small network). Validate approach works. Then optimize. |
+
+---
+
+## Conclusion
+
+Machine learning development requires a rigorous engineering mindset that balances scientific accuracy with production pragmatism. The ML Development Skill provides a comprehensive workflow that treats reproducibility, evidence-based validation, and production readiness as first-class requirements, not afterthoughts.
+
+By integrating experiment tracking (MLflow/W&B), automated hyperparameter optimization (Optuna), and production MLOps pipelines from the start, this skill ensures that models are not only accurate but also deployable, maintainable, and scientifically rigorous. The emphasis on statistical validation, data quality, and monitoring prevents common pitfalls like overfitting, data leakage, and silent production failures.
+
+Whether you are training a simple classifier or building a complex multi-model pipeline, this skill enforces best practices that scale from research prototypes to production systems. The three core principles - reproducibility first, evidence-based validation, and production readiness - guide every phase of the ML lifecycle, from initial data exploration to continuous model improvement in production.

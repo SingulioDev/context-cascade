@@ -2828,3 +2828,53 @@ This skill integrates with:
 **Last Updated:** 2025-10-19
 **Version:** 1.0.0
 **Maintainer:** Claude Code Flow Team
+
+## Core Principles
+
+GitHub Code Review operates on 3 fundamental principles:
+
+### Principle 1: Multi-Dimensional Quality Assessment
+Effective code review examines changes across multiple quality dimensions simultaneously rather than focusing on single aspects in isolation.
+
+In practice:
+- Security reviewers scan for vulnerabilities, authentication bypasses, and injection risks in parallel with other analyses
+- Performance specialists identify algorithmic complexity issues, memory leaks, and database query inefficiencies
+- Style enforcers check coding standards, naming conventions, and architectural patterns
+- Test coverage analysts ensure new code includes comprehensive test cases
+
+### Principle 2: Swarm-Based Collaborative Intelligence
+Multiple specialized AI agents reviewing code in parallel discover more issues and provide more comprehensive feedback than sequential single-agent review.
+
+In practice:
+- Security-agent, performance-agent, test-agent, and style-agent operate concurrently on the same PR
+- Agents cross-validate findings to reduce false positives through consensus mechanisms
+- Specialized agents leverage domain expertise (security patterns, performance benchmarks) unavailable to generalist reviewers
+- Swarm coordination aggregates findings into unified, prioritized feedback with severity ratings
+
+### Principle 3: Automated Action with Human Oversight
+Code review should automate routine quality checks while escalating complex decisions to human reviewers with full context.
+
+In practice:
+- Automated quality gates block PRs that fail critical checks (failing tests, security vulnerabilities, breaking changes)
+- Auto-fix suggestions are generated for mechanical issues (formatting, simple refactorings, missing documentation)
+- Human reviewers receive summarized findings with severity classification rather than raw tool output
+- Review metrics track false positive rates and adjust automation thresholds to maintain trust
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Superficial Review** | Reviewers focus on style nitpicks while missing critical logic errors or security vulnerabilities | Use multi-agent swarm with specialized reviewers (security, performance, logic) to ensure comprehensive coverage |
+| **Review Theater** | PR approval based on cursory glance or automated checks without genuine code understanding | Require evidence-based review with specific findings; validate reviewers examined changed code and surrounding context |
+| **Blocking on Trivial Issues** | PRs blocked for minor style issues while critical functionality merges without scrutiny | Separate blocking quality gates (security, correctness) from advisory feedback (style suggestions); auto-fix trivial issues |
+| **Missing Context Analysis** | Reviewing changed files in isolation without understanding impact on system architecture or dependent code | Analyze PR diff alongside call graphs, dependency maps, and historical context; identify affected downstream components |
+| **Late-Stage Review Bottleneck** | All review happens at PR submission, creating merge delays and context loss | Integrate continuous review during development; provide early feedback on work-in-progress branches |
+| **Inconsistent Standards** | Different reviewers enforce conflicting standards leading to confusing or contradictory feedback | Codify review criteria in automated checks; train reviewer agents on consistent rubrics; track inter-reviewer agreement |
+
+## Conclusion
+
+GitHub Code Review with AI-powered swarm coordination transforms pull request review from a manual bottleneck into an automated, comprehensive quality gate that catches issues early while accelerating development velocity. By orchestrating specialized AI agents that examine security, performance, correctness, testing, and style in parallel, this skill provides depth and breadth of review beyond what individual human reviewers can achieve within practical time constraints.
+
+Use this skill as part of your standard PR workflow to ensure consistent, thorough review of all code changes before they reach the main branch. The multi-agent approach is particularly valuable for teams with limited senior reviewer availability, for high-stakes code where security or correctness is critical, or when establishing quality baselines for new projects. The automated nature of swarm-based review enables reviewing every PR thoroughly rather than sampling or relying on spot checks that miss issues.
+
+The integration with GitHub's native review workflow means developers receive actionable feedback directly in their PRs with specific line numbers, severity classifications, and auto-fix suggestions where applicable. Combined with automated quality gates that prevent merging of failing code, GitHub Code Review establishes a systematic quality process that raises the bar for all code entering the codebase while providing educational feedback that improves developer skills over time.

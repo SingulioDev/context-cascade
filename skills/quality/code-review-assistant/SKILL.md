@@ -476,3 +476,45 @@ code-review-assistant 123 "security,tests" true --auto-merge true
 - **Critical security issues**: Block merge, escalate to security team
 - **Tests failing**: Request changes, provide fix suggestions
 - **GitHub CLI not authenticated**: Guide user to authenticate
+---
+
+## Core Principles
+
+Code Review Assistant operates on 3 fundamental principles:
+
+### Principle 1: Multi-Perspective Validation
+Every code change must be evaluated from multiple viewpoints to ensure comprehensive quality assessment. No single reviewer can catch all issues.
+
+In practice:
+- Parallel specialized reviews (security, performance, style, tests, docs) prevent blind spots
+- Cross-validation between reviewers catches what individual analysis misses
+
+### Principle 2: Evidence-Based Decision Making
+Review decisions must be grounded in objective metrics and actual execution results, not assumptions or subjective opinions.
+
+In practice:
+- Automated tests MUST pass before human review begins (blocking gate)
+- Security scans provide concrete vulnerability reports with severity ratings
+- Performance analysis uses profiling data and complexity metrics
+
+### Principle 3: Actionable Feedback Over Criticism
+Every finding must include specific location, concrete problem, and clear remediation path. Vague criticism wastes author time.
+
+In practice:
+- All findings include file path and line number (file.js:42)
+- Feedback provides "why it's wrong" + "how to fix it" (not just "change this")
+- Severity ranking (blocking/high/medium/low) guides prioritization
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Approval Without Execution** | Approving code based on reading alone without running tests or seeing actual output | ALWAYS require passing CI/CD, local execution, or sandbox testing before approval |
+| **Nitpicking Style Over Substance** | Focusing on minor formatting issues while missing critical security vulnerabilities or logic errors | Use automated linters for style; human reviewers focus on security, logic, architecture |
+| **Sequential Review Bottleneck** | Running reviews one-by-one (security -> performance -> docs) causing 8+ hour delays | Run all specialized reviews in PARALLEL using swarm coordination (2 hours total) |
+
+## Conclusion
+
+Code Review Assistant transforms PR review from a subjective, sequential bottleneck into an objective, parallel quality gate. By coordinating 5 specialized reviewers (security, performance, style, tests, docs) in parallel and requiring evidence-based validation, it achieves comprehensive coverage in 4 hours vs 8+ hours sequential. The system enforces the critical rule that code is NEVER approved without execution proof - all tests must pass, security scans must complete, and performance profiling must show acceptable metrics before merge approval. This multi-agent approach catches issues that single-reviewer processes miss while maintaining fast turnaround through parallelization.
+
+Use this skill when you need thorough PR review with multiple quality dimensions evaluated simultaneously. The automated checks (lint, test, coverage, build) act as a blocking gate - human review only begins after automation passes. The result is high-confidence merge decisions backed by concrete evidence rather than assumptions.

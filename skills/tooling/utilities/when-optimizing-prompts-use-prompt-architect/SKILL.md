@@ -838,3 +838,57 @@ Outputs:
 4. **prompt-library-entry.md**: Cataloged for reuse
 
 Skill complete when metrics show >20% improvement and all test cases pass.
+## Core Principles
+
+### 1. Structural Completeness Over Ad-Hoc Construction
+Prompts must contain all 7 essential components: system context, role definition, task description, constraints, format specification, examples, and quality criteria.
+
+In practice:
+- Audit existing prompts against structural checklist - identify missing components
+- Add system context explaining domain, background, and operating constraints
+- Define explicit role with persona, expertise, and working perspective
+- Separate MUST (required), MUST NOT (forbidden), and PREFER (optional) constraints
+- Specify exact output format (JSON schema, markdown structure, code template)
+- Include 2-3 examples showing desired behavior for typical, edge case, and stress scenarios
+
+### 2. Evidence-Based Techniques Drive Results
+Apply proven prompt engineering methods from research: Chain-of-Thought, self-consistency, ReAct, program-of-thought, plan-and-solve, role-playing, and few-shot learning.
+
+In practice:
+- Add explicit reasoning steps with Chain-of-Thought pattern (Understand -> Analyze -> Reason -> Synthesize -> Conclude)
+- Use self-consistency by requesting 3 independent solutions with different approaches, then selecting most robust
+- Implement ReAct pattern for multi-step workflows (Thought -> Action -> Observation cycle)
+- Provide 2-3 few-shot examples with input, reasoning process, and expected output
+- Frame constraints explicitly with prioritization order when conflicts occur
+
+### 3. Validate Through Measurement, Not Assumption
+Effectiveness claims require empirical A/B testing against baseline with quantitative metrics.
+
+In practice:
+- Define 3+ test cases covering typical use, edge cases, and stress scenarios
+- Run original prompt and optimized prompt on identical test cases
+- Measure average score, success rate, and consistency for both versions
+- Calculate percentage improvement for each metric
+- Require > 20% score improvement and > 85% success rate before deployment
+- Iteratively refine based on failure analysis until thresholds met
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|-------------|---------|----------|
+| Vague imperative instructions | "Please try to analyze..." produces inconsistent results | Use definitive commands: "Analyze the following dataset using statistical methods X, Y, Z. Return results in JSON format." Remove hedging words (please, try, maybe, possibly). |
+| Missing output format specification | AI guesses format, creates integration friction | Specify exact structure with schema or template. For JSON, provide complete schema with types. For text, show exact markdown structure. Include format validation in success criteria. |
+| Implicit assumptions unstated | AI fills gaps with incorrect interpretations | Make all assumptions explicit. State domain knowledge requirements. Define edge case handling. Clarify ambiguous terms with examples. |
+| Conflicting instructions | "Be comprehensive but concise" creates confusion | Resolve contradictions with explicit priorities: "Prioritize comprehensive coverage over brevity. Maximum 500 words per section." Use constraint hierarchy (Safety > Quality > Speed > Resources). |
+| No examples provided | AI guesses desired behavior from description alone | Include 2-3 few-shot examples: (1) typical case, (2) edge case, (3) error handling. Show input, reasoning process, and expected output for each. |
+| Untested optimization claims | "Optimized prompt" without validation proof | Always run A/B tests. Compare original vs optimized on 3+ test cases. Measure score, success rate, consistency. Require > 20% improvement with statistical significance (p < 0.05). |
+
+## Conclusion
+
+Prompt Architect provides a systematic engineering framework for transforming ad-hoc instructions into high-performance prompts through structural analysis, evidence-based optimization, and empirical validation. The skill recognizes that prompt quality directly determines AI system effectiveness - poorly structured prompts produce inconsistent, low-quality outputs regardless of model capabilities.
+
+The 7-component structural template ensures completeness by addressing common failure modes: missing context causes hallucinations, absent role definition produces generic responses, vague constraints enable interpretation drift, and lack of examples creates misaligned outputs. By systematically auditing for and adding these components, prompts become explicit, unambiguous contracts between human intent and AI execution.
+
+Most critically, this skill rejects subjective optimization claims in favor of quantitative A/B testing. The validation phase compares original and optimized prompts on identical test cases, measuring improvement in score, success rate, and consistency. Only prompts demonstrating > 20% improvement and > 85% success rate are deployed to production. This evidence-based approach ensures optimization efforts produce measurable value rather than speculative improvements.
+
+The iterative refinement process (analyze failures -> apply fixes -> re-validate) creates a continuous improvement loop. Failed test cases trigger root cause analysis identifying missing constraints, ambiguous instructions, insufficient examples, or inadequate edge case handling. Each iteration addresses specific failure modes, progressively improving prompt robustness. This systematic methodology scales from individual prompt optimization to building reusable prompt libraries, enabling organizations to accumulate proven patterns for common tasks and domains.

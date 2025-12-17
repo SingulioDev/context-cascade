@@ -1,88 +1,12 @@
 ---
 name: react-specialist
-description: Modern React development specialist for React 18+ with hooks, context,
-  suspense, server components (Next.js 13+), state management (Redux/Zustand/Jotai),
-  performance optimization (React.memo, useMemo, useCallback), and component library
-  development. Use when building React applications, optimizing rendering performance,
-  implementing complex state management, or creating reusable component libraries.
+description: Modern React development specialist for React 18+ with hooks, context, suspense, server components (Next.js 13+), state management (Redux/Zustand/Jotai), performance optimization (React.memo, useMemo, useCallback), and component library development. Use when building React applications, optimizing rendering performance, implementing complex state management, or creating reusable component libraries.
 category: Frontend Specialists
 complexity: Medium
-triggers:
-- react
-- react 18
-- hooks
-- next.js
-- redux
-- zustand
-- react performance
-- server components
-- suspense
-- react testing library
-version: 1.0.0
-tags:
-- specialists
-- domain-expert
-author: ruv
+triggers: ["react", "react 18", "hooks", "next.js", "redux", "zustand", "react performance", "server components", "suspense", "react testing library"]
 ---
 
 # React Specialist
-
-
-## When to Use This Skill
-
-- **React/Vue/Angular Development**: Building modern frontend applications
-- **Component Development**: Creating reusable UI components
-- **State Management**: Implementing Redux, Zustand, Pinia, or other state solutions
-- **Performance Optimization**: Improving render performance or bundle size
-- **Accessibility**: Implementing WCAG-compliant interfaces
-- **Responsive Design**: Building mobile-first or adaptive layouts
-
-## When NOT to Use This Skill
-
-- **Backend APIs**: Server-side logic or database operations
-- **Static Sites**: Simple HTML/CSS without framework complexity
-- **Native Mobile**: React Native, Flutter, Swift, Kotlin (use mobile specialist)
-- **Design Work**: Visual design or UI/UX research (use designer)
-
-## Success Criteria
-
-- [ ] Components render correctly across browsers (Chrome, Firefox, Safari, Edge)
-- [ ] Responsive design works on mobile, tablet, desktop
-- [ ] Accessibility score >90 (axe-core, Lighthouse)
-- [ ] Performance budget met (FCP <2s, LCP <2.5s, CLS <0.1)
-- [ ] Unit tests passing for components
-- [ ] E2E tests passing for user flows
-- [ ] TypeScript types accurate with no any types
-- [ ] Bundle size within limits
-
-## Edge Cases to Handle
-
-- **Hydration Mismatches**: SSR/SSG content differing from client render
-- **Browser Differences**: Vendor prefixes, polyfills, or feature detection
-- **Offline Support**: Service workers or offline-first functionality
-- **Memory Leaks**: Event listeners, subscriptions, or timers not cleaned up
-- **Large Lists**: Virtualization for rendering 1000+ items
-- **Form Validation**: Complex multi-step forms with async validation
-
-## Guardrails
-
-- **NEVER** mutate state directly (use immutable updates)
-- **ALWAYS** clean up effects (removeEventListener, unsubscribe)
-- **NEVER** store sensitive data in localStorage
-- **ALWAYS** sanitize user input before rendering (prevent XSS)
-- **NEVER** skip key prop on list items
-- **ALWAYS** use semantic HTML and ARIA labels
-- **NEVER** block main thread with heavy computation (use Web Workers)
-
-## Evidence-Based Validation
-
-- [ ] Lighthouse audit score >90 in all categories
-- [ ] React DevTools Profiler shows no unnecessary re-renders
-- [ ] Bundle analyzer shows no duplicate dependencies
-- [ ] axe-core accessibility scan passes
-- [ ] Visual regression tests pass (Percy, Chromatic)
-- [ ] Cross-browser testing (BrowserStack, Playwright)
-- [ ] Console shows no errors or warnings
 
 Expert React development for modern, performant, and maintainable frontend applications.
 
@@ -612,3 +536,50 @@ function DataFetcher<T>({ url, children }: DataFetcherProps<T>) {
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
 **Maintained By**: react-specialist agent
+
+## Core Principles
+
+### 1. Server Components First - Optimize by Default
+React Server Components (RSC) in Next.js 13+ enable zero-JavaScript rendering for non-interactive parts, dramatically improving performance.
+
+**In practice**:
+- Default to Server Components (async functions, direct data fetching)
+- Use 'use client' directive only when state, effects, or event handlers are needed
+- Fetch data on the server to reduce client bundle size and improve SEO
+- Example: Product listing page fetches data server-side (no JS sent), only filter UI is client component
+
+### 2. Memoization for Performance - Prevent Unnecessary Work
+React re-renders components when props or state change. Memoization prevents expensive computations and renders when inputs haven't changed.
+
+**In practice**:
+- Use useMemo for expensive calculations (sorting, filtering large arrays)
+- Use useCallback to stabilize function references passed to child components
+- Use React.memo to prevent child re-renders when props are identical
+- Example: useMemo prevents re-sorting 10,000 items on every parent state change, only when data actually changes
+
+### 3. Accessibility by Default - Build for Everyone
+Accessibility is not optional. Semantic HTML, ARIA labels, and keyboard navigation ensure applications work for all users.
+
+**In practice**:
+- Use semantic HTML (button, nav, main) instead of divs for interactive elements
+- Add ARIA labels for screen readers (aria-label, aria-describedby)
+- Support keyboard navigation (Enter, Escape, Tab, Arrow keys)
+- Example: Modal dialog uses role="dialog", traps focus, and closes on Escape key
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|-------------|---------|----------|
+| **'use client' Everywhere** | Marking all components as client components sends unnecessary JavaScript to browser, slowing page loads | Keep Server Components by default, only use 'use client' for interactive parts (forms, buttons, state management) |
+| **Prop Drilling 5+ Levels** | Passing props through multiple intermediate components creates fragile code and makes refactoring difficult | Use React Context for global UI state (theme, user) or composition patterns to avoid intermediate components |
+| **Inline Functions in JSX** | Creating new function references on every render causes child components to re-render unnecessarily | Use useCallback to memoize callbacks, or define handlers outside render if they don't depend on state |
+| **useState for Server Data** | Using useState for API data misses built-in features like caching, revalidation, and error handling | Use TanStack Query (React Query) for server state, or Next.js fetch with revalidation for Server Components |
+| **Non-Semantic HTML** | Using div and span for interactive elements breaks accessibility (screen readers, keyboard navigation) | Use semantic HTML (button, a, nav, main) and add ARIA attributes where needed for complex widgets |
+
+## Conclusion
+
+Modern React development prioritizes performance, type safety, and developer experience through Server Components, strict TypeScript, and comprehensive testing. The shift to Next.js App Router with React Server Components represents a fundamental change in how React applications are architected, moving computation to the server where possible and sending minimal JavaScript to clients.
+
+Performance optimization in React is achieved through strategic memoization, code splitting, and lazy loading. React.memo prevents unnecessary child re-renders, useMemo caches expensive computations, and useCallback stabilizes function references. Combined with React Suspense for loading states and Server Components for data fetching, modern React applications achieve Lighthouse scores above 90 while maintaining complex interactivity.
+
+Type safety through TypeScript strict mode catches errors at compile time rather than runtime. Proper typing of props, hooks, and API responses provides confidence during refactoring and enables powerful IDE features like autocomplete and inline documentation. Combined with Zod or Pydantic for runtime validation, TypeScript ensures data flowing through React applications matches expected shapes. Testing with React Testing Library focuses on user behavior rather than implementation details, creating maintainable test suites that survive refactoring. This comprehensive approach to React development produces applications that are fast, accessible, type-safe, and maintainable.

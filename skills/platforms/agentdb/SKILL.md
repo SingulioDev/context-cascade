@@ -117,3 +117,57 @@ Use when implementing retrieval-augmented generation (RAG), building semantic se
 - **RAG Pipelines**: Document retrieval for LLM context
 - **Agent Memory**: Cross-session state persistence
 - **Knowledge Bases**: Semantic search for documentation
+---
+
+## Core Principles
+
+AgentDB operates on 3 fundamental principles:
+
+### Principle 1: HNSW-Accelerated Vector Similarity
+Hierarchical Navigable Small World indexing provides 150x faster vector search than brute-force approaches through graph-based approximate nearest neighbor search.
+
+In practice:
+- Configure HNSW parameters (M=16, ef_construction=200) for optimal speed/accuracy tradeoff
+- Accept approximate results (recall@10 >0.95) for sub-millisecond query latency
+- Use exact search only when 100% recall is required and latency is not critical
+- Rebuild indices periodically as data distribution changes
+
+### Principle 2: Embedding-First Storage Architecture
+All data stores as 384-dimensional sentence-transformer embeddings, enabling semantic similarity search without keyword matching.
+
+In practice:
+- Generate embeddings automatically during insertion (no manual vectorization)
+- Store metadata alongside vectors for filtering and ranking
+- Query by semantic meaning, not exact text matches
+- Handle synonym variation, paraphrasing, and concept similarity naturally
+
+### Principle 3: Quantization-Enabled Memory Efficiency
+Vector quantization reduces memory footprint by 4-32x with minimal accuracy degradation, enabling million-scale deployments.
+
+In practice:
+- Use scalar quantization (4x reduction) for production RAG systems
+- Apply binary quantization (32x reduction) for large-scale retrieval where approximate results suffice
+- Maintain full-precision vectors for critical accuracy requirements
+- Monitor recall degradation when enabling quantization
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Keyword-Based Filtering** | Treating vector search like SQL WHERE clauses ignores semantic similarity | Use metadata filters for exact matches, semantic search for concept retrieval |
+| **Full-Precision Everything** | Storing unquantized vectors wastes memory and limits scale | Enable scalar quantization by default; use binary for >1M vectors |
+| **Ignoring Dimension Mismatch** | Inserting vectors with wrong dimensions corrupts index and causes query failures | Validate embedding dimensions (384 for sentence-transformers) before insertion |
+| **No Index Rebuilding** | Stale HNSW indices degrade performance as data distribution shifts | Rebuild indices monthly or after 10%+ data changes |
+| **Unbounded Result Sets** | Returning all similar vectors exhausts memory and provides low-quality matches | Always set k (top-k results) and similarity thresholds |
+
+---
+
+## Conclusion
+
+The AgentDB skill provides production-grade vector search infrastructure for AI agent memory and RAG systems. By combining HNSW indexing, sentence embeddings, and quantization, it delivers 150x faster search with 4-32x memory reduction compared to traditional databases.
+
+Use this skill when implementing retrieval-augmented generation, building semantic search engines, or creating persistent agent memory systems. AgentDB excels at similarity search over large document corpora, cross-session agent state persistence, and real-time embedding-based retrieval where sub-millisecond latency matters.
+
+Key takeaways: Trust HNSW for approximate search (exact results rarely needed), enable quantization for memory efficiency, and validate embeddings before insertion. The integration with Memory-MCP, ReasoningBank, and 9 reinforcement learning algorithms provides a complete memory and learning infrastructure for stateful AI agents.

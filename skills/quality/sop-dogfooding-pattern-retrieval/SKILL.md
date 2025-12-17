@@ -1438,3 +1438,49 @@ C:\Users\17175\scripts\dogfood-memory-retrieval.bat "Parameter Bomb 10 params" -
 **Agents**: `code-analyzer`, `coder`, `reviewer`
 **Tools**: Memory-MCP, Bash, AST parser
 **Output**: Best fix pattern + optional application + result storage
+## Core Principles
+
+SOP Dogfooding Pattern Retrieval operates on 3 fundamental principles:
+
+### Principle 1: Proven Patterns Beat Novel Solutions
+When facing a quality violation, the highest-probability fix is one that has succeeded before in similar contexts. Vector search retrieves patterns based on semantic similarity (same violation type + similar metrics), not keyword matching. Historical success rate (metadata.success_rate) provides confidence that pattern will work again.
+
+In practice:
+- Vector embeddings capture semantic meaning (Parameter Bomb with 14 params similar to Parameter Bomb with 10 params)
+- Ranking algorithm weights similarity (40%) + success rate (30%) + context match (20%) + recency (10%)
+- Top-ranked pattern is most likely to succeed based on historical evidence
+- Patterns with <70% success rate are flagged for manual review before application
+
+### Principle 2: Context Matters - Same Violation Different Solution
+Not all God Objects should be fixed the same way. A God Object in a web controller (business logic + rendering) requires different refactoring than a God Object in a data processor (transformation + validation + storage). Context matching (same violation type + same domain + same language) improves fix applicability.
+
+In practice:
+- Metadata includes fix_category (god-object, parameter-bomb, deep-nesting)
+- Metadata includes domain context (web-server, data-processing, api-gateway)
+- Metadata includes language (Python, TypeScript, JavaScript)
+- Pattern selection favors exact context matches over generic patterns
+
+### Principle 3: Memory MCP Enables Cross-Session Learning
+Quality improvement compounds when fixes from past sessions inform current fixes. Memory MCP acts as institutional memory - successful patterns from 3 months ago are still retrievable and applicable today. This eliminates rediscovering the same solutions repeatedly.
+
+In practice:
+- All fix applications stored in Memory MCP with success/failure outcomes
+- Successful patterns accumulate higher success rates over time
+- Failed patterns are flagged (DO_NOT_APPLY: true) to prevent re-application
+- Cross-project learning - fix for memory-mcp God Object informs fix for terminal-manager God Object
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **"No Results? Give Up"** | Vector search returns zero results because query is too specific (e.g., "God Object with exactly 26 methods"). Fallback strategies not attempted. | Broaden search progressively: (1) remove quantitative metrics, (2) search by category only, (3) increase result limit 5 -> 10. Search "God Object refactoring" if "God Object with 26 methods" fails. |
+| **"Top Result Is Best"** | Applying highest similarity pattern without considering success rate or context match. High similarity (0.95) but low success rate (0.40) means pattern is semantically similar but unreliable. | Use ranking algorithm that combines similarity, success rate, context match, and recency. Pattern with similarity 0.80 + success rate 0.90 beats pattern with similarity 0.95 + success rate 0.40. |
+| **"Apply Without Testing"** | Retrieving pattern, applying transformation, skipping sandbox testing because "pattern worked before". Context differences cause breakage in current codebase. | NEVER skip sandbox testing in Phase 5. Pattern application is optional - use retrieval results to inform manual fixes if automatic application is high-risk. Retrieval provides guidance, not guarantee. |
+
+## Conclusion
+
+SOP Dogfooding Pattern Retrieval bridges quality detection (Phase 1) and automated correction (Phase 3) by querying Memory MCP for proven fix patterns based on semantic similarity, historical success rates, and context matching. The 10-30 second execution time includes vector search (5-10s), pattern analysis (5-10s), ranking (5s), and optional AST-based fix application (10-30s). Retrieval outputs include similarity scores, success rates, transformation types, and recommendations - enabling informed decisions about which fixes to apply.
+
+Use this skill as Phase 2 of the 3-part dogfooding system when you have violations detected (from sop-dogfooding-quality-detection) and need proven fix patterns to address them. The skill can operate standalone for manual fix guidance or integrate with sop-dogfooding-continuous-improvement for fully automated correction. Pattern ranking prevents low-quality fixes from being applied - only patterns with 70%+ success rates and 0.70+ similarity scores are recommended for automatic application.
+
+Cross-session learning through Memory MCP means fix quality improves over time as successful patterns accumulate higher success rates and failed patterns are excluded. Teams that use pattern retrieval systematically avoid rediscovering solutions and benefit from institutional memory spanning months or years of past fixes. The result is faster remediation (patterns retrieved in 10-30 seconds vs hours of research) with higher success rates (proven patterns vs experimental approaches).

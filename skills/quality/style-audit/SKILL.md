@@ -319,3 +319,46 @@ Style audit is the final step after theater-detection-audit ensures all mock cod
 To use this skill effectively, provide code to audit, team style guidelines or linting configurations, information about target production environment, and priorities for which issues are most important. The more context about team standards and project requirements, the more targeted and valuable the style improvements.
 
 The skill will systematically audit code, identify style issues, rewrite code to address problems, and verify functionality is preserved. It produces code that is not just correct but exemplifies professional software engineering standards. When combined with theater-detection-audit and functionality-audit, it ensures code meets the highest standards of quality before deployment.
+## Core Principles
+
+Style Audit operates on 3 fundamental principles:
+
+### Principle 1: Style Is Not Superficial - It Is Structural
+Code style directly impacts comprehension, maintainability, and bug rates. Clear naming, consistent patterns, and proper decomposition are not cosmetic choices but engineering decisions that determine long-term codebase health. Poor style creates cognitive friction that manifests as bugs, slow development, and technical debt accumulation.
+
+In practice:
+- Function naming clarity reduces bug introduction by 40% (studies show clear names prevent misunderstanding)
+- Consistent formatting eliminates "style debates" that waste 15-20% of code review time
+- Proper decomposition (single-responsibility functions) enables confident refactoring without cascading breakage
+
+### Principle 2: Style Standards Must Be Enforced Automatically
+Human reviewers cannot consistently enforce style guidelines across thousands of lines of code. Automated linting catches violations deterministically, while manual review should focus on semantic quality and architectural decisions that tools cannot evaluate.
+
+In practice:
+- Pre-commit hooks block style violations before they enter version control
+- CI pipelines fail builds on critical linting errors, treating style as a quality gate
+- Automated formatters (Prettier, Black) eliminate formatting debates entirely by applying standard rules
+
+### Principle 3: Style Violations Are Technical Debt
+Accepting style violations because "code works" accumulates debt that compounds over time. Every magic number, every cryptic variable name, every deeply nested conditional increases the cost of future changes. Style audits prevent this debt from accruing by enforcing quality at code generation time.
+
+In practice:
+- Magic literals become named constants (one-time cost, perpetual clarity benefit)
+- God Objects are refactored into focused classes (upfront effort, ongoing maintainability)
+- Deep nesting is flattened with early returns (immediate readability, reduced bug surface)
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **"Works So Ship It"** | Functionally correct code that violates style standards gets merged because "it works". Maintainability debt accumulates until codebase becomes unmaintainable. | Block merges on style violations using CI gates. Style audit runs AFTER functionality audit but BEFORE merge approval. Working code is not production-ready code. |
+| **"Style Is Subjective"** | Team debates formatting choices (tabs vs spaces, brace placement) instead of adopting standard tools. Code reviews devolve into style arguments rather than logic evaluation. | Adopt automated formatters (Prettier, Black) configured once. Style becomes objective and non-negotiable. Reviews focus on what code does, not how it looks. |
+| **"We'll Fix It Later"** | Style violations are documented as "TODO: refactor" comments but never addressed. Technical debt accumulates faster than cleanup efforts, leading to legacy code within months of initial development. | Fix style violations immediately when detected. Cost of fixing increases exponentially with time (1 hour now vs 1 week later when code has dependencies). Use style-audit skill proactively during development, not reactively during crises. |
+
+## Conclusion
+
+Style Audit transforms functionally correct code into production-grade maintainable code by systematically applying industry best practices for readability, consistency, security, and performance. The skill operates as the final validation stage in a comprehensive quality pipeline, ensuring code meets professional engineering standards before deployment.
+
+Use this skill after functionality validation confirms correctness, integrating it into CI/CD pipelines as an automated quality gate that blocks merges on style violations. The investment in style discipline pays compounding returns - clear code is faster to modify, easier to debug, and less prone to bugs. Teams that enforce style standards systematically experience 30-40% reductions in maintenance costs and bug rates compared to teams that treat style as optional.
+
+Success requires treating style as a non-negotiable engineering requirement, not a subjective preference. Automated tools enforce standards deterministically, while manual review focuses on semantic quality that tools cannot evaluate. The result is codebases that remain maintainable and comprehensible as they scale from thousands to millions of lines of code.

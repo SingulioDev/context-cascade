@@ -304,3 +304,57 @@ EOF
 4. **Continuous Monitoring**: Real-time logs
 5. **Documentation**: Keep updated
 
+
+---
+
+## Core Principles
+
+### 1. Default Deny, Explicit Allow
+Network security begins with blocking all traffic by default, then explicitly allowing only necessary communications.
+
+**In practice:**
+- Firewall rules start with DROP policies for INPUT, OUTPUT, and FORWARD chains
+- Trusted domains are enumerated in whitelists, not inferred from patterns
+- Every allowed domain requires documented justification for why it is trusted
+- Periodic review removes domains no longer required (domain allowlists grow stale)
+
+### 2. Network Segmentation Limits Blast Radius
+Isolating network traffic by function prevents lateral movement when perimeters are breached.
+
+**In practice:**
+- Sandbox networks cannot access internal corporate networks (separate VLANs or namespaces)
+- Development sandboxes isolated from production environments
+- Outbound connections restricted to specific external services (APIs, package registries)
+- Inbound connections limited to localhost and explicitly approved sources
+
+### 3. Trust but Verify Through Continuous Validation
+Network policies degrade as environments change. Continuous testing ensures controls remain effective.
+
+**In practice:**
+- Automated tests verify approved domains remain accessible (npm install, git clone succeed)
+- Negative tests confirm blocked domains are actually blocked (curl to untrusted sites fails)
+- Proxy validation tests confirm traffic routes correctly through corporate infrastructure
+- Penetration testing attempts data exfiltration to verify isolation holds under adversarial conditions
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Wildcard domain patterns without justification** (*.com, *.cloudfront.net) | Massively expands attack surface. *.com allows millions of domains. CDN wildcards trust all customers of that CDN. | Use specific domain lists. Wildcard only subdomains you control (*.mycompany.com). Document justification for every wildcard. |
+| **Storing proxy credentials in config files** (http_proxy=http://user:password@proxy) | Credentials in plaintext expose proxy authentication to anyone reading config files or environment variables. | Use credential helpers, Kerberos/NTLM authentication, or secret management systems. Never plaintext passwords. |
+| **Skipping negative testing** (only testing that npm install works) | Confirms allowlist but not blocklist. Attackers exploit what you did not test - blocked domains might be accessible. | Always test that untrusted domains are blocked. Attempt connections to random domains, verify they fail. |
+| **Allowing localhost bypass** (localhost can access all domains) | Attackers tunnel traffic through localhost to bypass network restrictions. Localhost becomes universal proxy. | Enforce network policies on localhost traffic. No special exemptions for local connections. |
+| **DNS resolution without validation** (trusting DNS responses implicitly) | DNS poisoning redirects trusted domains to attacker-controlled IPs. Sandbox connects to malicious servers thinking they are legitimate. | Use DNSSEC where available, validate certificate chains (HTTPS only), implement DNS filtering, monitor DNS responses for anomalies. |
+| **One-time configuration without monitoring** (deploy policies and forget) | Network policies drift as requirements change. Approved domains become compromised. Configuration errors go undetected. | Continuous monitoring of network connections, periodic policy reviews, alerts on policy violations, audit trails of all changes. |
+
+---
+
+## Conclusion
+
+Network security for sandbox environments requires balancing isolation with functionality. The challenge is creating boundaries restrictive enough to prevent data exfiltration and malicious communications while permissive enough to allow legitimate development workflows. The whitelist approach outlined in this skill provides a systematic method for defining trusted domains, implementing access controls, and validating policies through comprehensive testing.
+
+The five-phase workflow (audit requirements, design policies, implement isolation, test controls, document configuration) ensures that network security is designed intentionally rather than configured reactively. Understanding what network access is actually required before defining policies prevents both over-restriction (breaking legitimate workflows) and under-restriction (leaving attack vectors open). Validation through positive and negative testing proves that policies work as intended.
+
+Network security is never complete. Attack techniques evolve, trusted domains become compromised, and system requirements change. The monitoring and maintenance practices outlined in this skill create continuous validation that network policies remain effective over time. Security is not a deployment milestone but an operational discipline requiring ongoing attention, periodic reviews, and rapid response to emerging threats. Treat network security as a living system that adapts to changing conditions while maintaining core isolation principles.

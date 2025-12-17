@@ -774,3 +774,59 @@ Upon successful completion, this skill outputs:
 4. **next-steps.md**: Recommended workflow to execute
 
 The skill is complete when user confirmation is obtained and confidence > 0.8.
+---
+
+## Core Principles
+
+### 1. First Principles Decomposition Over Surface Interpretation
+Break requests into fundamental components to uncover true intent, not just stated requirements.
+
+**In practice**:
+- Extract action verbs, subjects, constraints, and desired outcomes from user input
+- Build component trees showing primary, secondary, and implicit requirements
+- Map dependencies between components to understand execution order
+- Surface implicit assumptions that users may not articulate
+- Apply cognitive science principles: probabilistic intent mapping, volition extrapolation
+
+### 2. Socratic Clarification for Ambiguity Resolution
+Ask targeted questions to narrow interpretation space instead of guessing user intent.
+
+**In practice**:
+- Generate 3+ interpretation candidates with probability scores
+- Identify high-impact ambiguities (affect primary metric or risk assessment)
+- Prioritize questions by impact and interpretation likelihood
+- Limit to 3 questions maximum to avoid overwhelming user
+- Update probabilities using Bayesian reasoning when user responds
+
+### 3. Confidence Thresholds Trigger Clarification
+Only proceed with execution when interpretation confidence exceeds 80%, otherwise clarify.
+
+**In practice**:
+- Calculate confidence score for top interpretation using evidence and context
+- If confidence < 0.8, generate clarifying questions before proceeding
+- If confidence > 0.85, prepare execution brief immediately
+- Track clarification rounds: if still < 0.7 after 2 rounds, request concrete examples
+- Present confidence score to user for transparency
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Surface-Level Parsing** | Taking user requests literally without deeper analysis misses implicit requirements and leads to incomplete solutions | Apply first principles decomposition. Build component trees. Surface implicit constraints. Use probabilistic intent mapping to generate multiple interpretations. |
+| **Assumption Without Validation** | Proceeding with low-confidence interpretation because clarification feels like overhead results in rework when assumptions are wrong | Set 80% confidence threshold. Generate clarifying questions when below threshold. Present multiple interpretations and ask user to select. Track confidence scores. |
+| **Question Overload** | Bombarding users with 10+ clarification questions causes fatigue and disengagement | Limit to 3 questions maximum. Prioritize by impact and probability. Use multiple-choice when possible. Ask open-ended only for novel situations. |
+| **Ignoring Context Clues** | Treating each request in isolation without leveraging environment, history, or project type wastes available information | Analyze file system, recent edits, project type, user expertise level. Use context clues to boost or reduce interpretation probabilities. Apply Bayesian updates. |
+| **Single Interpretation Bias** | Generating only one interpretation and confirming it creates confirmation bias and misses alternatives | Generate at least 3 interpretations with probabilities. Rank by confidence. Present top 2 if they are close (>0.3 probability). Ask user to choose between alternatives. |
+| **No Learning from Feedback** | Discarding user clarifications after task completion prevents improving future intent analysis | Store clarifications in memory with intent analysis results. Build pattern library of common ambiguities and resolutions. Use for semantic caching on similar future requests. |
+
+---
+
+## Conclusion
+
+Intent analysis is the foundation of effective AI assistance. By applying first principles decomposition, Socratic clarification, and confidence thresholds, the intent analyzer transforms vague requests into precise execution briefs. This upfront investment in understanding prevents costly rework downstream.
+
+The skill's power lies in its structured approach: decompose into components, generate multiple interpretations with probabilities, ask targeted questions to narrow possibilities, and synthesize a confident understanding. When confidence is high, execution proceeds immediately. When confidence is low, clarification is mandatory - not optional.
+
+Remember: ambiguity is not the user's fault - it is the AI's responsibility to resolve. Every vague request is an opportunity to demonstrate intelligence through thoughtful questioning. The goal is not to execute fastest, but to execute correctly. Invest 5 minutes in intent analysis to save hours of rework. When you understand what the user truly needs, not just what they said, you deliver solutions that exceed expectations.

@@ -1,62 +1,9 @@
 ---
-
-## CRITICAL: DEPLOYMENT SAFETY GUARDRAILS
-
-**BEFORE any deployment, validate**:
-- [ ] All tests passing (unit, integration, E2E, load)
-- [ ] Security scan completed (SAST, DAST, dependency audit)
-- [ ] Infrastructure capacity verified (CPU, memory, disk, network)
-- [ ] Database migrations tested on production-like data volume
-- [ ] Rollback procedure documented with time estimates
-
-**NEVER**:
-- Deploy without comprehensive monitoring (metrics, logs, traces)
-- Skip load testing for high-traffic services
-- Deploy breaking changes without backward compatibility
-- Ignore security vulnerabilities in production dependencies
-- Deploy without incident response plan
-
-**ALWAYS**:
-- Validate deployment checklist before proceeding
-- Use feature flags for risky changes (gradual rollout)
-- Monitor error rates, latency p99, and saturation metrics
-- Document deployment in runbook with troubleshooting steps
-- Retain deployment artifacts for forensic analysis
-
-**Evidence-Based Techniques for Deployment**:
-- **Chain-of-Thought**: Trace deployment flow (code -> artifact -> registry -> cluster -> pods)
-- **Program-of-Thought**: Model deployment as state machine (pre-deploy -> deploy -> post-deploy -> verify)
-- **Reflection**: After deployment, analyze what worked vs assumptions
-- **Retrieval-Augmented**: Query past incidents for similar deployment patterns
-
 name: aws-specialist
-description: AWS cloud specialist for infrastructure as code with CloudFormation/CDK,
-  serverless with Lambda, container orchestration with ECS/Fargate, database management
-  with RDS, storage with S3/CloudFront CDN, and deployment automation. Use when deploying
-  to AWS, optimizing cloud costs, implementing auto-scaling, or requiring AWS-specific
-  best practices. Handles IAM policies, VPC networking, monitoring with CloudWatch,
-  and multi-region deployments.
+description: AWS cloud specialist for infrastructure as code with CloudFormation/CDK, serverless with Lambda, container orchestration with ECS/Fargate, database management with RDS, storage with S3/CloudFront CDN, and deployment automation. Use when deploying to AWS, optimizing cloud costs, implementing auto-scaling, or requiring AWS-specific best practices. Handles IAM policies, VPC networking, monitoring with CloudWatch, and multi-region deployments.
 category: Cloud Platforms
 complexity: High
-triggers:
-- aws
-- cloudformation
-- lambda
-- ecs
-- fargate
-- rds
-- s3
-- cloudfront
-- aws deployment
-- aws cdk
-- cloudwatch
-- auto-scaling
-version: 1.0.0
-tags:
-- operations
-- deployment
-- infrastructure
-author: ruv
+triggers: ["aws", "cloudformation", "lambda", "ecs", "fargate", "rds", "s3", "cloudfront", "aws deployment", "aws cdk", "cloudwatch", "auto-scaling"]
 ---
 
 # AWS Specialist
@@ -349,3 +296,53 @@ scaling.scaleOnCpuUtilization('CpuScaling', {
 
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
+
+## Core Principles
+
+AWS Specialist operates on 3 fundamental principles:
+
+### Principle 1: Infrastructure as Code - Version Control for Cloud Resources
+
+Manual AWS console configuration creates snowflake environments that cannot be reproduced, audited, or rolled back. Infrastructure as Code (IaC) with CDK/CloudFormation treats infrastructure as software - versioned in Git, peer-reviewed through PRs, and deployed through CI/CD pipelines with automated testing and rollback capabilities.
+
+In practice:
+- Define all AWS resources in CDK TypeScript code (Lambda, RDS, VPC, IAM policies) and store in version control
+- Use CDK stacks to organize resources by lifecycle (network stack deployed once, application stack updated weekly)
+- Implement drift detection to identify manual console changes that violate IaC - automatically revert or alert
+- Deploy through CI/CD pipelines with staging environments for validation before production changes
+
+### Principle 2: Least Privilege IAM - Grant Minimum Permissions Required for Task
+
+Overly permissive IAM policies (Action: *, Resource: *) create massive security blast radius - compromised credentials can delete entire AWS accounts. Least privilege IAM grants only the specific actions and resources required for each service, limiting damage from breaches to isolated components.
+
+In practice:
+- Define IAM policies with explicit resource ARNs (arn:aws:dynamodb:us-east-1:123456789012:table/Users) instead of wildcards
+- Use IAM policy conditions to restrict access by IP range, MFA requirement, or time windows
+- Grant Lambda functions only the specific DynamoDB actions needed (GetItem, PutItem) on specific tables, never dynamodb:*
+- Review IAM policies quarterly using Access Analyzer to identify unused permissions and remove them
+
+### Principle 3: Cost Optimization Through Right-Sizing and Spot Instances
+
+Default AWS configurations prioritize convenience over cost - on-demand instances, over-provisioned RDS, S3 standard storage. Production-grade architectures optimize costs through reserved instances (60% savings), spot instances for fault-tolerant workloads (70% savings), and intelligent storage tiering (S3 Intelligent-Tiering automatically moves cold data to cheaper tiers).
+
+In practice:
+- Use RDS reserved instances for production databases with predictable load (1-year commitment = 40% savings)
+- Deploy non-critical batch jobs on Spot instances with interruption handling (spot price = 70% cheaper than on-demand)
+- Enable S3 Intelligent-Tiering for data lakes and backups to automatically move cold data to Glacier (80% storage cost reduction)
+- Set CloudWatch billing alarms at 50%, 75%, 90% of monthly budget to prevent surprise overages
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Console Cowboy - Manual AWS Console Configuration** | Clicking through AWS console to create resources is fast initially but creates undocumented, unreproducible infrastructure. When production breaks, no one knows how it was configured. Console changes bypass code review and introduce drift. | Define 100% of infrastructure in CDK/CloudFormation code. Enforce through AWS Config rules that alert on manually created resources. Use AWS Service Catalog to provide approved templates for common patterns. Implement drift detection that automatically reverts manual changes. |
+| **Secrets in Environment Variables - Hardcode API Keys in Lambda Configuration** | Storing secrets in Lambda environment variables exposes them in CloudFormation templates, console UI, and CloudTrail logs. Anyone with Lambda read permissions can extract production API keys and database credentials. | Use AWS Secrets Manager for all credentials (RDS passwords, API keys, OAuth tokens). Grant Lambda IAM permission to retrieve specific secrets at runtime. Enable automatic rotation for RDS passwords (30-day rotation). Secrets Manager encrypts with KMS and provides audit trail. |
+| **Single-AZ Database - RDS in One Availability Zone** | Single-AZ RDS means entire application goes down during AZ failures (happens quarterly in AWS), maintenance windows (weekly), and failover testing. RPO = hours of data loss if AZ fails before latest snapshot. | Enable Multi-AZ for production RDS (automatic failover in 1-2 minutes, synchronous replication = zero data loss). Use Aurora for mission-critical workloads (6 replicas across 3 AZs, <30 second failover). Test failover quarterly to validate runbooks. |
+
+## Conclusion
+
+AWS Specialist provides comprehensive expertise for deploying production-grade applications on AWS through Infrastructure as Code with CDK/CloudFormation, security-hardened IAM policies, and cost-optimized architectures. The skill covers the full AWS service portfolio - serverless with Lambda, containers with ECS/Fargate, databases with RDS/DynamoDB, storage with S3/CloudFront, networking with VPC, and deployment automation with CodePipeline. By implementing the 3 core principles (IaC, least privilege IAM, cost optimization), you build AWS architectures that are reproducible, secure, scalable, and cost-effective.
+
+This skill is essential when migrating applications to AWS, implementing modern cloud-native architectures, or optimizing existing AWS deployments for security and cost. The CDK-first approach enables defining infrastructure in TypeScript with full IDE support (autocomplete, type checking) while automatically generating CloudFormation templates for deployment. This combines the expressiveness of programming languages with the safety of declarative infrastructure. The comprehensive examples for Lambda + API Gateway, ECS Fargate, RDS with automated backups, and S3 + CloudFront CDN provide production-ready templates for common architectural patterns.
+
+The key differentiator is security-by-default through least privilege IAM and Secrets Manager integration. Rather than treating security as an afterthought, the skill embeds IAM best practices into every workflow - explicit resource ARNs, minimal permission sets, MFA requirements, and automatic credential rotation. Combined with cost optimization through reserved instances, spot instances, and intelligent storage tiering, you achieve AWS architectures that are simultaneously secure, scalable, and cost-efficient - the trifecta required for sustainable production operations.

@@ -790,3 +790,52 @@ Verification commands return standard exit codes:
 - Verification Criteria: See `/docs/verification-criteria.md`
 - Integration Examples: See `/examples/verification/`
 - API Reference: See `/docs/api/verification.md`
+## Core Principles
+
+Verification and Quality Assurance operates on 3 fundamental principles:
+
+### Principle 1: Quantified Quality Through Truth Scoring
+Quality is measurable through statistical reliability metrics that provide objective assessment of code correctness and agent performance.
+
+In practice:
+- Truth scores (0.0-1.0 scale) quantify code quality, agent reliability, and task completion accuracy
+- Multiple verification perspectives (static analysis, dynamic testing, security scanning) contribute to composite scores
+- Statistical confidence intervals indicate reliability of measurements rather than single-point estimates
+- Trend analysis tracks quality improvement or degradation over time, not just current state
+
+### Principle 2: Automated Quality Gates with Instant Rollback
+Quality thresholds should be enforced automatically with immediate reversion of changes that fail verification rather than allowing bad code to persist.
+
+In practice:
+- Default 0.95 truth score threshold blocks merges of code below quality standards
+- Git-based rollback (<1 second) instantly reverts failed changes to last known good state
+- Selective rollback preserves good changes while reverting only failed files
+- Pre-commit hooks prevent low-quality code from entering version control
+
+### Principle 3: Continuous Quality Monitoring with Real-Time Feedback
+Quality verification is not a one-time gate but a continuous process providing real-time feedback during development.
+
+In practice:
+- Watch mode monitors directories for changes and runs verification automatically
+- Live dashboards display truth scores, verification status, and quality trends with WebSocket updates
+- Integration with CI/CD pipelines ensures every commit undergoes comprehensive verification
+- Export capabilities send metrics to external monitoring systems for alerting and long-term trend analysis
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Manual-Only Verification** | Relying on developers to remember to run verification checks before committing | Install pre-commit hooks that automatically verify changes; integrate verification into CI/CD pipeline |
+| **Ignoring Low Scores** | Seeing truth scores below threshold but merging anyway due to deadlines or "it looks fine" | Enforce quality gates strictly; use automatic rollback for failed verification; track exceptions with explicit justification |
+| **One-Dimensional Quality Metrics** | Focusing only on test coverage or only on linting while ignoring security, performance, or documentation | Use comprehensive verification criteria covering correctness, security, performance, best practices, and documentation |
+| **Late-Stage Verification** | Running verification only at PR submission, creating merge delays and context loss | Enable watch mode during development for immediate feedback; run verification continuously, not just at checkpoints |
+| **Ignoring Quality Trends** | Focusing only on current scores without noticing gradual quality degradation | Track trends over time; set alerts for declining quality metrics; review quality reports regularly |
+| **Overly Lenient Thresholds** | Setting thresholds too low (e.g., 0.75) allowing low-quality code to pass | Use strict thresholds (0.95-0.99) for production code; adjust thresholds based on criticality and risk tolerance |
+
+## Conclusion
+
+Verification and Quality Assurance with truth scoring and automatic rollback transforms code quality from a subjective judgment into an objective, measurable, and enforceable standard. By quantifying quality through statistical reliability metrics and automatically blocking or reverting changes that fall below thresholds, this skill ensures that only high-quality code enters the codebase while providing developers with clear, actionable feedback for improvement.
+
+Use this skill as a continuous quality monitoring system throughout the development lifecycle, not just at release gates. The combination of truth scoring for quantified quality assessment, comprehensive verification checks across multiple dimensions, and instant rollback for failed changes creates a safety net that catches quality issues early while maintaining development velocity. The real-time feedback through watch mode and live dashboards enables developers to fix issues immediately rather than discovering them days later during code review.
+
+The integration with CI/CD pipelines, pre-commit hooks, and external monitoring systems means verification becomes an automatic part of the development workflow rather than a manual step that gets skipped under pressure. When combined with functionality-audit for execution verification, theater-detection for placeholder elimination, and code-review for human oversight, this skill completes a comprehensive quality ecosystem that delivers production-ready code with measurable confidence in its correctness, security, and reliability.

@@ -960,3 +960,44 @@ Recommendation: Keep global and local scales, consider removing medium scale to 
 - Not tested on extremely high-resolution images (>2048px)
 - Best performance with batch size ≥32
 ```
+## Core Principles
+
+Method Development operates on 3 fundamental principles:
+
+### Principle 1: Ablation-Driven Validation
+Every novel component must justify its inclusion through controlled ablation studies showing statistically significant performance impact (p < 0.05). This prevents architectural complexity without empirical benefit.
+
+In practice:
+- Minimum 5 component ablations isolate individual contributions
+- Effect sizes (Cohen's d >= 0.5) verify practical significance beyond statistical significance
+- Interaction effects tested through combinatorial ablations
+
+### Principle 2: Baseline Superiority with Statistical Rigor
+Novel methods must demonstrably outperform replicated baselines with proper statistical validation, multiple comparison corrections, and sufficient statistical power (1-beta >= 0.8).
+
+In practice:
+- Paired t-tests with Bonferroni correction for multiple metrics
+- 95% confidence intervals reported for all performance claims
+- Minimum 3 independent runs with different random seeds
+
+### Principle 3: Reproducibility by Design
+All method development includes deterministic implementation, comprehensive documentation, and validated reproducibility packages to enable independent verification and future research.
+
+In practice:
+- Docker containers with pinned dependencies for environment reproducibility
+- Deterministic mode with fixed seeds for algorithmic reproducibility
+- Method cards documenting architecture, training, and computational requirements
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Skipping Baseline Replication** | Comparing to reported baseline results without replication introduces confounds and prevents fair evaluation | Complete Quality Gate 1 baseline replication (±1% tolerance) before method development |
+| **Insufficient Ablations** | Testing <5 components or skipping combinatorial ablations fails to isolate contributions and identify synergies | Run minimum 5 individual ablations plus key combinations, apply Bonferroni correction |
+| **Cherry-Picking Results** | Reporting only best runs or metrics inflates apparent performance and harms reproducibility | Report all runs with median/mean appropriately, include full result distributions |
+
+## Conclusion
+
+Method Development provides a rigorous framework for developing and validating novel machine learning methods with academic-level experimental rigor. By enforcing ablation studies, statistical validation, and reproducibility standards, this skill ensures that novel methods represent genuine scientific contributions rather than engineering artifacts.
+
+Use this skill after baseline replication (Quality Gate 1) when proposing architectural innovations, developing new training algorithms, or conducting systematic experimental validation for publication. The 7-phase workflow (architecture design, implementation, ablation studies, optimization, evaluation, documentation, Gate 2 validation) ensures comprehensive development while the guardrails prevent common pitfalls like p-hacking, cherry-picking, and insufficient statistical power. The result is publication-ready research with validated claims and reproducible results.

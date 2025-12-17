@@ -498,3 +498,24 @@ await rb.optimize();
 **Category**: Machine Learning / Reinforcement Learning
 **Difficulty**: Intermediate
 **Estimated Time**: 20-30 minutes
+## Core Principles
+
+1. **Vector Semantic Retrieval Over Exact Matching**: ReasoningBank with AgentDB leverages 150x faster vector search (100us vs 15ms) through semantic embeddings, retrieving similar trajectories even when keywords differ, enabling agents to learn from experiences described differently but contextually identical.
+
+2. **Adaptive Memory Consolidation**: Memory distillation consolidates 100+ granular experiences (e.g., "fixed NPE in UserService", "added null check to AuthService") into higher-level patterns ("defensive null checks prevent pointer exceptions"), reducing memory footprint while preserving learned knowledge and avoiding pattern redundancy.
+
+3. **Confidence-Weighted Experience Replay**: Verdict judgment retrieves patterns filtered by confidence (>0.8) and success rate, prioritizing proven trajectories over experimental ones, preventing agents from repeating failed approaches while still allowing exploration of medium-confidence strategies (0.5-0.8) when explicitly needed.
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|--------------|--------------|------------------|
+| Storing raw text without embeddings | Pattern retrieval becomes keyword search, missing semantically similar experiences ("optimize query" vs "speed up database") | Always compute embeddings via computeEmbedding() before insertion, enabling semantic similarity matching |
+| Skipping memory distillation | 10,000+ micro-experiences (every bug fix stored separately) bloat database to >2GB, slowing retrieval to >500ms | Run automatic consolidation (optimizeMemory: true) or manual distillation after 100+ experiences in same domain |
+| Using trajectory outcomes without confidence scores | Agent treats single successful case (confidence 0.6) as proven pattern, repeating approaches that succeeded by luck | Only apply patterns with confidence >0.8 and usage_count >3, mark experimental patterns as "needs validation" |
+
+## Conclusion
+
+ReasoningBank with AgentDB transforms agent learning from ephemeral task execution to persistent experience accumulation, enabling agents to judge new trajectories against historical patterns (verdict judgment), consolidate granular learnings into reusable strategies (memory distillation), and retrieve contextually relevant experiences through 150x faster vector search. This creates a flywheel effect - each task improves the pattern library, making future similar tasks faster and more accurate.
+
+The key to production success is maintaining the 70% survival threshold for pattern updates: adversarial validation must challenge new learnings (e.g., "does this null check pattern apply to async contexts?") and only accept patterns that survive scrutiny. Without this rigor, confident drift accumulates - the agent becomes certain of incorrect patterns, degrading performance over time. When tracking learning delta, measure not just task completion rate, but pattern quality (success_rate / usage_count) - a high-quality ReasoningBank enables 10x faster task execution through proven trajectory reuse.

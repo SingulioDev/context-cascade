@@ -742,3 +742,55 @@ After completing this skill:
 - Task Decomposition Patterns
 - Multi-Agent Orchestration Theory
 - Distributed Systems Coordination
+## Core Principles
+
+### 1. Task Decomposition Drives Efficiency
+Breaking complex work into atomic, parallelizable units unlocks the full power of swarm coordination.
+
+**In practice:**
+- Decompose tasks to 3 levels maximum: High-level goals -> Component tasks -> Atomic tasks
+- Design atomic tasks to be independent with no shared state dependencies
+- Identify explicit dependencies early using dependency graph analysis
+- Ensure each task has clear success criteria and estimated duration (30min-2hr per atomic task)
+- Validate that parallelizable tasks truly have no hidden dependencies before spawning concurrent agents
+- Use task templates for common patterns (API endpoint, database schema, UI component)
+
+### 2. Memory Coordination as Single Source of Truth
+All agents must synchronize state through shared memory to maintain consistency.
+
+**In practice:**
+- Store orchestration state in memory after every phase transition
+- Use hierarchical memory keys: orchestration/plan, orchestration/assignments, orchestration/progress
+- Implement optimistic locking for concurrent writes with version numbers or timestamps
+- Provide memory snapshots at regular intervals (every 30s) for rollback capability
+- Design agents to be stateless by persisting all state to memory rather than local variables
+- Use memory tags (WHO, WHEN, PROJECT, WHY) for audit trails and debugging
+
+### 3. Adaptive Coordination Over Fixed Plans
+Orchestration must respond to changing conditions rather than rigidly following initial plans.
+
+**In practice:**
+- Monitor agent health continuously with heartbeat checks (every 10s)
+- Detect blocked tasks by tracking time-in-progress (alert after 5 minutes without progress)
+- Automatically rebalance work by reassigning tasks from overloaded agents to idle agents
+- Switch strategies dynamically: sequential -> parallel when agents become available
+- Implement circuit breakers that pause orchestration when error rate exceeds 20%
+- Provide manual override mechanisms for human intervention when needed
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Monolithic task decomposition** | Large tasks assigned to single agents, no parallelism benefits, long execution times, difficult failure recovery | Break tasks into atomic units (30min-2hr each), identify independent subtasks, spawn multiple agents concurrently, design for parallel execution |
+| **Lost orchestration state** | Cannot recover from failures, unclear what work completed, duplicated effort, inconsistent final state | Persist orchestration state to memory after every phase, implement checkpoint/resume, track task completion status, log all state transitions |
+| **Ignoring agent failures** | Failed agents silently disappear, tasks hang indefinitely, partial results with no indication, cascading failures | Monitor agent health with heartbeat checks, detect timeouts (5min), respawn failed agents, implement circuit breakers, track failure patterns |
+| **Circular dependencies in task graph** | Tasks block waiting for each other, deadlock scenarios, orchestration hangs, no progress possible | Validate dependency graph for cycles before execution, use topological sort to determine valid execution order, fail fast with clear error message |
+| **No workload balancing** | Some agents overloaded while others idle, poor resource utilization, long tail of slow tasks, uneven completion times | Monitor agent workloads in real-time, dynamically reassign tasks from overloaded agents, spawn additional agents when all highly utilized, implement work stealing |
+
+## Conclusion
+
+Swarm orchestration represents the pinnacle of multi-agent coordination, enabling complex workflows to be executed with unprecedented speed and reliability through intelligent task decomposition, parallel execution, and adaptive coordination. The power of this approach lies in its ability to transform large, monolithic tasks into atomic units that can be processed concurrently by specialized agents, often achieving 8-10x speedup over sequential execution. However, this power comes with significant complexity in managing dependencies, coordinating state, and handling failures across distributed agents.
+
+The three core principles - task decomposition, memory coordination, and adaptive orchestration - form the foundation of robust swarm systems. Task decomposition unlocks parallelism by identifying independent work units. Memory coordination ensures consistency by providing a single source of truth that all agents reference. Adaptive coordination enables resilience by responding to failures and changing conditions dynamically. Together, these principles create orchestration systems that are not only fast but also reliable and maintainable.
+
+As you implement swarm orchestration, prioritize observability and incremental validation. Start with simple hierarchical topologies before exploring mesh or adaptive patterns. Validate your dependency graph for cycles before spawning agents. Monitor task progress continuously and alert on blockers quickly. Design for failure by implementing automatic retries, circuit breakers, and agent replacement strategies. By following these practices, you can build orchestration systems that harness the full power of multi-agent coordination while maintaining the reliability and debuggability required for production use. Remember: successful swarm orchestration is not about controlling every detail but about creating conditions for autonomous agents to collaborate effectively toward shared goals.

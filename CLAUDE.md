@@ -785,7 +785,7 @@ Match user request keywords to playbook:
 
 ## 4. RESOURCE REFERENCE (COMPRESSED)
 
-### 4.1 Skills (122 Total)
+### 4.1 Skills (181 Total)
 
 **Categories**:
 - Development Lifecycle (15): Planning, architecture, implementation, testing, deployment

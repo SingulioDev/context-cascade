@@ -612,3 +612,35 @@ Stream-Chain enables sophisticated multi-step workflows by:
 - **Data Transformation**: Complex processing through simple steps
 
 Use `run` for custom workflows and `pipeline` for battle-tested solutions.
+---
+
+## Core Principles
+
+### 1. Context Continuity
+Every step receives the complete output from all previous steps, creating an unbroken chain of context. This eliminates information loss and enables each agent to build upon prior work without requiring external state management. The chain itself is the state.
+
+### 2. Progressive Refinement
+Tasks flow from broad to specific - research leads to design, design leads to implementation, implementation leads to validation. Each step narrows scope and increases precision. This natural progression prevents premature optimization and ensures decisions are informed by prior analysis.
+
+### 3. Agent Specialization Through Sequencing
+Rather than creating generalist agents, stream chains leverage specialist agents in sequence. A researcher finds information, an architect designs solutions, a coder implements, a tester validates. Sequential execution turns specialist outputs into integrated solutions without requiring any single agent to master all domains.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|-------------|--------------|------------------|
+| **Circular Dependencies** | Step 3 depends on Step 5's output, creating deadlock. Chain execution requires strict DAG (directed acyclic graph). | Design chains as unidirectional flows. If bidirectional refinement needed, use multiple chains or explicit iteration loops with termination conditions. |
+| **Context Explosion** | Each step adds 50KB+ of output, causing later steps to hit token limits and lose early context. | Use summarization steps between major phases. Compress verbose outputs into key findings before passing to next step. Consider splitting into multiple chains with cross-chain memory storage. |
+| **Premature Parallelization** | Converting sequential chain into parallel execution loses the context flow that makes chains valuable. | If tasks are truly independent, use swarm coordination instead. Chains are for dependent tasks where output N feeds input N+1. Parallelization destroys this dependency graph. |
+
+---
+
+## Enhanced Conclusion
+
+Stream-Chain solves the fundamental challenge of multi-step reasoning: maintaining context across transformations. Traditional approaches either lose context (separate agents) or overwhelm context (single agent with all tasks). Stream chains provide a middle path - sequential execution with cumulative context, where each step builds on validated prior work.
+
+The chain architecture naturally enforces best practices: verification before progression, specialization over generalization, and incremental refinement over big-bang delivery. When tasks have natural dependencies and each step produces context valuable to subsequent steps, stream chains transform sequential constraints from limitations into architectural advantages.
+
+Use `run` for custom workflows requiring flexible step definitions. Use `pipeline` for battle-tested domain-specific workflows (analysis, refactoring, testing, optimization). Choose chains when task output quality depends on understanding prior results - when "what came before" matters as much as "what to do next."

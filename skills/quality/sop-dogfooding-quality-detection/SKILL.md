@@ -1274,3 +1274,92 @@ This skill integrates with:
 5. **CI/CD Gate** must pass before merge
 
 **See**: Full safety rules documentation for details
+---
+
+## Core Principles
+
+SOP Dogfooding Quality Detection operates on 3 fundamental principles:
+
+### Principle 1: Automated Learning from Real Usage
+Quality improvement comes from analyzing the code you actually write, not synthetic examples. Self-dogfooding catches real-world violations.
+
+In practice:
+- Connascence analysis runs on production codebases (memory-mcp, terminal-manager, trader-ai)
+- Violations detected in actual agent-generated code (not test fixtures)
+- Memory MCP stores findings with WHO/WHEN/PROJECT/WHY tags for cross-session learning
+
+### Principle 2: NASA-Grade Compliance as Non-Negotiable
+Certain quality standards (parameter limits, nesting depth) are grounded in human cognitive science. These thresholds are not subjective preferences.
+
+In practice:
+- Parameter Bombs (>6 params) flagged as CRITICAL - NASA research shows human working memory limit
+- Deep Nesting (>4 levels) flagged as CRITICAL - exceeds human comprehension capacity
+- These violations block merges regardless of "it works" arguments
+
+### Principle 3: Continuous Improvement Through Feedback Loops
+Quality detection is only valuable if it feeds back into code generation to prevent repeat violations. Detection without correction is theater.
+
+In practice:
+- Phase 1 detects violations, Phase 2 retrieves fix patterns from Memory MCP
+- Phase 3 applies fixes with sandbox testing (dogfooding-continuous-improvement)
+- Dashboard tracks violation trends over time (are we improving?)
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Analysis Without Storage** | Running Connascence analysis but not storing results in Memory MCP - no cross-session learning | ALWAYS store findings with WHO/WHEN/PROJECT/WHY tags - enables pattern retrieval in Phase 2 |
+| **Ignoring NASA Compliance** | Treating Parameter Bombs and Deep Nesting as "suggestions" rather than blockers | Flag NASA violations (>6 params, >4 nesting) as CRITICAL - these are cognitive science limits |
+| **Detection Without Action** | Detecting violations but never applying fixes - quality metrics don't improve | Always follow detection (Phase 1) with pattern retrieval (Phase 2) and fix application (Phase 3) |
+
+## Conclusion
+
+SOP Dogfooding Quality Detection closes the loop on AI code quality by automatically analyzing agent-generated code, detecting violations grounded in cognitive science (NASA parameter/nesting limits), and storing findings in Memory MCP for cross-session learning. This enables the dogfooding cycle where Phase 1 detects issues in real codebases, Phase 2 retrieves proven fix patterns from past successes, and Phase 3 applies corrections with sandbox validation. The result is continuous quality improvement - violation rates decrease over time as the system learns from its own mistakes.
+
+Use this skill as the first phase of the 3-part dogfooding system when you need to audit code quality on production codebases and build a knowledge base of violations and fixes. The 30-60 second execution time makes it suitable for post-generation quality gates. For the complete improvement cycle including fix application, use sop-dogfooding-continuous-improvement which orchestrates all three phases.
+
+## Core Principles (Additional)
+
+### Principle 4: False Positives Undermine Trust - Validation Threshold 2+ Signals
+Quality detection that flags non-issues as violations trains teams to ignore warnings, eroding trust in the entire system. The 2+ confirming signals threshold (static + dynamic, or static + historical, etc.) reduces false positive rate to <5%, ensuring findings are actionable rather than noise.
+
+In practice:
+- Connascence analysis provides static signal (code structure metrics)
+- Test execution provides dynamic signal (runtime behavior)
+- Git history provides historical signal (frequently changed files correlate with quality issues)
+- Findings require agreement from 2+ perspectives before flagging as violation
+- Uncertain findings tagged "needs manual review" rather than auto-flagged as violations
+
+### Principle 5: Detection Without Context Is Noise
+A Parameter Bomb (14 params) might be a genuine violation in business logic but intentional in a CLI argument parser. Context-aware detection considers domain patterns before flagging violations, reducing false positives and focusing remediation efforts on actual technical debt.
+
+In practice:
+- Leverage .claude/expertise/{domain}.yaml when available (domain-specific patterns documented)
+- Exclude generated code (build artifacts flagged as low priority)
+- Exclude third-party libraries (vendor/ and node_modules/ skipped)
+- DSL-specific patterns recognized (e.g., test fixtures often have many parameters intentionally)
+
+### Principle 6: Continuous Detection Enables Continuous Improvement
+One-time quality audits capture point-in-time state but do not prevent quality degradation. Continuous detection (daily cycles, post-commit hooks, pre-merge gates) catches violations as they are introduced, enabling immediate remediation before violations multiply.
+
+In practice:
+- Daily dogfooding cycles analyze active projects (memory-mcp, terminal-manager, trader-ai)
+- Post-commit hooks trigger analysis on modified files (targeted rather than full codebase scan)
+- Pre-merge CI gates block PRs with new critical violations (prevents quality regression)
+- Dashboard tracks violation trends (are we improving or regressing over time?)
+
+## Common Anti-Patterns (Additional)
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **"One-Time Audit"** | Running Connascence analysis once during "quality sprint", then never again. New code introduces violations that accumulate unnoticed until next sporadic audit. | Continuous detection - daily cycles for active projects, pre-merge gates for all PRs, post-commit hooks for immediate feedback. Quality is maintained through ongoing vigilance, not periodic cleanups. |
+| **"Alert Fatigue from False Positives"** | Detection system flags 100+ violations with 30% false positive rate. Teams ignore warnings, treating all findings as noise. Real issues buried in false alarms. | Validation threshold 2+ confirming signals. Accept lower sensitivity to achieve <5% false positive rate. Better to miss 10% of violations than flag 30% non-issues - trust is more valuable than completeness. |
+| **"Context-Blind Detection"** | Flagging Parameter Bombs in CLI parsers, Deep Nesting in test fixtures, God Objects in generated ORM models. Teams waste time investigating "violations" that are actually appropriate for context. | Context-aware detection - check .claude/expertise/{domain}.yaml, exclude generated code, recognize DSL patterns. Detection tuned to domain specifics prevents wasted investigation effort. |
+
+## Conclusion (Extended)
+
+SOP Dogfooding Quality Detection provides the foundation for continuous quality improvement by automatically analyzing agent-generated code, detecting violations grounded in cognitive science (NASA parameter/nesting limits), and storing findings in Memory MCP for cross-session learning. The 30-60 second execution time includes Connascence analysis (15-30s), Memory MCP storage (10-20s), and summary generation (5s), making it suitable for post-generation quality gates and pre-merge CI checks.
+
+Use this skill as the entry point into the 3-part dogfooding system when you need to audit code quality on production codebases and build institutional memory of violation patterns. Detection operates on real code (not synthetic test cases), catches violations in agent-generated output, and enables data-driven quality improvement by tracking which violation types are most common and trending over time. Integration with Memory MCP closes the loop - Phase 1 detects issues, Phase 2 retrieves proven fix patterns, Phase 3 applies corrections with safety validation.
+
+Success requires treating detection as continuous rather than one-time - quality degrades without ongoing monitoring. Teams that run daily detection cycles experience continuous improvement as violation rates decrease over time through automated remediation. The validation threshold (2+ confirming signals) and context awareness (<5% false positive rate) ensure findings are actionable and teams trust the system enough to act on recommendations. The result is systematic quality improvement driven by empirical evidence rather than subjective code review.

@@ -1,61 +1,9 @@
 ---
-
-## CRITICAL: DEPLOYMENT SAFETY GUARDRAILS
-
-**BEFORE any deployment, validate**:
-- [ ] All tests passing (unit, integration, E2E, load)
-- [ ] Security scan completed (SAST, DAST, dependency audit)
-- [ ] Infrastructure capacity verified (CPU, memory, disk, network)
-- [ ] Database migrations tested on production-like data volume
-- [ ] Rollback procedure documented with time estimates
-
-**NEVER**:
-- Deploy without comprehensive monitoring (metrics, logs, traces)
-- Skip load testing for high-traffic services
-- Deploy breaking changes without backward compatibility
-- Ignore security vulnerabilities in production dependencies
-- Deploy without incident response plan
-
-**ALWAYS**:
-- Validate deployment checklist before proceeding
-- Use feature flags for risky changes (gradual rollout)
-- Monitor error rates, latency p99, and saturation metrics
-- Document deployment in runbook with troubleshooting steps
-- Retain deployment artifacts for forensic analysis
-
-**Evidence-Based Techniques for Deployment**:
-- **Chain-of-Thought**: Trace deployment flow (code -> artifact -> registry -> cluster -> pods)
-- **Program-of-Thought**: Model deployment as state machine (pre-deploy -> deploy -> post-deploy -> verify)
-- **Reflection**: After deployment, analyze what worked vs assumptions
-- **Retrieval-Augmented**: Query past incidents for similar deployment patterns
-
 name: opentelemetry-observability
-description: OpenTelemetry specialist for distributed tracing, metrics collection,
-  log correlation, auto-instrumentation, custom spans, trace context propagation,
-  and sampling strategies. Use when implementing observability in microservices, debugging
-  production issues, monitoring performance, or requiring OpenTelemetry best practices.
-  Handles integration with Jaeger/Zipkin/Tempo, Prometheus/Grafana, and cloud-native
-  observability platforms.
+description: OpenTelemetry specialist for distributed tracing, metrics collection, log correlation, auto-instrumentation, custom spans, trace context propagation, and sampling strategies. Use when implementing observability in microservices, debugging production issues, monitoring performance, or requiring OpenTelemetry best practices. Handles integration with Jaeger/Zipkin/Tempo, Prometheus/Grafana, and cloud-native observability platforms.
 category: Observability
 complexity: High
-triggers:
-- opentelemetry
-- otel
-- distributed tracing
-- observability
-- metrics
-- spans
-- tracing
-- jaeger
-- zipkin
-- tempo
-- instrumentation
-version: 1.0.0
-tags:
-- operations
-- deployment
-- infrastructure
-author: ruv
+triggers: ["opentelemetry", "otel", "distributed tracing", "observability", "metrics", "spans", "tracing", "jaeger", "zipkin", "tempo", "instrumentation"]
 ---
 
 # OpenTelemetry Observability Specialist
@@ -468,3 +416,52 @@ docker run -d --name jaeger \
 
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
+
+## Core Principles
+
+OpenTelemetry Observability operates on 3 fundamental principles:
+
+### Principle 1: Context Propagation is Non-Negotiable
+Distributed tracing only works if trace context flows across service boundaries. W3C Trace Context headers (traceparent, tracestate) must be propagated through HTTP calls, message queues, and async operations. This principle enables end-to-end visibility.
+
+In practice:
+- Use OpenTelemetry auto-instrumentation to inject/extract trace context automatically
+- Explicitly propagate context in custom HTTP clients and message queue consumers
+- Validate context propagation in integration tests by checking trace continuity
+- Use baggage for cross-cutting concerns like user ID or request ID that need to flow everywhere
+
+### Principle 2: Cardinality Control Prevents Metric Explosions
+High-cardinality attributes (user IDs, request IDs) in metric labels cause exponential growth in time series, leading to OOM errors, high storage costs, and query timeouts. This principle ensures sustainable observability costs.
+
+In practice:
+- Use low-cardinality labels for metrics (environment, service, endpoint, status code)
+- Put high-cardinality data in span attributes, not metric labels
+- Use histograms for latency distribution instead of individual timers per request
+- Implement sampling to reduce trace volume while maintaining statistical significance
+
+### Principle 3: Semantic Conventions Enable Tool Interoperability
+OpenTelemetry defines semantic conventions for common attributes (http.method, db.system, messaging.destination). Following conventions ensures your telemetry works with all backends (Jaeger, Zipkin, Grafana, Prometheus) without custom transforms.
+
+In practice:
+- Use SemanticAttributes constants from OpenTelemetry SDK, not custom strings
+- Follow naming patterns (http.*, db.*, messaging.*, rpc.*) for standard operations
+- Document custom attributes with namespace prefixes (myapp.order.priority)
+- Validate semantic convention compliance in code reviews
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **100% Sampling in Production** | Capturing every trace creates massive backend load, storage costs exploding to hundreds of GB/day, and query performance degradation from index bloat. | Use TraceIdRatioBasedSampler (5-10% for production). Implement parent-based sampling to preserve complete traces. Use tail sampling for error-biased retention. |
+| **High-Cardinality Span Names** | Using unique IDs in span names (GET /users/12345 instead of GET /users/:id) creates millions of unique operations, breaking trace aggregation and dashboards. | Use generic operation names with placeholders. Put dynamic values in span attributes. Follow semantic conventions for HTTP routes (http.route: /users/:id). |
+| **Forgetting to End Spans** | Unclosed spans accumulate in memory, causing memory leaks, inaccurate latency measurements, and spans never exported to backend. | Always use try/finally blocks to ensure span.end() is called. Use context managers (Python with) or defer (Go) for automatic cleanup. |
+| **Logging Without Trace Correlation** | Logs and traces live in separate systems with no correlation, forcing manual detective work to connect error logs to slow traces. | Inject trace_id and span_id into structured log fields. Use OpenTelemetry LogRecordProcessor to auto-correlate. Configure backend (Grafana) to link logs to traces. |
+| **No Metric Export Validation** | Metrics are collected but never exported due to misconfigured endpoint, network issues, or authentication failures. Silent failures leave blind spots. | Implement health checks that verify metric export success. Monitor OTLP exporter metrics (exported count, failed count). Test export in staging environments. |
+
+## Conclusion
+
+The OpenTelemetry Observability skill provides a comprehensive framework for implementing production-grade distributed tracing, metrics, and log correlation across microservices architectures. By mastering the three core principles of context propagation, cardinality control, and semantic conventions, you ensure that your observability infrastructure is both powerful and sustainable at scale.
+
+The workflows demonstrate the complete lifecycle from auto-instrumentation setup to custom span creation, metrics collection, and advanced sampling strategies. The emphasis on W3C Trace Context propagation ensures trace continuity across polyglot services, while the semantic conventions guarantee interoperability with all major observability backends. The anti-patterns table serves as a critical reference to avoid common pitfalls that lead to metric explosions, memory leaks, and unactionable telemetry.
+
+This skill is particularly valuable when debugging production issues across distributed systems, implementing SLO-based alerting, or migrating from proprietary APM solutions to vendor-neutral OpenTelemetry. Whether you're instrumenting a Node.js microservice, a Python Flask API, or a complex event-driven architecture with message queues, the patterns and best practices documented here provide a solid foundation. Combined with backend setup guides (Jaeger, Prometheus, Grafana Tempo) and troubleshooting references, you have everything needed to build observable systems that provide actionable insights when incidents occur.

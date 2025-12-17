@@ -582,3 +582,57 @@ The pharmaceutical industry faces unprecedented challenges...
 **Time**: 10-15 minutes for full draft
 **Output**: Scaffolded manuscript with placeholders
 **Design**: Ethical scaffolding with placeholder-based content
+
+---
+
+## Core Principles
+
+### 1. Scaffolding Over Fabrication
+Academic writing tools must never cross the line from assistance to deception. This skill creates structural frameworks that guide authentic research communication.
+
+**In practice:**
+- Generate document outlines with proper academic section hierarchy (Abstract, IMRaD)
+- Create writing prompts that help articulate genuine research contributions
+- Provide templates that organize thoughts without replacing original thinking
+- Use placeholders like [YOUR_DATA] to mark where real content must be inserted
+- Flag sections requiring user input with specific guidance on what information belongs
+
+### 2. Speed Without Sacrifice of Integrity
+Rapid drafting should accelerate the mechanical aspects of writing while preserving the essential human elements of research communication - original thought, data interpretation, and scholarly argumentation.
+
+**In practice:**
+- Reduce time on boilerplate structure (paper organization, section transitions)
+- Automate citation placeholder insertion ([Author, Year] markers)
+- Generate section templates based on venue requirements (page limits, formatting)
+- Preserve researcher control over all substantive claims and findings
+- Maintain clear separation between auto-generated structure and required user content
+
+### 3. Transparency in Assistance
+Users must always know what is generated versus what requires their expertise. The boundary between tool-assisted and human-created content must be unmistakable.
+
+**In practice:**
+- Mark all generated content with clear indicators (<!-- AI-GENERATED TEMPLATE -->)
+- Use distinctive placeholder syntax that cannot be mistaken for real content
+- Include metadata showing what sections are complete vs scaffolded
+- Generate completion checklists highlighting all areas needing user input
+- Provide "generation time" metrics so users understand the tool's contribution
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Fabricating experimental results | Violates research integrity; creates fake data that appears legitimate but has no basis in actual experiments | Use explicit placeholders like [YOUR_RESULT: Mean accuracy = ?] instead of generating plausible-looking numbers. Add warnings that placeholders must be replaced before submission. |
+| Generic template overload | Produces formulaic writing that lacks domain-specific depth; all papers sound identical regardless of field or contribution | Customize templates based on research type (experimental, theoretical, review). Include field-specific writing tips. Generate domain-appropriate example text that researchers can adapt. |
+| Hiding AI contribution | Creates ethical ambiguity about authorship; users may unknowingly submit AI-generated text as their own work | Add metadata footer to drafts: "Generated with rapid-manuscript-drafter v1.0.0". Mark all AI-generated sections. Include ethics statement template about tool use. |
+
+---
+
+## Conclusion
+
+The rapid-manuscript-drafter skill addresses a critical bottleneck in academic publishing: the time-consuming process of transforming completed research into properly structured manuscripts. By automating the mechanical aspects of academic writing while preserving the essential human elements of scholarship, this skill enables researchers to focus on what matters most - articulating genuine insights and contributions.
+
+The ethical foundation of this skill rests on an unwavering commitment to transparency and integrity. Unlike tools that fabricate plausible-sounding content, rapid-manuscript-drafter creates honest scaffolds that make the writing process more efficient without compromising authenticity. Every placeholder is clearly marked, every template is customizable, and every generated structure serves to guide rather than replace human expertise. This approach respects both the researcher's intellectual contribution and the academic community's standards for scholarly communication.
+
+As research demands accelerate while publication standards remain rigorous, tools that accelerate legitimate scholarship become increasingly valuable. The rapid-manuscript-drafter skill demonstrates that speed and integrity are not opposing forces - when properly designed, automation can enhance both the efficiency and the quality of academic writing. By reducing the friction of manuscript preparation, this skill allows researchers to spend more time on the substance of their work and less time wrestling with formatting, structure, and organization.

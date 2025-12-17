@@ -768,3 +768,52 @@ Total: 16 weeks (4 months) for complete research lifecycle
 | Gate 1 | All requirements met, proceed to Phase 2 | Minor datasheet gaps, proceed with restrictions | Baseline >±1% or critical ethics issues |
 | Gate 2 | All requirements met, proceed to Phase 3 | Mitigation plan for fairness/robustness gaps | Performance regression or critical safety risks |
 | Gate 3 | All requirements met, DEPLOY to production | Minor documentation fixes required | Reproducibility failures or ethics violations |
+---
+
+## Core Principles
+
+Deep Research Orchestrator operates on 3 fundamental principles:
+
+### Principle 1: Systematic Rigor Over Expedience
+Research quality cannot be compromised for speed. Every phase and pipeline follows evidence-based methodology (PRISMA, ACM badging, NeurIPS reproducibility standards) ensuring publishable results.
+
+In practice:
+- Quality Gates enforce GO/NO-GO decisions with statistical validation
+- Minimum thresholds prevent premature progression (50+ papers, ±1% baseline tolerance, 3/3 reproducibility)
+- Ethics reviews (data-steward + ethics-agent) occur at every gate, not just final submission
+
+### Principle 2: Reproducibility as First-Class Requirement
+Reproducibility is not an afterthought but a continuous validation requirement from Phase 1 through Phase 3. Every artifact must be independently verifiable.
+
+In practice:
+- Baseline replication (±1% tolerance) validates computational environment before novel method development
+- Reproducibility packages tested in fresh Docker containers with zero cached dependencies
+- All code, data, hyperparameters archived with permanent DOIs (Zenodo, HuggingFace) before Gate 3
+
+### Principle 3: Multi-Agent Coordination for Comprehensive Coverage
+No single agent possesses complete expertise. Deep Research requires 9+ agents working in coordinated phases to ensure data integrity, methodological soundness, and production readiness.
+
+In practice:
+- data-steward validates datasets and bias before researcher conducts literature review
+- ethics-agent assesses risks at Gates 1, 2, 3 with independent reviews
+- archivist creates model cards and reproducibility packages while evaluator validates gate requirements
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Gate Skipping** | Proceeding to Phase 2 without Gate 1 APPROVED leads to invalid foundations (incomplete literature review, unvalidated datasets, failed baseline replication) | NEVER bypass gate-validation skill. If Gate 1 returns CONDITIONAL/REJECTED, address deficiencies before Phase 2. Use gate-validation --verbose to identify specific gaps |
+| **Single-Run Validation** | Testing reproducibility once (1/1 runs) masks non-deterministic behavior, framework bugs, or environment-specific issues | ALWAYS run 3+ reproductions in fresh Docker containers. Calculate variance (must be near-zero). Use different random seeds to validate determinism |
+| **Ethics Review as Checkbox** | Treating ethics-agent as formality rather than substantive risk assessment leads to Gate 2/3 rejection for bias, fairness, or safety violations | Integrate ethics-agent at EVERY gate (data bias in Gate 1, model fairness in Gate 2, deployment safety in Gate 3). Address flagged risks with mitigation plans, not dismissals |
+
+---
+
+## Conclusion
+
+The Deep Research Orchestrator is the definitive workflow for conducting rigorous, reproducible, and ethically sound machine learning research from ideation to production deployment. By enforcing 3 quality gates across 9 pipelines (A-I), this orchestrator ensures that research meets the standards required for top-tier academic publication (NeurIPS, ICML, CVPR) and production deployment.
+
+This skill is essential when research quality cannot be compromised: systematic literature reviews with 50+ papers, baseline replication within ±1% tolerance, holistic evaluation across 6+ dimensions (accuracy, fairness, robustness, efficiency, interpretability, safety), and reproducibility packages tested in independent environments. The 2-6 month timeline reflects the complexity of comprehensive research, but the result is publication-ready artifacts with ACM Artifact Evaluation badges and permanent DOIs.
+
+Use this orchestrator when starting new ML research projects, preparing academic submissions with artifact tracks, or ensuring regulatory compliance (FDA, EU AI Act). The coordinated multi-agent approach (researcher, data-steward, ethics-agent, archivist, coder, tester, evaluator) ensures no dimension is overlooked, and the quality gate system prevents premature progression. The investment in systematic methodology yields research that not only passes peer review but advances the state of the art with confidence in its validity and reproducibility.

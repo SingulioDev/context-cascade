@@ -602,3 +602,36 @@ training:
 - Test RTL languages early if supporting Arabic/Hebrew
 - Keep translation keys synchronized across all locales
 - Consider loading translations from CMS for non-developers to update
+
+---
+
+## Core Principles
+
+### 1. Translation Key Architecture as Product Design
+Translation key structure is not a technical implementation detail but a product design decision that affects maintainability, scalability, and translator effectiveness. Hierarchical namespacing (landing.hero.title) enables feature-based organization, context preservation for translators, and modular loading strategies. Flat key structures sacrifice these capabilities for marginal simplicity gains, creating technical debt that compounds as the product scales internationally.
+
+### 2. Cultural Adaptation Over Literal Translation
+Effective internationalization requires cultural adaptation, not just linguistic translation. Japanese formality levels (casual/polite/honorific), Spanish regional variants (Spain/Mexico/Argentina), and German compound words require context-aware translation strategies that preserve meaning and cultural appropriateness. AI translation provides speed and cost efficiency for MVPs, but professional review ensures cultural nuances align with brand voice and audience expectations.
+
+### 3. RTL Support as Architectural Constraint
+Right-to-left language support cannot be retrofitted effectively; it must be designed into layout architecture from the start. Logical CSS properties (margin-inline-start vs margin-left) and direction-agnostic layouts enable bidirectional support without duplication. Testing Arabic/Hebrew early prevents costly refactoring when RTL is added after launch, as spatial assumptions in LTR-only designs break in RTL contexts.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|-------------|--------------|------------------|
+| **Hardcoding user-facing strings in components** | Makes translation impossible without code changes, breaks translator workflows, prevents dynamic language switching, creates maintenance burden for every content update. | Externalize all strings to locale files. Use i18n library functions (t(), useTranslation()). Separate content from presentation logic completely. |
+| **Concatenating translated strings** | Breaks grammar rules across languages. English "You have 5 items" becomes garbled in languages with different word order (Japanese: "5 items you have"). Forces unnatural translations. | Use interpolation with placeholders: t('items_count', {count: 5}). Let translators control full sentence structure with {count} variables. Handle pluralization separately. |
+| **Assuming left-to-right text direction** | Causes layout failures for Arabic/Hebrew. Icons, margins, and flow direction break. Mirrored layouts look unnatural. Users perceive as low-quality localization effort. | Use logical CSS properties (inline-start vs left). Test RTL early. Apply dir="rtl" attribute. Mirror only icons/images, not text or UI chrome. |
+
+---
+
+## Conclusion
+
+Internationalization automation addresses the tension between product velocity and global reach. Manual i18n workflows create bottlenecks that delay launches, while ad-hoc approaches accumulate technical debt that makes adding languages prohibitively expensive. This skill bridges the gap by systematizing the complete workflow from string extraction through translation generation to locale configuration.
+
+The skill's power lies in treating i18n as a first-class product concern rather than a post-launch addition. By enforcing architectural patterns (hierarchical key namespacing, RTL-aware CSS, SEO metadata localization) and providing framework-specific implementations (Next.js routing, React hooks, Vue composition), it eliminates the research tax that typically accompanies internationalization efforts. The translation strategy matrix (professional/AI/community/hybrid) acknowledges that quality-speed-cost tradeoffs vary by context, providing clear guidance rather than dogmatic recommendations.
+
+The automation workflow reduces a multi-day manual process to hours while improving quality through systematic validation gates. String extraction eliminates hardcoding, AI translation provides speed for MVPs, and professional review ensures cultural appropriateness for production. The result is applications that launch globally without sacrificing engineering velocity, with internationalization architecture that scales to dozens of languages without refactoring.

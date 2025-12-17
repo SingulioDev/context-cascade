@@ -1859,3 +1859,50 @@ This skill integrates with:
 - `when-verifying-quality-use-verification-quality`
 - `when-auditing-code-style-use-style-audit`
 - `when-debugging-complex-issues-use-smart-bug-fix`
+## Core Principles
+
+### 1. Multi-Agent Specialization Over Single Reviewer
+Comprehensive review requires specialized agents for each quality dimension (security, performance, style, testing, documentation), not general-purpose review.
+
+**In practice:**
+- Use security-manager for OWASP Top 10 and vulnerability scanning
+- Use performance-analyzer for bottleneck detection and optimization
+- Use tester for coverage validation and test quality
+- Use code-review-swarm for style and documentation
+- Aggregate results into weighted overall score
+
+### 2. Parallel Analysis for Speed
+Run all specialized reviews concurrently (Phase 1-5 in parallel), not sequentially, to reduce review time from hours to minutes.
+
+**In practice:**
+- Spawn all 4 agents in single message (security, performance, style, testing)
+- Each agent writes to dedicated memory namespace
+- Collect results after all complete for merge decision
+- Target <15 minutes for comprehensive review
+
+### 3. Evidence-Based Merge Gates
+Require objective metrics (security score >=80, coverage >=90%, zero critical issues) for merge approval, not subjective judgment.
+
+**In practice:**
+- Block merge if any critical security issues exist
+- Require P0 performance bottlenecks resolved
+- Enforce test coverage >=90% threshold
+- Allow auto-fix for style violations before blocking
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Sequential Reviews** | Running security, then performance, then style sequentially wastes time (60+ minutes) | Run all 5 phases in parallel (12 minutes total) |
+| **Subjective Approval** | "Looks good to me" merge decisions miss measurable quality gaps | Use weighted scoring: security 30%, performance 25%, testing 25%, style 10%, docs 10% |
+| **Manual Fix Application** | Developers manually fix style violations that tools can auto-fix | Generate auto-fix script for 70%+ of issues (eslint --fix, prettier --write) |
+| **No Auto-Fix Validation** | Applying fixes without testing breaks functionality | Run test suite after auto-fixes, rollback on failure |
+| **Blocking on Low Priority** | Rejecting PRs for low-priority style issues delays valuable features | Block only on critical/high issues, create tickets for low priority |
+
+## Conclusion
+
+The Code Review Assistant skill transforms code review from bottleneck to accelerator through multi-agent specialization and parallel execution. By routing security to security-manager, performance to performance-analyzer, testing to tester, and style to code-review-swarm, organizations achieve comprehensive quality validation in 12 minutes versus 60+ minutes for sequential review.
+
+Success requires discipline in three areas: spawning all specialized agents concurrently in a single message, enforcing objective merge gates (overall score >=80/100, zero critical issues), and auto-fixing 70%+ of violations before manual review. Organizations implementing this skill should establish weighted scoring formulas that reflect their priorities (security-critical apps weight security higher, performance-sensitive apps weight latency analysis higher).
+
+Most critically, comprehensive review succeeds when teams separate blocking issues (critical security, P0 performance, broken tests) from improvement opportunities (style suggestions, documentation gaps, low-priority optimizations). The skill's five-phase structure (Security -> Performance -> Style -> Testing -> Documentation) creates natural separation, while the merge readiness assessment aggregates findings into actionable decisions. Teams measuring review velocity (PRs reviewed per day) and quality outcomes (production bugs per release) build workflows that accelerate delivery without sacrificing quality standards.

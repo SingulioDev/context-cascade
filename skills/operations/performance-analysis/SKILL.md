@@ -591,3 +591,58 @@ npx claude-flow bottleneck detect --fix
 **Version**: 1.0.0
 **Last Updated**: 2025-10-19
 **Maintainer**: Claude Flow Team
+
+---
+
+## Core Principles
+
+### 1. Measure Before Optimizing
+Premature optimization based on intuition rather than profiling data is the root of wasted effort. Performance bottlenecks are rarely where developers expect - profiling reveals the actual critical path. Optimizing non-bottlenecks improves nothing while adding complexity.
+
+In practice:
+- Establish baseline metrics (p50/p99 latency, throughput, error rate) before changes
+- Profile production-like workloads to identify actual bottlenecks (CPU, memory, I/O, network)
+- Focus optimization on the top 3 bottlenecks by impact - Pareto principle applies (20% of code causes 80% of performance issues)
+- Quantify improvement with A/B testing - "feels faster" is not a metric
+
+### 2. Optimization Has Trade-Offs
+Every performance optimization sacrifices something - code clarity, maintainability, memory usage, or development time. Micro-optimizations that save 2ms while making code unreadable are net negative for long-term velocity.
+
+In practice:
+- Document trade-offs explicitly (e.g., "caching reduces latency 40% but increases memory 20%")
+- Optimize critical path first, tolerate inefficiency in rarely-executed code
+- Preserve code clarity unless optimization is on critical path with proven impact
+- Set performance budgets that balance speed with maintainability
+
+### 3. Monitor Performance Over Time
+One-time optimization without continuous monitoring guarantees performance regressions. New features, dependency updates, and data volume growth slowly degrade performance until customer complaints force reactive firefighting.
+
+In practice:
+- Track key metrics continuously (response time p99, throughput, resource utilization)
+- Set up automated alerts for performance degradation (latency > baseline + 20%)
+- Run load tests in CI/CD to catch regressions before production
+- Maintain performance budgets as part of code review (max bundle size, max query time)
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|-------------|--------------|------------------|
+| **Optimizing Without Profiling** | Developer intuition about bottlenecks is wrong 70%+ of the time. Optimizing based on guesses wastes effort on non-critical code while ignoring actual performance issues. Results in complex, hard-to-maintain code with no measurable improvement. | Profile first with production-like data and traffic patterns. Use tools (flamegraphs, performance monitors) to identify actual bottlenecks. Focus optimization on top 3 bottlenecks by measured impact. Quantify improvement with before/after benchmarks. |
+| **Micro-Optimizations Everywhere** | Optimizing rarely-executed code (startup routines, config loading, error paths) provides negligible user-facing benefit while sacrificing code clarity. Developers spend days optimizing code that executes once per server restart. | Optimize critical path only - code executed thousands/millions of times per day (request handlers, data transforms, rendering loops). Use performance profiling to identify hot paths. Preserve code clarity in non-critical paths - maintainability matters more than 2ms saved in startup. |
+| **No Continuous Monitoring** | One-time optimization without ongoing measurement allows performance regressions to accumulate unnoticed. New features, dependency updates, and data growth slowly degrade performance until customer complaints force reactive investigation. | Implement continuous performance monitoring with automated alerts. Track key metrics (p99 latency, throughput, error rate) over time. Run load tests in CI/CD to catch regressions before production deployment. Set performance budgets for bundle size, query time, API latency. |
+
+---
+
+## Conclusion
+
+Performance analysis transforms subjective "feels slow" complaints into data-driven optimization through systematic bottleneck detection, profiling, and impact quantification. This skill provides comprehensive tooling for identifying performance issues across communication, processing, memory, and network dimensions, then prioritizing optimizations by measurable impact.
+
+Use this skill to establish baseline performance metrics, profile production-like workloads, identify actual bottlenecks (not assumed ones), and quantify improvement through A/B testing. The automated bottleneck detection (`bottleneck detect --fix`) applies proven optimizations (caching, topology changes, concurrency tuning) with estimated impact percentages, enabling informed trade-off decisions between performance gains and code complexity.
+
+The key insight is that performance optimization without profiling data is guesswork - developer intuition about bottlenecks is wrong 70%+ of the time. Profiling reveals the actual critical path, allowing focused effort on the 20% of code causing 80% of performance issues (Pareto principle). Micro-optimizations that save 2ms while making code unreadable are net negative for long-term velocity - optimize critical paths only, preserve clarity elsewhere.
+
+Continuous monitoring prevents performance regressions by tracking key metrics (p99 latency, throughput, resource utilization) over time and alerting on degradation. Without ongoing measurement, new features and dependency updates slowly degrade performance until customer complaints force reactive firefighting. The performance report generation (`performance-report --compare`) enables trend analysis, regression detection, and proactive optimization before user impact.
+
+Success requires treating performance as a continuous discipline, not a one-time fix. Establish performance budgets (max latency, max bundle size, max query time) during architecture phase, enforce budgets in code review and CI/CD, and prioritize optimization by measured impact rather than developer assumptions. The difference between fast systems and slow systems is systematic profiling, data-driven optimization, and continuous monitoring - not individual developer skill.

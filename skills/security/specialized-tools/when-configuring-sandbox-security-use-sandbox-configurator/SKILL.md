@@ -877,3 +877,57 @@ npx claude-flow@alpha memory store \
 - NIST Cybersecurity Framework
 - Claude Code Security Documentation
 - Linux Security Best Practices
+
+---
+
+## Core Principles
+
+### 1. Isolation Boundaries are Non-Negotiable
+Sandboxes exist to contain untrusted code execution. Weak boundaries defeat the entire purpose of sandboxing.
+
+**In practice:**
+- File system access defaults to deny, explicitly allow only workspace and temporary directories
+- Network access uses whitelist mode - only approved domains are reachable
+- Process isolation prevents sandbox escape through shared memory or inter-process communication
+- Resource limits (CPU, memory, disk) prevent denial-of-service attacks consuming host resources
+
+### 2. Least Privilege Enforcement
+Sandbox processes should operate with minimal permissions required for legitimate functionality.
+
+**In practice:**
+- Sandbox user accounts cannot access system directories (/etc, /root, /sys)
+- Read-only access to binaries and libraries, read-write only within workspace
+- No sudo or elevated privileges available to sandbox processes
+- Environment variables expose only non-sensitive configuration (never secrets or credentials)
+
+### 3. Defense in Depth Through Layered Controls
+Single security controls fail. Multiple independent layers ensure that compromise of one control does not compromise the entire sandbox.
+
+**In practice:**
+- Combine AppArmor/SELinux mandatory access control with file system permissions
+- Use both firewall rules (iptables) and DNS filtering to restrict network access
+- Implement resource quotas at both process level (ulimits) and user level (cgroups)
+- Add audit logging to detect and alert on suspicious activities even if controls are bypassed
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Allowing symlink traversal outside workspace** (following ../../../etc/passwd symlinks) | Symlinks bypass file path restrictions. Attacker creates symlink in workspace pointing to sensitive system files. | Set `symlink_resolution: deny` or validate symlink targets stay within allowed boundaries. Resolve symlinks and check canonicalized paths. |
+| **Overly permissive temp directory** (/tmp shared with host, no size limits) | Shared temp directories leak information between sandbox and host. No size limits enable DoS via disk exhaustion. | Use isolated temp directory (/tmp/sandbox) with size quotas. Auto-cleanup old files. Prevent cross-user access. |
+| **Storing secrets in sandbox configuration** (API keys, passwords in JSON files) | Configuration files are readable by sandbox processes. Secrets in config files expose credentials to untrusted code. | Use environment variable references (${SECRET_NAME}), fetch from secret management systems, never hardcode secrets in config. |
+| **Allowing wildcard network access** (*.com, *.cloudfront.net without justification) | Wildcards expand attack surface massively. *.com allows millions of domains including attacker-controlled sites. | Use specific domain lists. Wildcard only subdomains under your control. Document and justify every wildcard pattern. |
+| **No monitoring or audit logging** (deploying policies without visibility) | Security controls without monitoring create blind spots. Attacks succeed undetected. No evidence for incident response. | Enable audit logging (auditd, AppArmor logs), monitor for policy violations, alert on suspicious activities, retain logs for forensics. |
+| **Trusting corporate proxies implicitly** (assuming proxy = secure) | Proxies do not validate content security, only route traffic. Malicious content can flow through corporate proxies. | Layer proxy routing with content filtering, DNS filtering, and application-level security. Proxies are routing, not security. |
+
+---
+
+## Conclusion
+
+Sandbox security is the foundation of safe AI code execution environments. The isolation boundaries, access controls, and resource limits defined in this skill create a containment layer that allows untrusted code to execute while protecting the host system from compromise. Effective sandbox configuration balances security with usability - overly restrictive policies break legitimate workflows, while permissive policies enable attacks.
+
+The five-phase approach (assess requirements, configure file isolation, configure network isolation, test policies, deploy and monitor) ensures systematic implementation with validation at each stage. Security policies mean nothing until tested - the validation gates prove that unauthorized access is actually blocked and legitimate access actually works. Negative testing is as critical as positive testing: confirming that attacks fail is how you validate security controls.
+
+However, sandboxes are not perfect security. Determined attackers with sufficient resources find sandbox escapes. Kernel vulnerabilities, CPU side-channel attacks, and zero-day exploits can bypass sandbox controls. Sandboxes reduce risk and raise the cost of attacks, but do not eliminate risk entirely. Combine sandbox security with network segmentation, least-privilege architecture, monitoring, and incident response capabilities to create defense in depth. Assume sandbox breaches will occur and design systems that remain secure even when individual layers fail.

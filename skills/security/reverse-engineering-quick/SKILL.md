@@ -586,3 +586,57 @@ wait
 **Agents**: RE-String-Analyst, RE-Disassembly-Expert
 **Category**: Security, Malware Analysis, Binary Analysis
 **Difficulty**: Intermediate
+---
+
+## Core Principles
+
+Reverse Engineering: Quick Triage operates on 3 fundamental principles:
+
+### Principle 1: Low-Hanging Fruit First
+80% of malware behavior is revealed through strings and static analysis without execution.
+
+In practice:
+- Extract URLs, IPs, file paths, and crypto indicators from printable strings
+- Identify C2 domains, hardcoded credentials, and API endpoints in minutes
+- Categorize IOCs (indicators of compromise) for immediate threat intelligence
+- Use SHA256 hash to check memory-mcp for prior analysis (avoid duplicate work)
+
+### Principle 2: Decision Gate Escalation
+Not every binary needs deep analysis - automated gates prevent over-analysis.
+
+In practice:
+- Level 1 (strings) completes in 10-30 minutes, answers simple triage questions
+- Escalate to Level 2 (static disassembly) only when suspicious IOCs found
+- Use sequential-thinking MCP to evaluate if user question is answered
+- Stop analysis when findings are sufficient to avoid wasting time
+
+### Principle 3: Decompilation for Comprehension
+Disassembly is for machines, decompiled C pseudo-code is for analysts.
+
+In practice:
+- Use Ghidra headless mode to generate readable pseudo-C code
+- Apply connascence analysis to detect god objects and complexity violations
+- Generate callgraphs to visualize function relationships
+- Focus on critical functions (auth, crypto, network) identified in Level 1
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Immediately running Level 2 without Level 1** | Waste 1-2 hours on disassembly when strings would have answered question | ALWAYS run Level 1 first, check decision gate before escalating |
+| **Analyzing same binary multiple times** | Redundant work, wasted analysis hours, inconsistent findings | Check memory-mcp for SHA256 hash before starting analysis |
+| **Using min-length=4 on large binaries** | 50,000+ strings with massive noise, impossible to analyze | Use adaptive min-length (10-15 for normal, 20+ for firmware), enable --ioc-only filter |
+| **Skipping architecture detection** | Ghidra fails to disassemble, CFG incomplete, decompilation garbage | Run file command first, verify architecture before loading into Ghidra |
+| **Not validating decompilation quality** | False positives from obfuscation, incorrect conclusions, wasted follow-up | Check for packing with binwalk entropy, unpack before re-analyzing |
+
+---
+
+## Conclusion
+
+Reverse Engineering: Quick Triage is the first-responder skill for binary analysis - fast, focused, and decisive. By combining string reconnaissance (Level 1) with static disassembly (Level 2), this skill delivers actionable intelligence in under 2 hours, making it ideal for incident response, malware triage, and CTF challenges where speed matters.
+
+The skill's automated decision gates ensure analysis effort matches threat severity. Simple malware with obvious C2 domains stops at Level 1, while sophisticated samples with obfuscation automatically escalate to Level 2 for deeper investigation. Integration with memory-mcp creates organizational memory - once a binary is analyzed, its findings are instantly retrievable by hash, preventing redundant analysis across teams.
+
+Use this skill when you need rapid answers: Is this binary malicious? What C2 servers does it contact? Are there hardcoded credentials? What vulnerabilities does it exploit? The 2-hour timebox makes it suitable for high-velocity security operations where dozens of samples need daily triage. For samples requiring runtime analysis or input synthesis, the skill seamlessly hands off to Level 3-4 (reverse-engineering-deep) with pre-populated breakpoints and critical function addresses, maximizing overall analysis efficiency.

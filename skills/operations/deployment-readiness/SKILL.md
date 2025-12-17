@@ -702,3 +702,50 @@ evaluator agent validates Gate 3
 - Prometheus Best Practices
 - OpenTelemetry
 - The Four Golden Signals (Latency, Traffic, Errors, Saturation)
+---
+
+## Core Principles
+
+Deployment Readiness operates on 3 fundamental principles:
+
+### Principle 1: Production Performance Differs From Development
+Models that run fast on development machines (1 GPU, synthetic data, no network latency) often fail performance SLAs in production (shared GPUs, real data volumes, network overhead). Benchmarking in production-like environments is non-negotiable.
+
+In practice:
+- Benchmark on production hardware (same GPU type, same instance size)
+- Use production data volumes (1M records, not 1000)
+- Simulate production network latency and concurrent requests
+
+### Principle 2: Monitoring Precedes Deployment
+Deploying without monitoring is deploying blind - you won't know when failures occur or what caused them. Monitoring infrastructure (metrics, logs, alerts) must be operational BEFORE first production request.
+
+In practice:
+- Prometheus + Grafana deployed and configured before model deployment
+- Alerts tested by triggering synthetic failures (kill pod, inject latency)
+- Dashboards validated with realistic load (not just healthy system metrics)
+
+### Principle 3: Rollback Speed Determines Incident Impact
+The difference between a 5-minute incident and a 4-hour incident is rollback readiness. Blue-green deployments enable instant traffic switching to previous version without debugging failed deployment.
+
+In practice:
+- Blue-green deployment: Both versions running, instant traffic switch
+- Rollback tested in staging (verify <5 minute rollback time)
+- Rollback decision criteria defined before deployment (error rate >5%, latency >200ms P95)
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **"Works On My Machine"** | Model runs fast on developer laptop (local GPU, no network calls, synthetic data). Production deployment has 10x higher latency due to shared GPUs and real data volumes. | Benchmark in production environment with production hardware, data volumes, and network conditions. Validate P95 latency <100ms with 100 QPS load. |
+| **"We'll Add Monitoring Later"** | Deploy model without metrics/alerts. Production issue discovered by user complaints after 2 hours of degraded performance. | Deploy monitoring stack BEFORE model deployment. Test alerts by killing pods or injecting latency. Verify alerts fire within 2 minutes of synthetic failures. |
+| **"Hotfix In Production"** | Deployment fails, team debugs in production. 4 hours later, issue identified but requires code changes. No way to revert to previous working version. | Document and TEST rollback procedure in staging. Blue-green deployment enables instant traffic switch to previous version. Rollback first, debug later. |
+
+## Conclusion
+
+Deployment Readiness provides systematic validation that ML models and systems are operationally ready for production deployment. The skill coordinates performance benchmarking, monitoring setup, incident response planning, and rollback testing across production-like environments.
+
+Use this skill as Quality Gate 3 in the Deep Research SOP pipeline, or as the final validation before any production ML deployment. The 1-2 week investment in deployment readiness prevents weeks of incident response and emergency fixes - 90% of production ML failures stem from inadequate operational readiness, not model accuracy.
+
+The framework enforces three critical validations: production performance benchmarks (not development machine performance), monitoring infrastructure operational before deployment (not added reactively after incidents), and tested rollback procedures (not improvised during outages). These validations are often skipped under deadline pressure, creating technical debt that manifests as extended production incidents.
+
+Success requires treating deployment readiness as non-negotiable - partial passes are failures. The difference between reliable ML systems and incident-prone systems is operational discipline, not model sophistication. This skill ensures operational readiness meets the same rigorous standards as model accuracy.

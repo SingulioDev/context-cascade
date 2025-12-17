@@ -364,3 +364,52 @@ npx claude-flow@alpha pipeline report \
 - Pipeline Design Patterns
 - Stream Processing Theory
 - Data Flow Architectures
+## Core Principles
+
+### 1. Data Flow as Contract
+Each pipeline stage must have explicit input/output contracts that are validated at runtime.
+
+**In practice:**
+- Define JSON schemas for data passing between stages
+- Implement schema validation at stage boundaries to catch type mismatches early
+- Use structured data formats (JSON, Avro, Protobuf) rather than raw strings
+- Version your data contracts to enable backward-compatible pipeline updates
+- Generate documentation from schemas to keep API contracts synchronized
+
+### 2. Backpressure Management
+Never allow upstream stages to overwhelm downstream stages with data they cannot process.
+
+**In practice:**
+- Implement bounded queues between stages with configurable buffer sizes (default: 100 items)
+- Monitor queue depth and apply backpressure when 80% full by slowing upstream producers
+- Use flow control mechanisms like credit-based flow control or sliding windows
+- Provide visibility into queue metrics (depth, throughput, wait time) for bottleneck detection
+- Design stages to be idempotent so retries after backpressure do not cause duplicate processing
+
+### 3. Failure Isolation and Recovery
+One failing stage should not bring down the entire pipeline.
+
+**In practice:**
+- Implement circuit breakers that open after N consecutive failures (default: 5)
+- Use dead letter queues to capture failed items for later reprocessing
+- Apply exponential backoff with jitter for retries (1s, 2s, 4s, 8s, max 60s)
+- Log failure context (input data, error message, stack trace) for debugging
+- Design recovery workflows that can resume from last checkpoint without reprocessing entire pipeline
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Unbounded queues between stages** | Memory exhaustion when fast producers overwhelm slow consumers, no backpressure signal, eventual OOM crashes | Use bounded queues with explicit size limits (100-1000 items), implement backpressure signaling, monitor queue depth with alerts at 80% capacity |
+| **Sequential execution when parallelism possible** | Wastes resources by underutilizing available CPU/memory, long end-to-end latency, poor throughput for independent tasks | Analyze dependency graph to identify parallel stages, spawn concurrent agents for independent tasks, use fan-out/fan-in patterns where appropriate |
+| **No data validation at stage boundaries** | Silent data corruption, type errors discovered late in pipeline, difficult debugging due to error propagation, cascading failures | Validate data against JSON schemas at every stage input/output, fail fast with clear error messages, log validation failures with input examples |
+| **Stateful stages without checkpointing** | Pipeline cannot recover from failures without full restart, lost computation work, difficult to scale stages independently | Make stages stateless where possible, persist state to external store (Redis, database) with checkpoint IDs, enable resume from last checkpoint |
+| **Ignoring pipeline metrics** | No visibility into bottlenecks, cannot identify slow stages, resource allocation decisions made blindly | Track stage-level metrics (throughput, latency, error rate), expose metrics endpoint (Prometheus format), generate performance reports highlighting bottleneck stages |
+
+## Conclusion
+
+Agent pipeline chaining represents a sophisticated orchestration pattern that enables complex data processing workflows by composing specialized agents into sequential or parallel execution flows. The power of this approach lies in its ability to break down large tasks into manageable stages, each with clear responsibilities and explicit input/output contracts. However, this power comes with complexity - managing data flow, handling backpressure, and ensuring failure isolation require careful design and continuous monitoring.
+
+The core principles highlighted above - treating data flow as a contract, implementing backpressure management, and isolating failures - form the foundation of robust pipeline architectures. Without these principles, pipelines quickly become brittle, with cascading failures, resource exhaustion, and opaque debugging scenarios. The anti-patterns section illustrates common pitfalls that stem from neglecting these principles, such as unbounded queues leading to memory exhaustion or sequential execution wasting parallelization opportunities.
+
+As you design and implement agent pipeline chains, prioritize observability and incremental validation. Start with simple sequential pipelines before adding parallelism. Validate data contracts at every stage boundary. Monitor queue depths and stage throughput continuously. By building on these foundations, you can create pipelines that are not only powerful but also maintainable, debuggable, and resilient to the inevitable failures that occur in distributed systems. Remember: a well-designed pipeline is one that fails gracefully and provides clear signals about what went wrong and where.

@@ -904,3 +904,49 @@ describe('LoginForm', () => {
 
 // Phase 4: Validate - Component renders and validates correctly
 ```
+## Core Principles
+
+### 1. Evidence Over Assumptions
+Code must demonstrate functionality through actual execution, not through superficial appearance or static analysis alone.
+
+**In practice:**
+- Execute code with realistic inputs in isolated sandboxes before declaring success
+- Capture complete outputs including stdout, stderr, exit codes, and performance metrics
+- Validate behavior against expected outcomes with measurable criteria
+- Document evidence trails showing what was tested, when, and with what results
+
+### 2. Systematic Root Cause Analysis
+Issues must be traced to their underlying causes, not just their visible symptoms, to prevent recurrence.
+
+**In practice:**
+- Use debugging tools (stack traces, profilers, debuggers) to identify exact failure points
+- Categorize failures by type: syntax, runtime, logic, integration, dependency
+- Distinguish between primary failures and cascading effects
+- Apply fixes that address root causes rather than masking symptoms
+
+### 3. Continuous Validation Without Regressions
+Fixes must resolve issues while preserving all existing functionality through comprehensive regression testing.
+
+**In practice:**
+- Maintain baseline test suites that capture previously working behavior
+- Run full regression tests after every fix to detect unintended side effects
+- Compare before/after metrics: test pass rates, coverage, performance
+- Reject fixes that introduce new failures even if they resolve the original issue
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| "It Looks Correct" Approval | Approving code based on visual inspection without execution validation, leading to theater code deployment | Always execute code in sandbox with realistic inputs, capture outputs, and verify against expected behavior before approval |
+| Symptom Fixing | Applying quick patches that mask symptoms without addressing root causes, causing issues to resurface | Use systematic debugging to trace failures to root causes, categorize by type, and apply fixes that prevent recurrence |
+| Single-Path Testing | Testing only happy paths while ignoring edge cases and error scenarios, missing critical failure modes | Design comprehensive test matrices covering valid inputs, edge cases, boundary conditions, error paths, and exceptional scenarios |
+| Environment Assumptions | Assuming code works everywhere because it works locally, ignoring environment-specific failures | Test in isolated sandboxes that mirror production environments, validate dependencies, and verify configuration requirements |
+| Coverage Theater | Achieving high coverage percentages with weak tests that don't validate actual behavior | Focus on test quality over quantity, ensure assertions verify behavior, and measure actual defect detection rate |
+
+## Conclusion
+
+The Functionality Audit skill transforms code validation from superficial appearance checks into rigorous execution-based verification. By creating isolated test environments, executing code with realistic inputs, and systematically debugging failures to root causes, this skill ensures genuine functionality rather than assumed correctness. The five-phase workflow - from sandbox setup through execution testing, debugging, validation, and reporting - provides a systematic approach that catches issues before they reach production.
+
+The integration with memory coordination and hooks automation ensures audit results are preserved for future reference and continuous improvement. By storing findings in Memory MCP with WHO/WHEN/PROJECT/WHY tags, the skill enables trend analysis and learning from past audits. The evidence-based validation framework, incorporating self-consistency checking and program-of-thought decomposition, guarantees that audit conclusions are grounded in measurable facts rather than assumptions.
+
+This skill is most effective when used as part of a comprehensive quality pipeline, coordinated with theater detection for pre-screening, code review for post-validation assessment, and style audits for convention compliance. Organizations implementing this skill typically see significant reductions in production defects, faster debugging cycles, and higher confidence in code deployments. The 100% test recovery target, achieved through automated repair and systematic validation, represents a paradigm shift from accepting failures to enforcing functionality through rigorous audit processes.

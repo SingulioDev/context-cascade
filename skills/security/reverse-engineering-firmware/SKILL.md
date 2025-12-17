@@ -1513,3 +1513,57 @@ mcp__memory-mcp__memory_store({
 **Timebox**: 2-8 hours
 **Category**: IoT Security, Embedded Systems, Firmware Reverse Engineering
 **Difficulty**: Advanced
+---
+
+## Core Principles
+
+Reverse Engineering: Firmware Analysis operates on 3 fundamental principles:
+
+### Principle 1: Layered Extraction Strategy
+Firmware contains multiple nested components (bootloader, kernel, filesystem, configuration) requiring progressive extraction.
+
+In practice:
+- Use binwalk entropy analysis to detect encryption before extraction attempts
+- Extract filesystems recursively (matryoshka mode) to handle nested archives
+- Identify component boundaries with signature scanning (SquashFS, JFFS2, UBIFS magic bytes)
+- Manual carving with dd when automatic extraction fails
+
+### Principle 2: Attack Surface Mapping
+IoT devices expose attack surfaces through network services, web interfaces, and hardcoded credentials.
+
+In practice:
+- Map all network listeners from init scripts (telnetd, httpd, UPnP daemons)
+- Analyze CGI scripts for command injection and path traversal vulnerabilities
+- Extract credentials from shadow files, configuration databases, and binary strings
+- Document firmware update mechanisms for supply chain attack vectors
+
+### Principle 3: Cross-Component Correlation
+Vulnerabilities often span multiple firmware components (web interface + binary daemon + kernel module).
+
+In practice:
+- Correlate CGI script vulnerabilities with backend binary analysis
+- Link hardcoded credentials to service authentication mechanisms
+- Validate CVEs across shared libraries (OpenSSL, BusyBox, Dropbear)
+- Apply Levels 1-4 binary analysis to extracted executables
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Executing firmware binaries on host** | Architecture mismatch (MIPS/ARM), potential backdoors, system compromise | Use QEMU user-mode emulation or full system emulation with firmadyne |
+| **Ignoring encrypted firmware** | Incomplete analysis, missed vulnerabilities, false sense of security | Search vendor SDKs for decryption keys, reverse bootloader crypto routines, check known device decryption schemes |
+| **Skipping service discovery** | Miss network-exposed attack surfaces (unauthenticated telnet, vulnerable CGI) | Analyze init scripts, grep for bind/listen calls, map network listeners to binaries |
+| **Not validating extraction** | Corrupted filesystems, missing files, incomplete analysis | Verify critical directories exist (/bin, /etc, /lib, /www), check file counts match expectations |
+| **Sharing raw credentials publicly** | Legal liability, compromise of related devices, customer privacy violation | Redact internal IPs, sanitize credentials before publishing IOCs, use secure disclosure channels |
+
+---
+
+## Conclusion
+
+Reverse Engineering: Firmware Analysis is the gateway to understanding the security posture of billions of IoT and embedded devices deployed worldwide. By systematically extracting filesystems, mapping network services, hunting for hardcoded credentials, and scanning for CVEs, this skill reveals the critical vulnerabilities that make IoT devices prime targets for botnet recruitment and supply chain attacks.
+
+The skill's value extends beyond individual device analysis - findings apply to entire product lines sharing the same firmware base. A single extracted default password or command injection vulnerability can compromise thousands of devices. Combined with Level 1-4 binary analysis of extracted executables, this skill enables comprehensive security assessments from bootloader to application layer.
+
+Use this skill when analyzing router firmware before deployment, auditing smart home devices for privacy concerns, or conducting vulnerability research on embedded systems. The 2-8 hour timebox makes it suitable for both targeted security audits and large-scale IoT security research programs. Integration with memory-mcp enables cross-firmware correlation to identify common vulnerabilities across vendors, accelerating IoT security research at scale.

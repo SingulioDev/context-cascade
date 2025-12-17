@@ -1,87 +1,12 @@
 ---
 name: typescript-specialist
-description: Modern TypeScript development specialist for Node.js backends, Express/Nest.js
-  frameworks, type-safe frontend development, npm package creation, and monorepo management
-  with Turborepo/nx. Use when building TypeScript APIs, implementing type-safe full-stack
-  applications, creating npm libraries, or requiring TypeScript best practices. Handles
-  strict mode, advanced types, build tooling, and ESM/CommonJS modules.
+description: Modern TypeScript development specialist for Node.js backends, Express/Nest.js frameworks, type-safe frontend development, npm package creation, and monorepo management with Turborepo/nx. Use when building TypeScript APIs, implementing type-safe full-stack applications, creating npm libraries, or requiring TypeScript best practices. Handles strict mode, advanced types, build tooling, and ESM/CommonJS modules.
 category: Language Specialists
 complexity: Medium
-triggers:
-- typescript
-- node.js
-- express
-- nest.js
-- npm package
-- typescript api
-- type safety
-- monorepo
-- turborepo
-- ts-node
-version: 1.0.0
-tags:
-- specialists
-- domain-expert
-author: ruv
+triggers: ["typescript", "node.js", "express", "nest.js", "npm package", "typescript api", "type safety", "monorepo", "turborepo", "ts-node"]
 ---
 
 # TypeScript Specialist
-
-
-## When to Use This Skill
-
-- **Language-Specific Features**: Leveraging unique language capabilities
-- **Idiomatic Code**: Writing language-specific best practices
-- **Performance Optimization**: Using language-specific optimization techniques
-- **Type System**: Advanced TypeScript, Rust, or type system features
-- **Concurrency**: Language-specific async/parallel programming patterns
-- **Ecosystem Tools**: Language-specific linters, formatters, build tools
-
-## When NOT to Use This Skill
-
-- **Cross-Language Work**: Polyglot projects requiring multiple languages
-- **Framework-Specific**: React, Django, Rails (use framework specialist instead)
-- **Algorithm Design**: Language-agnostic algorithmic work
-- **Generic Patterns**: Design patterns applicable across languages
-
-## Success Criteria
-
-- [ ] Code follows language-specific style guide (PEP 8, Effective Go, etc.)
-- [ ] Language-specific linter passing (eslint, pylint, clippy)
-- [ ] Idiomatic patterns used (decorators, context managers, traits)
-- [ ] Type safety enforced (TypeScript strict mode, mypy, etc.)
-- [ ] Language-specific tests passing (pytest, jest, cargo test)
-- [ ] Performance benchmarks met
-- [ ] Documentation follows language conventions (JSDoc, docstrings, rustdoc)
-
-## Edge Cases to Handle
-
-- **Version Differences**: Language version compatibility (Python 2 vs 3, ES5 vs ES6)
-- **Platform Differences**: OS-specific behavior (Windows vs Linux paths)
-- **Encoding Issues**: Unicode, character sets, binary data
-- **Dependency Hell**: Version conflicts or missing dependencies
-- **Memory Management**: GC tuning, manual memory management (Rust, C++)
-- **Concurrency Models**: GIL limitations, async runtime differences
-
-## Guardrails
-
-- **NEVER** ignore language-specific warnings or deprecations
-- **ALWAYS** use language version managers (nvm, pyenv, rustup)
-- **NEVER** reinvent standard library functionality
-- **ALWAYS** follow language security best practices
-- **NEVER** disable type checking to make code compile
-- **ALWAYS** use language-native package managers
-- **NEVER** commit language-specific artifacts (node_modules, __pycache__)
-
-## Evidence-Based Validation
-
-- [ ] Language-specific linter passes with zero warnings
-- [ ] Type checker passes (tsc --strict, mypy --strict)
-- [ ] Tests pass on target language version
-- [ ] Benchmarks show performance within acceptable range
-- [ ] Code review by language expert
-- [ ] Security scanner passes (npm audit, safety, cargo audit)
-- [ ] Documentation generated successfully
 
 Expert TypeScript development for type-safe, scalable backend and full-stack applications with modern tooling.
 
@@ -737,3 +662,50 @@ function Log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
 **Maintained By**: typescript-specialist agent
+
+## Core Principles
+
+### 1. Strict Mode Always - Type Safety Over Convenience
+TypeScript's strict mode enables all strict type checking options, catching errors that permissive settings miss.
+
+**In practice**:
+- Enable strict: true in tsconfig.json (enables all strict checks)
+- Add noUncheckedIndexedAccess to catch undefined array access
+- Use strictNullChecks to prevent null/undefined errors
+- Example: Accessing array element array[5] without length check is caught by noUncheckedIndexedAccess
+
+### 2. Avoid any - Use unknown or Proper Types
+The any type disables type checking, defeating the purpose of TypeScript. unknown requires type narrowing before use.
+
+**In practice**:
+- Replace any with unknown and add type guards
+- Use generic type parameters instead of any
+- Create proper interfaces for data shapes
+- Example: API response typed as unknown requires runtime validation before use, preventing incorrect assumptions
+
+### 3. Leverage Type System - Use Advanced Types
+TypeScript's type system is powerful beyond basic interfaces. Mapped types, conditional types, and template literals provide type-level computation.
+
+**In practice**:
+- Use Partial, Pick, Omit for transforming existing types
+- Create custom mapped types for domain logic
+- Employ template literal types for string patterns
+- Example: API route type ApiRoute = `/${ApiVersion}/${Resource}` ensures only valid routes compile
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|-------------|---------|----------|
+| **Using any Instead of unknown** | any disables all type checking, hiding bugs and breaking refactoring safety | Use unknown and add type guards (typeof, instanceof) to narrow types before use |
+| **Ignoring Strict Mode** | Permissive TypeScript settings allow null errors, implicit any, and other bugs that strict mode prevents | Enable strict: true, noUncheckedIndexedAccess, and noImplicitReturns in tsconfig.json |
+| **Type Assertions Instead of Guards** | Using value as Type bypasses type checking and can cause runtime errors if assumption is wrong | Create type guard functions (value is Type) with runtime checks |
+| **No Return Type Annotations** | Missing return types allow accidental type changes and make refactoring difficult | Explicitly annotate function return types for all exported functions |
+| **Ignoring Compiler Errors** | Deploying code with TypeScript errors risks runtime failures | Treat compiler errors as blocking, add tsc --noEmit to CI/CD pipeline |
+
+## Conclusion
+
+TypeScript transforms JavaScript development by adding compile-time type safety while preserving JavaScript's flexibility and ecosystem. The key to effective TypeScript is embracing strict mode and leveraging the advanced type system rather than treating TypeScript as "JavaScript with type annotations." Strict mode catches entire categories of bugs that permissive settings miss, including null/undefined errors, implicit any, and unsafe array access.
+
+The TypeScript type system enables type-level programming that encodes business logic into types themselves. Mapped types transform existing types, conditional types enable type branching, and template literal types create precise string patterns. These features move validation from runtime to compile time, reducing bugs and improving developer experience through superior autocomplete and inline documentation.
+
+For production applications, TypeScript's integration with frameworks like Nest.js provides dependency injection, decorators, and middleware patterns that feel natural while remaining fully type-safe. Build tools like tsup and esbuild compile TypeScript rapidly, while dual module support (ESM + CommonJS) ensures compatibility across the Node.js ecosystem. Combined with Zod for runtime validation and Prettier for formatting, TypeScript creates a development experience that is both productive and safe, catching errors before they reach production while maintaining JavaScript's rapid iteration speed.

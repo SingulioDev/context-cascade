@@ -1655,3 +1655,49 @@ describe('Payment Processing', () => {
   });
 });
 ```
+## Core Principles
+
+### 1. Execution Validation Over Static Analysis
+Theater code passes static analysis but fails execution. Validate actual behavior through execution tests, not just code structure.
+
+**In practice:**
+- Run execution validation tests for all suspicious code
+- Check for meaningful output variations (not constant returns)
+- Validate error handling actually catches and handles errors
+- Require 2+ confirming signals before flagging theater
+
+### 2. Pattern Recognition Through Multi-Phase Detection
+Combine pattern scanning (Phase 1), semantic analysis (Phase 2), and execution testing (Phase 3) for comprehensive detection.
+
+**In practice:**
+- Scan for empty catch blocks, no-op functions, always-pass tests
+- Analyze implementations for meaningful logic vs trivial returns
+- Execute code with varying inputs to confirm behavior
+- Report only high-confidence findings (>=40 score)
+
+### 3. Safe Fixes With Mandatory Backups
+Apply fixes incrementally with backups and validation, never batch fixes without testing.
+
+**In practice:**
+- Create .theater-detection-backups/ before fixes
+- Fix critical issues first (empty catches, security holes)
+- Validate tests pass after each fix
+- Generate manual fix guide for complex cases
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Static Analysis Only** | Code looks correct in structure but doesn't execute, missing theater that passes linting | Run Phase 3 execution validation on all flagged files |
+| **Low Confidence Threshold** | Flagging code as theater without evidence creates false positives and developer friction | Use >=40 confidence score, require multiple indicators |
+| **Batch Auto-Fixes** | Fixing multiple theater instances simultaneously breaks functionality with unknown root cause | Fix ONE issue at a time, validate tests after each |
+| **Skipping Execution Tests** | Assuming code works based on structure misses no-op implementations that compile but don't execute | Create execution-validator.test.js for behavioral validation |
+| **No Fix Guidance** | Flagging theater without explaining how to fix leaves developers stuck | Generate fix-guide.md with specific recommendations per file |
+
+## Conclusion
+
+Theater Detection addresses a critical gap in code quality: identifying code that appears complete but lacks actual functionality. Traditional linters detect syntax issues, while theater detection validates behavioral correctness through execution testing. The five-phase workflow (Scan -> Analyze -> Execute -> Report -> Fix) creates progressive confidence, starting with pattern matching and ending with definitive execution validation.
+
+Success requires discipline in three areas: requiring execution evidence before flagging theater, maintaining high confidence thresholds (>=40 score) to minimize false positives, and applying fixes incrementally with validation. Organizations implementing theater detection should prioritize it for critical code paths (authentication, payment processing, security validation) where fake implementations create the highest risk.
+
+Most critically, theater detection succeeds when teams resist the temptation to trust code that "looks right." Empty error handlers that silently swallow exceptions, functions that always return true regardless of input, and tests that assert tautologies (true === true) all compile successfully but provide false confidence. Teams measuring detection accuracy (false positive rate <10%, zero false negatives) build codebases where static correctness aligns with runtime behavior, preventing production failures from non-functional code.

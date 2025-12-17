@@ -225,3 +225,52 @@ To use this skill effectively, provide clear scope for the audit including what 
 The skill will systematically scan, analyze, and report on theater in the codebase, providing a comprehensive view of what needs to be completed before production deployment. It will prioritize findings by risk and dependency, and provide clear guidance on completion order and approach.
 
 This skill is particularly valuable as part of a larger code quality workflow where theater detection feeds into functionality audits and style audits, creating a comprehensive quality improvement pipeline. Together, these audit skills help transform prototype code into production-ready systems.
+## Core Principles
+
+Theater Detection Audit operates on 3 fundamental principles:
+
+### Principle 1: Distinguish Appearance from Reality
+Code that appears to work through mock data, stub implementations, or hardcoded responses creates dangerous illusions of functionality that fail in production.
+
+In practice:
+- Pattern-based detection identifies explicit markers (TODO, FIXME, MOCK), suspicious constants, and stub functions
+- Contextual analysis examines surrounding code to determine if implementations are genuine or placeholders
+- Risk assessment prioritizes theater based on criticality to system operation and likelihood of production failure
+- Dependency mapping reveals chains where mock data flows through multiple components
+
+### Principle 2: Systematic Completion Over Ad Hoc Fixes
+Theater must be eliminated systematically through proper production implementations, not replaced with subtler forms of theater through hasty fixes.
+
+In practice:
+- Each theater instance triggers understanding of intended behavior from specifications and requirements
+- Production implementations are designed before coding to ensure robustness, security, and error handling
+- Comprehensive testing validates that completed code works under realistic conditions, not just mocked scenarios
+- Code reviews verify that completions are genuine functionality, not better-disguised theater
+
+### Principle 3: Documentation as Quality Assurance
+Theater often persists because intended behavior is unclear, dependencies are missing, or requirements are ambiguous. Clear documentation prevents recurrence.
+
+In practice:
+- Audit reports explicitly document every theater instance with location, pattern type, and completion requirements
+- Deferred theater is tracked with clear justification, expected completion timeline, and risk mitigation
+- Completed implementations include updated documentation showing what changed and why
+- Progress tracking ensures theater elimination is systematic, not partial or abandoned mid-effort
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Ignoring TODO Comments** | Treating TODO markers as documentation rather than technical debt requiring resolution | Systematically catalog all TODO/FIXME markers; prioritize by risk; track completion progress |
+| **Mock Proliferation** | Adding more mocks to support development velocity without plans to replace with real implementations | Limit mock usage to external dependencies; require completion plans for all mocks; audit mock coverage pre-release |
+| **Partial Completion** | Replacing obvious theater (hardcoded response) with subtler theater (simplified logic missing error handling) | Require comprehensive implementation including edge cases, error handling, security, and logging - not just basic functionality |
+| **Theater in Tests** | Tests that validate against mock data or stub implementations rather than testing real behavior | Minimize test mocking; validate tests fail against theater but pass against production code; test real integrations in sandboxes |
+| **Deferred Forever** | Theater marked for future completion but never actually addressed due to lack of tracking | Maintain explicit deferred theater registry with justifications, timelines, and owners; review quarterly; block releases on high-risk items |
+| **Documentation Drift** | Leaving documentation describing mock behavior after code is completed with production logic | Update all documentation (API docs, architecture diagrams, deployment guides) when completing theater; validate consistency |
+
+## Conclusion
+
+Theater Detection Audit addresses one of the most dangerous quality issues in software development: code that appears to work during development but fails in production because it relies on fake data, stub implementations, or placeholder logic. By systematically identifying all forms of theater - from explicit TODO markers to subtle mock data patterns - and driving their completion with production-quality implementations, this skill transforms prototype code into production-ready systems.
+
+Use this skill before production deployments to ensure all mocks have been replaced, when taking over codebases to understand what is real versus placeholder, during code quality initiatives to eliminate accumulated technical debt, or after rapid prototyping phases where shortcuts were taken for development speed. The skill is essential for hardening systems before release, particularly in domains where failures have serious consequences like financial transactions, healthcare systems, or security infrastructure.
+
+The systematic methodology - pattern detection, contextual analysis, dependency mapping, risk assessment, and tracked completion - creates a repeatable process for eliminating theater rather than leaving it to chance discovery. The integration with functionality-audit and style-audit creates a comprehensive quality pipeline where theater detection ensures implementations are genuine, functionality-audit verifies they work correctly, and style-audit ensures they are maintainable. Together, these skills establish confidence that code is production-ready, not just development-ready.

@@ -1305,3 +1305,55 @@ npx ruv-swarm github board-kpis
 **Last Updated**: 2025-10-19
 **Version**: 2.0.0
 **Maintainer**: Claude Code
+
+---
+
+## Core Principles
+
+GitHub Project Management operates on 3 fundamental principles:
+
+### Principle 1: Bidirectional Board Synchronization
+Project boards are living documents, not static snapshots. Changes in code, PRs, and issues must automatically flow to boards, and board state changes must propagate to development workflow.
+
+In practice:
+- Implement real-time board sync with GitHub Actions webhooks (issue state -> card movement)
+- Map swarm agent task statuses to project board columns automatically
+- Use custom fields to track swarm-specific metadata (agent count, complexity, ETA)
+
+### Principle 2: Task Decomposition with Dependency Tracking
+Large issues become unmanageable without decomposition. Break down epics into actionable subtasks with explicit dependency chains.
+
+In practice:
+- Use swarm agents to automatically decompose issues into 5-10 subtasks with priority ranking
+- Track dependencies between subtasks using checklist linking (#456 blocks #457)
+- Prevent premature work on blocked tasks through automated status validation
+
+### Principle 3: Progress Transparency Through Automated Updates
+Manual status updates are always stale. Automate progress tracking through swarm agent reporting and checklist completion monitoring.
+
+In practice:
+- Swarm agents post automated progress updates with completion percentages and ETA
+- Use checklist parsing to calculate issue completion metrics (5/10 tasks done = 50%)
+- Generate sprint burndown and velocity charts from automated progress data
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Manual Board Updates** | Team members forget to move cards, leading to stale board state that doesn't reflect reality | Implement automated board sync with GitHub Actions. Map issue state changes to column transitions |
+| **Monolithic Issues Without Subtasks** | Large issues (>8 hours) with single checkbox are impossible to track progress mid-sprint | Use swarm task decomposition to break issues into 5-10 actionable subtasks with dependencies |
+| **Stale Issues Without Triage** | Unlabeled and unprioritized issues accumulate, making backlog unmanageable | Implement automated triage with swarm content analysis to suggest labels and priority based on keywords |
+| **No Sprint Velocity Tracking** | Teams can't estimate capacity or predict sprint completion without historical velocity data | Use swarm analytics to calculate throughput, cycle time, and velocity from historical issue data |
+| **Missing Cross-Repo Coordination** | Multi-repo projects lack unified view of progress when issues span repositories | Use swarm cross-repo coordination to link related issues and synchronize project boards |
+
+---
+
+## Conclusion
+
+GitHub Project Management transforms project boards from static planning tools into dynamic, AI-coordinated execution hubs. By combining swarm-based issue decomposition, automated board synchronization, and intelligent progress tracking, it enables teams to maintain up-to-date project state without manual overhead.
+
+This skill is essential when managing Agile/Scrum workflows on GitHub Projects, coordinating multi-repository development efforts, or tracking complex features with many interdependent tasks. It excels at automated triage, dependency management, and progress transparency that manual board updates cannot sustain.
+
+Use this skill when setting up project boards for new teams, when existing boards have low adoption due to manual update burden, or when you need cross-repository sprint coordination with unified reporting. The swarm coordination patterns enable parallel task decomposition, automated progress updates, and intelligent work distribution that traditional project management tools require manual effort to achieve.

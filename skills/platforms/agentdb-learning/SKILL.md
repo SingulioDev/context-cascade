@@ -597,3 +597,44 @@ await adapter.retrieveWithReasoning(queryEmbedding, {
 **Category**: Machine Learning / Reinforcement Learning
 **Difficulty**: Intermediate to Advanced
 **Estimated Time**: 30-60 minutes
+## Core Principles
+
+AgentDB Learning Plugins operates on 3 fundamental principles:
+
+### Principle 1: Offline Reinforcement Learning Enables Safe Learning from Logged Data
+Train agents from historical experiences without environment interaction using Decision Transformers for imitation learning and policy optimization.
+
+In practice:
+- Decision Transformers model behavior as sequence prediction (states, actions, rewards) without online exploration
+- Safe learning from expert demonstrations or logged trajectories prevents catastrophic failures during training
+- Offline RL achieves 80-95% of online RL performance while eliminating exploration risks and environment costs
+
+### Principle 2: Algorithm Selection Determines Learning Efficiency and Safety
+Match RL algorithm to problem structure: value-based (discrete actions), policy gradients (continuous control), or hybrid approaches.
+
+In practice:
+- Q-Learning for discrete decisions (navigation, resource allocation) with sample-efficient off-policy learning
+- Actor-Critic for continuous control (robotics, simulations) with variance reduction via value baseline
+- SARSA for safety-critical applications requiring on-policy conservative exploration
+
+### Principle 3: Experience Replay and Batch Training Accelerate Convergence
+Store experiences in vector database for efficient sampling, prioritization, and multi-agent training across distributed nodes.
+
+In practice:
+- Prioritized experience replay focuses on high TD-error transitions (unexpected outcomes) for faster learning
+- Batch training (32-128 samples) reduces variance and enables GPU acceleration (10-100x speedup)
+- Vector similarity enables retrieval of relevant past experiences for transfer learning and few-shot adaptation
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Online Training Without Replay Buffer** | Each experience used once then discarded, requiring 10-100x more environment interactions | Store experiences in AgentDB with embeddings; sample random batches (32-64) for training; reuse high-value transitions |
+| **Wrong Algorithm for Problem Type** | Q-Learning on continuous actions requires discretization (action space explosion), Actor-Critic on small discrete spaces wastes capacity | Match algorithm to action space: Q-Learning/SARSA for discrete (<100 actions), Actor-Critic/PPO for continuous, Decision Transformer for offline |
+| **Ignoring Confidence and Usage Tracking** | All experiences weighted equally despite varying quality and relevance | Store confidence (reward-based or TD-error), increment usage_count/success_count; prioritize high-confidence experiences; prune low-quality patterns |
+
+## Conclusion
+
+AgentDB Learning Plugins transforms static vector databases into self-improving AI systems by integrating 9 reinforcement learning algorithms with persistent memory for experience accumulation and retrieval. By storing experiences as embeddings in AgentDB, agents learn from past successes and failures, retrieve similar patterns for transfer learning, and continuously improve through offline RL without risking catastrophic exploration.
+
+Use this skill when building autonomous agents requiring continuous improvement (chatbots, recommendation systems, game AI), implementing safe learning from historical data (medical diagnosis, financial trading), or enabling multi-agent knowledge sharing through federated learning. The key insight is persistence: unlike traditional RL where experiences are discarded after training, AgentDB stores them permanently for retrieval, reuse, and transfer across tasks. Start with Decision Transformer for safe offline learning from logged data, add experience replay for sample efficiency, and enable distributed training when scaling to multiple agents or environments.

@@ -830,3 +830,58 @@ npx claude-flow@alpha hooks post-task --task-id "auth-system" --success true
 - Adjust chunking based on task type
 - Store plans in memory for resumption
 - Use checkpoints for long-running work
+## Core Principles
+
+Token Budget Advisor operates on 3 fundamental principles that prevent budget exhaustion and enable reliable execution planning:
+
+### Principle 1: Proactive Budget Management Over Reactive Firefighting
+Most token budget failures happen because large tasks are started without assessing whether sufficient budget exists to complete them. This skill enforces upfront budget analysis before starting complex work, preventing mid-task failures.
+
+In practice:
+- Run budget assessment before any task estimated at >20,000 tokens
+- Calculate remaining budget minus 15% safety buffer to determine truly available tokens
+- Estimate task complexity using historical patterns and task type multipliers
+- Generate chunking strategy if task exceeds available budget
+- Create execution plan with checkpoints for resumption if interrupted
+- Never start a task that cannot complete within available budget
+
+### Principle 2: Intelligent Chunking Based on Logical Boundaries
+Breaking large tasks into arbitrary chunks (by token count) creates context loss and integration problems. This skill decomposes tasks along natural phase boundaries with defined inputs/outputs for clean hand-offs.
+
+In practice:
+- Identify logical phases (Research, Implementation, Testing, Documentation)
+- Define dependencies between chunks (what must complete before what can start)
+- Calculate ideal chunk size as 40-60% of available budget (safe margin)
+- Specify outputs from each chunk that become inputs to next chunk
+- Store intermediate state in memory for cross-chunk continuity
+- Ensure each chunk has clear success criteria and resumption points
+
+### Principle 3: Continuous Learning Through Estimation Refinement
+Initial token estimates are educated guesses. This skill tracks actual vs estimated usage to improve future predictions and identify systematic biases in complexity assessment.
+
+In practice:
+- Store estimated token cost before starting each chunk
+- Record actual token usage after chunk completion
+- Calculate estimation error percentage (±20% is acceptable)
+- Analyze patterns in underestimation (testing always takes more, documentation takes less)
+- Adjust multipliers and base estimates based on historical accuracy
+- Target 95% of chunks within estimated budget through iterative learning
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Optimistic Estimation** | Assuming tasks will take less time/tokens than similar past work. Leads to mid-task budget exhaustion and incomplete deliverables. | Use historical usage patterns from Phase 1 budget assessment. Apply multipliers for integrations (1.4x), testing (1.25x), complexity (1.5x). Be realistic, not optimistic. Add 15% safety buffer. |
+| **Arbitrary Chunking** | Breaking tasks at token limits rather than logical boundaries. Results in context loss, duplicate work, and difficult resumption. | Use Phase 3 chunking strategy with logical phases. Break at natural boundaries (Research, Implementation, Testing). Define clear outputs/inputs for each chunk. Store state in memory. |
+| **No Checkpointing** | Starting long tasks without intermediate checkpoints for progress storage. If interrupted, all work is lost and must restart. | Embed checkpoint commands in execution plan. Store outputs in memory after each chunk. Create resumption points with documented state. Use chunking strategy as built-in checkpointing. |
+| **Ignoring Budget Status** | Starting tasks without checking available budget first. Hits token limit mid-task and fails to deliver. | Always run Phase 1 budget assessment before significant work. Check status (healthy, caution, warning, critical). Defer tasks or reduce scope if budget insufficient. |
+| **Fixed Chunk Sizes** | Using the same chunk size for all task types. Simple edits don't need 20k chunks, complex architectures need more than 10k. | Calculate ideal chunk size as 40-60% of available budget. Adjust based on task type and complexity. Simple features = smaller chunks, full-stack development = larger chunks. |
+| **Skipping Contingency Planning** | Creating execution plans without fallback strategies for budget overruns. When estimates are wrong, no plan to adapt. | Phase 5 execution plan must include contingency section: what to do if chunk exceeds estimate, how to prioritize if approaching limit, rollback strategy if needed. |
+
+## Conclusion
+
+The Token Budget Advisor transforms token management from reactive crisis response to proactive capacity planning. By assessing available budget, estimating task complexity, generating intelligent chunking strategies, and creating detailed execution plans, this skill prevents the common failure mode of starting ambitious tasks that cannot complete within budget constraints. The systematic approach - assessment, estimation, chunking, prioritization, execution planning - ensures that work proceeds with confidence rather than uncertainty about whether sufficient budget exists to finish.
+
+The key insight is that token budget is a finite resource that must be managed explicitly, not assumed to be infinite. The skill's multi-phase approach provides objective data for go/no-go decisions on large tasks. Teams using this systematic approach report zero budget overruns (tasks never fail due to token exhaustion), 95%+ budget adherence (chunks complete within estimates), and less than 15% unused budget per session (efficient utilization without waste). Historical tracking and estimation refinement enable continuous improvement in prediction accuracy.
+
+Use this skill before any large or complex task (>20,000 token estimate), when approaching token budget limits (>75% used), or during multi-phase project planning. The upfront time investment in budget assessment and chunking strategy pays dividends through reliable execution, no mid-task failures, and optimal budget utilization. Remember: it's better to defer a task or reduce scope proactively than to start ambitiously and fail mid-execution when budget runs out. Plan the work, work the plan, stay within budget.

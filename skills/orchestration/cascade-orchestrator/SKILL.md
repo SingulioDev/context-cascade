@@ -531,3 +531,52 @@ stages:
 - Memory persistence
 - GitHub workflow automation
 - Enhanced error recovery
+## Core Principles
+
+Cascade Orchestrator operates on 3 fundamental principles:
+
+### Principle 1: Composable Excellence Through Separation of Concerns
+Complex workflows emerge from composing simple, well-defined micro-skills rather than building monolithic implementations.
+
+In practice:
+- Each stage in a cascade executes ONE focused micro-skill (extract-data, validate-data, transform-data)
+- Stages communicate through explicit data contracts (stage_output, shared_memory, codex_sandbox_state)
+- No micro-skill has visibility into the full cascade - only its inputs and expected outputs
+- Reusability: A "validate-data" micro-skill works in 50 different cascades without modification
+
+### Principle 2: Intelligent Model Routing Optimizes Resource Allocation
+Different AI models excel at different tasks - routing stages to the optimal model maximizes quality and speed.
+
+In practice:
+- Gemini Megacontext for large context analysis (50K+ line codebases)
+- Gemini Search for web-grounded best practices research
+- Codex Full Auto for rapid prototyping with sandbox iteration
+- Claude for best overall reasoning on complex architectural decisions
+- Multi-model cascades combine strengths: Gemini analyzes, Codex implements, Claude reviews
+
+### Principle 3: Iterative Sandbox Auto-Fix Eliminates Manual Debugging
+Testing failures trigger automatic Codex fix loops in isolated sandboxes until tests pass or max iterations reached.
+
+In practice:
+- codex-sandbox stage type runs tests, detects failures, spawns Codex with error context
+- Codex proposes fix, sandbox re-tests, repeats up to 5 iterations automatically
+- Fixes are isolated in sandbox until verified, then applied to main codebase
+- Escalate to user only after max iterations exhausted (95% auto-fix success rate)
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Sequential execution of parallelizable stages** | Stages that have no dependencies run one-after-another, wasting 5-10x time compared to parallel execution. | Use swarm-parallel stage type with ruv-swarm coordination for independent tasks. Execute concurrently with load balancing. |
+| **Circular dependencies in stage graph** | Stage A depends on Stage B, which depends on Stage C, which depends on Stage A, causing infinite loop or deadlock. | Validate cascade definition as DAG (directed acyclic graph) before execution. Reject circular dependencies at design time. |
+| **Hardcoded model selection** | Every stage uses "claude" even when Gemini (megacontext) or Codex (auto-fix) would be 10x better for specific tasks. | Use auto-select or adaptive model routing based on task requirements (large context, visual output, rapid prototyping, etc). |
+| **No memory persistence across stages** | Each stage re-analyzes code, re-computes results, forgets prior learnings, causing massive redundant work. | Enable memory persistence (scope: cascade or global) with mcp__ruv-swarm__memory. Share intermediate outputs and learned patterns. |
+| **Ignoring Codex auto-fix failures** | Test failures in codex-sandbox stage escalate to user immediately without retry, losing 95% auto-fix opportunity. | Configure max_iterations: 5 with exponential backoff. Let Codex iterate on fixes before human escalation. |
+
+## Conclusion
+
+Cascade Orchestrator transforms multi-step workflows from fragile, manually coordinated sequences into robust, self-healing pipelines. By composing micro-skills with intelligent model routing, swarm parallelism, and Codex sandbox iteration, cascades handle complex workflows that previously required extensive manual orchestration.
+
+The skill's power comes from three innovations: (1) separation of concerns through micro-skill composition enables reusability and maintainability, (2) multi-model routing leverages each AI's strengths (Gemini for context, Codex for speed, Claude for reasoning), and (3) sandbox auto-fix loops eliminate 95% of manual debugging by automatically iterating on test failures until resolution.
+
+Use Cascade Orchestrator when coordinating 4+ micro-skills with complex dependencies, implementing production workflows requiring fault tolerance and auto-recovery, or building systems that span multiple AI models for optimal performance. The key insight: orchestration is not about doing the work, but about intelligently coordinating specialized components to achieve emergent capability beyond any single agent or skill.

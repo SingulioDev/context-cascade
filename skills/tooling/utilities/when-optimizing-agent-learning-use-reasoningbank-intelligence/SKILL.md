@@ -689,3 +689,53 @@ Outputs:
 4. **pattern-library.json**: Validated patterns
 
 Complete when improvement > 15% and ready for production deployment.
+
+## Core Principles
+
+### 1. Experience-Driven Optimization
+Pattern recognition from actual agent execution, not theoretical assumptions.
+
+In practice:
+- Track every decision trajectory with context, reasoning, and outcomes
+- Store trajectories in AgentDB with HNSW indexing for 150x faster similarity search
+- Use verdict scoring (performance + efficiency + quality) to identify successful patterns
+- Extract patterns only from trajectories with verdict scores > 80% threshold
+
+### 2. Continuous Feedback Loops
+Learning is iterative - agents improve through repeated execution and pattern refinement.
+
+In practice:
+- Benchmark baseline agent performance on standardized test cases
+- Apply learned strategies and re-measure with same test cases
+- Calculate delta improvements (score, success rate, efficiency, quality)
+- Require > 15% improvement threshold before deployment
+- Retrain quarterly with accumulated trajectories
+
+### 3. Evidence-Based Strategy Selection
+Choose strategies based on empirical performance data, not intuition.
+
+In practice:
+- Use Decision Transformer (one of ReasoningBank's 9 RL algorithms) for trajectory-to-action learning
+- Weight strategies by frequency (how often pattern succeeded) and consistency (variance in outcomes)
+- Rank recommendations by priority score combining frequency, average verdict score, and applicability
+- Apply top 5 recommendations only - avoid strategy overload
+- A/B test new patterns against baseline before production
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|-------------|---------|----------|
+| Learning from failures | Training on low-scoring trajectories creates harmful patterns | Filter for verdict.passed = true and verdict.score > 0.8 before pattern extraction |
+| Insufficient trajectory data | Training Decision Transformer with < 20 trajectories causes overfitting | Collect minimum 50 successful trajectories before model training. Use data augmentation if needed. |
+| Ignoring context | Patterns applied to wrong situations degrade performance | Store context (task, environment, constraints) with each trajectory. Match new tasks to similar contexts using vector similarity (cosine > 0.85) |
+| No validation baseline | Cannot prove learning improved performance | Always run A/B tests: baseline agent vs optimized agent on same test cases. Require statistically significant improvement (p < 0.05) |
+| Static patterns | Patterns become outdated as requirements change | Retrain model quarterly. Track pattern effectiveness over time. Deprecate patterns with declining success rates. |
+| Missing error attribution | When learned strategies fail, no root cause analysis | Store failure analysis with each low-scoring trajectory. Build failure pattern library. Use adversarial validation to test pattern robustness. |
+
+## Conclusion
+
+ReasoningBank Intelligence transforms agents from static executors into self-improving systems through systematic learning from experience. By capturing decision trajectories, evaluating outcomes with weighted verdict scoring, and extracting successful patterns through vector similarity clustering, agents accumulate meta-cognitive knowledge that generalizes across tasks.
+
+The key insight is that adaptive learning requires three components: (1) comprehensive trajectory tracking with full context preservation, (2) rigorous verdict evaluation combining multiple metrics with configurable weights, and (3) evidence-based pattern application validated through A/B testing against baseline performance. This skill implements all three using ReasoningBank's Decision Transformer architecture and AgentDB's optimized vector operations.
+
+Most importantly, this is not one-time optimization but a continuous improvement loop. Agents that use ReasoningBank Intelligence become progressively more effective over time, learning from every execution to refine their decision-making strategies. The 15% improvement threshold ensures only validated learnings are deployed to production, creating a self-reinforcing cycle where each successful execution contributes to future performance gains. This approach scales from individual agent optimization to fleet-wide learning, where patterns discovered by one agent can benefit the entire agent ecosystem through the shared pattern library.

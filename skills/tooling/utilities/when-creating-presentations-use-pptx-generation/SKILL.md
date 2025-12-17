@@ -486,3 +486,60 @@ Outputs:
 4. **slide-notes.txt**: Speaker notes
 
 Complete when PPTX generated with WCAG 2.1 AA compliance.
+
+---
+
+## Core Principles
+
+### 1. Accessibility is Non-Negotiable
+All presentations must meet WCAG 2.1 AA standards to ensure inclusivity for users with disabilities.
+
+**In practice**:
+- Maintain 4.5:1 minimum contrast ratio for all text and background combinations
+- Add alt text to every image, chart, and diagram for screen reader compatibility
+- Define reading order explicitly so assistive tech navigates slides logically
+- Use semantic structure: titles, headings, lists instead of plain text boxes
+- Validate accessibility with automated scans before finalizing presentation
+
+### 2. Design System Enforces Consistency
+Define colors, fonts, layouts, and spacing upfront to ensure visual coherence across 30+ slides.
+
+**In practice**:
+- Create design system with primary/secondary/accent colors, heading/body/caption fonts
+- Define reusable slide layouts: title, content, two-column, data visualization
+- Apply layout templates programmatically instead of manual positioning
+- Use design tokens (variables) so changes propagate automatically
+- Validate consistency with automated checks: font usage, color palette, spacing
+
+### 3. Data Visualization Over Text Walls
+Transform data into charts and visuals instead of bullet-point lists to improve comprehension and retention.
+
+**In practice**:
+- Identify data points in content and recommend chart types (bar, line, pie, scatter)
+- Analyze trends and generate insights to accompany visualizations
+- Use consistent chart styling (colors, legends, labels) from design system
+- Add context: titles, captions, annotations to explain what data means
+- Limit text slides: aim for 80% visual content, 20% text-only slides
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Manual Positioning** | Placing text boxes and images by hand leads to inconsistent alignment, spacing, and visual chaos across slides | Use predefined layout templates with fixed positions. Apply programmatically. Define margin, spacing, and grid constants in design system. |
+| **Color Contrast Failures** | Low contrast between text and background (e.g., light gray on white) makes slides unreadable and fails WCAG compliance | Calculate contrast ratios programmatically. Reject color combinations below 4.5:1. Use dark text on light backgrounds or light text on dark backgrounds. |
+| **Missing Alt Text** | Images, charts, and diagrams without alt text exclude screen reader users and fail accessibility standards | Add alt text to every visual element. Store in slide notes for screen readers. Validate presence of alt text in accessibility scan before export. |
+| **Text Overload** | Dense bullet-point lists and paragraph-heavy slides cause audience disengagement and poor retention | Transform lists into visuals: use icons, diagrams, charts. Apply 1 idea per slide rule. Use progressive disclosure across multiple slides. |
+| **Inconsistent Styling** | Random font sizes, colors, and layouts across slides creates unprofessional appearance and cognitive load | Define design system upfront. Apply templates consistently. Use design tokens. Run consistency validation before export. |
+| **Stale Examples** | Hardcoded data in charts becomes outdated quickly, eroding trust in presentation content | Extract data from live sources or databases. Generate charts programmatically. Add timestamps to data slides. Update before each presentation. |
+
+---
+
+## Conclusion
+
+Enterprise-grade presentations are not built slide-by-slide with manual formatting - they are generated systematically from structured content, design systems, and accessibility constraints. By enforcing WCAG 2.1 AA compliance, applying consistent design systems, and prioritizing data visualization over text walls, the pptx-generation skill produces professional decks at scale.
+
+The skill's value lies in automation: define content structure once, apply design system programmatically, validate accessibility automatically, and export production-ready PowerPoint files in minutes instead of hours. This approach scales to 30+ slide decks without sacrificing quality or consistency.
+
+Remember: presentations are communication tools, not art projects. Clarity, accessibility, and consistency matter more than novelty. Automate the mechanical work (layout, styling, validation) so presenters can focus on the creative work (storytelling, insights, persuasion). When presentations meet accessibility standards, they reach wider audiences. When design is consistent, the content shines. When generation is automated, teams iterate faster and deliver better results.

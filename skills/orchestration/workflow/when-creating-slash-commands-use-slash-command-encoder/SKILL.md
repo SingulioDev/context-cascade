@@ -522,3 +522,52 @@ fi
 - CLI Design Patterns
 - Command Interface Best Practices
 - Parameter Validation Techniques
+## Core Principles
+
+### 1. Ergonomics Through Convention
+Commands should feel natural and consistent, following established CLI patterns that users already know.
+
+**In practice:**
+- Use verb-noun naming convention: /deploy-app, /test-suite, /analyze-code
+- Provide short aliases for frequently used commands: /a for /analyze, /d for /deploy
+- Support both positional arguments and named flags: /analyze ./src or /analyze --path ./src
+- Implement tab completion for command names and parameter values
+- Follow Unix conventions for flag naming: --help, --version, --verbose
+
+### 2. Fail Fast with Helpful Errors
+Invalid commands should fail immediately with clear, actionable error messages that guide users to correct usage.
+
+**In practice:**
+- Validate all parameters before execution, not during
+- Provide specific error messages: "Path './nonexistent' does not exist" instead of "Invalid input"
+- Suggest corrections for typos: "Unknown command '/analize'. Did you mean '/analyze'?"
+- Include usage examples in error output: "Usage: /analyze <path> [--depth <number>]"
+- Return non-zero exit codes for errors to enable scripting and automation
+
+### 3. Composability and Chaining
+Commands should output structured data that can be consumed by other commands or tools.
+
+**In practice:**
+- Support JSON output format for machine-readable results: /analyze --format json
+- Enable piping results to other commands: /analyze ./src | /optimize
+- Provide filtering and transformation flags: /list --filter "status=active"
+- Implement consistent exit codes for success/failure detection in scripts
+- Design commands to be atomic and side-effect free where possible
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Generic error messages without context** | Users cannot diagnose what went wrong, trial-and-error debugging, frustration and reduced adoption | Provide specific error messages with parameter name, actual value, expected format, and example of correct usage |
+| **No parameter validation** | Commands execute with invalid inputs, partial execution with corrupted state, difficult rollback scenarios | Validate all parameters before execution, fail fast with clear messages, use type coercion where sensible (string to number) |
+| **Inconsistent naming across commands** | Cognitive load increases, users must remember arbitrary variations, reduced discoverability, confusion | Establish naming conventions (verb-noun), document in style guide, enforce with linting, refactor existing commands for consistency |
+| **Commands without help text** | Users must guess parameter meanings, undiscoverable flags, poor developer experience, reduced adoption | Implement --help flag for every command, generate help text from schema, include examples, auto-generate documentation |
+| **Blocking execution without progress feedback** | Users cannot tell if command is working or hung, no indication of time remaining, frustration and premature cancellation | Show progress indicators for long-running commands, print incremental output, support --quiet flag to disable for scripting |
+
+## Conclusion
+
+Slash command systems represent a powerful paradigm for exposing micro-skills and agent capabilities through ergonomic, discoverable interfaces. When designed well, these command systems become force multipliers for developer productivity, enabling rapid access to complex functionality through simple, memorable syntax. The three core principles - ergonomics through convention, fail-fast error handling, and composability - form the foundation of successful command interfaces that users actually enjoy using.
+
+The key differentiator between good and great command systems lies in attention to detail: clear error messages that guide users to solutions, consistent naming conventions that reduce cognitive load, and validation logic that catches mistakes before execution. The anti-patterns highlighted above - particularly generic errors and lack of help text - represent missed opportunities to delight users and reduce friction. Every moment spent improving error messages and documentation pays dividends in reduced support burden and increased adoption.
+
+As you build slash command systems, remember that you are designing a user interface, not just a technical API. Users will form mental models of your command system based on patterns they have learned from Git, npm, Docker, and other CLI tools they use daily. By following established conventions and prioritizing user experience, you can create command systems that feel intuitive and powerful. Test your commands with real users, iterate on error messages, and continuously improve discoverability through better help text and auto-completion. A well-designed command system becomes an invisible interface that users rely on without thinking about it.

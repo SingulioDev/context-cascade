@@ -568,3 +568,29 @@ if (!user) {
 **Last Updated**: 2025-11-02
 **Maintained By**: language-specialists coordination
 **Tier**: Gold (Parent + Nested Specialists + Resources + Tests + Examples)
+
+---
+
+## Core Principles
+
+1. **Language Idioms Over Generic Patterns**: Always prioritize language-specific idioms and conventions over generic cross-language patterns. Python's decorators, context managers, and duck typing should be leveraged fully rather than forcing Java-style interfaces. TypeScript's structural typing and advanced type features like mapped types and conditional types should be used to create type-safe abstractions rather than runtime checks. The goal is to write code that feels native to the language ecosystem, not code that could be translated from any other language.
+
+2. **Type Safety as a Foundation, Not an Afterthought**: Type systems are not optional features to be added later but foundational components that guide architecture. In TypeScript, strict mode should be enabled from day one with no `any` escapes. In Python, type hints should be comprehensive enough that mypy in strict mode passes cleanly. Type-driven development catches entire classes of bugs at compile time, enables confident refactoring, and serves as living documentation that stays in sync with implementation.
+
+3. **Polyglot Projects Require Shared Contracts, Not Duplicated Logic**: When building multi-language systems, the interface boundaries must be precisely defined through shared schemas (JSON Schema, Protocol Buffers, OpenAPI). Business logic should never be duplicated across languages - instead, each language handles what it does best with clear API contracts at the boundaries. Python processes data pipelines, TypeScript handles type-safe business logic, and they communicate through well-defined interfaces with automated contract testing to prevent drift.
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Better Approach |
+|-------------|--------------|-----------------|
+| **Ignoring Language Version Managers** | Leads to "works on my machine" issues where code runs in development but fails in CI/CD due to version mismatches. Python 3.8 vs 3.11 have significant differences (typing features, asyncio improvements), and Node 16 vs 20 affect import resolution and performance. | Use pyenv/nvm consistently across all environments. Pin exact versions in .python-version and .nvmrc files. Document required versions in README with setup scripts. CI/CD should match production versions exactly. |
+| **Disabling Type Checkers to Ship Faster** | Using `@ts-ignore`, `# type: ignore`, or disabling strict mode trades short-term velocity for long-term technical debt. These suppressions hide bugs that will surface in production, make refactoring dangerous, and erode confidence in the type system. | Fix the root cause of type errors by refactoring interfaces, adding proper type definitions, or using type guards. If third-party libraries lack types, contribute them to DefinitelyTyped or create local declaration files. Treat type errors as seriously as runtime errors. |
+| **Mixing Language Conventions in Polyglot Codebases** | Using camelCase in Python because "it's consistent with TypeScript" or snake_case in TypeScript breaks ecosystem tooling, confuses developers, and makes code harder to maintain. Each language has conventions for good reasons - Python's PEP 8 reflects the community's decades of experience, as does TypeScript's alignment with JavaScript standards. | Follow each language's native conventions strictly. Use automated formatters (black for Python, Prettier for TypeScript) to enforce style. Create adapter layers at API boundaries to translate between naming conventions rather than forcing one language's style onto another. |
+
+## Conclusion
+
+The Language Specialists skill provides comprehensive multi-language development capabilities with production-ready tooling, automated validation, and real-world examples. By combining Python and TypeScript specialists with shared scripts, templates, and testing frameworks, this skill enables teams to build polyglot backend systems with confidence and consistency.
+
+Success with this skill depends on embracing each language's unique strengths while maintaining rigorous standards across both. The provided linting scripts, validation tools, and example projects demonstrate that multi-language development doesn't require compromising on code quality, type safety, or maintainability. Whether building a pure Python FastAPI service, a TypeScript Nest.js application, or a hybrid microservices architecture with both, this skill provides the expertise, automation, and guidance needed to deliver production-quality software.
+
+The Gold tier designation reflects not just the comprehensive resources provided, but the battle-tested patterns and tools that emerge from real-world polyglot development. Use this skill when language-specific expertise matters, when type safety is non-negotiable, and when you need proven patterns for building maintainable multi-language systems at scale.

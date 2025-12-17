@@ -547,3 +547,51 @@ curl http://localhost:3001/health
 - REST API Design
 - CLI Integration Patterns
 - Security Best Practices
+## Core Principles
+
+### 1. Bidirectional Communication as First-Class Citizen
+The bridge must treat both directions (Web -> CLI and CLI -> Web) with equal importance and reliability.
+
+**In practice:**
+- Design symmetrical error handling for both directions
+- Implement connection resilience with automatic reconnection for WebSocket channels
+- Maintain state synchronization across both interfaces using shared memory or distributed cache
+- Test both directions equally in integration test suites
+
+### 2. Security Through Layered Defense
+Never trust input from either side of the bridge without validation, authentication, and authorization.
+
+**In practice:**
+- Whitelist allowed CLI commands rather than blacklisting dangerous ones
+- Implement JWT or API key authentication for web interface access
+- Use command injection prevention by validating arguments before shell execution
+- Apply rate limiting to prevent abuse from automated web clients
+- Sandbox CLI execution using Docker containers or restricted user contexts
+
+### 3. Observability and Debugging First
+Bridge failures are inherently complex - make them easy to diagnose.
+
+**In practice:**
+- Log all bridge communications with correlation IDs for request tracing
+- Expose health check endpoints for both web and CLI components
+- Track performance metrics (latency, throughput, error rates) per endpoint
+- Implement structured logging with JSON format for machine parsing
+- Provide real-time monitoring dashboard showing active connections and command history
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Executing arbitrary CLI commands without validation** | Allows command injection attacks, system compromise, and data exfiltration | Implement strict command whitelisting, validate all arguments against schemas, use parameterized execution instead of shell string concatenation |
+| **Long-polling instead of WebSocket for real-time updates** | Creates high latency, wastes server resources with constant HTTP overhead, poor user experience for streaming output | Use WebSocket for bidirectional streaming, implement heartbeat mechanism, fall back to SSE (Server-Sent Events) if WebSocket unavailable |
+| **Storing secrets in client-side code** | Exposes API keys, database credentials, and authentication tokens to anyone inspecting web code | Store secrets server-side only, use environment variables, implement token rotation, never embed credentials in JavaScript bundles |
+| **Blocking CLI operations without timeout** | Single long-running command can freeze entire bridge, resource exhaustion, poor error handling | Implement per-command timeout (default 30s, configurable), use asynchronous execution with progress callbacks, provide cancellation mechanism |
+| **No authentication between web and bridge** | Anyone with network access can execute commands, potential for malicious automation, data breaches | Require JWT tokens for all API calls, implement OAuth2 for user authentication, use mTLS for bridge-to-CLI communication |
+
+## Conclusion
+
+The Web-CLI Teleport pattern represents a powerful integration strategy for bridging user interfaces with command-line workflows, but its power comes with significant responsibility. The bidirectional nature of this bridge creates a critical attack surface that must be secured through layered defense mechanisms - from command whitelisting and input validation to authentication, authorization, and rate limiting. When implemented correctly, this pattern enables seamless workflow automation, allowing web applications to leverage the full power of CLI tools while providing real-time feedback through WebSocket connections.
+
+The key to success lies in treating security and observability as core design requirements rather than afterthoughts. By implementing structured logging, health checks, and performance monitoring from day one, teams can diagnose issues quickly and maintain high reliability. The anti-patterns highlighted above - particularly arbitrary command execution and lack of authentication - represent common pitfalls that can turn a useful integration tool into a critical vulnerability.
+
+As you implement this pattern, remember that the bridge is not just a technical component but a trust boundary between user interfaces and system operations. Every command executed through the bridge should be logged, validated, and monitored. By following the core principles of bidirectional communication, layered security, and observability-first design, you can build a robust integration that enhances developer productivity while maintaining system integrity and security.

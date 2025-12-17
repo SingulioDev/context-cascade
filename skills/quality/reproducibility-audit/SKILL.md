@@ -1658,3 +1658,47 @@ This skill integrates with:
 - Docker Multi-Stage Builds
 - Dockerfile Security Best Practices
 - Docker Compose for Complex Environments
+---
+
+## Core Principles
+
+Reproducibility Audit operates on 3 fundamental principles:
+
+### Principle 1: Independent Reproduction as Ground Truth
+Reproducibility is not proven until an independent party can recreate results following only the provided documentation. Author success is not sufficient.
+
+In practice:
+- Audit runs in clean Docker environment (not author's machine with implicit dependencies)
+- README must enable reproduction in 5 steps or fewer (simplicity test)
+- 3 independent runs with different seeds required (statistical validation)
+
+### Principle 2: Deterministic Execution as Requirement
+ML reproducibility requires fixing all sources of randomness. Variance across runs indicates non-determinism that invalidates scientific claims.
+
+In practice:
+- All random seeds must be fixed (Python random, NumPy, PyTorch, TensorFlow)
+- Deterministic mode enabled (torch.backends.cudnn.deterministic = True)
+- Paired t-tests verify no significant difference between original and reproduced results
+
+### Principle 3: ACM Artifact Evaluation as Quality Bar
+Academic publication standards (ACM badges) provide objective criteria for reproducibility quality. These standards are not negotiable.
+
+In practice:
+- Available: Code and data publicly accessible (GitHub, Zenodo)
+- Functional: Artifacts execute without errors, generate claimed outputs
+- Reproduced: Results match within 1% tolerance (3/3 runs successful)
+- Reusable: Modular code, documentation, tests enable extension by others
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Author-Only Reproduction** | Only testing reproduction on author's machine with cached dependencies and implicit configuration | ALWAYS test in clean Docker environment - delete local cache, use fresh container |
+| **Single-Run Validation** | Claiming reproducibility after 1 successful run - variance and non-determinism undetected | Require 3 independent runs with different seeds - calculate variance and run paired t-test |
+| **Tolerance Inflation** | Accepting 5% or 10% deviation as "close enough" when 1% is standard | Use 1% tolerance for quantitative metrics - larger deviations indicate non-determinism or errors |
+
+## Conclusion
+
+Reproducibility Audit validates ML research artifacts meet scientific standards for independent reproduction using ACM Artifact Evaluation criteria. The audit requires 3 successful runs in clean Docker environments with results matching original within 1% tolerance using paired t-tests. This statistical validation catches non-determinism that single-run testing misses. The 6-phase workflow (structure audit, environment validation, 3 execution runs, statistical comparison, ACM compliance check, remediation) ensures artifacts are Available, Functional, Reproduced, and Reusable.
+
+Use this skill before Quality Gate 3 validation when preparing research for academic publication (NeurIPS, ICML, CVPR) or archiving artifacts to registries (Zenodo, HuggingFace). The 1-2 day timeline includes Docker environment setup (2-4 hours), 3 reproduction runs (8-24 hours depending on model complexity), statistical analysis (2-4 hours), and remediation if issues found. For production deployment validation without academic publication requirements, use deployment-readiness skill instead.

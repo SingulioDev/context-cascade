@@ -1824,3 +1824,35 @@ Overall: CONDITIONAL APPROVAL
 - Deploy only in non-adversarial environments without mitigation
 - Monitor fairness metrics in production
 ```
+---
+
+## Core Principles
+
+### 1. Multi-Dimensional Evaluation is Non-Negotiable
+Production-ready models require evaluation beyond accuracy alone. A model achieving 95% accuracy is not production-ready if it exhibits demographic bias, collapses under adversarial perturbations, or generates harmful outputs. Holistic evaluation treats accuracy, fairness, robustness, efficiency, interpretability, and safety as equally critical dimensions, with explicit quantitative thresholds for each. This principle prevents the deployment of models that excel in narrow metrics while failing in real-world contexts.
+
+### 2. Evidence-Based Decision Making with Statistical Rigor
+Every evaluation claim must be backed by reproducible evidence with statistical validation. This includes multiple comparison correction (Bonferroni) when testing multiple hypotheses, effect size calculation (Cohen's d) to measure practical significance, and power analysis (1-beta >= 0.8) to ensure sufficient sample sizes. Subjective assessments without quantitative backing are rejected. This principle ensures that Gate 2 validation decisions are defensible under academic peer review and regulatory scrutiny.
+
+### 3. Trade-Off Transparency Over Perfection
+No model is perfect across all dimensions - production deployment requires explicit acknowledgment of trade-offs. A model may sacrifice 2% accuracy for 10x efficiency gains, or prioritize fairness over raw performance. The holistic evaluation report must document these trade-offs transparently, providing deployment recommendations tailored to specific use cases. This principle prevents the dangerous illusion of a universally optimal model and enables informed risk-based deployment decisions.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|--------------|--------------|------------------|
+| **Accuracy-Only Validation** | Evaluating only test accuracy ignores fairness gaps, adversarial vulnerability, safety risks, and efficiency constraints. A 90% accurate model may have 30% accuracy on minority groups, collapse under small perturbations, or generate harmful outputs. Leads to production failures and reputational damage. | Evaluate all 6 dimensions (accuracy, fairness, robustness, efficiency, interpretability, safety) with quantitative thresholds. Require PASS status on ALL critical dimensions before Gate 2 approval. Document trade-offs explicitly in evaluation report. |
+| **Subjective Gate Decisions** | Gate 2 decisions based on intuition ("model looks good") without statistical validation fail under academic peer review and regulatory audit. Cannot defend approval decisions when challenged. Leads to reproducibility failures and rejected publications. | Implement rigorous statistical validation: multiple comparison correction (Bonferroni), effect size calculation (Cohen's d >= 0.5 for medium effects), power analysis (1-beta >= 0.8). Require 2+ confirming signals before flagging violations. Store all evidence in Memory MCP with WHO/WHEN/PROJECT/WHY tags. |
+| **One-Size-Fits-All Thresholds** | Applying generic thresholds (e.g., "accuracy > 90%") across all domains ignores context. Medical diagnosis requires 99%+ sensitivity to avoid false negatives, while recommendation systems tolerate lower accuracy for speed. Generic thresholds lead to either over-engineering or under-validation. | Define domain-specific thresholds based on use case requirements. Medical AI: ECE < 0.01, adversarial robustness > 80%. Consumer apps: latency < 100ms, throughput > 500 QPS. Document rationale for threshold selection in evaluation report. Coordinate with ethics-agent for high-risk domains. |
+
+---
+
+## Conclusion
+
+Holistic evaluation transforms model validation from a narrow accuracy check into a comprehensive production-readiness assessment spanning six critical dimensions. By requiring quantitative evidence across accuracy, fairness, robustness, efficiency, interpretability, and safety, this skill ensures that models deployed to production meet rigorous standards comparable to FDA medical device approval or EU AI Act compliance. The integration with Quality Gate 2 in the Deep Research SOP provides a systematic GO/NO-GO decision framework backed by statistical rigor, preventing the deployment of models that excel in lab benchmarks while failing in real-world scenarios.
+
+The value of holistic evaluation extends beyond risk mitigation - it enables informed trade-off decisions. A model evaluation revealing 87.5% accuracy, 8.2% fairness gaps, and 45.8% adversarial robustness under PGD attacks provides actionable intelligence: deploy in non-adversarial environments with fairness monitoring, while developing adversarial training for high-risk scenarios. This transparency prevents the dangerous illusion of universally optimal models and enables deployment strategies tailored to specific contexts and risk profiles.
+
+For production ML systems, holistic evaluation is not optional - it is the difference between responsible deployment and catastrophic failure. Models passing Gate 2 validation have been systematically evaluated against production-ready standards, with documented evidence, statistical validation, and clear deployment recommendations. This rigorous evaluation framework ensures that ML systems deployed from Deep Research SOP meet or exceed academic publication standards and regulatory compliance requirements.

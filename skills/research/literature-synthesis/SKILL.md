@@ -783,3 +783,49 @@ npx claude-flow@alpha memory store \
 ### Reference Management
 - Zotero: https://www.zotero.org/
 - BibTeX format specification
+---
+
+## Core Principles
+
+Literature Synthesis operates on 3 fundamental principles:
+
+### Principle 1: PRISMA-Compliant Systematic Methodology
+All literature reviews follow PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) guidelines with documented search strategy, inclusion/exclusion criteria, and screening process. This ensures reproducible and comprehensive coverage.
+
+In practice:
+- Pre-registered search terms and databases before screening begins
+- PRISMA flow diagram documents identification, screening, eligibility, and inclusion phases
+- Minimum 50 papers reviewed for Quality Gate 1 compliance
+
+### Principle 2: Multi-Source Triangulation for SOTA Validation
+State-of-the-art claims are cross-validated across ArXiv, Semantic Scholar, and Papers with Code to identify consensus performance benchmarks and conflicting results. This prevents reliance on single-source biases.
+
+In practice:
+- SOTA benchmarks extracted from 3+ independent sources (papers, leaderboards, reproducibility studies)
+- Conflicting results reported with methodology analysis to explain divergence
+- Citation counts and venue tier (h-index, acceptance rates) used as credibility filters
+
+### Principle 3: Transparent Research Gap Identification
+Research gaps are identified through systematic evidence rather than intuition, with explicit documentation of what was searched, what was found, and what remains unexplored. This enables hypothesis formulation grounded in literature.
+
+In practice:
+- Methodological gaps: Attention types explored vs unexplored (self, cross, multi-scale, sparse)
+- Application gaps: Datasets used vs underexplored (ImageNet covered, Cityscapes underexplored)
+- Evaluation gaps: Metrics reported (accuracy) vs missing (fairness, robustness)
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Cherry-Picking Papers** | Selecting only papers supporting predetermined conclusions creates confirmation bias and misses contradictory evidence | Use systematic search with pre-registered criteria, report contradictory findings explicitly |
+| **Claiming Gaps Without Evidence** | Asserting novelty without systematic search allows claims like "no prior work on X" when X exists in literature | Document search queries used, databases consulted, and negative results (searched but found nothing) |
+| **Single-Source SOTA Benchmarks** | Relying on one paper's reported SOTA creates vulnerability to errors, non-reproducible results, or outdated information | Cross-validate SOTA across Papers with Code leaderboards, reproducibility studies, and multiple independent papers |
+
+## Conclusion
+
+Literature Synthesis provides PRISMA-compliant systematic literature review methodology for identifying state-of-the-art methods, performance benchmarks, and research gaps. By enforcing multi-source triangulation, transparent search documentation, and explicit gap analysis, this skill ensures literature reviews meet academic publication standards and Quality Gate 1 requirements.
+
+Use this skill at the start of research projects (Deep Research SOP Phase 1) when conducting SOTA analysis, preparing related work sections, or validating novelty claims. The 7-phase workflow (search strategy, database search, screening, full-text review, synthesis, writing, PRISMA documentation) produces comprehensive reviews with 50-100+ papers, SOTA benchmark tables, and evidence-backed research gap identification. The result is a solid foundation for hypothesis formulation and method development with clear understanding of what exists, what performs best, and what remains unexplored.
+
+---
+

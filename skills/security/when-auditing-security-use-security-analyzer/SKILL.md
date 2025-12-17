@@ -878,3 +878,49 @@ For issues or questions about this skill:
 1. Check `/tmp/security-audit-report.json` for detailed diagnostics
 2. Review memory at `swarm/security/*` for intermediate results
 3. Consult OWASP documentation for specific vulnerability types
+## Core Principles
+
+### 1. Defense in Depth - Layer Security Controls
+Security is never about a single control. Effective security auditing assumes multiple layers can fail and validates redundancy.
+
+**In practice**:
+- Never rely on client-side validation alone - always validate server-side
+- Combine authentication, authorization, and input validation
+- Use network segmentation, WAF, rate limiting, and endpoint security together
+- Example: Even with parameterized queries, validate input format and sanitize output
+
+### 2. Evidence-Based Validation - Prove, Don't Assume
+Every security finding must be reproducible and validated through multiple methods before reporting.
+
+**In practice**:
+- Run findings through automated scanners AND manual verification
+- Create proof-of-concept exploits in isolated environments
+- Document attack chains from entry to impact
+- Example: SQL injection finding requires: scanner detection + manual reproduction + code review + attack path analysis
+
+### 3. Zero Trust Verification - Validate Everything
+Security audits must verify security controls exist and function correctly, not trust configuration files or documentation.
+
+**In practice**:
+- Test authentication bypass attempts even when auth middleware exists
+- Verify encrypted communications by inspecting network traffic
+- Validate authorization at the data access layer, not just route level
+- Example: Check if JWT tokens are actually validated or just decoded without signature verification
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|-------------|---------|----------|
+| **Automated Scanner Only** | Relying solely on tools like Nessus or Burp without manual validation leads to false positives and missed business logic flaws | Use scanners for discovery, then manually validate each finding with proof-of-concept and code review |
+| **Vulnerability Exploitation** | Going beyond proof-of-concept to fully exploit vulnerabilities causes damage and legal liability | Stop at minimal viable proof - demonstrate the vulnerability exists without extracting real data or causing disruption |
+| **Testing Production Without Authorization** | Scanning production systems without written approval violates laws and can cause outages | Always obtain signed authorization before testing, document scope, and use non-production environments when possible |
+| **Sharing Findings Publicly** | Disclosing vulnerabilities before patches are available puts users at risk and violates responsible disclosure | Follow 90-day disclosure timeline, notify vendor privately first, give time for patches before public disclosure |
+| **Ignoring False Positives** | Dismissing scanner findings without investigation misses real vulnerabilities that scanners incorrectly flag as safe | Investigate every finding manually - false positives may reveal real issues in unexpected ways |
+
+## Conclusion
+
+Comprehensive security auditing requires a systematic, multi-phase approach that combines automated tooling with manual expertise. The five-phase workflow (static analysis, dynamic testing, dependency audit, secrets detection, OWASP compliance) ensures no vulnerability category is overlooked while maintaining efficiency through automation.
+
+The key to effective security auditing is rigorous validation. Automated scanners provide breadth but lack the depth to understand business logic vulnerabilities or verify exploitability. Every finding must pass through manual validation, proof-of-concept demonstration, and code review before being reported. This evidence-based approach prevents false positives from wasting remediation time while ensuring real vulnerabilities are properly understood and prioritized.
+
+Security auditing is not a one-time activity but a continuous process. As applications evolve, new vulnerabilities emerge through code changes, dependency updates, and evolving attack techniques. Regular audits, integrated into CI/CD pipelines, provide ongoing assurance that security controls remain effective. The validation gates in this skill ensure that critical vulnerabilities block deployment while providing clear remediation guidance for developers. When executed properly, this systematic approach achieves both security rigor and development velocity.

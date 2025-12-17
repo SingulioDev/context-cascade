@@ -390,3 +390,44 @@ npx agentdb@latest stats ./vectors.db
 - Website: https://agentdb.ruv.io
 - CLI Help: `npx agentdb@latest --help`
 - Command Help: `npx agentdb@latest help <command>`
+## Core Principles
+
+AgentDB Vector Search operates on 3 fundamental principles:
+
+### Principle 1: Semantic Similarity Through Embedding-Based Retrieval
+Transform unstructured data (text, images, code) into high-dimensional vectors where similar concepts cluster together for intelligent search.
+
+In practice:
+- Embeddings map semantic meaning to geometric space (cosine similarity measures conceptual closeness)
+- "quantum computer" and "qubit processor" retrieve similar results despite different keywords
+- HNSW indexing provides O(log n) search complexity for sub-millisecond retrieval (<100µs) on millions of vectors
+
+### Principle 2: Quantization Trades Minimal Accuracy for Massive Memory Reduction
+Compress vectors by 4-32x with <5% accuracy loss using binary, scalar, or product quantization for scalable deployments.
+
+In practice:
+- Binary quantization (32x reduction) enables 1M vectors in 96MB vs 3GB (mobile/edge deployments)
+- Scalar quantization (4x reduction) balances memory and accuracy for production systems (98-99% original accuracy)
+- Select quantization based on constraints: binary for memory limits, scalar for accuracy, none for maximum precision
+
+### Principle 3: Hybrid Search Combines Vector Similarity with Metadata Filtering
+Merge semantic understanding (embeddings) with structured constraints (metadata) for precision beyond pure vector search.
+
+In practice:
+- Vector search finds semantically relevant documents, metadata filters enforce business rules (date ranges, categories, permissions)
+- MMR (Maximal Marginal Relevance) diversifies results to avoid redundancy while maintaining relevance
+- RAG pipelines combine vector retrieval with LLM generation for context-aware answers
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Mismatched Embedding Dimensions** | Inserting 1536-dim (OpenAI) vectors into 768-dim database causes dimension mismatch errors | Initialize database with correct dimensions: `--dimension 1536` (OpenAI ada-002), `--dimension 768` (sentence-transformers), `--dimension 384` (MiniLM) |
+| **Low Similarity Threshold** | Threshold 0.3 returns irrelevant results; too high (0.95) misses near-matches | Start with 0.7 for quality; lower to 0.5-0.6 for exploratory search; raise to 0.8-0.9 for high-precision retrieval |
+| **Ignoring Quantization** | Full precision (float32) uses 3GB for 1M vectors causing OOM on constrained environments | Apply binary quantization (32x reduction to 96MB) for mobile/edge; scalar (4x to 768MB) for production; benchmark accuracy vs memory trade-offs |
+
+## Conclusion
+
+AgentDB Vector Search provides production-ready semantic search infrastructure with 150-12,500x performance improvements over naive implementations through HNSW indexing, quantization, and hybrid search capabilities. By transforming unstructured data into embeddings and leveraging vector similarity, you enable intelligent retrieval that understands meaning rather than keyword matching, powering RAG systems, semantic search engines, and intelligent knowledge bases.
+
+Use this skill when building applications requiring semantic understanding (chatbots finding relevant context, document search beyond keywords), scaling to large datasets (>10K documents with sub-10ms latency), or deploying to memory-constrained environments (mobile apps, edge devices with quantization). The key insight is embedding choice determines quality: OpenAI embeddings (1536-dim) provide best semantic understanding, sentence-transformers (768-dim) balance quality and speed, MiniLM (384-dim) optimizes for resource constraints. Start with cosine similarity and scalar quantization, benchmark retrieval quality, and tune threshold/quantization based on accuracy requirements.

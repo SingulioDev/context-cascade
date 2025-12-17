@@ -677,3 +677,50 @@ memory-store --key "sop/pipeline-d/baseline-bert/gate-1" \
 **Pipeline**: D (Method Development)
 **Quality Gate**: 1 (Baseline Validation)
 **Estimated Time**: 8-12 hours (first baseline), 4-6 hours (subsequent)
+## Core Principles
+
+Baseline Replication operates on 3 fundamental principles:
+
+### Principle 1: Exact Reproducibility (+-1% Tolerance)
+All baseline replications must match published results within +-1% statistical tolerance using identical hyperparameters, datasets, and deterministic settings. This validates that baselines are understood and provides a fair comparison foundation.
+
+In practice:
+- All 47+ hyperparameters extracted from paper, code, and supplements
+- Deterministic mode enforced (torch.use_deterministic_algorithms(True))
+- 3 independent runs with identical results verify determinism
+- Statistical validation with paired t-tests confirms tolerance
+
+### Principle 2: Fresh Environment Reproducibility
+Reproducibility packages must work in completely fresh Docker environments without cached dependencies, manual interventions, or undocumented setup steps. This ensures true reproducibility rather than "works on my machine" artifacts.
+
+In practice:
+- Docker containers with pinned dependencies (pip freeze, conda export)
+- 3 successful fresh reproductions from scratch required
+- README with 5 steps max to reproduce results
+- SHA256 checksums verify dataset integrity
+
+### Principle 3: Complete Documentation Before Novel Development
+No novel method development proceeds without Quality Gate 1 baseline validation. This prevents building on misunderstood foundations and ensures fair performance comparisons.
+
+In practice:
+- Baseline specification document with all hyperparameters
+- Reproducibility package tested independently
+- Statistical comparison report (reproduced vs published)
+- Quality Gate 1 APPROVED status before method-development skill
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Skipping Baseline Replication** | Comparing novel methods to reported baseline results without replication introduces confounds (different hardware, frameworks, datasets) | Complete full baseline replication with +-1% validation before claiming improvements |
+| **Ignoring Non-Determinism** | Running experiments without fixed seeds produces variance across runs, making +-1% tolerance impossible to verify | Force deterministic mode, test with 3 identical runs, document any remaining variance sources |
+| **Incomplete Hyperparameter Extraction** | Missing hyperparameters like learning rate schedule or warmup steps causes silent performance gaps | Extract all 47+ hyperparameters from paper + code + supplements, contact authors for missing details |
+
+## Conclusion
+
+Baseline Replication provides rigorous methodology for reproducing published ML results with exact reproducibility (+-1% tolerance), establishing validated foundations for novel method development. By enforcing deterministic implementations, fresh environment testing, and complete documentation, this skill ensures baselines are understood rather than assumed.
+
+Use this skill before developing novel methods (Deep Research SOP Pipeline D prerequisite), when validating SOTA claims, or when preparing reproducibility packages for publication. The 7-phase workflow (paper analysis, dataset validation, implementation, experiments, validation, packaging, Quality Gate 1) produces independently verified baseline implementations with statistical confidence. The result is fair performance comparisons and solid foundations for research contributions.
+
+---
+

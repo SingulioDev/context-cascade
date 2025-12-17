@@ -2151,3 +2151,49 @@ This skill integrates with:
 - `when-reviewing-code-comprehensively-use-code-review-assistant`
 - `when-verifying-quality-use-verification-quality`
 - `when-ensuring-production-ready-use-production-readiness`
+## Core Principles
+
+### 1. Automated Enforcement Over Manual Review
+Style compliance should be enforced through automated tools (ESLint, Prettier, TypeScript) with auto-fix capabilities, not manual code review.
+
+**In practice:**
+- Run linters on every commit via pre-commit hooks
+- Use auto-fix for 70%+ of violations before manual review
+- Enforce standards through CI/CD gates, not review comments
+- Track compliance metrics over time for trend analysis
+
+### 2. Standards Alignment Before Custom Rules
+Adopt industry standards (Airbnb, Google, StandardJS) before creating custom conventions. Deviations require documented justification.
+
+**In practice:**
+- Compare project config to base standard (Airbnb ESLint)
+- Document missing critical rules with rationale
+- Align Prettier with ESLint to avoid conflicts
+- Use TypeScript strict mode by default
+
+### 3. Progressive Compliance Through Incremental Fixes
+Achieve style compliance through prioritized batches (auto-fix first, critical manual second, low priority last), not all-at-once refactoring.
+
+**In practice:**
+- Apply auto-fixes (189 issues) before manual review (58 issues)
+- Prioritize by severity: P0 critical -> P1 high -> P2 medium -> P3 low
+- Validate tests pass after each fix batch
+- Create backups before applying fixes
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Manual Style Fixes** | Developers waste time on formatting instead of logic, creating inconsistent results | Use Prettier auto-fix for 100% formatting consistency |
+| **No Configuration Baseline** | Custom rules diverge from standards without clear reason, creating maintenance burden | Start with industry standard (Airbnb), document deviations |
+| **All-or-Nothing Compliance** | Attempting 100% compliance immediately breaks builds and blocks development | Fix auto-fixable issues first, then prioritize manual fixes by severity |
+| **Skipping Validation Gates** | Fixes applied without testing cause regressions that break functionality | Run full test suite after auto-fixes, rollback on failures |
+| **Disabling Critical Rules** | Disabling no-console or no-debugger for convenience leaves debug code in production | Use environment-based rules (error in prod, warn in dev) |
+
+## Conclusion
+
+The Style Audit skill transforms code quality from subjective preference to objective measurement through automated tooling and industry standards. By separating auto-fixable issues (76.5% via ESLint --fix and Prettier) from manual review requirements, teams achieve rapid compliance improvement without disrupting development velocity.
+
+Success requires discipline in three areas: adopting standard configurations before customization, applying fixes progressively by severity, and validating changes through automated testing. Organizations should establish CI/CD gates requiring style compliance (90%+ threshold), not post-merge comments, to enforce standards systematically. The skill's five-phase workflow (Scan -> Compare -> Report -> Auto-Fix -> Validate) creates natural checkpoints preventing regression.
+
+Most critically, style audits succeed when teams resist custom rules without documented justification. Aligning with Airbnb ESLint (247 rules) or Google Style provides battle-tested conventions, while project-specific needs get layered on top with clear rationale. Teams measuring compliance percentage over time (current: 91.2%, target: >=95%) build codebases that maintain consistency as they scale, reducing cognitive load for new contributors and preventing style drift.

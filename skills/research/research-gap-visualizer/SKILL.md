@@ -430,3 +430,57 @@ npx claude-flow@alpha memory store \
 **Category**: Research / Gap Analysis
 **Prerequisites**: literature-synthesis output
 **Output Formats**: Mermaid, Markdown, ASCII, GraphViz
+
+---
+
+## Core Principles
+
+### 1. Multi-Dimensional Gap Analysis Over Linear Enumeration
+Research gaps exist at the intersection of multiple dimensions (methods, domains, datasets, time). Single-axis analysis misses the combinatorial opportunities where established methods meet unexplored application areas.
+
+**In practice:**
+- Generate gap matrices with at least 2 dimensions (method x domain, technique x dataset)
+- Use quadrant analysis to classify gaps by feasibility vs impact (pursue high-high areas first)
+- Apply temporal filtering to identify stale research areas (not updated in 2+ years)
+- Create bubble charts showing research density to reveal saturated vs unexplored regions
+- Combine multiple visualizations (matrix + landscape + temporal) for comprehensive coverage
+
+### 2. Evidence-Based Gap Identification With Quantitative Metrics
+Claiming a gap exists requires proof. This skill quantifies gaps using paper counts, citation analysis, and coverage metrics rather than subjective assessments.
+
+**In practice:**
+- Calculate gap percentage (unstudied cells / total cells in matrix)
+- Report exact paper counts per intersection (e.g., "GNN + Clinical NLP: 0 papers")
+- Use minimum threshold filters (e.g., >5 papers = studied, <3 = gap, 0 = opportunity)
+- Track confidence scores based on corpus size (1000+ papers = high confidence gaps)
+- Provide source data in CSV/JSON for independent validation and reproducibility
+
+### 3. Opportunity Scoring Beyond Gap Existence
+A gap is not inherently valuable. This skill prioritizes gaps by research potential, combining novelty with feasibility and impact to guide strategic direction.
+
+**In practice:**
+- Score each gap on 3 axes: novelty (0-1), feasibility (0-1), impact (0-1)
+- Calculate opportunity score as weighted combination (e.g., 0.4 * novelty + 0.3 * impact + 0.3 * feasibility)
+- Rank gaps by opportunity score to create actionable priority list
+- Classify as high/medium/low priority with explicit thresholds (>0.7 = high, 0.4-0.7 = medium, <0.4 = low)
+- Justify prioritization with evidence (why is this gap feasible? what makes it impactful?)
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Cherry-picking visualization to emphasize desired gaps | Selective axis choice or dimension filtering can make any area appear understudied; creates misleading visual "evidence" for pre-determined research direction | Use systematic dimension selection based on literature data (most common methods/domains). Generate multiple visualizations with different axes. Report both studied AND unstudied areas transparently. |
+| Ignoring corpus limitations in gap claims | A gap in your analyzed papers may not be a gap in the broader literature; limited corpus leads to false gap identification | Report corpus size prominently (e.g., "Analysis based on 150 papers from 2020-2024"). Add caveat: "Gaps may exist outside analyzed corpus". Use confidence scoring based on coverage (>1000 papers = high confidence). |
+| Treating all gaps as equal opportunities | Some gaps exist because they are uninteresting, infeasible, or already attempted and failed; visualization alone doesn't distinguish valuable from valueless gaps | Add feasibility and impact dimensions to opportunity scoring. Research why gap exists (technical barrier? lack of interest? ethical concerns?). Provide rationale for each high-priority gap recommendation. |
+
+---
+
+## Conclusion
+
+Research gap visualization transforms the abstract concept of "what's missing" into concrete, actionable visual evidence. By mapping the research landscape across multiple dimensions, this skill reveals not only where gaps exist but also where the most promising opportunities lie. The combination of gap matrices, landscape diagrams, temporal analysis, and opportunity scoring provides researchers with a comprehensive view of the strategic research terrain.
+
+The power of this skill lies in its ability to make gap identification systematic and evidence-based. Rather than relying on intuition or anecdotal observations about what's been studied, researchers can point to specific visualizations showing exact paper counts, coverage percentages, and prioritized recommendations. This visual evidence is particularly valuable in grant proposals and manuscript motivation sections, where demonstrating research novelty is critical for funding and publication success.
+
+As research fields become increasingly specialized and literature volumes grow exponentially, manual gap identification becomes impractical. Systematic visualization of research coverage allows scholars to identify novel contribution opportunities efficiently, avoid redundant work, and make strategic decisions about research direction. The research gap visualizer skill represents an essential tool for modern evidence-based research planning, transforming literature synthesis from descriptive summaries into strategic roadmaps.

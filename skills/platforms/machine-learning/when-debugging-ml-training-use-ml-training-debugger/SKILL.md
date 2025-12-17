@@ -599,3 +599,53 @@ Outputs:
 4. **optimization_recommendations.md**: Next steps
 
 Complete when training issues resolved and model performing well.
+---
+
+## Core Principles
+
+### 1. Systematic Diagnosis Over Random Fixes
+**Foundation**: Apply first principles to identify root causes before attempting solutions.
+
+**In practice**:
+- Analyze training curves quantitatively (loss trends, gradient statistics) before changing hyperparameters
+- Diagnose issues methodically: divergence -> overfitting -> convergence -> gradients -> data quality
+- Document findings at each diagnostic step to prevent repeated investigations
+- Use metrics-driven thresholds (e.g., train-val gap >5% = overfitting) rather than intuition
+
+### 2. Evidence-Based Validation
+**Foundation**: Every fix must be validated through measurable improvement in training metrics.
+
+**In practice**:
+- Compare before/after metrics with statistical significance (>10% improvement threshold)
+- Visualize training curves to verify convergence after fixes
+- Run ablation tests: apply one fix at a time to isolate effectiveness
+- Maintain checkpoint history to enable rapid rollback if fixes degrade performance
+
+### 3. Reproducibility and Transparency
+**Foundation**: Training experiments must be reproducible and all interventions trackable.
+
+**In practice**:
+- Pin random seeds, library versions, and data splits before debugging
+- Log all hyperparameter changes, data transformations, and architecture modifications
+- Save diagnostic reports as artifacts alongside model checkpoints
+- Use version control for training configurations to track evolution of fixes
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Random Hyperparameter Tuning** | Changing learning rate, batch size, or architecture without understanding the root cause wastes compute and may mask underlying issues (e.g., data quality problems) | Run Phase 1 diagnosis first. Only adjust hyperparameters after identifying specific issues (e.g., loss divergence -> reduce LR, overfitting -> add regularization) |
+| **Ignoring Data Quality** | Focusing only on model/training tweaks while data issues (class imbalance, outliers, missing normalization) persist leads to models that can never converge properly | Always run Phase 2 data analysis. Check class balance, outlier detection, and normalization BEFORE retraining. Bad data = bad model regardless of architecture |
+| **Single-Metric Optimization** | Optimizing only training loss without monitoring validation metrics, overfitting, or gradient health results in models that memorize training data but fail in production | Track multi-dimensional metrics: train/val loss, accuracy, precision/recall, gradient norms, and train-val gap. Use Phase 4 validation checklist comprehensively |
+
+---
+
+## Conclusion
+
+This ML Training Debugger skill provides a systematic, evidence-based approach to diagnosing and resolving common training issues that plague neural network development. By following the five-phase workflow—diagnosis, root cause analysis, fix application, validation, and optimization—teams can reduce debugging time from days to hours while achieving more reliable convergence.
+
+The skill's strength lies in its structured methodology: rather than randomly tweaking hyperparameters or architectures, it forces practitioners to first understand the problem through quantitative analysis of training curves, gradients, and data quality. This diagnostic-first approach prevents the common pitfall of applying fixes that mask symptoms rather than addressing root causes, ultimately leading to more robust models and faster iteration cycles.
+
+For production ML teams, adopting this systematic debugging workflow ensures that training failures are treated as opportunities for learning rather than frustrations. The comprehensive diagnostic reports, before/after comparisons, and optimization recommendations create a knowledge base that compounds over time, enabling teams to build increasingly sophisticated models with fewer training-related setbacks.

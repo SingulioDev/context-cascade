@@ -1186,3 +1186,46 @@ This skill integrates with:
 **Status**: Production-ready SOP
 **Complexity**: Medium (12-15 agents, 4 hours)
 **Pattern**: Star topology with specialized reviewers
+---
+
+## Core Principles
+
+SOP Code Review operates on 3 fundamental principles:
+
+### Principle 1: Specialized Expertise Over Generalist Review
+No single reviewer has deep expertise across all quality dimensions (security, performance, architecture, documentation). Specialization ensures thoroughness.
+
+In practice:
+- Security Reviewer focuses exclusively on OWASP Top 10, auth/authz, secret detection
+- Performance Analyst evaluates algorithmic complexity, resource usage, optimization opportunities
+- Architecture Reviewer assesses design patterns, API contracts, scalability
+
+### Principle 2: Automated Gates Before Human Review
+Human review is expensive (4 hours). Automated checks (linting, tests, coverage, build) must pass before humans invest time.
+
+In practice:
+- Phase 1 runs automated checks in parallel - all must pass to proceed to Phase 2
+- If lint/test/coverage/build fails, request author fixes immediately (stop review)
+- Only code that passes automation gates receives human review (saves 50% reviewer time)
+
+### Principle 3: Risk-Based Approval Decisions
+Not all changes carry equal risk. Merge decisions must consider blast radius, rollback difficulty, and user impact - not just code quality score.
+
+In practice:
+- Integration review (Phase 3) assesses deployment impact and backward compatibility
+- Risk analysis considers worst-case failure scenarios and monitoring adequacy
+- High-risk changes may require feature flags even if all reviews pass
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Human Review Before Automation** | Reviewers waste time finding lint errors and test failures that automation should catch | ALWAYS run automated checks first (Phase 1) - only proceed to human review if all pass |
+| **Single Generalist Reviewer** | One reviewer tries to evaluate security, performance, architecture, docs - misses specialized issues | Use 5 specialized reviewers in parallel (Phase 2) - security-manager, perf-analyzer, system-architect, etc. |
+| **Approval Without Risk Assessment** | Approving based on code quality alone without considering deployment impact and rollback strategy | Always include integration review (Phase 3) assessing deployment impact, user impact, risk level before final approval |
+
+## Conclusion
+
+SOP Code Review provides comprehensive PR review through a 4-phase workflow that balances automation efficiency with human expertise. Phase 1 automated checks (lint, tests, coverage, build) act as a blocking gate - human review only begins after automation passes, saving 50% reviewer time. Phase 2 spawns 5 specialized reviewers in parallel (security, performance, style, tests, docs) providing depth that generalist review misses. Phase 3 integration review assesses real-world deployment risk beyond just code quality. Phase 4 generates actionable summary with severity-ranked findings and merge recommendation.
+
+Use this skill when you need production-grade PR review with both automated validation and multi-dimensional human assessment. The 4-hour timeline (vs 8+ hours sequential) makes it suitable for critical PRs requiring security audit, performance validation, and architecture consistency checks. For simpler changes, use quick-quality-check instead. For changes already merged that need post-hoc analysis, use code-review-assistant.

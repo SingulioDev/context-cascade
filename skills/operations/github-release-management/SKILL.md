@@ -1109,3 +1109,55 @@ npx claude-flow@alpha github version-sync \
 **Version**: 2.0.0
 **Last Updated**: 2025-10-19
 **Maintained By**: Claude Flow Team
+
+---
+
+## Core Principles
+
+GitHub Release Management operates on 3 fundamental principles:
+
+### Principle 1: Semantic Versioning with Breaking Change Detection
+Version numbers carry semantic meaning. Automate version bump decisions based on commit analysis rather than arbitrary choices.
+
+In practice:
+- Scan commits and PR labels for breaking change keywords (BREAKING, BREAKING CHANGE, !)
+- Distinguish features (minor bump) from fixes (patch bump) using conventional commit parsing
+- Enforce semantic versioning compliance across multi-package monorepos with version alignment
+
+### Principle 2: Progressive Deployment with Health-Based Auto-Rollback
+Never deploy to 100% traffic immediately. Stage rollouts with automated health monitoring and rollback triggers.
+
+In practice:
+- Start with canary deployment (5% traffic) with strict error rate thresholds (<0.1%)
+- Progress through stages (25% -> 50% -> 100%) only after health checks pass
+- Configure auto-rollback triggers (error rate >5%, latency p99 >1s, failed health checks >3)
+
+### Principle 3: Multi-Artifact Coordination with Parallel Builds
+Modern releases target multiple platforms. Build artifacts in parallel and ensure atomic publishing across registries.
+
+In practice:
+- Use swarm coordination to parallelize builds across platforms (npm, Docker, binaries for Linux/macOS/Windows)
+- Validate all artifacts before publishing any (atomic release - all succeed or all fail)
+- Implement registry-specific retry logic with exponential backoff for transient failures
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Manual Version Bumping** | Human-selected version numbers don't reflect breaking changes, leading to SemVer violations | Use swarm version analysis to scan commits and PRs for breaking changes and auto-suggest version bump |
+| **No Staged Rollout** | Deploying to 100% traffic immediately amplifies impact of bugs, causing widespread user impact | Implement progressive deployment (5% -> 25% -> 50% -> 100%) with health checks between stages |
+| **Sequential Artifact Builds** | Building npm package, then Docker image, then binaries serially wastes 2-3x time | Use parallel swarm coordination to build all artifacts concurrently, validate, then publish atomically |
+| **Missing Rollback Plan** | Deployments fail with no automated rollback, requiring manual intervention during incidents | Configure auto-rollback based on error rate and health check metrics with 5-minute grace period |
+| **Incomplete Changelogs** | Release notes missing migration guides for breaking changes frustrate users upgrading | Use swarm changelog agent to categorize changes and generate migration guides for breaking changes |
+
+---
+
+## Conclusion
+
+GitHub Release Management orchestrates complex, multi-platform releases with AI swarm coordination to ensure reliability, completeness, and user confidence. By combining semantic version analysis, progressive deployment strategies, and parallel artifact coordination, it transforms manual release processes into automated, auditable pipelines.
+
+This skill is essential when managing production releases for multi-platform software, coordinating monorepo releases across packages, or implementing progressive deployment with automated rollback. It excels at version decision automation, breaking change detection, and multi-registry publishing that manual release processes struggle to coordinate consistently.
+
+Use this skill when setting up release workflows for new projects, when existing releases have high failure rates or incomplete changelogs, or when you need emergency hotfix capabilities with fast-track testing. The swarm coordination patterns enable parallel builds, intelligent changelog generation, and automated rollback that traditional release scripts require significant manual effort to achieve.

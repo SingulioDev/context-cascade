@@ -1,7 +1,7 @@
 # Skills Directory
 
-**Status:** 121 skills organised into ten functional categories  
-**Last reorganised:** 2025-11-02  
+**Status:** 181 skills organised into ten functional categories  
+**Last reorganised:** 2025-12-17 (consolidated from .claude/skills)  
 **Structure baseline:** Every skill retains the shared template (`skill.md`, `README.md`, `examples/`, `references/`, `resources/`, `tests/`).
 
 ---
@@ -10,16 +10,16 @@
 
 | Category | Description | Skill count | Example skills |
 |----------|-------------|-------------|----------------|
-| delivery | Build and implementation workflows that ship product features | 8 | `delivery/feature-dev-complete`, `delivery/smart-bug-fix` |
-| foundry | Tooling for creating new agents, skills, and prompts | 11 | `foundry/agent-creator`, `foundry/prompt-architect` |
-| operations | DevOps, infrastructure, and release management capabilities | 18 | `operations/cloud-platforms`, `operations/production-readiness` |
-| orchestration | Multi-agent coordination, swarms, and workflow execution | 15 | `orchestration/advanced-coordination`, `orchestration/swarm-orchestration` |
-| platforms | Core platform components and intelligent data services | 13 | `platforms/agentdb`, `platforms/flow-nexus-platform` |
-| quality | Testing, audit, review, and continuous verification skills | 21 | `quality/code-review-assistant`, `quality/quick-quality-check` |
-| research | Research pipelines, analysis, and discovery processes | 10 | `research/deep-research-orchestrator`, `research/literature-synthesis` |
-| security | Security, compliance, and reverse engineering expertise | 10 | `security/network-security-setup`, `security/reverse-engineering-deep` |
-| specialists | Domain specialists for languages, stacks, and ML | 9 | `specialists/language-specialists`, `specialists/ml-expert` |
-| tooling | Supporting utilities and cross-channel adapters | 6 | `tooling/web-cli-teleport`, `tooling/pptx-generation` |
+| delivery | Build and implementation workflows that ship product features | 10 | `delivery/feature-dev-complete`, `delivery/smart-bug-fix` |
+| foundry | Tooling for creating new agents, skills, and prompts | 22 | `foundry/agent-creator`, `foundry/prompt-architect` |
+| operations | DevOps, infrastructure, and release management capabilities | 23 | `operations/cloud-platforms`, `operations/production-readiness` |
+| orchestration | Multi-agent coordination, swarms, and workflow execution | 23 | `orchestration/advanced-coordination`, `orchestration/swarm-orchestration` |
+| platforms | Core platform components and intelligent data services | 18 | `platforms/agentdb`, `platforms/flow-nexus-platform` |
+| quality | Testing, audit, review, and continuous verification skills | 22 | `quality/code-review-assistant`, `quality/quick-quality-check` |
+| research | Research pipelines, analysis, and discovery processes | 21 | `research/deep-research-orchestrator`, `research/literature-synthesis` |
+| security | Security, compliance, and reverse engineering expertise | 13 | `security/network-security-setup`, `security/reverse-engineering-deep` |
+| specialists | Domain specialists for languages, stacks, and ML | 11 | `specialists/language-specialists`, `specialists/ml-expert` |
+| tooling | Supporting utilities and cross-channel adapters | 17 | `tooling/web-cli-teleport`, `tooling/pptx-generation` |
 
 Totals include nested skills; for example `operations/cloud-platforms/aws-specialist` counts toward the operations total.
 

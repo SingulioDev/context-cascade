@@ -1345,3 +1345,57 @@ const input_format = handoff.input_format
 **Agents**: RE-Runtime-Tracer, RE-Symbolic-Solver
 **Category**: Security, Malware Analysis, CTF, Binary Exploitation
 **Difficulty**: Advanced
+---
+
+## Core Principles
+
+Reverse Engineering: Deep Analysis operates on 3 fundamental principles:
+
+### Principle 1: Isolation-First Execution
+Runtime analysis MUST occur in isolated environments to prevent malware escape and system compromise.
+
+In practice:
+- Execute all binaries in snapshots VMs/containers with network monitoring
+- Use sandboxed debuggers (GDB in Docker, QEMU with snapshot mode)
+- Monitor syscalls, network traffic, and file operations during execution
+- Maintain air-gapped lab infrastructure for APT analysis
+
+### Principle 2: Multi-Method Validation
+No single analysis technique provides complete truth - cross-validation prevents false positives.
+
+In practice:
+- Static analysis findings must be confirmed by dynamic execution
+- Dynamic behavior must be reproducible across multiple runs
+- Symbolic execution results must validate against real execution paths
+- Memory dumps must correlate with network captures and syscall traces
+
+### Principle 3: Progressive Escalation
+Start with lightweight methods, escalate only when necessary to minimize analysis time.
+
+In practice:
+- Level 3 (dynamic) reveals 80% of malware behavior in under 1 hour
+- Escalate to Level 4 (symbolic) only when paths are unreachable manually
+- Use decision gates to avoid over-engineering simple analysis tasks
+- Cache findings in memory-mcp to prevent duplicate work
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Executing malware on host system** | Complete system compromise, data exfiltration, ransomware deployment | ALWAYS use isolated VM with snapshots, network monitoring, and rollback capability |
+| **Skipping static analysis before dynamic** | Waste time executing without understanding, miss packed binaries | Run Level 1-2 (strings + static) first to identify entry points and breakpoints |
+| **Over-relying on symbolic execution** | State explosion, analysis timeout, resource exhaustion | Use symbolic execution only for input-dependent paths unreachable by manual fuzzing |
+| **Ignoring anti-analysis techniques** | Debugger detection terminates analysis, VM detection changes behavior | Patch anti-debug checks, use stealthy debugging environments, monitor timing attacks |
+| **Not documenting methodology** | Results not reproducible, findings challenged, legal issues | Timestamp all actions, save GDB transcripts, document tool versions and commands used |
+
+---
+
+## Conclusion
+
+Reverse Engineering: Deep Analysis represents the critical bridge between static code inspection and complete program comprehension. By combining runtime execution (Level 3) with symbolic path exploration (Level 4), this skill enables security researchers to extract secrets, validate vulnerabilities, and synthesize inputs that reach specific program states - capabilities essential for malware analysis, CTF challenges, and vulnerability research.
+
+The skill's power lies in its automated decision gates and progressive escalation strategy. Rather than immediately jumping to resource-intensive symbolic execution, the skill starts with lightweight dynamic analysis using GDB and system call tracing. Only when manual execution fails to reach target states does it escalate to Angr-based symbolic execution, minimizing analysis time while maximizing findings.
+
+Use this skill when you need to understand runtime behavior that static analysis cannot reveal: memory secrets, network communication patterns, or valid inputs for complex authentication schemes. The skill excels at extracting indicators of compromise from malware, finding valid license keys in crackmes, and generating proof-of-concept exploits for vulnerabilities. Combined with memory-mcp integration for cross-session persistence and handoff coordination with firmware analysis (Level 5), it forms a comprehensive reverse engineering workflow suitable for both academic research and production security operations.

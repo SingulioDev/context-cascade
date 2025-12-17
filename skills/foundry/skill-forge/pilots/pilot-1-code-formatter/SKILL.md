@@ -381,3 +381,58 @@ After execution, verify:
 | **Max File Size** | 10MB | File size check |
 | **Timeout** | 60 seconds max | Timeout mechanism |
 | **Memory Usage** | <100MB | Not measured (formatter-dependent) |
+---
+
+## Core Principles
+
+Code Formatter operates on 3 fundamental principles that ensure reliable automated formatting with comprehensive error handling:
+
+### Principle 1: Validation Before Modification
+
+Always verify file existence, permissions, syntax, and create backups before making any changes. Never modify files without safety nets.
+
+In practice:
+- Check file exists and is readable before attempting any formatting operations, providing clear error messages with fix suggestions
+- Verify file size is within limits (10MB default) with user confirmation for larger files to prevent timeout issues
+- Run formatter in check mode first to detect syntax errors before modifying the file, avoiding corruption of malformed code
+- Create timestamped backups (.backup suffix) automatically before every formatting run, enabling instant rollback if needed
+
+### Principle 2: Language-Specific Formatter Selection
+
+Detect programming language from file extension and select the appropriate industry-standard formatter, prioritizing project-local over global installations.
+
+In practice:
+- Map file extensions to formatters - .js/.jsx/.ts/.tsx/.json to Prettier, .py to Black, .rs to rustfmt
+- Prioritize project-local formatters in ./node_modules/.bin/ over globally installed versions for consistency with project conventions
+- Automatically detect and respect formatter configuration files (.prettierrc, pyproject.toml, rustfmt.toml) when present
+- Provide clear installation instructions with package manager commands when required formatters are missing
+
+### Principle 3: Graceful Failure with Actionable Recovery
+
+Handle all error conditions with clear messages, restoration of original state, and specific recovery instructions. Never leave files corrupted.
+
+In practice:
+- Implement timeout mechanism (60s default) to prevent infinite loops in formatter bugs, restoring backup on timeout
+- Restore backup automatically on any formatter failure (syntax error, crash, timeout) before exiting
+- Provide error codes (1-7) mapped to specific recovery strategies documented in error code table
+- Normalize line endings (CRLF to LF) automatically when detected to prevent cross-platform formatting conflicts
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Formatting Without Backup** | Running formatter directly on files without creating backups risks data loss if formatter crashes, has bugs, or encounters syntax errors | Always create .backup files before any modification (Step 4.1) and restore automatically on any failure (Step 5 error handling) |
+| **Ignoring Syntax Errors** | Attempting to format files with syntax errors can corrupt code or produce unpredictable results depending on formatter behavior | Run formatter in check mode first (Step 4) to detect syntax errors, display them with line numbers, and ask user to fix before formatting |
+| **Missing Timeout Protection** | Formatters with bugs can hang indefinitely on malformed code, blocking automation pipelines and requiring manual intervention | Wrap formatter execution in timeout mechanism (60s default in Step 5) with automatic backup restoration on timeout |
+
+---
+
+## Conclusion
+
+Code Formatter provides a production-ready automated formatting system with comprehensive error handling and safety mechanisms. By validating before modification, selecting language-specific formatters intelligently, and handling failures gracefully, it enables reliable code formatting in automation pipelines.
+
+This skill excels at pre-commit formatting hooks, CI/CD style enforcement, and codebase-wide style consistency. Use this when you need automated formatting that won't corrupt files, respects project conventions, and provides clear feedback on changes. The comprehensive error code system (1-7) ensures every failure mode has a documented recovery path.
+
+The key differentiator is the safety-first approach - backup before modification, syntax check before formatting, timeout protection during execution, and automatic restoration on failure. This makes it suitable for production environments where file corruption is unacceptable and manual intervention should be minimized.

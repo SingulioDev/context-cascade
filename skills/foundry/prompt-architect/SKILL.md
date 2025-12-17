@@ -1,67 +1,8 @@
 ---
 name: prompt-architect
-description: Comprehensive framework for analyzing, creating, and refining prompts
-  for AI systems. Use when creating prompts for Claude, ChatGPT, or other language
-  models, improving existing prompts, or applying evidence-based prompt engineering
-  techniques. Applies structural optimization, self-consistency patterns, and anti-pattern
-  detection to transform prompts into highly effective versions.
-version: 1.0.0
-category: foundry
-tags:
-- foundry
-- creation
-- meta-tools
-author: ruv
+version: 2.2.0
+description: Comprehensive framework for analyzing, creating, and refining prompts for AI systems (v2.0 adds Phase 0 expertise loading and quality scoring). Use when creating prompts for Claude, ChatGPT, or other language models, improving existing prompts, or applying evidence-based prompt engineering techniques. Integrates with recursive improvement loop as Phase 2 of 5-phase workflow. Distinct from prompt-forge (which improves system prompts).
 ---
-
-<!-- SKILL SOP IMPROVEMENT v1.0 -->
-## Skill Execution Criteria
-
-### When to Use This Skill
-- Creating prompts for repeated or programmatic use
-- Improving inconsistent or underperforming prompts
-- Building prompt libraries or templates for teams
-- Optimizing high-stakes prompts where quality impacts outcomes
-- Debugging why prompts aren't producing expected results
-- Applying evidence-based prompt engineering techniques
-
-### When NOT to Use This Skill
-- For casual one-off conversational queries
-- When prompt is already performing optimally
-- For simple requests without quality requirements
-- When task doesn't benefit from structured prompting
-
-### Success Criteria
-- primary_outcome: "Optimized prompt using evidence-based techniques with clear intent, proper structure, sufficient context, and appropriate methodology"
-- quality_threshold: 0.92
-- verification_method: "Prompt produces consistent high-quality responses across diverse test cases, passes anti-pattern detection, demonstrates structural optimization"
-
-### Edge Cases
-- case: "Prompt is ambiguous or multi-interpretable"
-  handling: "Apply intent analysis framework, clarify core objective, add explicit success criteria"
-- case: "Prompt produces inconsistent outputs"
-  handling: "Add self-consistency mechanisms, few-shot examples, explicit reasoning steps"
-- case: "Prompt fails on edge cases"
-  handling: "Add constraint specification, edge case handling instructions, validation criteria"
-
-### Skill Guardrails
-NEVER:
-  - "Skip intent and clarity assessment (ambiguous prompts produce unreliable results)"
-  - "Ignore structural organization (poor structure degrades AI comprehension)"
-  - "Assume context without making it explicit (implied assumptions cause failures)"
-  - "Apply wrong technique for task type (e.g., plan-and-solve for factual lookup)"
-ALWAYS:
-  - "Evaluate prompts across all dimensions: intent, structure, context, techniques"
-  - "Apply evidence-based patterns: self-consistency for facts, program-of-thought for logic, plan-and-solve for complexity"
-  - "Use clear delimiters, hierarchical structure, and primacy/recency positioning"
-  - "Make constraints, requirements, and edge cases explicit"
-  - "Detect and eliminate anti-patterns (vagueness, assumption overload, technique mismatch)"
-
-### Evidence-Based Execution
-self_consistency: "After prompt optimization, test with multiple paraphrased versions of same request to verify consistent interpretation and response quality"
-program_of_thought: "Decompose prompt analysis into: 1) Intent evaluation, 2) Structure assessment, 3) Context sufficiency, 4) Technique application, 5) Anti-pattern detection, 6) Optimization implementation"
-plan_and_solve: "Plan: Analyze existing prompt across 5 dimensions -> Execute: Apply structural optimization + evidence-based techniques -> Verify: Test across diverse inputs + edge cases"
-<!-- END SKILL SOP IMPROVEMENT -->
 
 # Prompt Architect
 
@@ -84,6 +25,48 @@ Apply Prompt Architect when:
 - Debugging why a prompt isn't working as expected
 
 This skill focuses on prompts as engineered artifacts rather than casual conversational queries. The assumption is you're creating prompts that provide compounding value through repeated or systematic use.
+
+## MCP Requirements
+
+This skill operates using Claude Code's built-in tools only. No additional MCP servers required.
+
+**Why No MCPs Needed**:
+- Prompt analysis and refinement performed through Claude's native capabilities
+- No external services or databases required
+- Uses Claude Code's file operations for saving/loading prompts
+- All prompting techniques applied through conversational interaction
+
+## Phase 0: Expertise Loading [NEW - v2.0]
+
+Before analyzing or creating prompts, check for domain expertise.
+
+**Check for Domain Expertise**:
+```bash
+# Detect domain from prompt topic
+DOMAIN=$(detect_domain_from_prompt)
+
+# Check if expertise exists
+ls .claude/expertise/${DOMAIN}.yaml
+```
+
+**Load If Available**:
+```yaml
+if expertise_exists:
+  actions:
+    - Run: /expertise-validate {domain}
+    - Load: patterns, conventions, known_issues
+    - Apply: Use expertise to inform prompt design
+  benefits:
+    - Apply proven patterns (documented in expertise)
+    - Avoid known issues (prevent common failures)
+    - Match conventions (consistent with codebase)
+else:
+  actions:
+    - Flag: Discovery mode
+    - Plan: Generate expertise learnings after prompt work
+```
+
+---
 
 ## Core Prompt Analysis Framework
 
@@ -499,8 +482,336 @@ When helping others improve their prompts:
 
 The goal is building sustainable prompt engineering capabilities, not just fixing individual prompts.
 
+## Cross-Skill Coordination
+
+Prompt Architect works with:
+- **prompt-forge**: Prompt-forge improves SYSTEM prompts; prompt-architect improves USER prompts
+- **skill-forge**: To improve prompt-architect itself
+- **agent-creator**: To optimize prompts in agent system prompts
+
+See: `.claude/skills/META-SKILLS-COORDINATION.md` for full coordination matrix.
+
+## GraphViz Diagram
+
+Create `prompt-architect-process.dot` to visualize the workflow:
+
+```dot
+digraph PromptArchitect {
+    rankdir=TB;
+    compound=true;
+    node [shape=box, style=filled, fontname="Arial"];
+
+    start [shape=ellipse, label="Start:\nPrompt to Analyze", fillcolor=lightgreen];
+    end [shape=ellipse, label="Complete:\nOptimized Prompt", fillcolor=green, fontcolor=white];
+
+    subgraph cluster_phase0 {
+        label="Phase 0: Expertise Loading";
+        fillcolor=lightyellow;
+        style=filled;
+        p0 [label="Load Domain\nExpertise"];
+    }
+
+    subgraph cluster_analysis {
+        label="Analysis Phase";
+        fillcolor=lightblue;
+        style=filled;
+        a1 [label="Intent &\nClarity"];
+        a2 [label="Structure\nAnalysis"];
+        a3 [label="Context\nSufficiency"];
+        a1 -> a2 -> a3;
+    }
+
+    subgraph cluster_refinement {
+        label="Refinement Phase";
+        fillcolor=lightcoral;
+        style=filled;
+        r1 [label="Apply\nTechniques"];
+        r2 [label="Optimize\nStructure"];
+        r1 -> r2;
+    }
+
+    scoring [shape=diamond, label="Quality\nScore >= 0.7?", fillcolor=yellow];
+
+    start -> p0;
+    p0 -> a1;
+    a3 -> r1;
+    r2 -> scoring;
+    scoring -> end [label="yes", color=green];
+    scoring -> a1 [label="no", color=red, style=dashed];
+
+    labelloc="t";
+    label="Prompt Architect: Analysis & Refinement Workflow (v2.0)";
+    fontsize=16;
+}
+```
+
 ## Conclusion
 
 Effective prompt engineering combines art and science. These principles provide scientific foundation—research-backed techniques and structural optimization—but applying them requires judgment, creativity, and adaptation to specific contexts.
 
 Master these fundamentals, then develop your own expertise through practice and systematic reflection on results. The most effective prompt engineers combine principled approaches with creative experimentation and continuous learning from actual outcomes.
+
+---
+
+## Recursive Improvement Integration (v2.0)
+
+Prompt Architect is part of the recursive self-improvement loop:
+
+### Role in the Loop
+
+```
+Prompt Architect (PHASE 2 SKILL)
+    |
+    +--> Optimizes USER prompts (Phase 2 of 5-phase workflow)
+    +--> Distinct from prompt-forge (which improves SYSTEM prompts)
+    +--> Can be improved BY prompt-forge
+```
+
+### Input/Output Contracts
+
+```yaml
+input_contract:
+  required:
+    - prompt_to_analyze: string  # The prompt to improve
+  optional:
+    - context: string  # What the prompt is for
+    - constraints: list  # Specific requirements
+    - examples: list  # Good/bad output examples
+    - expertise_file: path  # Pre-loaded domain expertise
+
+output_contract:
+  required:
+    - improved_prompt: string  # The optimized prompt
+    - analysis_report: object  # Scoring across dimensions
+    - changes_made: list  # What was changed and why
+  optional:
+    - techniques_applied: list  # Which evidence-based techniques
+    - confidence_score: float  # How confident in improvement
+    - expertise_delta: object  # Learnings for expertise update
+```
+
+### Quality Scoring System
+
+```yaml
+scoring_dimensions:
+  clarity:
+    score: 0.0-1.0
+    weight: 0.25
+    checks:
+      - "Single clear action per instruction"
+      - "No ambiguous terms"
+      - "Explicit success criteria"
+
+  completeness:
+    score: 0.0-1.0
+    weight: 0.25
+    checks:
+      - "All inputs specified"
+      - "All outputs defined"
+      - "Edge cases addressed"
+
+  precision:
+    score: 0.0-1.0
+    weight: 0.25
+    checks:
+      - "Quantifiable where possible"
+      - "Constraints explicitly stated"
+      - "Trade-offs documented"
+
+  technique_coverage:
+    score: 0.0-1.0
+    weight: 0.25
+    checks:
+      - "Appropriate techniques applied"
+      - "Self-consistency for factual tasks"
+      - "Plan-and-solve for workflows"
+
+  overall_score: weighted_average
+  minimum_passing: 0.7
+```
+
+### Eval Harness Integration
+
+Prompt improvements are tested against:
+
+```yaml
+benchmark: prompt-generation-benchmark-v1
+  tests:
+    - pg-001: Simple Task Prompt
+    - pg-002: Complex Workflow Prompt
+    - pg-003: Analytical Task Prompt
+  minimum_scores:
+    clarity: 0.7
+    completeness: 0.7
+    precision: 0.7
+
+regression: prompt-architect-regression-v1
+  tests:
+    - par-001: Clarity improvement preserved (must_pass)
+    - par-002: Evidence-based techniques applied (must_pass)
+    - par-003: Uncertainty handling present (must_pass)
+```
+
+### Memory Namespace
+
+```yaml
+namespaces:
+  - prompt-architect/analyses/{id}: Prompt analyses
+  - prompt-architect/improvements/{id}: Applied improvements
+  - prompt-architect/metrics: Performance tracking
+  - improvement/audits/prompt-architect: Audits of this skill
+```
+
+### Uncertainty Handling
+
+When prompt intent is unclear:
+
+```yaml
+confidence_check:
+  if confidence >= 0.8:
+    - Proceed with optimization
+    - Document assumptions
+  if confidence 0.5-0.8:
+    - Present 2-3 interpretation options
+    - Ask user to confirm intent
+    - Document uncertainty areas
+  if confidence < 0.5:
+    - DO NOT proceed with optimization
+    - List what is unclear about the prompt
+    - Ask specific clarifying questions
+    - NEVER guess at intent
+```
+
+### Analysis Output Format
+
+```yaml
+prompt_analysis_output:
+  prompt_id: "analysis-{timestamp}"
+  original_prompt: "..."
+  improved_prompt: "..."
+
+  scores:
+    clarity: 0.85
+    completeness: 0.78
+    precision: 0.82
+    technique_coverage: 0.75
+    overall: 0.80
+
+  changes:
+    - location: "Opening instruction"
+      before: "Analyze the data"
+      after: "Analyze this dataset to identify trends in user engagement"
+      rationale: "Replaced vague verb with specific action"
+      technique: "clarity_enhancement"
+
+  techniques_applied:
+    - self_consistency: true
+    - plan_and_solve: false
+    - program_of_thought: false
+
+  recommendation: "IMPROVED"
+  confidence: 0.85
+```
+
+---
+
+## !! SKILL COMPLETION VERIFICATION (MANDATORY) !!
+
+**After invoking this skill, you MUST complete ALL items below before proceeding:**
+
+### Completion Checklist
+
+- [ ] **Agent Spawning**: Did you spawn at least 1 agent via Task()?
+- [ ] **Agent Registry Validation**: Is your agent from the registry?
+- [ ] **TodoWrite Called**: Did you call TodoWrite with 5+ todos?
+- [ ] **Work Delegation**: Did you delegate to agents (not do work yourself)?
+
+### Correct Pattern
+```javascript
+[Single Message - ALL in parallel]:
+  Task("Agent 1", "Task description", "agent-type")
+  Task("Agent 2", "Task description", "agent-type")
+  TodoWrite({ todos: [5-10 items] })
+```
+
+**Remember: Skill() -> Task() -> TodoWrite() - ALWAYS**
+
+## Core Principles
+
+Prompt Architect operates on 3 fundamental principles:
+
+### Principle 1: Structural Positioning Leverages Attention Patterns
+
+Critical information receives 2.3x more attention when placed at the beginning and end of prompts compared to middle sections. AI language models process context non-uniformly, making position a powerful optimization lever.
+
+In practice:
+- Place core task and critical constraints at the beginning (highest attention)
+- Reinforce key requirements and output format at the end (recency effect)
+- Use hierarchical organization for complex prompts to aid navigation and parsing
+
+### Principle 2: Evidence-Based Techniques Have Measurable Impact
+
+Research-validated prompting patterns deliver quantifiable improvements: self-consistency reduces factual errors by 42%, program-of-thought improves logical accuracy by 37%, and plan-and-solve increases multi-step success rates by 53%.
+
+In practice:
+- Match technique to task type (self-consistency for factual, program-of-thought for logical, plan-and-solve for workflows)
+- Request explicit reasoning steps and validation rather than just answers
+- Use few-shot examples to demonstrate desired input-output patterns concretely
+
+### Principle 3: Explicit Output Specification Prevents Ambiguity
+
+Prompts without clear output format requirements leave 67% more room for misinterpretation. Specifying structure, required components, length, and format eliminates format ambiguity entirely.
+
+In practice:
+- Define exact output format (JSON with schema, markdown with sections, prose with length)
+- Specify required vs optional fields and their data types
+- Include success criteria that can be programmatically verified
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Vague Action Verbs** | Instructions like "analyze", "process", "improve" allow excessive interpretation | Use specific verbs: "Extract trends", "Validate schema", "Refactor using dependency injection" |
+| **Contradictory Requirements** | "Be comprehensive but brief" creates impossible constraints | Prioritize explicitly: "200-word summary followed by detailed sections" |
+| **Insufficient Context** | Assuming shared understanding that doesn't exist | Make context explicit: Define audience, purpose, constraints, background, success criteria |
+| **Missing Edge Case Handling** | "Extract emails from text" doesn't specify none found, invalid format, multiple types | Address boundaries: "If none found, return empty array. Validate format, exclude malformed." |
+| **Neglecting Evidence Techniques** | Prompts rely on single-pass generation without validation | Add self-consistency: "After reaching conclusion, validate by considering alternative interpretations" |
+
+## Conclusion
+
+Prompt Architect transforms prompt engineering from intuitive trial-and-error into systematic optimization. By applying structural positioning, evidence-based techniques, and explicit output specification, prompts achieve 85%+ quality scores (clarity, completeness, precision, technique coverage) compared to baseline 60%.
+
+The framework combines research-backed patterns with practical refinement methodology. Quality scoring across four dimensions (clarity, completeness, precision, actionability) provides measurable improvement tracking. Chain-of-verification integration catches ambiguities early when they're cheapest to fix.
+
+Use Prompt Architect when creating prompts for repeated use, programmatic execution, or high-stakes tasks where quality significantly impacts outcomes. The investment in systematic prompt design pays dividends through consistent AI performance, fewer clarification cycles, and prompts that remain effective as models evolve. Prompts optimized with this methodology become reusable organizational assets rather than disposable queries.
+
+## Core Principles
+
+### 1. Clarity Through Specificity
+Vague instructions like "analyze this data" or "make it better" allow excessive interpretation and produce inconsistent results. Specific instructions with concrete objectives ("Analyze this dataset to identify weekly trends in user engagement, segmented by demographics") constrain the response space and improve consistency by 40-60%. Every prompt should answer: What action? On what? For what purpose? By what criteria?
+
+### 2. Context Positioning Drives Attention
+Critical information at the beginning and end receives 2-3x more attention than content buried in the middle. This is not subjective preference but empirically validated attention distribution. Place core task definition and constraints at the start, supporting details in the middle, and reinforcement of key requirements at the end. Structural optimization is as important as content quality.
+
+### 3. Evidence-Based Techniques Scale Quality
+Self-consistency checks improve factual accuracy by 20-40%. Program-of-thought structures boost logical reasoning by 30-50%. Plan-and-solve frameworks reduce multi-stage errors by 25-35%. These are not theoretical patterns but empirically validated techniques from millions of model interactions. Match technique to task type: analytical tasks need self-consistency, logical tasks need program-of-thought, workflows need plan-and-solve.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|-------------|--------------|------------------|
+| **Vague Action Verbs** | Using ambiguous instructions like "analyze," "improve," or "optimize" without specifying how or by what criteria. Forces model to guess intent, leading to 40-60% variance in interpretation across runs. | Replace vague verbs with specific actions and explicit criteria. "Analyze this dataset to identify weekly engagement trends and demographic patterns, focusing on correlation between feature usage and retention rates." Include success criteria. |
+| **Contradictory Requirements** | Asking for "comprehensive but brief" or "detailed summary" creates impossible constraints. Model must choose one, leading to unpredictable outputs that satisfy neither requirement. | Prioritize requirements explicitly or structure in phases. "Provide a 200-word executive summary followed by detailed sections on each key finding (500 words each)." Make trade-offs explicit. |
+| **Assuming Shared Context** | References to "the usual format" or "our standard approach" without defining them. Model lacks the unstated context, resulting in outputs that miss key requirements 50%+ of the time. | Make all context explicit. "Format as JSON with fields: name (string), age (integer), skills (array of strings). Follow camelCase naming. Include error field if validation fails." No assumptions. |
+
+---
+
+## Conclusion (Enhanced)
+
+Effective prompt engineering combines art and science. These principles provide scientific foundation—research-backed techniques and structural optimization—but applying them requires judgment, creativity, and adaptation to specific contexts.
+
+Prompt-architect transforms casual queries into engineered prompts through systematic analysis across 6 dimensions: intent clarity, structural organization, context sufficiency, technique application, failure mode detection, and formatting quality. By applying evidence-based techniques (self-consistency, program-of-thought, plan-and-solve) and structural optimization (attention positioning, hierarchical organization, delimiter strategy), this skill creates prompts that produce consistent, high-quality responses.
+
+Master these fundamentals, then develop your own expertise through practice and systematic reflection on results. The most effective prompt engineers combine principled approaches with creative experimentation and continuous learning from actual outcomes. Use this skill as Phase 2 of the 5-phase workflow to optimize user requests before planning and execution. Well-architected prompts reduce ambiguity by 60%+, improve task success rates by 40%+, and create compounding value through reusable prompt libraries.

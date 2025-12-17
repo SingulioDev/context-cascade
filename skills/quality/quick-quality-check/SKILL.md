@@ -192,3 +192,46 @@ quick-quality-check src/ --detailed
 - **Tests failing**: Flag but continue other checks
 - **Security issues found**: Escalate to detailed security review
 - **Poor quality score**: Trigger `deep-code-audit` skill
+---
+
+## Core Principles
+
+Quick Quality Check operates on 3 fundamental principles:
+
+### Principle 1: Speed Through Parallelization
+Quality feedback must be fast enough to fit into developer flow (under 30 seconds). Sequential checks create context-switching delays.
+
+In practice:
+- All 5 checks (theater, style, security, tests, tokens) run concurrently in mesh topology
+- Results aggregate in real-time as each check completes
+- No check waits for another - independence enables parallel execution
+
+### Principle 2: Fail-Fast Detection
+Critical issues should block development immediately, not hours later in CI/CD. Early detection saves rework time.
+
+In practice:
+- Theater detection flags mock/stub/TODO patterns that indicate incomplete work
+- Security scan catches vulnerabilities before they reach code review
+- Build validation ensures code compiles before committing
+
+### Principle 3: Severity-Based Triage
+Not all issues are equal. Ranking findings by severity (critical/high/medium/low) guides developer prioritization.
+
+In practice:
+- Critical issues (security, broken builds) surface first in report
+- Low-priority issues (style nitpicks) appear last
+- Quick mode skips deep analysis for faster feedback loop
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Deep Analysis in Quick Check** | Running comprehensive analysis (full security audit, 100% coverage) instead of quick scan causing 5+ minute delays | Use quick mode flags (--quick, --fast) - deep analysis belongs in pre-commit or CI/CD |
+| **Blocking on Non-Critical Issues** | Failing quality check for minor style violations or low-priority warnings | Only fail on critical/high severity - flag medium/low as warnings that don't block |
+| **No Prioritization** | Showing all 50+ findings in flat list without ranking | Always sort by severity (critical first) and provide counts (3 critical, 12 high, 35 low) |
+
+## Conclusion
+
+Quick Quality Check provides instant quality feedback (under 30 seconds) by running 5 independent checks in parallel and aggregating results with severity ranking. This enables developers to catch critical issues (theater code, security vulnerabilities, broken builds) before committing, rather than discovering them hours later in CI/CD. The key insight is parallelization - because checks are independent (theater detection doesn't need security scan results), they can run concurrently on separate agents and complete in the time of the slowest check (typically 20-30 seconds).
+
+Use this skill when you need fast quality feedback during active development - before git commit, during code review, or as a pre-push hook. The quick mode skips deep analysis (full coverage reports, comprehensive security audits) in favor of speed, making it suitable for tight feedback loops. For thorough analysis, use the comprehensive code review workflow instead.

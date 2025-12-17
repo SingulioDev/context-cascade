@@ -1378,3 +1378,58 @@ dot -Tpng flow-nexus-platform-process.dot -o flow-nexus-platform-process.png
 **Skill Tier**: Gold (13 files: 1 SKILL.md + 4 scripts + 3 templates + 3 tests + 1 process diagram + 1 resources README)
 
 *This skill consolidates 6 Flow Nexus command modules into a single comprehensive platform management interface with full automation capabilities.*
+
+---
+
+## Core Principles
+
+Flow Nexus Platform operates on 3 fundamental principles:
+
+### Principle 1: Cloud-Native Sandbox Isolation
+Every execution happens in ephemeral, isolated cloud sandboxes with automatic cleanup and resource management.
+
+In practice:
+- Create sandboxes on-demand for development, testing, or production workloads
+- Configure environment variables, packages, and startup scripts declaratively
+- Destroy sandboxes automatically after timeout or manually to prevent resource leaks
+- Upload files, execute code, and monitor logs without affecting host systems
+
+### Principle 2: Credit-Based Resource Metering
+All platform operations consume rUv credits, enabling transparent cost tracking and optimization.
+
+In practice:
+- Monitor credit balance before expensive operations (neural training, long-running sandboxes)
+- Configure auto-refill thresholds to prevent service interruptions
+- Optimize costs by choosing appropriate sandbox templates and cleaning up unused resources
+- Earn credits through challenge completion, template publishing, and referrals
+
+### Principle 3: Gamified Developer Engagement
+Challenges, achievements, and leaderboards transform platform usage into skill-building experiences.
+
+In practice:
+- Complete coding challenges to earn credits and build proficiency
+- Publish templates to the app store for passive credit income
+- Track progress through achievements (Speed Demon, Code Golf, Streak Master)
+- Compete on global and challenge-specific leaderboards
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Hardcoded API Keys** | Exposing authentication tokens in code or logs creates security vulnerabilities | Use environment variables via `env_vars` parameter in sandbox creation; never log credentials |
+| **Orphaned Sandboxes** | Leaving sandboxes running after task completion wastes credits and resources | Always destroy sandboxes explicitly or set `timeout` parameter; use cleanup scripts for batch operations |
+| **Ignoring Credit Limits** | Operations fail mid-execution when credits run out, losing progress | Check `check_balance()` before expensive operations; configure `auto_refill` with appropriate thresholds |
+| **Manual Template Replication** | Repeatedly creating identical sandbox configurations is error-prone and slow | Use `template_deploy()` for standardized environments; publish reusable templates to app store |
+| **Sync-Only Workflow Execution** | Blocking on long-running workflows prevents parallel operations | Use `async: true` for workflows >60s; monitor with `workflow_queue_status()` |
+
+---
+
+## Conclusion
+
+The Flow Nexus Platform skill provides comprehensive cloud infrastructure management for AI-assisted development workflows. By combining ephemeral sandbox execution, credit-based metering, and gamified skill-building, it enables scalable development without local infrastructure overhead.
+
+Use this skill when you need isolated execution environments, distributed compute resources, or cloud-based app deployment. The platform shines for teams requiring multi-user collaboration, auto-scaling workloads, or pay-per-use resource models. With 4 automation scripts, 3 production-ready templates, and comprehensive test coverage, this Gold-tier skill delivers enterprise-grade platform orchestration.
+
+Key takeaways: Leverage sandbox templates for consistency, monitor credit usage to optimize costs, and publish successful configurations as templates to build passive credit income. The platform's event-driven architecture, real-time subscriptions, and Queen Seraphina AI assistant provide advanced capabilities for sophisticated workflows.

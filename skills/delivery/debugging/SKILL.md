@@ -263,3 +263,125 @@ cat error.txt | python resources/scripts/stack-trace-analyzer.py --stdin
 ./resources/scripts/debug-session-recorder.sh stop
 ./resources/scripts/debug-session-recorder.sh report PROJ-456-20240115-103045
 ```
+
+## Core Principles
+
+1. **Reproduce Before Fixing** - Always create a minimal, reliable reproduction case before attempting fixes. This validates the bug exists and provides a test for verifying the fix.
+
+2. **Evidence-Driven Investigation** - Base conclusions on concrete evidence (stack traces, logs, profiler data, debugger inspection) rather than assumptions or guesses about root causes.
+
+3. **Systematic Elimination** - Use structured methodologies (binary search, hypothesis testing, differential debugging) to systematically narrow down the problem space rather than random code changes.
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Better Approach |
+|-------------|--------------|-----------------|
+| **Shotgun Debugging** - Making random code changes hoping to fix the bug | Creates new bugs, obscures root cause, wastes time on ineffective changes | Use systematic debugging methodologies (Phase 1-5 protocol), form explicit hypotheses before changing code |
+| **Ignoring Reproduction** - Attempting to fix bugs without reliable reproduction | Fixes may not address actual issue, cannot verify fix effectiveness, bug likely to return | Invest time in Phase 1 (Reproduce Reliably), create automated test that triggers bug consistently |
+| **Symptom Fixing** - Addressing surface-level errors without understanding root cause | Masks underlying problem, bug manifests differently later, technical debt accumulates | Use Phase 2 (Understand Root Cause), trace execution to find why code behaves incorrectly, not just where it fails |
+
+## Conclusion
+
+The debugging skill provides a comprehensive framework for investigating and resolving code failures through systematic methodology rather than trial-and-error. By following the 5-phase protocol (Reproduce, Understand, Design, Implement, Verify) and leveraging 10 proven debugging techniques, developers can efficiently identify root causes and implement lasting fixes. The included automation scripts (binary search debugger, log analyzer, stack trace analyzer, session recorder) accelerate common debugging workflows while maintaining rigor.
+
+Successful debugging requires discipline to reproduce bugs reliably, patience to understand root causes deeply, and systematic thinking to eliminate problem spaces methodically. The skill emphasizes evidence-based investigation through actual execution traces, profiler data, and debugger inspection rather than assumptions. By adding regression tests for every fixed bug and avoiding anti-patterns like shotgun debugging or symptom fixing, teams build more robust codebases while continuously improving their debugging capabilities. This systematic approach transforms debugging from a frustrating struggle into a structured problem-solving process with predictable outcomes.
+
+## Core Principles
+
+Debugging operates on 3 fundamental principles:
+
+### Principle 1: Reproducibility First
+A bug that cannot be reproduced cannot be reliably fixed. Invest time upfront to create minimal test cases that trigger failures consistently before attempting diagnosis.
+
+In practice:
+- Strip away unnecessary code/data to create minimal reproduction cases
+- Document exact sequence of inputs and environmental conditions
+- Verify bug occurs consistently (not intermittently) before proceeding to fix
+
+### Principle 2: Evidence-Based Diagnosis
+Form explicit hypotheses about root causes and test them systematically. Avoid guessing - use stack traces, logs, breakpoints, and state inspection to gather evidence.
+
+In practice:
+- Use 10 debugging methodologies (binary search, differential, hypothesis-driven)
+- Analyze stack traces with automated tools to identify error patterns
+- Instrument code with structured logging to capture execution flow
+
+### Principle 3: Prevention Through Regression Tests
+Every fixed bug should be immortalized as a regression test. This prevents the same bug from recurring and documents the expected behavior.
+
+In practice:
+- Add automated tests covering the exact failure scenario before fixing
+- Run full regression suite to ensure fix doesn't introduce new bugs
+- Update monitoring/alerting to catch similar issues in production
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Shotgun Debugging** | Making random changes hoping to fix the bug wastes time and introduces new issues | Use hypothesis-driven debugging: form testable hypotheses, gather evidence systematically |
+| **Fixing Symptoms** | Patching surface symptoms without understanding root cause allows bugs to recur | Always perform Phase 2 (Understand Root Cause) before implementing fixes |
+| **Print Statement Debugging** | Excessive print statements clutter code and provide poor observability | Use structured logging (JSON format) with appropriate log levels and context |
+| **Skipping Reproduction** | Attempting to fix bugs without reliable reproduction leads to ineffective fixes | Always complete Phase 1 (Reproduce Reliably) with minimal test case |
+| **Disabling Tests** | Disabling failing tests to make CI pass hides real bugs | Add regression tests for bugs, never disable tests without fixing underlying issues |
+| **Production Debugging** | Debugging directly in production risks data corruption and downtime | Reproduce locally or in staging, use production logs/metrics for diagnosis only |
+
+## Conclusion
+
+Debugging transforms from frustrating trial-and-error into systematic investigation when guided by the 5-phase protocol and 10 proven methodologies. By prioritizing reproducibility, gathering evidence through instrumentation, and preventing recurrence with regression tests, this skill ensures bugs are truly solved, not just temporarily suppressed.
+
+Use this skill when facing production incidents requiring rapid diagnosis, intermittent failures like race conditions, or complex stack traces spanning multiple services. The included automation scripts (binary search debugger, log analyzer, stack trace analyzer, session recorder) accelerate investigation by automating tedious analysis tasks.
+
+The result is a repeatable process that goes from bug report to validated fix with high confidence and comprehensive regression protection. When bugs cannot afford to recur, systematic debugging provides the rigor that ad-hoc approaches lack.
+
+## Core Principles
+
+Debugging operates on 3 fundamental principles:
+
+### Principle 1: Reproduce First, Diagnose Second
+
+You cannot fix what you cannot reliably reproduce. Intermittent bugs must be made deterministic before investigation.
+
+In practice:
+- Create minimal test case that triggers the bug consistently with exact sequence of inputs
+- Document environmental conditions (OS, browser, data state) required for reproduction
+- Strip away unnecessary complexity until you have the simplest failing case
+- If bug is intermittent, add logging/instrumentation until patterns emerge that enable reliable reproduction
+
+### Principle 2: Understand Root Cause Before Fixing
+
+Fixing symptoms without understanding root cause leads to incomplete fixes and recurring issues.
+
+In practice:
+- Trace execution path from symptom back to actual cause using stack traces, debuggers, and logging
+- Distinguish between the failure point (where error surfaces) and root cause (why error occurred)
+- Form explicit hypothesis about what is wrong, then test hypothesis with targeted experiments
+- Check for similar bugs elsewhere in codebase once root cause is understood
+
+### Principle 3: Verify Fixes Under Original Failure Conditions
+
+A fix that works in your test environment may still fail in production under original conditions.
+
+In practice:
+- Run regression tests that reproduce original failure and verify fix eliminates it
+- Test edge cases and boundary conditions, not just the happy path
+- Validate fix under production-like environment (same data, load, configuration)
+- Add automated test that would have caught this bug to prevent regression
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Debugging by Print Statement Alone** | Adding print/console.log everywhere creates noise without systematic investigation | Use actual debugger with breakpoints and variable inspection; add logging strategically at decision points, not randomly |
+| **Fixing Symptoms Not Causes** | Changing code to make error disappear without understanding why error occurred in first place | Use stack traces to trace error back to root cause; form hypothesis about what's wrong; test hypothesis; only fix after understanding |
+| **Skipping Reproduction Step** | Attempting to debug intermittent bug without first making it reproducible | Invest time in reliable reproduction (seeded data, controlled timing, logging); cannot fix what you cannot reproduce consistently |
+| **Shotgun Debugging** | Making multiple changes simultaneously hoping something fixes it | Change one variable at a time; test after each change; track what was changed and outcome; use binary search to isolate failure point |
+| **Disabling Tests to Make CI Green** | Commenting out failing tests rather than fixing bug or test | Never disable tests without removing them entirely; either fix the bug, fix the test, or delete test with documented justification |
+| **Deploying Debug Code** | Leaving verbose logging, debugger statements, or debug flags in production code | Use feature flags for debug modes; strip debug statements before deployment; run linters that catch debugger statements; review before merge |
+
+## Conclusion
+
+Systematic debugging through the 5-phase protocol - Reproduce Reliably, Understand Root Cause, Design Fix, Implement with Best Practices, Verify Fix - transforms bug investigation from frustrating trial-and-error into methodical problem-solving. By combining 10 proven debugging methodologies (binary search, rubber duck, hypothesis-driven, differential, logging, breakpoint analysis, stack trace analysis, state inspection, input validation, isolation testing) with production-ready automation scripts, this skill provides both strategic approach and tactical tools for rapid bug resolution.
+
+The automation scripts - binary-search-debug.js for bisecting commits and code lines, log-analyzer.py for intelligent log pattern detection, stack-trace-analyzer.py for multi-language root cause categorization, and debug-session-recorder.sh for comprehensive session management - accelerate debugging by automating tedious investigation steps. The comprehensive templates for debug configurations, logging setup, and systematic checklists ensure consistency and completeness across debugging sessions.
+
+Use this skill when investigating production incidents requiring rapid diagnosis, troubleshooting intermittent failures like flaky tests or race conditions, analyzing performance issues such as memory leaks or CPU spikes, debugging integration failures with third-party services, conducting regression analysis for bugs introduced by recent changes, or untangling complex stack traces spanning multiple services. The skill is essential for maintaining production systems where quick diagnosis and reliable fixes are critical to user experience and business continuity. The combination of systematic methodology, proven techniques, and automation tools enables debugging efficiency while ensuring fixes address root causes rather than just masking symptoms.

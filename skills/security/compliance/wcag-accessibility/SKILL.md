@@ -1,82 +1,10 @@
 ---
 name: wcag-accessibility
-description: WCAG 2.1 AA/AAA accessibility compliance specialist for ARIA attributes,
-  keyboard navigation, screen reader testing, color contrast validation, semantic
-  HTML, and automated a11y testing with axe-core/Lighthouse. Use when ensuring web
-  accessibility, meeting legal compliance (ADA, Section 508), implementing inclusive
-  design, or requiring WCAG best practices. Handles focus management, live regions,
-  accessible forms, and assistive technology compatibility.
+description: WCAG 2.1 AA/AAA accessibility compliance specialist for ARIA attributes, keyboard navigation, screen reader testing, color contrast validation, semantic HTML, and automated a11y testing with axe-core/Lighthouse. Use when ensuring web accessibility, meeting legal compliance (ADA, Section 508), implementing inclusive design, or requiring WCAG best practices. Handles focus management, live regions, accessible forms, and assistive technology compatibility.
 category: Compliance
 complexity: Medium
-triggers:
-- wcag
-- accessibility
-- a11y
-- aria
-- screen reader
-- keyboard navigation
-- color contrast
-- ada compliance
-- section 508
-- inclusive design
-version: 1.0.0
-tags:
-- security
-- compliance
-- safety
-author: ruv
+triggers: ["wcag", "accessibility", "a11y", "aria", "screen reader", "keyboard navigation", "color contrast", "ada compliance", "section 508", "inclusive design"]
 ---
-
-## When to Use This Skill
-
-Use this skill when conducting compliance audits, implementing regulatory controls, preparing for certification audits, validating GDPR/HIPAA/SOC2/PCI-DSS/ISO27001 adherence, or documenting security and privacy practices for regulated industries.
-
-## When NOT to Use This Skill
-
-Do NOT use for non-regulated applications, internal tools without compliance requirements, proof-of-concept projects, or general security audits (use security-analyzer instead). Avoid using for unauthorized compliance testing of third-party systems.
-
-## Success Criteria
-
-- All applicable regulatory requirements identified with evidence mapping
-- Compliance gaps documented with severity ratings (critical/high/medium/low)
-- Controls implemented with validation tests (automated where possible)
-- Evidence collection automated with audit trail timestamps
-- Remediation plans created for all gaps with assigned owners
-- Compliance score >90% for target framework
-- Zero critical violations remaining before certification
-
-## Edge Cases & Challenges
-
-- Multi-jurisdiction compliance (GDPR + CCPA + local regulations)
-- Legacy systems without compliance documentation
-- Third-party services requiring BAA/DPA agreements
-- Encrypted data requiring key escrow for compliance
-- Real-time compliance monitoring vs periodic audits
-- Conflicting requirements between frameworks
-- Continuous compliance vs point-in-time certification
-
-## Guardrails (CRITICAL SECURITY RULES)
-
-- NEVER implement compliance controls on unauthorized systems
-- NEVER collect or store PII/PHI without proper encryption and access controls
-- NEVER bypass security controls to achieve compliance scores
-- NEVER generate false compliance evidence or documentation
-- ALWAYS document evidence collection methods with timestamps
-- ALWAYS validate controls through independent testing
-- ALWAYS obtain legal review for compliance interpretations
-- ALWAYS maintain audit trails for all compliance activities
-- ALWAYS use encryption at rest and in transit for sensitive data
-- ALWAYS implement least-privilege access for compliance tools
-
-## Evidence-Based Validation
-
-All compliance findings MUST be validated through:
-1. **Automated scanning** - Use compliance scanning tools with documented results
-2. **Manual verification** - Independent review of at least 20% of automated findings
-3. **Evidence collection** - Screenshots, logs, configurations with timestamps
-4. **Cross-validation** - Multiple methods confirm same finding (tool + manual + audit)
-5. **Expert review** - Compliance specialist validates critical findings
-6. **Remediation testing** - Verify fixes resolve violations without introducing new gaps
 
 # WCAG Accessibility Specialist
 
@@ -602,3 +530,58 @@ jobs:
 
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
+
+---
+
+## Core Principles
+
+### 1. Semantic HTML First, ARIA Second
+The foundation of accessibility is proper HTML structure. Use native HTML elements with built-in semantics before adding ARIA attributes.
+
+**In practice:**
+- Use `<button>` instead of `<div role="button">` for interactive elements
+- Use `<nav>`, `<main>`, `<article>`, `<aside>` for document structure before adding landmarks
+- Reserve ARIA for enhancing native elements or creating custom widgets when no HTML equivalent exists
+- Remember: No ARIA is better than bad ARIA - incorrect ARIA can make experiences worse
+
+### 2. Keyboard Navigation is Non-Negotiable
+Every interactive element must be fully operable via keyboard alone. Mouse and touch are enhancements, not requirements.
+
+**In practice:**
+- All focusable elements must have visible focus indicators (3px minimum, 3:1 contrast)
+- Implement logical tab order that follows visual layout (avoid positive tabindex values)
+- Support standard keyboard patterns (Tab/Shift+Tab, Enter/Space, Arrow keys, Escape)
+- Test every user flow with keyboard only - if you cannot complete a task, users cannot either
+
+### 3. Perceivable Information Through Multiple Channels
+Content must be perceivable to users regardless of sensory abilities. Visual information must have non-visual equivalents.
+
+**In practice:**
+- Provide descriptive alt text for images (describe function, not appearance)
+- Never rely solely on color to convey information (use text labels, patterns, icons)
+- Ensure 4.5:1 contrast for normal text, 3:1 for large text and UI components
+- Use ARIA live regions to announce dynamic content changes to screen readers
+- Support text resizing up to 200% without loss of content or functionality
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Placeholder-only labels** (`<input placeholder="Email">`) | Screen readers do not treat placeholders as labels. Labels disappear when typing, causing memory burden. | Use `<label>` elements with `for` attribute. Placeholders can supplement but never replace labels. |
+| **Removing focus outlines** (`:focus { outline: none; }`) | Keyboard users cannot see where focus is, making navigation impossible. Creates accessibility barrier. | Always provide visible focus indicators. Use `:focus-visible` to show outlines for keyboard users only. |
+| **Generic link text** ("Click here", "Read more") | Screen reader users navigate by links. Generic text provides no context when read in isolation. | Use descriptive link text that makes sense out of context ("Download Q4 financial report", "Read privacy policy"). |
+| **Auto-playing media** (videos, carousels without pause) | Distracts screen reader users, causes cognitive overload, violates WCAG 2.1.1. Cannot be disabled by users. | Provide pause/stop controls. Never auto-play audio >3 seconds. Give users control over all motion. |
+| **Inaccessible modals** (no focus trap, no Escape key) | Keyboard users get lost in page behind modal. Cannot close modal without mouse. Violates WCAG 2.1.2. | Implement focus trap (Tab cycles within modal), restore focus on close, support Escape key to dismiss. |
+| **Missing alt text or alt="image"** | Screen readers announce "image" with no context. Users miss critical information conveyed visually. | Provide descriptive alt text for informative images, empty alt (`alt=""`) for decorative images. |
+
+---
+
+## Conclusion
+
+Web accessibility is not a checklist or compliance exercise - it is a continuous commitment to inclusive design that expands your audience and improves experiences for all users. The principles outlined in this skill create a foundation for building interfaces usable by people with diverse abilities, assistive technologies, and interaction preferences.
+
+The intersection of semantic HTML, keyboard navigation, and perceivable information creates a robust accessibility foundation that serves not only users with disabilities but improves usability for everyone. Proper HTML structure enhances SEO, keyboard navigation benefits power users, and high contrast benefits users in bright environments. Accessibility improvements are rarely wasted effort - they create cascading benefits across user populations.
+
+As you implement these practices, remember that accessibility is measurable and testable. Lighthouse scores, axe-core audits, and screen reader testing provide objective validation. However, the true measure of success is whether real users with disabilities can accomplish their goals efficiently and independently. Combine automated testing with manual validation and user research to create genuinely accessible experiences that meet both technical standards and human needs.

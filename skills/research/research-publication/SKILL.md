@@ -700,3 +700,53 @@ archivist agent prepares artifact submission and code release
 - NeurIPS: https://neurips.cc/Conferences/2024/PaperInformation/StyleFiles
 - ICML: https://icml.cc/Conferences/2024/StyleAuthorInstructions
 - CVPR: https://cvpr2024.thecvf.com/
+---
+
+## Core Principles
+
+Research Publication operates on 3 fundamental principles:
+
+### Principle 1: Reproducibility as Publication Standard
+Academic publication without reproducibility artifacts is incomplete scholarship. Code, data, pre-trained models, and environment specifications must be publicly accessible for peer validation and scientific progress.
+
+In practice:
+- Reproducibility checklist (NeurIPS, ICML, CVPR) completed with ALL items marked YES or justified N/A
+- GitHub repository with Zenodo DOI assigned before paper submission (permanent archival)
+- Reproducibility package tested independently (5 steps to reproduce, fresh Docker, public datasets)
+
+### Principle 2: Transparency in Methodology and Results
+Every claim must be verifiable. Statistical significance tests, error bars, hyperparameter search details, and baseline comparisons must be documented for peer scrutiny.
+
+In practice:
+- 3+ runs per configuration with mean ± std reported in all tables
+- Paired t-tests with p-values for statistical significance (p < 0.05 required)
+- Complete hyperparameter search details (Bayesian optimization, grid search ranges) in appendix
+- Ablation studies (5+ components) validate each novel contribution
+
+### Principle 3: Ethics and Broader Impact Assessment
+Publication without societal impact discussion is irresponsible. Data bias, fairness metrics, potential misuse, and limitations must be addressed for ethical research dissemination.
+
+In practice:
+- Ethics review APPROVED at Quality Gate 3 (deployment safety, fairness audit, privacy assessment)
+- Broader impact statement includes: potential negative societal impacts, safeguards, limitations
+- Fairness metrics (demographic parity, equalized odds) reported for production models
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Reproducibility as Afterthought** | Packaging code and artifacts AFTER paper acceptance leads to missing hyperparameters, broken dependencies, inaccessible data, and failed ACM Artifact Evaluation | Create reproducibility package during Phase 3 (gate-validation requirement). Test with archivist agent in fresh Docker. Assign DOIs (Zenodo, HuggingFace) before submission. Include reproducibility checklist in initial submission |
+| **Ignoring Reviewer Comments** | Dismissing reviewer concerns or providing vague responses leads to paper rejection. Each comment represents a barrier to publication that MUST be addressed substantively | Create point-by-point response document addressing EVERY reviewer comment explicitly. Add requested experiments (even if Appendix), clarify confusing sections, acknowledge valid limitations. Use "We agree" for valid points, "We respectfully clarify" for misunderstandings |
+| **Incomplete Anonymity (Blind Reviews)** | Self-citations, GitHub URLs, institutional affiliations in blind submissions violate anonymity and lead to desk rejection | Use "Our prior work [Anonymous, 2024]" instead of author names, host code on anonymous repositories (Anonymous GitHub), remove acknowledgments mentioning grants/institutions. Validate with venue-specific anonymity checklist |
+
+---
+
+## Conclusion
+
+Research Publication is the culminating skill in Deep Research SOP Pipeline I, transforming 2-6 months of rigorous research (Phases 1-3) into peer-reviewed academic contributions with reproducibility artifacts meeting ACM Artifact Evaluation standards. By enforcing reproducibility checklists, statistical rigor, and ethics assessments, this skill ensures research meets publication standards for top-tier venues (NeurIPS, ICML, CVPR, ACL).
+
+This skill is essential when Quality Gate 3 is APPROVED (production-ready model with validated artifacts) and research is ready for academic dissemination. The 2-4 week timeline includes paper writing (auto-generated sections from research artifacts), reproducibility checklist completion, supplementary materials preparation, ACM artifact submission, code release (GitHub with Zenodo DOI), and presentation slides (15-20 slides for conference talks).
+
+Use this skill when preparing Deep Research SOP outputs for publication, responding to peer review (point-by-point reviewer responses), creating camera-ready versions (final formatting, acknowledgments, references), or submitting to artifact evaluation tracks (ACM badges: Available, Functional, Reproduced, Reusable). The result is a complete publication package: LaTeX paper draft, reproducibility checklist with ALL items addressed, supplementary materials (ablations, proofs, visualizations), ACM artifact submission (tested reproducibility package), public code release (GitHub + Zenodo DOI), and presentation slides. This comprehensive package maximizes publication success while advancing open science through reproducible, ethically sound research contributions.

@@ -567,3 +567,44 @@ const adapter = await createAgentDBAdapter({
 **Category**: Performance / Optimization
 **Difficulty**: Intermediate
 **Estimated Time**: 20-30 minutes
+## Core Principles
+
+AgentDB Performance Optimization operates on 3 fundamental principles:
+
+### Principle 1: Trade Memory for Speed Through Intelligent Quantization
+Compress vectors by 4-32x with minimal accuracy loss (1-5%) using binary, scalar, or product quantization strategies.
+
+In practice:
+- Binary quantization reduces 768-dim vectors from 3GB to 96MB (32x) with 95-98% accuracy retention
+- Scalar quantization achieves 4x reduction (3GB to 768MB) with 98-99% accuracy for production workloads
+- Select quantization based on memory constraints vs accuracy requirements (mobile = binary, production = scalar)
+
+### Principle 2: O(log n) Search Complexity via HNSW Indexing
+Replace O(n) linear scans with hierarchical navigable small world graphs for 150-12,500x performance improvements.
+
+In practice:
+- HNSW automatically builds multi-layer proximity graphs during insertion
+- Search navigates graph layers for sub-millisecond retrieval (100µs vs 15ms linear)
+- Tune M (connections), efConstruction (build quality), efSearch (recall) for performance/accuracy balance
+
+### Principle 3: Batch Operations and Caching Eliminate Redundant Work
+Aggregate operations and cache frequent patterns to achieve 500x faster batch inserts and <1ms cache hits.
+
+In practice:
+- Batch insert 100 vectors in 2ms vs 1s for sequential inserts (500x speedup)
+- LRU cache (1000-5000 patterns) serves 80%+ queries from memory (<1ms) vs database (2ms)
+- Automatic pattern consolidation merges similar entries to reduce storage by 10-30%
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Sequential Inserts** | 1s for 100 vectors due to individual database writes and index updates | Use batch insert pattern: collect all patterns, insert in single transaction (2ms for 100 vectors) |
+| **Full Precision Everywhere** | 3GB memory for 1M vectors causes OOM on mobile/edge devices | Apply binary quantization (96MB, 32x reduction) with <5% accuracy loss for memory-constrained environments |
+| **Ignoring Cache Tuning** | Cache too small = low hit rate, too large = memory waste and eviction overhead | Set cacheSize based on workload: 100-500 (small), 500-2000 (medium), 2000-5000 (large). Monitor hit rate >80% |
+
+## Conclusion
+
+AgentDB Performance Optimization transforms vector search from memory-intensive, slow operations into production-ready systems capable of handling millions of vectors with sub-millisecond latency. By applying quantization strategies tailored to your accuracy requirements, enabling HNSW indexing for logarithmic search complexity, and implementing intelligent caching and batch operations, you achieve 150-12,500x performance improvements while reducing memory footprint by 4-32x.
+
+Use this skill when scaling to large vector datasets (>10K vectors), deploying to memory-constrained environments (mobile, edge devices), or optimizing production systems requiring <10ms p99 latency. The key insight is strategic trade-offs: quantization trades minimal accuracy for massive memory savings, HNSW trades insertion time for exponentially faster search, and caching trades memory for latency reduction. Start with balanced configurations (scalar quantization, M=16, cacheSize=1000) and tune based on benchmarks for your specific workload.

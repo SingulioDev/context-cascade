@@ -569,3 +569,48 @@ Task("Product Launch Orchestrator", "Execute complete product launch using SOP",
 **Status**: Production-ready SOP
 **Complexity**: High (15+ agents, 10 weeks)
 **Pattern**: Hybrid sequential + parallel orchestration
+---
+
+## Core Principles
+
+SOP: Product Launch operates on 3 fundamental principles:
+
+### Principle 1: Coordinated Multi-Channel Execution
+Product launches require simultaneous coordination across technical development, marketing campaigns, sales enablement, and operational readiness. Sequential execution creates gaps where momentum is lost.
+
+In practice:
+- Development, marketing, and sales work streams run in parallel phases
+- Coordination through shared memory namespaces ensures alignment
+- Phase gates prevent downstream teams from blocking on incomplete upstream work
+
+### Principle 2: Evidence-Based Milestone Validation
+Each phase must produce measurable artifacts that validate readiness for the next phase. Subjective "done" assessments lead to launch failures.
+
+In practice:
+- Technical gates: All tests passing, security audit complete, performance benchmarks met
+- Marketing gates: Campaign assets complete, A/B tests run, analytics configured
+- Sales gates: Enablement materials ready, CRM configured, support trained
+
+### Principle 3: Rollback-First Deployment Strategy
+Launch failures are inevitable. The difference between recoverable incidents and catastrophic failures is having tested rollback procedures before deployment.
+
+In practice:
+- Blue-green deployments with instant traffic switching
+- Database migration rollback scripts tested in staging
+- Communication templates pre-written for rollback scenarios
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Waterfall Launch** | Development completes, THEN marketing starts, THEN sales prepares. Launch delayed by 2-3x. | Run development, marketing, and sales in parallel phases (Week 3-8). Use memory coordination for dependencies. |
+| **Launch Without Metrics** | "We launched!" but no way to measure success. Teams argue about what worked. | Configure analytics, monitoring, and dashboards BEFORE launch (Week 7-8). Define success metrics in Week 1. |
+| **No Rollback Plan** | Launch fails, team scrambles to fix in production. Downtime extends for hours/days. | Document and TEST rollback procedures in Week 8. Practice rollback in staging environment. |
+
+## Conclusion
+
+SOP: Product Launch provides a battle-tested 10-week framework for coordinating 15+ specialist agents across research, development, marketing, sales, and operations. The key insight is parallelization - development, marketing, and sales work streams run concurrently, coordinated through shared memory namespaces and phase gates. This reduces launch timeline from 18-24 weeks (sequential) to 10 weeks (parallel).
+
+Use this skill when launching new products, major features, or market expansions requiring cross-functional coordination. The hybrid sequential-parallel pattern ensures critical dependencies are respected (research before development) while maximizing throughput (backend + frontend + mobile development in parallel).
+
+The framework scales from MVP launches (6-8 weeks, 10 agents) to enterprise launches (12-16 weeks, 20+ agents) by adjusting phase durations and agent counts. Success requires rigorous milestone validation at each phase gate - subjective "done" assessments are the primary cause of launch delays and failures.

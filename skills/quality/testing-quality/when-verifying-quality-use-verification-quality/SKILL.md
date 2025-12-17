@@ -1715,3 +1715,49 @@ This skill integrates with:
 - `when-reviewing-code-comprehensively-use-code-review-assistant`
 - `when-ensuring-production-ready-use-production-readiness`
 - `when-auditing-code-style-use-style-audit`
+## Core Principles
+
+### 1. Multi-Dimensional Quality Assessment
+Quality cannot be measured by a single metric but requires comprehensive evaluation across static analysis, dynamic testing, integration validation, and certification gates.
+
+**In practice:**
+- Execute static analysis for code structure, complexity, and maintainability metrics
+- Perform dynamic testing with unit, integration, and end-to-end tests for runtime validation
+- Validate component integration through API contracts, data flow, and service health checks
+- Apply certification gates with weighted scoring across all quality dimensions
+
+### 2. Evidence-Based Validation with Cross-Verification
+Quality findings must be validated through multiple perspectives to minimize false positives and ensure actionable feedback.
+
+**In practice:**
+- Require 2+ confirming signals before flagging violations (static + dynamic analysis)
+- Cross-check findings with complementary tools (SonarQube + ESLint + TypeScript)
+- Validate against historical analysis (git blame, past bug patterns, change frequency)
+- Include peer review and domain expertise for context-specific validation
+
+### 3. Automated Gates with Measurable Thresholds
+Quality standards must be enforced through automated validation gates with objective pass/fail criteria, not subjective judgment.
+
+**In practice:**
+- Define measurable thresholds for each quality dimension (90% coverage, <10 complexity)
+- Calculate weighted certification scores combining all quality metrics
+- Enforce blocking gates for critical issues (security vulnerabilities, test failures)
+- Provide clear audit trails documenting which gates passed and which failed
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Metrics Without Context | Reporting quality metrics without understanding project constraints, leading to inappropriate standards enforcement | Apply domain expertise and legacy code considerations, balance ideal standards with pragmatic technical debt management |
+| False Confidence from Partial Analysis | Approving code based on one quality dimension while ignoring others, missing critical issues | Execute all five phases comprehensively, require minimum scores across all dimensions before approval |
+| Static-Only Validation | Relying solely on static analysis without runtime verification, missing dynamic behavior issues | Combine static analysis with dynamic testing and integration validation for comprehensive coverage |
+| Threshold Gaming | Optimizing for metric thresholds without improving actual quality, achieving high scores through superficial changes | Focus on root cause remediation over symptom fixes, validate that improvements address genuine quality issues |
+| Manual Gate Approvals | Using subjective human judgment for gate decisions, introducing inconsistency and bias | Automate gate validation with objective thresholds, require cryptographic signatures for certification approval |
+
+## Conclusion
+
+The Verification Quality skill establishes a comprehensive, multi-phase approach to quality validation that goes far beyond simple code review or testing. By orchestrating five specialized agents across static analysis, dynamic testing, integration validation, certification, and reporting phases, this skill provides 360-degree quality visibility. The evidence-based validation framework ensures findings are grounded in measurable metrics from multiple tools, reducing false positives and increasing confidence in quality assessments.
+
+The integration with compliance frameworks (SOC2, GDPR, WCAG) and automated certification processes transforms quality verification from a manual bottleneck into a streamlined, auditable workflow. Organizations implementing this skill benefit from clear merge readiness decisions backed by comprehensive audit trails, weighted certification scores reflecting true quality posture, and actionable recommendations prioritized by impact. The 87.3/100 certification score threshold ensures only production-ready code advances while providing specific guidance for improvement.
+
+This skill represents the gold standard for quality verification in modern software development, combining the rigor of static analysis tools like SonarQube, the runtime validation of comprehensive test suites, the system-level validation of integration testing, and the compliance validation of certification processes. When coordinated with functionality audits, theater detection, and style validation, it creates an unbreachable quality pipeline that catches issues at every level before they reach production.

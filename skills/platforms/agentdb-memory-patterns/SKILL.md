@@ -395,3 +395,57 @@ npx agentdb@latest migrate --source .swarm/memory.db
 - Documentation: node_modules/agentic-flow/docs/AGENTDB_INTEGRATION.md
 - MCP Integration: `npx agentdb@latest mcp` for Claude Code
 - Website: https://agentdb.ruv.io
+---
+
+## Core Principles
+
+AgentDB Memory Patterns operates on 3 fundamental principles:
+
+### Principle 1: Triple-Layer Memory Retention
+Agent memory organizes across three time horizons: immediate (10 messages), short-term (session context), and long-term (persistent facts), mirroring human memory architecture.
+
+In practice:
+- Store recent messages in immediate memory for context window management
+- Persist session-level context (goals, preferences) in short-term memory
+- Extract important facts to long-term memory for cross-session retrieval
+- Consolidate memories periodically to prevent unbounded growth
+
+### Principle 2: Pattern Learning via Reinforcement
+Agents improve through experience by storing interaction patterns and training on successful/failed attempts using 9 RL algorithms.
+
+In practice:
+- Record trigger-response patterns with success indicators and context
+- Train learning plugins (Decision Transformer, Q-Learning, Actor-Critic) on pattern corpus
+- Retrieve proven patterns via vector similarity for new situations
+- Update pattern confidence scores based on real-world performance
+
+### Principle 3: Reasoning-Augmented Retrieval
+Context synthesis combines multiple memory sources with reasoning agents (PatternMatcher, ContextSynthesizer, MemoryOptimizer) for rich contextual understanding.
+
+In practice:
+- Use `retrieveWithReasoning()` instead of raw vector search
+- Enable `synthesizeContext: true` to generate coherent context from fragments
+- Apply Maximal Marginal Relevance (MMR) to reduce redundancy in results
+- Leverage ExperienceCurator to filter low-quality memories
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Flat Memory Structure** | Storing all memories at same priority causes retrieval noise and unbounded growth | Implement hierarchical memory with immediate/short-term/long-term layers |
+| **No Memory Consolidation** | Keeping all interactions forever exhausts storage and degrades retrieval quality | Run periodic consolidation with importance-based pruning and size limits |
+| **Raw Vector Search** | Retrieving embeddings without reasoning misses contextual relationships | Use `retrieveWithReasoning()` with `synthesizeContext: true` for richer results |
+| **Ignoring Learning Loops** | Never training on stored patterns wastes collected experience | Train learning plugins regularly with `adapter.train()` after accumulating experiences |
+| **Storing Everything** | Recording trivial interactions pollutes memory with low-value data | Filter by importance/relevance; store only interactions with confidence >0.5 |
+
+---
+
+## Conclusion
+
+The AgentDB Memory Patterns skill enables stateful AI agents through persistent cross-session memory with triple-layer retention and pattern learning capabilities. By combining HNSW-accelerated retrieval, 9 RL algorithms, and reasoning-augmented context synthesis, it provides 150x-12,500x faster memory operations than traditional solutions.
+
+Use this skill when building conversational agents, creating intelligent assistants that learn from interactions, or implementing systems requiring context persistence across sessions. The pattern library excels at chat systems, task-planning agents, and recommendation systems where historical interactions inform future decisions.
+
+Key takeaways: Organize memory hierarchically across time horizons, train learning plugins on accumulated patterns, and leverage reasoning agents for context synthesis. The 100% backward compatibility with ReasoningBank and seamless Claude Code integration via MCP makes AgentDB Memory Patterns the production-ready choice for stateful agent development.

@@ -447,3 +447,57 @@ training:
 - Secrets: NEVER in sandbox config, use .env.local
 
 **Security Principle**: Deny by default, allow explicitly, verify continuously
+---
+
+## Core Principles
+
+Network Security Setup operates on 3 fundamental principles:
+
+### Principle 1: Zero-Trust AI Execution
+AI-generated code cannot be assumed safe - network isolation prevents data exfiltration and malicious activity.
+
+In practice:
+- Whitelist only known-safe domains (package registries, source control, approved APIs)
+- Block all untrusted domains by default to prevent prompt injection attacks
+- Monitor network traffic during sandbox execution for anomaly detection
+- Test that untrusted domains are blocked (negative testing validates policy)
+
+### Principle 2: Least Privilege Access
+Grant minimum network permissions required for legitimate development work.
+
+In practice:
+- Start with no network access (mode: none), add domains only when needed
+- Use wildcard patterns sparingly (*.com allows too much, *.npmjs.org is specific)
+- Require justification documentation for every trusted domain added
+- Separate internal domains (company.internal) from public domains
+
+### Principle 3: Secrets Separation
+Environment variables containing credentials MUST NOT reside in sandbox configuration files.
+
+In practice:
+- Store API keys, database passwords, and private keys in .env.local (gitignored)
+- Use environment variable references in sandbox config, not plaintext values
+- Document required secrets without exposing values (API_KEY required, see .env.local)
+- Implement secret scanning to catch accidental commits of credentials
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Using wildcard *.com patterns** | Allows access to entire internet, defeats purpose of network isolation | Use specific subdomains: *.npmjs.org, *.github.com, NOT *.com |
+| **Storing secrets in settings.json** | Credentials committed to version control, shared across team insecurely | Store secrets in .env.local (gitignored), reference in config with documentation |
+| **Disabling network isolation without review** | Prompt injection can exfiltrate code/data to attacker domains | NEVER set mode: unrestricted, always use whitelist approach |
+| **Not testing negative cases** | Untrusted domains might be accessible due to config errors | Verify random websites are blocked: curl random-site.com should fail |
+| **Bypassing corporate proxy** | Violates organizational policy, triggers security alerts, audit failures | Configure customProxy with corporate proxy settings, never use mode: none to circumvent |
+
+---
+
+## Conclusion
+
+Network Security Setup is the foundational defense layer for AI-assisted development, protecting against the unique threat model where AI-generated code might contain malicious payloads from prompt injection attacks. By implementing trusted domain whitelisting, this skill ensures that even if an attacker successfully injects code, network isolation prevents data exfiltration to their command-and-control servers.
+
+The skill balances security with developer productivity by maintaining curated lists of approved package registries, source control platforms, and CDN services. Enterprise deployments extend this with internal registries and corporate proxy configurations, enabling secure development in air-gapped or restricted network environments. The result is a zero-trust sandbox where legitimate development proceeds unimpeded while malicious network activity is blocked by default.
+
+Use this skill when configuring new Claude Code installations, hardening sandbox security for sensitive projects, or implementing corporate security policies for AI-assisted development. The validation checklist ensures configurations are correct before deployment, preventing both false positives (blocking legitimate development) and false negatives (allowing malicious traffic). Combined with secret separation principles, this skill establishes the security baseline required for production use of AI code generation tools.

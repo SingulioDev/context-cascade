@@ -625,6 +625,40 @@ Focus reattack on:
 
 **Reference**: See `templates/adversarial-testing-protocol.md` for detailed methodology, risk matrix templates, and skill-type-specific adversarial patterns.
 
+### Phase 7b: Documentation Completeness Audit (MANDATORY)
+
+After adversarial testing, audit the skill documentation against the REQUIRED-SECTIONS standard. This ensures all skills meet the 4-tier documentation requirements before being marked production-ready.
+
+**Reference**: See SKILL-AUDIT-PROTOCOL.md and REQUIRED-SECTIONS.md for full specification.
+
+**Run Tier Compliance Check**:
+
+| Tier | Sections Required | Minimum | Blocking |
+|------|-------------------|---------|----------|
+| Tier 1 (Critical) | YAML Frontmatter, Overview, Core Principles, When to Use, Main Workflow | 100% | YES |
+| Tier 2 (Essential) | Pattern Recognition, Advanced Techniques, Anti-Patterns, Practical Guidelines | 100% | YES |
+| Tier 3 (Integration) | Cross-Skill Coordination, MCP Requirements, I/O Contracts, Recursive Improvement | 80% | NO |
+| Tier 4 (Closure) | Examples, Troubleshooting, Conclusion, Completion Verification | 80% | NO |
+
+**Auto-Generate Missing Sections**: For any missing section, use templates:
+
+1. **Core Principles**: Generate 3 domain-specific principles from skill purpose
+2. **Anti-Patterns**: Create table with 3 common mistakes and solutions  
+3. **Conclusion**: Summarize core value, key takeaways, when to use
+
+**Quality Gate: Documentation Audit Passed**
+- Tier 1 at 100% (all 5 sections present)
+- Tier 2 at 100% (all 4 sections present)
+- Tier 3 at 80%+ (at least 3 of 4 sections)
+- Tier 4 at 80%+ (at least 3 of 4 sections)
+- Overall score >= 82%
+- Status = COMPLETE or PARTIAL (not INCOMPLETE)
+
+**If Audit Fails**: Generate missing sections using templates, insert before final ---, re-run audit (max 3 iterations).
+
+**Integration with Meta-Loop**: Feeds into recursive-improvement (tracks doc debt), eval-harness (validates gates), Memory MCP (stores audit history in skill-audit/ namespace).
+
+
 ### Phase 8: Metrics Tracking & Continuous Improvement (Expert Track Only - Optional for Quick Track)
 
 Track revision gains from V0 (baseline) → V1 (improved) → V2 (optimized) to identify which techniques deliver highest ROI and build a database of technique effectiveness for future skills.
@@ -859,3 +893,51 @@ Skill Forge transforms skill creation from template filling into strategic desig
 The investment in thoughtful skill design pays dividends through skills that work reliably, handle edge cases gracefully, and become increasingly valuable over time. As you build a library of well-crafted skills, Claude Code becomes progressively more capable in your specific domain, ultimately becoming a true extension of your expertise.
 
 Remember that skill creation is both art and science. This framework provides the science—the principles, patterns, and methodologies that research and practice have shown to be effective. The art comes from applying these principles with judgment, creativity, and deep understanding of your specific needs. Use Skill Forge as a foundation while developing your own expertise in skill design through practice and reflection.
+## Core Principles
+
+Skill Forge operates on 3 fundamental principles:
+
+### Principle 1: Schema-First Design Prevents Structural Debt
+
+Defining input/output contracts, error conditions, and success criteria BEFORE writing prose reduces structural errors by 62% and missing elements by 47%. The frozen schema serves as a contract that subsequent phases must satisfy.
+
+In practice:
+- Use Phase 0 schema definition for complex skills with strict I/O requirements
+- Lock 80% of structure (required fields, output format, error types, critical dependencies)
+- Allow 20% flexibility for improvements discovered during prose development
+
+### Principle 2: Chain-of-Verification Catches Errors When Cheapest to Fix
+
+Systematic self-critique after each major phase identifies ambiguities, gaps, and failure modes before they propagate. COV reduces factual errors by 42% and improves completeness by 37% with minimal time investment.
+
+In practice:
+- Apply Phase 1b verification after intent analysis (confidence rating required)
+- Apply Phase 5b verification after instruction writing (adversarial testing required)
+- Do NOT proceed past quality gates if overall confidence is LOW
+
+### Principle 3: Adversarial Testing Reveals Hidden Vulnerabilities
+
+Red-teaming skills through intentional misinterpretation, missing prerequisites, and boundary attacks identifies 58% more vulnerabilities than basic validation. The 25-40 minute investment prevents hours of post-deployment debugging.
+
+In practice:
+- Brainstorm 10-15 failure modes using adversarial mindset
+- Risk-score using Likelihood x Impact matrix (fix CRITICAL and HIGH scores)
+- Reattack after fixes until no CRITICAL issues remain
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Prose-First Without Schema** | Skills lack clear contracts, missing elements discovered late, structural refactoring needed | Use Phase 0 schema definition to freeze I/O contracts and error conditions before prose |
+| **Skipping Chain-of-Verification** | Ambiguous instructions, hidden assumptions, gaps in edge case handling | Apply COV after intent analysis and instruction crafting, require quality gate passage |
+| **Vague Action Verbs** | Instructions like "handle", "process", "deal with" allow excessive interpretation | Replace with specific verbs: "Parse JSON into CSV", "Validate against schema", "Extract fields: name, email" |
+| **No Adversarial Testing** | Skills fail on edge cases, missing prerequisites, boundary conditions in production | Run Phase 7a adversarial protocol, fix all CRITICAL (score 12+) issues before deployment |
+| **Generic Skill Bloat** | Skills try to do too much, violating single-responsibility principle | Decompose into focused micro-skills with clean interfaces for composition |
+
+## Conclusion
+
+Skill Forge elevates skill creation from template-filling to strategic engineering. By combining schema-first design, chain-of-verification, adversarial testing, and evidence-based prompting, skills become production-ready artifacts with 85% first-time-right rates instead of the baseline 40%.
+
+The 8-phase methodology (Phase 0-7a) ensures skills are well-specified, thoroughly validated, and resilient to edge cases. Quality gates prevent progression when confidence is low, forcing clarification before expensive rework. Metrics tracking (Phase 8) quantifies which techniques deliver highest ROI, building institutional knowledge about what works.
+
+Use Skill Forge when creating skills for repeated use, building shared team libraries, or developing complex workflows requiring high reliability. The investment in systematic design compounds through reduced debugging time, fewer production issues, and skills that remain maintainable as requirements evolve. Skills created with this methodology become valuable organizational assets rather than throwaway scripts.

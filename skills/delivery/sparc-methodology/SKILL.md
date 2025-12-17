@@ -1168,3 +1168,50 @@ mcp__claude-flow__memory_usage { action: "store", key: "...", value: "..." }
 ---
 
 Remember: **SPARC = Systematic, Parallel, Agile, Refined, Complete**
+
+## Core Principles
+
+SPARC Methodology operates on 3 fundamental principles:
+
+### Principle 1: Specification Before Implementation
+Define requirements, constraints, and architecture before writing code. Clear specifications prevent rework from misunderstood requirements and enable accurate estimation.
+
+In practice:
+- Use researcher mode for requirements gathering and best practices
+- Use architect mode for system design with Memory-based coordination
+- Document architectural decisions (ADRs) before implementation begins
+
+### Principle 2: Test-Driven Development as Foundation
+Write tests before implementation (red-green-refactor cycle) to ensure correctness from first principles. Tests become executable specifications that prevent regressions.
+
+In practice:
+- Use tdd mode for red-green-refactor cycle with 90%+ coverage targets
+- Write failing tests first, implement minimal code to pass, then refactor
+- Maintain test suite as living documentation of system behavior
+
+### Principle 3: Parallel Agent Orchestration
+Decompose work into independent tasks executed concurrently by specialized agents. Parallelization delivers 2.8-4.4x speed improvements over sequential workflows.
+
+In practice:
+- Use swarm-coordinator for mesh/hierarchical topologies based on task dependencies
+- Spawn all independent agents in single message (Golden Rule)
+- Use Memory MCP for cross-agent state coordination and knowledge sharing
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Code-First Development** | Skipping specification and jumping straight to implementation creates rework | Always run researcher + architect modes before coder mode |
+| **Sequential Agent Execution** | Spawning agents one-by-one loses 2.8-4.4x parallelization speedup | Batch all independent Task() calls in single message |
+| **Skipping TDD** | Implementing features without tests allows bugs to accumulate | Use tdd mode for red-green-refactor cycle, enforce 90%+ coverage |
+| **Ignoring Memory Coordination** | Agents re-discover information instead of sharing state | Store architectural decisions, component specs, and learnings in Memory MCP |
+| **Root Folder Pollution** | Saving deliverables to root creates organizational chaos | Use proper directories: /src, /tests, /docs, /config, /scripts |
+| **Custom Agent Types** | Creating new agent types instead of using 203-agent registry | Match tasks to existing agents via registry (read agents/README.md) |
+
+## Conclusion
+
+SPARC Methodology embodies the philosophy that systematic orchestration beats ad-hoc execution. By enforcing specification-first development, test-driven implementation, and parallel agent coordination, SPARC delivers production-ready systems with 84.8% SWE-Bench solve rate and 32.3% token reduction through optimization.
+
+Use SPARC when building complex systems requiring multiple specialized agents (17 modes available), parallel execution (2.8-4.4x speedup), or rigorous quality standards (90%+ test coverage). The methodology scales from simple features (coder + tester) to complex research projects (researcher + architect + coder + tester + reviewer + optimizer) with consistent patterns.
+
+The result is a reproducible framework that transforms vague requirements into production systems with comprehensive testing, security validation, and performance optimization. When projects cannot afford ad-hoc approaches, SPARC provides the systematic rigor that enterprise development demands.

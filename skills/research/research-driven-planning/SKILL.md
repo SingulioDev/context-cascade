@@ -812,3 +812,56 @@ echo "➡️  Next: Execute parallel-swarm-implementation skill"
 **Loop Position**: 1 of 3 (Planning)
 **Integration**: Feeds Loop 2, Receives from Loop 3
 **Agent Coordination**: 6-agent research + 8-agent pre-mortem with Byzantine consensus
+---
+
+## Core Principles
+
+### 1. Evidence-Based Planning Over Assumption-Based Design
+Most project failures stem from untested assumptions made during planning. This skill replaces gut-feeling decisions with research-backed evidence from actual implementations, creating plans grounded in proven patterns rather than theoretical ideals.
+
+**In practice:**
+- Use 6-agent parallel research to gather 10-30+ credible sources for every major technical decision
+- Require minimum 3 sources per architectural choice with explicit citations
+- Cross-validate conflicting recommendations using self-consistency (multiple agents must agree)
+- Document confidence scores for each decision (70%+ required to proceed)
+- Store research findings in memory for future project reference and pattern building
+
+### 2. Iterative Risk Mitigation Through Pre-Mortem Consensus
+Catching problems before coding begins prevents 85-95% of implementation failures. Byzantine consensus with multiple failure analysis perspectives ensures comprehensive risk coverage that single-analyst approaches miss.
+
+**In practice:**
+- Run 5 pre-mortem iterations using 8 specialized agents (optimistic, pessimistic, realistic analysts)
+- Require 2/3 Byzantine consensus agreement on risk severity classifications
+- Continue iterations until <3% failure confidence is achieved or explain why threshold unreachable
+- Use Root Cause Detective agents with 5-Whys and fishbone analysis to trace symptoms to actual causes
+- Apply defense-in-depth mitigations with cost-benefit analysis (positive ROI required)
+
+### 3. Continuous Learning Through Loop 3 Feedback Integration
+Every project generates failure pattern data that should inform future planning. This skill closes the learning loop by incorporating actual production failures into future risk analysis, making pre-mortems progressively more accurate.
+
+**In practice:**
+- Store all Loop 3 failure patterns in integration/loop3-feedback memory namespace
+- Load historical failure data into Realistic Failure Mode Analyst for next project's pre-mortem
+- Track planning accuracy improvement over time (measure pre-mortem predictions vs actual failures)
+- Use failure data to refine research queries (what types of sources predict actual problems?)
+- Build organizational knowledge base of domain-specific failure modes
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Skipping research phase for "familiar" technologies | Confidence bias leads to outdated patterns; miss recent security vulnerabilities or better approaches; reinvent solved problems | ALWAYS run research phase regardless of familiarity. Even well-known tech evolves (new best practices, security patches, performance optimizations). Set minimum research time (2 hours) as non-negotiable. |
+| Converging pre-mortem too quickly (<3 iterations) | Early consensus often reflects groupthink rather than comprehensive analysis; miss non-obvious failure modes that emerge in later iterations | Require minimum 5 iterations regardless of early agreement. Track new risks discovered per iteration - if iteration 4-5 still finding critical risks, extend to 7-10 cycles. |
+| Ignoring low-agreement risks in Byzantine consensus | Minority-flagged risks are often the most critical - they represent failure modes majority didn't consider; dismissing <66% agreement risks loses valuable edge-case coverage | Create separate "low-agreement high-severity" risk register. Investigate WHY agents disagree (different assumptions? missing info?). Require explicit mitigation or justification for dismissal. |
+
+---
+
+## Conclusion
+
+Research-driven planning represents a fundamental shift from traditional software planning methodologies. Where conventional approaches rely on individual expertise and intuition, this skill orchestrates multi-agent research and consensus-driven risk analysis to achieve >97% planning accuracy. The 6-11 hour investment in comprehensive planning prevents 85-95% of potential failures, delivering 2-3x ROI through reduced rework and avoided dead ends.
+
+The three-phase architecture (research, planning, execution) with Byzantine consensus ensures that plans are not only thorough but battle-tested against multiple analytical perspectives. The integration with Loop 3 creates a continuous improvement cycle where each project's actual failures refine future planning accuracy. This transforms planning from a one-time guess into an evolving, evidence-based discipline that becomes more effective with each iteration.
+
+As software complexity increases and the cost of failed implementations rises, the value of rigorous upfront planning grows proportionally. Research-driven planning demonstrates that the apparent trade-off between planning speed and quality is false - by parallelizing research agents and automating pre-mortem analysis, this skill delivers both comprehensive planning and reasonable timelines. The result is a sustainable approach to complex project delivery that prevents problems rather than merely reacting to them.

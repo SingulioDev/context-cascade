@@ -264,3 +264,35 @@ Success metrics:
 - Reduced iteration cycles (get it right in first generation)
 - Scalability to complex 30+ slide decks
 - Accessibility compliance as default, not afterthought
+---
+
+## Core Principles
+
+### 1. Negative Constraints Outperform Positive Specifications
+Visual design has exponentially more failure modes than success modes. Prohibiting border boxes, outline shapes, and rounded rectangles eliminates entire categories of layout failures before generation begins. This constraint-based approach scales more reliably than descriptive guidance because it reduces the search space of possible outputs rather than attempting to guide toward a single correct solution.
+
+### 2. Workflow Enforcement Prevents Tool Degradation
+AI systems silently switch to suboptimal alternatives when primary tools encounter difficulties. For PowerPoint generation, this manifests as abandoning html2pptx for simpler but less precise methods, causing spatial layout failures. Explicit workflow enforcement with documentation review requirements creates a forcing function that prevents this silent degradation, ensuring reliable pixel-level control across all generations.
+
+### 3. Quantified Visual Specifications Enable Automated Validation
+Vague qualitative instructions like "clean margins" force AI to guess intent, leading to inconsistent results. Converting requirements to measurable parameters (4.5:1 contrast ratio, 18pt minimum font, 0.5" margins) eliminates ambiguity and enables automated validation gates. This shifts quality control from subjective review to objective measurement, dramatically improving consistency.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|-------------|--------------|------------------|
+| **Generating all slides at once for 30+ decks** | Exhausts context window with visual elements, causes inconsistency, prevents section-level iteration, makes debugging impossible when failures occur late. | Use multi-chat architecture: architect (structure) -> generator (10-15 slide sections) -> assembly (consistency validation). Iterate per section. |
+| **Decorative visual complexity over clean design** | Border boxes, rounded rectangles, and outline shapes create spatial calculation brittleness. AI struggles with nested containers and overlapping elements, causing layout failures. | Prohibit decorative containers. Use spacing, typography, and color blocks for visual hierarchy. Text directly on backgrounds or solid color zones. |
+| **Skipping pre-execution design plan** | Leads to inconsistent visual styling across slides, premature commitment to suboptimal approaches, no audit trail for coherent visual system. Requires full regeneration to fix. | Mandatory written design plan specifying layout philosophy, color palette (hex values), typography hierarchy, visual emphasis strategy before any code generation. |
+
+---
+
+## Conclusion
+
+PowerPoint generation represents the intersection of data analysis, narrative structure, visual design, and spatial layout, making it one of the most complex AI generation tasks in corporate knowledge work. This skill addresses the unique challenges through systematic workflow enforcement, evidence-based prompting techniques, and constraint-based design principles.
+
+The fundamental insight is that visual complexity in AI-generated presentations comes from insufficient constraints, not insufficient capability. By leading with negative constraints (prohibitions on decorative elements), enforcing quantified specifications (exact contrast ratios, font sizes, margins), and separating planning from execution (design plan before code generation), the skill transforms an unreliable generative process into a systematic workflow with measurable quality gates.
+
+The multi-chat architecture for complex decks acknowledges token budget realities while maintaining visual coherence through explicit state management. The validation checklist ensures accessibility compliance and professional polish are defaults rather than afterthoughts. The result is enterprise-grade presentations generated at scale with consistent quality, reliable spatial layout, and zero manual cleanup required.

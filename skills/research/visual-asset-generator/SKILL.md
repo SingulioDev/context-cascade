@@ -537,3 +537,57 @@ Proposed & \textbf{0.891} & \textbf{0.887} & \textbf{1.8M} \\
 **Category**: Research / Visualization
 **Formats**: Mermaid, GraphViz, Markdown, ASCII, LaTeX
 **Design**: Ethical visualization with placeholder-based data insertion
+
+---
+
+## Core Principles
+
+### 1. Publication-Ready Quality By Default
+Research visualizations must meet journal and conference standards without manual refinement. This skill generates assets that are immediately suitable for submission, saving researchers from formatting iterations.
+
+**In practice:**
+- Use vector formats (SVG, PDF) for infinite scaling without quality loss
+- Apply colorblind-friendly palettes (viridis, cividis) for accessibility compliance
+- Generate publication-standard captions with both short (figure list) and long (in-text) formats
+- Include source data files (CSV, JSON) for reproducibility requirements
+- Export at 300+ DPI resolution for print publication standards
+
+### 2. Template-Based Generation With Data Integrity
+Visualization automation must never cross into data fabrication. This skill provides structural templates while requiring explicit user data insertion.
+
+**In practice:**
+- Generate diagram structures (PRISMA flow, methodology flowcharts) without requiring data
+- Use [YOUR_DATA] placeholders in charts/tables that need numerical values
+- Add metadata tags indicating "user_provided" vs "template_placeholder" for all visualizations
+- Include warnings when templates contain unfilled placeholders ("REPLACE BEFORE SUBMISSION")
+- Validate data types when user provides values (numeric for charts, proper date formats for timelines)
+
+### 3. Multi-Format Export For Maximum Compatibility
+Different research contexts require different visualization formats. This skill generates assets optimized for each target medium.
+
+**In practice:**
+- Mermaid for markdown documents, GitHub READMEs, and web-based presentations
+- GraphViz for complex dependency diagrams and architecture visualizations
+- LaTeX tables for journal manuscripts with precise formatting control
+- ASCII art for terminal-based documentation and code comments
+- SVG/PDF for high-resolution publication figures
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Using raster formats (PNG, JPG) for diagrams | Images become pixelated when scaled for different display sizes; journals often require vector formats; editing requires regeneration rather than modification | Generate SVG or PDF by default. Only use PNG for screenshots or photographs (pixel-based by nature). Provide export commands for converting vector to raster if needed. |
+| Default matplotlib/seaborn color schemes | Rainbow colormap is not perceptually uniform and fails colorblind accessibility tests; reduces figure inclusivity and violates some journal guidelines | ALWAYS use colorblind-friendly palettes (viridis, plasma, cividis, colorbrewer). Test with colorblind simulators (Coblis, Color Oracle). Document palette choice in caption or methods. |
+| Missing or inadequate captions | Readers cannot understand figures without context; violates publication standards requiring standalone interpretability; reduces citation potential of figure | Auto-generate both short caption (for list of figures) and long caption (detailed description including methodology notes, key findings, data sources). Include all necessary context for standalone interpretation. |
+
+---
+
+## Conclusion
+
+Visual asset generation automates one of the most time-consuming aspects of research communication - the creation of publication-quality diagrams, charts, and tables. By providing templates for common research visualizations (PRISMA diagrams, methodology flowcharts, comparison tables), this skill accelerates manuscript preparation from days to minutes while maintaining the highest standards of quality and integrity.
+
+The ethical foundation of this skill ensures that automation enhances rather than replaces human judgment. Unlike tools that generate plausible-looking data visualizations from thin air, this skill creates honest structural scaffolds that researchers populate with their actual findings. The clear distinction between template structures and required data insertion prevents the most dangerous failure mode of research automation - the inadvertent fabrication of results.
+
+As research publication demands increase while quality standards remain stringent, tools that accelerate legitimate visualization become essential infrastructure. The visual asset generator demonstrates that speed and integrity are compatible goals - when properly designed, automation can enhance both the efficiency and the quality of research communication. By reducing the mechanical burden of figure creation, this skill allows researchers to focus on what matters most: clearly communicating genuine scientific insights.

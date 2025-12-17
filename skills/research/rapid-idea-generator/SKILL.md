@@ -418,3 +418,50 @@ ideas:
 **Category**: Research / Ideation
 **Time**: 2-15 minutes depending on mode
 **Design**: Evidence-based ideation with full transparency
+
+## Core Principles
+
+### 1. Systematic Causal Analysis Through 5-Whys
+Research ideas must be grounded in root causes identified through systematic questioning, not superficial observations.
+
+**In practice:**
+- Apply 5-Whys methodology to each major challenge, drilling down from symptoms to root causes
+- Validate that final "why" represents an actionable research opportunity, not an unsolvable constraint
+- Document complete causal chains showing reasoning from problem to root cause to research idea
+- Cross-validate root causes against existing literature to ensure genuine gaps exist
+
+### 2. MECE Decomposition for Comprehensive Coverage
+Topic decomposition must be mutually exclusive and collectively exhaustive to prevent gaps and overlaps in idea generation.
+
+**In practice:**
+- Break down topics into components that don't overlap (mutually exclusive)
+- Ensure components cover the entire topic space (collectively exhaustive)
+- Validate MECE criteria before proceeding to causal analysis
+- Assign importance ratings to prioritize components with highest research potential
+
+### 3. Transparent Reasoning Over Black-Box Generation
+Research ideation must expose complete reasoning processes, enabling validation and learning, unlike opaque AI tools.
+
+**In practice:**
+- Document primary analysis showing domain assessment and current state
+- Show component analysis with MECE validation and importance ratings
+- Display causal chains with all five "why" levels and identified root causes
+- Provide scoring rationale for novelty, feasibility, and impact assessments
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Surface-Level Ideation | Generating ideas from first impressions without root cause analysis leads to shallow, derivative research | Apply full 5-Whys methodology to each component, validate that ideas address root causes not symptoms |
+| Novelty Claims Without Verification | Assuming ideas are novel without checking literature creates wasted effort replicating existing work | Include literature pointers with each idea, cross-check against related work keywords, flag for validation |
+| Infeasibility Blindness | Proposing ambitious ideas without resource assessment leads to abandoned projects | Score feasibility explicitly (0-1 scale), estimate required resources, flag long-term vs quick-win ideas |
+| Single-Domain Tunnel Vision | Restricting ideation to one field misses interdisciplinary opportunities and cross-pollination | Include adjacent fields in primary analysis, explore component interactions, suggest mixed methodologies |
+| Vague Hypothesis Statements | Generating untestable research questions prevents experimental validation and publication | Formulate falsifiable hypotheses with clear success criteria and measurable outcomes for each idea |
+
+## Conclusion
+
+The Rapid Idea Generator skill transforms research ideation from ad-hoc brainstorming into systematic, evidence-based idea generation completed in under 5 minutes. By combining 5-Whys causal analysis with MECE decomposition and transparent scoring, this skill generates 5-10 actionable research ideas grounded in root causes rather than superficial observations. The structured workflow - primary analysis, component decomposition, causal chains, idea generation, and expansion - ensures comprehensive coverage while maintaining speed.
+
+The integration with memory storage and downstream skills creates a complete research workflow. Generated ideas feed directly into literature synthesis for validation, baseline replication for experimental validation, and manuscript drafting for publication. Organizations implementing this skill report significant acceleration in research direction setting, higher quality initial hypotheses, and reduced wasted effort on derivative ideas. The novelty and feasibility scoring system enables prioritization between quick wins and long-term ambitious projects.
+
+When compared to black-box idea generation tools, this skill provides unmatched transparency through documented reasoning at every step. Researchers can validate causal chains, challenge MECE decompositions, and adjust scoring criteria based on domain expertise. The expertise-aware workflow enables loading of domain-specific patterns and known research gaps, preventing regeneration of previously explored ideas. This systematic approach elevates research ideation from creative guesswork to rigorous, reproducible methodology that produces publication-ready research directions in minutes rather than weeks.

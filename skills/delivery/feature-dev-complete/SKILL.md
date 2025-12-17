@@ -380,3 +380,50 @@ feature-dev-complete "Dark mode toggle" --create-pr false
 - **Security issues critical**: Block deployment, escalate
 - **Quality score too low**: Run additional polish iterations
 - **Architecture unclear**: Request user input on design decisions
+
+## Core Principles
+
+Feature Development Complete operates on 3 fundamental principles:
+
+### Principle 1: Research-Driven Development
+Begin every feature by researching current best practices and analyzing existing codebase patterns before writing code. Knowledge gathered upfront prevents costly refactoring later.
+
+In practice:
+- Use Gemini Search for latest 2025 best practices and framework updates
+- Analyze existing codebase patterns with MegaContext for consistency
+- Document architectural decisions in ADRs before implementation
+
+### Principle 2: Multi-Model Orchestration
+Leverage specialized AI models for their strengths - Gemini for research and diagrams, Codex for rapid prototyping, Claude for architecture and testing strategy. The right tool for each phase maximizes quality.
+
+In practice:
+- Gemini Search/MegaContext for research and large codebase analysis
+- Codex Auto for rapid prototyping with auto-fixing iterations
+- Claude for architecture design, testing strategy, and style polish
+
+### Principle 3: Quality Gates Before Deployment
+Features must pass comprehensive testing, security review, and quality checks before reaching production. No shortcuts - automated gates ensure production readiness.
+
+In practice:
+- Theater detection eliminates placeholder code before testing
+- Codex iteration loops until all tests pass (max 5 iterations)
+- Security scan blocks deployment on critical issues (zero tolerance)
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Skipping Research Phase** | Implementing outdated patterns or reinventing existing solutions | Always run Gemini Search for latest best practices before coding |
+| **Manual Quality Checks** | Inconsistent reviews, missed security issues, subjective quality assessment | Automate theater detection, security scanning, and quality scoring |
+| **Sequential Workflow** | Slow delivery from blocking dependencies (research -> design -> code -> test) | Parallelize independent phases (diagrams + prototyping, testing + security review) |
+| **Hardcoded Configuration** | Brittle code requiring redeployment for config changes | Use environment variables, feature flags, and external config files |
+| **Theater Code in Production** | Placeholder TODOs and incomplete implementations shipped to users | Run theater detection before testing phase and auto-complete all placeholders |
+| **Skipping Staging Validation** | Production bugs from untested deployments | Always deploy to staging first and validate before production release |
+
+## Conclusion
+
+Feature Development Complete embodies the philosophy that production-ready code requires systematic orchestration, not ad-hoc scripting. By combining multi-model AI research, automated quality gates, and comprehensive testing, this skill delivers features that are not just functional, but maintainable, secure, and performant from day one.
+
+Use this skill when building features that matter - greenfield functionality, multi-layer changes, or anything requiring production deployment. The 12-stage workflow ensures nothing is missed, from research to documentation, while theater detection and security scanning prevent the technical debt that plagues rushed implementations.
+
+The result is a consistent, repeatable process that transforms vague feature requests into production-ready code with >80% test coverage, comprehensive documentation, and zero critical security issues. When quality cannot be compromised, Feature Development Complete is the systematic approach that delivers.

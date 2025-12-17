@@ -289,3 +289,52 @@ Functionality audit findings feed into other quality skills. Bugs discovered dur
 To use this skill effectively, provide clear specifications of expected code behavior, representative test data or inputs, any known edge cases or problem areas, and information about dependencies or external systems the code interacts with. The more context provided, the more thorough and accurate the functionality testing becomes.
 
 The skill will systematically test code, identify bugs, debug issues using best practices, and produce a comprehensive report. It transforms code from "possibly correct" to "verified correct" through rigorous execution validation. When combined with theater-detection-audit and style-audit, it ensures code is genuine, functional, and well-crafted before deployment.
+## Core Principles
+
+Functionality Audit operates on 3 fundamental principles:
+
+### Principle 1: Execution Over Assumption
+Code that looks correct is not the same as code that works correctly. Syntax validation, static analysis, and visual inspection are insufficient for verifying functionality.
+
+In practice:
+- Every code change is executed in isolated sandbox environments with realistic inputs
+- Outputs are verified against precise specifications, not assumptions about correctness
+- Edge cases and boundary conditions are systematically tested, not just happy paths
+- Integration behavior is validated under production-like conditions
+
+### Principle 2: Systematic Root Cause Analysis
+Bugs are symptoms of underlying problems. Superficial fixes that address symptoms without understanding root causes leave problems in place or create new issues.
+
+In practice:
+- Failures trigger methodical investigation to trace execution backwards from the failure point
+- Hypotheses about bug causes are formed and tested systematically before applying fixes
+- Minimal reproducible test cases are created to isolate bugs from surrounding complexity
+- Fixes are designed to eliminate root causes, validated through comprehensive testing
+
+### Principle 3: Comprehensive Verification Feedback Loop
+Testing and fixing are iterative processes. Each bug discovered and fixed improves understanding of system behavior and reveals additional areas requiring validation.
+
+In practice:
+- Test results feed directly into debugging workflows with detailed failure analysis
+- Fixed code undergoes more thorough testing than original implementations to prevent regressions
+- Patterns from discovered bugs inform generation of new test cases for similar vulnerabilities
+- Documentation captures the evolution from buggy to verified code for future maintainers
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Approval Without Execution** | Assuming code works because it "looks right" or passes linting without running it | Execute code in sandboxes with realistic inputs before approval; require output verification |
+| **Shallow Testing** | Testing only happy paths or using incomplete test cases that miss edge conditions | Generate comprehensive test suites covering normal operation, boundaries, errors, edge cases, and stress scenarios |
+| **Symptom-Based Fixes** | Applying quick patches that address visible failures without understanding underlying causes | Perform root cause analysis before implementing fixes; trace execution to identify where actual behavior diverges from expected |
+| **Theater Testing** | Tests that use mocks everywhere or validate against other mock data rather than real behavior | Use minimal mocking; test against real integrations in sandbox environments; verify outputs match production specifications |
+| **Incomplete Verification** | Checking that code runs without errors but not verifying correctness of outputs or side effects | Validate outputs with precise equality checks, structural validation, and invariant assertions; monitor side effects like file/database changes |
+| **Manual-Only Testing** | Relying on one-time manual verification without automated regression prevention | Create automated test suites from manual test cases; integrate testing into development workflow |
+
+## Conclusion
+
+Functionality Audit transforms code quality assurance from a superficial checking exercise into rigorous validation that code genuinely works as intended. By executing code in isolated sandbox environments and systematically verifying behavior against specifications, this skill eliminates the dangerous gap between apparent correctness and actual functionality. The combination of comprehensive test case generation, careful output verification, and systematic debugging workflows ensures that bugs are not just found but understood and properly fixed.
+
+Use this skill whenever code correctness is critical, particularly after generating or modifying complex logic, integrating code from multiple sources, or before production releases. The skill is essential when visual inspection is insufficient due to code complexity, when debugging mysterious failures that only occur under specific conditions, or when establishing confidence that new code will behave correctly in production environments.
+
+The systematic approach embodied in functionality-audit - from sandbox creation through test execution to root cause analysis and verified fixes - creates a repeatable quality process that catches bugs early and prevents regressions. When integrated with theater-detection-audit to ensure code is genuine and style-audit to ensure maintainability, functionality-audit completes a comprehensive quality pipeline that delivers production-ready code with verified behavior, not just syntactically correct placeholders.

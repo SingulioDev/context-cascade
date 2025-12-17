@@ -1,87 +1,12 @@
 ---
 name: python-specialist
-description: Expert Python development specialist for backend APIs, async/await optimization,
-  Django/Flask/FastAPI frameworks, type hints, packaging, and performance profiling.
-  Use when building Python backend services, optimizing async code, implementing REST/GraphQL
-  APIs, or requiring Python-specific best practices. Handles dependency management,
-  virtual environments, testing with pytest, and deployment patterns.
+description: Expert Python development specialist for backend APIs, async/await optimization, Django/Flask/FastAPI frameworks, type hints, packaging, and performance profiling. Use when building Python backend services, optimizing async code, implementing REST/GraphQL APIs, or requiring Python-specific best practices. Handles dependency management, virtual environments, testing with pytest, and deployment patterns.
 category: Language Specialists
 complexity: Medium
-triggers:
-- python
-- django
-- fastapi
-- flask
-- async python
-- python api
-- python backend
-- type hints
-- pytest
-- python optimization
-version: 1.0.0
-tags:
-- specialists
-- domain-expert
-author: ruv
+triggers: ["python", "django", "fastapi", "flask", "async python", "python api", "python backend", "type hints", "pytest", "python optimization"]
 ---
 
 # Python Specialist
-
-
-## When to Use This Skill
-
-- **Language-Specific Features**: Leveraging unique language capabilities
-- **Idiomatic Code**: Writing language-specific best practices
-- **Performance Optimization**: Using language-specific optimization techniques
-- **Type System**: Advanced TypeScript, Rust, or type system features
-- **Concurrency**: Language-specific async/parallel programming patterns
-- **Ecosystem Tools**: Language-specific linters, formatters, build tools
-
-## When NOT to Use This Skill
-
-- **Cross-Language Work**: Polyglot projects requiring multiple languages
-- **Framework-Specific**: React, Django, Rails (use framework specialist instead)
-- **Algorithm Design**: Language-agnostic algorithmic work
-- **Generic Patterns**: Design patterns applicable across languages
-
-## Success Criteria
-
-- [ ] Code follows language-specific style guide (PEP 8, Effective Go, etc.)
-- [ ] Language-specific linter passing (eslint, pylint, clippy)
-- [ ] Idiomatic patterns used (decorators, context managers, traits)
-- [ ] Type safety enforced (TypeScript strict mode, mypy, etc.)
-- [ ] Language-specific tests passing (pytest, jest, cargo test)
-- [ ] Performance benchmarks met
-- [ ] Documentation follows language conventions (JSDoc, docstrings, rustdoc)
-
-## Edge Cases to Handle
-
-- **Version Differences**: Language version compatibility (Python 2 vs 3, ES5 vs ES6)
-- **Platform Differences**: OS-specific behavior (Windows vs Linux paths)
-- **Encoding Issues**: Unicode, character sets, binary data
-- **Dependency Hell**: Version conflicts or missing dependencies
-- **Memory Management**: GC tuning, manual memory management (Rust, C++)
-- **Concurrency Models**: GIL limitations, async runtime differences
-
-## Guardrails
-
-- **NEVER** ignore language-specific warnings or deprecations
-- **ALWAYS** use language version managers (nvm, pyenv, rustup)
-- **NEVER** reinvent standard library functionality
-- **ALWAYS** follow language security best practices
-- **NEVER** disable type checking to make code compile
-- **ALWAYS** use language-native package managers
-- **NEVER** commit language-specific artifacts (node_modules, __pycache__)
-
-## Evidence-Based Validation
-
-- [ ] Language-specific linter passes with zero warnings
-- [ ] Type checker passes (tsc --strict, mypy --strict)
-- [ ] Tests pass on target language version
-- [ ] Benchmarks show performance within acceptable range
-- [ ] Code review by language expert
-- [ ] Security scanner passes (npm audit, safety, cargo audit)
-- [ ] Documentation generated successfully
 
 Expert Python development for modern backend systems, API development, and high-performance applications.
 
@@ -592,3 +517,50 @@ async def log_requests(request: Request, call_next):
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
 **Maintained By**: python-specialist agent
+
+## Core Principles
+
+### 1. Async/Await for I/O - Never Block the Event Loop
+Modern Python backends must handle concurrent requests efficiently. Async/await enables thousands of concurrent connections without thread overhead.
+
+**In practice**:
+- Use async def for all I/O operations (database queries, HTTP requests, file operations)
+- Use httpx instead of requests for async HTTP clients
+- Employ asyncio.gather for concurrent operations
+- Example: FastAPI endpoint fetching data from 3 services concurrently reduces latency from 600ms (sequential) to 200ms (parallel)
+
+### 2. Type Hints Everywhere - Catch Errors at Compile Time
+Type hints combined with mypy provide static type checking that prevents runtime errors and improves code maintainability.
+
+**In practice**:
+- Add type hints to all function signatures (arguments and return types)
+- Enable mypy strict mode in CI/CD pipelines
+- Use Pydantic models for data validation at runtime
+- Example: Type hint prevents passing string to function expecting int, caught by mypy before deployment
+
+### 3. Virtual Environments Always - Isolate Dependencies
+Global Python package installations create conflicts between projects and make deployment unpredictable.
+
+**In practice**:
+- Create venv for every project (python -m venv .venv)
+- Pin exact versions in requirements.txt or pyproject.toml
+- Use Poetry or PDM for advanced dependency management
+- Example: Two projects using different Django versions coexist without conflicts through isolated virtual environments
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|-------------|---------|----------|
+| **Blocking I/O in Async Functions** | Using requests.get() in async functions blocks event loop, preventing concurrency and reducing throughput | Use async libraries (httpx, asyncpg, motor) and await all I/O operations |
+| **Bare Exception Handling** | Catching all exceptions with bare except silently swallows errors, making debugging impossible | Catch specific exceptions (ValueError, DatabaseError), log errors, and let unexpected exceptions propagate |
+| **No Type Hints** | Missing type hints prevent static analysis, break IDE autocomplete, and hide bugs until runtime | Add type hints to all function signatures, enable mypy strict mode |
+| **Global Package Installation** | Installing packages globally with pip causes version conflicts and non-reproducible deployments | Always use virtual environments (venv, virtualenv, conda) and pin dependencies |
+| **Manual Resource Cleanup** | Forgetting to close files, database connections, or HTTP clients leaks resources and causes crashes | Use context managers (async with, with statements) for automatic resource cleanup |
+
+## Conclusion
+
+Modern Python development for backend systems centers on FastAPI for API development, async/await for concurrency, and type hints for safety. FastAPI's automatic OpenAPI documentation, Pydantic integration for validation, and dependency injection system create a powerful foundation for production APIs. Combined with async/await patterns using asyncio, Python achieves performance comparable to Node.js while maintaining Python's readability and ecosystem.
+
+Type safety through type hints and mypy transforms Python from a dynamically typed language into a statically verified one at development time. This catches entire categories of bugs before code runs, while preserving Python's flexibility for rapid development. Pydantic bridges the gap between static types and runtime validation, ensuring data from external sources (API requests, database queries) matches expected schemas.
+
+Performance optimization in Python requires understanding when to use async for I/O-bound work and when to use ProcessPoolExecutor for CPU-bound tasks. Profiling with cProfile and memory_profiler identifies bottlenecks, while tools like Numba provide JIT compilation for numerical code. For production deployments, uvicorn with uvloop provides the fastest ASGI server, while connection pooling for databases and caching for expensive operations ensure scalability. This comprehensive approach produces Python applications that are type-safe, performant, and maintainable at scale.

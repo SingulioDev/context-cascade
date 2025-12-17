@@ -164,3 +164,57 @@ pytest tests/
 - GPU acceleration for training and inference
 - Automated hyperparameter tuning with Optuna
 - Model versioning and experiment tracking with MLflow
+---
+
+## Core Principles
+
+Machine Learning Development operates on 3 fundamental principles:
+
+### Principle 1: Reproducibility Through Determinism
+Every training run must be reproducible via fixed random seeds, version-locked dependencies, and containerized environments to enable scientific validation.
+
+In practice:
+- Set random seeds for PyTorch, NumPy, and Python at training initialization
+- Lock dependency versions in requirements.txt with exact versions (==, not >=)
+- Use Docker containers with pinned base images for training environments
+- Version datasets with DVC to ensure identical train/validation/test splits
+
+### Principle 2: Multi-Metric Holistic Evaluation
+Model quality cannot be reduced to single metrics; accuracy, fairness, robustness, efficiency, interpretability, and safety must all be evaluated.
+
+In practice:
+- Track accuracy metrics (precision, recall, F1) alongside fairness metrics (demographic parity, equalized odds)
+- Measure robustness via adversarial attacks and out-of-distribution detection
+- Monitor efficiency (inference latency, model size, FLOPS) for deployment feasibility
+- Assess interpretability through feature importance, saliency maps, or SHAP values
+
+### Principle 3: Deployment-Aware Training
+Models must be trained with deployment constraints in mind - target latency, memory footprint, and inference hardware determine architecture choices.
+
+In practice:
+- Profile inference latency on target hardware (CPU, GPU, TPU, mobile) early in development
+- Apply model compression (quantization, pruning, distillation) before final training
+- Design architectures compatible with deployment frameworks (ONNX, TensorRT, CoreML)
+- Monitor resource usage during training to predict deployment costs
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Unreproducible Training** | No fixed seeds, floating dependencies, or undocumented preprocessing prevents validation | Set seeds, lock versions, version datasets with DVC, document preprocessing |
+| **Accuracy-Only Evaluation** | Ignoring fairness, robustness, or efficiency leads to biased or unusable models | Implement holistic evaluation with 6+ metric categories (see holistic-evaluation skill) |
+| **Training Without Validation** | No held-out test set or k-fold validation causes overfitting and poor generalization | Always split data into train/val/test; use cross-validation for small datasets |
+| **Ignoring Deployment Constraints** | Training massive models incompatible with target hardware wastes resources | Profile inference latency early; apply compression techniques before training |
+| **Manual Hyperparameter Tuning** | Grid search or manual tuning is slow and suboptimal | Use automated hyperparameter optimization (Optuna, Ray Tune) |
+
+---
+
+## Conclusion
+
+The Machine Learning Development skill provides end-to-end ML workflows from data preprocessing through model deployment, with strong emphasis on reproducibility, holistic evaluation, and deployment readiness. By integrating AgentDB Learning for RL algorithms, ML Expert for advanced architectures, and Holistic Evaluation for comprehensive metrics, it delivers production-grade ML systems.
+
+Use this skill when training neural networks, developing ML pipelines, or deploying machine learning systems requiring rigorous scientific methodology. The platform excels at distributed training, automated hyperparameter tuning, and fairness-aware model development where reproducibility and comprehensive evaluation matter.
+
+Key takeaways: Prioritize reproducibility through determinism, evaluate across multiple dimensions beyond accuracy, and design with deployment constraints from the start. The integration with Data Steward for bias auditing, Deployment Readiness for production validation, and MLflow for experiment tracking provides complete ML development infrastructure with Gold-tier quality standards.

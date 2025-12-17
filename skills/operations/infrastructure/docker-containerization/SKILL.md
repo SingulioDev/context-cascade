@@ -1,59 +1,9 @@
 ---
-
-## CRITICAL: CI/CD SAFETY GUARDRAILS
-
-**BEFORE any CI/CD operation, validate**:
-- [ ] Rollback plan documented and tested
-- [ ] Deployment window approved (avoid peak hours)
-- [ ] Health checks configured (readiness + liveness probes)
-- [ ] Monitoring alerts active for deployment metrics
-- [ ] Incident response team notified
-
-**NEVER**:
-- Deploy without rollback capability
-- Skip environment-specific validation (dev -> staging -> prod)
-- Ignore test failures in pipeline
-- Deploy outside approved maintenance windows
-- Bypass approval gates in production pipelines
-
-**ALWAYS**:
-- Use blue-green or canary deployments for zero-downtime
-- Implement circuit breakers for cascading failure prevention
-- Document deployment state changes in incident log
-- Validate infrastructure drift before deployment
-- Retain audit trail of all pipeline executions
-
-**Evidence-Based Techniques for CI/CD**:
-- **Plan-and-Solve**: Break deployment into phases (build -> test -> stage -> prod)
-- **Self-Consistency**: Run identical tests across environments (consistency = reliability)
-- **Least-to-Most**: Start with smallest scope (single pod -> shard -> region -> global)
-- **Verification Loop**: After each phase, verify expected state before proceeding
-
 name: docker-containerization
-description: Docker containerization specialist for multi-stage builds, layer caching
-  optimization, security scanning with Trivy, Docker Compose orchestration, BuildKit
-  advanced features, and production-grade Dockerfile best practices. Use when containerizing
-  applications, optimizing image size, implementing CI/CD pipelines, or requiring
-  Docker best practices. Handles secrets management, health checks, resource limits,
-  and registry operations.
+description: Docker containerization specialist for multi-stage builds, layer caching optimization, security scanning with Trivy, Docker Compose orchestration, BuildKit advanced features, and production-grade Dockerfile best practices. Use when containerizing applications, optimizing image size, implementing CI/CD pipelines, or requiring Docker best practices. Handles secrets management, health checks, resource limits, and registry operations.
 category: Infrastructure
 complexity: Medium
-triggers:
-- docker
-- dockerfile
-- docker compose
-- containerization
-- docker build
-- buildkit
-- trivy
-- docker security
-- multi-stage build
-version: 1.0.0
-tags:
-- operations
-- deployment
-- infrastructure
-author: ruv
+triggers: ["docker", "dockerfile", "docker compose", "containerization", "docker build", "buildkit", "trivy", "docker security", "multi-stage build"]
 ---
 
 # Docker Containerization Specialist
@@ -477,3 +427,52 @@ docker system prune -a --volumes
 
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
+
+## Core Principles
+
+Docker Containerization operates on 3 fundamental principles:
+
+### Principle 1: Layer Efficiency Through Strategic Ordering
+Docker images are composed of layers, and each Dockerfile instruction creates a new layer. Layer ordering directly impacts build speed, cache hit rate, and final image size. This principle ensures fast builds and small artifacts.
+
+In practice:
+- Place rarely-changing instructions early in Dockerfile (base image, system dependencies)
+- Copy dependency files before application code to cache package installations
+- Use multi-stage builds to separate build dependencies from runtime artifacts
+- Leverage BuildKit cache mounts to persist package manager caches across builds
+
+### Principle 2: Minimal Attack Surface Through Base Image Selection
+The base image determines the security posture, image size, and available tooling. Smaller images have fewer vulnerabilities and faster pull times. This principle balances functionality with security.
+
+In practice:
+- Prefer Alpine Linux (5MB) for minimal footprint when shell access is needed
+- Use Distroless images when no shell is required (20-40MB, no package manager vulnerabilities)
+- Avoid full OS base images like Ubuntu unless absolutely necessary (200MB+)
+- Regularly scan base images with Trivy and update to patched versions
+
+### Principle 3: Runtime Security Through Least Privilege
+Containers should run with the minimum privileges necessary to function. Running as root is a security vulnerability that can lead to host compromise. This principle reduces blast radius of container escapes.
+
+In practice:
+- Create non-root users in Dockerfile and switch to them before CMD/ENTRYPOINT
+- Set readOnlyRootFilesystem to prevent runtime modifications
+- Drop all capabilities and add back only required ones
+- Use security scanning tools (Trivy, Snyk) to detect vulnerabilities before deployment
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Copying Entire Context** | Using COPY . . without .dockerignore copies node_modules, .git, build artifacts into the image, bloating size by 10-100x and exposing sensitive files. | Create comprehensive .dockerignore excluding node_modules, .git, .env, test files. Copy only necessary files. Use multi-stage builds to separate build and runtime dependencies. |
+| **Running as Root User** | Default user in containers is root. Container escapes or application vulnerabilities can lead to host compromise since container root = host root in many configurations. | Create dedicated user with RUN addgroup/adduser commands. Switch to non-root user with USER directive before CMD. Set runAsNonRoot in Kubernetes SecurityContext. |
+| **No Health Checks** | Docker/Kubernetes cannot determine if the application is actually healthy, only if the process is running. Leads to traffic being routed to broken containers. | Implement HEALTHCHECK instruction in Dockerfile using curl or application-specific health endpoint. Use interval/timeout/retries to tune sensitivity. |
+| **Single-Stage Builds** | Including build tools (gcc, make, npm) in the final image bloats size, increases attack surface, and exposes unnecessary tooling in production. | Use multi-stage builds with separate builder and runtime stages. Copy only compiled artifacts from builder to final stage. Final image should have minimal dependencies. |
+| **Hardcoded Secrets** | Embedding API keys, passwords, or certificates in Dockerfile or environment variables bakes secrets into image layers, exposing them to anyone with image access. | Use BuildKit --secret mount for build-time secrets. Use environment variables or external secret managers (Vault, AWS Secrets Manager) for runtime secrets. Never commit secrets to Dockerfiles. |
+
+## Conclusion
+
+The Docker Containerization skill provides a comprehensive framework for building production-grade container images that are secure, efficient, and maintainable. By mastering the three core principles of layer efficiency, minimal attack surface, and least privilege, you ensure that your containerized applications are optimized for speed, security, and cost.
+
+The multi-stage build workflows demonstrated here are the industry standard for modern containerization, reducing image sizes by 70-90% compared to naive approaches. The security practices including non-root users, health checks, and vulnerability scanning with Trivy establish a robust defense-in-depth strategy. The anti-patterns table serves as a checklist to avoid common mistakes that plague Docker implementations in the wild.
+
+This skill is essential when building CI/CD pipelines, deploying microservices to Kubernetes, or migrating legacy applications to containers. Whether you're containerizing a Node.js API, a Python Flask application, or a complex multi-service architecture with Docker Compose, the patterns and best practices documented here will accelerate your path to production-ready containerization. Combined with the troubleshooting guide and tool references, you have everything needed to build, optimize, and maintain secure container images at scale.

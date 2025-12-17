@@ -640,3 +640,65 @@ After invoking this skill, verify:
 - [ ] **Physics Verified**: Does solution behave correctly at singularity?
 
 **Remember**: Skill() -> Task() -> TodoWrite() - ALWAYS
+
+---
+
+## Core Principles
+
+### 1. Optimization is Universal, Not Singular
+The optimal numerical method depends on the problem scale and structure, not just the presence of singularities. Classical calculus (k=0) is one choice among many, not the default.
+
+**In practice:**
+- Always run ai_simulation_helper.py to determine optimal k, even for smooth problems
+- Use k(L) formula for scale-dependent optimization: k = -0.0137 * log10(L) + 0.1593
+- Recognize that k != 0 provides 10-30% accuracy gains at microscales (L < 1e-6 m)
+- Understand that k handles singularities (k=-1 for 1/r) AND optimizes smooth problems
+- Never assume k=0 is optimal without verification
+- Document why k was chosen (scale-based or singularity-based)
+
+### 2. Validate Against Baselines
+Numerical improvements must be demonstrated empirically, not assumed. Every simulation should prove it outperforms classical methods.
+
+**In practice:**
+- Always compare k=optimal vs k=0 (classical) baseline
+- Measure accuracy improvement (relative error reduction)
+- Measure computational efficiency (step count reduction)
+- Document convergence rates for both methods
+- Use model-evaluation-agent for statistical comparison (paired t-test)
+- Report both accuracy gains AND step reduction (not just one)
+- Validate that solution remains physically meaningful (energy conservation, boundedness)
+
+### 3. Transparency Through Reproducibility
+Simulations must be independently verifiable. The k-selection process, transforms, and validation must be fully documented.
+
+**In practice:**
+- Document k value, source (length scale or singularity type), and expected improvement
+- Include both forward and inverse NNC transforms in code
+- Provide comparison plots (k=optimal vs k=0 error curves)
+- Store results in experiment-tracking-agent with full parameters
+- Make assumptions explicit (smoothness, boundary conditions, scale ranges)
+- Include roundtrip error tests (transform -> inverse -> verify < 1e-10 error)
+- Archive simulation code, k-selection rationale, and validation results
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Assuming k=0 is optimal** | Misses 10-30% accuracy gains at microscales and 10,000x+ gains for singularities by defaulting to classical calculus | Always run ai_simulation_helper.py. Use k(L) formula for scale-based optimization. Only use k=0 if empirically validated. |
+| **Using NNC only for singularities** | Limits NNC to singularity handling, ignores computational efficiency gains for smooth problems | Recognize NNC optimizes BOTH accuracy (singularities) AND complexity (step reduction). Use for any simulation where speed matters. |
+| **Skipping k=0 comparison** | Cannot prove improvement, lacks evidence for k-selection, wastes effort if classical methods work fine | Always benchmark k=optimal vs k=0. Document accuracy and step count differences. Use model-evaluation-agent for statistical validation. |
+| **Hardcoding k values** | Violates scale-dependence, uses wrong k for problem, cannot adapt to different physics | Use ai_simulation_helper.py for every problem. Never hardcode k without CLI verification. Store k-selection rationale. |
+| **Missing inverse transforms** | Forward-only transforms prevent coordinate recovery, breaks visualization and boundary conditions | Implement BOTH forward (u -> v) AND inverse (v -> u) transforms. Test roundtrip error < 1e-10. |
+| **No physics validation** | Numerically stable but physically wrong (negative energies, unbounded solutions, violation of conservation laws) | Verify physical constraints: energy conservation, boundedness at singularities, correct asymptotic behavior. Use domain experts. |
+
+---
+
+## Conclusion
+
+The Physics Simulation Creator skill challenges the assumption that classical calculus (k=0) is universally optimal. By leveraging Non-Newtonian Calculus (NNC) with scale-dependent parameter tuning, this skill delivers significant accuracy improvements (10-30% for microscales, 10,000x+ for singularities) and computational efficiency gains (7-100x step reduction).
+
+The core insight is that optimal k varies by problem scale and structure. The bundled ai_simulation_helper.py script automates k-selection using the k(L) formula for length-scale optimization and singularity-specific tables for problems with explicit discontinuities. This ensures that every simulation uses the numerically optimal method for its specific physics, rather than defaulting to classical approaches.
+
+By enforcing baseline comparisons, transparent documentation, and physics validation, this skill ensures that NNC-based simulations are not only faster and more accurate but also reproducible and scientifically rigorous. Whether simulating molecular dynamics at atomic scales or handling gravitational singularities, this skill provides a systematic framework for optimal numerical physics simulation.

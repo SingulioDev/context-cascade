@@ -311,3 +311,36 @@ training:
 - Mobile great for planning during commute
 - Always clean git state before teleporting
 - Context window shows how much history loaded
+
+---
+
+## Core Principles
+
+### 1. Context Preservation Over Interface Consistency
+The teleport system prioritizes maintaining conversation history and decision context over forcing users to stay in one interface. A 50% context window load during teleportation is vastly superior to starting fresh with 0% context. This principle recognizes that continuity of thought matters more than tool familiarity, especially when complexity escalates mid-task.
+
+### 2. Mobile-First Planning, Desktop-First Execution
+Effective development workflows separate thinking from doing. Mobile devices excel at async planning, requirement gathering, and progress review due to notification systems and portability. Desktop environments with full IDE integration excel at iterative implementation, debugging, and local testing. The skill treats these as complementary rather than competitive, optimizing for the strengths of each environment.
+
+### 3. Complexity-Triggered Interface Switching
+Static interface recommendations fail because task complexity reveals itself during execution, not planning. The skill designs for mid-stream transitions, providing clear signals for when to teleport and ensuring the teleportation mechanism is friction-free. This accepts that initial assessments are probabilistic and builds in escape hatches when predictions fail.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|-------------|--------------|------------------|
+| **Forcing CLI for all "serious" work** | Dismisses valid web use cases like quick fixes, mobile access, and collaborative PR review. Creates unnecessary friction for tasks that don't need full local tooling. | Use decision matrix: complexity, iteration count, local testing needs, current location. Web handles 1-3 interaction tasks efficiently. |
+| **Starting fresh instead of teleporting** | Loses 50% context window worth of decisions, requirements, and exploratory work. Forces re-explanation of nuances already established. Wastes time rebuilding shared understanding. | Always use teleport command when switching. Verify context % loaded. Continue conversation rather than restart. |
+| **Teleporting with dirty git state** | Blocks teleport operation, requires cleanup, causes confusion about what changes belong to current task vs previous work. Risks accidental commits of unrelated changes. | Verify git status shows clean working directory before teleport. Stash or commit local changes first. Use branch per feature to isolate work. |
+
+---
+
+## Conclusion
+
+The Web-CLI Teleport skill addresses a fundamental tension in modern development: the need for both mobility and power. Traditional tooling forces binary choices between environments, losing context during transitions and creating artificial barriers based on location rather than task requirements.
+
+This skill's innovation lies in treating interface selection as a continuous optimization problem rather than an upfront commitment. By providing seamless teleportation with context preservation, it enables developers to start work anywhere, recognize complexity shifts in real-time, and transition to appropriate tooling without penalty. The decision matrix reduces cognitive load by encoding environment-specific tradeoffs into clear criteria, while the teleport protocol ensures conversations remain continuous across physical and virtual boundaries.
+
+The result is a workflow that respects both human mobility patterns and technical complexity curves, allowing planning on mobile during commute, exploratory work on web during meetings, and focused implementation on desktop with full tooling, all within a single conversational thread that accumulates rather than resets context.

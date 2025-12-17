@@ -608,3 +608,58 @@ Timeline: 2 weeks
 **Status**: Production-ready SOP
 **Complexity**: Medium (8-12 agents, 2 weeks)
 **Pattern**: Test-Driven Development with parallel optimization
+
+---
+
+## Core Principles
+
+### 1. Test-Driven Development (TDD) as Non-Negotiable
+Write tests BEFORE implementation, not after. TDD is not a productivity drag - it prevents rework:
+- **Red-Green-Refactor Cycle**: Write failing test (red), implement minimal code to pass (green), refactor for clarity (refactor)
+- **Regression Safety**: Tests prevent breaking existing functionality during refactoring or feature additions
+- **Design Validation**: Tests force API design decisions before implementation locks them in
+- **Documentation Through Tests**: Tests document expected behavior more accurately than comments
+
+APIs developed without TDD accumulate technical debt through untested edge cases, brittle code, and breaking changes. The cost of writing tests after implementation is 3-5x higher than writing tests first due to refactoring required for testability.
+
+### 2. API Contract-First Design
+Define OpenAPI specification BEFORE writing code. API contracts are the interface between frontend and backend:
+- **Frontend-Backend Parallelization**: Teams can work in parallel using mock servers from OpenAPI spec
+- **Breaking Change Detection**: Schema validation detects breaking changes before deployment
+- **Documentation Generation**: Interactive API docs (Swagger UI) generated automatically from spec
+- **Client SDK Generation**: Client libraries generated automatically for multiple languages
+
+Code-first API development leads to undocumented endpoints, inconsistent naming, and breaking changes discovered in production. Contract-first development treats the API as a product with versioned specifications and automated validation.
+
+### 3. Progressive Deployment Through Canary Releases
+Deploy new API versions incrementally to detect issues before full rollout:
+- **Traffic Splitting**: Route 1-5% traffic to new version, monitor error rates and latency before full rollout
+- **Rollback Capability**: Instant rollback to previous version if error rates exceed thresholds
+- **Feature Flags**: Decouple deployment from feature activation, enable features per user cohort or API key
+- **Blue-Green Strategy**: Run new version alongside old version, switch traffic atomically
+
+Direct deployment to 100% of traffic converts minor bugs into major incidents. Canary releases limit blast radius - a bug affecting 5% of users is recoverable, the same bug affecting all users requires crisis management and customer notifications.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|-------------|--------------|------------------|
+| **Implementation Before Tests** | Writing code first, then adding tests as afterthought. Results in untested edge cases, brittle code that resists refactoring, and false confidence from passing tests that merely document existing behavior rather than validate requirements. | **Red-Green-Refactor TDD Cycle**: Write failing test first (red), implement minimal code to pass test (green), refactor for clarity (refactor). Tests drive API design and catch regressions. Aim for 90%+ test coverage measured by branches covered, not just lines executed. |
+| **Implicit API Contracts Through Code** | Defining API through code without formal specification (OpenAPI/Swagger). Leads to undocumented endpoints, inconsistent naming conventions, and breaking changes discovered in production when clients fail. | **OpenAPI-First API Design**: Write OpenAPI 3.0 specification BEFORE implementing endpoints. Use specification to generate mock servers for frontend development, validate requests/responses in middleware, and auto-generate interactive documentation (Swagger UI). Version specifications alongside code. |
+| **Direct Production Deployment** | Deploying new API version directly to 100% of production traffic without gradual rollout. Minor bugs become major incidents affecting all users. Rollback requires full redeployment under pressure. | **Canary Release with Progressive Rollout**: Deploy to 1-5% of traffic (canary), monitor error rates and latency for 1 hour. If metrics within thresholds, roll out to 25%, then 50%, then 100% with automated rollback on threshold violations. Use feature flags to decouple deployment from activation. |
+
+---
+
+## Conclusion
+
+REST API development requires systematic adherence to three core principles: Test-Driven Development for quality assurance, Contract-First Design for interface clarity, and Progressive Deployment for risk mitigation. This SOP coordinates 8-12 agents across a 2-week timeline to deliver production-ready APIs with comprehensive testing, documentation, and monitoring.
+
+The TDD principle of writing tests before implementation is non-negotiable for production APIs. Tests written after code merely document existing behavior rather than validate requirements. The Red-Green-Refactor cycle forces API design decisions before implementation locks them in, provides regression safety during refactoring, and creates executable documentation that accurately reflects behavior. APIs developed without TDD accumulate technical debt through untested edge cases and brittle code that resists modification. The upfront investment in TDD pays dividends through faster feature development, fewer production bugs, and confident refactoring.
+
+Contract-First API Design treats the API specification as a versioned product, not an afterthought. Defining OpenAPI specifications before writing code enables frontend-backend parallelization (mock servers from spec), breaking change detection (schema validation), automated documentation generation (Swagger UI), and client SDK generation. Implicit API contracts through code lead to undocumented endpoints, inconsistent naming, and breaking changes discovered in production. The OpenAPI specification becomes the source of truth that drives code generation, validation middleware, and interactive documentation.
+
+Progressive Deployment through Canary Releases limits blast radius by incrementally rolling out new API versions to small traffic percentages before full production deployment. Direct deployment to 100% of traffic converts minor bugs into major incidents. Canary releases (1-5% traffic) with automated monitoring detect issues affecting a small user cohort before they impact the entire user base. Blue-green deployment provides instant rollback capability, while feature flags decouple deployment from feature activation. The incremental cost of progressive deployment is trivial compared to the cost of a production incident affecting all users.
+
+This SOP provides a systematic 4-phase workflow (Planning & Design, Development, Testing & Documentation, Deployment) with clear agent assignments, memory namespace conventions, and success metrics. Use this as a template for API development projects, adapting timeline and agent allocation to project complexity. REST API mastery is not about memorizing HTTP status codes - it is about applying consistent principles that guarantee quality, maintainability, and reliability through systematic testing, contract-driven design, and progressive deployment.

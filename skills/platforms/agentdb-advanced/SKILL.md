@@ -602,3 +602,44 @@ const result = await adapter.retrieveWithReasoning(queryEmbedding, {
 **Category**: Advanced / Distributed Systems
 **Difficulty**: Advanced
 **Estimated Time**: 45-60 minutes
+## Core Principles
+
+AgentDB Advanced Features operates on 3 fundamental principles:
+
+### Principle 1: Distributed Consistency Through QUIC Synchronization
+Achieve sub-millisecond cross-node synchronization with automatic retry, multiplexing, and TLS 1.3 encryption for distributed vector databases.
+
+In practice:
+- QUIC enables <1ms pattern synchronization across network boundaries with UDP + reliability layer
+- Multiplexed streams allow simultaneous operations (queries, inserts, syncs) without head-of-line blocking
+- Event-based broadcasting ensures eventual consistency with configurable sync intervals (1s default)
+
+### Principle 2: Hybrid Search Combines Vector Similarity with Metadata Filtering
+Merge semantic understanding (embeddings) with structured constraints (metadata filters) for precision retrieval beyond pure vector search.
+
+In practice:
+- Vector search finds semantically similar documents, metadata filters enforce business rules (date ranges, categories, permissions)
+- MMR (Maximal Marginal Relevance) diversifies results to avoid redundancy while maintaining relevance
+- Custom distance metrics (cosine, Euclidean, dot product) optimize for different embedding types (text vs images)
+
+### Principle 3: Multi-Database Sharding Enables Horizontal Scaling
+Partition vector data across databases by domain or tenant for independent scaling and isolation.
+
+In practice:
+- Separate databases per domain (knowledge.db, conversations.db, code.db) prevent cross-contamination
+- Sharding by tenant or region enables geographic distribution and compliance (GDPR data residency)
+- Independent optimization per shard (different quantization, cache sizes) based on access patterns
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Synchronous QUIC Sync** | Blocking operations wait for sync completion, causing 10-100ms latency spikes | Enable async sync with configurable intervals (1s), batch sync operations (100 patterns), use fire-and-forget pattern |
+| **Over-Filtering Hybrid Search** | Too many metadata filters return empty results despite semantic matches | Start with k=100 for vector search, then apply filters; progressively relax filters if results <5 |
+| **Single Monolithic Database** | One database for all domains causes index bloat, slow queries, and cross-domain contamination | Shard by domain or tenant; use separate databases with independent indices and optimization strategies |
+
+## Conclusion
+
+AgentDB Advanced Features unlocks production-grade distributed AI systems by extending core vector search with QUIC synchronization for multi-node deployments, hybrid search for combining semantic and structured queries, and flexible sharding for horizontal scaling. These capabilities transform AgentDB from a local vector database into a distributed platform capable of supporting multi-agent coordination, geographic distribution, and enterprise-scale applications.
+
+Use this skill when building distributed AI systems requiring cross-node communication (<1ms QUIC sync), implementing RAG systems needing metadata filters beyond semantic search (hybrid search with date/category/permission constraints), or scaling beyond single-machine limits (multi-database sharding by domain/tenant). The key insight is architectural flexibility: QUIC enables distributed consistency, hybrid search adds precision to semantic retrieval, and sharding provides independent scaling per domain. Start with single-database deployment, add QUIC sync when distributing across nodes, enable hybrid search for complex filtering, and implement sharding only when hitting performance or isolation limits.

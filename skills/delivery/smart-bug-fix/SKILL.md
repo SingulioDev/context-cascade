@@ -284,3 +284,50 @@ smart-bug-fix "Database connection fails" src/db/ \
 - **Codex fix fails tests**: Try alternative approach, escalate if max iterations reached
 - **Regression detected**: Rollback fix, analyze conflicting requirements
 - **Performance degradation**: Optimize fix, consider alternative approach
+
+## Core Principles
+
+Smart Bug Fix operates on 3 fundamental principles:
+
+### Principle 1: Root Cause Over Symptoms
+Never patch surface symptoms - invest time in deep root cause analysis using 5 Whys and inverse reasoning. Fixing the underlying issue prevents the bug from reappearing in new forms.
+
+In practice:
+- Use RCA agent to perform systematic 5 Whys analysis before implementing fixes
+- Identify contributing factors beyond the immediate cause
+- Document evidence trail showing how diagnosis was reached
+
+### Principle 2: Validate Through Iteration
+Fixes must prove themselves through automated testing with Codex iteration loops. No fix is complete until tests pass and regressions are ruled out.
+
+In practice:
+- Run comprehensive testing with max 5 Codex auto-fix iterations
+- Enable regression checking to ensure fix doesn't break existing functionality
+- Measure performance impact before declaring fix complete
+
+### Principle 3: Alternative Approaches
+Generate multiple fix strategies using multi-model reasoning (Claude RCA + Codex alternatives). The first solution is rarely the optimal one.
+
+In practice:
+- Compare Claude's RCA-derived solution with Codex alternatives
+- Evaluate trade-offs between fixes (complexity, performance, maintainability)
+- Choose approach with best long-term viability, not fastest implementation
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Quick Patching** | Fixing symptoms without understanding root cause leads to recurring bugs | Always perform deep RCA before implementing fixes |
+| **Single-Attempt Fixes** | First fix fails, give up and escalate prematurely | Use Codex iteration loop (max 5 attempts) before escalating |
+| **Ignoring Regressions** | Fix solves bug A but breaks feature B unknowingly | Enable regression checking in functionality audit |
+| **Performance Blindness** | Fix works but degrades system performance | Analyze performance impact before declaring success |
+| **Manual Testing Only** | Relying on manual verification allows bugs to slip through | Use automated test suite with comprehensive coverage |
+| **Skipping Context Analysis** | Fixing bugs in isolation without understanding broader system impact | Analyze large codebases with Gemini MegaContext for patterns |
+
+## Conclusion
+
+Smart Bug Fix transforms debugging from an art into a systematic science. By combining root cause analysis, multi-model reasoning, and automated iteration, this skill ensures bugs are not just patched but truly solved - with evidence of correctness through passing tests and regression validation.
+
+Use this skill when bugs matter - production incidents, recurring issues, or complex failures requiring deep investigation. The RCA-first methodology prevents the whack-a-mole anti-pattern where surface fixes create new bugs elsewhere. The Codex iteration loop provides resilience, automatically recovering from initial implementation failures.
+
+The result is a repeatable process that goes from bug report to validated fix with high confidence. When bugs cannot afford to recur, Smart Bug Fix provides the systematic rigor that manual debugging lacks.

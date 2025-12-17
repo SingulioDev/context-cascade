@@ -326,3 +326,56 @@ jobs:
 - Small: 5-20 endpoints
 - Medium: 20-100 endpoints
 - Large: 100+ endpoints
+
+## Core Principles
+
+API Documentation operates on 3 fundamental principles:
+
+### Principle 1: Documentation as Code
+
+API specifications should be machine-readable, version-controlled, and generated from source code rather than maintained manually.
+
+In practice:
+- OpenAPI specs live in version control alongside code (docs/openapi.yaml)
+- Automated generation from code annotations prevents drift between implementation and documentation
+- CI/CD validates specs on every commit using swagger-cli and openapi-generator-cli
+- Breaking changes detected automatically through spec comparison tools
+
+### Principle 2: Interactive Over Static
+
+Developers learn APIs by trying them, not just reading about them. Interactive documentation enables exploration and experimentation.
+
+In practice:
+- Swagger UI provides "Try it out" functionality for every endpoint
+- Authentication is pre-configured so developers can test with real credentials
+- Response examples show actual JSON/XML structures, not just schema definitions
+- Error cases documented with real error payloads developers will encounter
+
+### Principle 3: Completeness Through Automation
+
+Comprehensive documentation requires documenting every parameter, response, and error code. Manual documentation always has gaps.
+
+In practice:
+- Framework auto-detection extracts routes from Flask/FastAPI/Express/Django automatically
+- Type hints and JSDoc comments become parameter schemas without duplication
+- Validation rules (required fields, enum values, constraints) flow from code to spec
+- Missing documentation triggers validation warnings, not silent gaps
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Manual Specification Maintenance** | Hand-writing OpenAPI specs separate from code causes documentation drift as code evolves | Generate specs from code annotations (docstrings, JSDoc, decorators) using framework-specific tools; treat specs as build artifacts |
+| **Example-Free Documentation** | Schema-only docs without concrete request/response examples force developers to construct examples mentally | Include realistic examples for every endpoint; show full request bodies and response payloads with actual data |
+| **Missing Error Documentation** | Documenting only success cases (200 OK) while omitting error responses (4xx, 5xx) leaves developers unprepared for failures | Document all error codes with example payloads; explain what triggers each error; show error response schemas |
+| **Static-Only Documentation** | PDF or Markdown docs without interactive API explorer require developers to use separate tools (Postman, curl) for testing | Deploy Swagger UI or ReDoc with "Try it out" functionality; enable authentication testing in browser; provide runnable examples |
+| **Versioning Neglect** | Single documentation version for multiple API versions confuses developers about which features are available | Document each API version separately; mark deprecated endpoints with sunset dates; provide migration guides between versions |
+| **Validation-Free Publishing** | Deploying documentation without validating OpenAPI compliance results in broken specs that tools cannot parse | Run swagger-cli validate and openapi-generator-cli validate in CI/CD; treat validation failures as build breaks; enforce strict mode |
+
+## Conclusion
+
+API Documentation Generator transforms API specification from a manual, error-prone chore into an automated, reliable artifact generated directly from source code. By extracting documentation from Flask decorators, FastAPI type hints, Express JSDoc comments, and Django REST Framework serializers, it ensures documentation stays synchronized with implementation through continuous validation in CI/CD pipelines.
+
+The skill's three-phase workflow - generation from code, multi-tool validation (swagger-cli, openapi-generator-cli, yamllint), and interactive documentation deployment (Swagger UI, ReDoc) - creates a comprehensive documentation pipeline that catches errors early and delivers developer-friendly exploration tools. The framework auto-detection intelligently identifies your web framework and applies appropriate extraction strategies, while the validation pipeline enforces OpenAPI 3.0 compliance with strict mode treating warnings as errors for production specs.
+
+Use this skill when building new APIs that need documentation from day one, when refactoring existing APIs where documentation has drifted from reality, or when onboarding external developers who need clear API references. The automated generation prevents documentation debt from accumulating, while interactive Swagger UI enables developers to understand and test endpoints without leaving the browser. The result is API documentation that developers actually trust and use rather than outdated PDFs gathering dust in wikis.

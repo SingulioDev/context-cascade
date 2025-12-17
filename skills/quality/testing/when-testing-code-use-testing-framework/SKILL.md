@@ -1169,3 +1169,25 @@ If any phase fails:
 - Testing best practices guide
 - Troubleshooting guide
 - CI/CD setup instructions
+
+## Core Principles
+
+1. **Test Pyramid Balance** - Maintain proper test distribution: many fast unit tests, fewer integration tests, minimal E2E tests. This ensures comprehensive coverage while keeping test suites fast and maintainable.
+
+2. **Test Independence** - Each test must run in isolation without dependencies on other tests or shared state. Tests should pass consistently regardless of execution order or parallelization.
+
+3. **Fail Fast with Clear Feedback** - Tests should fail quickly when issues arise and provide actionable error messages. Every failure should pinpoint the exact problem and suggest next steps for resolution.
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Better Approach |
+|-------------|--------------|-----------------|
+| **Flaky Tests** - Tests that pass/fail non-deterministically | Erodes trust in test suite, wastes developer time investigating false failures, masks real bugs | Fix race conditions, eliminate time dependencies, use proper test isolation, mock external services consistently |
+| **Testing Implementation Details** - Tests coupled to internal code structure rather than behavior | Brittle tests break on refactoring, high maintenance cost, discourages code improvement | Test public APIs and observable behavior, focus on contract not implementation, use integration tests over unit tests when appropriate |
+| **Missing Assertions** - Tests that execute code but don't verify outcomes | False confidence in code correctness, bugs slip through, tests provide no value | Every test needs explicit assertions (expect/toBe), verify both success cases and error conditions, ensure minimum 2 assertions per test |
+
+## Conclusion
+
+The testing framework skill provides a comprehensive 5-phase workflow for building production-ready test infrastructure that ensures code quality and reliability. By following the systematic approach from test strategy design through CI/CD integration, teams can achieve robust coverage across unit, integration, and E2E testing layers. The skill emphasizes proper test architecture, framework selection, and automation while maintaining the test pyramid balance that keeps suites fast and maintainable.
+
+Successful testing implementation requires commitment to test independence, clear failure feedback, and continuous coverage improvement. By avoiding anti-patterns like flaky tests, implementation-detail coupling, and missing assertions, teams build test suites that provide genuine confidence in code correctness. The integration of coverage analysis, pre-commit hooks, and CI/CD pipelines ensures testing becomes an automated quality gate rather than a manual burden. This systematic approach transforms testing from a checkbox exercise into a powerful mechanism for catching bugs early, enabling confident refactoring, and shipping reliable software to production.

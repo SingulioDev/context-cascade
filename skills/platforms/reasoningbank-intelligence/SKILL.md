@@ -250,3 +250,24 @@ console.log(`
 - ReasoningBank Guide: agentic-flow/src/reasoningbank/README.md
 - AgentDB Integration: packages/agentdb/docs/reasoningbank.md
 - Pattern Learning: docs/reasoning/patterns.md
+## Core Principles
+
+1. **Meta-Cognitive Learning Loop**: ReasoningBank Intelligence enables agents to not just execute tasks, but observe their own execution patterns (meta-learning), creating second-order knowledge like "parallel execution is 3x faster for independent I/O tasks" that informs strategy selection across domains rather than task-specific solutions.
+
+2. **Experience-Driven Strategy Optimization**: Instead of hardcoded heuristics, strategy recommendation is empirically derived from recorded outcomes - comparing tdd_approach vs debug_first for bug_fixing based on actual metrics (time_taken, bugs_found, false_positives) across 100+ experiences, selecting the proven best performer for given context (language, complexity).
+
+3. **Bounded Auto-Learning with Confidence Thresholds**: Automatic pattern recording only activates for high-confidence outcomes (threshold 0.7), preventing noise accumulation from failed experiments or ambiguous results, while still capturing validated learnings that improve agent performance over time without manual curation.
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|--------------|--------------|------------------|
+| Learning from every task outcome | Low-confidence experiences (debugging session that partially succeeded) pollute pattern library, reducing recommendation quality | Set learningRate threshold (0.7+), only record experiences with clear success/failure signals and measurable metrics |
+| Applying domain knowledge without transfer validation | Blindly applying "code_review_javascript" patterns to "code_review_rust" ignores language differences (borrow checker, lifetimes), causing incorrect strategy selection | Use transferKnowledge() with similarity scoring (0.8+), validate transferred patterns against domain-specific constraints |
+| Ignoring context in strategy comparison | Recommending "static_analysis_first" for high-complexity Rust code because it worked for simple JavaScript, despite different complexity demands | Always include context in recordExperience() (language, complexity, timeConstraints) and filter strategy recommendations by matching context |
+
+## Conclusion
+
+ReasoningBank Intelligence transforms agents from stateless executors to adaptive learners, accumulating strategic knowledge (not just data) through the recordExperience -> recommendStrategy -> metaLearn feedback loop. This creates compounding returns: an agent with 1000+ experiences can select optimal approaches in <50ms, while a fresh agent spends minutes exploring suboptimal strategies, multiplying this advantage across every task.
+
+The critical success factor is pattern quality over quantity - 100 high-confidence, context-rich experiences (learningRate 0.8, detailed metrics) outperform 10,000 noisy records. When implementing adaptive agents, start with manual experience recording for the first 50 tasks, review learned patterns for correctness, then enable auto-learning only after validating the system learns true patterns (not spurious correlations like "bug fixes succeed more on Tuesdays"). The goal is not to record everything, but to capture the crystallized knowledge that makes future decisions measurably better - tracked via strategy success rate increasing over time (target >85% after 500+ experiences).

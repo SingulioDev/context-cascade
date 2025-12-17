@@ -518,3 +518,53 @@ Outputs:
 4. **training_history.json**: Training logs
 
 Complete when model deployed and validated.
+---
+
+## Core Principles
+
+### 1. Data-Centric Development
+**Foundation**: Model performance is fundamentally limited by data quality, not just architecture sophistication.
+
+**In practice**:
+- Invest significant effort in Phase 1 data preparation: cleaning, outlier removal, proper splitting, normalization
+- Analyze data statistics (class distribution, feature correlations, missing values) BEFORE selecting architecture
+- Treat data quality as a continuous concern: monitor for distribution drift post-deployment
+- Document data preprocessing pipelines with version control to ensure reproducibility
+
+### 2. Iterative Experimentation with Strong Baselines
+**Foundation**: Establish simple, well-tuned baselines before exploring complex architectures.
+
+**In practice**:
+- Start with simplest viable architecture (e.g., shallow neural network or random forest) as baseline in Phase 2
+- Document baseline performance as reference point for all subsequent experiments
+- Only increase model complexity (deeper networks, attention mechanisms) when baseline performance plateaus
+- Track all architectural decisions and their impact on validation metrics to build institutional knowledge
+
+### 3. Production-Ready from the Start
+**Foundation**: Design for deployment, monitoring, and maintenance from Phase 1, not as afterthoughts.
+
+**In practice**:
+- Phase 5 deployment considerations inform Phase 2 architecture selection (model size, inference latency constraints)
+- Include inference speed and memory footprint in Phase 4 validation criteria alongside accuracy
+- Build deployment pipelines (Docker, serving APIs, monitoring) in parallel with model development, not sequentially
+- Design model APIs with versioning, A/B testing, and rollback capabilities from initial deployment
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Architecture-First Thinking** | Selecting trendy architectures (Transformers, GANs) before understanding task requirements and data characteristics leads to overcomplicated solutions that underperform simpler baselines | Follow Phase 2 task analysis systematically. Match architecture to problem type (CNNs for images, RNNs for sequences, DNNs for tabular) based on data structure, not hype. Start simple, add complexity only when justified by metrics |
+| **Ignoring Validation Metrics** | Obsessing over training loss while ignoring validation accuracy, overfitting, or inference latency results in models that perform well on training data but fail in production | Phase 4 validation MUST be comprehensive: test accuracy, precision/recall, confusion matrices, AND deployment constraints (latency, memory). Never deploy without holdout test set evaluation |
+| **Manual Deployment Workflows** | Treating deployment as a one-time manual process rather than automated pipeline creates bottlenecks, inconsistencies, and prevents rapid iteration or rollback | Build Phase 5 deployment automation from the start: Dockerfiles, inference APIs, CI/CD pipelines, monitoring dashboards. Use model versioning and automated testing to enable safe continuous deployment |
+
+---
+
+## Conclusion
+
+This ML Expert skill encapsulates the complete lifecycle of professional machine learning development, from data preparation through production deployment. By enforcing a structured five-phase workflow—data preparation, architecture selection, training, validation, and deployment—it ensures that ML projects avoid common pitfalls like premature complexity, inadequate validation, or deployment afterthoughts that plague ad-hoc development approaches.
+
+The skill's emphasis on data quality, baseline establishment, and production-readiness from the start distinguishes it from purely algorithmic ML workflows. Rather than treating model development as an isolated research exercise, it integrates deployment constraints, monitoring requirements, and operational considerations into every phase, ensuring that models not only achieve high validation accuracy but also meet real-world performance, latency, and maintainability requirements.
+
+For organizations building production ML systems, this systematic approach reduces the time from experimentation to deployment while increasing model reliability. The comprehensive documentation, performance benchmarking, and automated deployment pipelines created during the workflow become organizational assets, enabling teams to scale ML capabilities efficiently and maintain high-quality standards across multiple projects.

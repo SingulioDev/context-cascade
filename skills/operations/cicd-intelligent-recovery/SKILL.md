@@ -2068,3 +2068,54 @@ Loop 3 is successful when:
 **Loop Position**: 3 of 3 (CI/CD Quality)
 **Integration**: Receives from Loop 2, Feeds Loop 1 (next iteration)
 **Optimization**: Evidence-based prompting with explicit agent SOPs
+---
+
+## Core Principles
+
+CI/CD Intelligent Recovery operates on 3 fundamental principles:
+
+### Principle 1: Failure Isolation Through Root Cause Graphs
+Treat test failures as symptoms, not root causes. Use dependency graph analysis to distinguish cascade failures from genuine root issues.
+
+In practice:
+- Build failure dependency graphs before any fix attempts
+- Apply 5-Whys methodology to reach true root causes, not surface-level errors
+- Prioritize root failures that unblock cascaded failures (fix 1 root = resolve 5 cascades)
+
+### Principle 2: Evidence-Based Consensus Over Individual Agent Opinions
+Byzantine consensus (5/7 agent agreement) prevents false positives and ensures fix quality through distributed validation.
+
+In practice:
+- Spawn 7 parallel analysis agents for cross-validation on every root cause
+- Require 5/7 agreement threshold before accepting root cause claims
+- Weight agent confidence scores in consensus calculation to prioritize high-certainty findings
+
+### Principle 3: Theater Detection as Quality Gate
+Passing tests mean nothing if fixes mask problems instead of solving them. Theater detection ensures authentic improvements.
+
+In practice:
+- Run dual validation (sandbox execution + theater audit) on every fix
+- Reject fixes that introduce new theater patterns even if tests pass
+- Compare against Loop 2 baseline to catch theater regression
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Fixing Symptoms Instead of Root Causes** | Addressing error messages without 5-Whys analysis leads to fixes that don't prevent recurrence | Always build dependency graphs and apply 5-Whys before generating fixes. Validate that fixing root failure resolves cascaded failures |
+| **Skipping Theater Detection** | Tests pass but quality degrades (mocks escalate, errors get suppressed, tests become meaningless) | Never approve fixes without theater audit. Use 6-agent Byzantine consensus and differential analysis against Loop 2 baseline |
+| **Single-Agent Analysis Bias** | One agent's opinion may miss context or introduce bias, leading to incorrect root cause identification | Always use multi-agent consensus (7 analysts minimum) with 5/7 agreement threshold for root cause validation |
+| **Ignoring Connascence Context** | Fixing code in isolation without understanding coupling patterns causes incomplete fixes or breaks related code | Always run connascence analysis (name, type, algorithm) and bundle fixes atomically across coupled files |
+| **Sequential Fix Generation** | Fixing failures one-by-one is slow and misses opportunities for bundled fixes across related failures | Use root cause graph to identify fix bundles, then generate fixes in parallel with program-of-thought structure |
+
+---
+
+## Conclusion
+
+CI/CD Intelligent Recovery represents the final quality gate in the Three-Loop Integrated Development System. By combining Byzantine consensus analysis, root cause graph detection, connascence-aware fixes, and theater detection audits, it achieves 100% test success rates while ensuring authentic quality improvements.
+
+This skill is essential when you need to recover from CI/CD failures with high confidence and prevent regression. It excels at distinguishing root causes from cascade failures, generating minimal fixes that respect code coupling patterns, and validating that improvements are genuine rather than theatrical.
+
+Use this skill when Loop 2 implementation completes and test failures occur, when you need automated failure recovery with root cause analysis, or when you want to ensure CI/CD fixes feed back into Loop 1 planning for continuous improvement. The combination of evidence-based techniques (Gemini large-context, Byzantine/Raft consensus, program-of-thought) with theater detection ensures that every fix is both effective and authentic.

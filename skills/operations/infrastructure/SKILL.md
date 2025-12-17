@@ -362,3 +362,79 @@ File: examples/terraform-infrastructure-example.md
 **Status**: Gold Tier - Production Ready with Comprehensive Resources
 **Maintainer**: Infrastructure & DevOps Team
 **Support**: Refer to sub-skills for specialized guidance
+
+---
+
+## Core Principles
+
+### 1. Immutable Infrastructure Pattern
+Treat servers as disposable cattle, not irreplaceable pets. Never modify running infrastructure - replace it entirely:
+- **No SSH Access**: Eliminate manual server modification and configuration drift
+- **Bake AMIs/Images**: Pre-configure all software in machine images, not at runtime
+- **Blue-Green Deployments**: Run new version alongside old, switch traffic atomically
+- **Rollback via Version**: Roll back by redeploying previous image version, not by patching
+
+Configuration drift (servers modified manually) is the primary cause of "works on my machine" failures and unreproducible production issues. Immutable infrastructure eliminates drift by treating every deployment as a clean slate.
+
+### 2. Observable Systems Through Instrumentation
+You cannot debug what you cannot see. Every infrastructure component must expose three pillars of observability:
+- **Metrics**: Time-series data for performance monitoring (CPU, memory, request rate, latency percentiles)
+- **Logs**: Structured event streams for debugging (JSON format, centralized aggregation, retention policies)
+- **Traces**: Distributed request tracking across services (OpenTelemetry, Jaeger, correlation IDs)
+
+Without observability, production debugging becomes guesswork. Instrument BEFORE deploying, not after incidents occur. Use standardized formats (OpenTelemetry) for vendor-agnostic instrumentation.
+
+### 3. Progressive Deployment Strategies
+Deploying directly to 100% of production traffic is a failure mode. Use incremental rollout patterns:
+- **Canary Deployment**: Route 1-5% traffic to new version, monitor error rates before full rollout
+- **Blue-Green Deployment**: Run new version alongside old, switch traffic atomically with instant rollback
+- **Feature Flags**: Decouple deployment from feature activation, enable features per user cohort
+- **Circuit Breakers**: Automatically stop deployment if error rates exceed thresholds
+
+Progressive deployment limits blast radius. A bug affecting 5% of users (canary) is recoverable; the same bug affecting 100% of users (direct deployment) is a crisis.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|-------------|--------------|------------------|
+| **Configuration Drift Through Manual Changes** | SSH into servers and manually modify configuration. This creates "snowflake servers" - unique, undocumented configurations that break when scaled or replaced. Disaster recovery fails because configuration is not reproducible. | **Immutable Infrastructure**: Never modify running servers. Use configuration management (Ansible/Chef) for pre-deployment setup, then replace entire instances on configuration changes. Configuration must be version-controlled and code-reviewed. |
+| **Monitoring as an Afterthought** | Deploy infrastructure without instrumentation, add monitoring only after production incidents occur. Results in blind spots during outages and prolonged incident resolution times. | **Observability-First Design**: Instrument metrics, logs, and traces BEFORE deploying. Define SLIs (Service Level Indicators) and SLOs (Service Level Objectives) during architecture phase. Deploy monitoring stack (Prometheus/Grafana) before application services. |
+| **Single-Environment Testing** | Test only in development environment, then deploy directly to production. Results in "works on dev" failures in production due to configuration differences, data volume differences, or network topology differences. | **Multi-Stage Pipeline with Production Parity**: Maintain staging environment with production-like data volume, network topology, and resource constraints. Run full test suite (integration + E2E + load) on staging before production deployment. Use infrastructure-as-code to guarantee environment consistency. |
+
+---
+
+## Conclusion
+
+Infrastructure orchestration is the foundation of reliable software delivery. The patterns and tools in this skill enable automated provisioning, deployment, and monitoring across cloud platforms, container orchestrators, and on-premises data centers. However, tools alone do not guarantee success - systematic adherence to core principles separates resilient production systems from brittle ones.
+
+The principle of immutable infrastructure eliminates configuration drift by treating servers as disposable units that are replaced, not modified. This requires upfront investment in automation (Terraform, Packer, Docker) but eliminates entire categories of production failures caused by "snowflake servers" - servers with unique, undocumented configurations that break disaster recovery and scaling. When every deployment is a clean slate, reproducibility becomes automatic.
+
+Observable systems expose the three pillars of instrumentation: metrics for performance monitoring, logs for debugging, and traces for distributed request tracking. Without observability, production debugging is guesswork. Instrument BEFORE deploying, not after incidents occur. Define Service Level Objectives (SLOs) during architecture design, not after availability targets are missed. The incremental cost of instrumentation is trivial compared to the cost of prolonged outages caused by blind spots.
+
+Progressive deployment strategies (canary, blue-green, feature flags) limit blast radius by incrementally rolling out changes to small user cohorts before full production traffic. Deploying directly to 100% of traffic converts minor bugs into major incidents. A canary deployment catching a bug affecting 5% of users is a Tuesday; the same bug affecting 100% of users is a crisis requiring executive escalation and customer notifications.
+
+The specialized sub-skills (Docker containerization, Terraform IaC) provide deep expertise in specific domains, but this parent skill provides the orchestration framework that coordinates their execution. Use the workflows and agent assignments in this skill to systematically provision infrastructure, deploy applications, and maintain production systems with confidence. Infrastructure mastery is not about memorizing tool syntax - it is about applying consistent principles that guarantee reliability, observability, and repeatability across all environments.
+
+## Core Principles
+
+1. **Infrastructure as Code (IaC)** - All infrastructure changes must be codified, version-controlled, and reproducible. Never make manual changes that cannot be recreated through code execution.
+
+2. **Defense in Depth** - Implement multiple layers of security, reliability, and observability. Single points of failure are unacceptable for production systems.
+
+3. **Immutable Infrastructure** - Treat infrastructure as disposable and replaceable. Deploy new instances rather than modifying existing ones to ensure consistency and enable rapid rollback.
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Better Approach |
+|-------------|--------------|-----------------|
+| **Manual Configuration** - Making infrastructure changes directly through cloud console or SSH | Creates undocumented drift, prevents reproducibility, breaks disaster recovery | Use IaC tools (Terraform, CloudFormation), codify all changes, apply through CI/CD pipelines |
+| **Skipping Multi-Environment Testing** - Deploying directly to production without staging validation | Production incidents from untested changes, no safe rollback path, user impact | Implement dev -> staging -> production pipeline, validate infrastructure changes in staging first |
+| **Ignoring State Management** - Not locking or backing up Terraform/IaC state files | State conflicts between team members, lost infrastructure state, inability to manage resources | Use remote state backends (S3 + DynamoDB, Terraform Cloud), enable state locking, automated backups |
+
+## Conclusion
+
+The infrastructure orchestration skill enables teams to build robust, scalable, and secure cloud infrastructure through systematic automation and best practices. By treating infrastructure as code, implementing proper monitoring and observability, and following defense-in-depth principles, organizations can achieve high availability, rapid deployment, and operational excellence. The skill coordinates specialized sub-skills for Docker containerization and Terraform IaC while providing comprehensive workflows for provisioning, deployment, monitoring, and configuration management.
+
+Success in infrastructure orchestration requires commitment to automation, security-first thinking, and operational discipline. Avoiding anti-patterns like manual configuration changes or skipping multi-environment testing prevents costly production incidents and technical debt. The integration of CI/CD pipelines, comprehensive monitoring, and disaster recovery procedures ensures infrastructure can scale reliably while maintaining security compliance. By following the workflows and best practices outlined in this skill, teams can deliver production-ready infrastructure that meets modern cloud-native standards while remaining maintainable and cost-effective over time.

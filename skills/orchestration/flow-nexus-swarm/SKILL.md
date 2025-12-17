@@ -660,3 +660,57 @@ claude mcp add flow-nexus npx flow-nexus@latest mcp start
 ---
 
 **Remember**: Flow Nexus provides cloud-based orchestration infrastructure. For local execution and coordination, use the core `claude-flow` MCP server alongside Flow Nexus for maximum flexibility.
+---
+
+## Core Principles
+
+Flow Nexus Swarm operates on 3 fundamental principles:
+
+### Principle 1: Topology-Driven Agent Coordination
+Swarm behavior emerges from network topology - hierarchical trees for delegation, mesh networks for collaboration, rings for pipelines, stars for centralization.
+
+In practice:
+- Choose hierarchical topology for complex projects with clear coordinator roles
+- Use mesh topology for research tasks requiring peer-to-peer collaboration
+- Apply ring topology for sequential workflows with ordered handoffs
+- Select star topology for simple task delegation with centralized orchestration
+
+### Principle 2: Event-Driven Workflow Orchestration
+Workflows execute asynchronously via message queues, enabling non-blocking parallel execution with dependency management.
+
+In practice:
+- Define workflow steps with explicit dependencies using `depends_on` arrays
+- Mark independent steps with `parallel: true` for concurrent execution
+- Use async execution (`async: true`) for long-running workflows to avoid blocking
+- Implement retry policies and timeout limits for resilient workflows
+
+### Principle 3: Intelligent Agent Assignment via Vector Similarity
+Agents match to tasks through semantic similarity search, not manual assignment, optimizing capability-to-requirement alignment.
+
+In practice:
+- Enable `use_vector_similarity: true` for optimal agent-task matching
+- Let the system analyze task requirements and agent capabilities automatically
+- Trust the platform to consider past performance and current workload
+- Override with explicit `agent_type` only when domain constraints require it
+
+---
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Wrong Topology Selection** | Using star topology for collaborative research or hierarchical for simple tasks wastes coordination overhead | Match topology to workflow: mesh for collaboration, hierarchical for delegation, ring for pipelines, star for simplicity |
+| **Ignoring Dependencies** | Executing dependent steps in parallel causes race conditions and corrupted state | Always define `depends_on` arrays; use parallel execution only for truly independent steps |
+| **Manual Agent Assignment** | Hardcoding agent assignments ignores capability matching and load balancing | Use `use_vector_similarity: true` to leverage AI-powered agent selection |
+| **Sync Execution for Long Workflows** | Blocking on multi-hour workflows prevents concurrent work | Set `async: true` for workflows >5 minutes; monitor via `workflow_queue_status()` |
+| **No Failure Handling** | Swarms fail silently or cascade failures without recovery | Implement `retry_policy: "exponential_backoff"`, set `max_retries`, define `on_failure` actions |
+
+---
+
+## Conclusion
+
+The Flow Nexus Swarm skill enables cloud-based multi-agent orchestration with topology-aware coordination and event-driven workflow automation. By separating workflow definition from execution infrastructure, it provides scalable agent coordination without local resource constraints.
+
+Use this skill for complex multi-agent tasks requiring parallel execution (6+ agents), distributed compute workloads, or sophisticated workflow pipelines with dependencies. The swarm architecture excels at full-stack development, research projects, CI/CD automation, and data processing pipelines where coordination overhead justifies cloud infrastructure.
+
+Key takeaways: Select topology based on coordination patterns, leverage event-driven workflows for long-running tasks, and trust vector similarity for agent assignment. The platform's template library, real-time monitoring, and multi-swarm coordination capabilities enable enterprise-scale agent orchestration with minimal configuration overhead.

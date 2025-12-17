@@ -432,3 +432,49 @@ Since implementation:
 **Agents**: hierarchical-coordinator, code-analyzer, coder, reviewer
 **MCP Tools**: connascence-analyzer, memory-mcp, claude-flow
 **Safety**: Sandbox testing + automated rollback + verification
+## Core Principles
+
+### 1. Evidence-Based Detection Over Assumptions
+Quality violations must be detected through measurable metrics (connascence analysis), not subjective judgment. Every finding requires concrete evidence.
+
+**In practice:**
+- Use Connascence Analyzer for 7+ violation types with thresholds
+- Require 2+ confirming signals before flagging violations
+- Store findings with WHO/WHEN/PROJECT/WHY metadata
+- Track false positive rates (<5% target)
+
+### 2. Progressive Improvement Through Pattern Learning
+Fix quality issues by learning from past solutions, not reinventing approaches. Build institutional knowledge through vector search.
+
+**In practice:**
+- Store every fix in Memory-MCP with context
+- Query similar violations before applying new fixes
+- Rank patterns by similarity (40%) + success rate (30%) + context (20%) + recency (10%)
+- Update patterns after successful fixes
+
+### 3. Safety-First Automated Fixes
+Apply fixes in isolated sandboxes with automated rollback before touching production code.
+
+**In practice:**
+- Test EVERY fix in sandbox before production
+- Use git stash for automatic rollback on failure
+- Fix ONE violation at a time with validation
+- Require test coverage >=70% before applying fixes
+
+## Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Batch Fixes Without Testing** | Applying multiple fixes simultaneously causes cascading failures with unknown root cause | Fix ONE violation at a time, test after each |
+| **Skipping Sandbox Validation** | Direct production fixes risk breaking functionality with no recovery path | ALWAYS test in sandbox first, rollback on failure |
+| **Ignoring Pattern History** | Reinventing solutions wastes time and introduces untested approaches | Query Memory-MCP for similar violations before fixing |
+| **Low Confidence Threshold** | Flagging ambiguous patterns creates false positives and noise | Use >=40 confidence score threshold, require 2+ signals |
+| **Missing Metadata Tagging** | Fixes stored without WHO/WHEN/PROJECT/WHY context become unusable for pattern retrieval | Use taggedMemoryStore() for automatic metadata injection |
+
+## Conclusion
+
+The Dogfooding System represents a paradigm shift from reactive debugging to proactive quality improvement through institutional learning. By combining Connascence Analysis for detection, Memory-MCP for pattern storage, and sandbox testing for safe application, organizations build self-improving codebases that learn from past fixes.
+
+The three-phase architecture (Quality Detection -> Pattern Retrieval -> Continuous Improvement) creates a feedback loop where every fix strengthens future detection. Teams implementing dogfooding should prioritize safety rules (sandbox testing, progressive fixes, test coverage requirements) and proper metadata tagging for pattern retrieval. The system's vector search capabilities enable finding relevant fixes even when violation details differ, as semantic similarity identifies underlying patterns.
+
+Most critically, dogfooding succeeds when organizations resist the temptation to batch fixes or skip validation. The discipline of one-fix-at-a-time testing, combined with automated rollback, creates sustainable quality improvement without production risk. Teams measuring success by improvement velocity (violations fixed per day) rather than just violation counts build codebases that continuously evolve toward higher quality.

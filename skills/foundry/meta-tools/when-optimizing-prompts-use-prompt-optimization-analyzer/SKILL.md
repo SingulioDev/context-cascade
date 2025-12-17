@@ -519,3 +519,58 @@ npx claude-flow@alpha hooks post-task --task-id "skill-optimization"
 - Track improvements over time
 - Share optimization patterns across team
 - Update analysis scripts as new anti-patterns emerge
+## Core Principles
+
+Prompt Optimization Analyzer operates on 3 fundamental principles that maximize prompt effectiveness while minimizing token waste:
+
+### Principle 1: Information Density Over Word Count
+Every token in a prompt should carry actionable information. Verbose explanations, redundant phrases, and filler words waste token budget without improving outcomes. This analyzer prioritizes concise, high-information-density prompts that communicate precisely.
+
+In practice:
+- Replace vague terms ("good", "thorough", "appropriate") with specific criteria ("90% test coverage", "O(n log n) complexity")
+- Remove filler words ("very", "really", "just", "actually") that add no semantic value
+- Consolidate repeated phrases ("you should" appears 4 times) into single imperative statements
+- Use structured lists instead of prose paragraphs for instructions
+- Target 20-50% token reduction while maintaining or improving clarity
+- Measure information density as meaningful directives per 100 tokens
+
+### Principle 2: Specificity Beats Ambiguity
+Generic instructions like "handle errors appropriately" leave room for interpretation and inconsistent execution. This analyzer detects ambiguous terminology and replaces it with concrete, measurable criteria that eliminate guesswork.
+
+In practice:
+- Define technical terms inline (don't assume shared vocabulary)
+- Specify exact formats (JSON structure, file paths, naming conventions)
+- Provide concrete examples showing the expected pattern, not just descriptions
+- Replace modal verb ambiguity (10 "must" + 10 "should") with clear MUST vs SHOULD separation
+- Include success criteria that can be objectively validated
+- Ensure triggers use explicit "when" or "if" conditions, not vague scenarios
+
+### Principle 3: Structural Clarity Through Organization
+Well-organized prompts are easier to parse, reducing cognitive load and improving execution accuracy. This analyzer optimizes information architecture for logical flow and progressive disclosure.
+
+In practice:
+- Group related concepts into clear sections with descriptive headers
+- Use hierarchy (H1, H2, H3) to show relationships between concepts
+- Place critical instructions before optional details (progressive disclosure)
+- Extract repetitive content into references to avoid duplication
+- Use tables for multi-dimensional comparisons (anti-patterns, routing decisions)
+- Maintain consistent formatting (code blocks, bullet lists, examples) throughout
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Vague Instructions** | Using subjective terms like "make it better", "handle appropriately", or "be thorough" without defining measurable criteria. Leads to inconsistent execution and unclear expectations. | Replace with specific, measurable criteria: "reduce token count by 20%", "catch exceptions and log to memory", "90% test coverage". Every directive should have an objective validation method. |
+| **Redundancy Bloat** | Repeating the same phrase ("you should", "make sure") or concept multiple times throughout the prompt. Wastes tokens and adds no new information. | Use imperative mood instead of "you should" repetition. Consolidate similar instructions into single statements. Remove phrase repetition detected by analysis scripts. Target <10 redundancy score. |
+| **Example Overload** | Providing 5-10 examples when 2-3 would suffice, or showing redundant variations of the same pattern. Bloats token count without improving understanding. | Include 2-3 diverse examples covering edge cases, not 10 similar ones. Consolidate examples showing the same pattern. Focus on illustrating different scenarios, not repetition for emphasis. |
+| **Wall of Text** | Writing prompts as dense paragraphs without structure, lists, or examples. Reduces readability and increases cognitive load for parsing instructions. | Break into sections with clear headers. Use bullet lists for sequential steps. Include code examples in blocks. Add tables for multi-dimensional info. Structure improves both human and AI comprehension. |
+| **Missing Context** | Referencing "the standard format" or "the usual approach" without defining what that means. Assumes shared knowledge that may not exist. | Define all technical terms inline. Specify exact formats with examples. Provide concrete templates rather than references to undefined standards. Make prompts self-contained. |
+| **Over-Specification** | Providing excessive detail on trivial formatting choices while leaving critical logic undefined. Misallocates attention and token budget. | Focus token budget on critical logic and success criteria. Defer trivial details to configuration files (.editorconfig, linting rules). Specify "what" and "why", let tools handle "how" for formatting. |
+
+## Conclusion
+
+The Prompt Optimization Analyzer transforms prompt engineering from subjective writing to objective optimization. By detecting token waste, identifying anti-patterns, and generating concrete optimization recommendations, this skill ensures that prompts communicate effectively while respecting token budget constraints. The systematic analysis - token efficiency, anti-pattern detection, trigger analysis, structural optimization - provides actionable data for improving prompt quality across all skills.
+
+The key insight demonstrated by the real-world example is dramatic: the original verbose prompt (124 tokens, vague instructions, repetitive phrases) was reduced to an optimized version (67 tokens, specific criteria, structured format) - a 46% reduction while significantly improving clarity and actionability. This pattern repeats across prompt optimization efforts: typical reductions of 20-50% with simultaneous clarity improvements. The analyzer's value lies not just in token savings, but in the forcing function to replace vague generalities with specific, measurable criteria.
+
+Use this skill before publishing new skills or slash commands, during skill maintenance, or when prompts approach token budget limits. The pre-publish checklist ensures that skills go into production with optimized prompts rather than verbose first drafts. Remember: every token saved in prompts is budget available for execution. A well-optimized skill library with 20-50% token reduction across prompts can handle significantly more complex tasks within the same budget limits. Write less, communicate more, execute better.

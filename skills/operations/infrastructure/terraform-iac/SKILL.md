@@ -1,59 +1,9 @@
 ---
-
-## CRITICAL: DEPLOYMENT SAFETY GUARDRAILS
-
-**BEFORE any deployment, validate**:
-- [ ] All tests passing (unit, integration, E2E, load)
-- [ ] Security scan completed (SAST, DAST, dependency audit)
-- [ ] Infrastructure capacity verified (CPU, memory, disk, network)
-- [ ] Database migrations tested on production-like data volume
-- [ ] Rollback procedure documented with time estimates
-
-**NEVER**:
-- Deploy without comprehensive monitoring (metrics, logs, traces)
-- Skip load testing for high-traffic services
-- Deploy breaking changes without backward compatibility
-- Ignore security vulnerabilities in production dependencies
-- Deploy without incident response plan
-
-**ALWAYS**:
-- Validate deployment checklist before proceeding
-- Use feature flags for risky changes (gradual rollout)
-- Monitor error rates, latency p99, and saturation metrics
-- Document deployment in runbook with troubleshooting steps
-- Retain deployment artifacts for forensic analysis
-
-**Evidence-Based Techniques for Deployment**:
-- **Chain-of-Thought**: Trace deployment flow (code -> artifact -> registry -> cluster -> pods)
-- **Program-of-Thought**: Model deployment as state machine (pre-deploy -> deploy -> post-deploy -> verify)
-- **Reflection**: After deployment, analyze what worked vs assumptions
-- **Retrieval-Augmented**: Query past incidents for similar deployment patterns
-
 name: terraform-iac
-description: Terraform infrastructure as code specialist for multi-cloud deployments
-  (AWS/GCP/Azure), state management with remote backends, module development, drift
-  detection, policy as code with Sentinel/OPA, and GitOps workflows. Use when provisioning
-  cloud infrastructure, managing infrastructure state, implementing IaC best practices,
-  or requiring Terraform expertise. Handles workspaces, dynamic blocks, for_each loops,
-  and production-grade Terraform configurations.
+description: Terraform infrastructure as code specialist for multi-cloud deployments (AWS/GCP/Azure), state management with remote backends, module development, drift detection, policy as code with Sentinel/OPA, and GitOps workflows. Use when provisioning cloud infrastructure, managing infrastructure state, implementing IaC best practices, or requiring Terraform expertise. Handles workspaces, dynamic blocks, for_each loops, and production-grade Terraform configurations.
 category: Infrastructure
 complexity: High
-triggers:
-- terraform
-- iac
-- infrastructure as code
-- terraform state
-- terraform modules
-- multi-cloud
-- terraform plan
-- terraform apply
-- hcl
-version: 1.0.0
-tags:
-- operations
-- deployment
-- infrastructure
-author: ruv
+triggers: ["terraform", "iac", "infrastructure as code", "terraform state", "terraform modules", "multi-cloud", "terraform plan", "terraform apply", "hcl"]
 ---
 
 # Terraform Infrastructure as Code Specialist
@@ -539,3 +489,52 @@ terraform plan -detailed-exitcode
 
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
+
+## Core Principles
+
+Terraform Infrastructure as Code operates on 3 fundamental principles:
+
+### Principle 1: State is the Single Source of Truth
+Terraform state file is the authoritative record of infrastructure. State management directly impacts collaboration, drift detection, and disaster recovery capabilities. This principle ensures consistency across teams and environments.
+
+In practice:
+- Always use remote backends (S3, Terraform Cloud, GCS) for team collaboration
+- Enable state locking with DynamoDB or equivalent to prevent concurrent modifications
+- Encrypt state files as they contain sensitive values (passwords, keys)
+- Never edit state files manually - use terraform state commands for modifications
+
+### Principle 2: Modules Enable DRY Infrastructure
+Reusable modules encapsulate infrastructure patterns, enforce best practices, and eliminate copy-paste errors. Well-designed modules are the foundation of maintainable infrastructure at scale. This principle promotes consistency and reduces technical debt.
+
+In practice:
+- Create modules for common patterns (VPC, EKS cluster, RDS database)
+- Publish internal modules to version-controlled registries
+- Use semantic versioning for module releases to enable safe upgrades
+- Document module inputs, outputs, and examples for discoverability
+
+### Principle 3: Immutable Infrastructure Through Versioning
+Infrastructure should be versioned like application code. Changes are deployed as new versions, not in-place modifications. This principle enables rollbacks, auditability, and reproducibility.
+
+In practice:
+- Tag all infrastructure changes with semantic versions in VCS (Git)
+- Use terraform plan before apply to review changes
+- Implement GitOps workflows where merged PRs trigger automated deployments
+- Maintain separate state files for dev/staging/prod using workspaces or directory structure
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **Local State Files** | Team members have divergent state, leading to conflicting changes, inability to collaborate, and lost infrastructure knowledge when developers leave. | Configure remote backend (S3 with DynamoDB locking). Store state in version-controlled backend configuration. Enable state encryption for sensitive data. |
+| **Hardcoded Credentials** | Embedding AWS keys, passwords, or API tokens in .tf files exposes secrets in version control and Terraform state files visible to all operators. | Use environment variables (AWS_ACCESS_KEY_ID) or IAM roles. Store secrets in AWS Secrets Manager/Vault and reference with data sources. Mark outputs as sensitive. |
+| **No Variable Validation** | Missing validation allows invalid values (typos, wrong formats) to pass through, causing runtime failures after expensive infrastructure provisioning. | Add validation blocks to variables with condition checks and error messages. Use type constraints (string, number, list, map) to enforce structure. |
+| **Monolithic Configurations** | Single massive main.tf file becomes unmaintainable, has blast radius affecting all infrastructure, and prevents parallel team workflows on different components. | Split into logical modules (networking, compute, database). Use separate state files for independent stacks. Implement directory structure by environment and component. |
+| **Ignoring Drift Detection** | Manual changes via console or API create drift between code and reality. Terraform loses track of actual state, and subsequent applies can cause outages. | Run terraform plan regularly in CI/CD to detect drift. Use terraform refresh to update state. Implement policy-as-code (OPA, Sentinel) to prevent manual changes. |
+
+## Conclusion
+
+The Terraform Infrastructure as Code skill empowers you to provision and manage cloud infrastructure across AWS, GCP, Azure, and multi-cloud environments with consistency, repeatability, and auditability. By adhering to the three core principles of state management, modular design, and infrastructure versioning, you transform infrastructure from brittle manual processes into reliable, automated deployments.
+
+The workflows provided cover the full lifecycle from initial resource provisioning to GitOps-driven continuous deployment. The emphasis on remote state with locking, comprehensive variable validation, and drift detection ensures that your infrastructure remains consistent with your codebase. The anti-patterns table serves as a critical checklist to avoid common pitfalls that lead to production outages and security vulnerabilities.
+
+This skill is particularly valuable when building cloud-native applications, migrating from manual infrastructure to IaC, or implementing multi-environment deployments with shared infrastructure patterns. Whether you're provisioning a simple EC2 instance or orchestrating a complex multi-region Kubernetes cluster with networking, databases, and observability infrastructure, the patterns and best practices documented here provide a solid foundation. Combined with the troubleshooting guide and tool references (Terragrunt, tfsec, Checkov), you have everything needed to build production-grade infrastructure as code at enterprise scale.

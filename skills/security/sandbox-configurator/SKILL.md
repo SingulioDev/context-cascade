@@ -244,3 +244,35 @@ training:
 **Quick Reference**: `/sandbox` command shows current configuration
 **Documentation**: Settings stored in `.claude/settings.local.json`
 **Security**: Always prefer stricter settings and add exclusions only when necessary
+---
+
+## Core Principles
+
+### 1. Defense in Depth Through Network Isolation
+Sandbox security relies on multiple layers: file system isolation (read-only system paths), network isolation (trusted domain whitelist), and command isolation (excluded dangerous operations). Network isolation is critical defense against data exfiltration and prompt injection attacks where malicious code attempts to send sensitive data to attacker-controlled domains. Whitelist-only network policies ensure code can only communicate with validated trusted endpoints, preventing exfiltration even if malicious code executes.
+
+### 2. Least Privilege with Explicit Escalation
+Start with maximum security (Level 1) and escalate only when workflows require it. Don't default to permissive settings. Each excluded command (git, docker) and allowed domain (*.npmjs.org) represents explicit security decision with documented justification. This forces conscious evaluation: does this workflow genuinely require Docker access, or can it run in isolated environment? Explicit escalation creates audit trail and prevents permission creep.
+
+### 3. Validation Through Positive and Negative Testing
+Configuration correctness requires two-sided validation: positive tests verify approved operations succeed (npm install, git clone from trusted repos); negative tests verify untrusted operations fail (curl to random external domains). Security is only as good as its verification. Untested configurations may inadvertently allow dangerous operations or block legitimate workflows. Both test types are mandatory for production security configurations.
+
+---
+
+## Anti-Patterns
+
+| Anti-Pattern | Why It Fails | Correct Approach |
+|--------------|--------------|------------------|
+| **Disabling sandbox entirely for convenience** | Removes all security boundaries. Malicious code from prompt injection or compromised dependencies gains direct system access, enabling data exfiltration, credential theft, and system compromise. Convenience over security creates unacceptable risk. | Use Level 2 (Balanced Security) with explicit exclusions for required operations. Enable allowLocalBinding for dev servers, exclude git/docker if needed, but maintain network isolation. Security boundaries prevent worst-case outcomes even when malicious code executes. |
+| **Wildcard domain patterns without justification** (e.g., *.com, *) | Defeats network isolation by allowing any domain. Malicious code can exfiltrate to attacker-controlled *.com domains. Wildcards should be narrowly scoped to specific services (*.npmjs.org for npm registry CDN). | Use specific domain whitelist: "registry.npmjs.org", "api.github.com", "*.mycompany.com". Each wildcard requires documented justification. Prefer full domains over wildcards. Reject overly broad patterns like *.com or * entirely. |
+| **Storing secrets (API keys, passwords) in configuration files** | Configuration files are often committed to version control or shared, exposing secrets. Hardcoded credentials in sandbox config create security vulnerability and violate secret management best practices. | Use environment variable references in sandbox config: NPM_TOKEN="${NPM_TOKEN}". Actual secrets stored in secure credential management (CI/CD secrets, local env files in .gitignore). Configuration references secrets, never contains them. |
+
+---
+
+## Conclusion
+
+Sandbox Configurator establishes security boundaries for Claude Code execution through defense-in-depth layering: file system isolation, network domain whitelisting, and command exclusion. This is critical protection against prompt injection attacks where malicious actors embed instructions in code comments, README files, or dependencies that attempt to manipulate Claude into executing harmful operations or exfiltrating sensitive data. Network isolation ensures even if malicious code runs, it cannot communicate with attacker-controlled infrastructure.
+
+The skill's value lies in balancing security with developer productivity. Maximum security (Level 1) blocks all network access and many development operations, preventing malicious behavior but also blocking legitimate workflows. The art is calibrating security levels to workflow requirements: Level 2 for most development (local binding, git/docker access, but maintained network whitelist), Level 3 for full-stack development requiring extensive tooling integration, Level 4 never in untrusted contexts. Each escalation is explicit, justified, and documented.
+
+Effective sandbox configuration requires discipline in three areas: starting with least privilege and escalating only when proven necessary; maintaining narrow domain whitelists with documented justifications for each entry; and validating configurations through both positive and negative testing to ensure security boundaries function correctly. The investment prevents catastrophic outcomes - data exfiltration, credential theft, system compromise - while enabling productive development workflows within well-defined security boundaries. In an era of AI-assisted development, sandbox security is not optional infrastructure - it's essential protection against an expanding attack surface.

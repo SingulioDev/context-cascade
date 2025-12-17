@@ -1,62 +1,9 @@
 ---
-
-## CRITICAL: DEPLOYMENT SAFETY GUARDRAILS
-
-**BEFORE any deployment, validate**:
-- [ ] All tests passing (unit, integration, E2E, load)
-- [ ] Security scan completed (SAST, DAST, dependency audit)
-- [ ] Infrastructure capacity verified (CPU, memory, disk, network)
-- [ ] Database migrations tested on production-like data volume
-- [ ] Rollback procedure documented with time estimates
-
-**NEVER**:
-- Deploy without comprehensive monitoring (metrics, logs, traces)
-- Skip load testing for high-traffic services
-- Deploy breaking changes without backward compatibility
-- Ignore security vulnerabilities in production dependencies
-- Deploy without incident response plan
-
-**ALWAYS**:
-- Validate deployment checklist before proceeding
-- Use feature flags for risky changes (gradual rollout)
-- Monitor error rates, latency p99, and saturation metrics
-- Document deployment in runbook with troubleshooting steps
-- Retain deployment artifacts for forensic analysis
-
-**Evidence-Based Techniques for Deployment**:
-- **Chain-of-Thought**: Trace deployment flow (code -> artifact -> registry -> cluster -> pods)
-- **Program-of-Thought**: Model deployment as state machine (pre-deploy -> deploy -> post-deploy -> verify)
-- **Reflection**: After deployment, analyze what worked vs assumptions
-- **Retrieval-Augmented**: Query past incidents for similar deployment patterns
-
 name: kubernetes-specialist
-description: Kubernetes orchestration expert for Helm chart development, custom operators
-  and CRDs, service mesh (Istio/Linkerd), auto-scaling strategies (HPA/VPA/Cluster
-  Autoscaler), multi-cluster management, and production-grade deployments. Use when
-  deploying containerized applications to K8s, implementing GitOps workflows, optimizing
-  pod scheduling, or requiring Kubernetes best practices. Handles ingress controllers,
-  persistent volumes, network policies, and security contexts.
+description: Kubernetes orchestration expert for Helm chart development, custom operators and CRDs, service mesh (Istio/Linkerd), auto-scaling strategies (HPA/VPA/Cluster Autoscaler), multi-cluster management, and production-grade deployments. Use when deploying containerized applications to K8s, implementing GitOps workflows, optimizing pod scheduling, or requiring Kubernetes best practices. Handles ingress controllers, persistent volumes, network policies, and security contexts.
 category: Cloud Platforms
 complexity: Very High
-triggers:
-- kubernetes
-- k8s
-- helm
-- operators
-- crd
-- istio
-- linkerd
-- service mesh
-- kubectl
-- kustomize
-- argocd
-- flux
-version: 1.0.0
-tags:
-- operations
-- deployment
-- infrastructure
-author: ruv
+triggers: ["kubernetes", "k8s", "helm", "operators", "crd", "istio", "linkerd", "service mesh", "kubectl", "kustomize", "argocd", "flux"]
 ---
 
 # Kubernetes Specialist
@@ -534,3 +481,53 @@ spec:
 
 **Skill Version**: 1.0.0
 **Last Updated**: 2025-11-02
+
+## Core Principles
+
+Kubernetes Specialist operates on 3 fundamental principles:
+
+### Principle 1: Declarative Infrastructure Over Imperative Commands
+Kubernetes thrives on declarative configuration where you describe the desired state, not the steps to achieve it. This principle ensures reproducibility, version control, and GitOps compatibility.
+
+In practice:
+- Define all resources in YAML manifests checked into version control
+- Use Helm charts or Kustomize for templating rather than manual kubectl edits
+- Implement GitOps workflows with ArgoCD/Flux for automated deployments
+- Avoid imperative commands like kubectl run or kubectl expose in production
+
+### Principle 2: Resource Constraints Are Non-Negotiable
+Every container must have explicit resource requests and limits. This principle prevents the noisy neighbor problem, enables efficient bin-packing, and ensures predictable performance across the cluster.
+
+In practice:
+- Set CPU/memory requests based on actual application profiling (use VPA recommendations)
+- Set limits to prevent runaway processes from consuming entire node resources
+- Use HorizontalPodAutoscaler for elastic scaling based on utilization
+- Monitor resource utilization with metrics-server and adjust requests/limits accordingly
+
+### Principle 3: Defense in Depth Through Layered Security
+Security is not a single configuration but a composition of multiple protective layers. This principle ensures that even if one layer fails, others provide fallback protection.
+
+In practice:
+- Apply security contexts at pod level (runAsNonRoot, readOnlyRootFilesystem, capabilities drop)
+- Enforce network policies to restrict pod-to-pod communication
+- Use PodSecurityStandards or OPA/Gatekeeper for admission control
+- Implement RBAC with least-privilege access for service accounts
+- Scan images with Trivy/Snyk before deployment
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **No Resource Limits** | Pods can consume all node resources, causing cascading failures and unpredictable scheduling. Without limits, a memory leak or CPU spike can crash the entire node. | Define both requests and limits for every container. Use VPA for recommendations. Set namespace ResourceQuotas to enforce constraints. |
+| **Missing Health Probes** | Kubernetes cannot detect when containers are unhealthy or not ready to serve traffic. Results in traffic being routed to broken pods, causing user-facing errors. | Implement both liveness (restart if unhealthy) and readiness (remove from service if not ready) probes. Use HTTP checks for web services, TCP for databases. Set appropriate initialDelaySeconds and periodSeconds. |
+| **Deploying :latest Tag** | Image tags are mutable and can change unexpectedly, leading to version drift, inability to rollback, and non-reproducible deployments across environments. | Always use immutable tags with semantic versioning (e.g., v1.2.3 or git commit SHA). Implement image pull policies (IfNotPresent) to reduce registry load. Use image digests for absolute immutability. |
+| **StatefulSets for Stateless Apps** | Using StatefulSets when Deployments suffice adds unnecessary complexity, slower rollouts, and limited horizontal scaling capabilities. | Use Deployments for stateless applications. Reserve StatefulSets for databases or applications requiring stable network identity and persistent storage. Use init containers for initialization tasks. |
+| **Single Replica in Production** | Zero redundancy means any pod failure causes downtime. No high availability, no rolling updates without downtime. | Run minimum 2-3 replicas with PodDisruptionBudgets (minAvailable: 1). Use podAntiAffinity to spread replicas across nodes/zones. Implement HPA for dynamic scaling. |
+
+## Conclusion
+
+The Kubernetes Specialist skill empowers you to build production-grade container orchestration systems that are resilient, secure, and cost-effective. By adhering to the three core principles of declarative infrastructure, resource constraints, and defense-in-depth security, you ensure that your deployments are not only functional but maintainable at scale. The workflows provided cover the full spectrum from basic deployments to advanced service mesh implementations, giving you the tools to handle everything from greenfield microservices to complex multi-cluster architectures.
+
+Key takeaways: Always define resource limits, implement comprehensive health checks, and apply security contexts. Use Helm charts for reusability and GitOps for automated deployments. The anti-patterns table serves as a checklist to avoid common pitfalls that plague Kubernetes deployments. When combined with the troubleshooting section, you have a complete toolkit for diagnosing and resolving production issues.
+
+This skill is particularly valuable when deploying microservices architectures, implementing auto-scaling strategies, or migrating legacy applications to cloud-native platforms. Whether you're setting up a new EKS cluster on AWS or optimizing an existing GKE deployment on Google Cloud, the patterns and best practices documented here will accelerate your journey to production-ready Kubernetes deployments.

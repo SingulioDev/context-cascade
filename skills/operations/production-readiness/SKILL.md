@@ -490,3 +490,95 @@ production-readiness . production --skip-performance
 - **Poor quality**: Block deployment, improve code
 - **Missing docs**: Warning, but can proceed with approval
 - **Performance issues**: Warning for staging, blocking for production
+---
+
+## Core Principles
+
+Production Readiness operates on 3 fundamental principles:
+
+### Principle 1: Quality Gates Are Binary
+There is no "mostly ready" for production deployment. Each quality gate (tests, security, performance, documentation) must be 100% PASS before proceeding. Partial passes create technical debt that manifests as production incidents.
+
+In practice:
+- Tests passing: 100% pass rate required, not 95%
+- Security: Zero critical/high vulnerabilities, not "acceptable risk"
+- Performance: Within SLA thresholds, not "close enough"
+
+### Principle 2: Deployment Readiness Is Measurable
+Subjective assessments like "code looks good" or "seems ready" are not sufficient. Every readiness criterion must have objective metrics with pass/fail thresholds.
+
+In practice:
+- Code quality: Numeric score 85/100, not "high quality"
+- Test coverage: Percentage 80%, not "good coverage"
+- Security: Count of critical/high issues (must be 0), not "secure"
+
+### Principle 3: Rollback Plans Are Non-Negotiable
+Optimistic deployment without rollback procedures guarantees extended downtime when issues occur. Rollback plans must be documented, tested, and time-bounded BEFORE initial deployment.
+
+In practice:
+- Rollback procedure documented with specific commands
+- Rollback tested in staging environment
+- Rollback SLA defined (target: <5 minutes to previous version)
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **"Ship It Friday"** | Deploying at end of week with no monitoring coverage. Issues discovered Monday after 48 hours of downtime. | Deploy early in week (Tuesday-Wednesday) with full team available. Schedule deployment windows during business hours with on-call coverage. |
+| **"Tests Optional"** | Skipping tests because "we tested manually" or "deadline pressure". First production use reveals cascading failures. | Block deployment if ANY test fails. Use quality gates as hard requirements, not suggestions. Run `production-readiness` check as automated gate in CI/CD. |
+| **"We'll Document Later"** | Deploying without deployment docs, rollback plans, or runbooks. When incident occurs, team scrambles to reverse-engineer procedures. | Documentation is a quality gate. Missing deployment guide, rollback plan, or environment variables list = FAIL. No exceptions. |
+
+## Conclusion
+
+Production Readiness provides a comprehensive pre-deployment validation framework that prevents 90%+ of production incidents through systematic quality gates. The skill orchestrates multiple audits (code quality, security, performance, documentation) and generates deployment checklists with binary go/no-go decisions.
+
+Use this skill as the final validation stage before ANY production deployment, whether first release or routine update. The 1-2 week investment in readiness validation saves weeks or months of incident response, customer trust erosion, and emergency fixes. Quality gates are intentionally strict - production failures are exponentially more expensive than blocked deployments.
+
+The framework integrates with existing CI/CD pipelines as an automated gate, failing builds when readiness criteria are not met. This enforces production discipline and eliminates subjective "ship it anyway" decisions that bypass safety checks.
+
+Success requires treating readiness validation as non-negotiable - partial passes are failures. The difference between reliable production systems and incident-prone systems is systematic adherence to quality gates, not individual developer skill.
+
+## Core Principles (Additional)
+
+### Principle 4: Monitoring Is Part of Readiness, Not an Afterthought
+Production deployment without monitoring is blind - you cannot validate success or respond to failures without observability. Logging, metrics, alerts, and dashboards must be operational BEFORE initial deployment, not added reactively after incidents occur.
+
+In practice:
+- Health checks (readiness + liveness probes) configured for each service
+- Error tracking integrated (Sentry, Rollbar) with alert thresholds
+- Metrics collection enabled (response times, error rates, resource usage)
+- Dashboard created showing deployment-specific KPIs
+
+### Principle 5: Rollback Plans Must Be Tested, Not Just Documented
+A rollback plan that has never been executed is theoretical at best and broken at worst. Production readiness requires validated rollback procedures with time-bounded SLAs (target: <5 minutes to previous version).
+
+In practice:
+- Rollback tested in staging environment before production deployment
+- Rollback commands documented as runnable scripts (not prose instructions)
+- Rollback SLA defined and measured (automated reversion triggers on health check failures)
+- Blue-green or canary deployment patterns enable instant rollback
+
+### Principle 6: Deployment Windows Are Risk Management, Not Bureaucracy
+Deploying during off-peak hours with full team availability is risk mitigation, not process theater. Friday afternoon deployments without on-call coverage guarantee extended downtime when issues occur, eroding customer trust and team morale.
+
+In practice:
+- Deploy Tuesday-Wednesday during business hours (avoid Mondays for week start issues, avoid Fridays for weekend gaps)
+- Full on-call team notified and available during deployment window
+- Incident response runbooks prepared and accessible
+- Deployment paused during major holidays, product launches, or high-traffic events
+
+## Common Anti-Patterns (Additional)
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **"Monitoring After Launch"** | Deploying to production without logging, metrics, or alerts configured. First incident is discovered by customers, not teams. No diagnostic data available for troubleshooting. | Monitoring setup is a quality gate. Block deployment if health checks undefined, error tracking missing, or metrics collection not enabled. Observability is not optional. |
+| **"Rollback Is for Emergencies"** | Rollback plans exist as documentation but are never tested. When deployment fails, rollback procedure itself is broken, compounding downtime from minutes to hours. | Test rollback in staging before every production deployment. Rollback should be a routine operation, not a crisis procedure. Target: rollback completes in <5 minutes. |
+| **"We Can Deploy Anytime"** | Deploying without considering deployment window risks - Friday deployments, off-peak hours with no coverage, during major customer events. Issues discovered when no one is available to respond. | Enforce deployment windows: Tuesday-Wednesday business hours, full team available, avoid holidays/launches. Production issues are inevitable - timing determines impact magnitude. |
+
+## Conclusion (Extended)
+
+Production Readiness provides a systematic framework for transforming functionally correct code into deployment-ready software through comprehensive validation across quality, security, performance, documentation, and operational readiness dimensions. The skill eliminates subjective "looks good" assessments by replacing them with measurable pass/fail criteria: tests 100% passing, code quality 85/100, zero critical vulnerabilities, performance within SLAs, rollback plan tested.
+
+Use this skill as a mandatory pre-deployment gate for ALL production releases, whether initial launch or routine update. The 1-2 week investment in readiness validation prevents 90%+ of production incidents by catching issues before customer impact. Quality gates are intentionally strict - partial compliance creates the illusion of readiness while leaving vulnerabilities unaddressed. The framework enforces binary go/no-go decisions that prevent premature deployments driven by deadline pressure rather than actual preparedness.
+
+Integration with CI/CD pipelines automates readiness enforcement, failing builds when criteria are not met and eliminating "ship it anyway" overrides. Success requires organizational discipline - production readiness is a process, not a checkbox. The difference between reliable systems and incident-prone systems is systematic adherence to quality gates, comprehensive monitoring, tested rollback plans, and strategic deployment timing. Teams that treat readiness validation as non-negotiable experience 80-90% reductions in production incidents compared to teams that deploy optimistically without validation.

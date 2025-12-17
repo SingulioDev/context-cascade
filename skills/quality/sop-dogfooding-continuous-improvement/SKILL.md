@@ -1928,3 +1928,52 @@ This skill integrates with:
 **Status**: ✅ PRODUCTION READY
 **Enforcement**: Automated via sandbox testing + rollback + verification
 **Integration**: Part of 3-part dogfooding system (Quality Detection → Pattern Retrieval → Continuous Improvement)
+## Core Principles
+
+SOP Dogfooding Continuous Improvement operates on 3 fundamental principles:
+
+### Principle 1: Automation Without Safety Is Chaos
+Automated quality improvement must include mandatory safety checks - sandbox testing, rollback capabilities, and verification loops. Automation that breaks production is worse than no automation. The 60-120 second execution time includes comprehensive safety measures, not just fix application speed.
+
+In practice:
+- Sandbox environment created for EVERY fix (prevents production breakage)
+- Git stash backup before ANY code modification (enables instant rollback)
+- Tests run in sandbox BEFORE production application (catch regressions early)
+- Production tests run AFTER application (verify fix actually works in target environment)
+- Automatic rollback on ANY test failure (never leave codebase broken)
+
+### Principle 2: Continuous Improvement Requires Measurable Progress
+Improvement cycles without metrics tracking are invisible - you cannot validate effectiveness or identify regressions. Every cycle must record violations before/after, success rates, and improvement velocity to demonstrate continuous quality gains over time.
+
+In practice:
+- Dashboard tracks violations reduced per cycle (target: 5+ per day)
+- Success rate measured (fixes successful / fixes attempted, target: 95%+)
+- Improvement velocity calculated (violations fixed per day)
+- Memory-MCP stores cycle results for trend analysis (are we getting better?)
+- Grafana visualizations show quality trajectory over weeks/months
+
+### Principle 3: Progressive Application Beats Big Bang Changes
+Applying multiple fixes simultaneously makes root cause analysis impossible when issues occur. Progressive application (up to 5 fixes per cycle, one at a time) isolates failures to specific patterns, enabling pattern-level success rate tracking and rejection of low-quality fix patterns.
+
+In practice:
+- Maximum 5 fixes per cycle (prevents overwhelming rollback complexity)
+- Each fix applied sequentially with individual sandbox testing
+- Failed fixes tracked separately in Memory-MCP (pattern-level failure rates)
+- High-success patterns prioritized in future cycles
+- Low-success patterns flagged for manual investigation
+
+## Common Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| **"Skip Sandbox for Speed"** | Applying fixes directly to production codebase without sandbox testing to save 10-20 seconds. First broken test reveals fix breaks functionality, requiring emergency rollback and manual investigation. | NEVER skip sandbox testing. Cost of fixing broken production (hours of debugging) far exceeds cost of sandbox validation (20 seconds). Sandbox testing is non-negotiable. |
+| **"Fix Everything At Once"** | Applying 20+ fixes in single cycle to maximize throughput. When tests fail, impossible to determine which fix caused breakage. Rollback discards all fixes, not just problematic one. | Limit to 5 fixes per cycle, applied progressively. Each fix isolated, tested, and verified before next fix begins. Failed fix does not block other fixes from succeeding. |
+| **"Improvement Without Metrics"** | Running dogfooding cycles without tracking violations reduced, success rates, or improvement velocity. Cannot demonstrate value or identify regressions. Quality appears to improve based on subjective assessment, not data. | Track and visualize metrics: violations before/after, success rate per cycle, improvement velocity over time. Dashboard shows objective progress. Metrics justify continued investment in dogfooding infrastructure. |
+
+## Conclusion
+
+SOP Dogfooding Continuous Improvement completes the 3-part dogfooding system by orchestrating automated quality improvement cycles that detect violations, retrieve proven fix patterns from Memory MCP, and apply corrections with mandatory safety checks. The 60-120 second execution time includes comprehensive validation - sandbox testing before production application, automatic rollback on failures, and re-analysis to verify improvements. This ensures automation never breaks production while enabling rapid quality gains.
+
+Use this skill as the top-level orchestrator when you want fully automated continuous improvement without manual intervention. The skill delegates to sop-dogfooding-quality-detection (Phase 1) for violation detection and sop-dogfooding-pattern-retrieval (Phase 2) for fix pattern search, then applies fixes progressively with safety guardrails. Success rate targets (95%+ fixes succeed) and improvement velocity targets (5+ violations fixed per day) provide objective measures of effectiveness.
+
+Integration with Memory MCP enables cross-session learning - fixes that succeed are stored with high success rates, while failed fixes are flagged to prevent future application. Over time, the system learns which fix patterns are reliable for specific violation types, improving fix quality automatically. Teams that run daily dogfooding cycles experience continuous quality improvement with minimal manual effort - violations detected on Day 1 are automatically fixed by Day 3, with full safety validation throughout.
