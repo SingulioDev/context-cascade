@@ -1,3 +1,7 @@
+# UI and Backend (large folders - excluded)
+ui-consolidated/
+backend/
+
 # Dependencies
 node_modules/
 .venv/
