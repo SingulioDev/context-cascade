@@ -8,6 +8,10 @@ import time
 from pathlib import Path
 from typing import Optional, List
 
+# Disable HuggingFace offline mode (may be set system-wide)
+os.environ.pop('HF_HUB_OFFLINE', None)
+os.environ['HF_HUB_OFFLINE'] = '0'
+
 import torch
 
 try:
