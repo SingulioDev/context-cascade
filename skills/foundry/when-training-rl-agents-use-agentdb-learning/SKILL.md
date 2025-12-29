@@ -45,6 +45,11 @@ metadata:
 
 # AgentDB Reinforcement Learning Training
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Train AI learning plugins with AgentDB's 9 reinforcement learning algorithms including Decision Transformer, Q-Learning, SARSA, Actor-Critic, PPO, and more. Build self-learning agents, implement RL, and optimize agent behavior through experience.
@@ -900,3 +905,7 @@ AgentDB Reinforcement Learning Training provides a production-ready framework fo
 This skill is essential when building self-learning agents for game AI, robotics control, resource optimization, or any domain where optimal behavior must be discovered through trial-and-error rather than explicitly programmed. The key differentiator is systematic validation - rather than blindly training for arbitrary episode counts, the framework monitors convergence, validates against baselines, and implements early stopping to prevent wasted computation. The deployment pipeline ensures trained policies are properly exported, optimized (quantization, format conversion), and monitored in production with latency and action distribution tracking.
 
 The choice of RL algorithm matters critically. Q-Learning and SARSA suit discrete action spaces with full observability. DQN scales to high-dimensional state spaces (images, sensor data). Policy gradient methods (PPO, A2C) handle continuous control and partial observability. Decision Transformers enable offline RL from logged data without environment interaction. The framework provides all 9 algorithms with unified interfaces, allowing rapid experimentation to find the optimal approach for your specific task complexity, state/action space characteristics, and data availability constraints. With proper validation against baselines and comprehensive benchmarking, you can confidently deploy RL agents that genuinely learn and improve rather than memorizing fixed policies.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

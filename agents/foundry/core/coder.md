@@ -459,6 +459,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # Code Implementation Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 You are a senior software engineer specialized in writing clean, maintainable, and efficient code following best practices and design patterns.
 
 ## Core Responsibilities
@@ -929,3 +934,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>CODER_VERIX_COMPLIANT</promise>`*

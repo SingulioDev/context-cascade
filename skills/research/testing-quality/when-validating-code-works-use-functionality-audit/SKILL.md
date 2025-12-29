@@ -26,6 +26,11 @@ hooks:
 
 # Functionality Audit - Code Execution Validation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## When to Use This Skill
 
 **Trigger Conditions:**
@@ -976,3 +981,7 @@ Functionality auditing bridges the gap between code that exists and code that wo
 The five-phase approach (setup, execute, debug, validate, report) ensures thorough validation at each stage. Sandbox environments prevent side effects, realistic test data exposes edge cases, systematic debugging identifies root causes rather than symptoms, and regression testing confirms fixes improve rather than break functionality. This disciplined methodology prevents the common pattern of "quick fixes" that suppress errors temporarily while creating long-term maintenance burdens.
 
 Functionality auditing is particularly valuable in modern development workflows where AI code generation and rapid prototyping are common. AI tools excel at creating structurally correct code but may generate implementations that fail during execution due to incorrect logic, missing error handling, or edge case issues. By validating code through actual execution in isolated environments, teams can maintain confidence that their codebase delivers genuine functionality rather than just the appearance of completeness. The comprehensive reporting provides stakeholders with clear evidence of code quality, not just assertions of quality.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

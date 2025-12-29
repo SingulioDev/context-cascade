@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /re:quick
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Fast reverse engineering triage for rapid assessment (Levels 1-2: String Reconnaissance + Static Analysis).
 
 **Timebox**: ≤2 hours
@@ -182,3 +187,7 @@ Detect: God Objects, Parameter Bombs, deep nesting in decompiled code
 - `/re:firmware` - Firmware extraction (Level 5)
 - `/re:strings` - String analysis only
 - `/re:static` - Static analysis only
+
+
+---
+*Promise: `<promise>QUICK_VERIX_COMPLIANT</promise>`*

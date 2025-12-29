@@ -8,6 +8,11 @@ triggers: ["aws", "cloudformation", "lambda", "ecs", "fargate", "rds", "s3", "cl
 
 # AWS Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert AWS cloud infrastructure design, deployment, and optimization for production-grade applications.
 
 ## Purpose
@@ -286,16 +291,12 @@ scaling.scaleOnCpuUtilization('CpuScaling', {
 - `mcp__memory-mcp__memory_store` for AWS architecture patterns
 
 ## Success Metrics
-
-- Deployment time: <15 minutes for full stack
-- Infrastructure drift: 0%
-- Cost optimization: 20-30% reduction with reserved instances
-- Availability: 99.9%+ with multi-AZ
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
+- [assert|neutral] Deployment time: <15 minutes for full stack [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Infrastructure drift: 0% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Cost optimization: 20-30% reduction with reserved instances [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Availability: 99.9%+ with multi-AZ [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -346,3 +347,7 @@ AWS Specialist provides comprehensive expertise for deploying production-grade a
 This skill is essential when migrating applications to AWS, implementing modern cloud-native architectures, or optimizing existing AWS deployments for security and cost. The CDK-first approach enables defining infrastructure in TypeScript with full IDE support (autocomplete, type checking) while automatically generating CloudFormation templates for deployment. This combines the expressiveness of programming languages with the safety of declarative infrastructure. The comprehensive examples for Lambda + API Gateway, ECS Fargate, RDS with automated backups, and S3 + CloudFront CDN provide production-ready templates for common architectural patterns.
 
 The key differentiator is security-by-default through least privilege IAM and Secrets Manager integration. Rather than treating security as an afterthought, the skill embeds IAM best practices into every workflow - explicit resource ARNs, minimal permission sets, MFA requirements, and automatic credential rotation. Combined with cost optimization through reserved instances, spot instances, and intelligent storage tiering, you achieve AWS architectures that are simultaneously secure, scalable, and cost-efficient - the trifecta required for sustainable production operations.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

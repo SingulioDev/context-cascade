@@ -1,5 +1,10 @@
 # code-review
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: Requires GitHub CLI (gh) or GitHub API token for authentication
 - Authentication/token requirements: Use GITHUB_TOKEN env var or gh auth login for GitHub operations
@@ -53,3 +58,7 @@ npx claude-flow github code-review --pr-number 456 --focus security
 # With fix suggestions
 npx claude-flow github code-review --pr-number 456 --suggest-fixes
 ```
+
+
+---
+*Promise: `<promise>CODE_REVIEW_VERIX_COMPLIANT</promise>`*

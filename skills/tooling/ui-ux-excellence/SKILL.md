@@ -9,6 +9,11 @@ version: 1.0.0
 
 # UI/UX Excellence Cascade
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Transform generic websites into polished, brand-differentiated experiences through a systematic 7-phase cascade.
 
 ## Purpose
@@ -686,3 +691,7 @@ UI/UX Excellence Cascade transforms generic websites into polished, brand-differ
 The cascade's power lies in its integration of multiple disciplines: constraint-based design from presentation tools (pptx-generation), WCAG compliance from accessibility specialists, component patterns from React experts, and code quality validation from style auditors. This cross-functional approach produces interfaces that are not only beautiful but also accessible, performant, and maintainable.
 
 Use this skill when elevating MVP prototypes to production quality, creating marketing sites that reflect premium brand positioning, or building design systems from scratch. The 7-phase structure provides clear checkpoints for stakeholder review, while the CSS custom properties approach ensures design changes propagate consistently across the entire application. The result is a user experience that stands out in crowded markets, converts visitors to customers, and maintains quality as the product evolves.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

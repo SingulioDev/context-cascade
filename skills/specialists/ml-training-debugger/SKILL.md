@@ -11,6 +11,11 @@ author: ruv
 
 # ML Training Debugger
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -364,3 +369,7 @@ Success with this skill requires discipline in evidence gathering, hypothesis fo
 The value of this skill emerges most clearly during critical training failures where compute time is expensive and deadlines are tight. Rather than spending days trying random fixes, systematic diagnosis identifies root causes within minutes to hours, enabling targeted solutions that actually work. The quality standards enforced - evidence-based reasoning, confidence levels, expected impact statements - ensure that debugging is a learning process that builds understanding rather than trial-and-error that accumulates technical debt.
 
 Whether diagnosing subtle issues like ACT variance collapse or obvious failures like loss divergence, this skill provides the methodology, tooling, and expertise to debug machine learning training efficiently and effectively. The agent-based architecture enables scaling this expertise across teams, ensuring that debugging knowledge is captured systematically rather than lost when individuals leave projects.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

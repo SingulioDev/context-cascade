@@ -25,13 +25,12 @@ author: ruv
 - Tasks that can run on single-machine environments
 
 ## Success Criteria
-
-- API response time: <200ms for sandbox creation
-- Deployment success rate: >99%
-- Sandbox startup time: <5s
-- Network latency: <50ms between sandboxes
-- Resource utilization: <80% CPU/memory per sandbox
-- Uptime: >99.9% for production deployments
+- [assert|neutral] API response time: <200ms for sandbox creation [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Deployment success rate: >99% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Sandbox startup time: <5s [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Network latency: <50ms between sandboxes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Resource utilization: <80% CPU/memory per sandbox [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Uptime: >99.9% for production deployments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -43,13 +42,12 @@ author: ruv
 - **Deployment Failures**: Implement rollback strategies; maintain previous working state
 
 ## Guardrails & Safety
-
-- NEVER expose API keys or authentication tokens in code or logs
-- ALWAYS validate responses from Flow Nexus API before processing
-- ALWAYS implement timeout limits for long-running operations
-- NEVER trust user input for sandbox commands without validation
-- ALWAYS monitor resource usage to prevent runaway processes
-- ALWAYS clean up sandboxes and resources after task completion
+- [assert|emphatic] NEVER: expose API keys or authentication tokens in code or logs [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate responses from Flow Nexus API before processing [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement timeout limits for long-running operations [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: trust user input for sandbox commands without validation [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: monitor resource usage to prevent runaway processes [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: clean up sandboxes and resources after task completion [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -61,6 +59,11 @@ author: ruv
 
 
 # Flow Nexus Neural Networks
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Deploy, train, and manage neural networks in distributed E2B sandbox environments. Train custom models with multiple architectures (feedforward, LSTM, GAN, transformer) or use pre-built templates from the marketplace.
 
@@ -823,3 +826,7 @@ In practice:
 Flow Nexus Neural Networks transforms distributed AI development by providing E2B sandbox infrastructure for scalable neural network training, federated learning for privacy-preserving model development, and a marketplace of reusable templates to accelerate common tasks. By orchestrating multiple sandboxes with coordinated gradient aggregation and model synchronization, you achieve enterprise-scale training capabilities without managing infrastructure.
 
 Use this skill when training large models requiring distributed computing (>1B parameters across multiple GPUs), implementing privacy-sensitive ML applications (healthcare, finance with federated learning), or accelerating development with pre-trained templates (sentiment analysis, image classification, forecasting). The key insight is sandbox isolation combined with coordination: each node operates independently in secure E2B environment while participating in collective training through gradient sharing and model updates. Start with single-node training using templates for common tasks, scale to distributed clusters when model size or training time exceeds single-machine limits, and enable federated learning only when data cannot be centralized due to privacy or compliance constraints.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

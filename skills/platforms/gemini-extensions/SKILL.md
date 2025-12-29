@@ -7,6 +7,11 @@ version: 1.0.0
 
 # Gemini Extensions Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 Leverage Gemini CLI's ecosystem of 70+ extensions to integrate with Figma, Stripe, Postman, Shopify, and other third-party services that Claude Code cannot directly access.
 
@@ -71,3 +76,7 @@ Plus 60+ community extensions on GitHub.
 ---
 
 **See full documentation** in `.claude/agents/gemini-extensions-agent.md`
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

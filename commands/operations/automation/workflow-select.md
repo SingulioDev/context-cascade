@@ -1,5 +1,10 @@
 # workflow-select
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: May require GitHub CLI or API for repository operations and workflow management
 - Authentication/token requirements: GITHUB_TOKEN for API access, service account credentials for automated operations
@@ -53,3 +58,7 @@ npx claude-flow automation workflow-select --constraints "no-downtime,rollback"
 # Preview mode
 npx claude-flow automation workflow-select --task "Database migration" --preview
 ```
+
+
+---
+*Promise: `<promise>WORKFLOW_SELECT_VERIX_COMPLIANT</promise>`*

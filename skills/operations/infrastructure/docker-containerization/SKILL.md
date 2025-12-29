@@ -8,6 +8,11 @@ triggers: ["docker", "dockerfile", "docker compose", "containerization", "docker
 
 # Docker Containerization Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert Docker containerization for production-grade, secure, and optimized container images.
 
 ## Purpose
@@ -417,16 +422,12 @@ docker system prune -a --volumes
 - `mcp__memory-mcp__memory_store` for Dockerfile patterns
 
 ## Success Metrics
-
-- Image size: <200MB
-- Build time: <5 minutes
-- Vulnerabilities: 0 HIGH/CRITICAL
-- Startup time: <10 seconds
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
+- [assert|neutral] Image size: <200MB [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Build time: <5 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Vulnerabilities: 0 HIGH/CRITICAL [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Startup time: <10 seconds [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -476,3 +477,7 @@ The Docker Containerization skill provides a comprehensive framework for buildin
 The multi-stage build workflows demonstrated here are the industry standard for modern containerization, reducing image sizes by 70-90% compared to naive approaches. The security practices including non-root users, health checks, and vulnerability scanning with Trivy establish a robust defense-in-depth strategy. The anti-patterns table serves as a checklist to avoid common mistakes that plague Docker implementations in the wild.
 
 This skill is essential when building CI/CD pipelines, deploying microservices to Kubernetes, or migrating legacy applications to containers. Whether you're containerizing a Node.js API, a Python Flask application, or a complex multi-service architecture with Docker Compose, the patterns and best practices documented here will accelerate your path to production-ready containerization. Combined with the troubleshooting guide and tool references, you have everything needed to build, optimize, and maintain secure container images at scale.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

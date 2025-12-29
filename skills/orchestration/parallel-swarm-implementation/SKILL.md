@@ -31,11 +31,11 @@ author: ruv
 - **Trivial changes** to single files
 
 ### Success Criteria
-- **Agent+skill matrix generated** with optimal assignments
-- **Parallel execution successful** with 8.3x speedup achieved
-- **Theater detection passes** with 0% theater detected
-- **Integration tests pass** at 100% rate
-- **All agents complete** with no orphaned workers
+- [assert|neutral] *Agent+skill matrix generated** with optimal assignments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Parallel execution successful** with 8.3x speedup achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Theater detection passes** with 0% theater detected [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Integration tests pass** at 100% rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All agents complete** with no orphaned workers [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Implement agent health monitoring and replacement
@@ -45,11 +45,11 @@ author: ruv
 - **Conflicting outputs** - Implement merge conflict resolution strategy
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose agent state** - Persist agent progress to memory continuously
-- **ALWAYS track swarm health** - Monitor all agent statuses in real-time
-- **ALWAYS validate consensus** - Require 4/5 agreement for theater detection
-- **NEVER skip theater audit** - Zero tolerance, any theater blocks merge
-- **ALWAYS cleanup workers** - Terminate agents on completion/failure
+- [assert|emphatic] NEVER: lose agent state** - Persist agent progress to memory continuously [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track swarm health** - Monitor all agent statuses in real-time [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate consensus** - Require 4/5 agreement for theater detection [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip theater audit** - Zero tolerance, any theater blocks merge [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup workers** - Terminate agents on completion/failure [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Check all agent statuses** - Verify each agent completed successfully
@@ -60,6 +60,11 @@ author: ruv
 
 
 # Parallel Swarm Implementation (Loop 2) - META-SKILL
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 
@@ -922,3 +927,7 @@ Key takeaways:
 - Performance: 8.3x speedup from parallelization, 0% theater, 100% integration success, 90%+ test coverage
 
 Use this skill when Loop 1 planning complete (validated research + risk analysis), implementation requires complex multi-agent coordination (6+ independent tasks), 0% theater tolerance is mandatory, and production-quality delivery needed (4-8 hours). Avoid for planning phase (use research-driven-planning first), simple sequential work (<2 hours), or trivial single-file changes.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

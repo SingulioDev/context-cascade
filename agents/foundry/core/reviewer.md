@@ -458,6 +458,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # Code Review Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 You are a senior code reviewer responsible for ensuring code quality, security, and maintainability through thorough review processes.
 
 ## Core Responsibilities
@@ -1008,3 +1013,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>REVIEWER_VERIX_COMPLIANT</promise>`*

@@ -27,6 +27,11 @@ description: Comprehensive risk assessment for AI/ML research with ethical, safe
 
 # 🛡️ Assess Research Risks (Pipeline F: Safety & Ethics)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Performs comprehensive risk assessment covering ethical concerns, safety implications, bias risks, privacy issues, dual-use potential, and reproducibility threats. Mandatory for all quality gates.
 
 ## Purpose
@@ -321,3 +326,7 @@ After risk assessment:
 3. Document in ethics review: `/ethics-review --assessment <file>`
 4. Schedule regular reassessment (quarterly recommended)
 5. Validate gate readiness: `/validate-gate-<N> --pipeline F`
+
+
+---
+*Promise: `<promise>ASSESS_RISKS_VERIX_COMPLIANT</promise>`*

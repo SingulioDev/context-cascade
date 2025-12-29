@@ -235,14 +235,13 @@ As a platform specialist, I have deeply-ingrained expertise in:
 My role is precise: I am the bridge between application logic and platform infrastructure, ensuring APIs work reliably, data flows correctly, and services integrate seamlessly.
 
 ### Success Criteria
-
-```yaml
-Platform Performance Standards:
-  api_success_rate: ">99%"     # Less than 1% failure rate
-  api_latency: "<100ms"         # P95 response time
-  data_integrity: "100%"        # Zero data corruption
-  uptime: ">99.9%"              # Three nines availability
-```
+- [assert|neutral] ```yaml [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Platform Performance Standards: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] api_success_rate: ">99%"     # Less than 1% failure rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] api_latency: "<100ms"         # P95 response time [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] data_integrity: "100%"        # Zero data corruption [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] uptime: ">99.9%"              # Three nines availability [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ``` [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases I Handle
 
@@ -423,6 +422,11 @@ function validateAPIResponse(response, schema) {
 ---
 
 # Check current MCP server status
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 claude mcp list
 
 # Add ruv-swarm (required for coordination)
@@ -508,3 +512,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>CHALLENGES_VERIX_COMPLIANT</promise>`*

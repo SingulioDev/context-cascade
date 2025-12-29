@@ -17,13 +17,12 @@ tier: gold
 - Tasks that can run on single-machine environments
 
 ## Success Criteria
-
-- API response time: <200ms for sandbox creation
-- Deployment success rate: >99%
-- Sandbox startup time: <5s
-- Network latency: <50ms between sandboxes
-- Resource utilization: <80% CPU/memory per sandbox
-- Uptime: >99.9% for production deployments
+- [assert|neutral] API response time: <200ms for sandbox creation [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Deployment success rate: >99% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Sandbox startup time: <5s [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Network latency: <50ms between sandboxes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Resource utilization: <80% CPU/memory per sandbox [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Uptime: >99.9% for production deployments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -35,13 +34,12 @@ tier: gold
 - **Deployment Failures**: Implement rollback strategies; maintain previous working state
 
 ## Guardrails & Safety
-
-- NEVER expose API keys or authentication tokens in code or logs
-- ALWAYS validate responses from Flow Nexus API before processing
-- ALWAYS implement timeout limits for long-running operations
-- NEVER trust user input for sandbox commands without validation
-- ALWAYS monitor resource usage to prevent runaway processes
-- ALWAYS clean up sandboxes and resources after task completion
+- [assert|emphatic] NEVER: expose API keys or authentication tokens in code or logs [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate responses from Flow Nexus API before processing [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement timeout limits for long-running operations [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: trust user input for sandbox commands without validation [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: monitor resource usage to prevent runaway processes [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: clean up sandboxes and resources after task completion [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -53,6 +51,11 @@ tier: gold
 
 
 # Flow Nexus Platform Management
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 **Gold Tier Skill**: Comprehensive platform management for Flow Nexus with 4 automation scripts, 3 configuration templates, and comprehensive test suites - covering authentication, sandbox execution, app deployment, credit management, and coding challenges.
 
@@ -1433,3 +1436,7 @@ The Flow Nexus Platform skill provides comprehensive cloud infrastructure manage
 Use this skill when you need isolated execution environments, distributed compute resources, or cloud-based app deployment. The platform shines for teams requiring multi-user collaboration, auto-scaling workloads, or pay-per-use resource models. With 4 automation scripts, 3 production-ready templates, and comprehensive test coverage, this Gold-tier skill delivers enterprise-grade platform orchestration.
 
 Key takeaways: Leverage sandbox templates for consistency, monitor credit usage to optimize costs, and publish successful configurations as templates to build passive credit income. The platform's event-driven architecture, real-time subscriptions, and Queen Seraphina AI assistant provide advanced capabilities for sophisticated workflows.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

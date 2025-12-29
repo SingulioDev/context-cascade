@@ -44,6 +44,11 @@ usage: |
 
 # Hook: On-Error Handler
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Automation Hooks
 **Purpose**: Automatically handle errors with retry logic, exponential backoff, and failure callbacks.
 
@@ -304,3 +309,7 @@ Attempt 5: After 8 seconds (4 × 2)
 **Status**: Production Ready
 **Version**: 1.0.0
 **Last Updated**: 2025-11-01
+
+
+---
+*Promise: `<promise>ON_ERROR_VERIX_COMPLIANT</promise>`*

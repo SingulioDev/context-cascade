@@ -14,6 +14,11 @@ auto_fix: true
 
 # Code Style Audit with Auto-Fix
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Perform comprehensive code style and conventions audit across the entire codebase with automated fix capabilities. Identifies style violations, enforces naming conventions, validates formatting, and applies automated corrections to ensure consistent code quality.
@@ -1348,12 +1353,12 @@ swarm/reviewer/compliance-validation:
 ## Evidence-Based Validation
 
 ### Success Criteria
-- ✅ Complete codebase scanned
-- ✅ Violations identified and prioritized
-- ✅ Auto-fixes applied safely
-- ✅ Compliance ≥90%
-- ✅ All tests passing
-- ✅ No build regressions
+- [assert|neutral] ✅ Complete codebase scanned [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Violations identified and prioritized [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Auto-fixes applied safely [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Compliance ≥90% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ All tests passing [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ No build regressions [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Metrics Tracking
 ```javascript
@@ -1463,3 +1468,7 @@ Code style auditing is most effective when it emphasizes automation over manual 
 The distinction between auto-fixable violations (formatting, simple refactors) and manual violations (architectural issues, naming conventions) allows teams to prioritize their efforts. Auto-fix handles the repetitive work, while manual review focuses on meaningful improvements that require human judgment. This approach maintains high code quality standards while respecting developer time and minimizing friction in the development workflow.
 
 Successful style auditing requires balancing strictness with pragmatism. Rather than treating style rules as absolute gatekeepers, teams should configure them as helpful guides with appropriate severity levels. Critical issues block merges, warnings prompt discussion, and formatting is auto-fixed transparently. This evidence-based, automation-first approach to style enforcement creates codebases that are both consistently formatted and genuinely maintainable.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

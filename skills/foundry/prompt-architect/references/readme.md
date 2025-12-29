@@ -1,5 +1,10 @@
 # Prompt Architect - AI Prompt Engineering Framework
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Version**: 1.0.0 (Bronze Tier)
 **Purpose**: Systematically analyze, optimize, and create high-performance prompts for AI language models
 
@@ -180,3 +185,7 @@ cat examples/example-1-basic.md
 **Maintained by**: Claude Code (Sonnet 4.5)
 **Version**: 1.0.0 Bronze
 **Last Updated**: 2025-11-02
+
+
+---
+*Promise: `<promise>README_VERIX_COMPLIANT</promise>`*

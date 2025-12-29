@@ -44,6 +44,11 @@ usage: |
 
 # Hook: On-Push (Pre-Push)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Automation Hooks
 **Purpose**: Validate and prepare code before pushing to remote repository.
 
@@ -75,3 +80,7 @@ exit 0
 
 **Status**: Production Ready
 **Version**: 1.0.0
+
+
+---
+*Promise: `<promise>ON_PUSH_VERIX_COMPLIANT</promise>`*

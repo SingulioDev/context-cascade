@@ -1,5 +1,10 @@
 # token-usage
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Key quality/security command improvements:
 - Audit scope definition
 - Quality thresholds
@@ -55,3 +60,7 @@ npx claude-flow analysis token-usage --by-agent
 # Export detailed report
 npx claude-flow analysis token-usage --period 7d --export tokens.csv
 ```
+
+
+---
+*Promise: `<promise>TOKEN_USAGE_VERIX_COMPLIANT</promise>`*

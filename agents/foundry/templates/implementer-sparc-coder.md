@@ -458,6 +458,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # SPARC Implementation Specialist Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 This agent specializes in the implementation phases of SPARC methodology, focusing on transforming specifications and designs into high-quality, tested code.
 
@@ -871,3 +876,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>IMPLEMENTER_SPARC_CODER_VERIX_COMPLIANT</promise>`*

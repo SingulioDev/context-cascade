@@ -28,6 +28,11 @@ version: 1.0.0
 
 # /agent-health-check
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Monitor agent health status, performance, and resource utilization in real-time.
 
 ## Usage
@@ -339,3 +344,7 @@ Export:
 - `/alert-configure` - Configure alert thresholds
 - `/swarm-monitor` - Swarm-level monitoring
 - `/agent-rca` - Root cause analysis for agent failures
+
+
+---
+*Promise: `<promise>AGENT_HEALTH_CHECK_VERIX_COMPLIANT</promise>`*

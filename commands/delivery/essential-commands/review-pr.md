@@ -53,6 +53,11 @@ version: 1.0.0
 
 # /review-pr
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Multi-agent comprehensive PR review with specialized reviewers.
 
 ## Usage
@@ -151,3 +156,7 @@ PR comment posted with detailed review.
 - `/pr-enhance` - Improve PR description
 - `/audit-pipeline` - Complete quality audit
 - `/fix-bug` - Fix review findings
+
+
+---
+*Promise: `<promise>REVIEW_PR_VERIX_COMPLIANT</promise>`*

@@ -1,5 +1,10 @@
 # SPARC Tester Mode
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Purpose
 One-line description of what this command does.
 
@@ -14,9 +19,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -111,3 +116,7 @@ npx claude-flow@alpha sparc run tester "full regression suite"
 - Load testing
 - Cross-browser testing
 - Multi-environment validation
+
+
+---
+*Promise: `<promise>TESTER_VERIX_COMPLIANT</promise>`*

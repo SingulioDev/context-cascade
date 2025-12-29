@@ -22,6 +22,11 @@ dependencies:
 
 # Dependency Mapper Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 **When mapping dependencies, use dependency-mapper** to extract, analyze, visualize, and audit dependency trees across multiple package managers (npm, pip, cargo, maven, go.mod).
@@ -384,3 +389,7 @@ The Dependency Mapper skill transforms dependency management from a reactive fir
 The five-phase workflow (discovery, extraction, analysis, security, visualization) ensures that dependency mapping is thorough, automated, and actionable. Whether analyzing a small Python project with 20 packages or a large Node.js monorepo with 800+ dependencies, this skill scales from quick audits to comprehensive security reviews.
 
 By integrating interactive visualizations (D3.js graphs), multi-language support (npm, pip, cargo, maven, go.mod), and actionable recommendations (prioritized fix lists), the Dependency Mapper makes complex dependency trees comprehensible and manageable. The result is reduced supply chain risk, faster vulnerability remediation, and better architectural decisions based on dependency health metrics.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

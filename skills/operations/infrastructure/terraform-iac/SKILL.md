@@ -8,6 +8,11 @@ triggers: ["terraform", "iac", "infrastructure as code", "terraform state", "ter
 
 # Terraform Infrastructure as Code Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert Terraform for cloud-agnostic infrastructure provisioning and state management.
 
 ## Purpose
@@ -479,16 +484,12 @@ terraform plan -detailed-exitcode
 - `mcp__memory-mcp__memory_store` for IaC patterns
 
 ## Success Metrics
-
-- Infrastructure drift: 0%
-- Deployment time: <15 minutes
-- Code reuse: ≥70% via modules
-- Test coverage: 100% of modules
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
+- [assert|neutral] Infrastructure drift: 0% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Deployment time: <15 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Code reuse: ≥70% via modules [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Test coverage: 100% of modules [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -538,3 +539,7 @@ The Terraform Infrastructure as Code skill empowers you to provision and manage 
 The workflows provided cover the full lifecycle from initial resource provisioning to GitOps-driven continuous deployment. The emphasis on remote state with locking, comprehensive variable validation, and drift detection ensures that your infrastructure remains consistent with your codebase. The anti-patterns table serves as a critical checklist to avoid common pitfalls that lead to production outages and security vulnerabilities.
 
 This skill is particularly valuable when building cloud-native applications, migrating from manual infrastructure to IaC, or implementing multi-environment deployments with shared infrastructure patterns. Whether you're provisioning a simple EC2 instance or orchestrating a complex multi-region Kubernetes cluster with networking, databases, and observability infrastructure, the patterns and best practices documented here provide a solid foundation. Combined with the troubleshooting guide and tool references (Terragrunt, tfsec, Checkov), you have everything needed to build production-grade infrastructure as code at enterprise scale.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

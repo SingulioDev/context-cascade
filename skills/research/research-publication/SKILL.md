@@ -16,11 +16,11 @@
 - When full peer review not required
 
 ### Success Criteria
-- Paper submitted to target venue with all required files (PDF, source, supplementary)
-- Reproducibility package published (GitHub, Zenodo, ACM DL)
-- Reviewer responses drafted addressing all comments
-- Camera-ready version uploaded meeting all formatting requirements
-- Artifacts archived with permanent DOIs (Zenodo, FigShare)
+- [assert|neutral] Paper submitted to target venue with all required files (PDF, source, supplementary) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Reproducibility package published (GitHub, Zenodo, ACM DL) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Reviewer responses drafted addressing all comments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Camera-ready version uploaded meeting all formatting requirements [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Artifacts archived with permanent DOIs (Zenodo, FigShare) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Desk rejection: verify venue fit, check submission guidelines, resubmit elsewhere
@@ -60,6 +60,11 @@ author: ruv
 ---
 
 # Research Publication
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Prepare research for academic publication with comprehensive reproducibility artifacts, ensuring compliance with venue requirements and ACM Artifact Evaluation standards.
 
@@ -750,3 +755,7 @@ Research Publication is the culminating skill in Deep Research SOP Pipeline I, t
 This skill is essential when Quality Gate 3 is APPROVED (production-ready model with validated artifacts) and research is ready for academic dissemination. The 2-4 week timeline includes paper writing (auto-generated sections from research artifacts), reproducibility checklist completion, supplementary materials preparation, ACM artifact submission, code release (GitHub with Zenodo DOI), and presentation slides (15-20 slides for conference talks).
 
 Use this skill when preparing Deep Research SOP outputs for publication, responding to peer review (point-by-point reviewer responses), creating camera-ready versions (final formatting, acknowledgments, references), or submitting to artifact evaluation tracks (ACM badges: Available, Functional, Reproduced, Reusable). The result is a complete publication package: LaTeX paper draft, reproducibility checklist with ALL items addressed, supplementary materials (ablations, proofs, visualizations), ACM artifact submission (tested reproducibility package), public code release (GitHub + Zenodo DOI), and presentation slides. This comprehensive package maximizes publication success while advancing open science through reproducible, ethically sound research contributions.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

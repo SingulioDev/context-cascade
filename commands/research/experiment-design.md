@@ -38,6 +38,11 @@ usage: |
 
 # Research: Experiment Design
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Research Workflows
 **Purpose**: Design rigorous experiments with statistical power analysis, randomization, and design optimization for scientific research.
 
@@ -588,3 +593,7 @@ experiment-design/
 **Status**: Production Ready
 **Version**: 1.0.0
 **Last Updated**: 2025-11-01
+
+
+---
+*Promise: `<promise>EXPERIMENT_DESIGN_VERIX_COMPLIANT</promise>`*

@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /workflow:deployment
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Orchestrate multi-stage deployment workflows with validation gates.
 
 ## Usage
@@ -350,3 +355,7 @@ Notifications Sent:
 - `/k8s-deploy` - Kubernetes deployment
 - `/smoke-test` - Post-deployment testing
 - `/monitoring-configure` - Setup monitoring
+
+
+---
+*Promise: `<promise>WORKFLOW_DEPLOYMENT_VERIX_COMPLIANT</promise>`*

@@ -21,6 +21,11 @@ cognitive_frame:
 
 # Feature Development Complete
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Aspektual'naya Ramka Aktivatsiya (Aspectual State Tracking)
 
 Kazhdyy etap razvertyvaniya (Each stage of deployment):
@@ -739,3 +744,7 @@ The **aspectual frame** ensures every stage has explicit completion criteria wit
 Use this skill when building features that matter - greenfield functionality, multi-layer changes, or anything requiring production deployment. The 12-stage workflow ensures nothing is missed, from research to documentation, while **aspectual state tracking** prevents the "90% done" syndrome and **hierarchical breakdown** enables efficient parallel execution.
 
 The result is a consistent, repeatable process that transforms vague feature requests into production-ready code with >80% test coverage, comprehensive documentation, zero critical security issues, and **complete visibility into progress and blockers at every level of the work hierarchy**. When quality cannot be compromised, Feature Development Complete is the systematic approach that delivers.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

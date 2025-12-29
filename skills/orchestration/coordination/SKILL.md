@@ -50,11 +50,11 @@ author: ruv
 - **Static topologies** not requiring adaptive scaling
 
 ### Success Criteria
-- **Coordination topology established** (mesh/hierarchical/star)
-- **All agents registered** in coordination namespace
-- **Event routing functional** with <50ms message latency
-- **No coordination deadlocks** - All agents progressing
-- **Scalability validated** - Handles target agent count
+- [assert|neutral] *Coordination topology established** (mesh/hierarchical/star) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All agents registered** in coordination namespace [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Event routing functional** with <50ms message latency [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *No coordination deadlocks** - All agents progressing [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Scalability validated** - Handles target agent count [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Network partitions** - Implement partition tolerance with eventual consistency
@@ -64,11 +64,11 @@ author: ruv
 - **Rate limiting** - Handle cloud API rate limits with backoff
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose coordination state** - Persist topology and agent registry
-- **ALWAYS validate topology** - Check for cycles, orphaned nodes
-- **ALWAYS monitor message queues** - Prevent queue overflow
-- **NEVER skip health checks** - Continuous agent liveness monitoring
-- **ALWAYS handle failures gracefully** - No cascading failures
+- [assert|emphatic] NEVER: lose coordination state** - Persist topology and agent registry [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate topology** - Check for cycles, orphaned nodes [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: monitor message queues** - Prevent queue overflow [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip health checks** - Continuous agent liveness monitoring [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: handle failures gracefully** - No cascading failures [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Verify topology structure** - Validate graph properties (connected, acyclic if needed)
@@ -79,6 +79,11 @@ author: ruv
 
 
 # Agent Coordination Skill
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -534,3 +539,7 @@ Key takeaways:
 - CAP theorem applies - choose between consistency, availability, and partition tolerance based on requirements
 
 Use this skill when orchestrating complex multi-agent workflows (6+ agents) requiring sophisticated coordination, consensus building, fault tolerance, or distributed decision-making across mesh, hierarchical, or adaptive topologies. Avoid for simple 2-5 agent tasks with loose coupling where direct spawning without formal coordination infrastructure is more efficient.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -1,4 +1,9 @@
 # hook pre-edit
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Command-Specific Context
 - Deployment target requirements
 - Pre/post hook execution order
@@ -142,3 +147,7 @@ Returns JSON with:
 - `Edit` - File editing tool
 - `MultiEdit` - Multiple edits tool
 - `agent spawn` - Manual agent creation
+
+
+---
+*Promise: `<promise>PRE_EDIT_VERIX_COMPLIANT</promise>`*

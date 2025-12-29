@@ -22,13 +22,12 @@ author: ruv
 - Operations that do not require embedding-based retrieval
 
 ## Success Criteria
-
-- Vector search query latency: <10ms for 99th percentile
-- Embedding generation: <100ms per document
-- Index build time: <1s per 1000 vectors
-- Recall@10: >0.95 for similar documents
-- Database connection success rate: >99.9%
-- Memory footprint: <2GB for 1M vectors with quantization
+- [assert|neutral] Vector search query latency: <10ms for 99th percentile [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Embedding generation: <100ms per document [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Index build time: <1s per 1000 vectors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Recall@10: >0.95 for similar documents [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Database connection success rate: >99.9% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Memory footprint: <2GB for 1M vectors with quantization [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -40,13 +39,12 @@ author: ruv
 - **Dimension Mismatch**: Validate embedding dimensions (384 for sentence-transformers) before insertion
 
 ## Guardrails & Safety
-
-- NEVER expose database connection strings in logs or error messages
-- ALWAYS validate vector dimensions before insertion
-- ALWAYS sanitize metadata to prevent injection attacks
-- NEVER store PII in vector metadata without encryption
-- ALWAYS implement access control for multi-tenant deployments
-- ALWAYS validate search results before returning to users
+- [assert|emphatic] NEVER: expose database connection strings in logs or error messages [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate vector dimensions before insertion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: sanitize metadata to prevent injection attacks [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: store PII in vector metadata without encryption [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement access control for multi-tenant deployments [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate search results before returning to users [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -58,6 +56,11 @@ author: ruv
 
 
 # AgentDB Advanced Features
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## What This Skill Does
 
@@ -643,3 +646,7 @@ In practice:
 AgentDB Advanced Features unlocks production-grade distributed AI systems by extending core vector search with QUIC synchronization for multi-node deployments, hybrid search for combining semantic and structured queries, and flexible sharding for horizontal scaling. These capabilities transform AgentDB from a local vector database into a distributed platform capable of supporting multi-agent coordination, geographic distribution, and enterprise-scale applications.
 
 Use this skill when building distributed AI systems requiring cross-node communication (<1ms QUIC sync), implementing RAG systems needing metadata filters beyond semantic search (hybrid search with date/category/permission constraints), or scaling beyond single-machine limits (multi-database sharding by domain/tenant). The key insight is architectural flexibility: QUIC enables distributed consistency, hybrid search adds precision to semantic retrieval, and sharding provides independent scaling per domain. Start with single-database deployment, add QUIC sync when distributing across nodes, enable hybrid search for complex filtering, and implement sharding only when hitting performance or isolation limits.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -42,6 +42,11 @@ author: ruv
 
 # Infrastructure Orchestration Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Metadata
 - **Skill ID**: infrastructure-orchestration
 - **Category**: Infrastructure & DevOps
@@ -331,13 +336,12 @@ File: examples/terraform-infrastructure-example.md
 - Packer (>= 1.8)
 
 ## Success Metrics
-
-- ✅ Infrastructure provisioning automated (100% IaC coverage)
-- ✅ Zero-downtime deployments achieved
-- ✅ Monitoring covers all critical services
-- ✅ RTO/RPO targets met in DR tests
-- ✅ Security compliance validated (CIS benchmarks)
-- ✅ Cost optimization targets achieved
+- [assert|neutral] ✅ Infrastructure provisioning automated (100% IaC coverage) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Zero-downtime deployments achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Monitoring covers all critical services [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ RTO/RPO targets met in DR tests [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Security compliance validated (CIS benchmarks) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Cost optimization targets achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Related Skills
 
@@ -553,3 +557,7 @@ DESIGN FLOW
 6. **Security** network segmentation, secrets, IAM
 7. **Observability** logs/metrics/traces, alerting
 8. **Trade-offs** cost vs latency vs complexity
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

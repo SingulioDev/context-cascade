@@ -1,5 +1,10 @@
 # performance-report
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Key quality/security command improvements:
 - Audit scope definition
 - Quality thresholds
@@ -55,3 +60,7 @@ npx claude-flow analysis performance-report --compare swarm-123
 # Full metrics report
 npx claude-flow analysis performance-report --include-metrics --format markdown
 ```
+
+
+---
+*Promise: `<promise>PERFORMANCE_REPORT_VERIX_COMPLIANT</promise>`*

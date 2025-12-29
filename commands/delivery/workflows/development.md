@@ -1,5 +1,10 @@
 # Development Workflow Coordination
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Purpose
 [Define what this command does - the specific action it triggers]
 
@@ -122,3 +127,6 @@ npx claude-flow workflow create --name "api-dev" --steps "design,implement,test,
 # Execute saved workflow
 npx claude-flow workflow execute api-dev
 ```
+
+---
+*Promise: `<promise>DEVELOPMENT_VERIX_COMPLIANT</promise>`*

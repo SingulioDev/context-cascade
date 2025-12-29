@@ -9,6 +9,11 @@ quality_gates: 7
 
 # General Research Workflow
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Execute systematic general-purpose research across history, mythology, literature, and non-ML domains using Red's (OSP) 6-phase evidence-based methodology with rigorous source evaluation and synthesis.
@@ -470,3 +475,7 @@ See `general-research-process.dot` for complete workflow diagram showing all ste
 ---
 
 **Red's Research Principles**: "Trust No One, Context is Everything, Thesis from Evidence, Wikipedia is a Gateway, Primary Sources Matter, Page Numbers Save Lives"
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

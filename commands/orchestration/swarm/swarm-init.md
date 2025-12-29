@@ -1,4 +1,9 @@
 # swarm-init
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -49,3 +54,7 @@ npx claude-flow swarm init [options]
 npx claude-flow swarm init --topology mesh
 npx claude-flow swarm init --topology hierarchical --max-agents 8
 ```
+
+
+---
+*Promise: `<promise>SWARM_INIT_VERIX_COMPLIANT</promise>`*

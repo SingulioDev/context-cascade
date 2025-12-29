@@ -6,6 +6,11 @@ description: Dependency management and analysis hub. Map project dependencies, a
 
 # Dependencies
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Dependency management, analysis, and vulnerability detection for projects.
 
 ## Phase 0: Expertise Loading
@@ -164,3 +169,7 @@ Dependency management addresses the tension between leveraging ecosystem velocit
 The skill's effectiveness comes from treating dependencies as a living system requiring continuous monitoring rather than one-time audits. Automated security scanning detects CVEs as they are disclosed, version freshness checks identify stale packages before vulnerabilities emerge, and circular dependency detection prevents architectural decay. The cross-skill coordination with security audits and code review integrates dependency health into broader quality gates rather than treating it as isolated infrastructure concern.
 
 By providing ecosystem-specific tooling (npm/pip/cargo/go mod) and risk-stratified update strategies (security patches immediate, minor updates batched, major updates deliberate), the skill balances the conflicting goals of staying current and maintaining stability. The result is applications that leverage ecosystem innovation without accumulating hidden technical debt and security exposure in the dependency graph.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /functionality-audit
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Validates that code actually works through sandbox testing with Codex auto-fix iteration.
 
 ## Usage
@@ -84,3 +89,7 @@ Validates that code actually works through sandbox testing with Codex auto-fix i
 - `/style-audit` - Polish after fixing functionality
 - `/audit-pipeline` - Run all audits
 - `/codex-auto` - Direct Codex access
+
+
+---
+*Promise: `<promise>FUNCTIONALITY_AUDIT_VERIX_COMPLIANT</promise>`*

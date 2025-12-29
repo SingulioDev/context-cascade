@@ -17,6 +17,11 @@ author: ruv
 
 # PowerPoint Generation Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 This skill implements a systematic framework for generating professional-quality PowerPoint presentations using AI. It addresses the unique challenges of PowerPoint as a medium that combines data analysis, narrative structure, visual design, and spatial layout—making it one of the most complex AI generation tasks in corporate knowledge work.
@@ -296,3 +301,7 @@ PowerPoint generation represents the intersection of data analysis, narrative st
 The fundamental insight is that visual complexity in AI-generated presentations comes from insufficient constraints, not insufficient capability. By leading with negative constraints (prohibitions on decorative elements), enforcing quantified specifications (exact contrast ratios, font sizes, margins), and separating planning from execution (design plan before code generation), the skill transforms an unreliable generative process into a systematic workflow with measurable quality gates.
 
 The multi-chat architecture for complex decks acknowledges token budget realities while maintaining visual coherence through explicit state management. The validation checklist ensures accessibility compliance and professional polish are defaults rather than afterthoughts. The result is enterprise-grade presentations generated at scale with consistent quality, reliable spatial layout, and zero manual cleanup required.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

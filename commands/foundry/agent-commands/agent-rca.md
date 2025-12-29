@@ -29,6 +29,11 @@ version: 1.0.0
 
 # /agent-rca
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Spawns Root Cause Analyzer agent for systematic debugging and finding real underlying problems.
 
 ## Usage
@@ -103,3 +108,7 @@ Spawns Root Cause Analyzer agent for systematic debugging and finding real under
 - `/codex-auto` - Quick prototyping/fixing
 - `/functionality-audit` - Systematic testing
 - `/agent-reviewer` - Code review
+
+
+---
+*Promise: `<promise>AGENT_RCA_VERIX_COMPLIANT</promise>`*

@@ -23,11 +23,11 @@ author: Claude Flow Team
 - **Ephemeral tasks** not needing collective memory
 
 ### Success Criteria
-- **Queen successfully coordinates** all worker agents
-- **Consensus achieved** using configured algorithm (majority/weighted/Byzantine)
-- **Collective memory shared** across all agents with <10ms access time
-- **All workers complete tasks** with 100% assignment success
-- **Session state persisted** with checkpoint recovery capability
+- [assert|neutral] *Queen successfully coordinates** all worker agents [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Consensus achieved** using configured algorithm (majority/weighted/Byzantine) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Collective memory shared** across all agents with <10ms access time [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All workers complete tasks** with 100% assignment success [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Session state persisted** with checkpoint recovery capability [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Queen failure** - Implement queen failover and re-election
@@ -37,11 +37,11 @@ author: Claude Flow Team
 - **Session crash** - Resume from last checkpoint with full state recovery
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose collective memory** - Persist to SQLite with WAL mode
-- **ALWAYS validate queen health** - Monitor queen heartbeat continuously
-- **ALWAYS track worker states** - Real-time worker status in shared memory
-- **NEVER skip consensus** - Critical decisions require configured consensus
-- **ALWAYS checkpoint sessions** - Save state at key milestones
+- [assert|emphatic] NEVER: lose collective memory** - Persist to SQLite with WAL mode [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate queen health** - Monitor queen heartbeat continuously [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track worker states** - Real-time worker status in shared memory [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip consensus** - Critical decisions require configured consensus [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: checkpoint sessions** - Save state at key milestones [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Verify queen coordination** - Check queen issued commands to all workers
@@ -52,6 +52,11 @@ author: Claude Flow Team
 
 
 # Hive Mind Advanced Skill
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Master the advanced Hive Mind collective intelligence system for sophisticated multi-agent coordination using queen-led architecture, Byzantine consensus, and collective memory.
 
@@ -803,3 +808,7 @@ Hive Mind Advanced represents the apex of multi-agent coordination in distribute
 The skill's unique contributions are: (1) queen-worker topology enables strategic oversight without micromanagement (queen delegates to worker expertise), (2) Byzantine consensus provides fault tolerance for mission-critical decisions while weighted consensus enables fast iteration, and (3) collective memory transforms ephemeral agent interactions into long-term organizational knowledge that improves with each execution.
 
 Use Hive Mind Advanced when coordinating 10+ specialized agents, implementing systems requiring fault-tolerant consensus (Byzantine or weighted), or building AI organizations that must learn and improve across sessions. The architecture scales from tactical execution (single queen, 6 workers) to multi-queen hierarchies (strategic queen -> tactical queens -> workers) for enterprise-scale automation. The key insight: collective intelligence emerges not from individual agent capability, but from coordination protocols, consensus mechanisms, and shared memory that enable agents to think and decide as a unified entity.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

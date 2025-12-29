@@ -8,6 +8,11 @@ triggers: ["typescript", "node.js", "express", "nest.js", "npm package", "typesc
 
 # TypeScript Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert TypeScript development for type-safe, scalable backend and full-stack applications with modern tooling.
 
 ## Purpose
@@ -641,27 +646,21 @@ function Log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
 - `mcp__memory-mcp__memory_store` for persisting TypeScript patterns
 
 ## Success Metrics
-
-**Development Speed**:
-- New API endpoint: 10-20 minutes
-- Service with business logic: 30-40 minutes
-- Full feature with tests: 1.5-2 hours
-
-**Type Safety**:
-- Compiler errors: 0
-- Type coverage: 100%
-- Runtime type errors: <1% of bugs
-
-**Build Performance**:
-- Full build: <30 seconds
-- Incremental build: <3 seconds
-- Dev server startup: <2 seconds
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
-**Maintained By**: typescript-specialist agent
+- [assert|neutral] *Development Speed**: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] New API endpoint: 10-20 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Service with business logic: 30-40 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Full feature with tests: 1.5-2 hours [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Type Safety**: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Compiler errors: 0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Type coverage: 100% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Runtime type errors: <1% of bugs [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Build Performance**: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Full build: <30 seconds [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Incremental build: <3 seconds [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Dev server startup: <2 seconds [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Maintained By**: typescript-specialist agent [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -709,3 +708,7 @@ TypeScript transforms JavaScript development by adding compile-time type safety 
 The TypeScript type system enables type-level programming that encodes business logic into types themselves. Mapped types transform existing types, conditional types enable type branching, and template literal types create precise string patterns. These features move validation from runtime to compile time, reducing bugs and improving developer experience through superior autocomplete and inline documentation.
 
 For production applications, TypeScript's integration with frameworks like Nest.js provides dependency injection, decorators, and middleware patterns that feel natural while remaining fully type-safe. Build tools like tsup and esbuild compile TypeScript rapidly, while dual module support (ESM + CommonJS) ensures compatibility across the Node.js ecosystem. Combined with Zod for runtime validation and Prettier for formatting, TypeScript creates a development experience that is both productive and safe, catching errors before they reach production while maintaining JavaScript's rapid iteration speed.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

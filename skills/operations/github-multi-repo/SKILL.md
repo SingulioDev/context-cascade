@@ -48,6 +48,11 @@ capabilities:
 
 # GitHub Multi-Repository Coordination Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Advanced multi-repository coordination system that combines swarm intelligence, package synchronization, and repository architecture optimization. This skill enables organization-wide automation, cross-project collaboration, and scalable repository management.
@@ -965,3 +970,7 @@ Eventual consistency enables parallel development by allowing repositories to sy
 Semantic versioning alignment is the contract that makes automated synchronization possible. Without semantic versioning discipline, every dependency update becomes a risky manual process requiring extensive regression testing. With semantic versioning, minor version bumps can be auto-deployed with confidence, patch versions can be auto-updated for security fixes, and major versions trigger migration guides and approval gates. The version compatibility matrix documents which package versions work together, enabling automated dependency resolution.
 
 The skills and workflows in this module provide battle-tested patterns for organization-wide automation, cross-package integration, and repository architecture optimization. Use the swarm coordination features for distributed workflows, the package synchronization tools for dependency alignment, and the architecture optimization patterns for repository structure standardization. Multi-repo mastery is not about manual coordination - it is about building automated systems that detect conflicts, propagate changes, and maintain consistency across distributed repositories without blocking parallel development.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

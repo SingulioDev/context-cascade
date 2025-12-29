@@ -1,5 +1,10 @@
 # SKILL: connascence-quality-gate
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## METADATA
 - **Name**: Connascence Quality Gate
 - **Category**: quality
@@ -186,9 +191,8 @@ Claude:
 - `testing-quality`: Test coverage verification
 
 ## SUCCESS CRITERIA
-
-- All code changes automatically audited
-- Quality issues surfaced immediately
-- Loop continues until quality passes
-- Final code has 0 critical, <=3 high violations
-- Completion promise only accepted when quality gate passes
+- [assert|neutral] All code changes automatically audited [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Quality issues surfaced immediately [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Loop continues until quality passes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Final code has 0 critical, <=3 high violations [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Completion promise only accepted when quality gate passes [ground:acceptance-criteria] [conf:0.90] [state:provisional]

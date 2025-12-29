@@ -1,4 +1,9 @@
 # hive-mind-consensus
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -38,3 +43,7 @@ Usage:
 ```bash
 npx claude-flow hive-mind hive-mind-consensus [options]
 ```
+
+
+---
+*Promise: `<promise>HIVE_MIND_CONSENSUS_VERIX_COMPLIANT</promise>`*

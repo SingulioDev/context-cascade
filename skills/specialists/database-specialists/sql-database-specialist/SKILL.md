@@ -8,6 +8,11 @@ triggers: ["sql", "postgresql", "mysql", "database optimization", "query optimiz
 
 # SQL Database Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert SQL database optimization, schema design, and performance tuning for PostgreSQL and MySQL.
 
 ## Purpose
@@ -432,16 +437,12 @@ LIMIT 10;
 - `mcp__memory-mcp__memory_store` for SQL patterns
 
 ## Success Metrics
-
-- Query p95 latency: <100ms
-- Index usage: ≥95% of queries
-- Connection pool utilization: 60-80%
-- Database uptime: 99.99%
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
+- [assert|neutral] Query p95 latency: <100ms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Index usage: ≥95% of queries [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Connection pool utilization: 60-80% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Database uptime: 99.99% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -561,3 +562,7 @@ Before choosing database strategy, answer:
 6. **Caching** Redis layer for hot paths
 7. **Operations** connection pooling + vacuum
 8. **Trade-offs** explain why SQL over alternatives
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

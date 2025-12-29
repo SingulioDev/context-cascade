@@ -45,9 +45,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -66,6 +66,11 @@ One-line description of what this command does.
 
 
 # 🎯 API Designer - RESTful API Design Specialist
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 **Agent**: API Architect | **Category**: SPARC Specialists | **Loop**: Loop 2 Implementation
 
@@ -487,3 +492,7 @@ npx claude-flow@alpha memory store \
 **Agent Status**: Production-Ready
 **Version**: 2.0.0
 **Last Updated**: 2025-11-01
+
+
+---
+*Promise: `<promise>API_DESIGNER_VERIX_COMPLIANT</promise>`*

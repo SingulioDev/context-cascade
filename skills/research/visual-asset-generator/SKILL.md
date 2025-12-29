@@ -16,11 +16,11 @@
 - When time constrained (<1 hour, use pre-made assets)
 
 ### Success Criteria
-- High-resolution publication-ready assets (300+ DPI, vector formats)
-- Clear labels, legends, and captions
-- Colorblind-friendly palettes (viridis, cividis)
-- Consistent style across all figures (fonts, colors, line widths)
-- Source files included (SVG, PDF, Python/R scripts)
+- [assert|neutral] High-resolution publication-ready assets (300+ DPI, vector formats) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Clear labels, legends, and captions [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Colorblind-friendly palettes (viridis, cividis) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Consistent style across all figures (fonts, colors, line widths) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Source files included (SVG, PDF, Python/R scripts) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Complex architectures: use hierarchical layouts, group related components
@@ -67,6 +67,11 @@ mcp_servers:
 ---
 
 # Visual Asset Generator
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 
@@ -591,3 +596,7 @@ Visual asset generation automates one of the most time-consuming aspects of rese
 The ethical foundation of this skill ensures that automation enhances rather than replaces human judgment. Unlike tools that generate plausible-looking data visualizations from thin air, this skill creates honest structural scaffolds that researchers populate with their actual findings. The clear distinction between template structures and required data insertion prevents the most dangerous failure mode of research automation - the inadvertent fabrication of results.
 
 As research publication demands increase while quality standards remain stringent, tools that accelerate legitimate visualization become essential infrastructure. The visual asset generator demonstrates that speed and integrity are compatible goals - when properly designed, automation can enhance both the efficiency and the quality of research communication. By reducing the mechanical burden of figure creation, this skill allows researchers to focus on what matters most: clearly communicating genuine scientific insights.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

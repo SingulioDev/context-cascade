@@ -1,4 +1,9 @@
 # agent-capabilities
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Command-Specific Requirements
 
 ### Agent Creation Parameters
@@ -41,3 +46,7 @@ npx claude-flow agents capabilities
 # For specific agent
 npx claude-flow agents capabilities --type coder
 ```
+
+
+---
+*Promise: `<promise>AGENT_CAPABILITIES_VERIX_COMPLIANT</promise>`*

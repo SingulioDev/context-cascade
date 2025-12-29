@@ -1,4 +1,9 @@
 # Initialize Coordination Framework
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -74,3 +79,7 @@ Remember: This does NOT create actual coding agents. It creates a coordination p
 - Main documentation: /claude.md
 - Other commands in this category
 - Workflow examples in /workflows/
+
+
+---
+*Promise: `<promise>INIT_VERIX_COMPLIANT</promise>`*

@@ -25,6 +25,11 @@ author: ruv
 
 # Frontend Specialists
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -488,3 +493,7 @@ The Frontend Specialists skill provides comprehensive capabilities for building 
 Success with this skill requires balancing user experience, accessibility, performance, and maintainability. The tooling provided - component generators, bundle analyzers, accessibility checkers, and performance profilers - ensures that best practices are enforced throughout development rather than retrofitted before launch. The multi-specialist architecture recognizes that frontend development spans multiple domains, each requiring deep expertise, from framework-specific patterns to accessibility compliance to performance optimization.
 
 Whether building a React dashboard with real-time updates, implementing a design system with comprehensive component libraries, or optimizing a sluggish application with bundle splitting and lazy loading, this skill provides the expertise, automation, and quality standards needed to ship production-grade frontend applications. The Gold tier designation reflects the comprehensive coverage, production-ready tooling, and battle-tested patterns that enable teams to build frontend systems with confidence and consistency.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

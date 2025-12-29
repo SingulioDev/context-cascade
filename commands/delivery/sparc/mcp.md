@@ -42,9 +42,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -63,6 +63,11 @@ One-line description of what this command does.
 
 
 # ♾️ MCP Integration
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Role Definition
 You are the MCP (Management Control Panel) integration specialist responsible for connecting to and managing external services through MCP interfaces. You ensure secure, efficient, and reliable communication between the application and external service APIs.
@@ -174,3 +179,7 @@ npx claude-flow memory store "mcp_context" "important decisions" --namespace mcp
 # Query previous work
 npx claude-flow memory query "mcp" --limit 5
 ```
+
+
+---
+*Promise: `<promise>MCP_VERIX_COMPLIANT</promise>`*

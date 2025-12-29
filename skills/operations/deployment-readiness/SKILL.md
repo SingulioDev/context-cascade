@@ -50,6 +50,11 @@ cognitive_frame:
 
 # Deployment Readiness
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Validate ML models and systems for production deployment, ensuring operational readiness across performance, monitoring, security, and incident management dimensions.
 
 ---
@@ -1064,3 +1069,7 @@ Use this skill as Quality Gate 3 in the Deep Research SOP pipeline, or as the fi
 The framework enforces three critical validations: production performance benchmarks (not development machine performance), monitoring infrastructure operational before deployment (not added reactively after incidents), and tested rollback procedures (not improvised during outages). These validations are often skipped under deadline pressure, creating technical debt that manifests as extended production incidents.
 
 Success requires treating deployment readiness as non-negotiable - partial passes are failures. The difference between reliable ML systems and incident-prone systems is operational discipline, not model sophistication. This skill ensures operational readiness meets the same rigorous standards as model accuracy.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

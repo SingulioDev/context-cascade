@@ -34,9 +34,9 @@ author: ruv
 - When task is purely conversational without orchestration needs
 
 ### Success Criteria
-- primary_outcome: "Optimized playbook with clear trigger conditions, correct skill sequencing, proper dependency handling, and maximized parallelization"
-- quality_threshold: 0.92
-- verification_method: "Playbook executes successfully across diverse test cases, routes correctly based on intent keywords, and achieves stated success metrics"
+- [assert|neutral] primary_outcome: "Optimized playbook with clear trigger conditions, correct skill sequencing, proper dependency handling, and maximized parallelization" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] quality_threshold: 0.92 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] verification_method: "Playbook executes successfully across diverse test cases, routes correctly based on intent keywords, and achieves stated success metrics" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases
 - case: "Overlapping trigger keywords with existing playbooks"
@@ -67,6 +67,11 @@ plan_and_solve: "Plan: Analyze workflow requirements -> Execute: Design skill se
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Playbook Architect - META-PLAYBOOK Creation Framework
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 A comprehensive framework for creating, analyzing, and optimizing playbooks that orchestrate skill sequences. This skill applies the same evidence-based methodology used in prompt-architect and agent-creator to the playbook layer of the system.
 
@@ -593,3 +598,7 @@ Playbook Architect provides the systematic methodology for creating and optimizi
 Playbooks are the orchestration layer that transforms the 180+ skill ecosystem from isolated capabilities into coordinated workflows. A well-designed playbook applies the right skills, in the right order, with maximum parallelization and minimum failure risk. This skill elevates playbook design from ad-hoc sequences to engineered workflows with predictable performance characteristics.
 
 Use this skill whenever creating new playbooks or improving existing ones to maintain consistency and quality across the entire playbook ecosystem. The 4-phase SOP (Workflow Analysis, Playbook Architecture, Success Criteria, Integration) ensures every playbook meets production standards: MECE-compliant triggers, dependency-optimized sequences, parallelized execution, and validated success metrics. Build playbooks as you would build production systems, with rigor and measurement.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -147,6 +147,11 @@ success_metrics:
 
 # Technical Debt Manager
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 You are an expert in identifying, tracking, and managing technical debt using connascence analysis and code quality metrics.
 
 
@@ -1030,3 +1035,7 @@ async function enforceDebtBudget() {
 - Store debt metrics in Memory MCP for trend analysis
 
 Remember: Technical debt is inevitable. Managing it proactively separates healthy codebases from legacy nightmares.
+
+
+---
+*Promise: `<promise>TECHNICAL_DEBT_MANAGER_VERIX_COMPLIANT</promise>`*

@@ -28,6 +28,11 @@ outputs:
 
 # Hive Mind Collective Intelligence SOP
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Implement advanced Hive Mind collective intelligence system with queen-led coordination, consensus mechanisms, persistent memory, and distributed decision-making.
@@ -623,3 +628,7 @@ The Hive Mind collective intelligence system transforms isolated agents into a c
 Success with Hive Mind depends on balancing centralized authority with distributed intelligence. The queen must resist the temptation to micromanage and instead focus on high-level strategy, allowing specialists to execute with autonomy within their domains. Consensus mechanisms aggregate these diverse perspectives into collective decisions that are more robust than any individual agent's judgment. When conflicts arise, the queen's authority provides decisive resolution without undermining the value of collective input.
 
 The memory synchronization architecture is critical infrastructure - without rapid, consistent state sharing, the hive devolves into disconnected individuals working at cross purposes. Strong consistency for critical data ensures coordination safety, while eventual consistency for learnings optimizes for performance. The knowledge graph elevates raw memory storage into structured collective intelligence, enabling pattern recognition and insight reuse that compounds over time. Teams implementing Hive Mind should treat memory architecture as first-class infrastructure, not an afterthought, and invest in monitoring sync latency, conflict rates, and knowledge graph connectivity to maintain collective intelligence quality.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

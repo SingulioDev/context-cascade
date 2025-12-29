@@ -6,6 +6,11 @@ description: Creates specialized AI agents with optimized system prompts using t
 
 # Agent Creator - Enhanced with 5-Phase SOP Methodology (v3.0)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 This skill provides the **official comprehensive framework** for creating specialized AI agents, integrating the proven 5-phase methodology (v3.0 adds Phase 0.5 cognitive frame selection) from Desktop .claude-flow with Claude Agent SDK implementation and evidence-based prompting techniques.
 
 ## Trigger Keywords
@@ -1182,3 +1187,7 @@ Use Agent Creator when building production-ready agents for domains requiring co
 - Basic agent creation workflow
 - Claude Agent SDK implementation
 - Evidence-based prompting techniques (self-consistency, PoT, plan-and-solve)
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

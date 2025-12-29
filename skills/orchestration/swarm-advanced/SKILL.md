@@ -23,11 +23,11 @@ author: Claude Flow Team
 - **Trivial changes** to single files
 
 ### Success Criteria
-- **Agent+skill matrix generated** with optimal assignments
-- **Parallel execution successful** with 8.3x speedup achieved
-- **Theater detection passes** with 0% theater detected
-- **Integration tests pass** at 100% rate
-- **All agents complete** with no orphaned workers
+- [assert|neutral] *Agent+skill matrix generated** with optimal assignments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Parallel execution successful** with 8.3x speedup achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Theater detection passes** with 0% theater detected [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Integration tests pass** at 100% rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All agents complete** with no orphaned workers [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Implement agent health monitoring and replacement
@@ -37,11 +37,11 @@ author: Claude Flow Team
 - **Conflicting outputs** - Implement merge conflict resolution strategy
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose agent state** - Persist agent progress to memory continuously
-- **ALWAYS track swarm health** - Monitor all agent statuses in real-time
-- **ALWAYS validate consensus** - Require 4/5 agreement for theater detection
-- **NEVER skip theater audit** - Zero tolerance, any theater blocks merge
-- **ALWAYS cleanup workers** - Terminate agents on completion/failure
+- [assert|emphatic] NEVER: lose agent state** - Persist agent progress to memory continuously [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track swarm health** - Monitor all agent statuses in real-time [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate consensus** - Require 4/5 agreement for theater detection [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip theater audit** - Zero tolerance, any theater blocks merge [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup workers** - Terminate agents on completion/failure [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Check all agent statuses** - Verify each agent completed successfully
@@ -52,6 +52,11 @@ author: Claude Flow Team
 
 
 # Advanced Swarm Orchestration
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Master advanced swarm patterns for distributed research, development, and testing workflows. This skill covers comprehensive orchestration strategies using both MCP tools and CLI commands.
 
@@ -1073,3 +1078,7 @@ Key takeaways:
 - Fault tolerance through health monitoring (heartbeat every 5-10s), failure detection (3 missed = dead), and recovery strategy (spawn replacement or redistribute work)
 
 Use this skill when 3+ independent tasks exist with domain-specific requirements requiring parallel multi-agent execution (research, development, testing, analysis workflows), complex implementation (6+ tasks), theater-free development (0% tolerance validation), or high-quality delivery (Byzantine consensus). Avoid for single-agent tasks, simple sequential work (<2 hours), or trivial changes where coordination overhead exceeds parallelization benefits.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

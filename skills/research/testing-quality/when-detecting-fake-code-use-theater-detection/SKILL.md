@@ -25,6 +25,11 @@ hooks:
 
 # Theater Code Detection
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## When to Use This Skill
 
 **Trigger Conditions:**
@@ -1224,3 +1229,7 @@ Theater code detection addresses a critical gap in software quality assurance: c
 The three-phase approach (scan, analyze, execute) provides increasing confidence at each stage. Pattern scanning identifies suspicious code quickly (empty catches, no-ops), implementation analysis reduces false positives by examining logic depth, and execution validation definitively confirms theater by running code with realistic inputs. This layered validation ensures high detection accuracy while minimizing wasted effort on false alarms.
 
 Theater detection is particularly crucial in modern development environments where AI code generation and rapid prototyping are common. AI tools excel at creating structurally correct code but may generate placeholders or incomplete implementations that look convincing. By systematically validating functionality through execution, teams can maintain confidence that their codebase delivers genuine value rather than just the appearance of completeness. The skill's automated fix capabilities and comprehensive reporting ensure detected issues lead to actionable improvements, not just documentation of problems.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -1,5 +1,10 @@
 # Network Traffic Analysis Command
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Key quality/security command improvements:
 - Audit scope definition
 - Quality thresholds
@@ -503,3 +508,7 @@ mcp__ruv-swarm__task_orchestrate({
 **Security Level**: HIGH
 **Last Updated**: 2025-11-01
 **Maintainer**: Network Security Specialist
+
+
+---
+*Promise: `<promise>NETWORK_TRAFFIC_VERIX_COMPLIANT</promise>`*

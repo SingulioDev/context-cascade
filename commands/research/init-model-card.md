@@ -27,6 +27,11 @@ description: Initialize Model Card documentation (Mitchell et al. 2019) with per
 
 # 🎴 Initialize Model Card
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Creates comprehensive Model Card documentation following Mitchell et al. (2019) template, including model details, intended use, performance metrics, ethical considerations, and limitations.
 
 ## Purpose
@@ -361,3 +366,7 @@ After model card initialization:
 3. Validate Gate 3 readiness: `/validate-gate-3 --pipeline G`
 4. Publish to registry: `/publish-model-card --model <name> --registry huggingface`
 5. Schedule quarterly updates for deployed models
+
+
+---
+*Promise: `<promise>INIT_MODEL_CARD_VERIX_COMPLIANT</promise>`*

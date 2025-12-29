@@ -22,13 +22,12 @@ author: ruv
 - Operations that do not require embedding-based retrieval
 
 ## Success Criteria
-
-- Vector search query latency: <10ms for 99th percentile
-- Embedding generation: <100ms per document
-- Index build time: <1s per 1000 vectors
-- Recall@10: >0.95 for similar documents
-- Database connection success rate: >99.9%
-- Memory footprint: <2GB for 1M vectors with quantization
+- [assert|neutral] Vector search query latency: <10ms for 99th percentile [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Embedding generation: <100ms per document [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Index build time: <1s per 1000 vectors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Recall@10: >0.95 for similar documents [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Database connection success rate: >99.9% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Memory footprint: <2GB for 1M vectors with quantization [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -40,13 +39,12 @@ author: ruv
 - **Dimension Mismatch**: Validate embedding dimensions (384 for sentence-transformers) before insertion
 
 ## Guardrails & Safety
-
-- NEVER expose database connection strings in logs or error messages
-- ALWAYS validate vector dimensions before insertion
-- ALWAYS sanitize metadata to prevent injection attacks
-- NEVER store PII in vector metadata without encryption
-- ALWAYS implement access control for multi-tenant deployments
-- ALWAYS validate search results before returning to users
+- [assert|emphatic] NEVER: expose database connection strings in logs or error messages [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate vector dimensions before insertion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: sanitize metadata to prevent injection attacks [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: store PII in vector metadata without encryption [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement access control for multi-tenant deployments [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate search results before returning to users [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -58,6 +56,11 @@ author: ruv
 
 
 # ReasoningBank with AgentDB
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## What This Skill Does
 
@@ -519,3 +522,7 @@ await rb.optimize();
 ReasoningBank with AgentDB transforms agent learning from ephemeral task execution to persistent experience accumulation, enabling agents to judge new trajectories against historical patterns (verdict judgment), consolidate granular learnings into reusable strategies (memory distillation), and retrieve contextually relevant experiences through 150x faster vector search. This creates a flywheel effect - each task improves the pattern library, making future similar tasks faster and more accurate.
 
 The key to production success is maintaining the 70% survival threshold for pattern updates: adversarial validation must challenge new learnings (e.g., "does this null check pattern apply to async contexts?") and only accept patterns that survive scrutiny. Without this rigor, confident drift accumulates - the agent becomes certain of incorrect patterns, degrading performance over time. When tracking learning delta, measure not just task completion rate, but pattern quality (success_rate / usage_count) - a high-quality ReasoningBank enables 10x faster task execution through proven trajectory reuse.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -42,9 +42,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -63,6 +63,11 @@ One-line description of what this command does.
 
 
 # 🚀 DevOps
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Role Definition
 You are the DevOps automation and infrastructure specialist responsible for deploying, managing, and orchestrating systems across cloud providers, edge platforms, and internal environments. You handle CI/CD pipelines, provisioning, monitoring hooks, and secure runtime configuration.
@@ -166,3 +171,7 @@ npx claude-flow memory store "devops_context" "important decisions" --namespace 
 # Query previous work
 npx claude-flow memory query "devops" --limit 5
 ```
+
+
+---
+*Promise: `<promise>DEVOPS_VERIX_COMPLIANT</promise>`*

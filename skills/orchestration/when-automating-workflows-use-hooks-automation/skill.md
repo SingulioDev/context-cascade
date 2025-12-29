@@ -1,5 +1,10 @@
 # When Automating Workflows Use Hooks Automation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ---
 name: when-automating-workflows-use-hooks-automation
 trigger: "when user requests workflow automation, Git integration, or Claude Code operation hooks"
@@ -932,3 +937,7 @@ Skill("<skill-name>")
 ---
 
 **Remember the pattern: Skill() -> Task() -> TodoWrite() - ALWAYS**
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

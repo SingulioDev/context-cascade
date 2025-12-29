@@ -30,6 +30,11 @@ memory_pattern: "product-launch/{launch-id}/phase-{N}/{agent}/{deliverable}"
 
 # Product Launch Orchestration Workflow
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Complete end-to-end product launch workflow orchestrating 15+ specialist agents across research, development, marketing, launch execution, and post-launch monitoring. Designed for comprehensive product launches requiring coordination across technical, marketing, sales, and operations teams.
 
 ## Overview
@@ -966,3 +971,7 @@ Orchestrated product launches transform chaotic, ad-hoc release processes into s
 The phased approach with explicit gates prevents the most common launch failures - building products without market validation, deploying without production readiness, or launching without marketing support. Each gate acts as quality checkpoint forcing teams to pause and validate assumptions before proceeding. The cross-functional coordination pattern recognizes that product launches require simultaneous progress across engineering, marketing, sales, and operations - sequential handoffs between teams add weeks of latency and information loss that compound into launch delays.
 
 Success depends on disciplined memory coordination where every agent documents deliverables in the shared namespace following the established pattern. This enables downstream phases to retrieve exactly the context needed without searching or reconstructing knowledge. The weekly optimization cycle in Phase 5 closes the feedback loop, capturing launch learnings that improve future executions. Teams must resist the temptation to skip phases or compress timelines - the 10-week duration reflects realistic minimum time required for comprehensive market research, quality development, effective marketing, and production-ready deployment. Rushing these phases inevitably surfaces as launch day failures that damage product reputation far more than modest timeline extensions.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

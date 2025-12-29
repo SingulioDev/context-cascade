@@ -16,12 +16,12 @@
 - Prototyping without production requirements
 
 ### Success Criteria
-- Research phase complete with 3-5+ credible sources analyzed
-- 5 pre-mortem cycles executed, failure modes identified
-- Multi-agent consensus achieved (3+ agents agree on plan)
-- Plan accuracy >97% (validated against similar past projects)
-- Best practices documented with citations
-- Dependencies and parallelization strategy clearly defined
+- [assert|neutral] Research phase complete with 3-5+ credible sources analyzed [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 5 pre-mortem cycles executed, failure modes identified [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Multi-agent consensus achieved (3+ agents agree on plan) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Plan accuracy >97% (validated against similar past projects) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Best practices documented with citations [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Dependencies and parallelization strategy clearly defined [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Limited research sources: expand to Tier 3 (expert blogs), flag limitations
@@ -61,6 +61,11 @@ author: ruv
 ---
 
 # Research-Driven Planning (Loop 1)
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 
@@ -865,3 +870,7 @@ Research-driven planning represents a fundamental shift from traditional softwar
 The three-phase architecture (research, planning, execution) with Byzantine consensus ensures that plans are not only thorough but battle-tested against multiple analytical perspectives. The integration with Loop 3 creates a continuous improvement cycle where each project's actual failures refine future planning accuracy. This transforms planning from a one-time guess into an evolving, evidence-based discipline that becomes more effective with each iteration.
 
 As software complexity increases and the cost of failed implementations rises, the value of rigorous upfront planning grows proportionally. Research-driven planning demonstrates that the apparent trade-off between planning speed and quality is false - by parallelizing research agents and automating pre-mortem analysis, this skill delivers both comprehensive planning and reasonable timelines. The result is a sustainable approach to complex project delivery that prevents problems rather than merely reacting to them.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

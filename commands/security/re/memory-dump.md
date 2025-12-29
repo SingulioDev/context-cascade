@@ -1,5 +1,10 @@
 # Memory Dump Analysis Command
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Key quality/security command improvements:
 - Audit scope definition
 - Quality thresholds
@@ -500,3 +505,7 @@ mcp__ruv-swarm__task_orchestrate({
 **Security Level**: CRITICAL
 **Last Updated**: 2025-11-01
 **Maintainer**: Digital Forensics Specialist
+
+
+---
+*Promise: `<promise>MEMORY_DUMP_VERIX_COMPLIANT</promise>`*

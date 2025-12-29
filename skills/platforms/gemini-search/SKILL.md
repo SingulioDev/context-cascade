@@ -7,6 +7,11 @@ version: 1.0.0
 
 # Gemini Search Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 Leverage Gemini CLI's built-in Google Search grounding to fetch real-time web information, validate current best practices, and access the latest documentation - capabilities Claude Code doesn't have natively.
 
@@ -253,14 +258,11 @@ For security or architecture decisions:
 - `multi-model`: Let orchestrator decide when to search
 
 ## Success Indicators
-
-✅ Got current, accurate information with sources
-✅ Found latest API documentation
-✅ Identified breaking changes or updates
-✅ Validated best practices against current standards
-✅ Discovered security advisories or patches
-✅ Sources are authoritative and recent
-
----
-
-**Remember**: Use Gemini Search for CURRENT information Claude Code doesn't have access to. Always verify critical information from multiple sources.
+- [assert|neutral] ✅ Got current, accurate information with sources [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Found latest API documentation [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Identified breaking changes or updates [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Validated best practices against current standards [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Discovered security advisories or patches [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Sources are authoritative and recent [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Remember**: Use Gemini Search for CURRENT information Claude Code doesn't have access to. Always verify critical information from multiple sources. [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`* [ground:acceptance-criteria] [conf:0.90] [state:provisional]

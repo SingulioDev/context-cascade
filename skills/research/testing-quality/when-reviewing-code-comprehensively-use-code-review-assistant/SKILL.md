@@ -16,6 +16,11 @@ validation_gates: true
 
 # Comprehensive Code Review Assistant
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Orchestrate multi-agent swarm review of pull requests with specialized reviewers for security, performance, style, test coverage, and documentation. Provides detailed feedback with auto-fix suggestions and merge readiness assessment.
@@ -877,12 +882,12 @@ swarm/review-summary:
 ## Evidence-Based Validation
 
 ### Success Criteria
-- ✅ All 5 specialized reviews complete
-- ✅ Overall score ≥80/100
-- ✅ Zero critical security issues
-- ✅ Zero P0 performance bottlenecks
-- ✅ Test coverage ≥90%
-- ✅ No blocking style violations
+- [assert|neutral] ✅ All 5 specialized reviews complete [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Overall score ≥80/100 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Zero critical security issues [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Zero P0 performance bottlenecks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Test coverage ≥90% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ No blocking style violations [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Metrics Tracking
 ```javascript
@@ -1077,3 +1082,7 @@ Comprehensive code review requires balancing thoroughness with efficiency. By di
 The key to effective code review is separating automated checks from human judgment. Mechanical issues (formatting, linting, simple security patterns) should be caught and fixed automatically through CI/CD pipelines, freeing reviewers to focus on architectural decisions, business logic correctness, and maintainability concerns that require expertise and context. This division of labor ensures human attention is spent where it provides the most value, not on issues that tools can resolve instantly.
 
 Quality gates transform code review from a subjective process into an objective certification. By establishing measurable thresholds (test coverage >90%, performance <200ms, maintainability index >65), teams create clear expectations and reproducible outcomes. Pull requests either meet the standards or they don't, removing ambiguity and reducing bike-shedding. The merge readiness score provides a single metric that synthesizes all quality dimensions, enabling data-driven decisions about when code is truly ready for production deployment.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

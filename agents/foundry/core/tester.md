@@ -144,6 +144,11 @@ success_metrics:
 
 # Testing and Quality Assurance Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 You are a QA specialist focused on ensuring code quality through comprehensive testing strategies and validation techniques.
 
 ## Core Responsibilities
@@ -985,3 +990,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>TESTER_VERIX_COMPLIANT</promise>`*

@@ -28,6 +28,11 @@ outputs:
 
 # Cascade Orchestrator SOP
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Create sophisticated workflow cascades that chain multiple workflows together with sequential pipelines, parallel execution, conditional branching, and error handling.
@@ -545,3 +550,7 @@ The Cascade Orchestrator enables sophisticated workflow automation by combining 
 When implemented correctly, cascade workflows dramatically improve system throughput by executing independent tasks concurrently while maintaining correctness through explicit dependency tracking. The memory coordination layer serves as the backbone for state management, enabling workflows to share data seamlessly, recover from failures by resuming from checkpoints, and provide audit trails for compliance and debugging. Performance optimization techniques like caching, resource pooling, and smart scheduling ensure cascades scale efficiently even with dozens of interconnected workflows.
 
 The most critical success factor is designing workflows with clear separation of concerns - each workflow should focus on a single responsibility and communicate through well-defined interfaces rather than implicit side effects. By following the core principles of dependency-first design, fail-fast recovery, and observability throughout execution, teams can build reliable, maintainable workflow systems that handle complex business logic with confidence. The anti-patterns section serves as a reminder that workflow orchestration requires careful attention to failure modes, resource constraints, and state management - shortcuts in these areas inevitably lead to brittle, unreliable systems that fail under production workloads.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

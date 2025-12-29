@@ -15,6 +15,11 @@ tags:
 
 # Eval Harness (Frozen Evaluation)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Gate ALL self-improvement changes with objective evaluation.
@@ -705,3 +710,7 @@ The eval harness is the foundation of trustworthy self-improvement systems. By f
 Goodhart's Law warns us: "When a measure becomes a target, it ceases to be a good measure." The eval harness resists this by remaining immutable - improvements must adapt to the harness, not the other way around. This asymmetry is not a limitation but a feature: it forces rigorous engineering instead of metric gaming.
 
 Remember: a self-improvement loop is only as good as its evaluation harness. Invest in comprehensive benchmarks, regression tests, and human oversight. Treat the harness as infrastructure - boring, reliable, and never exciting. When the harness is solid, you can innovate with confidence knowing that regressions will be caught before they reach production.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

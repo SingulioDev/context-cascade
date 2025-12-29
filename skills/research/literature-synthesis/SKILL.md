@@ -16,12 +16,12 @@
 - Time-constrained projects (<1 week turnaround)
 
 ### Success Criteria
-- Minimum 50 papers reviewed (Quality Gate 1)
-- PRISMA flow diagram generated
-- SOTA benchmarks extracted and tabulated
-- Research gaps identified with 3+ citations
-- BibTeX database with complete metadata
-- All claims cross-referenced with 2+ independent sources
+- [assert|neutral] Minimum 50 papers reviewed (Quality Gate 1) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] PRISMA flow diagram generated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] SOTA benchmarks extracted and tabulated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Research gaps identified with 3+ citations [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] BibTeX database with complete metadata [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All claims cross-referenced with 2+ independent sources [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Paywalled papers: institutional access, contact authors, preprints
@@ -61,6 +61,11 @@ author: ruv
 ---
 
 # Literature Synthesis
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Conduct systematic literature reviews following PRISMA guidelines, synthesizing state-of-the-art research to identify gaps and opportunities for Deep Research SOP Phase 1.
 
@@ -829,3 +834,7 @@ Use this skill at the start of research projects (Deep Research SOP Phase 1) whe
 
 ---
 
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

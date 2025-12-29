@@ -22,15 +22,14 @@ Use this skill when configuring sandbox network isolation, setting up trusted do
 Do NOT use for production network security (use infrastructure-as-code instead), configuring firewall rules on live systems, bypassing organizational network policies, or setting up VPNs and network routing (use networking specialists). Avoid for troubleshooting network connectivity issues unrelated to sandbox security.
 
 ## Success Criteria
-
-- Trusted domain whitelist validated (all required domains accessible, untrusted blocked)
-- Network isolation prevents data exfiltration attacks (tested with simulated exfil)
-- Internal registries accessible through proper proxy configuration
-- Environment variables secured (no secrets in config files)
-- Zero false positives (legitimate development work unblocked)
-- Package installations succeed from approved registries
-- Build and deployment commands execute without network errors
-- Validation tests pass (npm install, git clone, API calls to approved domains)
+- [assert|neutral] Trusted domain whitelist validated (all required domains accessible, untrusted blocked) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Network isolation prevents data exfiltration attacks (tested with simulated exfil) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Internal registries accessible through proper proxy configuration [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Environment variables secured (no secrets in config files) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Zero false positives (legitimate development work unblocked) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Package installations succeed from approved registries [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Build and deployment commands execute without network errors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Validation tests pass (npm install, git clone, API calls to approved domains) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Challenges
 
@@ -44,19 +43,18 @@ Do NOT use for production network security (use infrastructure-as-code instead),
 - Proxy auto-configuration (PAC) files with complex logic
 
 ## Guardrails (CRITICAL SECURITY RULES)
-
-- NEVER disable network isolation without security review
-- NEVER add untrusted domains to whitelist without validation
-- NEVER store secrets (API keys, passwords) in sandbox configuration files
-- NEVER bypass proxy settings to access restricted resources
-- NEVER allow wildcard domain patterns without justification (*.com = insecure)
-- ALWAYS validate domain ownership before whitelisting
-- ALWAYS use HTTPS for external domains (enforce TLS)
-- ALWAYS document why each domain is trusted (justification required)
-- ALWAYS test that untrusted domains are blocked (negative testing)
-- ALWAYS use environment variable references for secrets (not plaintext)
-- ALWAYS maintain audit logs of network policy changes
-- ALWAYS validate network policies after configuration changes
+- [assert|emphatic] NEVER: disable network isolation without security review [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: add untrusted domains to whitelist without validation [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: store secrets (API keys, passwords) in sandbox configuration files [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: bypass proxy settings to access restricted resources [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: allow wildcard domain patterns without justification (*.com = insecure) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate domain ownership before whitelisting [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: use HTTPS for external domains (enforce TLS) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: document why each domain is trusted (justification required) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: test that untrusted domains are blocked (negative testing) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: use environment variable references for secrets (not plaintext) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: maintain audit logs of network policy changes [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate network policies after configuration changes [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -69,6 +67,11 @@ All network security configurations MUST be validated through:
 6. **Penetration testing** - Attempt data exfiltration to verify isolation
 
 # Network Security Setup
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 Configure Claude Code sandbox network isolation policies including trusted domain whitelisting, custom access rules, and secure environment variable management.
@@ -501,3 +504,7 @@ Network Security Setup is the foundational defense layer for AI-assisted develop
 The skill balances security with developer productivity by maintaining curated lists of approved package registries, source control platforms, and CDN services. Enterprise deployments extend this with internal registries and corporate proxy configurations, enabling secure development in air-gapped or restricted network environments. The result is a zero-trust sandbox where legitimate development proceeds unimpeded while malicious network activity is blocked by default.
 
 Use this skill when configuring new Claude Code installations, hardening sandbox security for sensitive projects, or implementing corporate security policies for AI-assisted development. The validation checklist ensures configurations are correct before deployment, preventing both false positives (blocking legitimate development) and false negatives (allowing malicious traffic). Combined with secret separation principles, this skill establishes the security baseline required for production use of AI code generation tools.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -34,13 +34,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -84,6 +83,11 @@ This skill integrates with:
 
 # SOP: Dogfooding Quality Detection
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Loop 1 of 3-Part System**: Code Quality Detection → Memory Storage
 
 **Purpose**: Automatically detect code quality violations and store findings for cross-session learning
@@ -111,13 +115,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -192,13 +195,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -293,13 +295,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -430,13 +431,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -601,13 +601,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -721,13 +720,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -837,13 +835,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -960,13 +957,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -1037,13 +1033,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -1125,13 +1120,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -1215,13 +1209,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -1363,3 +1356,7 @@ SOP Dogfooding Quality Detection provides the foundation for continuous quality 
 Use this skill as the entry point into the 3-part dogfooding system when you need to audit code quality on production codebases and build institutional memory of violation patterns. Detection operates on real code (not synthetic test cases), catches violations in agent-generated output, and enables data-driven quality improvement by tracking which violation types are most common and trending over time. Integration with Memory MCP closes the loop - Phase 1 detects issues, Phase 2 retrieves proven fix patterns, Phase 3 applies corrections with safety validation.
 
 Success requires treating detection as continuous rather than one-time - quality degrades without ongoing monitoring. Teams that run daily detection cycles experience continuous improvement as violation rates decrease over time through automated remediation. The validation threshold (2+ confirming signals) and context awareness (<5% false positive rate) ensure findings are actionable and teams trust the system enough to act on recommendations. The result is systematic quality improvement driven by empirical evidence rather than subjective code review.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

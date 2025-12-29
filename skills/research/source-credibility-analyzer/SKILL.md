@@ -9,6 +9,11 @@ quality_gates: 5
 
 # Source Credibility Analyzer
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Automate evaluation of research sources using transparent program-of-thought rubrics. Outputs structured JSON with credibility, bias, and priority scores (1-5) plus explanations showing calculation logic. Can be used as standalone tool OR integrated into general-research-workflow Step 3.
@@ -580,3 +585,7 @@ Each example: Input → Calculations → Output JSON → Explanation
 ---
 
 **Program-of-Thought Principle**: "Make scoring transparent, auditable, and reproducible through explicit calculations"
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

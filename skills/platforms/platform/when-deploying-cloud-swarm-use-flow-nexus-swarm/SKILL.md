@@ -1,5 +1,10 @@
 # Flow Nexus Cloud Swarm Deployment SOP
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ```yaml
 metadata:
   skill_name: when-deploying-cloud-swarm-use-flow-nexus-swarm
@@ -1130,3 +1135,7 @@ This Flow Nexus Cloud Swarm Deployment skill enables sophisticated multi-agent c
 The skill's emphasis on topology selection, agent specialization, and observability distinguishes it from ad-hoc multi-agent approaches. Rather than simply spawning multiple agents and hoping for emergent coordination, it enforces intentional design: matching topology to task structure, assigning clear responsibilities, and continuously monitoring performance to inform scaling decisions. This structured approach prevents common pitfalls like coordination bottlenecks, unclear accountability, and resource waste that plague unmanaged swarm deployments.
 
 For organizations building production AI swarms, this workflow provides the operational foundation for reliable, scalable multi-agent systems. The comprehensive monitoring dashboards, auto-scaling policies, and performance analysis created during deployment become critical operational assets, enabling teams to manage complex distributed workflows with confidence while maintaining predictable costs and response times.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

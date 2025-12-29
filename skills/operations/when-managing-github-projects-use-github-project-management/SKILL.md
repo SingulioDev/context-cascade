@@ -15,6 +15,11 @@ mcp_tools:
 
 # GitHub Project Management Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Automate and orchestrate GitHub project management workflows using intelligent agent coordination. This skill provides comprehensive project management capabilities including automated issue triage, sprint planning, milestone tracking, project board synchronization, and team coordination through GitHub Projects v2 integration.
@@ -604,3 +609,7 @@ Effective automation requires three foundations: rich metadata (labels, custom f
 The agent coordination patterns (star topology with central coordinator, specialized agents for triage/planning/board-sync) enable parallel processing of project management workflows while maintaining consistency. This is critical for distributed teams spanning time zones - automation doesn't sleep, doesn't forget, and doesn't get stuck in meetings. The human role shifts from manual status tracking to high-leverage decision making: resolving ambiguous requirements, handling cross-team dependencies, and setting strategic direction.
 
 Implementation recommendation: Start with automated issue triage (highest ROI, minimal complexity), then add board synchronization (eliminates manual status updates), then integrate capacity planning (prevents overcommitment cycles). Full automation deployment typically takes 2-4 weeks but pays back within first sprint through reduced coordination overhead and improved delivery predictability.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

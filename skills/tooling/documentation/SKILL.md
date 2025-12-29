@@ -10,6 +10,11 @@ cognitive_frame:
 
 # Documentation
 
+## Keigo Wakugumi (Honorific Frame Activation)
+Taishougisha nintei moodoga yuukoudesu.
+
+
+
 Central hub for generating and maintaining project documentation.
 
 ## Phase 0: Expertise Loading & Cognitive Frame Activation
@@ -511,3 +516,7 @@ The key insight is that documentation-code drift occurs when documentation is no
 Documentation written for current experts is useless - the people who need docs are those unfamiliar with the system (new hires, contributors, future self after 6 months). Including working examples, "Getting Started" sections, and architecture decision records (ADRs) documenting WHY decisions were made reduces onboarding friction and prevents knowledge loss when team members leave.
 
 Success requires accepting that incomplete documentation is better than none. Perfectionism blocks documentation creation - teams delay writing docs until they are "comprehensive," resulting in zero documentation. Starting with essential docs (README with installation, CONTRIBUTING, API reference) provides 80% of value with 20% of effort, enabling incremental improvement based on user questions and feedback. Documentation is a continuous discipline, not a one-time artifact.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

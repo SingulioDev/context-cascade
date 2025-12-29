@@ -33,9 +33,9 @@ author: ruv
 - When dependencies must be minimized beyond template defaults
 
 ### Success Criteria
-- primary_outcome: "Production-ready project template with modern tooling, automated validation, Docker support, and CI/CD integration"
-- quality_threshold: 0.88
-- verification_method: "Template generates successfully, passes validation scripts, builds without errors, includes working tests and CI/CD pipeline"
+- [assert|neutral] primary_outcome: "Production-ready project template with modern tooling, automated validation, Docker support, and CI/CD integration" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] quality_threshold: 0.88 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] verification_method: "Template generates successfully, passes validation scripts, builds without errors, includes working tests and CI/CD pipeline" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases
 - case: "Template type not supported (not in 6 core types)"
@@ -65,6 +65,11 @@ plan_and_solve: "Plan: Identify project requirements + select template -> Execut
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Base Template Generator (Gold Tier)
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Generate clean, production-ready foundational code templates for modern development frameworks with automated validation, Docker support, and CI/CD integration.
 
@@ -380,3 +385,7 @@ The Base Template Generator skill eliminates the "blank canvas" problem that pla
 The Gold Tier status reflects the comprehensive tooling: 3 production-ready scripts (generation, validation, interactive setup), 4 template resources, 3 test suites, and support for 6 major project types. The emphasis on minimal dependencies (5-10 production deps) and automated validation (30+ checks) ensures that generated projects are both lightweight and reliable. Teams report 80-90% reduction in project setup time compared to manual configuration, while maintaining higher quality due to enforced best practices.
 
 Use this skill when starting new microservices, API backends, frontend applications, or any project requiring solid foundations. The validation-first approach prevents technical debt from accumulating in the critical early stages of development. Remember: the best time to establish quality patterns is at project creation, when changing them is trivial rather than after thousands of lines of code have been written against flawed foundations.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

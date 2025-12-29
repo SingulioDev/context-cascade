@@ -1,4 +1,9 @@
 # swarm-spawn
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -49,3 +54,7 @@ npx claude-flow swarm spawn [options]
 npx claude-flow swarm spawn --type coder --count 3
 npx claude-flow swarm spawn --type researcher --capabilities "web-search,analysis"
 ```
+
+
+---
+*Promise: `<promise>SWARM_SPAWN_VERIX_COMPLIANT</promise>`*

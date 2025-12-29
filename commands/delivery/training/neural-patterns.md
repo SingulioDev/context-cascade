@@ -1,4 +1,9 @@
 # Neural Pattern Training
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 Key platform/tooling/training command improvements:
 - Platform API requirements
 - Tool configuration
@@ -79,3 +84,6 @@ npx claude-flow neural status
 # Analyze patterns
 npx claude-flow neural patterns --analyze
 ```
+
+---
+*Promise: `<promise>NEURAL_PATTERNS_VERIX_COMPLIANT</promise>`*

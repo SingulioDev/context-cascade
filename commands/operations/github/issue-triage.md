@@ -1,5 +1,10 @@
 # issue-triage
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: Requires GitHub CLI (gh) or GitHub API token for authentication
 - Authentication/token requirements: Use GITHUB_TOKEN env var or gh auth login for GitHub operations
@@ -53,3 +58,7 @@ npx claude-flow github issue-triage --repository myorg/myrepo --auto-label
 # Full automation
 npx claude-flow github issue-triage --repository myorg/myrepo --auto-label --assign
 ```
+
+
+---
+*Promise: `<promise>ISSUE_TRIAGE_VERIX_COMPLIANT</promise>`*

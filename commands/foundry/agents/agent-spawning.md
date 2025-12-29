@@ -1,4 +1,9 @@
 # agent-spawning
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Command-Specific Requirements
 
 ### Agent Creation Parameters
@@ -48,3 +53,7 @@ mcp__claude-flow__agent_spawn { type: "researcher" }
 2. Use Task tool for execution
 3. MCP only for coordination
 4. Batch all operations
+
+
+---
+*Promise: `<promise>AGENT_SPAWNING_VERIX_COMPLIANT</promise>`*

@@ -11,6 +11,11 @@ cognitive_frame:
 
 # Audit Pipeline - Complete Code Quality Workflow
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Cognitive Frame Activation
 
 ### Kanitsal Kalite Hatti (Evidential Quality Pipeline)
@@ -564,13 +569,12 @@ For each test failure:
 - Human approval for major changes (optional)
 
 ## Success Criteria
-
-Pipeline succeeds when:
-✅ All theater identified and completed
-✅ All functionality tests passing
-✅ All style issues resolved
-✅ No regressions introduced
-✅ Code meets production standards
+- [assert|neutral] Pipeline succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ All theater identified and completed [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ All functionality tests passing [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ All style issues resolved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ No regressions introduced [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Code meets production standards [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## When to Use
 
@@ -626,3 +630,7 @@ Times include Codex iteration loops and style refactoring.
 **Remember**: This pipeline transforms code from "it works on my machine" to "it's production-ready". Use it before every major release!
 
 See `docs/agents/audit-pipeline-guide.md` for complete documentation.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

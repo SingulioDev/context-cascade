@@ -15,6 +15,11 @@ author: Claude Flow
 
 # SPARC Methodology - Comprehensive Development Framework
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -1215,3 +1220,7 @@ SPARC Methodology embodies the philosophy that systematic orchestration beats ad
 Use SPARC when building complex systems requiring multiple specialized agents (17 modes available), parallel execution (2.8-4.4x speedup), or rigorous quality standards (90%+ test coverage). The methodology scales from simple features (coder + tester) to complex research projects (researcher + architect + coder + tester + reviewer + optimizer) with consistent patterns.
 
 The result is a reproducible framework that transforms vague requirements into production systems with comprehensive testing, security validation, and performance optimization. When projects cannot afford ad-hoc approaches, SPARC provides the systematic rigor that enterprise development demands.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -1,5 +1,10 @@
 # workflow-execute
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Purpose
 [Define what this command does - the specific action it triggers]
 
@@ -69,3 +74,7 @@ npx claude-flow workflow execute --name "test-suite" --params '{"env": "staging"
 # Dry run
 npx claude-flow workflow execute --name "deploy-api" --dry-run
 ```
+
+
+---
+*Promise: `<promise>WORKFLOW_EXECUTE_VERIX_COMPLIANT</promise>`*

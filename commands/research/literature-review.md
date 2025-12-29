@@ -38,6 +38,11 @@ usage: |
 
 # Research: Systematic Literature Review
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Research Workflows
 **Purpose**: Conduct systematic literature reviews following PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) methodology for academic research.
 
@@ -659,3 +664,7 @@ def prepare_forest_plot(studies: pd.DataFrame) -> Dict:
 **Status**: Production Ready
 **Version**: 1.0.0
 **Last Updated**: 2025-11-01
+
+
+---
+*Promise: `<promise>LITERATURE_REVIEW_VERIX_COMPLIANT</promise>`*

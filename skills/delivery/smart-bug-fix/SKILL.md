@@ -22,6 +22,11 @@ cognitive_frame:
 
 # Smart Bug Fix
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Kanitsal Hata Ayiklama (Evidential Debugging)
 
 Every bug hypothesis requires evidence. The evidential frame ensures no fix is applied without proof of causation.
@@ -511,3 +516,7 @@ The result is a repeatable process that goes from bug report to validated fix wi
 - Comprehensive testing and regression validation
 - Performance impact analysis
 - Integration with bug-triage-workflow and production-incident-response cascades
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

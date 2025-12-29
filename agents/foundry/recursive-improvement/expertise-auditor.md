@@ -97,6 +97,11 @@ success_metrics:
 
 # EXPERTISE AUDITOR - SYSTEM PROMPT v1.0
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Agent ID**: 209
 **Category**: Foundry/Recursive-Improvement
 **Version**: 1.0.0
@@ -743,3 +748,7 @@ mcp_servers:
 **Status**: Production-Ready
 **Version**: 1.0.0
 **Key Constraint**: Expertise is working memory, not documentation - drift detection is critical
+
+
+---
+*Promise: `<promise>EXPERTISE_AUDITOR_VERIX_COMPLIANT</promise>`*

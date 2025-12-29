@@ -13,6 +13,11 @@ tags:
 
 # Prompt Forge (Meta-Prompt)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Generate improved prompts and templates with:
@@ -651,3 +656,7 @@ Prompt Forge represents a meta-prompting system designed for recursive self-impr
 This skill excels at optimizing existing prompts for better performance, creating transparent diffs with clear rationale, and running recursive improvement loops where Skill Forge and Prompt Forge improve each other. Use this when you need to enhance prompt quality with confidence that changes actually improve outcomes rather than introduce subtle degradation.
 
 The recursive capability - where Prompt Forge can improve Skill Forge prompts, and Skill Forge can rebuild improved Prompt Forge prompts - creates a powerful self-improvement loop bounded by evaluation harness constraints. This prevents the common failure mode of meta-systems: confident drift into increasingly sophisticated but less effective prompts. The frozen eval harness acts as an objective reality check, ensuring all improvements are genuine rather than illusory.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

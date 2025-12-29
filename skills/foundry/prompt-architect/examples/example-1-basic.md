@@ -1,5 +1,10 @@
 # Example 1: Code Review Prompt Optimization
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Scenario**: Transform a basic code review prompt into a high-performance, structured version
 **Task Type**: Code Analysis & Review
 **Difficulty**: Basic
@@ -418,3 +423,7 @@ Specified behavior for boundary conditions (no issues, uncertainty, etc.)
 **ROI**: High (prompt used 100+ times = 1500+ minutes saved)
 
 **Key Takeaway**: Systematic prompt optimization using the Prompt Architect framework produces measurable, substantial improvements in output quality and consistency.
+
+
+---
+*Promise: `<promise>EXAMPLE_1_BASIC_VERIX_COMPLIANT</promise>`*

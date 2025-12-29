@@ -53,10 +53,9 @@ author: ruv
 - **Non-Standard Tools**: Do not use when tools are deprecated, unsupported, or outside standard toolkit
 
 ## Success Criteria
-
-- **Tool Executed Correctly**: Verify tool runs without errors and produces expected output
-- **Reference Accurate**: Confirm reference material is current and applicable
-- **Pipeline Complete**: Ensure automation pipeline completes all stages successfully
+- [assert|neutral] *Tool Executed Correctly**: Verify tool runs without errors and produces expected output [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Reference Accurate**: Confirm reference material is current and applicable [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Pipeline Complete**: Ensure automation pipeline completes all stages successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases
 
@@ -65,10 +64,9 @@ author: ruv
 - **Pipeline Failures**: Recover gracefully from mid-pipeline failures with clear error messages
 
 ## Guardrails
-
-- **NEVER use deprecated tools**: Always verify tool versions and support status before execution
-- **ALWAYS verify outputs**: Validate tool outputs match expected format and content
-- **ALWAYS check health**: Run tool health checks before critical operations
+- [assert|emphatic] NEVER: use deprecated tools**: Always verify tool versions and support status before execution [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: verify outputs**: Validate tool outputs match expected format and content [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: check health**: Run tool health checks before critical operations [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -77,6 +75,11 @@ author: ruv
 - **Pipeline Monitoring**: Track pipeline execution metrics and success rates
 
 # PPTX Generation - Enterprise Presentation Creator
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -543,3 +546,7 @@ Enterprise-grade presentations are not built slide-by-slide with manual formatti
 The skill's value lies in automation: define content structure once, apply design system programmatically, validate accessibility automatically, and export production-ready PowerPoint files in minutes instead of hours. This approach scales to 30+ slide decks without sacrificing quality or consistency.
 
 Remember: presentations are communication tools, not art projects. Clarity, accessibility, and consistency matter more than novelty. Automate the mechanical work (layout, styling, validation) so presenters can focus on the creative work (storytelling, insights, persuasion). When presentations meet accessibility standards, they reach wider audiences. When design is consistent, the content shines. When generation is automated, teams iterate faster and deliver better results.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

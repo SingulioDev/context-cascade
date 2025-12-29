@@ -16,12 +16,12 @@
 - When peer review is not the target venue
 
 ### Success Criteria
-- Complete manuscript with standard sections (Abstract, Intro, Related Work, Methods, Results, Discussion, Conclusion)
-- All claims cited with proper references (BibTeX generated)
-- Figures and tables properly formatted (captions, labels)
-- Reproducibility section included (code, data, hyperparameters)
-- Word count matches venue requirements (8 pages NeurIPS, 12 CVPR)
-- LaTeX source compiles without errors
+- [assert|neutral] Complete manuscript with standard sections (Abstract, Intro, Related Work, Methods, Results, Discussion, Conclusion) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All claims cited with proper references (BibTeX generated) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Figures and tables properly formatted (captions, labels) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Reproducibility section included (code, data, hyperparameters) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Word count matches venue requirements (8 pages NeurIPS, 12 CVPR) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] LaTeX source compiles without errors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Over page limit: prioritize core contributions, move details to appendix
@@ -68,6 +68,11 @@ mcp_servers:
 ---
 
 # Rapid Manuscript Drafter
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 
@@ -636,3 +641,7 @@ The rapid-manuscript-drafter skill addresses a critical bottleneck in academic p
 The ethical foundation of this skill rests on an unwavering commitment to transparency and integrity. Unlike tools that fabricate plausible-sounding content, rapid-manuscript-drafter creates honest scaffolds that make the writing process more efficient without compromising authenticity. Every placeholder is clearly marked, every template is customizable, and every generated structure serves to guide rather than replace human expertise. This approach respects both the researcher's intellectual contribution and the academic community's standards for scholarly communication.
 
 As research demands accelerate while publication standards remain rigorous, tools that accelerate legitimate scholarship become increasingly valuable. The rapid-manuscript-drafter skill demonstrates that speed and integrity are not opposing forces - when properly designed, automation can enhance both the efficiency and the quality of academic writing. By reducing the friction of manuscript preparation, this skill allows researchers to spend more time on the substance of their work and less time wrestling with formatting, structure, and organization.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -40,6 +40,11 @@ author: ruv
 
 # Prompt Architect - Evidence-Based Prompt Engineering
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Comprehensive framework for analyzing, creating, and refining prompts for AI systems (Claude, GPT, etc.). Applies structural optimization, self-consistency patterns, and anti-pattern detection to transform prompts into highly effective versions.
@@ -892,3 +897,7 @@ The 7-component structural template ensures completeness by addressing common fa
 Most critically, this skill rejects subjective optimization claims in favor of quantitative A/B testing. The validation phase compares original and optimized prompts on identical test cases, measuring improvement in score, success rate, and consistency. Only prompts demonstrating > 20% improvement and > 85% success rate are deployed to production. This evidence-based approach ensures optimization efforts produce measurable value rather than speculative improvements.
 
 The iterative refinement process (analyze failures -> apply fixes -> re-validate) creates a continuous improvement loop. Failed test cases trigger root cause analysis identifying missing constraints, ambiguous instructions, insufficient examples, or inadequate edge case handling. Each iteration addresses specific failure modes, progressively improving prompt robustness. This systematic methodology scales from individual prompt optimization to building reusable prompt libraries, enabling organizations to accumulate proven patterns for common tasks and domains.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

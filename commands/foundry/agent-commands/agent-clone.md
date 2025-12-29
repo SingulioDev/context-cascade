@@ -37,6 +37,11 @@ evidence_based_techniques: [self-consistency, program-of-thought]
 
 # /agent-clone - High-Performing Agent Replication
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 The `/agent-clone` command creates clones of high-performing agents with their learned patterns, memory, and optimized configurations.
@@ -123,3 +128,7 @@ Uses same config but starts with blank memory and patterns
 ---
 
 **Version**: 2.0.0
+
+
+---
+*Promise: `<promise>AGENT_CLONE_VERIX_COMPLIANT</promise>`*

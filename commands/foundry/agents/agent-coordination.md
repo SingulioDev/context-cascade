@@ -1,4 +1,9 @@
 # agent-coordination
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Command-Specific Requirements
 
 ### Agent Creation Parameters
@@ -48,3 +53,7 @@ npx claude-flow swarm init --topology adaptive
 - Use hierarchical for complex projects
 - Use mesh for research tasks
 - Use adaptive for unknown workloads
+
+
+---
+*Promise: `<promise>AGENT_COORDINATION_VERIX_COMPLIANT</promise>`*

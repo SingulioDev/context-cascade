@@ -42,6 +42,11 @@ metadata:
 
 # AgentDB Semantic Vector Search
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Implement semantic vector search with AgentDB for intelligent document retrieval, similarity matching, and context-aware querying. Build RAG systems, semantic search engines, and knowledge bases.
@@ -111,11 +116,10 @@ const results = await db.search({
 - **RAG Integration**: Context for LLMs
 
 ## Success Metrics
-
-- Retrieval accuracy > 90%
-- Query latency < 100ms
-- Relevant results in top-10: > 95%
-- API uptime > 99.9%
+- [assert|neutral] Retrieval accuracy > 90% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Query latency < 100ms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Relevant results in top-10: > 95% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] API uptime > 99.9% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## MCP Requirements
 
@@ -185,3 +189,7 @@ AgentDB Semantic Vector Search enables building production-grade document retrie
 This skill excels at building RAG systems where LLMs need relevant context, semantic search engines for large document collections, and recommendation systems based on content similarity. Use this when keyword search is insufficient because users search by concept rather than exact terms, or when you need to retrieve contextually relevant documents even when query phrasing differs from document text.
 
 The 5-phase framework (setup database, embed documents, build index, implement query interface, refine optimization) provides a systematic path from initial prototype to production deployment with <100ms query latency and >90% retrieval accuracy at scale.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

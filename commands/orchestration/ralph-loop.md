@@ -11,6 +11,11 @@ allowed_tools:
 
 # /ralph-loop
 
+## Kompositioneller Rahmen (Compositional Frame Activation)
+Strukturaufbaumodus aktiv.
+
+
+
 Start a Ralph Wiggum persistence loop in the current session.
 
 ## Usage

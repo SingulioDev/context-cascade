@@ -9,6 +9,11 @@ tier: gold
 
 # Safe Task Spawn - Registry-Validated Task Spawning
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Version**: 1.0.0 (Gold Tier)
 **Purpose**: Prevent invalid agent spawns through registry validation, skill requirement matching, and comprehensive audit logging
 
@@ -201,25 +206,25 @@ interface SafeTaskSpawnInput {
 ## Output Contract
 
 ### Success Case
-```typescript
-interface SafeTaskSpawnSuccess {
-  status: "success";
-  task: Task;                      // Spawned Task object
-  agent_metadata: {
-    agent_type: string;
-    category: string;
+- [assert|neutral] ```typescript [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] interface SafeTaskSpawnSuccess { [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] status: "success"; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] task: Task;                      // Spawned Task object [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] agent_metadata: { [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] agent_type: string; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] category: string; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
     capabilities: string[];
-    file_path: string;
-  };
-  validation_results: {
-    registry_found: true;
-    capabilities_match: boolean;
-    category_match: boolean;
-    match_score: number;           // 0-100
-  };
-  audit_log_key: string;           // Memory MCP key for audit record
-}
-```
+- [assert|neutral] file_path: string; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] }; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] validation_results: { [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] registry_found: true; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] capabilities_match: boolean; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] category_match: boolean; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] match_score: number;           // 0-100 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] }; [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] audit_log_key: string;           // Memory MCP key for audit record [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] } [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ``` [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Failure Case
 ```typescript
@@ -626,3 +631,7 @@ Every skill that spawns agents should use Safe Task Spawn to prevent invalid spa
 **Registry Source**: claude-code-plugins/ruv-sparc-three-loop-system/agents/ (211 agents)
 **Version**: 1.0.0
 **Last Updated**: 2025-12-17
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

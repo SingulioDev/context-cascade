@@ -37,6 +37,11 @@ author: ruv
 
 # API Documentation Generator (Gold Tier)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -379,3 +384,7 @@ API Documentation Generator transforms API specification from a manual, error-pr
 The skill's three-phase workflow - generation from code, multi-tool validation (swagger-cli, openapi-generator-cli, yamllint), and interactive documentation deployment (Swagger UI, ReDoc) - creates a comprehensive documentation pipeline that catches errors early and delivers developer-friendly exploration tools. The framework auto-detection intelligently identifies your web framework and applies appropriate extraction strategies, while the validation pipeline enforces OpenAPI 3.0 compliance with strict mode treating warnings as errors for production specs.
 
 Use this skill when building new APIs that need documentation from day one, when refactoring existing APIs where documentation has drifted from reality, or when onboarding external developers who need clear API references. The automated generation prevents documentation debt from accumulating, while interactive Swagger UI enables developers to understand and test endpoints without leaving the browser. The result is API documentation that developers actually trust and use rather than outdated PDFs gathering dust in wikis.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

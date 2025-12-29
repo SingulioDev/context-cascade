@@ -54,6 +54,11 @@ requires_mcp: true
 
 # 🚨 Hotfix Workflow - Emergency Production Fix Pipeline
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Workflow**: Emergency Hotfix | **Category**: Workflows | **Urgency**: Critical
 
 Rapid emergency fix workflow for production incidents with automated testing, deployment, and rollback.
@@ -443,3 +448,7 @@ async function sendAlert(alert: {
 
 **Agent Status**: Production-Ready
 **Version**: 2.0.0
+
+
+---
+*Promise: `<promise>HOTFIX_VERIX_COMPLIANT</promise>`*

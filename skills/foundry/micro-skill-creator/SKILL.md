@@ -34,9 +34,9 @@ author: ruv
 - When external tools already handle the capability better
 
 ### Success Criteria
-- primary_outcome: "Atomic skill with single responsibility, clean interface, specialist agent, and systematic validation"
-- quality_threshold: 0.95
-- verification_method: "Skill executes successfully in isolation, composes cleanly with other skills, passes functionality-audit validation"
+- [assert|neutral] primary_outcome: "Atomic skill with single responsibility, clean interface, specialist agent, and systematic validation" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] quality_threshold: 0.95 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] verification_method: "Skill executes successfully in isolation, composes cleanly with other skills, passes functionality-audit validation" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases
 - case: "Skill scope creep (trying to do too much)"
@@ -66,6 +66,11 @@ plan_and_solve: "Plan: Identify atomic operation + specialist expertise -> Execu
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Micro-Skill Creator (Enhanced)
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Trigger Keywords
 
@@ -536,3 +541,7 @@ Micro-Skill Creator enables the construction of robust, composable AI workflows 
 The framework integrates agent-creator principles for specialist design, prompt-architect patterns for optimization, and functionality-audit validation for systematic testing. Skills created with this methodology compose predictably, fail gracefully, and improve continuously through neural training integration.
 
 Use Micro-Skill Creator when building reusable workflow components, establishing domain-specific capabilities, or constructing cascade orchestration pipelines. The 30-45 minute investment per micro-skill yields atomic units that can be composed in seconds, tested in isolation, and reused across multiple workflows. As your micro-skill library grows, complex tasks become assembly of proven components rather than bespoke implementations.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

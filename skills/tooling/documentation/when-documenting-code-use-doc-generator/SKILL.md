@@ -17,6 +17,11 @@ tags: [documentation, api-docs, readme, comments, diagrams, automation]
 
 # When Documenting Code - Use Doc Generator
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 This skill provides automated, comprehensive documentation generation for codebases. It analyzes code structure, generates API documentation, creates README files, adds inline comments, and produces architecture diagrams using evidence-based documentation patterns.
@@ -777,3 +782,7 @@ Comprehensive documentation is not a luxury - it is a force multiplier for engin
 The doc-generator skill automates the mechanical work of documentation creation, freeing developers to focus on the creative aspects: explaining design decisions, providing meaningful examples, and capturing the "why" behind the code. When combined with CI/CD integration and quality gates, automated documentation becomes self-healing infrastructure that stays synchronized with the codebase.
 
 Remember: the best documentation is the documentation that exists, is accurate, and is discoverable. Start with automation, enforce with tooling, and maintain with discipline. Your future self - and your teammates - will thank you.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -38,6 +38,11 @@ version: 2.0.0
 
 # ☁️ Cloudflare Workers Deployment
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Deploy serverless functions to Cloudflare edge network.
 
 ```bash
@@ -45,3 +50,7 @@ npx wrangler publish
 ```
 
 **Version**: 2.0.0
+
+
+---
+*Promise: `<promise>CLOUDFLARE_DEPLOY_VERIX_COMPLIANT</promise>`*

@@ -8,6 +8,11 @@ triggers: ["python", "django", "fastapi", "flask", "async python", "python api",
 
 # Python Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert Python development for modern backend systems, API development, and high-performance applications.
 
 ## Purpose
@@ -496,27 +501,21 @@ async def log_requests(request: Request, call_next):
 - `mcp__memory-mcp__memory_store` for persisting API patterns and decisions
 
 ## Success Metrics
-
-**Development Speed**:
-- New API endpoint: 15-30 minutes
-- Database model + CRUD: 30-45 minutes
-- Full feature with tests: 2-3 hours
-
-**Code Quality**:
-- Test coverage: ≥90%
-- Type coverage (mypy): 100%
-- Linting: 0 errors
-
-**Performance**:
-- API latency p95: <200ms
-- Throughput: 1000+ req/s (simple endpoints)
-- Memory usage: <100MB for simple APIs
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
-**Maintained By**: python-specialist agent
+- [assert|neutral] *Development Speed**: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] New API endpoint: 15-30 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Database model + CRUD: 30-45 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Full feature with tests: 2-3 hours [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Code Quality**: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Test coverage: ≥90% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Type coverage (mypy): 100% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Linting: 0 errors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Performance**: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] API latency p95: <200ms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Throughput: 1000+ req/s (simple endpoints) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Memory usage: <100MB for simple APIs [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Maintained By**: python-specialist agent [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -564,3 +563,7 @@ Modern Python development for backend systems centers on FastAPI for API develop
 Type safety through type hints and mypy transforms Python from a dynamically typed language into a statically verified one at development time. This catches entire categories of bugs before code runs, while preserving Python's flexibility for rapid development. Pydantic bridges the gap between static types and runtime validation, ensuring data from external sources (API requests, database queries) matches expected schemas.
 
 Performance optimization in Python requires understanding when to use async for I/O-bound work and when to use ProcessPoolExecutor for CPU-bound tasks. Profiling with cProfile and memory_profiler identifies bottlenecks, while tools like Numba provide JIT compilation for numerical code. For production deployments, uvicorn with uvloop provides the fastest ASGI server, while connection pooling for databases and caching for expensive operations ensure scalability. This comprehensive approach produces Python applications that are type-safe, performant, and maintainable at scale.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

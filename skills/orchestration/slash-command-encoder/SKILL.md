@@ -32,11 +32,11 @@ author: ruv
 - **Pure research** without implementation stages
 
 ### Success Criteria
-- **All stages complete** with 100% success rate
-- **Dependency resolution** with no circular dependencies
-- **Model routing optimal** for each stage (Gemini/Codex/Claude)
-- **Memory persistence** maintained across all stages
-- **No orphaned stages** - all stages tracked and completed
+- [assert|neutral] *All stages complete** with 100% success rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Dependency resolution** with no circular dependencies [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Model routing optimal** for each stage (Gemini/Codex/Claude) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Memory persistence** maintained across all stages [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *No orphaned stages** - all stages tracked and completed [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Stage failure mid-cascade** - Implement retry with exponential backoff
@@ -46,11 +46,11 @@ author: ruv
 - **Timeout on long stages** - Configure per-stage timeout limits
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose stage state** - Persist after each stage completion
-- **ALWAYS validate dependencies** - Check DAG acyclic before execution
-- **ALWAYS track cascade progress** - Update memory with real-time status
-- **NEVER skip error handling** - Every stage needs try/catch with fallback
-- **ALWAYS cleanup on failure** - Release resources, clear temp state
+- [assert|emphatic] NEVER: lose stage state** - Persist after each stage completion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate dependencies** - Check DAG acyclic before execution [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track cascade progress** - Update memory with real-time status [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip error handling** - Every stage needs try/catch with fallback [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup on failure** - Release resources, clear temp state [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Verify stage outputs** - Check actual results vs expected schema
@@ -61,6 +61,11 @@ author: ruv
 
 
 # Slash Command Encoder (Enhanced)
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 Creates fast, scriptable `/command` interfaces for micro-skills, cascades, and agents. This enhanced version includes automatic skill discovery, intelligent command generation, parameter validation, multi-model routing, and command chaining patterns.
@@ -790,3 +795,7 @@ Key takeaways:
 - Command chaining enables powerful workflow composition from simple building blocks
 
 Use this skill when operations are performed repeatedly, require exact parameters, or need to be composed into automated pipelines. Avoid for one-off exploratory tasks or operations requiring natural language nuance.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

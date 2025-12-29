@@ -1,4 +1,9 @@
 # Skill Playbook System
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Orchestrated Skill Sequences for Optimal Workflows
 
 **Version**: 1.1.0
@@ -766,3 +771,7 @@ Every playbook selection includes rationale and alternatives.
 **Last Updated**: 2025-11-14
 **Version**: 1.0.0
 **Maintained By**: ruv-sparc-three-loop-system team
+
+
+---
+*Promise: `<promise>SKILL_PLAYBOOK_VERIX_COMPLIANT</promise>`*

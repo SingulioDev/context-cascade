@@ -1,4 +1,9 @@
 # /run-improvement-cycle
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Command-Specific Requirements
 
 ### Agent Creation Parameters
@@ -120,3 +125,7 @@ self_improvement_safeguards:
 
 **Version**: 1.0.0
 **Category**: foundry/recursive-improvement
+
+
+---
+*Promise: `<promise>RUN_IMPROVEMENT_CYCLE_VERIX_COMPLIANT</promise>`*

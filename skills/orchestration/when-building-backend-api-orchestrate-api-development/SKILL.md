@@ -25,6 +25,11 @@ memory_pattern: "api-development/{api-id}/phase-{N}/{agent}/{deliverable}"
 
 # API Development Orchestration Workflow
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Complete REST API development workflow using Test-Driven Development and multi-agent coordination. Orchestrates 8-12 specialist agents across planning, architecture design, TDD implementation, testing, documentation, and production deployment in a systematic 2-week process.
 
 ## Overview
@@ -1181,3 +1186,7 @@ Key takeaways:
 - Blue-green deployment with canary rollout provides zero-downtime production releases with instant rollback capability
 
 Use this skill when building production-ready REST APIs from scratch, migrating existing APIs with comprehensive testing requirements, requiring systematic TDD approach with documented coverage, or when quality gates for security, performance, and scalability are non-negotiable. Avoid for simple CRUD APIs without security requirements or prototypes not requiring production-grade quality.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

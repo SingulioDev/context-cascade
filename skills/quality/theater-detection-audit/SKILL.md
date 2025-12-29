@@ -34,13 +34,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -83,6 +82,11 @@ This skill integrates with:
 
 
 # Theater Detection Audit
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 This skill helps identify and eliminate "theater" in codebases, which refers to code that appears to work but uses fake data, mock responses, stub implementations, or other non-production placeholders. Theater is common during rapid development but must be systematically removed before production deployment. This skill provides a comprehensive audit and completion workflow.
 
@@ -274,3 +278,7 @@ Theater Detection Audit addresses one of the most dangerous quality issues in so
 Use this skill before production deployments to ensure all mocks have been replaced, when taking over codebases to understand what is real versus placeholder, during code quality initiatives to eliminate accumulated technical debt, or after rapid prototyping phases where shortcuts were taken for development speed. The skill is essential for hardening systems before release, particularly in domains where failures have serious consequences like financial transactions, healthcare systems, or security infrastructure.
 
 The systematic methodology - pattern detection, contextual analysis, dependency mapping, risk assessment, and tracked completion - creates a repeatable process for eliminating theater rather than leaving it to chance discovery. The integration with functionality-audit and style-audit creates a comprehensive quality pipeline where theater detection ensures implementations are genuine, functionality-audit verifies they work correctly, and style-audit ensures they are maintainable. Together, these skills establish confidence that code is production-ready, not just development-ready.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

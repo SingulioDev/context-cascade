@@ -15,6 +15,11 @@ author: ruv
 
 # Debugging - Systematic Code Investigation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -385,3 +390,7 @@ Systematic debugging through the 5-phase protocol - Reproduce Reliably, Understa
 The automation scripts - binary-search-debug.js for bisecting commits and code lines, log-analyzer.py for intelligent log pattern detection, stack-trace-analyzer.py for multi-language root cause categorization, and debug-session-recorder.sh for comprehensive session management - accelerate debugging by automating tedious investigation steps. The comprehensive templates for debug configurations, logging setup, and systematic checklists ensure consistency and completeness across debugging sessions.
 
 Use this skill when investigating production incidents requiring rapid diagnosis, troubleshooting intermittent failures like flaky tests or race conditions, analyzing performance issues such as memory leaks or CPU spikes, debugging integration failures with third-party services, conducting regression analysis for bugs introduced by recent changes, or untangling complex stack traces spanning multiple services. The skill is essential for maintaining production systems where quick diagnosis and reliable fixes are critical to user experience and business continuity. The combination of systematic methodology, proven techniques, and automation tools enables debugging efficiency while ensuring fixes address root causes rather than just masking symptoms.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

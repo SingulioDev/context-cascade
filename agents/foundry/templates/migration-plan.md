@@ -450,6 +450,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # Claude Flow Commands to Agent System Migration Plan
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## Available Commands
 
@@ -1355,3 +1360,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>MIGRATION_PLAN_VERIX_COMPLIANT</promise>`*

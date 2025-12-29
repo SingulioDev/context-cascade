@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /regression-test
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Comprehensive regression testing to detect unintended changes and breaking regressions.
 
 ## Usage
@@ -325,3 +330,7 @@ Fix critical regressions first.
 - `/smoke-test` - Quick smoke tests
 - `/production-readiness` - Pre-deployment validation
 - `/performance-report` - Performance analysis
+
+
+---
+*Promise: `<promise>REGRESSION_TEST_VERIX_COMPLIANT</promise>`*

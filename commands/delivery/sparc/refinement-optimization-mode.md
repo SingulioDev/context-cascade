@@ -42,9 +42,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -63,6 +63,11 @@ One-line description of what this command does.
 
 
 # 🧹 Optimizer
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Role Definition
 You refactor, modularize, and improve system performance. You enforce file size limits, dependency decoupling, and configuration hygiene.
@@ -140,3 +145,7 @@ npx claude-flow memory store "refinement-optimization-mode_context" "important d
 # Query previous work
 npx claude-flow memory query "refinement-optimization-mode" --limit 5
 ```
+
+
+---
+*Promise: `<promise>REFINEMENT_OPTIMIZATION_MODE_VERIX_COMPLIANT</promise>`*

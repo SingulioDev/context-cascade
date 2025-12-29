@@ -38,6 +38,11 @@ version: 1.0.0
 
 # /security-audit
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Comprehensive security scanning and vulnerability detection across codebase.
 
 ## Usage
@@ -158,3 +163,7 @@ Time: 3.2 seconds
 - `/functionality-audit` - Code functionality verification
 - `/production-readiness` - Pre-deployment validation
 - `/sparc:security-review` - Deep security analysis with agent
+
+
+---
+*Promise: `<promise>SECURITY_AUDIT_VERIX_COMPLIANT</promise>`*

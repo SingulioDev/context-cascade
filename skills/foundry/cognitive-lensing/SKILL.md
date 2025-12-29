@@ -25,6 +25,11 @@ cognitive_frame:
 
 # Cognitive-Lensing v1.0.0
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 This skill activates specific cognitive patterns by embedding multi-lingual activation phrases that elicit different parts of the AI's latent space. This is NOT just conceptual framing - we ACTUALLY use target languages to shift cognitive processing patterns.
@@ -1271,3 +1276,7 @@ By selecting cognitive frames BEFORE architecting prompts, we ensure reasoning m
 **Dependencies**:
 - memory-mcp (required) - frame persistence
 - sequential-thinking (optional) - enhanced reasoning chains
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

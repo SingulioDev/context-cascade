@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /re:static
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Static analysis and disassembly only - no code execution (RE Level 2 only).
 
 **Timebox**: 1-2 hours
@@ -112,11 +117,11 @@ Static analysis and disassembly only - no code execution (RE Level 2 only).
 3. **Dependency Graph**: Module relationships
 
 ## Success Criteria
-- ✅ Binary disassembled successfully
-- ✅ Entry point and key functions identified
-- ✅ Control flow graph generated
-- ✅ Decompiled C code produced (if --decompile true)
-- ✅ Suspicious patterns flagged
+- [assert|neutral] ✅ Binary disassembled successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Entry point and key functions identified [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Control flow graph generated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Decompiled C code produced (if --decompile true) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Suspicious patterns flagged [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Output Structure
 ```
@@ -195,3 +200,7 @@ connascence-analyzer.analyze_workspace(./ghidra/decompiled/)
 - `/re:strings` - String analysis only
 - `/re:dynamic` - Runtime analysis
 - `/audit-pipeline` - Code quality audit
+
+
+---
+*Promise: `<promise>STATIC_VERIX_COMPLIANT</promise>`*

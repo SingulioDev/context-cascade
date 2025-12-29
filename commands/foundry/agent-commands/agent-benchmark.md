@@ -37,6 +37,11 @@ evidence_based_techniques: [self-consistency, program-of-thought]
 
 # /agent-benchmark - Agent Performance Benchmarking
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 The `/agent-benchmark` command runs comprehensive performance benchmarks on agents to measure speed, accuracy, resource efficiency, and task completion quality.
@@ -188,3 +193,7 @@ npx claude-flow@alpha agent benchmark --agent-id "coder-123"
 ---
 
 **Version**: 2.0.0
+
+
+---
+*Promise: `<promise>AGENT_BENCHMARK_VERIX_COMPLIANT</promise>`*

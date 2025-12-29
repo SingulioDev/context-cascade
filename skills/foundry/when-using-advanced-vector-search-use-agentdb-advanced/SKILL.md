@@ -46,6 +46,11 @@ metadata:
 
 # Advanced AgentDB Vector Search Implementation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Master advanced AgentDB features including QUIC synchronization, multi-database management, custom distance metrics, hybrid search, and distributed systems integration for building distributed AI systems, multi-agent coordination, and advanced vector search applications.
@@ -1103,13 +1108,12 @@ cache.reconfigure({
 ```
 
 ## Success Metrics
-
-- 150x faster search vs baseline
-- 4-32x memory reduction with quantization
-- Multi-database synchronization < 100ms lag
-- Custom metrics improve accuracy by 15-30%
-- 99.9% uptime in production
-- Health checks pass continuously
+- [assert|neutral] 150x faster search vs baseline [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 4-32x memory reduction with quantization [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Multi-database synchronization < 100ms lag [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Custom metrics improve accuracy by 15-30% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 99.9% uptime in production [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Health checks pass continuously [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## MCP Requirements
 
@@ -1175,3 +1179,7 @@ Advanced AgentDB Vector Search Implementation enables production-scale distribut
 This skill is critical when scaling beyond single-node deployments to handle massive query volumes (>10K QPS), implementing high-availability architectures with automatic failover, or building domain-specific search requiring specialized similarity functions. The key architectural decision is choosing the right synchronization model - synchronous replication guarantees consistency but limits write throughput, asynchronous QUIC replication enables high-speed writes with eventual consistency trade-offs. Most production systems choose asynchronous with <100ms replication lag as the optimal balance.
 
 Custom distance metrics unlock powerful domain applications but require rigorous validation. Generic cosine similarity fails for tasks like code search (needs AST structure), document retrieval (needs recency weighting), or fraud detection (needs anomaly scoring). The metric validation framework prevents silent accuracy degradation by verifying mathematical properties before production deployment. Combined with HNSW indexing, quantization, and caching from the optimization skill, you achieve both specialized similarity functions and sub-10ms query latency - enabling intelligent search experiences that feel magical to users while remaining cost-effective at scale. The comprehensive monitoring, alerting, and runbooks ensure systems remain operational through network partitions, replica failures, and traffic spikes that inevitably occur in production environments.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

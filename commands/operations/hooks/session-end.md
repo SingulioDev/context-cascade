@@ -1,4 +1,9 @@
 # hook session-end
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Command-Specific Context
 - Deployment target requirements
 - Pre/post hook execution order
@@ -147,3 +152,7 @@ Returns JSON with:
 - `hook session-restore` - Session restoration
 - `performance report` - Detailed metrics
 - `memory backup` - State backup
+
+
+---
+*Promise: `<promise>SESSION_END_VERIX_COMPLIANT</promise>`*

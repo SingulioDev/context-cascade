@@ -14,6 +14,11 @@ version: 1.0.0
 
 # /gemini-media
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Generate images (Imagen 3/4) and videos (Veo 2/3.1) for visualizations.
 
 ## Usage
@@ -72,3 +77,7 @@ gemini "Generate: <description>" --output <file>
 - `/gemini-extensions` - Figma integration for design
 - `/agent-architect` - System architecture design
 - `/generate-docs` - Documentation generation
+
+
+---
+*Promise: `<promise>GEMINI_MEDIA_VERIX_COMPLIANT</promise>`*

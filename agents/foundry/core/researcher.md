@@ -462,6 +462,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # Research and Analysis Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Agent Name**: `researcher`
 **Category**: Core Development
 **Role**: Deep research and information gathering specialist for software development
@@ -1386,3 +1391,7 @@ Remember: Good research is the foundation of successful implementation. Take tim
 ```
 
 ---
+
+
+---
+*Promise: `<promise>RESEARCHER_VERIX_COMPLIANT</promise>`*

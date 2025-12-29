@@ -1,5 +1,10 @@
 # pr-enhance
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: Requires GitHub CLI (gh) or GitHub API token for authentication
 - Authentication/token requirements: Use GITHUB_TOKEN env var or gh auth login for GitHub operations
@@ -54,3 +59,7 @@ npx claude-flow github pr-enhance --pr-number 123 --add-tests
 # Full enhancement
 npx claude-flow github pr-enhance --pr-number 123 --add-tests --improve-docs
 ```
+
+
+---
+*Promise: `<promise>PR_ENHANCE_VERIX_COMPLIANT</promise>`*

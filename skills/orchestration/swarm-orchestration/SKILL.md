@@ -28,11 +28,11 @@ author: ruv
 - **Trivial changes** to single files
 
 ### Success Criteria
-- **Agent+skill matrix generated** with optimal assignments
-- **Parallel execution successful** with 8.3x speedup achieved
-- **Theater detection passes** with 0% theater detected
-- **Integration tests pass** at 100% rate
-- **All agents complete** with no orphaned workers
+- [assert|neutral] *Agent+skill matrix generated** with optimal assignments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Parallel execution successful** with 8.3x speedup achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Theater detection passes** with 0% theater detected [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Integration tests pass** at 100% rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All agents complete** with no orphaned workers [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Implement agent health monitoring and replacement
@@ -42,11 +42,11 @@ author: ruv
 - **Conflicting outputs** - Implement merge conflict resolution strategy
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose agent state** - Persist agent progress to memory continuously
-- **ALWAYS track swarm health** - Monitor all agent statuses in real-time
-- **ALWAYS validate consensus** - Require 4/5 agreement for theater detection
-- **NEVER skip theater audit** - Zero tolerance, any theater blocks merge
-- **ALWAYS cleanup workers** - Terminate agents on completion/failure
+- [assert|emphatic] NEVER: lose agent state** - Persist agent progress to memory continuously [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track swarm health** - Monitor all agent statuses in real-time [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate consensus** - Require 4/5 agreement for theater detection [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip theater audit** - Zero tolerance, any theater blocks merge [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup workers** - Terminate agents on completion/failure [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Check all agent statuses** - Verify each agent completed successfully
@@ -57,6 +57,11 @@ author: ruv
 
 
 # Swarm Orchestration
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## What This Skill Does
 
@@ -278,3 +283,7 @@ Swarm Orchestration transforms single-agent sequential execution into massively 
 The value proposition centers on three capabilities: (1) topology patterns (mesh/hierarchical/adaptive) optimize coordination efficiency for different task types, (2) parallel execution eliminates sequential bottlenecks by spawning all independent tasks concurrently, and (3) swarm memory maintains stateful context across agents and sessions, enabling collaborative intelligence and avoiding redundant work.
 
 Use Swarm Orchestration when implementing complex features with 6+ independent tasks (backend + frontend + tests + docs running concurrently), building systems requiring Byzantine consensus validation (0% theater tolerance), or coordinating distributed agents across multiple execution environments. The architecture scales from small swarms (3-5 agents) to enterprise-scale coordination (50+ agents with hierarchical topology). The key insight: coordination overhead is the bottleneck - optimize agent communication patterns (topology) and eliminate sequential dependencies (parallelism) to unlock true multi-agent leverage.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

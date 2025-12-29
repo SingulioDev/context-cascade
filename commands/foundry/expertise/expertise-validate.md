@@ -29,6 +29,11 @@ version: 1.0.0
 
 # /expertise-validate
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Validate domain expertise against current code reality. Run all falsifiable checks and detect drift.
 
 ## Usage
@@ -155,3 +160,7 @@ if (validation.status === 'valid' || validation.status === 'minor_drift') {
 - `/expertise-challenge` - Adversarial validation
 - `/expertise-refresh` - Rebuild stale expertise
 - `/expertise-diff` - Show what's changed
+
+
+---
+*Promise: `<promise>EXPERTISE_VALIDATE_VERIX_COMPLIANT</promise>`*

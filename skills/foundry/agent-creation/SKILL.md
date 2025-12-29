@@ -31,9 +31,9 @@ author: ruv
 - When the task is better suited for a slash command or micro-skill
 
 ### Success Criteria
-- primary_outcome: "Production-ready agent with optimized system prompt, clear role definition, and validated performance"
-- quality_threshold: 0.9
-- verification_method: "Agent successfully completes domain-specific tasks with consistent high-quality output, passes validation tests, and integrates with Claude Agent SDK"
+- [assert|neutral] primary_outcome: "Production-ready agent with optimized system prompt, clear role definition, and validated performance" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] quality_threshold: 0.9 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] verification_method: "Agent successfully completes domain-specific tasks with consistent high-quality output, passes validation tests, and integrates with Claude Agent SDK" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases
 - case: "Vague agent requirements"
@@ -62,6 +62,11 @@ plan_and_solve: "Plan: Research domain + identify capabilities -> Execute: Build
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Agent Creation - Systematic Agent Design
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Evidence-based agent creation following best practices for prompt engineering and agent specialization.
 
@@ -364,3 +369,7 @@ Agent creation is not prompt writing, it is systematic engineering. The differen
 The agent-creation skill transforms vague requirements into specialized agents with clear roles, evidence-based prompts, and validated performance. By combining Chain-of-Thought reasoning, few-shot learning, role definition, and plan-and-solve workflows, it creates agents that don't just follow instructions but reason through problems systematically. This methodology scales from simple specialist agents to complex coordinator agents managing multi-agent workflows.
 
 Use this skill whenever creating new agents or refining existing ones. The upfront investment in systematic design pays exponential dividends: agents that work consistently, handle edge cases gracefully, and integrate seamlessly into the broader agent ecosystem. Build specialists, not generalists. Apply evidence, not intuition. Test rigorously, not casually.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

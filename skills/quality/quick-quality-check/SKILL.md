@@ -34,13 +34,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -83,6 +82,11 @@ This skill integrates with:
 
 
 # Quick Quality Check
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 
@@ -235,3 +239,7 @@ In practice:
 Quick Quality Check provides instant quality feedback (under 30 seconds) by running 5 independent checks in parallel and aggregating results with severity ranking. This enables developers to catch critical issues (theater code, security vulnerabilities, broken builds) before committing, rather than discovering them hours later in CI/CD. The key insight is parallelization - because checks are independent (theater detection doesn't need security scan results), they can run concurrently on separate agents and complete in the time of the slowest check (typically 20-30 seconds).
 
 Use this skill when you need fast quality feedback during active development - before git commit, during code review, or as a pre-push hook. The quick mode skips deep analysis (full coverage reports, comprehensive security audits) in favor of speed, making it suitable for tight feedback loops. For thorough analysis, use the comprehensive code review workflow instead.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

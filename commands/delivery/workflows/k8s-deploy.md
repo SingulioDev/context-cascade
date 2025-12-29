@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /k8s-deploy
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Deploy applications to Kubernetes clusters with intelligent orchestration.
 
 ## Usage
@@ -234,3 +239,7 @@ Rollback Command (if needed):
 - `/monitoring-configure` - Setup K8s monitoring
 - `/smoke-test` - Post-deployment validation
 - `/load-test` - Load testing for scaled deployments
+
+
+---
+*Promise: `<promise>K8S_DEPLOY_VERIX_COMPLIANT</promise>`*

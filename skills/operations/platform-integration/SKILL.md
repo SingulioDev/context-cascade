@@ -48,6 +48,11 @@ author: ruv
 
 # Platform Integration
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Execute enterprise-grade platform integration with comprehensive API connectivity, webhook automation, data synchronization, and event-driven coordination across multiple platforms and services.
@@ -742,3 +747,7 @@ Use this skill when integrating with external platforms (Stripe, Salesforce, Sho
 The key architectural principle is event-driven design - webhooks and message queues provide real-time updates with better reliability and lower latency than polling. All webhook handlers include signature verification, idempotency checks, and dead letter queues for failed events.
 
 Success requires understanding the target platform's API patterns (REST vs GraphQL, webhook formats, rate limits, authentication methods) and designing integration architecture that handles failures gracefully. The framework provides production-ready templates for common platforms, reducing integration time from weeks to days while avoiding common pitfalls like duplicate processing, cascading failures, and security vulnerabilities.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

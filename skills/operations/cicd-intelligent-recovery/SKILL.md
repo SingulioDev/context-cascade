@@ -46,6 +46,11 @@ author: ruv
 
 # CI/CD Quality & Debugging Loop (Loop 3)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Purpose**: Continuous integration with automated failure recovery and authentic quality validation.
 
 **SOP Workflow**: Specification → Research → Planning → Execution → Knowledge
@@ -2040,19 +2045,17 @@ Task("Tiebreaker Analyst", "Review conflicts and make final decision", "analyst"
 ---
 
 ## Success Criteria
-
-Loop 3 is successful when:
-- ✅ 100% test success rate achieved
-- ✅ All root causes identified and fixed (Raft consensus validation)
-- ✅ Theater audit passed (6-agent Byzantine consensus, no false improvements)
-- ✅ Sandbox validation: 100% test pass in production-like environment
-- ✅ Differential analysis shows improvement
-- ✅ GitHub PR created with comprehensive evidence
-- ✅ Failure patterns stored for Loop 1 feedback
-- ✅ Memory namespaces populated with complete data
-- ✅ Evidence-based techniques applied (Gemini, Byzantine, Raft, Program-of-Thought, Self-Consistency)
-
----
+- [assert|neutral] Loop 3 is successful when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ 100% test success rate achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ All root causes identified and fixed (Raft consensus validation) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Theater audit passed (6-agent Byzantine consensus, no false improvements) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Sandbox validation: 100% test pass in production-like environment [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Differential analysis shows improvement [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ GitHub PR created with comprehensive evidence [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Failure patterns stored for Loop 1 feedback [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Memory namespaces populated with complete data [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Evidence-based techniques applied (Gemini, Byzantine, Raft, Program-of-Thought, Self-Consistency) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Related Skills
 
@@ -2119,3 +2122,7 @@ CI/CD Intelligent Recovery represents the final quality gate in the Three-Loop I
 This skill is essential when you need to recover from CI/CD failures with high confidence and prevent regression. It excels at distinguishing root causes from cascade failures, generating minimal fixes that respect code coupling patterns, and validating that improvements are genuine rather than theatrical.
 
 Use this skill when Loop 2 implementation completes and test failures occur, when you need automated failure recovery with root cause analysis, or when you want to ensure CI/CD fixes feed back into Loop 1 planning for continuous improvement. The combination of evidence-based techniques (Gemini large-context, Byzantine/Raft consensus, program-of-thought) with theater detection ensures that every fix is both effective and authentic.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

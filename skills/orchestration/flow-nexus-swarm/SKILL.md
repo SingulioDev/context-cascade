@@ -33,11 +33,11 @@ author: ruv
 - **Trivial changes** to single files
 
 ### Success Criteria
-- **Agent+skill matrix generated** with optimal assignments
-- **Parallel execution successful** with 8.3x speedup achieved
-- **Theater detection passes** with 0% theater detected
-- **Integration tests pass** at 100% rate
-- **All agents complete** with no orphaned workers
+- [assert|neutral] *Agent+skill matrix generated** with optimal assignments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Parallel execution successful** with 8.3x speedup achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Theater detection passes** with 0% theater detected [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Integration tests pass** at 100% rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All agents complete** with no orphaned workers [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Implement agent health monitoring and replacement
@@ -47,11 +47,11 @@ author: ruv
 - **Conflicting outputs** - Implement merge conflict resolution strategy
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose agent state** - Persist agent progress to memory continuously
-- **ALWAYS track swarm health** - Monitor all agent statuses in real-time
-- **ALWAYS validate consensus** - Require 4/5 agreement for theater detection
-- **NEVER skip theater audit** - Zero tolerance, any theater blocks merge
-- **ALWAYS cleanup workers** - Terminate agents on completion/failure
+- [assert|emphatic] NEVER: lose agent state** - Persist agent progress to memory continuously [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track swarm health** - Monitor all agent statuses in real-time [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate consensus** - Require 4/5 agreement for theater detection [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip theater audit** - Zero tolerance, any theater blocks merge [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup workers** - Terminate agents on completion/failure [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Check all agent statuses** - Verify each agent completed successfully
@@ -62,6 +62,11 @@ author: ruv
 
 
 # Flow Nexus Swarm & Workflow Orchestration
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Deploy and manage cloud-based AI agent swarms with event-driven workflow automation, message queue processing, and intelligent agent coordination.
 
@@ -714,3 +719,7 @@ The Flow Nexus Swarm skill enables cloud-based multi-agent orchestration with to
 Use this skill for complex multi-agent tasks requiring parallel execution (6+ agents), distributed compute workloads, or sophisticated workflow pipelines with dependencies. The swarm architecture excels at full-stack development, research projects, CI/CD automation, and data processing pipelines where coordination overhead justifies cloud infrastructure.
 
 Key takeaways: Select topology based on coordination patterns, leverage event-driven workflows for long-running tasks, and trust vector similarity for agent assignment. The platform's template library, real-time monitoring, and multi-swarm coordination capabilities enable enterprise-scale agent orchestration with minimal configuration overhead.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

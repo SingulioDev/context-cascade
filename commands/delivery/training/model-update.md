@@ -1,4 +1,9 @@
 # model-update
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 Key platform/tooling/training command improvements:
 - Platform API requirements
 - Tool configuration
@@ -30,3 +35,7 @@ npx claude-flow training model-update --model agent-selector
 # Incremental with validation
 npx claude-flow training model-update --incremental --validate
 ```
+
+
+---
+*Promise: `<promise>MODEL_UPDATE_VERIX_COMPLIANT</promise>`*

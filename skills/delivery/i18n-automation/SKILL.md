@@ -16,6 +16,11 @@ author: ruv
 
 # i18n Automation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -645,3 +650,7 @@ Internationalization automation addresses the tension between product velocity a
 The skill's power lies in treating i18n as a first-class product concern rather than a post-launch addition. By enforcing architectural patterns (hierarchical key namespacing, RTL-aware CSS, SEO metadata localization) and providing framework-specific implementations (Next.js routing, React hooks, Vue composition), it eliminates the research tax that typically accompanies internationalization efforts. The translation strategy matrix (professional/AI/community/hybrid) acknowledges that quality-speed-cost tradeoffs vary by context, providing clear guidance rather than dogmatic recommendations.
 
 The automation workflow reduces a multi-day manual process to hours while improving quality through systematic validation gates. String extraction eliminates hardcoding, AI translation provides speed for MVPs, and professional review ensures cultural appropriateness for production. The result is applications that launch globally without sacrificing engineering velocity, with internationalization architecture that scales to dozens of languages without refactoring.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

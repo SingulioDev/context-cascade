@@ -33,6 +33,11 @@ mcp_servers:
 
 # Physics Simulation Creator
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Create optimal physics simulations with automatic parameter tuning using Non-Newtonian Calculus (NNC).
 
 ## Overview
@@ -412,15 +417,13 @@ python ai_simulation_helper.py --length-scale 1e21 --json
 ---
 
 ## Success Metrics
-
-| Metric | Target |
-|--------|--------|
-| k-value selection | Use CLI script output |
-| Accuracy vs k=0 | Document improvement |
-| Performance vs k=0 | Document step reduction |
-| Singularity detection | Correctly identify if present |
-
----
+- [assert|neutral] | Metric | Target | [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] |--------|--------| [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] | k-value selection | Use CLI script output | [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] | Accuracy vs k=0 | Document improvement | [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] | Performance vs k=0 | Document step reduction | [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] | Singularity detection | Correctly identify if present | [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## References
 
@@ -845,3 +848,7 @@ The Physics Simulation Creator skill challenges the assumption that classical ca
 The core insight is that optimal k varies by problem scale and structure. The bundled ai_simulation_helper.py script automates k-selection using the k(L) formula for length-scale optimization and singularity-specific tables for problems with explicit discontinuities. This ensures that every simulation uses the numerically optimal method for its specific physics, rather than defaulting to classical approaches.
 
 By enforcing baseline comparisons, transparent documentation, and physics validation, this skill ensures that NNC-based simulations are not only faster and more accurate but also reproducible and scientifically rigorous. Whether simulating molecular dynamics at atomic scales or handling gravitational singularities, this skill provides a systematic framework for optimal numerical physics simulation.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

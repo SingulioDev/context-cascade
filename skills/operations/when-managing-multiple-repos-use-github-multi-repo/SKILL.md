@@ -16,6 +16,11 @@ mcp_tools:
 
 # GitHub Multi-Repository Management Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Orchestrate complex operations across multiple related GitHub repositories with intelligent agent coordination. This skill enables consistent architecture enforcement, synchronized dependency updates, cross-repo refactoring, and coordinated releases for microservices, multi-package ecosystems, and distributed system architectures.
@@ -512,3 +517,7 @@ Success requires three architectural commitments: dependency graph discipline (u
 The hierarchical agent topology (central coordinator orchestrating repository-specific workers) enables parallel execution within dependency constraints while maintaining global consistency. This is critical for large-scale operations: propagating API changes across 20 repositories requires parallel updates (serial execution would take days) but must respect dependency order (upstream before downstream). The coordinator maintains the dependency graph, workers execute repository-specific tasks, and the topology ensures both parallelism and correctness.
 
 Implementation sequencing matters: Start with dependency graph visualization (`repo-graph.sh build-graph` for all repositories), then implement automated architectural linting (`arch-lint.sh` in CI pipelines), then attempt coordinated operations (cross-repo refactoring, synchronized releases). Attempting multi-repo operations without dependency understanding and enforcement infrastructure results in production outages and permanent architectural drift. The upfront investment in coordination infrastructure (typically 1-2 weeks) prevents months of firefighting dependency conflicts and architectural inconsistency.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

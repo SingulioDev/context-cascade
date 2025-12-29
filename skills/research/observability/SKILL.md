@@ -6,6 +6,11 @@ description: Observability specialists hub for monitoring, logging, tracing, and
 
 # Observability
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Central hub for monitoring, logging, tracing, and system observability.
 
 ## Phase 0: Expertise Loading
@@ -200,3 +205,7 @@ The Observability skill establishes comprehensive system visibility through unif
 The SLO-based alerting framework transforms monitoring from reactive firefighting into proactive quality management. By defining Service Level Objectives that reflect actual business requirements and configuring alerts based on SLO burn rates, teams receive actionable notifications about genuine user impact rather than noisy metric threshold violations. The recursive improvement integration through benchmark evaluation ensures observability implementations meet quality standards for monitoring coverage and alert quality.
 
 Organizations implementing this skill benefit from faster incident detection and resolution, reduced mean time to recovery (MTTR), and deeper understanding of system behavior under load. The expertise-aware workflow enables teams to leverage documented monitoring patterns and alerting rules specific to their infrastructure, preventing common pitfalls and accelerating observability maturity. When coordinated with infrastructure, deployment-readiness, and performance-analysis skills, observability creates a complete operational excellence framework.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

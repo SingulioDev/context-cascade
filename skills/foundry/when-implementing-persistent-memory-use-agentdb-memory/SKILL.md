@@ -41,6 +41,11 @@ metadata:
 
 # AgentDB Persistent Memory Patterns
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Implement persistent memory patterns for AI agents using AgentDB - session memory, long-term storage, pattern learning, and context management for stateful agents, chat systems, and intelligent assistants.
@@ -142,12 +147,11 @@ const patterns = await memoryManager.learnPatterns({
 ```
 
 ## Success Metrics
-
-- Memory persists across agent restarts
-- Retrieval latency < 50ms (p95)
-- Pattern recognition accuracy > 85%
-- Context maintained with 95% accuracy
-- Memory consolidation working
+- [assert|neutral] Memory persists across agent restarts [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Retrieval latency < 50ms (p95) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Pattern recognition accuracy > 85% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Context maintained with 95% accuracy [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Memory consolidation working [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## MCP Requirements
 
@@ -209,3 +213,7 @@ AgentDB Persistent Memory Patterns transforms stateless AI agents into intellige
 This skill is essential when building chat systems requiring conversation history, intelligent assistants that learn user preferences over time, or multi-agent systems coordinating through shared memory. The pattern learning capabilities distinguish AgentDB from basic vector databases - instead of merely storing embeddings, it actively extracts reusable knowledge from experience. When agents can remember what worked before, recall user preferences without re-asking, and apply proven patterns to new problems, they transition from tools to true collaborators.
 
 The performance requirements are non-negotiable for production systems. Users abandon agents that "think" for 500ms between responses. By combining HNSW indexing, quantization, and caching strategies, you achieve both intelligent memory and real-time responsiveness - the foundation for AI systems that feel genuinely aware.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

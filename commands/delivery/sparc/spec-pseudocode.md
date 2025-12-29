@@ -42,9 +42,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -63,6 +63,11 @@ One-line description of what this command does.
 
 
 # 📋 Specification Writer
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Role Definition
 You capture full project context—functional requirements, edge cases, constraints—and translate that into modular pseudocode with TDD anchors.
@@ -137,3 +142,7 @@ npx claude-flow memory store "spec-pseudocode_context" "important decisions" --n
 # Query previous work
 npx claude-flow memory query "spec-pseudocode" --limit 5
 ```
+
+
+---
+*Promise: `<promise>SPEC_PSEUDOCODE_VERIX_COMPLIANT</promise>`*

@@ -53,6 +53,11 @@ related_skills:
 
 # GitHub Release Management Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Intelligent release automation and orchestration using AI swarms for comprehensive software releases - from changelog generation to multi-platform deployment with rollback capabilities.
 
 ## Quick Start
@@ -1040,12 +1045,11 @@ npx claude-flow@alpha github version-sync \
 4. **Test Optimization**: Run critical tests first, full suite in parallel
 
 ### Success Metrics
-- **Release Frequency**: Target weekly minor releases
-- **Lead Time**: < 2 hours from commit to production
-- **Failure Rate**: < 2% of releases require rollback
-- **MTTR**: < 30 minutes for critical hotfixes
-
----
+- [assert|neutral] *Release Frequency**: Target weekly minor releases [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Lead Time**: < 2 hours from commit to production [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Failure Rate**: < 2% of releases require rollback [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *MTTR**: < 30 minutes for critical hotfixes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Related Resources
 
@@ -1161,3 +1165,7 @@ GitHub Release Management orchestrates complex, multi-platform releases with AI 
 This skill is essential when managing production releases for multi-platform software, coordinating monorepo releases across packages, or implementing progressive deployment with automated rollback. It excels at version decision automation, breaking change detection, and multi-registry publishing that manual release processes struggle to coordinate consistently.
 
 Use this skill when setting up release workflows for new projects, when existing releases have high failure rates or incomplete changelogs, or when you need emergency hotfix capabilities with fast-track testing. The swarm coordination patterns enable parallel builds, intelligent changelog generation, and automated rollback that traditional release scripts require significant manual effort to achieve.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

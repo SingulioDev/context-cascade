@@ -32,9 +32,9 @@ author: ruv
 - When simple script suffices without skill abstraction
 
 ### Success Criteria
-- primary_outcome: "Production-grade skill with comprehensive structure, agent coordination, adversarial testing, and integration documentation"
-- quality_threshold: 0.91
-- verification_method: "Skill passes adversarial testing protocol, survives COV validation, integrates with Claude Flow, includes examples and tests"
+- [assert|neutral] primary_outcome: "Production-grade skill with comprehensive structure, agent coordination, adversarial testing, and integration documentation" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] quality_threshold: 0.91 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] verification_method: "Skill passes adversarial testing protocol, survives COV validation, integrates with Claude Flow, includes examples and tests" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases
 - case: "Skill requires complex multi-agent coordination"
@@ -64,6 +64,11 @@ plan_and_solve: "Plan: Identify skill scope + agents needed -> Execute: Build st
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Skill Forge
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 An advanced skill creation system that helps craft sophisticated, well-engineered skills for Claude Code by combining deep intent analysis, evidence-based prompting principles, and systematic skill engineering methodology.
 
@@ -1139,3 +1144,7 @@ Skill Forge elevates skill creation from template-filling to strategic engineeri
 The 8-phase methodology (Phase 0-7a) ensures skills are well-specified, thoroughly validated, and resilient to edge cases. Quality gates prevent progression when confidence is low, forcing clarification before expensive rework. Metrics tracking (Phase 8) quantifies which techniques deliver highest ROI, building institutional knowledge about what works.
 
 Use Skill Forge when creating skills for repeated use, building shared team libraries, or developing complex workflows requiring high reliability. The investment in systematic design compounds through reduced debugging time, fewer production issues, and skills that remain maintainable as requirements evolve. Skills created with this methodology become valuable organizational assets rather than throwaway scripts.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

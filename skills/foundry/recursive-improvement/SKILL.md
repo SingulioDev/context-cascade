@@ -1,5 +1,10 @@
 # Recursive Improvement - Meta-Loop Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ---
 name: recursive-improvement
 description: Self-improving meta-loop that audits and enhances skills, prompts, and expertise files
@@ -308,3 +313,7 @@ mcp_servers:
 **Status**: Production-Ready
 **Version**: 2.0.0
 **Key Constraint**: Eval-harness is FROZEN - never self-improves
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

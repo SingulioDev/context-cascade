@@ -1,4 +1,9 @@
 # task-orchestrate
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -55,3 +60,7 @@ npx claude-flow task orchestrate --task "Fix production bug" --priority critical
 # With specific strategy
 npx claude-flow task orchestrate --task "Refactor codebase" --strategy parallel
 ```
+
+
+---
+*Promise: `<promise>TASK_ORCHESTRATE_VERIX_COMPLIANT</promise>`*

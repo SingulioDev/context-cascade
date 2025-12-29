@@ -15,6 +15,11 @@ validation_gates: true
 
 # Quality Verification and Validation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Execute comprehensive quality verification across static analysis, dynamic testing, integration validation, and certification gates to ensure code meets production standards with measurable quality metrics and approval documentation.
@@ -983,11 +988,11 @@ swarm/production-validator/final-report:
 ## Evidence-Based Validation
 
 ### Success Criteria
-- ✅ Certification score ≥80/100
-- ✅ All quality gates pass
-- ✅ Compliance checks complete
-- ✅ Stakeholder sign-off obtained
-- ✅ Comprehensive documentation generated
+- [assert|neutral] ✅ Certification score ≥80/100 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ All quality gates pass [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Compliance checks complete [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Stakeholder sign-off obtained [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Comprehensive documentation generated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Metrics Tracking
 ```javascript
@@ -1096,3 +1101,7 @@ Quality verification transforms software quality from a subjective assessment in
 The key to effective quality verification is balancing thoroughness with automation. Static analysis runs quickly and catches maintainability issues, dynamic testing validates runtime behavior and coverage, integration testing confirms component interactions, and compliance checks ensure regulatory requirements are met. By automating these validations and running them continuously in CI/CD pipelines, teams catch issues early when they are cheapest to fix, rather than discovering problems in production when they are most expensive.
 
 Comprehensive documentation and audit trails make quality verification valuable beyond immediate quality assurance. The detailed reports, certification artifacts, and cryptographic signatures provide evidence for compliance audits (SOC2, GDPR, HIPAA), stakeholder reviews, and post-mortems. This documentation demonstrates not just that quality was checked, but exactly what was measured, what thresholds were applied, and how the certification decision was made. The transparency and reproducibility of this process builds trust with stakeholders and regulators while maintaining high quality standards that protect users and business value.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

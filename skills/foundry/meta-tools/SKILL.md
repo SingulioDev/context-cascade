@@ -28,7 +28,7 @@ author: ruv
 
 ### Success Criteria
 - primary_outcome: "[SKILL-SPECIFIC measurable result based on skill purpose]"
-- quality_threshold: 0.85
+- [assert|neutral] quality_threshold: 0.85 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 - verification_method: "[How to validate skill executed correctly and produced expected outcome]"
 
 ### Edge Cases
@@ -56,6 +56,11 @@ plan_and_solve: "Plan: [SKILL-SPECIFIC planning phase] -> Execute: [SKILL-SPECIF
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Meta-Tools - Tool Creation and Composition Framework
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -344,3 +349,7 @@ In practice:
 Meta-Tools provides a comprehensive framework that transforms tool creation from an artisanal process to an engineering discipline. By treating tools as first-class artifacts with specifications, validation, and optimization, this framework enables developers to build robust tooling ecosystems that scale.
 
 Use this skill when creating multiple related tools, building custom development workflows, or establishing tooling standards across teams. The framework's strength lies in automation and consistency - what would take hours of manual work (writing tests, documentation, validation) happens automatically through specification-driven generation. This reduces cognitive load while ensuring professional-grade quality for all generated tools.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

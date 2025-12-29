@@ -22,13 +22,12 @@ author: ruv
 - Operations that do not require embedding-based retrieval
 
 ## Success Criteria
-
-- Vector search query latency: <10ms for 99th percentile
-- Embedding generation: <100ms per document
-- Index build time: <1s per 1000 vectors
-- Recall@10: >0.95 for similar documents
-- Database connection success rate: >99.9%
-- Memory footprint: <2GB for 1M vectors with quantization
+- [assert|neutral] Vector search query latency: <10ms for 99th percentile [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Embedding generation: <100ms per document [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Index build time: <1s per 1000 vectors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Recall@10: >0.95 for similar documents [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Database connection success rate: >99.9% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Memory footprint: <2GB for 1M vectors with quantization [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -40,13 +39,12 @@ author: ruv
 - **Dimension Mismatch**: Validate embedding dimensions (384 for sentence-transformers) before insertion
 
 ## Guardrails & Safety
-
-- NEVER expose database connection strings in logs or error messages
-- ALWAYS validate vector dimensions before insertion
-- ALWAYS sanitize metadata to prevent injection attacks
-- NEVER store PII in vector metadata without encryption
-- ALWAYS implement access control for multi-tenant deployments
-- ALWAYS validate search results before returning to users
+- [assert|emphatic] NEVER: expose database connection strings in logs or error messages [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate vector dimensions before insertion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: sanitize metadata to prevent injection attacks [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: store PII in vector metadata without encryption [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement access control for multi-tenant deployments [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate search results before returning to users [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -58,6 +56,11 @@ author: ruv
 
 
 # AgentDB Learning Plugins
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## What This Skill Does
 
@@ -638,3 +641,7 @@ In practice:
 AgentDB Learning Plugins transforms static vector databases into self-improving AI systems by integrating 9 reinforcement learning algorithms with persistent memory for experience accumulation and retrieval. By storing experiences as embeddings in AgentDB, agents learn from past successes and failures, retrieve similar patterns for transfer learning, and continuously improve through offline RL without risking catastrophic exploration.
 
 Use this skill when building autonomous agents requiring continuous improvement (chatbots, recommendation systems, game AI), implementing safe learning from historical data (medical diagnosis, financial trading), or enabling multi-agent knowledge sharing through federated learning. The key insight is persistence: unlike traditional RL where experiences are discarded after training, AgentDB stores them permanently for retrieval, reuse, and transfer across tasks. Start with Decision Transformer for safe offline learning from logged data, add experience replay for sample efficiency, and enable distributed training when scaling to multiple agents or environments.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

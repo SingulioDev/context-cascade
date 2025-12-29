@@ -22,13 +22,12 @@ author: ruv
 - Operations that do not require embedding-based retrieval
 
 ## Success Criteria
-
-- Vector search query latency: <10ms for 99th percentile
-- Embedding generation: <100ms per document
-- Index build time: <1s per 1000 vectors
-- Recall@10: >0.95 for similar documents
-- Database connection success rate: >99.9%
-- Memory footprint: <2GB for 1M vectors with quantization
+- [assert|neutral] Vector search query latency: <10ms for 99th percentile [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Embedding generation: <100ms per document [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Index build time: <1s per 1000 vectors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Recall@10: >0.95 for similar documents [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Database connection success rate: >99.9% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Memory footprint: <2GB for 1M vectors with quantization [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -40,13 +39,12 @@ author: ruv
 - **Dimension Mismatch**: Validate embedding dimensions (384 for sentence-transformers) before insertion
 
 ## Guardrails & Safety
-
-- NEVER expose database connection strings in logs or error messages
-- ALWAYS validate vector dimensions before insertion
-- ALWAYS sanitize metadata to prevent injection attacks
-- NEVER store PII in vector metadata without encryption
-- ALWAYS implement access control for multi-tenant deployments
-- ALWAYS validate search results before returning to users
+- [assert|emphatic] NEVER: expose database connection strings in logs or error messages [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate vector dimensions before insertion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: sanitize metadata to prevent injection attacks [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: store PII in vector metadata without encryption [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement access control for multi-tenant deployments [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate search results before returning to users [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -58,6 +56,11 @@ author: ruv
 
 
 # AgentDB Memory Patterns
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## What This Skill Does
 
@@ -449,3 +452,7 @@ The AgentDB Memory Patterns skill enables stateful AI agents through persistent 
 Use this skill when building conversational agents, creating intelligent assistants that learn from interactions, or implementing systems requiring context persistence across sessions. The pattern library excels at chat systems, task-planning agents, and recommendation systems where historical interactions inform future decisions.
 
 Key takeaways: Organize memory hierarchically across time horizons, train learning plugins on accumulated patterns, and leverage reasoning agents for context synthesis. The 100% backward compatibility with ReasoningBank and seamless Claude Code integration via MCP makes AgentDB Memory Patterns the production-ready choice for stateful agent development.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /theater-detect
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Detects placeholder code, mock data, TODO markers, and incomplete implementations.
 
 ## Usage
@@ -72,3 +77,7 @@ Detects placeholder code, mock data, TODO markers, and incomplete implementation
 - `/functionality-audit` - Verify code works
 - `/style-audit` - Polish code quality
 - `/audit-pipeline` - Run all audits
+
+
+---
+*Promise: `<promise>THEATER_DETECT_VERIX_COMPLIANT</promise>`*

@@ -21,12 +21,11 @@ author: ruv
 - Applications that do not benefit from reasoning trace storage
 
 ## Success Criteria
-
-- Reasoning chain accuracy: >90% logically valid steps
-- Retrieval relevance: Top-5 recall >0.85 for similar reasoning
-- Storage efficiency: <1MB per 100 reasoning chains
-- Query latency: <50ms for reasoning retrieval
-- Integration success: Seamless connection with AgentDB backend
+- [assert|neutral] Reasoning chain accuracy: >90% logically valid steps [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Retrieval relevance: Top-5 recall >0.85 for similar reasoning [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Storage efficiency: <1MB per 100 reasoning chains [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Query latency: <50ms for reasoning retrieval [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Integration success: Seamless connection with AgentDB backend [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -37,13 +36,12 @@ author: ruv
 - **Circular Reasoning**: Detect and prevent circular reference chains
 
 ## Guardrails & Safety
-
-- NEVER store reasoning chains with sensitive or PII data
-- ALWAYS validate reasoning quality before storage
-- ALWAYS sanitize inputs to prevent prompt injection
-- NEVER expose internal reasoning structures in public APIs
-- ALWAYS implement access control for reasoning retrieval
-- ALWAYS audit reasoning chains for bias and harmful content
+- [assert|emphatic] NEVER: store reasoning chains with sensitive or PII data [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate reasoning quality before storage [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: sanitize inputs to prevent prompt injection [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: expose internal reasoning structures in public APIs [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement access control for reasoning retrieval [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: audit reasoning chains for bias and harmful content [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -55,6 +53,11 @@ author: ruv
 
 
 # ReasoningBank Intelligence
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## What This Skill Does
 
@@ -271,3 +274,7 @@ console.log(`
 ReasoningBank Intelligence transforms agents from stateless executors to adaptive learners, accumulating strategic knowledge (not just data) through the recordExperience -> recommendStrategy -> metaLearn feedback loop. This creates compounding returns: an agent with 1000+ experiences can select optimal approaches in <50ms, while a fresh agent spends minutes exploring suboptimal strategies, multiplying this advantage across every task.
 
 The critical success factor is pattern quality over quantity - 100 high-confidence, context-rich experiences (learningRate 0.8, detailed metrics) outperform 10,000 noisy records. When implementing adaptive agents, start with manual experience recording for the first 50 tasks, review learned patterns for correctness, then enable auto-learning only after validating the system learns true patterns (not spurious correlations like "bug fixes succeed more on Tuesdays"). The goal is not to record everything, but to capture the crystallized knowledge that makes future decisions measurably better - tracked via strategy success rate increasing over time (target >85% after 500+ experiences).
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

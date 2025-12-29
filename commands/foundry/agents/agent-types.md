@@ -1,4 +1,9 @@
 # agent-types
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Command-Specific Requirements
 
 ### Agent Creation Parameters
@@ -46,3 +51,7 @@ For full list and details:
 ```bash
 npx claude-flow agents list
 ```
+
+
+---
+*Promise: `<promise>AGENT_TYPES_VERIX_COMPLIANT</promise>`*

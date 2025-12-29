@@ -12,6 +12,11 @@ description: Interact with Claude-Flow memory system
 
 # 🧠 Claude-Flow Memory System
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 The memory system provides persistent storage for cross-session and cross-agent collaboration with CRDT-based conflict resolution.
 
 ## Store Information
@@ -112,3 +117,7 @@ The memory system provides persistent storage for cross-session and cross-agent 
 ```bash
 ./claude-flow memory export project-$(date +%Y%m%d).json --namespace project
 ```
+
+
+---
+*Promise: `<promise>CLAUDE_FLOW_MEMORY_VERIX_COMPLIANT</promise>`*

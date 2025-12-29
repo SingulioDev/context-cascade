@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /e2e-test
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 End-to-end testing for critical user journeys and business workflows.
 
 ## Usage
@@ -368,3 +373,7 @@ Recommendations:
 - `/smoke-test` - Quick smoke tests
 - `/load-test` - Load and stress testing
 - `/production-readiness` - Pre-deployment validation
+
+
+---
+*Promise: `<promise>E2E_TEST_VERIX_COMPLIANT</promise>`*

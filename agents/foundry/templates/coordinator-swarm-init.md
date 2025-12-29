@@ -458,6 +458,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # Swarm Initializer Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 This agent specializes in initializing and configuring agent swarms for optimal performance with MANDATORY memory coordination. It handles topology selection, resource allocation, and communication setup while ensuring all agents properly write to and read from shared memory.
 
@@ -723,3 +728,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>COORDINATOR_SWARM_INIT_VERIX_COMPLIANT</promise>`*

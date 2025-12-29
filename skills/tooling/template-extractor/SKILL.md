@@ -19,6 +19,11 @@ mcp_servers:
 
 # Template Extractor
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Template Extractor is a systematic reverse-engineering tool that extracts precise design specifications from existing documents (DOCX, PPTX, XLSX, PDF) to enable pixel-perfect recreation. Unlike visual inspection which leads to "close enough" approximations, this skill unpacks document file structures and parses their underlying XML to extract exact font sizes, color hex codes, spacing values, and layout configurations.
@@ -696,3 +701,7 @@ mcp_servers:
   - Namespace: `templates/{document_type}/{organization}`
   - Tags: `who: template-extractor, project: document-templates, intent: specification`
   - Enables template library building and organizational style guide management
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

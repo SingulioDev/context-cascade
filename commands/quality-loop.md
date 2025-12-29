@@ -1,5 +1,10 @@
 # /quality-loop
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Description
 Start a quality-gated Ralph Wiggum persistence loop with Connascence Safety Analyzer integration. Code is automatically audited after each change, and the loop continues until all quality issues are resolved.
 

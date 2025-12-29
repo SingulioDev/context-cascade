@@ -37,6 +37,11 @@ evidence_based_techniques: [plan-and-solve, self-consistency]
 
 # /agent-retire - Graceful Agent Retirement
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 The `/agent-retire` command gracefully retires agents with proper cleanup, memory preservation, task handoff, and resource deallocation.
@@ -104,3 +109,7 @@ npx claude-flow@alpha agent retire --agent-id "stuck-agent" --force
 ---
 
 **Version**: 2.0.0
+
+
+---
+*Promise: `<promise>AGENT_RETIRE_VERIX_COMPLIANT</promise>`*

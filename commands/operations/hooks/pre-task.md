@@ -1,4 +1,9 @@
 # hook pre-task
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Command-Specific Context
 - Deployment target requirements
 - Pre/post hook execution order
@@ -140,3 +145,7 @@ Returns JSON with:
 - `agent spawn` - Manual agent creation
 - `memory usage` - Memory management
 - `swarm init` - Swarm initialization
+
+
+---
+*Promise: `<promise>PRE_TASK_VERIX_COMPLIANT</promise>`*

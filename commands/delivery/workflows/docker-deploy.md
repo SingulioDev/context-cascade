@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /docker-deploy
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Deploy Docker containers to registries and orchestration platforms.
 
 ## Usage
@@ -197,3 +202,7 @@ Rollback Command (if needed):
 - `/workflow:rollback` - Rollback deployment
 - `/monitoring-configure` - Setup deployment monitoring
 - `/smoke-test` - Post-deployment validation
+
+
+---
+*Promise: `<promise>DOCKER_DEPLOY_VERIX_COMPLIANT</promise>`*

@@ -8,6 +8,11 @@ triggers: ["react", "react 18", "hooks", "next.js", "redux", "zustand", "react p
 
 # React Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert React development for modern, performant, and maintainable frontend applications.
 
 ## Purpose
@@ -524,18 +529,14 @@ function DataFetcher<T>({ url, children }: DataFetcherProps<T>) {
 - `mcp__memory-mcp__memory_store` for persisting React patterns
 
 ## Success Metrics
-
-- Component creation: 10-15 minutes
-- Feature with tests: 1-2 hours
-- Lighthouse performance: ≥90
-- Test coverage: ≥80%
-- Bundle size: <200KB (gzipped)
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
-**Maintained By**: react-specialist agent
+- [assert|neutral] Component creation: 10-15 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Feature with tests: 1-2 hours [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Lighthouse performance: ≥90 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Test coverage: ≥80% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Bundle size: <200KB (gzipped) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Maintained By**: react-specialist agent [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -583,3 +584,7 @@ Modern React development prioritizes performance, type safety, and developer exp
 Performance optimization in React is achieved through strategic memoization, code splitting, and lazy loading. React.memo prevents unnecessary child re-renders, useMemo caches expensive computations, and useCallback stabilizes function references. Combined with React Suspense for loading states and Server Components for data fetching, modern React applications achieve Lighthouse scores above 90 while maintaining complex interactivity.
 
 Type safety through TypeScript strict mode catches errors at compile time rather than runtime. Proper typing of props, hooks, and API responses provides confidence during refactoring and enables powerful IDE features like autocomplete and inline documentation. Combined with Zod or Pydantic for runtime validation, TypeScript ensures data flowing through React applications matches expected shapes. Testing with React Testing Library focuses on user behavior rather than implementation details, creating maintainable test suites that survive refactoring. This comprehensive approach to React development produces applications that are fast, accessible, type-safe, and maintainable.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

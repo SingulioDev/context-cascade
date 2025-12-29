@@ -38,6 +38,11 @@ estimated_time: 5 min per run
 
 # Runway Dashboard
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Real-time financial tracking with burn rate analysis, runway projection, and critical alert thresholds. Know exactly how many weeks you can operate.
 
 ## Overview
@@ -406,13 +411,11 @@ bash runway_dashboard.sh
 ---
 
 ## Success Metrics
-
-- **Zero surprises**: Always know runway status
-- **Alert response**: <24 hours to act on critical alerts
-- **Forecast accuracy**: ±10% on 30-day projections
-- **Peace of mind**: Quantified vs. emotional stress
-
----
+- [assert|neutral] *Zero surprises**: Always know runway status [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Alert response**: <24 hours to act on critical alerts [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Forecast accuracy**: ±10% on 30-day projections [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Peace of mind**: Quantified vs. emotional stress [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Troubleshooting
 
@@ -433,3 +436,7 @@ bash runway_dashboard.sh
 **Version**: 1.0.0
 **Scheduled**: Daily, 8:00 AM (Mon-Fri)
 **Maintainer**: David Youssef
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

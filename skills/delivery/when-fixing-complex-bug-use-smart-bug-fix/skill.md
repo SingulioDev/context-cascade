@@ -1,5 +1,10 @@
 # When Fixing Complex Bug Use Smart Bug Fix
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ---
 name: when-fixing-complex-bug-use-smart-bug-fix
 trigger: "when user reports complex bug, production issue, or requests systematic debugging"
@@ -735,3 +740,7 @@ Skill("<skill-name>")
 ---
 
 **Remember the pattern: Skill() -> Task() -> TodoWrite() - ALWAYS**
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

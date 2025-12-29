@@ -39,6 +39,11 @@ author: Claude Flow Team
 
 # Performance Analysis Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Comprehensive performance analysis suite for identifying bottlenecks, profiling swarm operations, generating detailed reports, and providing actionable optimization recommendations.
 
 ## Overview
@@ -789,3 +794,7 @@ Which invalidation pattern fits?
 - Start with TTL (simple, predictable)
 - Add explicit invalidation only when freshness critical
 - Monitor cache hit rate (should be >90% for hot paths)
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

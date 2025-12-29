@@ -13,6 +13,11 @@ tags:
 
 # Expertise Manager
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Phase 0: Expertise Loading
 
 Before managing expertise:
@@ -557,15 +562,13 @@ Task("Expertise Failure Integrator",
 ---
 
 ## Success Criteria
-
-Expertise Manager is successful when:
-- Agents read expertise BEFORE acting (no search thrash)
-- Expertise auto-updates after successful builds (learning DNA)
-- Knowledge persists across sessions (Memory MCP)
-- Drift is detected and corrected automatically
-- Failure patterns feed back into expertise (continuous improvement)
-
----
+- [assert|neutral] Expertise Manager is successful when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Agents read expertise BEFORE acting (no search thrash) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expertise auto-updates after successful builds (learning DNA) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Knowledge persists across sessions (Memory MCP) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Drift is detected and corrected automatically [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Failure patterns feed back into expertise (continuous improvement) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Performance Metrics
 
@@ -671,3 +674,7 @@ Expertise Manager implements Agent Experts-style learning for the three-loop sys
 The system's power emerges through three integrated mechanisms: pre-action loading eliminates search thrash by providing agents with accumulated domain knowledge before they begin work; post-success auto-update creates learning DNA where successful builds automatically strengthen expertise; and validation loops detect drift between expertise and code reality, enabling automatic correction before stale knowledge misleads agents. Together, these mechanisms create self-improving agents that compound effectiveness over time.
 
 Successful implementation requires treating expertise as living mental models that require continuous validation against code reality. The investment pays exponential returns - early tasks spend time creating expertise, but subsequent tasks in the same domains execute faster with fewer mistakes as agents leverage pre-existing knowledge. This is especially powerful in Loop 2 parallel swarms where multiple agents working across domains all benefit from shared expertise, eliminating redundant discovery and ensuring consistent pattern application across the entire codebase.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

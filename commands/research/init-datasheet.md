@@ -27,6 +27,11 @@ description: Initialize comprehensive Datasheet for Datasets (Form F-C1) with st
 
 # 📊 Initialize Datasheet for Datasets
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Creates a comprehensive, structured Datasheet for Datasets following Gebru et al. (2020) template with all required sections and quality gates.
 
 ## Purpose
@@ -214,3 +219,7 @@ After creating datasheet:
 2. Document data splits: `/data-split --dataset <name>`
 3. Validate Gate 1 readiness: `/validate-gate-1 --pipeline C`
 4. Proceed to Method Development (Pipeline D)
+
+
+---
+*Promise: `<promise>INIT_DATASHEET_VERIX_COMPLIANT</promise>`*

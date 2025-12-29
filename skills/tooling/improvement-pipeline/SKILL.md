@@ -13,6 +13,11 @@ tags:
 
 # Improvement Pipeline (Executable Stages)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Provide concrete, executable implementation for each stage of the improvement pipeline:
@@ -939,3 +944,7 @@ The improvement pipeline transforms chaotic ad-hoc changes into a disciplined, a
 The pipeline's power comes from its staged architecture: PROPOSE creates concrete diffs, TEST validates objectively, COMPARE decides quantitatively, COMMIT applies safely, MONITOR detects delays, and ROLLBACK recovers instantly. Each stage is independently testable, debuggable, and improvable.
 
 Remember: the goal is not perfection on the first try, but safe experimentation with fast feedback loops. The pipeline reduces the cost of failure, making it rational to try bold improvements. When rollback is easy, teams take smarter risks. When monitoring is automatic, regressions are caught early. When every stage is validated, the pipeline becomes a competitive advantage - not overhead, but infrastructure that enables velocity.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

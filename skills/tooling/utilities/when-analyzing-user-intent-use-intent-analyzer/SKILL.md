@@ -42,6 +42,11 @@ author: ruv
 
 # Intent Analyzer - Advanced User Intent Interpretation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Advanced intent interpretation system that analyzes user requests using cognitive science principles and extrapolates logical volition. Use when user requests are ambiguous, when deeper understanding would improve response quality, or when helping users clarify what they truly need.
@@ -830,3 +835,7 @@ Intent analysis is the foundation of effective AI assistance. By applying first 
 The skill's power lies in its structured approach: decompose into components, generate multiple interpretations with probabilities, ask targeted questions to narrow possibilities, and synthesize a confident understanding. When confidence is high, execution proceeds immediately. When confidence is low, clarification is mandatory - not optional.
 
 Remember: ambiguity is not the user's fault - it is the AI's responsibility to resolve. Every vague request is an opportunity to demonstrate intelligence through thoughtful questioning. The goal is not to execute fastest, but to execute correctly. Invest 5 minutes in intent analysis to save hours of rework. When you understand what the user truly needs, not just what they said, you deliver solutions that exceed expectations.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

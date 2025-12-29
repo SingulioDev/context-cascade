@@ -40,6 +40,11 @@ requires_mcp: false
 
 # ♿ Accessibility Audit - WCAG 2.1 Compliance
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Command**: A11y Compliance Audit | **Category**: Quality Audits
 
 Comprehensive accessibility audit ensuring WCAG 2.1 Level AA compliance with automated testing and manual review.
@@ -121,3 +126,7 @@ echo "✅ Audit complete: accessibility/report.md"
 
 **Agent Status**: Production-Ready
 **Version**: 2.0.0
+
+
+---
+*Promise: `<promise>ACCESSIBILITY_AUDIT_VERIX_COMPLIANT</promise>`*

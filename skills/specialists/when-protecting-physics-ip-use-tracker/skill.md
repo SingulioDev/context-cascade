@@ -39,6 +39,11 @@ estimated_time: 15 min per run
 
 # Physics IP Tracker
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Timestamped protection for unpublished physics research (vector equilibrium, mass gap, CKM unification) with arXiv prior art monitoring.
 
 ## Overview
@@ -504,15 +509,12 @@ bash physics_ip_timestamp.sh
 ---
 
 ## Success Metrics
-
-- **Claims protected**: All major breakthroughs timestamped within 48 hours of conception
-- **Conflict detection**: <7 days to identify overlapping work
-- **Priority establishment**: Cryptographic + git + Memory MCP triple-proof
-- **Publication ready**: Claims formalized for journal submission
-
----
-
-**Last updated**: 2025-01-06
-**Version**: 1.0.0
-**Scheduled**: Sunday, 20:00 (weekly)
-**Maintainer**: David Youssef
+- [assert|neutral] *Claims protected**: All major breakthroughs timestamped within 48 hours of conception [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Conflict detection**: <7 days to identify overlapping work [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Priority establishment**: Cryptographic + git + Memory MCP triple-proof [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Publication ready**: Claims formalized for journal submission [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last updated**: 2025-01-06 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Scheduled**: Sunday, 20:00 (weekly) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Maintainer**: David Youssef [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`* [ground:acceptance-criteria] [conf:0.90] [state:provisional]

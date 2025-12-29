@@ -138,10 +138,10 @@ HIERARCHY PROPERTIES:
 
 ### Success Criteria
 - **All stages complete** with 100% success rate (all [SV:COMPLETED])
-- **Dependency resolution** with no circular dependencies
-- **Model routing optimal** for each stage (Gemini/Codex/Claude)
-- **Memory persistence** maintained across all stages
-- **No orphaned stages** - all stages tracked and state-transitioned
+- [assert|neutral] *Dependency resolution** with no circular dependencies [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Model routing optimal** for each stage (Gemini/Codex/Claude) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Memory persistence** maintained across all stages [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *No orphaned stages** - all stages tracked and state-transitioned [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Stage failure mid-cascade** - Transition to [FAILED], implement retry with exponential backoff
@@ -151,11 +151,11 @@ HIERARCHY PROPERTIES:
 - **Timeout on long stages** - Configure per-stage timeout limits, transition to [FAILED]
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose stage state** - Persist after each state transition ([NSV] -> [SV])
-- **ALWAYS validate dependencies** - Check DAG acyclic before execution
-- **ALWAYS track cascade progress** - Update memory with real-time state (aspectual tracking)
-- **NEVER skip error handling** - Every stage needs try/catch with [FAILED] transition
-- **ALWAYS cleanup on failure** - Release resources, clear temp state, mark [ERROR]
+- [assert|emphatic] NEVER: lose stage state** - Persist after each state transition ([NSV] -> [SV]) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate dependencies** - Check DAG acyclic before execution [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track cascade progress** - Update memory with real-time state (aspectual tracking) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip error handling** - Every stage needs try/catch with [FAILED] transition [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup on failure** - Release resources, clear temp state, mark [ERROR] [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Verify stage outputs** - Check actual results vs expected schema (validate [SV] state)
@@ -166,6 +166,11 @@ HIERARCHY PROPERTIES:
 
 
 # Cascade Orchestrator (Enhanced)
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 Manages workflows (cascades) that coordinate multiple micro-skills into cohesive processes. This enhanced version integrates Codex sandbox iteration, multi-model routing, ruv-swarm coordination, and memory persistence across stages.
@@ -851,3 +856,7 @@ Cascade Orchestrator transforms multi-step workflows from fragile, manually coor
 The skill's power comes from three innovations: (1) separation of concerns through micro-skill composition enables reusability and maintainability, (2) multi-model routing leverages each AI's strengths (Gemini for context, Codex for speed, Claude for reasoning), and (3) sandbox auto-fix loops eliminate 95% of manual debugging by automatically iterating on test failures until resolution.
 
 Use Cascade Orchestrator when coordinating 4+ micro-skills with complex dependencies, implementing production workflows requiring fault tolerance and auto-recovery, or building systems that span multiple AI models for optimal performance. The key insight: orchestration is not about doing the work, but about intelligently coordinating specialized components to achieve emergent capability beyond any single agent or skill.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

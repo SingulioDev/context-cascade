@@ -16,12 +16,12 @@
 - Industry benchmarks without academic rigor
 
 ### Success Criteria
-- Results within +/- 1% of published metrics
-- 3+ successful reproductions in fresh Docker
-- All 47+ hyperparameters documented
-- Reproducibility package tested independently
-- Dataset checksums verified (SHA256)
-- Random seeds documented, deterministic results
+- [assert|neutral] Results within +/- 1% of published metrics [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 3+ successful reproductions in fresh Docker [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All 47+ hyperparameters documented [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Reproducibility package tested independently [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Dataset checksums verified (SHA256) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Random seeds documented, deterministic results [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Missing hyperparameters: GitHub issues, contact authors, supplements
@@ -60,6 +60,11 @@ author: ruv
 ---
 
 # Baseline Replication
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 Replicates published machine learning baseline methods with exact reproducibility, ensuring results match within ±1% tolerance. This skill implements Deep Research SOP Pipeline D baseline validation, which is a prerequisite for developing novel methods.
@@ -724,3 +729,7 @@ Use this skill before developing novel methods (Deep Research SOP Pipeline D pre
 
 ---
 
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

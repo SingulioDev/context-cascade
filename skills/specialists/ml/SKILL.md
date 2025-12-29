@@ -34,6 +34,11 @@ author: ruv
 
 # ML Development Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -310,3 +315,7 @@ Machine learning development requires a rigorous engineering mindset that balanc
 By integrating experiment tracking (MLflow/W&B), automated hyperparameter optimization (Optuna), and production MLOps pipelines from the start, this skill ensures that models are not only accurate but also deployable, maintainable, and scientifically rigorous. The emphasis on statistical validation, data quality, and monitoring prevents common pitfalls like overfitting, data leakage, and silent production failures.
 
 Whether you are training a simple classifier or building a complex multi-model pipeline, this skill enforces best practices that scale from research prototypes to production systems. The three core principles - reproducibility first, evidence-based validation, and production readiness - guide every phase of the ML lifecycle, from initial data exploration to continuous model improvement in production.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -458,6 +458,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # Pull Request Manager Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 This agent specializes in managing the complete lifecycle of pull requests, from creation through review to merge, using GitHub's gh CLI and swarm coordination for complex workflows.
 
@@ -795,3 +800,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>GITHUB_PR_MANAGER_VERIX_COMPLIANT</promise>`*

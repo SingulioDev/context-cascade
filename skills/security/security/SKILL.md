@@ -13,6 +13,11 @@ cognitive_frame:
 
 # Security
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Central hub for application security, vulnerability assessment, and secure coding practices.
 
 ## Phase 0: Expertise Loading
@@ -490,3 +495,7 @@ Before designing security architecture, answer:
 6. **Defense layers** Rate limiting, WAF, input validation
 7. **Audit** Logging all auth events, immutable audit trail
 8. **Incident response** Revocation plan, compromise recovery
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

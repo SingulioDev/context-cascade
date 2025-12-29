@@ -1,4 +1,9 @@
 # swarm
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -57,3 +62,7 @@ npx claude-flow swarm "Research AI patterns" --strategy research
 # Open in Claude Code
 npx claude-flow swarm "Build API" --claude
 ```
+
+
+---
+*Promise: `<promise>SWARM_VERIX_COMPLIANT</promise>`*

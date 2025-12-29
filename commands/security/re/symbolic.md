@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /re:symbolic
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Symbolic execution and constraint solving with Angr/Z3 (RE Level 4 only).
 
 **Timebox**: 2-6 hours
@@ -109,11 +114,11 @@ Symbolic execution and constraint solving with Angr/Z3 (RE Level 4 only).
 4. **Store in memory-mcp**: Tag with target address, solutions
 
 ## Success Criteria
-- ✅ Target state reached
-- ✅ Input values synthesized
-- ✅ Constraints solved successfully
-- ✅ Solution validated (binary actually reaches target)
-- ✅ Reproducible Angr script generated
+- [assert|neutral] ✅ Target state reached [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Input values synthesized [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Constraints solved successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Solution validated (binary actually reaches target) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Reproducible Angr script generated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Output Structure
 ```
@@ -247,3 +252,7 @@ DECISION: Add to avoid list, do NOT explore
 - `/re:dynamic` - Dynamic analysis only
 - `/re:static` - Find target/avoid addresses
 - `/functionality-audit` - Validate solutions
+
+
+---
+*Promise: `<promise>SYMBOLIC_VERIX_COMPLIANT</promise>`*

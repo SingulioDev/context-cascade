@@ -53,6 +53,11 @@ version: 1.0.0
 
 # /quick-check
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Lightning-fast quality check using parallel execution (< 30 seconds).
 
 ## Usage
@@ -120,3 +125,7 @@ Next Steps:
 - `/audit-pipeline` - Full 3-phase audit
 - `/production-readiness` - Pre-deployment check
 - `/code-review` - PR review
+
+
+---
+*Promise: `<promise>QUICK_CHECK_VERIX_COMPLIANT</promise>`*

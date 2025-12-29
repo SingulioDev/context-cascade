@@ -16,11 +16,11 @@
 - When novelty is not the primary goal
 
 ### Success Criteria
-- 10+ distinct ideas generated per session
-- Ideas directly address identified research gaps
-- Each idea includes testable hypothesis and expected outcome
-- Feasibility assessment provided (quick vs long-term)
-- Citations to supporting literature included
+- [assert|neutral] 10+ distinct ideas generated per session [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Ideas directly address identified research gaps [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Each idea includes testable hypothesis and expected outcome [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Feasibility assessment provided (quick vs long-term) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Citations to supporting literature included [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - No research gaps identified: broaden literature search, explore adjacent fields
@@ -66,6 +66,11 @@ mcp_servers:
 ---
 
 # Rapid Idea Generator
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 
@@ -465,3 +470,7 @@ The Rapid Idea Generator skill transforms research ideation from ad-hoc brainsto
 The integration with memory storage and downstream skills creates a complete research workflow. Generated ideas feed directly into literature synthesis for validation, baseline replication for experimental validation, and manuscript drafting for publication. Organizations implementing this skill report significant acceleration in research direction setting, higher quality initial hypotheses, and reduced wasted effort on derivative ideas. The novelty and feasibility scoring system enables prioritization between quick wins and long-term ambitious projects.
 
 When compared to black-box idea generation tools, this skill provides unmatched transparency through documented reasoning at every step. Researchers can validate causal chains, challenge MECE decompositions, and adjust scoring criteria based on domain expertise. The expertise-aware workflow enables loading of domain-specific patterns and known research gaps, preventing regeneration of previously explored ideas. This systematic approach elevates research ideation from creative guesswork to rigorous, reproducible methodology that produces publication-ready research directions in minutes rather than weeks.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

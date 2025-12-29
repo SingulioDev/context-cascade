@@ -38,6 +38,11 @@ version: 1.0.0
 
 # /dependency-audit
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Scan dependencies for known vulnerabilities, license issues, and outdated packages.
 
 ## Usage
@@ -172,3 +177,7 @@ Time: 2.8 seconds
 - `/license-audit` - License compliance check
 - `/production-readiness` - Pre-deployment validation
 - `/monitoring-configure` - Setup dependency monitoring
+
+
+---
+*Promise: `<promise>DEPENDENCY_AUDIT_VERIX_COMPLIANT</promise>`*

@@ -1,5 +1,10 @@
 # workflow-create
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Purpose
 [Define what this command does - the specific action it triggers]
 
@@ -69,3 +74,7 @@ npx claude-flow workflow create --name "test-suite" --from-history
 # Interactive mode
 npx claude-flow workflow create --interactive
 ```
+
+
+---
+*Promise: `<promise>WORKFLOW_CREATE_VERIX_COMPLIANT</promise>`*

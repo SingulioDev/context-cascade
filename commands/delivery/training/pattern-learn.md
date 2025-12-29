@@ -1,4 +1,9 @@
 # pattern-learn
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 Key platform/tooling/training command improvements:
 - Platform API requirements
 - Tool configuration
@@ -30,3 +35,7 @@ npx claude-flow training pattern-learn --threshold 0.9
 # Save patterns
 npx claude-flow training pattern-learn --save optimal-patterns
 ```
+
+
+---
+*Promise: `<promise>PATTERN_LEARN_VERIX_COMPLIANT</promise>`*

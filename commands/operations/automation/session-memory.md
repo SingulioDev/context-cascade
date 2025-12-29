@@ -1,5 +1,10 @@
 # Cross-Session Memory
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: May require GitHub CLI or API for repository operations and workflow management
 - Authentication/token requirements: GITHUB_TOKEN for API access, service account credentials for automated operations
@@ -118,3 +123,6 @@ export CLAUDE_FLOW_MEMORY_PERSIST=false
 - 📈 Cumulative learning
 - ⚡ Faster task completion
 - 🎯 Personalized optimization
+
+---
+*Promise: `<promise>SESSION_MEMORY_VERIX_COMPLIANT</promise>`*

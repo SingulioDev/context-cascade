@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /re:strings
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 String reconnaissance only - fast IOC extraction and pattern matching (RE Level 1 only).
 
 **Timebox**: ≤30 minutes
@@ -89,11 +94,11 @@ String reconnaissance only - fast IOC extraction and pattern matching (RE Level 
 5. **Store in memory-mcp**: Tag with WHO/WHEN/PROJECT/WHY
 
 ## Success Criteria
-- ✅ Strings extracted and categorized
-- ✅ IOCs cataloged (URLs, IPs, emails)
-- ✅ Protocol tokens identified
-- ✅ File metadata computed
-- ✅ JSON output generated
+- [assert|neutral] ✅ Strings extracted and categorized [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ IOCs cataloged (URLs, IPs, emails) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Protocol tokens identified [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ File metadata computed [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ JSON output generated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Output Format (strings.json)
 ```json
@@ -171,3 +176,7 @@ String reconnaissance only - fast IOC extraction and pattern matching (RE Level 
 - `/re:quick` - Fast triage (Levels 1-2)
 - `/re:static` - Static analysis only
 - `/re:deep` - Dynamic/symbolic analysis
+
+
+---
+*Promise: `<promise>STRINGS_VERIX_COMPLIANT</promise>`*

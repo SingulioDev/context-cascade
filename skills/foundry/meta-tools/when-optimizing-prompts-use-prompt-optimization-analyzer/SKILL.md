@@ -33,7 +33,7 @@ author: ruv
 
 ### Success Criteria
 - primary_outcome: "[SKILL-SPECIFIC measurable result based on skill purpose]"
-- quality_threshold: 0.85
+- [assert|neutral] quality_threshold: 0.85 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 - verification_method: "[How to validate skill executed correctly and produced expected outcome]"
 
 ### Edge Cases
@@ -61,6 +61,11 @@ plan_and_solve: "Plan: [SKILL-SPECIFIC planning phase] -> Execute: [SKILL-SPECIF
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Prompt Optimization Analyzer
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 **Purpose:** Analyze prompt quality and provide actionable optimization recommendations to reduce token waste, improve clarity, and enhance effectiveness.
 
@@ -574,3 +579,7 @@ The Prompt Optimization Analyzer transforms prompt engineering from subjective w
 The key insight demonstrated by the real-world example is dramatic: the original verbose prompt (124 tokens, vague instructions, repetitive phrases) was reduced to an optimized version (67 tokens, specific criteria, structured format) - a 46% reduction while significantly improving clarity and actionability. This pattern repeats across prompt optimization efforts: typical reductions of 20-50% with simultaneous clarity improvements. The analyzer's value lies not just in token savings, but in the forcing function to replace vague generalities with specific, measurable criteria.
 
 Use this skill before publishing new skills or slash commands, during skill maintenance, or when prompts approach token budget limits. The pre-publish checklist ensures that skills go into production with optimized prompts rather than verbose first drafts. Remember: every token saved in prompts is budget available for execution. A well-optimized skill library with 20-50% token reduction across prompts can handle significantly more complex tasks within the same budget limits. Write less, communicate more, execute better.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

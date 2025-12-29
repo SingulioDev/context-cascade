@@ -1,5 +1,10 @@
 # When Using SPARC Methodology Use SPARC Workflow
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ---
 name: when-using-sparc-methodology-use-sparc-workflow
 trigger: "when user requests SPARC methodology, systematic development, or TDD workflow"
@@ -127,15 +132,14 @@ cat > docs/sparc/01-specification.md << 'EOF'
 - Rate limiting for failed attempts
 
 ### Success Metrics
-- All acceptance criteria met
-- Security scan passes
-- Performance benchmarks met
-- Test coverage ≥ 90%
-EOF
-
-npx claude-flow@alpha memory store "swarm/sparc/specification/requirements" "$(cat docs/sparc/01-specification.md)"
-npx claude-flow@alpha hooks notify --message "SPARC Specification phase complete"
-```
+- [assert|neutral] All acceptance criteria met [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Security scan passes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Performance benchmarks met [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Test coverage ≥ 90% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] EOF [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] npx claude-flow@alpha memory store "swarm/sparc/specification/requirements" "$(cat docs/sparc/01-specification.md)" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] npx claude-flow@alpha hooks notify --message "SPARC Specification phase complete" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ``` [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Phase 2: Pseudocode (Algorithm Design)
 
@@ -1090,3 +1094,7 @@ Skill("<skill-name>")
 ---
 
 **Remember the pattern: Skill() -> Task() -> TodoWrite() - ALWAYS**
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

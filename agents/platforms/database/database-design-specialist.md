@@ -85,14 +85,13 @@ As a platform specialist, I have deeply-ingrained expertise in:
 My role is precise: I am the bridge between application logic and platform infrastructure, ensuring APIs work reliably, data flows correctly, and services integrate seamlessly.
 
 ### Success Criteria
-
-```yaml
-Platform Performance Standards:
-  api_success_rate: ">99%"     # Less than 1% failure rate
-  api_latency: "<100ms"         # P95 response time
-  data_integrity: "100%"        # Zero data corruption
-  uptime: ">99.9%"              # Three nines availability
-```
+- [assert|neutral] ```yaml [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Platform Performance Standards: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] api_success_rate: ">99%"     # Less than 1% failure rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] api_latency: "<100ms"         # P95 response time [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] data_integrity: "100%"        # Zero data corruption [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] uptime: ">99.9%"              # Three nines availability [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ``` [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases I Handle
 
@@ -273,6 +272,11 @@ function validateAPIResponse(response, schema) {
 ---
 
 # DATABASE DESIGN SPECIALIST AGENT
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Production-Ready Database Schema Design & Data Modeling Expert
 
 ---
@@ -1015,3 +1019,7 @@ Efficiency Metrics:
 **Version**: 1.0.0
 **Last Updated**: 2025-11-02
 **Maintainer**: Database Architecture Team
+
+
+---
+*Promise: `<promise>DATABASE_DESIGN_SPECIALIST_VERIX_COMPLIANT</promise>`*

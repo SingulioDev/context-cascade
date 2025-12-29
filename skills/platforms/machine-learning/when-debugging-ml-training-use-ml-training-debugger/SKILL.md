@@ -48,13 +48,12 @@ author: ruv
 - Operations that do not involve model training or inference
 
 ## Success Criteria
-
-- Model training convergence: Loss decreasing consistently
-- Validation accuracy: Meeting or exceeding baseline targets
-- Training time: Within expected bounds for dataset size
-- GPU utilization: >80% during training
-- Model export success: 100% successful saves
-- Inference latency: <100ms for real-time applications
+- [assert|neutral] Model training convergence: Loss decreasing consistently [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Validation accuracy: Meeting or exceeding baseline targets [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Training time: Within expected bounds for dataset size [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] GPU utilization: >80% during training [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Model export success: 100% successful saves [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Inference latency: <100ms for real-time applications [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -66,13 +65,12 @@ author: ruv
 - **Distributed Training Failures**: Handle node failures, implement fault tolerance
 
 ## Guardrails & Safety
-
-- NEVER train on unvalidated or uncleaned data
-- ALWAYS validate model outputs before deployment
-- ALWAYS implement reproducibility (random seeds, version pinning)
-- NEVER expose training data in model artifacts or logs
-- ALWAYS monitor for bias and fairness issues
-- ALWAYS implement model versioning and rollback capabilities
+- [assert|emphatic] NEVER: train on unvalidated or uncleaned data [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate model outputs before deployment [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement reproducibility (random seeds, version pinning) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: expose training data in model artifacts or logs [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: monitor for bias and fairness issues [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement model versioning and rollback capabilities [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -84,6 +82,11 @@ author: ruv
 
 
 # ML Training Debugger - Diagnose and Fix Training Issues
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -649,3 +652,7 @@ This ML Training Debugger skill provides a systematic, evidence-based approach t
 The skill's strength lies in its structured methodology: rather than randomly tweaking hyperparameters or architectures, it forces practitioners to first understand the problem through quantitative analysis of training curves, gradients, and data quality. This diagnostic-first approach prevents the common pitfall of applying fixes that mask symptoms rather than addressing root causes, ultimately leading to more robust models and faster iteration cycles.
 
 For production ML teams, adopting this systematic debugging workflow ensures that training failures are treated as opportunities for learning rather than frustrations. The comprehensive diagnostic reports, before/after comparisons, and optimization recommendations create a knowledge base that compounds over time, enabling teams to build increasingly sophisticated models with fewer training-related setbacks.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

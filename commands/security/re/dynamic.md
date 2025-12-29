@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /re:dynamic
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Dynamic analysis with runtime execution and debugging (RE Level 3 only).
 
 **Timebox**: ≤1 hour
@@ -114,11 +119,11 @@ Dynamic analysis with runtime execution and debugging (RE Level 3 only).
 4. **Store in memory-mcp**: Tag with WHO/WHEN/PROJECT/WHY
 
 ## Success Criteria
-- ✅ Binary executed safely in sandbox
-- ✅ Runtime state captured at key points
-- ✅ Secrets extracted from memory
-- ✅ Crash points identified (if any)
-- ✅ System calls logged
+- [assert|neutral] ✅ Binary executed safely in sandbox [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Runtime state captured at key points [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Secrets extracted from memory [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Crash points identified (if any) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ System calls logged [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Output Structure
 ```
@@ -233,3 +238,7 @@ checksec              # Binary security features
 - `/re:static` - Static analysis
 - `/re:symbolic` - Symbolic execution
 - `/sandbox-validator` - Safe execution
+
+
+---
+*Promise: `<promise>DYNAMIC_VERIX_COMPLIANT</promise>`*

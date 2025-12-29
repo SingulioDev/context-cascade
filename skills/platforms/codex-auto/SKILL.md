@@ -7,6 +7,11 @@ version: 1.0.0
 
 # Codex Full Auto Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 Leverage Codex CLI's Full Auto mode for unattended, sandboxed prototyping where the AI can autonomously read, write, and execute code without approval - perfect for rapid scaffolding and overnight builds.
 
@@ -98,3 +103,7 @@ Result: All components refactored, tests passing
 **Note**: Use your ChatGPT Plus ($20/month) subscription. Recommended model: GPT-5-Codex for agentic tasks.
 
 See `.claude/agents/codex-auto-agent.md` for full details.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

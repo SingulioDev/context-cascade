@@ -16,6 +16,11 @@ mcp_tools:
 
 # GitHub Release Management Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Orchestrate end-to-end software release processes with intelligent agent coordination. This skill automates version bumping, changelog generation, release candidate testing, deployment orchestration, post-release validation, and rollback procedures for GitHub-hosted projects using comprehensive CI/CD integration.
@@ -684,3 +689,7 @@ Success requires three architectural commitments: deployment automation (cicd-en
 The hierarchical agent topology (release-manager coordinating cicd-engineer/tester/reviewer/docs-writer agents) enables parallel execution of release workflow phases while maintaining sequential dependencies (testing after building, deployment after testing). This is critical for fast release cycles - serial execution of build/test/deploy/document would take hours, parallel execution reduces to minutes while respecting dependency constraints. The coordinator maintains global release state (version number, deployment strategy, go/no-go status) while specialized agents execute domain-specific tasks.
 
 Implementation sequencing: Start with automated changelog generation (lowest risk, immediate value for documenting releases), then add semantic versioning automation (eliminates version number confusion), then implement canary deployments (reduces blast radius of issues), finally add automated rollback (fastest mean time to recovery). Attempting advanced deployment strategies (canary, blue-green) without basic automation (changelog, semver) results in complex deployment workflows with manual documentation burden. The full release automation stack typically takes 3-6 weeks to implement but eliminates 90% of release coordination overhead and reduces deployment-induced outages by catching issues in staging before production impact.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

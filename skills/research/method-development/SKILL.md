@@ -16,12 +16,12 @@
 - Industry projects without academic-level rigor
 
 ### Success Criteria
-- Novel method outperforms baseline (p < 0.05)
-- 5+ ablation studies isolate component contributions
-- Effect sizes reported (Cohen's d >= 0.5)
-- 95% confidence intervals for all metrics
-- Multiple comparison corrections (Bonferroni, FDR)
-- Statistical power verified (1-beta >= 0.8)
+- [assert|neutral] Novel method outperforms baseline (p < 0.05) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 5+ ablation studies isolate component contributions [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Effect sizes reported (Cohen's d >= 0.5) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 95% confidence intervals for all metrics [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Multiple comparison corrections (Bonferroni, FDR) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Statistical power verified (1-beta >= 0.8) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Small datasets: use bootstrapping (1000+ samples) for robust CI
@@ -62,6 +62,11 @@ author: ruv
 ---
 
 # Method Development
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Systematically develop and validate novel machine learning methods through controlled experimentation, ablation studies, and architectural innovation following Deep Research SOP Pipeline D.
 
@@ -1001,3 +1006,7 @@ In practice:
 Method Development provides a rigorous framework for developing and validating novel machine learning methods with academic-level experimental rigor. By enforcing ablation studies, statistical validation, and reproducibility standards, this skill ensures that novel methods represent genuine scientific contributions rather than engineering artifacts.
 
 Use this skill after baseline replication (Quality Gate 1) when proposing architectural innovations, developing new training algorithms, or conducting systematic experimental validation for publication. The 7-phase workflow (architecture design, implementation, ablation studies, optimization, evaluation, documentation, Gate 2 validation) ensures comprehensive development while the guardrails prevent common pitfalls like p-hacking, cherry-picking, and insufficient statistical power. The result is publication-ready research with validated claims and reproducible results.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

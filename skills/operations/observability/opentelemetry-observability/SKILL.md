@@ -8,6 +8,11 @@ triggers: ["opentelemetry", "otel", "distributed tracing", "observability", "met
 
 # OpenTelemetry Observability Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert distributed tracing, metrics, and logging with OpenTelemetry for production observability.
 
 ## Purpose
@@ -405,17 +410,13 @@ docker run -d --name jaeger \
 - `mcp__memory-mcp__memory_store` for OTel patterns
 
 ## Success Metrics
-
-- Trace coverage: ≥95% of requests
-- Sampling rate: 5-10% (production)
-- Metrics export interval: 60 seconds
-- Span drop rate: <1%
-- Log-trace correlation: 100%
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
+- [assert|neutral] Trace coverage: ≥95% of requests [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Sampling rate: 5-10% (production) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Metrics export interval: 60 seconds [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Span drop rate: <1% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Log-trace correlation: 100% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -573,3 +574,7 @@ OBSERVABILITY DESIGN FLOW
 | Alert on every metric | Alert fatigue, ignored pages | Alert on SLO burn rate |
 | 100% sampling in prod | Cost explosion, storage overflow | 5-10% with tail sampling |
 | Logs without trace_id | Manual correlation during incident | Auto-inject trace context |
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

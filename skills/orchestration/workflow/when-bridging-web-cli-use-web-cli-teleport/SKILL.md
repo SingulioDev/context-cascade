@@ -42,11 +42,11 @@ author: ruv
 - **Exploratory work** not needing formal orchestration
 
 ### Success Criteria
-- **All agents complete successfully** with 100% task completion
-- **Coordination overhead minimal** (<20% of total execution time)
-- **No orphaned agents** - All spawned agents tracked and terminated
-- **State fully recoverable** - Can resume from any failure point
-- **Quality gates pass** - All validation checks successful
+- [assert|neutral] *All agents complete successfully** with 100% task completion [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Coordination overhead minimal** (<20% of total execution time) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *No orphaned agents** - All spawned agents tracked and terminated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *State fully recoverable** - Can resume from any failure point [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Quality gates pass** - All validation checks successful [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Detect and replace failed agents automatically
@@ -56,11 +56,11 @@ author: ruv
 - **Partial completion** - Support incremental progress with rollback
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose orchestration state** - Persist to memory after each phase
-- **ALWAYS track all agents** - Maintain real-time agent registry
-- **ALWAYS cleanup resources** - Terminate agents and free memory on completion
-- **NEVER skip validation** - Run quality checks before marking complete
-- **ALWAYS handle errors** - Every orchestration step needs error handling
+- [assert|emphatic] NEVER: lose orchestration state** - Persist to memory after each phase [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track all agents** - Maintain real-time agent registry [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup resources** - Terminate agents and free memory on completion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip validation** - Run quality checks before marking complete [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: handle errors** - Every orchestration step needs error handling [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Verify all agent outputs** - Check actual results vs expected contracts
@@ -71,6 +71,11 @@ author: ruv
 
 
 # Web-CLI Teleport SOP
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -603,3 +608,7 @@ The Web-CLI Teleport pattern represents a powerful integration strategy for brid
 The key to success lies in treating security and observability as core design requirements rather than afterthoughts. By implementing structured logging, health checks, and performance monitoring from day one, teams can diagnose issues quickly and maintain high reliability. The anti-patterns highlighted above - particularly arbitrary command execution and lack of authentication - represent common pitfalls that can turn a useful integration tool into a critical vulnerability.
 
 As you implement this pattern, remember that the bridge is not just a technical component but a trust boundary between user interfaces and system operations. Every command executed through the bridge should be logged, validated, and monitored. By following the core principles of bidirectional communication, layered security, and observability-first design, you can build a robust integration that enhances developer productivity while maintaining system integrity and security.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

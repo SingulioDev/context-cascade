@@ -53,6 +53,11 @@ version: 1.0.0
 
 # /fix-bug
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Intelligent bug fixing with RCA + multi-model reasoning + auto-fix + validation.
 
 ## Usage
@@ -136,3 +141,7 @@ Files Changed:
 - `/agent-rca` - RCA only (no fix)
 - `/codex-auto` - Direct Codex fix
 - `/functionality-audit` - Testing only
+
+
+---
+*Promise: `<promise>FIX_BUG_VERIX_COMPLIANT</promise>`*

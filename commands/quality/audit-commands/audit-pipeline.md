@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /audit-pipeline
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Complete 3-phase quality audit: theater detection → functionality testing → style polish.
 
 ## Usage
@@ -106,3 +111,7 @@ Lint, refactor, document to production standards.
 - `/functionality-audit` - Phase 2 only
 - `/style-audit` - Phase 3 only
 - `/quality-check` - Alternative quality workflow
+
+
+---
+*Promise: `<promise>AUDIT_PIPELINE_VERIX_COMPLIANT</promise>`*

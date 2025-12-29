@@ -22,15 +22,14 @@ Use this skill when analyzing malware samples, reverse engineering binaries for 
 Do NOT use for unauthorized reverse engineering of commercial software, analyzing binaries on production systems, reversing software without legal authorization, violating terms of service or EULAs, or analyzing malware outside isolated environments. Avoid for simple string extraction (use basic tools instead).
 
 ## Success Criteria
-
-- All security-relevant behaviors identified (network, file, registry, process activity)
-- Malicious indicators extracted with confidence scores (IOCs, C2 domains, encryption keys)
-- Vulnerabilities documented with CVE mapping where applicable
-- Analysis completed within sandbox environment (VM/container with snapshots)
-- Findings validated through multiple analysis methods (static + dynamic + symbolic)
-- Complete IOC report generated (STIX/MISP format for threat intelligence sharing)
-- Zero false positives in vulnerability assessments
-- Exploitation proof-of-concept created (if vulnerability research)
+- [assert|neutral] All security-relevant behaviors identified (network, file, registry, process activity) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Malicious indicators extracted with confidence scores (IOCs, C2 domains, encryption keys) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Vulnerabilities documented with CVE mapping where applicable [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Analysis completed within sandbox environment (VM/container with snapshots) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Findings validated through multiple analysis methods (static + dynamic + symbolic) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Complete IOC report generated (STIX/MISP format for threat intelligence sharing) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Zero false positives in vulnerability assessments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Exploitation proof-of-concept created (if vulnerability research) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Challenges
 
@@ -44,19 +43,18 @@ Do NOT use for unauthorized reverse engineering of commercial software, analyzin
 - Encrypted network traffic requiring SSL interception
 
 ## Guardrails (CRITICAL SECURITY RULES)
-
-- NEVER execute unknown binaries on host systems (ONLY in isolated VM/sandbox)
-- NEVER analyze malware without proper containment (air-gapped lab preferred)
-- NEVER reverse engineer software without legal authorization
-- NEVER share extracted credentials or encryption keys publicly
-- NEVER bypass licensing mechanisms for unauthorized use
-- ALWAYS use sandboxed environments with network monitoring
-- ALWAYS take VM snapshots before executing suspicious binaries
-- ALWAYS validate findings through multiple analysis methods
-- ALWAYS document analysis methodology with timestamps
-- ALWAYS assume binaries are malicious until proven safe
-- ALWAYS use network isolation to prevent malware communication
-- ALWAYS sanitize IOCs before sharing (redact internal IP addresses)
+- [assert|emphatic] NEVER: execute unknown binaries on host systems (ONLY in isolated VM/sandbox) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: analyze malware without proper containment (air-gapped lab preferred) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: reverse engineer software without legal authorization [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: share extracted credentials or encryption keys publicly [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: bypass licensing mechanisms for unauthorized use [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: use sandboxed environments with network monitoring [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: take VM snapshots before executing suspicious binaries [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate findings through multiple analysis methods [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: document analysis methodology with timestamps [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: assume binaries are malicious until proven safe [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: use network isolation to prevent malware communication [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: sanitize IOCs before sharing (redact internal IP addresses) [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -69,6 +67,11 @@ All reverse engineering findings MUST be validated through:
 6. **Reproducibility** - Second analyst can replicate findings from analysis artifacts
 
 # Reverse Engineering: Quick Triage
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## What This Skill Does
 
@@ -640,3 +643,7 @@ Reverse Engineering: Quick Triage is the first-responder skill for binary analys
 The skill's automated decision gates ensure analysis effort matches threat severity. Simple malware with obvious C2 domains stops at Level 1, while sophisticated samples with obfuscation automatically escalate to Level 2 for deeper investigation. Integration with memory-mcp creates organizational memory - once a binary is analyzed, its findings are instantly retrievable by hash, preventing redundant analysis across teams.
 
 Use this skill when you need rapid answers: Is this binary malicious? What C2 servers does it contact? Are there hardcoded credentials? What vulnerabilities does it exploit? The 2-hour timebox makes it suitable for high-velocity security operations where dozens of samples need daily triage. For samples requiring runtime analysis or input synthesis, the skill seamlessly hands off to Level 3-4 (reverse-engineering-deep) with pre-populated breakpoints and critical function addresses, maximizing overall analysis efficiency.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

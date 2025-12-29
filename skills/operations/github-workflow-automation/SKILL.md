@@ -56,6 +56,11 @@ author: ruv
 
 # GitHub Workflow Automation Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 This skill provides comprehensive GitHub Actions automation with AI swarm coordination. It integrates intelligent CI/CD pipelines, workflow orchestration, and repository management to create self-organizing, adaptive GitHub workflows.
@@ -1146,3 +1151,7 @@ GitHub Workflow Automation transforms CI/CD pipelines from brittle, manually-mai
 This skill is essential when you need production-grade CI/CD automation with minimal manual intervention. It excels at self-healing workflows, multi-stage deployments with automated rollback, and cost optimization through smart caching and parallelization.
 
 Use this skill when setting up new repositories with optimal CI/CD workflows, when existing workflows have high failure rates or long execution times, or when you need multi-repository coordination with synchronized deployments. The swarm-based coordination patterns enable parallel test execution, intelligent failure triage, and automated remediation that traditional static workflows cannot achieve.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -42,6 +42,11 @@ estimated_time: 30 min per run
 
 # Hackathon EV Optimizer
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expected Value (EV) calculator for hackathons and bounties. Optimizes for prize × p(win) − time_cost with judge fit analysis and past win pattern learning.
 
 ## Overview
@@ -1127,17 +1132,14 @@ echo "✓ Setup complete! Run: ./hackathon_ev_master.sh"
 ---
 
 ## Success Metrics
-
-- **Opportunities scanned**: 10-20/week
-- **High-EV identified**: 2-5 with EV >$1,000
-- **MVS packages generated**: 3/week
-- **Actual entries**: 1-2/month
-- **Win rate**: Track and improve (goal: >15%)
-- **ROI**: (Prizes won) / (Time invested)
-
----
-
-**Last updated**: 2025-01-06
-**Version**: 1.0.0
-**Scheduled**: Monday & Thursday, 9:00 AM
-**Maintainer**: David Youssef
+- [assert|neutral] *Opportunities scanned**: 10-20/week [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *High-EV identified**: 2-5 with EV >$1,000 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *MVS packages generated**: 3/week [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actual entries**: 1-2/month [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Win rate**: Track and improve (goal: >15%) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *ROI**: (Prizes won) / (Time invested) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last updated**: 2025-01-06 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Scheduled**: Monday & Thursday, 9:00 AM [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Maintainer**: David Youssef [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`* [ground:acceptance-criteria] [conf:0.90] [state:provisional]

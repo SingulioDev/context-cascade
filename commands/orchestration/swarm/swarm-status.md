@@ -1,4 +1,9 @@
 # swarm-status
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -38,3 +43,7 @@ Usage:
 ```bash
 npx claude-flow swarm swarm-status [options]
 ```
+
+
+---
+*Promise: `<promise>SWARM_STATUS_VERIX_COMPLIANT</promise>`*

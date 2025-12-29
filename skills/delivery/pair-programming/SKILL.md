@@ -16,6 +16,11 @@ author: ruv
 
 # Pair Programming
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -1314,3 +1319,7 @@ Pair Programming with AI transforms collaborative development from an occasional
 Use this skill when learning new technologies (Mentor mode), tackling complex features (Switch mode for balanced collaboration), or debugging difficult issues (Debug mode for systematic analysis). The truth-score verification and auto-rollback features provide safety nets that manual pairing lacks, while session persistence allows resuming work without context loss.
 
 The result is a development practice that consistently delivers high-quality code (truth score >0.95), comprehensive test coverage (90%+ targets), and genuine knowledge transfer (both participants can explain implementation). When collaboration needs structure and quality needs verification, Pair Programming provides the framework that makes excellence repeatable.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

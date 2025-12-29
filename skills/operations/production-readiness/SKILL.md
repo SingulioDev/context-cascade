@@ -46,6 +46,11 @@ author: ruv
 
 # Production Readiness
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Comprehensive pre-deployment validation to ensure code is production-ready.
@@ -582,3 +587,7 @@ Production Readiness provides a systematic framework for transforming functional
 Use this skill as a mandatory pre-deployment gate for ALL production releases, whether initial launch or routine update. The 1-2 week investment in readiness validation prevents 90%+ of production incidents by catching issues before customer impact. Quality gates are intentionally strict - partial compliance creates the illusion of readiness while leaving vulnerabilities unaddressed. The framework enforces binary go/no-go decisions that prevent premature deployments driven by deadline pressure rather than actual preparedness.
 
 Integration with CI/CD pipelines automates readiness enforcement, failing builds when criteria are not met and eliminating "ship it anyway" overrides. Success requires organizational discipline - production readiness is a process, not a checkbox. The difference between reliable systems and incident-prone systems is systematic adherence to quality gates, comprehensive monitoring, tested rollback plans, and strategic deployment timing. Teams that treat readiness validation as non-negotiable experience 80-90% reductions in production incidents compared to teams that deploy optimistically without validation.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

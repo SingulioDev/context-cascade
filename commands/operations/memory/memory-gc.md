@@ -30,3 +30,7 @@ success_metrics:
   execution_success: ">95%"
 <!-- END META-LOOP -->
 
+
+
+---
+*Promise: `<promise>MEMORY_GC_VERIX_COMPLIANT</promise>`*

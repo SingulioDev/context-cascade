@@ -28,6 +28,11 @@ memory_patterns:
 
 # Security Analyzer - Comprehensive Security Auditing Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 This skill provides multi-vector security analysis combining static code analysis, dynamic testing, dependency auditing, secrets detection, and OWASP Top 10 compliance checking. Uses coordinated agents with validation gates between phases.
@@ -884,3 +889,7 @@ Security auditing is not a single activity but a systematic process combining mu
 The validation gates between phases serve a critical purpose: preventing false security. Security tools generate noise alongside signal - not every finding is exploitable, but every critical finding demands response. Gates force disposition of serious issues before proceeding, ensuring that security problems do not accumulate silently. The discipline of hard stops for critical vulnerabilities creates accountability and prevents security debt.
 
 However, automated tools are necessary but insufficient. The ultimate test of security is adversarial: can a motivated attacker exploit your system? Automated scans detect known patterns; human attackers find creative combinations and business logic flaws. Complement automated audits with manual penetration testing, threat modeling, and red team exercises. Security is a continuous arms race - your security posture must evolve as quickly as attack techniques advance.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

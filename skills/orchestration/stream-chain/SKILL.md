@@ -29,11 +29,11 @@ author: ruv
 - **Exploratory work** not needing formal orchestration
 
 ### Success Criteria
-- **All agents complete successfully** with 100% task completion
-- **Coordination overhead minimal** (<20% of total execution time)
-- **No orphaned agents** - All spawned agents tracked and terminated
-- **State fully recoverable** - Can resume from any failure point
-- **Quality gates pass** - All validation checks successful
+- [assert|neutral] *All agents complete successfully** with 100% task completion [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Coordination overhead minimal** (<20% of total execution time) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *No orphaned agents** - All spawned agents tracked and terminated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *State fully recoverable** - Can resume from any failure point [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Quality gates pass** - All validation checks successful [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Detect and replace failed agents automatically
@@ -43,11 +43,11 @@ author: ruv
 - **Partial completion** - Support incremental progress with rollback
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose orchestration state** - Persist to memory after each phase
-- **ALWAYS track all agents** - Maintain real-time agent registry
-- **ALWAYS cleanup resources** - Terminate agents and free memory on completion
-- **NEVER skip validation** - Run quality checks before marking complete
-- **ALWAYS handle errors** - Every orchestration step needs error handling
+- [assert|emphatic] NEVER: lose orchestration state** - Persist to memory after each phase [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track all agents** - Maintain real-time agent registry [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup resources** - Terminate agents and free memory on completion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip validation** - Run quality checks before marking complete [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: handle errors** - Every orchestration step needs error handling [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Verify all agent outputs** - Check actual results vs expected contracts
@@ -58,6 +58,11 @@ author: ruv
 
 
 # Stream-Chain Skill
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Execute sophisticated multi-step workflows where each agent's output flows into the next, enabling complex data transformations and sequential processing pipelines.
 
@@ -652,3 +657,7 @@ Stream-Chain solves the fundamental challenge of multi-step reasoning: maintaini
 The chain architecture naturally enforces best practices: verification before progression, specialization over generalization, and incremental refinement over big-bang delivery. When tasks have natural dependencies and each step produces context valuable to subsequent steps, stream chains transform sequential constraints from limitations into architectural advantages.
 
 Use `run` for custom workflows requiring flexible step definitions. Use `pipeline` for battle-tested domain-specific workflows (analysis, refactoring, testing, optimization). Choose chains when task output quality depends on understanding prior results - when "what came before" matters as much as "what to do next."
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

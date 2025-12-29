@@ -1,5 +1,10 @@
 # auto agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: May require GitHub CLI or API for repository operations and workflow management
 - Authentication/token requirements: GITHUB_TOKEN for API access, service account credentials for automated operations
@@ -150,3 +155,7 @@ mcp__claude-flow__auto_agent {
 - `swarm init` - Initialize swarm manually
 - `smart spawn` - Intelligent agent spawning
 - `workflow select` - Choose predefined workflows
+
+
+---
+*Promise: `<promise>AUTO_AGENT_VERIX_COMPLIANT</promise>`*

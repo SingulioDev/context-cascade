@@ -44,11 +44,11 @@ author: ruv
 - **Trivial changes** to single files
 
 ### Success Criteria
-- **Agent+skill matrix generated** with optimal assignments
-- **Parallel execution successful** with 8.3x speedup achieved
-- **Theater detection passes** with 0% theater detected
-- **Integration tests pass** at 100% rate
-- **All agents complete** with no orphaned workers
+- [assert|neutral] *Agent+skill matrix generated** with optimal assignments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Parallel execution successful** with 8.3x speedup achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Theater detection passes** with 0% theater detected [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Integration tests pass** at 100% rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All agents complete** with no orphaned workers [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Implement agent health monitoring and replacement
@@ -58,11 +58,11 @@ author: ruv
 - **Conflicting outputs** - Implement merge conflict resolution strategy
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose agent state** - Persist agent progress to memory continuously
-- **ALWAYS track swarm health** - Monitor all agent statuses in real-time
-- **ALWAYS validate consensus** - Require 4/5 agreement for theater detection
-- **NEVER skip theater audit** - Zero tolerance, any theater blocks merge
-- **ALWAYS cleanup workers** - Terminate agents on completion/failure
+- [assert|emphatic] NEVER: lose agent state** - Persist agent progress to memory continuously [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track swarm health** - Monitor all agent statuses in real-time [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate consensus** - Require 4/5 agreement for theater detection [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip theater audit** - Zero tolerance, any theater blocks merge [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup workers** - Terminate agents on completion/failure [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Check all agent statuses** - Verify each agent completed successfully
@@ -73,6 +73,11 @@ author: ruv
 
 
 # Swarm Orchestration SOP
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -802,3 +807,7 @@ Swarm orchestration represents the pinnacle of multi-agent coordination, enablin
 The three core principles - task decomposition, memory coordination, and adaptive orchestration - form the foundation of robust swarm systems. Task decomposition unlocks parallelism by identifying independent work units. Memory coordination ensures consistency by providing a single source of truth that all agents reference. Adaptive coordination enables resilience by responding to failures and changing conditions dynamically. Together, these principles create orchestration systems that are not only fast but also reliable and maintainable.
 
 As you implement swarm orchestration, prioritize observability and incremental validation. Start with simple hierarchical topologies before exploring mesh or adaptive patterns. Validate your dependency graph for cycles before spawning agents. Monitor task progress continuously and alert on blockers quickly. Design for failure by implementing automatic retries, circuit breakers, and agent replacement strategies. By following these practices, you can build orchestration systems that harness the full power of multi-agent coordination while maintaining the reliability and debuggability required for production use. Remember: successful swarm orchestration is not about controlling every detail but about creating conditions for autonomous agents to collaborate effectively toward shared goals.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

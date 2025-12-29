@@ -1,5 +1,10 @@
 # Decompilation Workflow Command
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Key quality/security command improvements:
 - Audit scope definition
 - Quality thresholds
@@ -567,3 +572,7 @@ mcp__ruv-swarm__task_orchestrate({
 **Maintainer**: Reverse Engineering Specialist
 
 **⚠️ Legal Notice**: Reverse engineering may be restricted by law or license agreements. Ensure proper authorization before proceeding.
+
+
+---
+*Promise: `<promise>DECOMPILE_VERIX_COMPLIANT</promise>`*

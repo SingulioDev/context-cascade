@@ -45,6 +45,11 @@ usage: |
 
 # Hook: On-Commit (Pre-Commit)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Automation Hooks
 **Purpose**: Automatically validate, lint, and format code before git commits.
 
@@ -147,3 +152,7 @@ npx husky add .git/hooks/pre-commit "/hook:on-commit --lint --format"
 
 **Status**: Production Ready
 **Version**: 1.0.0
+
+
+---
+*Promise: `<promise>ON_COMMIT_VERIX_COMPLIANT</promise>`*

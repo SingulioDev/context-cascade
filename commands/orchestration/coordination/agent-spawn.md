@@ -1,4 +1,9 @@
 # agent-spawn
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -55,3 +60,7 @@ npx claude-flow agent spawn --type researcher --name "API Expert"
 # With specific skills
 npx claude-flow agent spawn --type coder --skills "python,fastapi,testing"
 ```
+
+
+---
+*Promise: `<promise>AGENT_SPAWN_VERIX_COMPLIANT</promise>`*

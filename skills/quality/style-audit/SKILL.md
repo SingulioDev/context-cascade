@@ -34,13 +34,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -83,6 +82,11 @@ This skill integrates with:
 
 
 # Style Audit
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 This skill transforms functionally correct code into production-grade code through systematic style improvement. While functionality audits verify that code works, style audits ensure that code is maintainable, readable, secure, performant, and aligned with team standards. The skill applies CI/CD quality guidelines to identify style violations, then rewrites code to eliminate issues while preserving functionality.
 
@@ -362,3 +366,7 @@ Style Audit transforms functionally correct code into production-grade maintaina
 Use this skill after functionality validation confirms correctness, integrating it into CI/CD pipelines as an automated quality gate that blocks merges on style violations. The investment in style discipline pays compounding returns - clear code is faster to modify, easier to debug, and less prone to bugs. Teams that enforce style standards systematically experience 30-40% reductions in maintenance costs and bug rates compared to teams that treat style as optional.
 
 Success requires treating style as a non-negotiable engineering requirement, not a subjective preference. Automated tools enforce standards deterministically, while manual review focuses on semantic quality that tools cannot evaluate. The result is codebases that remain maintainable and comprehensible as they scale from thousands to millions of lines of code.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

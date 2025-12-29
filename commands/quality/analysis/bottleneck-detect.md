@@ -1,5 +1,10 @@
 # bottleneck detect
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Key quality/security command improvements:
 - Audit scope definition
 - Quality thresholds
@@ -192,3 +197,7 @@ mcp__claude-flow__bottleneck_detect {
 - `token usage` - Token optimization analysis
 - `swarm monitor` - Real-time monitoring
 - `cache manage` - Cache optimization
+
+
+---
+*Promise: `<promise>BOTTLENECK_DETECT_VERIX_COMPLIANT</promise>`*

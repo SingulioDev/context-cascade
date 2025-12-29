@@ -22,14 +22,13 @@ Use this skill when conducting compliance audits, implementing regulatory contro
 Do NOT use for non-regulated applications, internal tools without compliance requirements, proof-of-concept projects, or general security audits (use security-analyzer instead). Avoid using for unauthorized compliance testing of third-party systems.
 
 ## Success Criteria
-
-- All applicable regulatory requirements identified with evidence mapping
-- Compliance gaps documented with severity ratings (critical/high/medium/low)
-- Controls implemented with validation tests (automated where possible)
-- Evidence collection automated with audit trail timestamps
-- Remediation plans created for all gaps with assigned owners
-- Compliance score >90% for target framework
-- Zero critical violations remaining before certification
+- [assert|neutral] All applicable regulatory requirements identified with evidence mapping [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Compliance gaps documented with severity ratings (critical/high/medium/low) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Controls implemented with validation tests (automated where possible) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Evidence collection automated with audit trail timestamps [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Remediation plans created for all gaps with assigned owners [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Compliance score >90% for target framework [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Zero critical violations remaining before certification [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Challenges
 
@@ -42,17 +41,16 @@ Do NOT use for non-regulated applications, internal tools without compliance req
 - Continuous compliance vs point-in-time certification
 
 ## Guardrails (CRITICAL SECURITY RULES)
-
-- NEVER implement compliance controls on unauthorized systems
-- NEVER collect or store PII/PHI without proper encryption and access controls
-- NEVER bypass security controls to achieve compliance scores
-- NEVER generate false compliance evidence or documentation
-- ALWAYS document evidence collection methods with timestamps
-- ALWAYS validate controls through independent testing
-- ALWAYS obtain legal review for compliance interpretations
-- ALWAYS maintain audit trails for all compliance activities
-- ALWAYS use encryption at rest and in transit for sensitive data
-- ALWAYS implement least-privilege access for compliance tools
+- [assert|emphatic] NEVER: implement compliance controls on unauthorized systems [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: collect or store PII/PHI without proper encryption and access controls [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: bypass security controls to achieve compliance scores [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: generate false compliance evidence or documentation [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: document evidence collection methods with timestamps [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate controls through independent testing [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: obtain legal review for compliance interpretations [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: maintain audit trails for all compliance activities [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: use encryption at rest and in transit for sensitive data [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement least-privilege access for compliance tools [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -65,6 +63,11 @@ All compliance findings MUST be validated through:
 6. **Remediation testing** - Verify fixes resolve violations without introducing new gaps
 
 # Compliance - Regulatory Standards Validation
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Comprehensive compliance validation and documentation for major regulatory frameworks.
 
@@ -189,3 +192,7 @@ In practice:
 Compliance provides comprehensive regulatory validation and documentation for major frameworks (GDPR, HIPAA, SOC 2, PCI-DSS, ISO 27001) through evidence-based controls, continuous monitoring, and automated compliance checks. By treating compliance as an engineering discipline with measurable outcomes and automated validation, this skill transforms regulatory adherence from a periodic burden to a continuous process.
 
 Use this skill when implementing controls for regulated industries, preparing for certification audits, or maintaining ongoing compliance for production systems. The framework supports multi-jurisdiction compliance (GDPR + CCPA), automated evidence collection with audit trails, and risk-prioritized remediation plans. Critical guardrails prevent false compliance claims, unauthorized system access, and security control bypasses. The result is verifiable compliance readiness with 90%+ framework coverage and zero critical violations.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

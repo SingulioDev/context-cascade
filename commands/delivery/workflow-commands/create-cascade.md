@@ -14,6 +14,11 @@ version: 1.0.0
 
 # /create-cascade
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Creates workflow cascades that coordinate micro-skills with multi-model routing.
 
 ## Usage
@@ -119,3 +124,7 @@ Cascades are just sequences of slash commands! No need for complex YAML - just c
 - `/create-micro-skill` - Create atomic skills first
 - `/create-command` - Bind cascade to command
 - `/audit-pipeline` - Example cascade
+
+
+---
+*Promise: `<promise>CREATE_CASCADE_VERIX_COMPLIANT</promise>`*

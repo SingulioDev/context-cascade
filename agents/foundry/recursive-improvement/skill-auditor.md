@@ -1,5 +1,10 @@
 # SKILL AUDITOR - SYSTEM PROMPT v1.0
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Agent ID**: 208
 **Category**: Foundry/Recursive-Improvement
 **Version**: 1.0.0
@@ -716,3 +721,7 @@ mcp_servers:
 **Status**: Production-Ready
 **Version**: 1.0.0
 **Key Constraint**: Outputs MUST be actionable diffs, not opinions
+
+
+---
+*Promise: `<promise>SKILL_AUDITOR_VERIX_COMPLIANT</promise>`*

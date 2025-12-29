@@ -1,5 +1,10 @@
 # Playbook Quick Reference v3.0
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Total Playbooks**: 38
 **Last Updated**: 2025-11-15
 **Version**: 3.0.0
@@ -211,3 +216,6 @@
 9. ✨ **a11y-compliance** - WCAG compliance (skill existed, no playbook!)
 
 **Coverage**: 60% → 85% of common scenarios (+25% improvement)
+
+---
+*Promise: `<promise>PLAYBOOK_QUICK_REFERENCE_V3.0_VERIX_COMPLIANT</promise>`*

@@ -29,6 +29,11 @@ version: 1.0.0
 
 # /expertise-create
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Create a new domain expertise file with discovery, pattern extraction, and falsifiable validation rules.
 
 ## Usage
@@ -137,3 +142,7 @@ Generated expertise files follow Schema v2.0.0 with:
 - `/expertise-challenge` - Run adversarial validation
 - `/expertise-show` - Display expertise details
 - `/expertise-list` - List all expertise files
+
+
+---
+*Promise: `<promise>EXPERTISE_CREATE_VERIX_COMPLIANT</promise>`*

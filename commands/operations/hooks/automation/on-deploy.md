@@ -44,6 +44,11 @@ usage: |
 
 # Hook: On-Deploy
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Automation Hooks
 **Purpose**: Automated deployment with health checks, monitoring, and rollback.
 
@@ -93,3 +98,7 @@ fi
 
 **Status**: Production Ready
 **Version**: 1.0.0
+
+
+---
+*Promise: `<promise>ON_DEPLOY_VERIX_COMPLIANT</promise>`*

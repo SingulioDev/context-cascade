@@ -17,6 +17,11 @@ agents:
 
 # Agent Selector Micro-Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Phase 0: Expertise Loading
 
 Before selecting agents:
@@ -489,3 +494,7 @@ Agent selection is the critical routing layer between user intent and specialize
 The agent-selector skill transforms the agent registry from a static catalog into a dynamic routing system. By applying semantic search through Memory MCP, scoring candidates across 6 dimensions, and enforcing confidence thresholds, it ensures every task gets matched to the optimal specialist. This precision cascades downstream: well-selected agents execute faster, produce higher quality outputs, and require less debugging than generic alternatives.
 
 Use this skill religiously in Phase 4 routing. Never spawn agents without consulting the registry. The investment in precise agent selection pays dividends throughout execution, turning the agent ecosystem from a collection of tools into a coordinated system of specialists.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

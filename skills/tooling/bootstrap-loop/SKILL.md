@@ -12,6 +12,11 @@ tags:
 
 # Bootstrap Loop (Recursive Self-Improvement Orchestrator)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Orchestrate the recursive improvement cycle:
@@ -627,3 +632,7 @@ The Bootstrap Loop orchestrates recursive self-improvement with rigorous safegua
 The recursive improvement cycle - where Prompt Forge improves Skill Forge, Skill Forge improves Prompt Forge, and both audit everything else - creates a positive feedback loop for continuous quality improvement. However, this loop is carefully bounded by frozen evaluation criteria, transparent decision logging, and automatic rollback on regression. The result is a self-improving system that gets better over time without drifting from its core objectives.
 
 Whether improving a single skill prompt or orchestrating a full audit of 196 skills, the Bootstrap Loop ensures that changes are validated, versioned, and reversible. The combination of automated improvement with human oversight at critical decision points strikes the balance between efficiency and safety, enabling rapid iteration without sacrificing quality or stability.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

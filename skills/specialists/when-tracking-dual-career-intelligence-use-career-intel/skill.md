@@ -39,6 +39,11 @@ estimated_time: 45 min per run
 
 # Dual-Track Career Intelligence
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Automated tracking of internal/external roles across US/EU markets with policy monitoring, visa leverage analysis, and tailored pitch generation.
 
 ## Overview
@@ -962,12 +967,11 @@ When `coder` agent generates scoring scripts:
 - **Improved application quality** through systematic tailoring
 
 ### Success Metrics
-- **Applications sent**: 2+ per week
-- **Interview conversion**: Track ratio (aim for >10%)
-- **Time per application**: <30 min with pre-generated pitch
-- **EU option awareness**: Zero missed policy deadlines
-
----
+- [assert|neutral] *Applications sent**: 2+ per week [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Interview conversion**: Track ratio (aim for >10%) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Time per application**: <30 min with pre-generated pitch [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *EU option awareness**: Zero missed policy deadlines [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Troubleshooting
 
@@ -1008,3 +1012,7 @@ When `coder` agent generates scoring scripts:
 **Version**: 1.0.0
 **Maintainer**: David Youssef
 **License**: Personal use (Life-OS IP)
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

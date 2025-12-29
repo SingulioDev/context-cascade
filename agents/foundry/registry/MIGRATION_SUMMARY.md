@@ -1,5 +1,10 @@
 # Claude Flow Commands to Agent System Migration Summary
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Executive Summary
 This document provides a complete migration plan for converting the existing command-based system (`.claude/commands/`) to the new intelligent agent-based system (`agents/`). The migration preserves all functionality while adding natural language understanding, intelligent coordination, and improved parallelization.
 
@@ -213,3 +218,6 @@ triggers:
 - Community support: GitHub discussions
 
 The new agent system represents a significant advancement in AI-assisted development, providing a more intuitive, powerful, and efficient way to accomplish complex tasks.
+
+---
+*Promise: `<promise>MIGRATION_SUMMARY_VERIX_COMPLIANT</promise>`*

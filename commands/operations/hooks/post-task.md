@@ -1,4 +1,9 @@
 # hook post-task
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Command-Specific Context
 - Deployment target requirements
 - Pre/post hook execution order
@@ -141,3 +146,7 @@ Returns JSON with:
 - `performance report` - Detailed metrics
 - `memory usage` - Memory management
 - `neural patterns` - Pattern analysis
+
+
+---
+*Promise: `<promise>POST_TASK_VERIX_COMPLIANT</promise>`*

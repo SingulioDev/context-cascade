@@ -1,5 +1,10 @@
 # smart-spawn
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: May require GitHub CLI or API for repository operations and workflow management
 - Authentication/token requirements: GITHUB_TOKEN for API access, service account credentials for automated operations
@@ -53,3 +58,7 @@ npx claude-flow automation smart-spawn --threshold 5
 # Force topology
 npx claude-flow automation smart-spawn --topology hierarchical
 ```
+
+
+---
+*Promise: `<promise>SMART_SPAWN_VERIX_COMPLIANT</promise>`*

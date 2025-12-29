@@ -16,11 +16,11 @@
 - Non-academic audiences unfamiliar with research visualizations
 
 ### Success Criteria
-- High-resolution publication-ready figures (300+ DPI)
-- Clear axis labels, legends, and titles
-- Color scheme accessible (colorblind-friendly)
-- Gap areas clearly highlighted (red for unexplored, green for saturated)
-- Source data included (CSV/JSON for reproducibility)
+- [assert|neutral] High-resolution publication-ready figures (300+ DPI) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Clear axis labels, legends, and titles [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Color scheme accessible (colorblind-friendly) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Gap areas clearly highlighted (red for unexplored, green for saturated) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Source data included (CSV/JSON for reproducibility) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Too many dimensions: use PCA/t-SNE for dimensionality reduction
@@ -65,6 +65,11 @@ mcp_servers:
 ---
 
 # Research Gap Visualizer
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 
@@ -484,3 +489,7 @@ Research gap visualization transforms the abstract concept of "what's missing" i
 The power of this skill lies in its ability to make gap identification systematic and evidence-based. Rather than relying on intuition or anecdotal observations about what's been studied, researchers can point to specific visualizations showing exact paper counts, coverage percentages, and prioritized recommendations. This visual evidence is particularly valuable in grant proposals and manuscript motivation sections, where demonstrating research novelty is critical for funding and publication success.
 
 As research fields become increasingly specialized and literature volumes grow exponentially, manual gap identification becomes impractical. Systematic visualization of research coverage allows scholars to identify novel contribution opportunities efficiently, avoid redundant work, and make strategic decisions about research direction. The research gap visualizer skill represents an essential tool for modern evidence-based research planning, transforming literature synthesis from descriptive summaries into strategic roadmaps.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

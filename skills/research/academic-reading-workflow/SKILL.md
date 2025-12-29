@@ -9,6 +9,11 @@ quality_gates: 3
 
 # Academic Reading Workflow
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 Execute systematic reading of academic papers, books, and complex texts using Blue's (OSP) 3-phase methodology: summary-first reading, active annotation with searchable keyword system, and evidence-based writing.
@@ -494,3 +499,7 @@ Tags: WHO=researcher,WHEN=[ISO8601],PROJECT=[slug],WHY=annotation,SOURCE=[title]
 ---
 
 **Blue's Annotation Principles**: "Read the Roadmap, Command-F in Real Life, Paraphrase > Highlighting, Write for Future You"
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

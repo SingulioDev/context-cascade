@@ -23,6 +23,11 @@ author: ruv
 
 # Language Specialists - Gold Tier
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -594,3 +599,7 @@ The Language Specialists skill provides comprehensive multi-language development
 Success with this skill depends on embracing each language's unique strengths while maintaining rigorous standards across both. The provided linting scripts, validation tools, and example projects demonstrate that multi-language development doesn't require compromising on code quality, type safety, or maintainability. Whether building a pure Python FastAPI service, a TypeScript Nest.js application, or a hybrid microservices architecture with both, this skill provides the expertise, automation, and guidance needed to deliver production-quality software.
 
 The Gold tier designation reflects not just the comprehensive resources provided, but the battle-tested patterns and tools that emerge from real-world polyglot development. Use this skill when language-specific expertise matters, when type safety is non-negotiable, and when you need proven patterns for building maintainable multi-language systems at scale.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

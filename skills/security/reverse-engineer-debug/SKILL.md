@@ -11,6 +11,11 @@ cognitive_frame:
 
 # Reverse Engineer Debug Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Kanitsal Kok Neden Analizi (Evidential Root Cause Analysis)
 
 Every causal link in the investigation MUST have supporting evidence. No speculation without proof.
@@ -332,18 +337,14 @@ Provide more details about:
 - `style-audit`: Ensure code quality after fixes
 
 ## Success Indicators
-
-✅ Root cause clearly identified with evidence (all WHY levels have DOGRUDAN or CIKARIM support)
-✅ Confidence scores >= 0.7 for each WHY level
-✅ All hypotheses tested with evidence for/against
-✅ Solution addresses ROOT cause, not symptoms (verified by WHY-5 level)
-✅ Validation plan has DOGRUDAN evidence requirements
-✅ Prevention strategy includes pre-mortem question for Loop 1
-✅ Investigation process fully documented with evidence chain
-
----
-
-**Remember**: This skill finds THE REAL PROBLEM through evidential reasoning and morphological decomposition. Every causal claim requires evidence. Every symptom decomposes through 5-Whys until the root is reached. No speculation without proof. No fixes without addressing the foundational cause.
+- [assert|neutral] ✅ Root cause clearly identified with evidence (all WHY levels have DOGRUDAN or CIKARIM support) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Confidence scores >= 0.7 for each WHY level [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ All hypotheses tested with evidence for/against [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Solution addresses ROOT cause, not symptoms (verified by WHY-5 level) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Validation plan has DOGRUDAN evidence requirements [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Prevention strategy includes pre-mortem question for Loop 1 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Investigation process fully documented with evidence chain [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Remember**: This skill finds THE REAL PROBLEM through evidential reasoning and morphological decomposition. Every causal claim requires evidence. Every symptom decomposes through 5-Whys until the root is reached. No speculation without proof. No fixes without addressing the foundational cause. [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Changelog
 
@@ -367,3 +368,7 @@ Provide more details about:
 - Hypothesis generation and testing
 - Solution design and validation planning
 - Prevention strategies
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

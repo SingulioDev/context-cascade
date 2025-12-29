@@ -7,6 +7,11 @@ version: 1.0.0
 
 # Codex Reasoning Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 Leverage OpenAI's GPT-5-Codex model (optimized for agentic coding) to get alternative reasoning approaches, second opinions, and specialized algorithmic solutions that complement Claude's perspective.
 
@@ -85,3 +90,7 @@ Result: Codex approach 2x faster for this use case
 **Uses your ChatGPT Plus subscription.** Use `/model` in Codex to switch to GPT-5-Codex.
 
 See `.claude/agents/codex-reasoning-agent.md` for details.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

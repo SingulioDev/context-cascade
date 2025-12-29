@@ -44,11 +44,11 @@ author: ruv
 - **Trivial changes** to single files
 
 ### Success Criteria
-- **Agent+skill matrix generated** with optimal assignments
-- **Parallel execution successful** with 8.3x speedup achieved
-- **Theater detection passes** with 0% theater detected
-- **Integration tests pass** at 100% rate
-- **All agents complete** with no orphaned workers
+- [assert|neutral] *Agent+skill matrix generated** with optimal assignments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Parallel execution successful** with 8.3x speedup achieved [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Theater detection passes** with 0% theater detected [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Integration tests pass** at 100% rate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All agents complete** with no orphaned workers [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Implement agent health monitoring and replacement
@@ -58,11 +58,11 @@ author: ruv
 - **Conflicting outputs** - Implement merge conflict resolution strategy
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose agent state** - Persist agent progress to memory continuously
-- **ALWAYS track swarm health** - Monitor all agent statuses in real-time
-- **ALWAYS validate consensus** - Require 4/5 agreement for theater detection
-- **NEVER skip theater audit** - Zero tolerance, any theater blocks merge
-- **ALWAYS cleanup workers** - Terminate agents on completion/failure
+- [assert|emphatic] NEVER: lose agent state** - Persist agent progress to memory continuously [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track swarm health** - Monitor all agent statuses in real-time [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate consensus** - Require 4/5 agreement for theater detection [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip theater audit** - Zero tolerance, any theater blocks merge [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup workers** - Terminate agents on completion/failure [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Check all agent statuses** - Verify each agent completed successfully
@@ -73,6 +73,11 @@ author: ruv
 
 
 # Advanced Swarm Coordination SOP
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -774,3 +779,7 @@ Advanced swarm coordination represents the cutting edge of multi-agent orchestra
 The three core principles - topology selection, dynamic optimization, and fault tolerance - form the foundation of production-grade swarm systems that can operate reliably under varying conditions. Topology selection provides the right coordination pattern for your workload. Dynamic optimization ensures performance does not degrade over time. Fault tolerance guarantees that individual failures do not cascade into system-wide outages. Together, these principles create swarm systems that are not only powerful but also resilient and self-healing.
 
 As you implement advanced swarm patterns, resist the temptation to over-engineer early. Start with simple topologies and add complexity only when measurements show clear bottlenecks or limitations. Implement comprehensive monitoring before attempting dynamic optimization - you cannot optimize what you cannot measure. Design fault tolerance mechanisms from the beginning rather than retrofitting them later. Test topology switching in non-production environments before applying to critical workloads. By following these practices and learning from the anti-patterns highlighted above, you can build swarm systems that rival the sophistication of distributed systems like Kubernetes and Apache Kafka while maintaining the agility and intelligence that only AI-powered coordination can provide. Remember: the goal is not maximum complexity but optimal performance with appropriate complexity for your specific coordination challenges.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -42,9 +42,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -63,6 +63,11 @@ One-line description of what this command does.
 
 
 # 🔐 Supabase Admin
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Role Definition
 You are the Supabase database, authentication, and storage specialist. You design and implement database schemas, RLS policies, triggers, and functions for Supabase projects. You ensure secure, efficient, and scalable data management.
@@ -405,3 +410,7 @@ npx claude-flow memory store "supabase-admin_context" "important decisions" --na
 # Query previous work
 npx claude-flow memory query "supabase-admin" --limit 5
 ```
+
+
+---
+*Promise: `<promise>SUPABASE_ADMIN_VERIX_COMPLIANT</promise>`*

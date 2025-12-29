@@ -12,6 +12,11 @@ description: Coordinate multi-agent swarms for complex tasks
 
 # 🐝 Claude-Flow Swarm Coordination
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Advanced multi-agent coordination system with timeout-free execution, distributed memory sharing, and intelligent load balancing.
 
 ## Basic Usage
@@ -210,3 +215,7 @@ Swarms automatically use distributed memory for collaboration:
 - Adaptive
 
 For detailed documentation, see: https://github.com/ruvnet/claude-code-flow/docs/swarm-system.md
+
+
+---
+*Promise: `<promise>CLAUDE_FLOW_SWARM_VERIX_COMPLIANT</promise>`*

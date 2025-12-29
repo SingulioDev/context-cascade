@@ -7,6 +7,11 @@ version: 1.0.0
 
 # Multi-Model Orchestrator Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 Automatically route tasks to the optimal AI model (Gemini or Codex) based on task requirements and each model's unique strengths. You don't need to decide - the orchestrator does it for you.
 
@@ -208,15 +213,11 @@ Orchestrator learns from:
 ```
 
 ## Success Indicators
-
-✅ Task completed efficiently
-✅ Right model used for each subtask
-✅ Time/cost optimized
-✅ High-quality results
-✅ Smooth coordination between models
-
----
-
-**Remember**: When in doubt, use `/multi-model` - it will figure out the optimal routing for you!
-
-See `docs/agents/multi-model-guide.md` for complete documentation.
+- [assert|neutral] ✅ Task completed efficiently [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Right model used for each subtask [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Time/cost optimized [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ High-quality results [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Smooth coordination between models [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Remember**: When in doubt, use `/multi-model` - it will figure out the optimal routing for you! [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] See `docs/agents/multi-model-guide.md` for complete documentation. [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`* [ground:acceptance-criteria] [conf:0.90] [state:provisional]

@@ -22,13 +22,12 @@ author: ruv
 - Operations that do not require embedding-based retrieval
 
 ## Success Criteria
-
-- Vector search query latency: <10ms for 99th percentile
-- Embedding generation: <100ms per document
-- Index build time: <1s per 1000 vectors
-- Recall@10: >0.95 for similar documents
-- Database connection success rate: >99.9%
-- Memory footprint: <2GB for 1M vectors with quantization
+- [assert|neutral] Vector search query latency: <10ms for 99th percentile [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Embedding generation: <100ms per document [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Index build time: <1s per 1000 vectors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Recall@10: >0.95 for similar documents [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Database connection success rate: >99.9% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Memory footprint: <2GB for 1M vectors with quantization [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -40,13 +39,12 @@ author: ruv
 - **Dimension Mismatch**: Validate embedding dimensions (384 for sentence-transformers) before insertion
 
 ## Guardrails & Safety
-
-- NEVER expose database connection strings in logs or error messages
-- ALWAYS validate vector dimensions before insertion
-- ALWAYS sanitize metadata to prevent injection attacks
-- NEVER store PII in vector metadata without encryption
-- ALWAYS implement access control for multi-tenant deployments
-- ALWAYS validate search results before returning to users
+- [assert|emphatic] NEVER: expose database connection strings in logs or error messages [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate vector dimensions before insertion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: sanitize metadata to prevent injection attacks [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: store PII in vector metadata without encryption [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement access control for multi-tenant deployments [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate search results before returning to users [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -58,6 +56,11 @@ author: ruv
 
 
 # AgentDB Performance Optimization
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## What This Skill Does
 
@@ -608,3 +611,7 @@ In practice:
 AgentDB Performance Optimization transforms vector search from memory-intensive, slow operations into production-ready systems capable of handling millions of vectors with sub-millisecond latency. By applying quantization strategies tailored to your accuracy requirements, enabling HNSW indexing for logarithmic search complexity, and implementing intelligent caching and batch operations, you achieve 150-12,500x performance improvements while reducing memory footprint by 4-32x.
 
 Use this skill when scaling to large vector datasets (>10K vectors), deploying to memory-constrained environments (mobile, edge devices), or optimizing production systems requiring <10ms p99 latency. The key insight is strategic trade-offs: quantization trades minimal accuracy for massive memory savings, HNSW trades insertion time for exponentially faster search, and caching trades memory for latency reduction. Start with balanced configurations (scalar quantization, M=16, cacheSize=1000) and tune based on benchmarks for your specific workload.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

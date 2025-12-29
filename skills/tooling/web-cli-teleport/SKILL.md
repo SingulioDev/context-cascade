@@ -29,10 +29,9 @@ author: ruv
 - **Non-Standard Tools**: Do not use when tools are deprecated, unsupported, or outside standard toolkit
 
 ## Success Criteria
-
-- **Tool Executed Correctly**: Verify tool runs without errors and produces expected output
-- **Reference Accurate**: Confirm reference material is current and applicable
-- **Pipeline Complete**: Ensure automation pipeline completes all stages successfully
+- [assert|neutral] *Tool Executed Correctly**: Verify tool runs without errors and produces expected output [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Reference Accurate**: Confirm reference material is current and applicable [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Pipeline Complete**: Ensure automation pipeline completes all stages successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases
 
@@ -41,10 +40,9 @@ author: ruv
 - **Pipeline Failures**: Recover gracefully from mid-pipeline failures with clear error messages
 
 ## Guardrails
-
-- **NEVER use deprecated tools**: Always verify tool versions and support status before execution
-- **ALWAYS verify outputs**: Validate tool outputs match expected format and content
-- **ALWAYS check health**: Run tool health checks before critical operations
+- [assert|emphatic] NEVER: use deprecated tools**: Always verify tool versions and support status before execution [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: verify outputs**: Validate tool outputs match expected format and content [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: check health**: Run tool health checks before critical operations [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -53,6 +51,11 @@ author: ruv
 - **Pipeline Monitoring**: Track pipeline execution metrics and success rates
 
 # Web-CLI Teleport Guide
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 Help users choose the optimal Claude Code interface (Web vs CLI) and seamlessly teleport sessions between environments for maximum productivity.
@@ -344,3 +347,7 @@ The Web-CLI Teleport skill addresses a fundamental tension in modern development
 This skill's innovation lies in treating interface selection as a continuous optimization problem rather than an upfront commitment. By providing seamless teleportation with context preservation, it enables developers to start work anywhere, recognize complexity shifts in real-time, and transition to appropriate tooling without penalty. The decision matrix reduces cognitive load by encoding environment-specific tradeoffs into clear criteria, while the teleport protocol ensures conversations remain continuous across physical and virtual boundaries.
 
 The result is a workflow that respects both human mobility patterns and technical complexity curves, allowing planning on mobile during commute, exploratory work on web during meetings, and focused implementation on desktop with full tooling, all within a single conversational thread that accumulates rather than resets context.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

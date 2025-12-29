@@ -1,5 +1,10 @@
 # workflow-export
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Purpose
 [Define what this command does - the specific action it triggers]
 
@@ -69,3 +74,7 @@ npx claude-flow workflow export --name "test-suite" --format yaml
 # With history
 npx claude-flow workflow export --name "deploy-api" --include-history
 ```
+
+
+---
+*Promise: `<promise>WORKFLOW_EXPORT_VERIX_COMPLIANT</promise>`*

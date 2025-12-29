@@ -38,6 +38,11 @@ version: 2.0.0
 
 # ▲ Vercel Deployment
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Deploy to Vercel with automatic preview deployments.
 
 ```bash
@@ -45,3 +50,7 @@ npx vercel --prod
 ```
 
 **Version**: 2.0.0
+
+
+---
+*Promise: `<promise>VERCEL_DEPLOY_VERIX_COMPLIANT</promise>`*

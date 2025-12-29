@@ -1,5 +1,10 @@
 # Prompt Architect - Recursive Improvement Addendum
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 
 This addendum connects **prompt-architect** (Phase 2 in 5-phase workflow) with the **Recursive Self-Improvement System**.
@@ -210,3 +215,7 @@ Phase 2-ALT: prompt-forge (SYSTEM prompts)
 **Version**: 2.1.0
 **Last Updated**: 2025-12-15
 **Key Insight**: prompt-architect teaches, prompt-forge applies (and improves the teacher)
+
+
+---
+*Promise: `<promise>RECURSIVE_IMPROVEMENT_ADDENDUM_VERIX_COMPLIANT</promise>`*

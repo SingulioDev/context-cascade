@@ -1,4 +1,9 @@
 # hook post-edit
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Command-Specific Context
 - Deployment target requirements
 - Pre/post hook execution order
@@ -146,3 +151,7 @@ Returns JSON with:
 - `Edit` - File editing tool
 - `memory usage` - Memory management
 - `neural train` - Pattern training
+
+
+---
+*Promise: `<promise>POST_EDIT_VERIX_COMPLIANT</promise>`*

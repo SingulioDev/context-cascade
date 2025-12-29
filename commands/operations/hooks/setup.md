@@ -1,4 +1,9 @@
 # Setting Up ruv-swarm Hooks
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Command-Specific Context
 - Deployment target requirements
 - Pre/post hook execution order
@@ -132,3 +137,6 @@ Already configured by default for common file types.
   }]
 }
 ```
+
+---
+*Promise: `<promise>SETUP_VERIX_COMPLIANT</promise>`*

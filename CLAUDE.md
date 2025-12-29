@@ -1203,9 +1203,173 @@ Output <promise>DONE</promise> when ALL tests pass." \
 
 **Triggers**: "ralph loop", "persistence loop", "iterate until", "TDD loop"
 
+### 7.5 Meta Loop + Ralph Wiggum Integration (NEW)
+
+**When**: Recursive self-improvement of foundry skills (agent-creator, skill-forge, prompt-forge)
+
+**Architecture**:
+```
+5-PHASE WORKFLOW (1-4)
+        |
+        v
+   FOUNDRY TRIANGLE (in Ralph Loops)
+   PROMPT FORGE <--> SKILL FORGE <--> AGENT CREATOR
+        |
+        v
+   4 AUDITORS (parallel Ralph Loops)
+   prompt | skill | expertise | output
+        |
+        v
+   EVAL HARNESS (Ralph Loop - FROZEN)
+        |
+        v
+   COMPARE -> ACCEPT/REJECT -> COMMIT -> MONITOR (7 days)
+```
+
+**Key Insight**: Each phase runs in its own nested Ralph loop, creating persistent execution that ensures completion before moving to the next phase.
+
+**Commands**:
+```bash
+# Start meta loop on foundry skill
+/meta-loop-foundry "Add cognitive frame integration" \
+  --target "skills/foundry/skill-forge/SKILL.md" \
+  --foundry "prompt-forge"
+
+# Check status
+/meta-loop-status
+
+# Cancel active loop
+/meta-loop-cancel
+
+# Rollback completed session
+/meta-loop-rollback meta-20251228-160000
+```
+
+**Execution Phases**:
+
+| Phase | Ralph Loop | Max Iter | Promise |
+|-------|------------|----------|---------|
+| EXECUTE | #1 | 30 | {FOUNDRY}_PROPOSAL_READY |
+| IMPLEMENT | #2 | 20 | CHANGES_APPLIED |
+| AUDIT (x4) | #3-6 | 10 each | *_AUDIT_PASS |
+| EVAL | #7 | 50 | EVAL_HARNESS_PASS |
+| MONITOR | #8 | 7 | MONITOR_COMPLETE |
+
+**Safety Constraints**:
+- Eval harness is FROZEN (cannot self-modify)
+- Changes >500 lines require human approval
+- All 4 auditors must pass
+- 7-day monitoring with auto-rollback
+- 90-day rollback archive
+
+**State Files**:
+- Meta state: `~/.claude/ralph-wiggum/meta-loop-state.yaml`
+- Ralph state: `~/.claude/ralph-wiggum/loop-state.md`
+- Sessions: `~/.claude/ralph-wiggum/foundry-sessions/`
+
+**Memory Namespace**:
+```
+meta-loop/
+  sessions/{id}        # Complete session state
+  foundry/{skill}/{id} # Foundry execution logs
+  auditors/{type}/{id} # Auditor results
+  proposals/{id}       # Improvement proposals
+  eval-results/{id}    # Eval harness results
+```
+
+**Triggers**: "recursive improvement", "meta loop", "improve foundry", "self-improvement"
+
+**Documentation**: See `skills/recursive-improvement/META-LOOP-RALPH-INTEGRATION.md`
+
+---
+
+### 7.6 Cognitive Architecture (MOO x DSPy x VERILINGUA x VERIX)
+
+**Location**: `cognitive-architecture/`
+
+A dual-layer optimization system for improving AI prompts and the language that expresses them.
+
+**Core Components**:
+
+| Component | File | Purpose |
+|-----------|------|---------|
+| VERILINGUA | `core/verilingua.py` | 7 cognitive frames from natural languages |
+| VERIX | `core/verix.py` | Epistemic notation system |
+| VectorCodec | `core/config.py` | 14-dimensional config vector |
+| PromptBuilder | `core/prompt_builder.py` | Prompt construction from config |
+
+**The 7 Cognitive Frames**:
+
+| Frame | Source | Forces |
+|-------|--------|--------|
+| Evidential | Turkish | How do you know? |
+| Aspectual | Russian | Complete or ongoing? |
+| Morphological | Arabic | Semantic decomposition |
+| Compositional | German | Build from primitives |
+| Honorific | Japanese | Audience calibration |
+| Classifier | Chinese | Type and count |
+| Spatial | Guugu Yimithirr | Absolute positioning |
+
+**Dual-Layer Optimization**:
+
+```
+Layer 1 (Monthly): Language Evolution
+  - File: optimization/dspy_level1.py
+  - Scope: Structural changes to prompt architecture
+  - Output: EvolutionProposals
+
+Layer 2 (Minutes): Prompt Expression
+  - File: optimization/dspy_level2.py
+  - Scope: Per-cluster prompt caching
+  - Output: CompiledPrompts
+```
+
+**Two-Stage MOO**:
+
+```
+Stage 1: GlobalMOO (5D exploration)
+  - API: https://app.globalmoo.com/api
+  - Model ID: 2193, Project ID: 8318
+  - Dimensions: evidential, aspectual, verix_strictness, compression, require_ground
+
+Stage 2: PyMOO NSGA-II (14D refinement)
+  - File: optimization/two_stage_optimizer.py
+  - Dimensions: All 14 config dimensions
+  - Algorithm: NSGA-II (pop=200, gen=100)
+```
+
+**Named Modes** (from optimization):
+
+| Mode | Accuracy | Efficiency | Frames |
+|------|----------|------------|--------|
+| audit | 0.960 | 0.763 | evidential, aspectual, morphological, classifier |
+| speed | 0.734 | 0.950 | (none) |
+| research | 0.980 | 0.824 | evidential, honorific, classifier, spatial |
+| robust | 0.960 | 0.769 | evidential, aspectual, morphological, classifier |
+| balanced | 0.882 | 0.928 | evidential, spatial |
+| meta-loop | 0.970 | 0.780 | evidential, aspectual |
+
+**Storage**:
+- `storage/two_stage_optimization/named_modes.json` - Distilled modes
+- `storage/telemetry/` - Layer 1 telemetry
+- `storage/prompts/` - Layer 2 prompt cache
+
+**Documentation**: See `cognitive-architecture/docs/SYSTEM-INDEX.md`
+
 ---
 
 ## 8. CHANGELOG
+
+### v2.6.0 (2025-12-28)
+- Meta Loop + Ralph Wiggum Integration for recursive self-improvement
+- New skill: meta-loop-orchestrator (orchestration category)
+- New commands: /meta-loop-foundry, /meta-loop-status, /meta-loop-cancel, /meta-loop-rollback
+- Integration script: scripts/meta-loop/ralph-foundry-integration.sh
+- Nested Ralph loops for each meta loop phase
+- 4 parallel auditor loops (prompt, skill, expertise, output)
+- Frozen eval harness protection
+- 7-day monitoring with auto-rollback
+- Documentation: META-LOOP-RALPH-INTEGRATION.md
 
 ### v2.5.0 (2025-12-28)
 - Connascence Safety Analyzer integration with Ralph loop

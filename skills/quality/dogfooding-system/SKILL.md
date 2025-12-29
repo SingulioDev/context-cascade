@@ -33,13 +33,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -82,6 +81,11 @@ This skill integrates with:
 
 
 # Dogfooding System - Self-Improvement Architecture
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 A comprehensive 3-phase self-improvement system that enables Claude Code to automatically improve itself and connected MCP servers through quality detection, pattern retrieval, and safe automated fixes.
 
@@ -478,3 +482,7 @@ The Dogfooding System represents a paradigm shift from reactive debugging to pro
 The three-phase architecture (Quality Detection -> Pattern Retrieval -> Continuous Improvement) creates a feedback loop where every fix strengthens future detection. Teams implementing dogfooding should prioritize safety rules (sandbox testing, progressive fixes, test coverage requirements) and proper metadata tagging for pattern retrieval. The system's vector search capabilities enable finding relevant fixes even when violation details differ, as semantic similarity identifies underlying patterns.
 
 Most critically, dogfooding succeeds when organizations resist the temptation to batch fixes or skip validation. The discipline of one-fix-at-a-time testing, combined with automated rollback, creates sustainable quality improvement without production risk. Teams measuring success by improvement velocity (violations fixed per day) rather than just violation counts build codebases that continuously evolve toward higher quality.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

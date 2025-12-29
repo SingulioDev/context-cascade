@@ -53,10 +53,9 @@ author: ruv
 - **Non-Standard Tools**: Do not use when tools are deprecated, unsupported, or outside standard toolkit
 
 ## Success Criteria
-
-- **Tool Executed Correctly**: Verify tool runs without errors and produces expected output
-- **Reference Accurate**: Confirm reference material is current and applicable
-- **Pipeline Complete**: Ensure automation pipeline completes all stages successfully
+- [assert|neutral] *Tool Executed Correctly**: Verify tool runs without errors and produces expected output [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Reference Accurate**: Confirm reference material is current and applicable [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Pipeline Complete**: Ensure automation pipeline completes all stages successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases
 
@@ -65,10 +64,9 @@ author: ruv
 - **Pipeline Failures**: Recover gracefully from mid-pipeline failures with clear error messages
 
 ## Guardrails
-
-- **NEVER use deprecated tools**: Always verify tool versions and support status before execution
-- **ALWAYS verify outputs**: Validate tool outputs match expected format and content
-- **ALWAYS check health**: Run tool health checks before critical operations
+- [assert|emphatic] NEVER: use deprecated tools**: Always verify tool versions and support status before execution [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: verify outputs**: Validate tool outputs match expected format and content [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: check health**: Run tool health checks before critical operations [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -77,6 +75,11 @@ author: ruv
 - **Pipeline Monitoring**: Track pipeline execution metrics and success rates
 
 # ReasoningBank Intelligence - Adaptive Agent Learning
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -739,3 +742,7 @@ ReasoningBank Intelligence transforms agents from static executors into self-imp
 The key insight is that adaptive learning requires three components: (1) comprehensive trajectory tracking with full context preservation, (2) rigorous verdict evaluation combining multiple metrics with configurable weights, and (3) evidence-based pattern application validated through A/B testing against baseline performance. This skill implements all three using ReasoningBank's Decision Transformer architecture and AgentDB's optimized vector operations.
 
 Most importantly, this is not one-time optimization but a continuous improvement loop. Agents that use ReasoningBank Intelligence become progressively more effective over time, learning from every execution to refine their decision-making strategies. The 15% improvement threshold ensures only validated learnings are deployed to production, creating a self-reinforcing cycle where each successful execution contributes to future performance gains. This approach scales from individual agent optimization to fleet-wide learning, where patterns discovered by one agent can benefit the entire agent ecosystem through the shared pattern library.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

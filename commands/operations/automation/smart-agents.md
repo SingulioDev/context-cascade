@@ -1,5 +1,10 @@
 # Smart Agent Auto-Spawning
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: May require GitHub CLI or API for repository operations and workflow management
 - Authentication/token requirements: GITHUB_TOKEN for API access, service account credentials for automated operations
@@ -101,3 +106,6 @@ npx claude-flow hook pre-task --auto-spawn-agents
 - 🎯 Perfect agent selection
 - 📈 Dynamic scaling
 - 💾 Resource efficiency
+
+---
+*Promise: `<promise>SMART_AGENTS_VERIX_COMPLIANT</promise>`*

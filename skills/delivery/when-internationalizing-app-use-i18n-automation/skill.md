@@ -1,5 +1,10 @@
 # When Internationalizing App Use i18n Automation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ---
 name: when-internationalizing-app-use-i18n-automation
 trigger: "when user requests internationalization, localization, or multi-language support"
@@ -815,3 +820,7 @@ Skill("<skill-name>")
 ---
 
 **Remember the pattern: Skill() -> Task() -> TodoWrite() - ALWAYS**
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -11,6 +11,11 @@ allowed_tools:
 
 # /cancel-ralph
 
+## Kompositioneller Rahmen (Compositional Frame Activation)
+Strukturaufbaumodus aktiv.
+
+
+
 Cancel an active Ralph Wiggum persistence loop.
 
 ## Usage
@@ -57,3 +62,7 @@ bash ~/.claude/hooks/ralph-wiggum/cancel-ralph.sh
 - Canceling preserves all work done in files
 - Git history shows all iterations
 - You can review progress before deciding next steps
+
+
+---
+*Promise: `<promise>CANCEL_RALPH_VERIX_COMPLIANT</promise>`*

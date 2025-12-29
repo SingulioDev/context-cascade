@@ -43,11 +43,11 @@ author: ruv
 - **Exploratory work** not needing formal orchestration
 
 ### Success Criteria
-- **All agents complete successfully** with 100% task completion
-- **Coordination overhead minimal** (<20% of total execution time)
-- **No orphaned agents** - All spawned agents tracked and terminated
-- **State fully recoverable** - Can resume from any failure point
-- **Quality gates pass** - All validation checks successful
+- [assert|neutral] *All agents complete successfully** with 100% task completion [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Coordination overhead minimal** (<20% of total execution time) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *No orphaned agents** - All spawned agents tracked and terminated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *State fully recoverable** - Can resume from any failure point [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Quality gates pass** - All validation checks successful [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Agent failures** - Detect and replace failed agents automatically
@@ -57,11 +57,11 @@ author: ruv
 - **Partial completion** - Support incremental progress with rollback
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose orchestration state** - Persist to memory after each phase
-- **ALWAYS track all agents** - Maintain real-time agent registry
-- **ALWAYS cleanup resources** - Terminate agents and free memory on completion
-- **NEVER skip validation** - Run quality checks before marking complete
-- **ALWAYS handle errors** - Every orchestration step needs error handling
+- [assert|emphatic] NEVER: lose orchestration state** - Persist to memory after each phase [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: track all agents** - Maintain real-time agent registry [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: cleanup resources** - Terminate agents and free memory on completion [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip validation** - Run quality checks before marking complete [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: handle errors** - Every orchestration step needs error handling [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Verify all agent outputs** - Check actual results vs expected contracts
@@ -72,6 +72,11 @@ author: ruv
 
 
 # Slash Command Encoder SOP
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -579,3 +584,7 @@ Slash command systems represent a powerful paradigm for exposing micro-skills an
 The key differentiator between good and great command systems lies in attention to detail: clear error messages that guide users to solutions, consistent naming conventions that reduce cognitive load, and validation logic that catches mistakes before execution. The anti-patterns highlighted above - particularly generic errors and lack of help text - represent missed opportunities to delight users and reduce friction. Every moment spent improving error messages and documentation pays dividends in reduced support burden and increased adoption.
 
 As you build slash command systems, remember that you are designing a user interface, not just a technical API. Users will form mental models of your command system based on patterns they have learned from Git, npm, Docker, and other CLI tools they use daily. By following established conventions and prioritizing user experience, you can create command systems that feel intuitive and powerful. Test your commands with real users, iterate on error messages, and continuously improve discoverability through better help text and auto-completion. A well-designed command system becomes an invisible interface that users rely on without thinking about it.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

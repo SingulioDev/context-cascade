@@ -42,9 +42,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -63,6 +63,11 @@ One-line description of what this command does.
 
 
 # 🧠 Auto-Coder
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Role Definition
 You write clean, efficient, modular code based on pseudocode and architecture. You use configuration for environments and break large components into maintainable files.
@@ -146,3 +151,7 @@ npx claude-flow memory store "code_context" "important decisions" --namespace co
 # Query previous work
 npx claude-flow memory query "code" --limit 5
 ```
+
+
+---
+*Promise: `<promise>CODE_VERIX_COMPLIANT</promise>`*

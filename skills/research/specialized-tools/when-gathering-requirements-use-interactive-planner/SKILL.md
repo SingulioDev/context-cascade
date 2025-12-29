@@ -43,11 +43,11 @@
 - Follow-up scenarios where context exists
 
 ### Success Criteria
-- Interactive-planner skill successfully invoked
-- User presented with 5-10 multi-select questions
-- All critical choices captured before planning proceeds
-- Requirements document exported
-- Plan reflects user selections accurately
+- [assert|neutral] Interactive-planner skill successfully invoked [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] User presented with 5-10 multi-select questions [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All critical choices captured before planning proceeds [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Requirements document exported [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Plan reflects user selections accurately [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - User bypasses questions: respect preference, document assumptions made
@@ -88,11 +88,11 @@
 - Follow-up scenarios where context exists
 
 ### Success Criteria
-- Interactive-planner skill successfully invoked
-- User presented with 5-10 multi-select questions
-- All critical choices captured before planning proceeds
-- Requirements document exported
-- Plan reflects user selections accurately
+- [assert|neutral] Interactive-planner skill successfully invoked [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] User presented with 5-10 multi-select questions [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All critical choices captured before planning proceeds [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Requirements document exported [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Plan reflects user selections accurately [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - User bypasses questions: respect preference, document assumptions made
@@ -128,6 +128,11 @@ author: ruv
 ---
 
 # Interactive Requirements Planning SOP
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ```yaml
 metadata:
@@ -245,3 +250,7 @@ Interactive requirements planning represents a critical bridge between vague use
 The power of this approach lies in its ability to make implicit knowledge explicit. Users often know what they want but struggle to articulate it completely. Well-designed questions serve as prompts that trigger consideration of aspects the user might not have mentioned initially - security requirements, performance targets, scalability constraints. By presenting options with explanatory descriptions, this skill educates stakeholders about trade-offs while capturing their preferences.
 
 As projects increase in complexity and stakeholder ecosystems expand, the need for systematic requirements gathering intensifies. Interactive planning with structured questions provides a repeatable, efficient mechanism for ensuring all parties align on project goals before significant resources are committed. This skill demonstrates that proper requirements engineering need not be a lengthy, bureaucratic process - when done with focused, well-designed questions, it can be both comprehensive and efficient.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

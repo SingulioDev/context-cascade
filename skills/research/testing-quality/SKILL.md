@@ -6,6 +6,11 @@ description: Testing quality assessment for test suite health, coverage analysis
 
 # Testing Quality
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Assessment and improvement of test suite quality, coverage, and effectiveness.
 
 ## Phase 0: Expertise Loading
@@ -201,3 +206,7 @@ The multi-dimensional assessment - coverage analysis, reliability metrics, speed
 The testing quality skill enables systematic assessment of test suite health across multiple dimensions beyond simple coverage metrics. By evaluating coverage adequacy, test reliability, execution speed, and code maintainability, teams gain comprehensive understanding of their testing effectiveness. The integration with the recursive improvement system ensures quality assessments feed continuous self-improvement through the dogfooding cycle, creating a feedback loop that elevates testing practices organization-wide.
 
 Effective quality assessment requires looking beyond vanity metrics to evidence-based evaluation of what tests actually validate. Avoiding anti-patterns like coverage theater or tolerating flaky tests ensures the test suite provides genuine confidence rather than false assurance. By maintaining quality standards for test code itself and continuously improving through the assessment-feedback-improvement loop, teams build test suites that catch bugs reliably, execute quickly, and remain maintainable as codebases evolve. This systematic approach transforms testing from a compliance exercise into a strategic quality advantage.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

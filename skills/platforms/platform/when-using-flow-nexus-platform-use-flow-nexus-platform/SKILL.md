@@ -1,5 +1,10 @@
 # Flow Nexus Platform Management SOP
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ```yaml
 metadata:
   skill_name: when-using-flow-nexus-platform-use-flow-nexus-platform
@@ -1380,3 +1385,7 @@ This Flow Nexus Platform Management skill provides a comprehensive framework for
 The skill's emphasis on codified configurations, non-negotiable observability, and cost-aware resource management distinguishes it from typical platform onboarding tutorials. Rather than treating platform features as isolated capabilities to explore, it integrates them into a cohesive operational workflow where every service deployment includes monitoring, every configuration is versioned, and every resource allocation is tracked for cost optimization. This disciplined approach prevents the technical debt and operational surprises that plague teams adopting cloud platforms without systematic processes.
 
 For organizations building on Flow Nexus, this workflow establishes the operational foundation for reliable, cost-effective platform usage at scale. The comprehensive documentation, automated utilities, and monitoring infrastructure created during setup become critical organizational assets, enabling teams to manage complex cloud deployments with confidence while maintaining predictable costs, high availability, and rapid incident response capabilities.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

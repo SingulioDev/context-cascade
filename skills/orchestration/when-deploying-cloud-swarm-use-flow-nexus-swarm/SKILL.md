@@ -1,5 +1,10 @@
 # Flow Nexus Cloud Swarm Deployment SOP
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ```yaml
 metadata:
   skill_name: when-deploying-cloud-swarm-use-flow-nexus-swarm
@@ -1141,3 +1146,7 @@ Flow Nexus Swarm deployment represents the convergence of cloud-native infrastru
 The event-driven coordination model is fundamental to swarm scalability - synchronous blocking between agents creates tight coupling that limits parallelism and causes cascading failures. Message queues decouple producers from consumers, enabling workflows to proceed at different paces and gracefully handle temporary agent unavailability. Event sourcing provides the observability foundation for debugging distributed workflows, capturing full execution history that can be replayed for root cause analysis or regulatory compliance.
 
 Progressive rollout strategies mitigate deployment risk by exposing new workflows to small traffic percentages before full rollout. Comprehensive monitoring through real-time dashboards and distributed tracing enables teams to detect anomalies quickly and roll back before widespread impact. The combination of auto-scaling, event-driven coordination, and observability creates a resilient platform where workflows scale transparently, failures are isolated, and operations teams maintain full control even as complexity grows. Teams adopting Flow Nexus Swarm should prioritize investing in monitoring infrastructure early - without visibility into swarm behavior, debugging distributed workflows becomes prohibitively difficult as scale increases.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

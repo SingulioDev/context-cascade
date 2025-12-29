@@ -29,6 +29,11 @@ version: 1.0.0
 
 # /expertise-challenge
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Run adversarial validation to actively try to DISPROVE expertise claims. Prevents confident drift.
 
 ## Usage
@@ -174,3 +179,7 @@ Called automatically by:
 - `/expertise-validate` - Basic validation
 - `/expertise-refresh` - Rebuild expertise
 - `/expertise-history` - View challenge history
+
+
+---
+*Promise: `<promise>EXPERTISE_CHALLENGE_VERIX_COMPLIANT</promise>`*

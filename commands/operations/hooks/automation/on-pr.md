@@ -44,6 +44,11 @@ usage: |
 
 # Hook: On-PR (Pull Request)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Automation Hooks
 **Purpose**: Automate PR creation, review requests, and CI integration.
 
@@ -94,3 +99,7 @@ if __name__ == "__main__":
 
 **Status**: Production Ready
 **Version**: 1.0.0
+
+
+---
+*Promise: `<promise>ON_PR_VERIX_COMPLIANT</promise>`*

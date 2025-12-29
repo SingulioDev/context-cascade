@@ -44,6 +44,11 @@ metadata:
 
 # ReasoningBank Adaptive Learning with AgentDB
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Implement ReasoningBank adaptive learning with AgentDB's 150x faster vector database for trajectory tracking, verdict judgment, memory distillation, and pattern recognition. Build self-learning agents that improve decision-making through experience.
@@ -169,12 +174,11 @@ const enhanced = await reasoningBank.enhance({
 ```
 
 ## Success Metrics
-
-- Trajectory tracking accuracy > 95%
-- Verdict judgment accuracy > 90%
-- Pattern learning efficiency
-- Decision quality improvement over time
-- 150x faster than traditional approaches
+- [assert|neutral] Trajectory tracking accuracy > 95% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Verdict judgment accuracy > 90% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Pattern learning efficiency [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Decision quality improvement over time [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 150x faster than traditional approaches [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## MCP Requirements
 
@@ -245,3 +249,7 @@ ReasoningBank Adaptive Learning with AgentDB provides a framework for building s
 This skill excels at building meta-learning systems where agents need to improve over time, reinforcement learning applications requiring trajectory analysis, and decision support systems that learn from historical outcomes. Use this when agents face recurring decision scenarios where learning from past successes and failures can improve future performance.
 
 The 5-phase framework (initialize ReasoningBank, track trajectories, judge verdicts, distill memory, apply learning) provides systematic progression from data collection to active learning. The integration with AgentDB's 150x faster vector search makes it suitable for production environments with real-time decision requirements and large trajectory datasets.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

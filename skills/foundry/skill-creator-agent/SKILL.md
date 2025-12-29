@@ -30,7 +30,7 @@ author: ruv
 
 ### Success Criteria
 - primary_outcome: "[SKILL-SPECIFIC measurable result based on skill purpose]"
-- quality_threshold: 0.85
+- [assert|neutral] quality_threshold: 0.85 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 - verification_method: "[How to validate skill executed correctly and produced expected outcome]"
 
 ### Edge Cases
@@ -58,6 +58,11 @@ plan_and_solve: "Plan: [SKILL-SPECIFIC planning phase] -> Execute: [SKILL-SPECIF
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Skill Creator with Agent Specialization
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Trigger Keywords
 
 **USE WHEN user mentions:**
@@ -750,3 +755,7 @@ In practice:
 The skill-creator-agent approach represents a fundamental shift from instruction-following to agent-spawning architecture. By cleanly separating skills (triggering and coordination) from agents (domain execution), this pattern enables professional-grade tooling with consistent quality, maintainable codebases, and reliable integration across complex workflows.
 
 Use this skill when building tools for domains where specialist expertise significantly impacts outcomes, when quality consistency matters across many invocations, or when creating reusable components for team use. The additional architectural complexity pays dividends through measurably better results, easier maintenance, and more robust error handling compared to traditional single-layer skills.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

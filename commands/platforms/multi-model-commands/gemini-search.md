@@ -14,6 +14,11 @@ version: 1.0.0
 
 # /gemini-search
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Get real-time web information via Google Search grounding (bypasses Claude Code knowledge cutoff).
 
 ## Usage
@@ -74,3 +79,7 @@ gemini "<query>" --grounding google-search
 - `/gemini-megacontext` - Large context analysis
 - `/codex-auto` - Rapid prototyping
 - `/agent-rca` - Root cause analysis
+
+
+---
+*Promise: `<promise>GEMINI_SEARCH_VERIX_COMPLIANT</promise>`*

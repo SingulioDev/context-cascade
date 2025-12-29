@@ -19,6 +19,11 @@ triggers:
 
 # Landing Page Generator
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 A comprehensive 6-phase SOP for AI-driven landing page creation, from research to deployment. Converts product/service briefs into high-converting, deployable landing pages using evidence-based design patterns and conversion psychology.
 
 ## Overview
@@ -551,9 +556,8 @@ required:
   - deploy_url: string  # Live URL
   - deploy_id: string  # Deployment identifier
   - status: string  # success or failed
-```
-
----
+- [assert|neutral] ``` [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Agent Mapping
 
@@ -1275,3 +1279,7 @@ post_deployment_learning:
 ---
 
 **Remember**: The copy (Phase 2) is the most critical checkpoint. Get user approval before investing in design and development phases.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

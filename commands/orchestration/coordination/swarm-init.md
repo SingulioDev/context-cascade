@@ -1,4 +1,9 @@
 # swarm init
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -115,3 +120,7 @@ mcp__claude-flow__swarm_init { topology: "hierarchical", maxAgents: 8 }
 - `task orchestrate` - Coordinate task execution
 - `swarm status` - Check swarm state
 - `swarm monitor` - Real-time monitoring
+
+
+---
+*Promise: `<promise>SWARM_INIT_VERIX_COMPLIANT</promise>`*

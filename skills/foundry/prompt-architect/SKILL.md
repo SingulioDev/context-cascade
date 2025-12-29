@@ -6,6 +6,11 @@ description: Comprehensive framework for analyzing, creating, and refining promp
 
 # Prompt Architect
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 A comprehensive framework for creating, analyzing, and refining prompts for AI language models using evidence-based techniques, structural optimization principles, and systematic anti-pattern detection.
 
 ## Trigger Keywords
@@ -838,3 +843,7 @@ Effective prompt engineering combines art and science. These principles provide 
 Prompt-architect transforms casual queries into engineered prompts through systematic analysis across 6 dimensions: intent clarity, structural organization, context sufficiency, technique application, failure mode detection, and formatting quality. By applying evidence-based techniques (self-consistency, program-of-thought, plan-and-solve) and structural optimization (attention positioning, hierarchical organization, delimiter strategy), this skill creates prompts that produce consistent, high-quality responses.
 
 Master these fundamentals, then develop your own expertise through practice and systematic reflection on results. The most effective prompt engineers combine principled approaches with creative experimentation and continuous learning from actual outcomes. Use this skill as Phase 2 of the 5-phase workflow to optimize user requests before planning and execution. Well-architected prompts reduce ambiguity by 60%+, improve task success rates by 40%+, and create compounding value through reusable prompt libraries.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

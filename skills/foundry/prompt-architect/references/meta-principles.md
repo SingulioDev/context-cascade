@@ -1,5 +1,10 @@
 # Meta-Principles: Counter-Intuitive Prompt Engineering Wisdom
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Purpose**: Fundamental truths about prompt engineering that separate experts from novices. These principles often contradict intuition but are backed by empirical results.
 
 **Why This Matters**: Following these principles often yields 2-3x better results than conventional approaches, but requires unlearning common assumptions.
@@ -1617,3 +1622,7 @@ When creating or refining prompts, remember:
 ---
 
 **Final Meta-Principle**: These principles contradict intuition. Trust empirical results over gut feelings. Measure improvements, not theory.
+
+
+---
+*Promise: `<promise>META_PRINCIPLES_VERIX_COMPLIANT</promise>`*

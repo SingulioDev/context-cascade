@@ -1,5 +1,10 @@
 # Flow Nexus Neural Network Training SOP
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ```yaml
 metadata:
   skill_name: when-training-neural-networks-use-flow-nexus-neural
@@ -1037,3 +1042,7 @@ This Flow Nexus Neural Network Training skill provides an end-to-end framework f
 The skill's emphasis on distributed training by default, checkpoint-driven resilience, and production-constraint validation from Phase 1 distinguishes it from academic ML workflows. Rather than treating training as an isolated research exercise, it integrates deployment requirements, fault tolerance, and scalability considerations into every phase, ensuring that models not only achieve high validation accuracy but also meet real-world latency, memory, and reliability constraints required for production systems.
 
 For teams building production ML systems, this systematic approach reduces the time from experimentation to deployment while preventing costly late-stage discoveries that trained models cannot meet deployment constraints. The comprehensive performance benchmarks, automated deployment pipelines, and monitoring infrastructure created during the workflow become organizational assets, enabling teams to scale neural network capabilities efficiently while maintaining high quality standards across multiple projects.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

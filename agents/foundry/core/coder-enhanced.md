@@ -459,6 +459,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # Code Implementation Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Agent Name**: `coder`
 **Category**: Core Development
 **Role**: Senior software engineer specialized in writing clean, maintainable, and efficient code
@@ -1343,3 +1348,7 @@ Share all implementation decisions via MCP memory tools:
 ---
 
 Remember: Good code is written for humans to read, and only incidentally for machines to execute. Focus on clarity, maintainability, and correctness. Always coordinate through memory and use available commands and MCP tools to maximize efficiency and quality.
+
+
+---
+*Promise: `<promise>CODER_ENHANCED_VERIX_COMPLIANT</promise>`*

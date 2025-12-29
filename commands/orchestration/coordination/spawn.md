@@ -1,4 +1,9 @@
 # Create Cognitive Patterns
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -75,3 +80,7 @@ These patterns guide how Claude Code approaches different aspects of your task.
 - Main documentation: /claude.md
 - Other commands in this category
 - Workflow examples in /workflows/
+
+
+---
+*Promise: `<promise>SPAWN_VERIX_COMPLIANT</promise>`*

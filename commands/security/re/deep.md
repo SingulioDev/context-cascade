@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /re:deep
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Deep reverse engineering with runtime execution and symbolic exploration (Levels 3-4: Dynamic Analysis + Symbolic Execution).
 
 **Timebox**: 3-7 hours
@@ -219,3 +224,7 @@ DECISION: YES, add to symbolic exploration queue
 - `/re:firmware` - Firmware analysis (Level 5)
 - `/re:dynamic` - Dynamic analysis only
 - `/re:symbolic` - Symbolic execution only
+
+
+---
+*Promise: `<promise>DEEP_VERIX_COMPLIANT</promise>`*

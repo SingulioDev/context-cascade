@@ -1,4 +1,9 @@
 # hive-mind-spawn
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -51,3 +56,7 @@ npx claude-flow hive-mind spawn "Build API"
 npx claude-flow hive-mind spawn "Research patterns" --queen-type adaptive
 npx claude-flow hive-mind spawn "Build service" --claude
 ```
+
+
+---
+*Promise: `<promise>HIVE_MIND_SPAWN_VERIX_COMPLIANT</promise>`*

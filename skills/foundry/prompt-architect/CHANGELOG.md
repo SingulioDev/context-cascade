@@ -1,5 +1,10 @@
 # Prompt Architect Changelog
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## v2.2.0 (2025-12-15)
 
 **Minor Release: All Supporting Files Updated from Cycle 8**
@@ -86,3 +91,7 @@ All 5 files in prompt-architect folder now consistent with v2.0+ methodology
 - Anti-pattern detection
 - Task-category specific guidance
 - Model-specific considerations
+
+
+---
+*Promise: `<promise>CHANGELOG_VERIX_COMPLIANT</promise>`*

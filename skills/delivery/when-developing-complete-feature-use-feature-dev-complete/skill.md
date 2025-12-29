@@ -1,5 +1,10 @@
 # When Developing Complete Feature Use Feature Dev Complete
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ---
 name: when-developing-complete-feature-use-feature-dev-complete
 trigger: "when user requests complete feature development from research to deployment"
@@ -650,3 +655,7 @@ Skill("<skill-name>")
 ---
 
 **Remember the pattern: Skill() -> Task() -> TodoWrite() - ALWAYS**
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

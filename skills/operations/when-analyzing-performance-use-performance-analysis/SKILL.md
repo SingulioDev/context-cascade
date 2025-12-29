@@ -28,6 +28,11 @@ outputs:
 
 # Performance Analysis SOP
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Comprehensive performance analysis for Claude Flow swarms including bottleneck detection, profiling, benchmarking, and actionable optimization recommendations.
@@ -544,3 +549,7 @@ The Performance Analysis skill provides a systematic, data-driven approach to id
 The 5-phase workflow (Baseline, Profile, Analyze, Optimize, Validate) is designed to minimize wasted effort and maximize impact. The emphasis on comprehensive profiling (CPU, memory, network) ensures that you optimize the right bottlenecks, while the incremental optimization approach with regression testing prevents performance gains from being offset by hidden regressions. The anti-patterns table serves as a critical checklist to avoid common mistakes that plague performance work.
 
 This skill is particularly valuable when optimizing Claude Flow swarms, debugging high-latency distributed systems, or preparing applications for production scale. Whether you are troubleshooting a 2x slowdown in swarm execution, reducing coordination overhead in multi-agent workflows, or improving resource utilization to reduce infrastructure costs, the methodologies documented here provide a proven framework. Combined with the neural optimization techniques, memory profiling, and benchmark validation, you have everything needed to systematically improve performance while maintaining system stability.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

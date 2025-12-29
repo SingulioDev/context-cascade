@@ -54,6 +54,11 @@ requires_mcp: true
 
 # 🚀 Deployment Workflow - Production Release Pipeline
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Workflow**: Production Deployment | **Category**: Workflows | **Loop**: Loop 3 Deployment
 
 Comprehensive deployment workflow with blue-green deployment, canary releases, health checks, and automated rollback capabilities.
@@ -505,3 +510,7 @@ async function rollback(version: string): Promise<void> {
 
 **Agent Status**: Production-Ready
 **Version**: 2.0.0
+
+
+---
+*Promise: `<promise>DEPLOYMENT_VERIX_COMPLIANT</promise>`*

@@ -36,6 +36,11 @@ usage: |
 
 # Research: Citation Manager
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Research Workflows
 **Purpose**: Manage research citations with BibTeX, format conversion, and bibliography generation.
 
@@ -107,3 +112,7 @@ if __name__ == "__main__":
 
 **Status**: Production Ready
 **Version**: 1.0.0
+
+
+---
+*Promise: `<promise>CITATION_MANAGER_VERIX_COMPLIANT</promise>`*

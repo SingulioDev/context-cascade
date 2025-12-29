@@ -1,5 +1,10 @@
 # Flow Nexus Neural Network Training SOP
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ```yaml
 metadata:
   skill_name: when-training-neural-networks-use-flow-nexus-neural
@@ -1044,3 +1049,7 @@ Neural network training with Flow Nexus platform provides a systematic approach 
 The distributed nature of Flow Nexus training is its primary advantage. By orchestrating multiple E2B sandboxes in a mesh topology, training time is reduced dramatically while enabling larger models than single-node training allows. The workflow coordinates parameter servers, worker nodes, and validator nodes to achieve efficient distributed computation with built-in fault tolerance.
 
 Continuous monitoring and validation throughout training prevents wasted computation. Early detection of convergence issues, overfitting, or performance problems saves hours of unnecessary training time. The checkpoint strategy ensures progress is preserved and enables experimentation without risk. The evidence-based validation phase (accuracy thresholds, latency benchmarks, overfitting checks) provides confidence that the model is production-ready before deployment.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -708,6 +708,11 @@ Before using MCP tools, ensure servers are connected:
 
 ```bash
 # Check current MCP server status
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 claude mcp list
 
 # Add ruv-swarm (required for coordination)
@@ -793,3 +798,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>SPARC_COORDINATOR_VERIX_COMPLIANT</promise>`*

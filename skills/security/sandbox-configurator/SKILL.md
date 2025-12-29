@@ -21,15 +21,14 @@ Use this skill when configuring sandbox network isolation, setting up trusted do
 Do NOT use for production network security (use infrastructure-as-code instead), configuring firewall rules on live systems, bypassing organizational network policies, or setting up VPNs and network routing (use networking specialists). Avoid for troubleshooting network connectivity issues unrelated to sandbox security.
 
 ## Success Criteria
-
-- Trusted domain whitelist validated (all required domains accessible, untrusted blocked)
-- Network isolation prevents data exfiltration attacks (tested with simulated exfil)
-- Internal registries accessible through proper proxy configuration
-- Environment variables secured (no secrets in config files)
-- Zero false positives (legitimate development work unblocked)
-- Package installations succeed from approved registries
-- Build and deployment commands execute without network errors
-- Validation tests pass (npm install, git clone, API calls to approved domains)
+- [assert|neutral] Trusted domain whitelist validated (all required domains accessible, untrusted blocked) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Network isolation prevents data exfiltration attacks (tested with simulated exfil) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Internal registries accessible through proper proxy configuration [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Environment variables secured (no secrets in config files) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Zero false positives (legitimate development work unblocked) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Package installations succeed from approved registries [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Build and deployment commands execute without network errors [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Validation tests pass (npm install, git clone, API calls to approved domains) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Challenges
 
@@ -43,19 +42,18 @@ Do NOT use for production network security (use infrastructure-as-code instead),
 - Proxy auto-configuration (PAC) files with complex logic
 
 ## Guardrails (CRITICAL SECURITY RULES)
-
-- NEVER disable network isolation without security review
-- NEVER add untrusted domains to whitelist without validation
-- NEVER store secrets (API keys, passwords) in sandbox configuration files
-- NEVER bypass proxy settings to access restricted resources
-- NEVER allow wildcard domain patterns without justification (*.com = insecure)
-- ALWAYS validate domain ownership before whitelisting
-- ALWAYS use HTTPS for external domains (enforce TLS)
-- ALWAYS document why each domain is trusted (justification required)
-- ALWAYS test that untrusted domains are blocked (negative testing)
-- ALWAYS use environment variable references for secrets (not plaintext)
-- ALWAYS maintain audit logs of network policy changes
-- ALWAYS validate network policies after configuration changes
+- [assert|emphatic] NEVER: disable network isolation without security review [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: add untrusted domains to whitelist without validation [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: store secrets (API keys, passwords) in sandbox configuration files [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: bypass proxy settings to access restricted resources [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: allow wildcard domain patterns without justification (*.com = insecure) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate domain ownership before whitelisting [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: use HTTPS for external domains (enforce TLS) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: document why each domain is trusted (justification required) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: test that untrusted domains are blocked (negative testing) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: use environment variable references for secrets (not plaintext) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: maintain audit logs of network policy changes [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate network policies after configuration changes [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -68,6 +66,11 @@ All network security configurations MUST be validated through:
 6. **Penetration testing** - Attempt data exfiltration to verify isolation
 
 # Sandbox Configurator
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 Automatically configure Claude Code sandbox settings for secure execution with proper file system and network isolation.
@@ -287,3 +290,7 @@ Sandbox Configurator establishes security boundaries for Claude Code execution t
 The skill's value lies in balancing security with developer productivity. Maximum security (Level 1) blocks all network access and many development operations, preventing malicious behavior but also blocking legitimate workflows. The art is calibrating security levels to workflow requirements: Level 2 for most development (local binding, git/docker access, but maintained network whitelist), Level 3 for full-stack development requiring extensive tooling integration, Level 4 never in untrusted contexts. Each escalation is explicit, justified, and documented.
 
 Effective sandbox configuration requires discipline in three areas: starting with least privilege and escalating only when proven necessary; maintaining narrow domain whitelists with documented justifications for each entry; and validating configurations through both positive and negative testing to ensure security boundaries function correctly. The investment prevents catastrophic outcomes - data exfiltration, credential theft, system compromise - while enabling productive development workflows within well-defined security boundaries. In an era of AI-assisted development, sandbox security is not optional infrastructure - it's essential protection against an expanding attack surface.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

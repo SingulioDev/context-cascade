@@ -1,4 +1,9 @@
 # topology-optimize
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 nKey memory/monitoring/optimization command improvements:
 - Memory MCP integration
 - Metric collection requirements
@@ -30,3 +35,7 @@ success_metrics:
   execution_success: ">95%"
 <!-- END META-LOOP -->
 
+
+
+---
+*Promise: `<promise>TOPOLOGY_OPTIMIZE_VERIX_COMPLIANT</promise>`*

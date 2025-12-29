@@ -8,6 +8,11 @@ triggers: ["kubernetes", "k8s", "helm", "operators", "crd", "istio", "linkerd", 
 
 # Kubernetes Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert Kubernetes orchestration for cloud-native applications with production-grade deployments.
 
 ## Purpose
@@ -471,16 +476,12 @@ spec:
 - `mcp__memory-mcp__memory_store` for K8s patterns
 
 ## Success Metrics
-
-- Deployment time: <5 minutes
-- Pod startup time: <30 seconds
-- Cluster utilization: 60-80%
-- Zero-downtime deployments: 100%
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
+- [assert|neutral] Deployment time: <5 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Pod startup time: <30 seconds [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Cluster utilization: 60-80% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Zero-downtime deployments: 100% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -641,3 +642,7 @@ K8s DESIGN FLOW
 6. **Observability** Prometheus metrics, structured logs
 7. **Security** RBAC, NetworkPolicies, securityContext
 8. **Trade-offs** cost vs reliability, managed vs self-hosted
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -17,6 +17,11 @@ tags: [documentation, api-docs, readme, comments, diagrams, automation]
 
 # When Documenting Code - Use Doc Generator
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 This skill provides automated, comprehensive documentation generation for codebases. It analyzes code structure, generates API documentation, creates README files, adds inline comments, and produces architecture diagrams using evidence-based documentation patterns.
@@ -776,3 +781,7 @@ The SPARC-based workflow (Specification -> Pseudocode -> Architecture -> Refinem
 Most critically, this skill recognizes that documentation quality is measurable and enforceable. The validation phase sets concrete thresholds: 100% coverage for public APIs, 80% for internal functions, 100% for complex algorithms, at least 1 example per major feature. Pre-commit hooks block commits that fall below these thresholds, treating documentation deficiencies as seriously as failing tests. This shift from "nice to have" to "enforced requirement" fundamentally changes documentation culture from reactive cleanup to proactive quality assurance.
 
 The generated artifacts serve different audiences with appropriate depth. README files provide 5-minute quick starts for new users. API documentation offers comprehensive references for integration developers. Architecture diagrams communicate system design to technical stakeholders. Inline comments guide maintainers through complex logic. By automating generation across all tiers and maintaining them through CI/CD integration, this skill ensures documentation becomes a living artifact that evolves with the codebase rather than a static snapshot that decays over time.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -58,13 +58,12 @@ Do NOT use this skill for:
 - Third-party libraries (focus on application code)
 
 ## Success Criteria
-
-This skill succeeds when:
-- **Violations Detected**: All quality issues found with ZERO false negatives
-- **False Positive Rate**: <5% (95%+ findings are genuine issues)
-- **Actionable Feedback**: Every finding includes file path, line number, and fix guidance
-- **Root Cause Identified**: Issues traced to underlying causes, not just symptoms
-- **Fix Verification**: Proposed fixes validated against codebase constraints
+- [assert|neutral] This skill succeeds when: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Violations Detected**: All quality issues found with ZERO false negatives [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *False Positive Rate**: <5% (95%+ findings are genuine issues) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actionable Feedback**: Every finding includes file path, line number, and fix guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Root Cause Identified**: Issues traced to underlying causes, not just symptoms [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Fix Verification**: Proposed fixes validated against codebase constraints [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases and Limitations
 
@@ -107,6 +106,11 @@ This skill integrates with:
 
 
 # Functionality Audit - Code Execution Validation
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## When to Use This Skill
 
@@ -950,3 +954,7 @@ The Functionality Audit skill transforms code validation from superficial appear
 The integration with memory coordination and hooks automation ensures audit results are preserved for future reference and continuous improvement. By storing findings in Memory MCP with WHO/WHEN/PROJECT/WHY tags, the skill enables trend analysis and learning from past audits. The evidence-based validation framework, incorporating self-consistency checking and program-of-thought decomposition, guarantees that audit conclusions are grounded in measurable facts rather than assumptions.
 
 This skill is most effective when used as part of a comprehensive quality pipeline, coordinated with theater detection for pre-screening, code review for post-validation assessment, and style audits for convention compliance. Organizations implementing this skill typically see significant reductions in production defects, faster debugging cycles, and higher confidence in code deployments. The 100% test recovery target, achieved through automated repair and systematic validation, represents a paradigm shift from accepting failures to enforcing functionality through rigorous audit processes.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

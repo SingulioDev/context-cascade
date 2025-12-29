@@ -1,4 +1,9 @@
 # neural-train
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 Key platform/tooling/training command improvements:
 - Platform API requirements
 - Tool configuration
@@ -30,3 +35,7 @@ npx claude-flow training neural-train --model task-predictor
 # Custom epochs
 npx claude-flow training neural-train --epochs 100
 ```
+
+
+---
+*Promise: `<promise>NEURAL_TRAIN_VERIX_COMPLIANT</promise>`*

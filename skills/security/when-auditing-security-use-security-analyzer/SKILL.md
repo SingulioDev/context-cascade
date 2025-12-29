@@ -42,15 +42,14 @@ Use this skill when conducting comprehensive security audits, performing vulnera
 Do NOT use for compliance audits (use compliance skill instead), unauthorized security testing, production system scanning without approval, vulnerability exploitation (only identification), or automated scanning without manual validation. Avoid for code quality audits unrelated to security.
 
 ## Success Criteria
-
-- All security vulnerabilities identified with CVSS scores and remediation guidance
-- Security misconfigurations documented with severity ratings
-- Attack surface mapped (exposed services, authentication mechanisms, data flows)
-- Security controls validated (authentication, authorization, encryption, logging)
-- Vulnerability remediation plan created with prioritization
-- Zero critical/high vulnerabilities remaining after remediation
-- Security findings validated through manual testing (not just automated scans)
-- Penetration testing readiness achieved (all low-hanging fruit addressed)
+- [assert|neutral] All security vulnerabilities identified with CVSS scores and remediation guidance [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Security misconfigurations documented with severity ratings [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Attack surface mapped (exposed services, authentication mechanisms, data flows) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Security controls validated (authentication, authorization, encryption, logging) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Vulnerability remediation plan created with prioritization [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Zero critical/high vulnerabilities remaining after remediation [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Security findings validated through manual testing (not just automated scans) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Penetration testing readiness achieved (all low-hanging fruit addressed) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Challenges
 
@@ -64,19 +63,18 @@ Do NOT use for compliance audits (use compliance skill instead), unauthorized se
 - Time-of-check to time-of-use (TOCTOU) race conditions
 
 ## Guardrails (CRITICAL SECURITY RULES)
-
-- NEVER exploit vulnerabilities beyond proof-of-concept validation
-- NEVER conduct security testing on unauthorized systems
-- NEVER exfiltrate sensitive data during security assessments
-- NEVER cause denial-of-service or system instability
-- NEVER share vulnerability details publicly before responsible disclosure
-- ALWAYS obtain written authorization before security testing
-- ALWAYS document findings with remediation guidance
-- ALWAYS validate vulnerabilities through manual testing
-- ALWAYS follow responsible disclosure timelines (90 days standard)
-- ALWAYS maintain confidentiality of security findings
-- ALWAYS use non-destructive testing methods where possible
-- ALWAYS preserve audit trails of security testing activities
+- [assert|emphatic] NEVER: exploit vulnerabilities beyond proof-of-concept validation [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: conduct security testing on unauthorized systems [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: exfiltrate sensitive data during security assessments [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: cause denial-of-service or system instability [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: share vulnerability details publicly before responsible disclosure [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: obtain written authorization before security testing [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: document findings with remediation guidance [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate vulnerabilities through manual testing [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: follow responsible disclosure timelines (90 days standard) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: maintain confidentiality of security findings [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: use non-destructive testing methods where possible [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: preserve audit trails of security testing activities [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -89,6 +87,11 @@ All security findings MUST be validated through:
 6. **Remediation testing** - Verify fix resolves vulnerability without introducing new issues
 
 # Security Analyzer - Comprehensive Security Auditing Skill
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Overview
 
@@ -935,3 +938,7 @@ Comprehensive security auditing requires a systematic, multi-phase approach that
 The key to effective security auditing is rigorous validation. Automated scanners provide breadth but lack the depth to understand business logic vulnerabilities or verify exploitability. Every finding must pass through manual validation, proof-of-concept demonstration, and code review before being reported. This evidence-based approach prevents false positives from wasting remediation time while ensuring real vulnerabilities are properly understood and prioritized.
 
 Security auditing is not a one-time activity but a continuous process. As applications evolve, new vulnerabilities emerge through code changes, dependency updates, and evolving attack techniques. Regular audits, integrated into CI/CD pipelines, provide ongoing assurance that security controls remain effective. The validation gates in this skill ensure that critical vulnerabilities block deployment while providing clear remediation guidance for developers. When executed properly, this systematic approach achieves both security rigor and development velocity.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

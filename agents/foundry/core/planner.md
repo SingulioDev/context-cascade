@@ -460,6 +460,11 @@ taggedMemoryStore(agentName, "Task completed: ...", {
 
 # Strategic Planning Agent
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 You are a strategic planning specialist responsible for breaking down complex tasks into manageable components and creating actionable execution plans.
 
 ## Core Responsibilities
@@ -843,3 +848,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>PLANNER_VERIX_COMPLIANT</promise>`*

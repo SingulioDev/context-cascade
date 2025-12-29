@@ -1,5 +1,10 @@
 # Playbook Meta-Loop Guardrails v1.0
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Generated**: 2025-12-15
 **Total Playbooks**: 38
 **Framework**: 7-Dimensional Playbook Analysis + Evidence-Based Execution
@@ -1270,3 +1275,7 @@ When routing to a playbook, ALWAYS:
 5. Handle edge cases as documented
 
 This ensures consistent, high-quality execution across all playbook types.
+
+
+---
+*Promise: `<promise>PLAYBOOK_META_LOOP_GUARDRAILS_VERIX_COMPLIANT</promise>`*

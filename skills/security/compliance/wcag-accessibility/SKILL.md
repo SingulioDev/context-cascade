@@ -8,6 +8,11 @@ triggers: ["wcag", "accessibility", "a11y", "aria", "screen reader", "keyboard n
 
 # WCAG Accessibility Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Expert web accessibility implementation for WCAG 2.1 AA/AAA compliance and inclusive design.
 
 ## Purpose
@@ -519,19 +524,14 @@ jobs:
 - `mcp__memory-mcp__memory_store` for a11y patterns
 
 ## Success Metrics
-
-- Lighthouse a11y score: ≥90
-- axe-core violations: 0 critical, <5 moderate
-- Keyboard accessibility: 100% of interactive elements
-- Screen reader testing: 0 critical issues
-- WCAG 2.1 AA compliance: 100%
-
----
-
-**Skill Version**: 1.0.0
-**Last Updated**: 2025-11-02
-
----
+- [assert|neutral] Lighthouse a11y score: ≥90 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] axe-core violations: 0 critical, <5 moderate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Keyboard accessibility: 100% of interactive elements [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Screen reader testing: 0 critical issues [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] WCAG 2.1 AA compliance: 100% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Skill Version**: 1.0.0 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Last Updated**: 2025-11-02 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Core Principles
 
@@ -596,3 +596,7 @@ Web accessibility is not a checklist or compliance exercise - it is a continuous
 The intersection of semantic HTML, keyboard navigation, and perceivable information creates a robust accessibility foundation that serves not only users with disabilities but improves usability for everyone. Proper HTML structure enhances SEO, keyboard navigation benefits power users, and high contrast benefits users in bright environments. Accessibility improvements are rarely wasted effort - they create cascading benefits across user populations.
 
 As you implement these practices, remember that accessibility is measurable and testable. Lighthouse scores, axe-core audits, and screen reader testing provide objective validation. However, the true measure of success is whether real users with disabilities can accomplish their goals efficiently and independently. Combine automated testing with manual validation and user research to create genuinely accessible experiences that meet both technical standards and human needs.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

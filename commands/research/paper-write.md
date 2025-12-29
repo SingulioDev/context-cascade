@@ -37,6 +37,11 @@ usage: |
 
 # Research: Academic Paper Writing
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Category**: Research Workflows
 **Purpose**: Generate well-structured research papers with proper formatting, citations, and adherence to journal guidelines.
 
@@ -241,3 +246,7 @@ if __name__ == "__main__":
 
 **Status**: Production Ready
 **Version**: 1.0.0
+
+
+---
+*Promise: `<promise>PAPER_WRITE_VERIX_COMPLIANT</promise>`*

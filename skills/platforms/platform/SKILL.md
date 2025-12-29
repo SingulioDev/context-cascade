@@ -6,6 +6,11 @@ description: Platform services hub routing to Flow Nexus platform skills. Use fo
 
 # Platform
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Central hub for Flow Nexus platform services and cloud AI capabilities.
 
 ## Phase 0: Expertise Loading
@@ -133,3 +138,7 @@ Works with: **flow-nexus-neural**, **flow-nexus-platform**, **flow-nexus-swarm**
 The platform skill serves as the intelligent gateway to Flow Nexus cloud services, ensuring requests reach specialized handlers (neural, swarm, or generic platform) without unnecessary overhead. By combining Phase 0 expertise loading with confidence-scored routing, it balances speed (cached service patterns) with safety (uncertainty handling), preventing the common failure mode of blindly routing expensive GPU requests to wrong endpoints.
 
 For production deployments, the key success metric is routing accuracy above 0.90 - below this threshold, the cost of misrouted neural training jobs (hours of GPU waste) exceeds the benefit of automated routing. When in doubt, defer to explicit service selection rather than guessing; a 5-second clarification question prevents a 4-hour GPU misallocation.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -44,6 +44,11 @@ author: ruv
 
 # SOP: Product Launch Workflow
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Complete end-to-end product launch process using multi-agent coordination.
 
 ## Timeline: 10 Weeks
@@ -614,3 +619,7 @@ SOP: Product Launch provides a battle-tested 10-week framework for coordinating 
 Use this skill when launching new products, major features, or market expansions requiring cross-functional coordination. The hybrid sequential-parallel pattern ensures critical dependencies are respected (research before development) while maximizing throughput (backend + frontend + mobile development in parallel).
 
 The framework scales from MVP launches (6-8 weeks, 10 agents) to enterprise launches (12-16 weeks, 20+ agents) by adjusting phase durations and agent counts. Success requires rigorous milestone validation at each phase gate - subjective "done" assessments are the primary cause of launch delays and failures.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

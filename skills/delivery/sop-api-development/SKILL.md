@@ -13,6 +13,11 @@ author: ruv
 
 # SOP: REST API Development
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -756,3 +761,7 @@ Before designing ANY API, extract these constraints:
 6. **Testing** contract tests + integration
 7. **Deployment** canary rollout
 8. **Trade-offs** explain choices made
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

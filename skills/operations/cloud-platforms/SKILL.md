@@ -47,6 +47,11 @@ author: ruv
 
 # Cloud Platforms - Multi-Cloud Infrastructure ⭐ GOLD TIER
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Comprehensive cloud deployment and management for AWS, Google Cloud, and Azure platforms with production-ready automation scripts, infrastructure templates, and multi-cloud testing.
 
 **Tier:** Gold
@@ -307,3 +312,7 @@ Second, design for failure. Cloud services achieve high availability through red
 Third, optimize costs through architectural design, not reactive cost-cutting. Cloud bills grow exponentially when resources are provisioned without consideration for auto-scaling, right-sizing, and lifecycle policies. The difference between a well-architected cloud deployment and an unoptimized one can be 5-10x in monthly costs. Use reserved instances for predictable workloads, spot instances for fault-tolerant batch jobs, and auto-scaling for variable traffic patterns. Monitor spending continuously and set budget alerts to prevent surprises.
 
 The Gold tier resources in this skill (20 files, 4 automation scripts, 4 infrastructure templates, 3 test suites) provide battle-tested patterns for production deployments. Use them as starting points, adapt them to your specific requirements, and always validate through automated testing before production rollout. Cloud mastery is not about memorizing service catalogs - it is about applying consistent principles to deliver reliable, cost-efficient, and secure systems.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

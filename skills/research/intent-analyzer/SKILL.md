@@ -16,11 +16,11 @@
 - Follow-up questions where context already established
 
 ### Success Criteria
-- Understood intent with 85%+ confidence score
-- Explicit and implicit constraints identified
-- Ambiguities resolved through Socratic clarification
-- User confirms optimized request matches true intent
-- First principles decomposition reveals underlying goals
+- [assert|neutral] Understood intent with 85%+ confidence score [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Explicit and implicit constraints identified [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Ambiguities resolved through Socratic clarification [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] User confirms optimized request matches true intent [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] First principles decomposition reveals underlying goals [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - User says 'just do it': flag low confidence, proceed with caveats
@@ -61,6 +61,11 @@ author: ruv
 ---
 
 # Intent Analyzer
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 An advanced system for deeply understanding user intent by going beyond surface-level requests to discover underlying goals, unstated constraints, and true needs.
 
@@ -512,3 +517,7 @@ Intent Analyzer represents a shift from literal interpretation to understanding 
 The practical value emerges in prevented wasted effort. Without intent analysis, ambiguous requests lead to technically correct but functionally useless responses - solving the stated problem while missing the actual need. With intent analysis, responses address true underlying goals even when initial phrasing was imperfect. This is especially critical for complex, high-stakes, or ambiguous requests where misunderstanding compounds across multiple steps.
 
 Effective intent analysis requires balancing thoroughness with efficiency. Not every request needs deep analysis - straightforward queries benefit from immediate execution. The skill's power lies in recognizing when surface-level interpretation is insufficient and applying systematic analysis precisely where it adds value. Master this discernment, and you transform Claude from a literal executor into a genuine collaborator that understands not just what users say, but what they mean.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

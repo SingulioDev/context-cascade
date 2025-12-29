@@ -28,6 +28,11 @@ memory_pattern: "code-review/{pr-id}/phase-{N}/{reviewer}/{findings}"
 
 # Code Review Orchestration Workflow
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Comprehensive code review workflow orchestrating 12-15 specialized reviewers across automated checks, parallel expert reviews, integration analysis, and final approval recommendation. Designed for thorough quality validation across security, performance, architecture, testing, and documentation dimensions in a systematic 4-hour process.
 
 ## Overview
@@ -1301,3 +1306,7 @@ Comprehensive code review orchestration transforms manual, inconsistent review p
 The workflow's effectiveness stems from balancing speed with thoroughness - Phase 1 automated checks complete in 30 minutes providing immediate feedback, while Phase 2 parallel specialist reviews achieve comprehensive coverage without sequential bottlenecks. The deterministic decision logic in Phase 4 eliminates subjective merge decisions, basing recommendations on severity-weighted findings rather than gut feel. This consistency builds team confidence that review quality remains high regardless of which specialists are available.
 
 Memory coordination enables specialists to reference findings from other reviewers, preventing duplicate work and creating holistic assessments. The security reviewer can reference performance issues when evaluating authentication flows, while the architecture reviewer considers deployment complexity identified by DevOps analysis. This cross-referencing elevates individual specialist insights into collective intelligence greater than sum of parts. Teams implementing this workflow should resist the temptation to skip phases or compress timelines during crunch periods - the 4-hour duration reflects realistic minimum time for thorough multi-dimensional analysis. Rushing reviews surfaces as production incidents that cost far more than modest PR review delays.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

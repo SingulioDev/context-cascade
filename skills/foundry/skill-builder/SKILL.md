@@ -9,6 +9,11 @@ description: "Create new Claude Code Skills with proper YAML frontmatter, progre
 
 # Skill Builder
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## What This Skill Does
 
 Creates production-ready Claude Code Skills with proper YAML frontmatter, progressive disclosure architecture, and complete file/folder structure. This skill guides you through building skills that Claude can autonomously discover and use across all surfaces (Claude.ai, Claude Code, SDK, API).
@@ -1050,3 +1055,7 @@ Skill Builder transforms the process of creating Claude Code skills from guesswo
 The progressive disclosure architecture is the key innovation that enables Claude Code to scale to 100+ skills without context collapse. By loading only metadata at startup (6KB for 100 skills), full content on trigger (2-5KB per active skill), and referenced files on-demand (variable), the system maintains low context overhead while providing deep functionality when needed. Violating this architecture through bloated SKILL.md files or nested directories breaks the scaling properties.
 
 Use this skill whenever creating new skills for Claude Code. Follow the 3-level structure religiously: lean metadata for discovery, concise SKILL.md for core instructions, referenced files for advanced content. Optimize descriptions for autonomous matching by front-loading keywords and including explicit "when" clauses. Validate YAML compliance before deployment. Skills built with this methodology integrate seamlessly into the Claude Code ecosystem and scale efficiently across 100+ skill libraries.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

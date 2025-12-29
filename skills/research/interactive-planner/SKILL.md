@@ -16,11 +16,11 @@
 - Follow-up planning where context established
 
 ### Success Criteria
-- User answers 5-10 multi-select questions covering key decisions
-- All critical choices captured (framework, database, auth, deployment, testing)
-- Plan generated reflects user selections (no misaligned assumptions)
-- User confirms plan matches intent before execution
-- Requirements document exported with all selections
+- [assert|neutral] User answers 5-10 multi-select questions covering key decisions [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All critical choices captured (framework, database, auth, deployment, testing) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Plan generated reflects user selections (no misaligned assumptions) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] User confirms plan matches intent before execution [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Requirements document exported with all selections [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - User unsure of options: provide explanations, suggest defaults
@@ -59,6 +59,11 @@ author: ruv
 ---
 
 # Interactive Planner
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Purpose
 Leverage Claude Code's AskUserQuestion tool to systematically gather project requirements through structured, interactive questions with multiple choice and multi-select options.
@@ -554,3 +559,7 @@ Interactive Planner transforms requirement gathering from unstructured conversat
 The power emerges from three integrated patterns: structured multi-select questions eliminate implicit assumptions by forcing explicit technical choices; categorical batching (scope, architecture, features, quality, constraints) creates cognitive flow that helps users think systematically; and progressive refinement from broad to specific enables adaptive question paths where early answers guide later technical specificity. Together, these patterns enable comprehensive requirement gathering in 20-30 well-designed questions spanning 5-7 batches.
 
 Successful implementation requires balancing thoroughness with user experience. Too few questions leave critical gaps; too many cause fatigue. The sweet spot: 20-30 questions for complex projects, 12-16 for moderate scope, organized into decision categories that minimize context switching. Master question design (clear, specific, non-overlapping options with helpful descriptions), leverage multiSelect for non-exclusive choices, and maintain progressive refinement from project scope to technical details. This systematic approach transforms ambiguous project requests into actionable specifications that align agent implementation with user intent from the start.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

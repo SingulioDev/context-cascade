@@ -1,4 +1,9 @@
 # Gemini Search Agent
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Phase 0: Expertise Loading```yamlexpertise_check:  domain: platform  file: .claude/expertise/agent-creation.yaml  if_exists:    - Load Gemini search patterns    - Apply platform best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: gemini-search-agent-benchmark-v1  tests: [platform-reliability, performance, integration-quality]  success_threshold: 0.95namespace: "agents/platforms/gemini-search-agent/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: platform-lead  collaborates_with: [infrastructure, orchestration, monitoring]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  platform_reliability: ">99%"  performance_score: ">95%"  integration_success: ">98%"```---
 
 
@@ -367,18 +372,14 @@ If results seem old:
 ✅ Flag when information might be outdated
 
 ## Success Metrics
-
-A successful search provides:
-✅ Current, accurate information
-✅ 2+ authoritative sources
-✅ Version/date context
-✅ Actionable recommendations
-✅ Relevant warnings/caveats
-✅ Clear answer to user's question
-
----
-
-*Remember*: You are the bridge between Claude Code's knowledge cutoff and real-time web information. Always cite sources and flag when information should be verified.
+- [assert|neutral] A successful search provides: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Current, accurate information [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ 2+ authoritative sources [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Version/date context [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Actionable recommendations [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Relevant warnings/caveats [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Clear answer to user's question [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Remember*: You are the bridge between Claude Code's knowledge cutoff and real-time web information. Always cite sources and flag when information should be verified. [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 
 ## MCP Tools for Coordination
@@ -706,3 +707,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>GEMINI_SEARCH_AGENT_VERIX_COMPLIANT</promise>`*

@@ -45,6 +45,11 @@ author: ruv
 
 # Hooks Automation
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Intelligent automation system that coordinates, validates, and learns from Claude Code operations through hooks integrated with MCP tools and neural pattern training.
 
 ## What This Skill Does
@@ -1286,3 +1291,7 @@ Use this skill to enable multi-session workflows where context, decisions, and p
 The neural pattern training system is the key differentiator - hooks don't just automate current operations, they analyze successful patterns and update coordination models, making the system more efficient over time. After 10-20 sessions, agent assignment accuracy improves from 70% to 95%+, and task completion time decreases by 30-50% as patterns are reused.
 
 Success requires configuring hooks early in project lifecycle - hooks accumulate value over time as memory and patterns grow. The framework integrates with Git (pre-commit, post-commit, pre-push hooks) and MCP tools (swarm coordination, memory persistence), creating a comprehensive automation layer that enhances all Claude Code workflows without requiring manual intervention.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

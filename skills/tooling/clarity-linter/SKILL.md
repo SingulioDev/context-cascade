@@ -10,6 +10,11 @@ artifacts: clarity_rubric.json, violation-reports, fix-suggestions
 
 # Clarity Linter
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Phase 0: Expertise Loading
 
 Before linting for clarity:
@@ -662,19 +667,14 @@ npx claude-flow@alpha skills run clarity-linter \
 ---
 
 ## Success Metrics
-
-Track in Memory-MCP:
-- Total audits run
-- Average score trend (improving over time)
-- Auto-fix success rate (no regressions)
-- Time to ACCEPT (target: <5 iterations)
-- Violations by type (trend analysis)
-
----
-
-**END OF CLARITY-LINTER SKILL SOP**
-
----
+- [assert|neutral] Track in Memory-MCP: [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Total audits run [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Average score trend (improving over time) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Auto-fix success rate (no regressions) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Time to ACCEPT (target: <5 iterations) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Violations by type (trend analysis) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *END OF CLARITY-LINTER SKILL SOP** [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Recursive Improvement Integration (v2.1)
 
@@ -832,3 +832,7 @@ The Clarity Linter skill operationalizes code clarity through machine-readable r
 The emphasis on indirection as the primary clarity violation challenges the "clean code" assumption that more abstraction is always better. Thin helpers, pass-through wrappers, and excessive call depth increase cognitive load without reducing complexity. The skill detects these patterns automatically and provides high-confidence auto-fixes (inlining, wrapper removal) alongside lower-confidence suggestions (extracting substeps, splitting cohesion).
 
 By integrating with the dogfooding cycle (Phase 1: quality detection, Phase 2: pattern retrieval, Phase 3: continuous improvement), the Clarity Linter enables systematic code quality improvement with pattern learning across projects. The combination of objective metrics, safe auto-fixes, and transparent reporting makes code clarity measurable, improvable, and auditable - transforming it from an art into an engineering discipline.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

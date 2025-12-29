@@ -33,13 +33,13 @@
 - Prototyping without publication goals
 
 ### Success Criteria
-- All 3 Quality Gates passed (Foundations, Development, Production)
-- Minimum 50 papers reviewed (Pipeline A)
-- Baseline replicated within +/- 1% (Pipeline D)
-- Novel method validated (p < 0.05, d >= 0.5)
-- Holistic evaluation across 6+ dimensions
-- Reproducibility package tested in fresh environments
-- Ethics review completed (data bias audit, fairness metrics)
+- [assert|neutral] All 3 Quality Gates passed (Foundations, Development, Production) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Minimum 50 papers reviewed (Pipeline A) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Baseline replicated within +/- 1% (Pipeline D) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Novel method validated (p < 0.05, d >= 0.5) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Holistic evaluation across 6+ dimensions [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Reproducibility package tested in fresh environments [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Ethics review completed (data bias audit, fairness metrics) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Gate 1 failure: incomplete literature review, missing SOTA benchmarks
@@ -83,6 +83,11 @@ cognitive_frame:
 ---
 
 # Deep Research Orchestrator
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Master orchestration skill for the complete Deep Research Standard Operating Procedure (SOP), managing the entire research lifecycle from ideation through production deployment with rigorous quality gates.
 
@@ -1035,3 +1040,7 @@ Use this orchestrator when starting new ML research projects, preparing academic
 - All [INFERRED] conclusions: ≥80% confidence, documented reasoning
 - All [REPORTED] claims: Linked to sources (DOIs), ≥70% confidence
 - Overall research validity: ≥90% confidence threshold for publication approval
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

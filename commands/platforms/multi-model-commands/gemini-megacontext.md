@@ -14,6 +14,11 @@ version: 1.0.0
 
 # /gemini-megacontext
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Access Gemini's 1 million token context window for analyzing entire large codebases.
 
 ## Usage
@@ -68,3 +73,7 @@ gemini "<task>" --files <context> --model gemini-2.0-flash
 - `/gemini-search` - Real-time web information
 - `/codex-auto` - Rapid prototyping
 - `/claude-reason` - Best overall reasoning
+
+
+---
+*Promise: `<promise>GEMINI_MEGACONTEXT_VERIX_COMPLIANT</promise>`*

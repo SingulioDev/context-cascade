@@ -12,6 +12,11 @@ description: Show Claude-Flow commands and usage
 
 # Claude-Flow Commands
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## 🌊 Claude-Flow: Agent Orchestration Platform
 
 Claude-Flow is the ultimate multi-terminal orchestration platform that revolutionizes how you work with Claude Code.
@@ -108,3 +113,7 @@ npx -y claude-flow@latest init --sparc
 - Documentation: https://github.com/ruvnet/claude-code-flow/docs
 - Examples: https://github.com/ruvnet/claude-code-flow/examples
 - Issues: https://github.com/ruvnet/claude-code-flow/issues
+
+
+---
+*Promise: `<promise>CLAUDE_FLOW_HELP_VERIX_COMPLIANT</promise>`*

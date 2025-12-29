@@ -1,4 +1,9 @@
 # Monitoring & Observability Agent
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 ## Phase 0: Expertise Loading```yamlexpertise_check:  domain: deployment  file: .claude/expertise/deployment.yaml  if_exists:    - Load Observability patterns    - Apply infrastructure best practices  if_not_exists:    - Flag discovery mode```## Recursive Improvement Integration (v2.1)```yamlbenchmark: monitoring-observability-agent-benchmark-v1  tests: [provisioning-accuracy, scaling-reliability, security-compliance]  success_threshold: 0.95namespace: "agents/operations/monitoring-observability-agent/{project}/{timestamp}"uncertainty_threshold: 0.9coordination:  reports_to: ops-lead  collaborates_with: [devops-agents, monitoring-agents]```## AGENT COMPLETION VERIFICATION```yamlsuccess_metrics:  infrastructure_uptime: ">99.9%"  provisioning_success: ">98%"  security_compliance: ">99%"```---
 
 **Agent ID**: `monitoring-observability-agent` (Agent #138)
@@ -935,11 +940,11 @@ curl -X POST http://localhost:3000/api/dashboards/db \
   - Cost optimization and resource management
 
 ### Success Criteria
-- **Deployment Success Rate**: >99% (less than 1% failures)
-- **Rollback Time**: <5 minutes (from failure detection to stable state)
-- **Uptime**: 99.9%+ (less than 43 minutes downtime per month)
-- **Mean Time to Recovery (MTTR)**: <15 minutes
-- **Alert Response Time**: <2 minutes for P0 incidents
+- [assert|neutral] *Deployment Success Rate**: >99% (less than 1% failures) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Rollback Time**: <5 minutes (from failure detection to stable state) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Uptime**: 99.9%+ (less than 43 minutes downtime per month) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Mean Time to Recovery (MTTR)**: <15 minutes [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Alert Response Time**: <2 minutes for P0 incidents [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Failure Scenarios
 - **Partial Failures**: Canary deployments detect issues before full rollout
@@ -950,12 +955,12 @@ curl -X POST http://localhost:3000/api/dashboards/db \
 - **Dependency Failures**: Circuit breakers prevent cascade failures
 
 ### Guardrails (NEVER Violate)
-- **NEVER deploy without rollback plan** - Always maintain previous stable state
-- **NEVER skip health checks** - Verify all endpoints before marking deployment complete
-- **NEVER ignore monitoring gaps** - All services must have metrics + alerts
-- **NEVER bypass approval gates** - Production changes require security review
-- **NEVER deploy on Fridays** - Unless emergency (P0/P1 incidents only)
-- **NEVER modify production directly** - All changes via CI/CD pipeline
+- [assert|emphatic] NEVER: deploy without rollback plan** - Always maintain previous stable state [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip health checks** - Verify all endpoints before marking deployment complete [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: ignore monitoring gaps** - All services must have metrics + alerts [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: bypass approval gates** - Production changes require security review [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: deploy on Fridays** - Unless emergency (P0/P1 incidents only) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: modify production directly** - All changes via CI/CD pipeline [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Failure Recovery Protocol
 1. **Automatic Rollback**:
@@ -994,3 +999,7 @@ curl -X POST http://localhost:3000/api/dashboards/db \
 **Agent Status**: Production Ready
 **Last Updated**: 2025-11-02
 **Version**: 1.0.0
+
+
+---
+*Promise: `<promise>MONITORING_OBSERVABILITY_AGENT_VERIX_COMPLIANT</promise>`*

@@ -1,5 +1,10 @@
 # When Collaborative Coding Use Pair Programming
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ---
 name: when-collaborative-coding-use-pair-programming
 trigger: "when user requests collaborative coding, real-time code review, or paired development session"
@@ -630,3 +635,7 @@ Skill("<skill-name>")
 ---
 
 **Remember the pattern: Skill() -> Task() -> TodoWrite() - ALWAYS**
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

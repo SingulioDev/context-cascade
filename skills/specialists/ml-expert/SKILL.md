@@ -11,6 +11,11 @@ author: ruv
 
 # ML Expert - Machine Learning Implementation Specialist
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 
 ## When to Use This Skill
 
@@ -402,3 +407,7 @@ The ML Expert skill provides comprehensive machine learning implementation capab
 Success with this skill requires balancing mathematical rigor with engineering pragmatism. The agent spawning architecture ensures that ML expertise is applied systematically - from implementing novel architectures from research papers to debugging training failures and optimizing inference performance. The quality standards enforced by this skill (comprehensive testing, documentation, performance validation) reflect the reality that ML code must be held to the same standards as production software, not treated as experimental scripts.
 
 Whether implementing cutting-edge architectures like TRM and Titans-MAG, fixing subtle training issues like ACT variance collapse, or optimizing models for real-time inference, this skill provides the expertise and tooling to deliver robust ML solutions. The integration with ml-training-debugger creates a complete workflow from implementation through diagnosis to production deployment, ensuring that ML systems are not just mathematically correct but operationally reliable.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

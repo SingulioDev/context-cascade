@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /workflow:rollback
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Intelligent rollback orchestration with automated root cause analysis.
 
 ## Usage
@@ -347,3 +352,7 @@ Notifications Sent:
 - `/monitoring-configure` - Setup monitoring alerts
 - `/agent-health-check` - Monitor agent health
 - `/smoke-test` - Post-rollback validation
+
+
+---
+*Promise: `<promise>WORKFLOW_ROLLBACK_VERIX_COMPLIANT</promise>`*

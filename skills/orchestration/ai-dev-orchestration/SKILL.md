@@ -10,6 +10,11 @@ artifacts: Feature-Prompt-Framework.md, Foundation-Prompt-Template.md, Complianc
 
 # AI-Assisted App Development Orchestration
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Phase 0: Expertise Loading
 
 Before orchestrating AI development:
@@ -215,15 +220,13 @@ Generate App One-Pager with structure:
 - **Annual**: <$Y/year> - <discount %>
 
 ### Success Criteria (Measurable)
-1. <outcome metric 1>
-2. <outcome metric 2>
-3. <outcome metric 3>
-
-Save to: docs/app-one-pager.md
-
-Store in Memory-MCP with WHO/WHEN/PROJECT/WHY tagging.
-`, "planner");
-```
+- [assert|neutral] 1. <outcome metric 1> [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 2. <outcome metric 2> [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 3. <outcome metric 3> [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Save to: docs/app-one-pager.md [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Store in Memory-MCP with WHO/WHEN/PROJECT/WHY tagging. [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] `, "planner"); [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ``` [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## MCP Requirements
 
@@ -1195,3 +1198,7 @@ AI-Assisted App Development Orchestration bridges the gap between AI coding tool
 The skill's unique value lies not in the technical stack decisions or coding speed, but in the orchestration patterns: fresh context per feature, "do not touch" lists, manual testing gates, and ephemeral chat history combined with persistent architectural memory. These patterns prevent the chaos typical of AI-assisted development (scope creep, theater implementations, context pollution) while preserving the leverage (rapid prototyping, automation of repetitive tasks).
 
 Use this skill when building greenfield applications with AI coding tools (Cursor, Claude Code, Lovable), especially for small teams or solo builders who need systematic quality controls without heavyweight processes. The 5-phase structure scales from MVP (1-2 must-have features) to production (iterative feature additions with deployment monitoring), making it ideal for both product validation and sustained development. The key takeaway: AI accelerates execution, but humans must orchestrate strategy, enforce boundaries, and validate outcomes.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

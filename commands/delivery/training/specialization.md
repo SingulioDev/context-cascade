@@ -1,4 +1,9 @@
 # Agent Specialization Training
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 Key platform/tooling/training command improvements:
 - Platform API requirements
 - Tool configuration
@@ -68,3 +73,6 @@ npx claude-flow train agent --type coder --capabilities "react,typescript"
 # Check specializations
 npx claude-flow agent list --specializations
 ```
+
+---
+*Promise: `<promise>SPECIALIZATION_VERIX_COMPLIANT</promise>`*

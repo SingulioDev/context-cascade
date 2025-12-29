@@ -42,6 +42,11 @@ metadata:
 
 # AgentDB Vector Search Optimization
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Optimize AgentDB performance with quantization (4-32x memory reduction), HNSW indexing (150x faster search), caching, and batch operations for scaling to millions of vectors.
@@ -119,11 +124,10 @@ db.setCache(new QueryCache({
 - **Embedding Cache**: Reuse embeddings
 
 ## Success Metrics
-
-- Memory reduction: 4-32x
-- Search speedup: 150x
-- Accuracy maintained: > 95%
-- Cache hit rate: > 70%
+- [assert|neutral] Memory reduction: 4-32x [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Search speedup: 150x [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Accuracy maintained: > 95% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Cache hit rate: > 70% [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## MCP Requirements
 
@@ -184,3 +188,7 @@ AgentDB Vector Search Optimization unlocks production-scale performance for vect
 This skill is critical when scaling vector search beyond toy datasets to millions of vectors, reducing infrastructure costs by 75%+ through memory compression, or achieving sub-10ms latency requirements for real-time applications like recommendation engines and search APIs. The techniques are complementary, not competing - quantization reduces memory footprint enabling larger in-memory indexes, HNSW accelerates the search operation itself, and caching eliminates redundant computation for common queries.
 
 The key insight is performance optimization requires measurement-driven iteration. Blindly applying "best practices" without understanding your workload's query patterns, accuracy requirements, and scale constraints leads to wasted effort or degraded quality. By establishing baselines first, applying optimizations incrementally, and validating improvements at each step, you achieve dramatic performance gains while maintaining the accuracy guarantees your application demands. The result is vector search systems that scale to billions of vectors while remaining responsive enough for interactive user experiences.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

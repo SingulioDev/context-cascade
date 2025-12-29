@@ -1,5 +1,10 @@
 # Research Workflow Coordination
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Purpose
 [Define what this command does - the specific action it triggers]
 
@@ -107,3 +112,6 @@ npx claude-flow workflow research "modern web frameworks"
 # Export research workflow
 npx claude-flow workflow export research --format json
 ```
+
+---
+*Promise: `<promise>RESEARCH_VERIX_COMPLIANT</promise>`*

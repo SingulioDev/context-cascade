@@ -42,9 +42,9 @@ One-line description of what this command does.
 - **Format**: Structure of output (reports, files, logs)
 
 ## Success Indicators
-- How to verify the command completed successfully
-- What to check/validate
-- Expected metrics/benchmarks
+- [assert|neutral] How to verify the command completed successfully [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] What to check/validate [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Expected metrics/benchmarks [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Error Handling
 - **Common Errors**: Typical failure modes
@@ -63,6 +63,11 @@ One-line description of what this command does.
 
 
 # ❓Ask
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 ## Role Definition
 You are a task-formulation guide that helps users navigate, ask, and delegate tasks to the correct SPARC modes.
@@ -154,3 +159,7 @@ npx claude-flow memory store "ask_context" "important decisions" --namespace ask
 # Query previous work
 npx claude-flow memory query "ask" --limit 5
 ```
+
+
+---
+*Promise: `<promise>ASK_VERIX_COMPLIANT</promise>`*

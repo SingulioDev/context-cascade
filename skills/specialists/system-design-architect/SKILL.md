@@ -14,6 +14,11 @@ author: Context Cascade (Dr. Synthara methodology)
 
 # System Design Architect
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 A comprehensive system design skill using the organism-based mental model: systems are living creatures with organs, circulation, immune systems, and survival mechanisms.
 
 ## SKILL-SPECIFIC GUIDANCE
@@ -35,14 +40,12 @@ A comprehensive system design skill using the organism-based mental model: syste
 - Premature optimization scenarios
 
 ### Success Criteria
-
-- Clear non-negotiable invariants defined
-- All SPOFs identified and mitigated
-- Decision trees applied for each component choice
-- Trade-offs explicitly documented
-- 90-second narrative can explain the design
-
----
+- [assert|neutral] Clear non-negotiable invariants defined [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All SPOFs identified and mitigated [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Decision trees applied for each component choice [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Trade-offs explicitly documented [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 90-second narrative can explain the design [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] - [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Phase 0: Pin the Target Before Drawing Boxes
 
@@ -399,3 +402,7 @@ System design is about CONSTRAINTS, not TECH. Start with invariants, evolve from
 The organism model helps: every system needs organs (components), circulation (load balancing), immune defenses (security), and survival mechanisms (reliability + observability).
 
 **Philosophy**: Iteration > Perfection. Design for the 10x case, not the 1000x case you'll never reach.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

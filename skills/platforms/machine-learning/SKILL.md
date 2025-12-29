@@ -37,13 +37,12 @@ category: platforms
 - Operations that do not involve model training or inference
 
 ## Success Criteria
-
-- Model training convergence: Loss decreasing consistently
-- Validation accuracy: Meeting or exceeding baseline targets
-- Training time: Within expected bounds for dataset size
-- GPU utilization: >80% during training
-- Model export success: 100% successful saves
-- Inference latency: <100ms for real-time applications
+- [assert|neutral] Model training convergence: Loss decreasing consistently [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Validation accuracy: Meeting or exceeding baseline targets [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Training time: Within expected bounds for dataset size [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] GPU utilization: >80% during training [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Model export success: 100% successful saves [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Inference latency: <100ms for real-time applications [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Edge Cases & Error Handling
 
@@ -55,13 +54,12 @@ category: platforms
 - **Distributed Training Failures**: Handle node failures, implement fault tolerance
 
 ## Guardrails & Safety
-
-- NEVER train on unvalidated or uncleaned data
-- ALWAYS validate model outputs before deployment
-- ALWAYS implement reproducibility (random seeds, version pinning)
-- NEVER expose training data in model artifacts or logs
-- ALWAYS monitor for bias and fairness issues
-- ALWAYS implement model versioning and rollback capabilities
+- [assert|emphatic] NEVER: train on unvalidated or uncleaned data [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate model outputs before deployment [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement reproducibility (random seeds, version pinning) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: expose training data in model artifacts or logs [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: monitor for bias and fairness issues [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: implement model versioning and rollback capabilities [ground:policy] [conf:0.98] [state:confirmed]
 
 ## Evidence-Based Validation
 
@@ -73,6 +71,11 @@ category: platforms
 
 
 # Machine Learning Development Skill
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Complete workflow for machine learning model development, training, evaluation, and deployment.
 
@@ -218,3 +221,7 @@ The Machine Learning Development skill provides end-to-end ML workflows from dat
 Use this skill when training neural networks, developing ML pipelines, or deploying machine learning systems requiring rigorous scientific methodology. The platform excels at distributed training, automated hyperparameter tuning, and fairness-aware model development where reproducibility and comprehensive evaluation matter.
 
 Key takeaways: Prioritize reproducibility through determinism, evaluate across multiple dimensions beyond accuracy, and design with deployment constraints from the start. The integration with Data Steward for bias auditing, Deployment Readiness for production validation, and MLflow for experiment tracking provides complete ML development infrastructure with Gold-tier quality standards.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

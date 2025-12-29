@@ -53,6 +53,11 @@ version: 1.0.0
 
 # /deploy-check
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Comprehensive pre-deployment validation with quality gates.
 
 ## Usage
@@ -170,3 +175,7 @@ Generates comprehensive checklist including:
 - `/audit-pipeline` - Quality audit
 - `/quick-check` - Fast quality check
 - `/security-scan` - Security only
+
+
+---
+*Promise: `<promise>DEPLOY_CHECK_VERIX_COMPLIANT</promise>`*

@@ -1,4 +1,9 @@
 # Coordinate Task Execution
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 n## Key orchestration command improvements:
 - Swarm initialization requirements
 - Coordination protocol selection
@@ -73,3 +78,7 @@ The orchestrator creates a plan that Claude Code follows using its native tools.
 - Main documentation: /claude.md
 - Other commands in this category
 - Workflow examples in /workflows/
+
+
+---
+*Promise: `<promise>ORCHESTRATE_VERIX_COMPLIANT</promise>`*

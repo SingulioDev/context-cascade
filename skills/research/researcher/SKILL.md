@@ -16,11 +16,11 @@
 - Opinion-based topics without objective truth
 
 ### Success Criteria
-- 90%+ average credibility score across sources
-- 3+ independent sources corroborate key claims
-- All sources annotated with credibility breakdown
-- Contradictory evidence reported and analyzed
-- Full citations (APA/IEEE/ACM with access dates)
+- [assert|neutral] 90%+ average credibility score across sources [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] 3+ independent sources corroborate key claims [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All sources annotated with credibility breakdown [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Contradictory evidence reported and analyzed [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Full citations (APA/IEEE/ACM with access dates) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 - Paywalled sources: institutional access, preprints, contact authors
@@ -59,6 +59,11 @@ author: ruv
 ---
 
 # Researcher - Systematic Information Gathering
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Systematic multi-level research with integrated Gemini Search for comprehensive knowledge synthesis.
 
@@ -176,3 +181,7 @@ In practice:
 Researcher provides systematic multi-level research with rigorous source evaluation, ensuring findings are credible, well-supported, and transparently documented. By applying academic research standards to everyday information gathering, this skill transforms web search into evidence-based knowledge synthesis.
 
 Use this skill when technical accuracy matters, when building knowledge bases for unfamiliar domains, or when decisions depend on reliable information. The three-level approach scales from quick factual lookups (Level 1, under 5 minutes) to publication-ready research (Level 3, 1+ hours with 10+ sources). The credibility scoring system ensures you know exactly how much trust to place in each finding, with explicit documentation of evidence quality.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

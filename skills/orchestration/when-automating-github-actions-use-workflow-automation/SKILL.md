@@ -16,6 +16,11 @@ mcp_tools:
 
 # GitHub Actions Workflow Automation Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Design, implement, and optimize GitHub Actions CI/CD workflows using intelligent agent coordination. This skill provides end-to-end workflow automation including pipeline generation, security hardening, performance optimization, test orchestration, and debugging for robust continuous integration and deployment.
@@ -713,3 +718,7 @@ Key takeaways:
 - Blue-green deployment with canary rollout provides safe production releases with instant rollback capability
 
 Use this skill when creating CI/CD pipelines from scratch, optimizing slow workflows, implementing matrix testing, hardening workflow security, debugging failures, or establishing organizational workflow standards. Avoid for simple scripts that do not require GitHub Actions infrastructure.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

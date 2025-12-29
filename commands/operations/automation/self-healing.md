@@ -1,5 +1,10 @@
 # Self-Healing Workflows
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: May require GitHub CLI or API for repository operations and workflow management
 - Authentication/token requirements: GITHUB_TOKEN for API access, service account credentials for automated operations
@@ -134,3 +139,6 @@ mcp__claude-flow__task_orchestrate({
 - 🔄 Automatic recovery
 - 📚 Learns from errors
 - ⏱️ Saves debugging time
+
+---
+*Promise: `<promise>SELF_HEALING_VERIX_COMPLIANT</promise>`*

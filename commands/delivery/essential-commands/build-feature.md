@@ -53,6 +53,11 @@ version: 1.0.0
 
 # /build-feature
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Complete feature development lifecycle from research to deployment (12 stages).
 
 ## Usage
@@ -146,3 +151,7 @@ parallel ::: \
 - `/quick-check` - Fast quality check
 - `/code-review` - PR review
 - `/production-readiness` - Deployment validation
+
+
+---
+*Promise: `<promise>BUILD_FEATURE_VERIX_COMPLIANT</promise>`*

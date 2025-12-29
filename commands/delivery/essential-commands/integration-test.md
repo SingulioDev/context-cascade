@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /integration-test
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Integration testing for API contracts, service interactions, and external dependencies.
 
 ## Usage
@@ -414,3 +419,7 @@ Recommendations:
 - `/load-test` - Load and stress testing
 - `/smoke-test` - Quick smoke tests
 - `/production-readiness` - Pre-deployment validation
+
+
+---
+*Promise: `<promise>INTEGRATION_TEST_VERIX_COMPLIANT</promise>`*

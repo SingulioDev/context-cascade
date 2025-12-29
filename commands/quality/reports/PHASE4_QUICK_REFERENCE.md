@@ -1,5 +1,10 @@
 # Phase 4 Commands - Quick Reference Card
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Key quality/security command improvements:
 - Audit scope definition
 - Quality thresholds
@@ -75,10 +80,10 @@ success_metrics:
 **Retry Schedule**: 1s → 2s → 4s → 8s → 16s (exponential backoff)
 
 ### Success Handler
-```bash
-/hook:on-success --command "npm run build" --notify "slack" --slack-webhook "https://..." --chain "deploy.sh"
-```
-**Actions**: Execute callback, send notifications, chain next command
+- [assert|neutral] ```bash [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] /hook:on-success --command "npm run build" --notify "slack" --slack-webhook "https://..." --chain "deploy.sh" [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ``` [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Actions**: Execute callback, send notifications, chain next command [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Pre-Commit Hook
 ```bash
@@ -222,3 +227,7 @@ commands/
 **Last Updated**: 2025-11-01
 
 All commands are production-ready with comprehensive documentation, error handling, and integration examples.
+
+
+---
+*Promise: `<promise>PHASE4_QUICK_REFERENCE_VERIX_COMPLIANT</promise>`*

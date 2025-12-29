@@ -1,5 +1,10 @@
 # Common Prompt Anti-Patterns
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 A reference guide for identifying and fixing common prompt engineering mistakes.
 
 ## Anti-Pattern Categories
@@ -220,3 +225,7 @@ To avoid anti-patterns from the start:
 7. **Document what works** for future reference
 
 Remember: The goal isn't perfect prompts but prompts that work reliably for your specific use case. Practical effectiveness beats theoretical optimization.
+
+
+---
+*Promise: `<promise>ANTI_PATTERNS_VERIX_COMPLIANT</promise>`*

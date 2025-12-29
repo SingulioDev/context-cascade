@@ -1,5 +1,10 @@
 # Playbook MCP Requirements - Complete Reference
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 **Version**: 1.0.0
 **Date**: 2025-11-15
 **Status**: Production Ready
@@ -492,3 +497,6 @@ No additional MCPs needed!
 **Deep Research & Three-Loop are the only "MCP-heavy" playbooks** - everything else uses 11.3k-56.2k tokens conditionally.
 
 For complete activation instructions, see: `C:\Users\17175\docs\CONDITIONAL-MCP-ACTIVATION-GUIDE.md`
+
+---
+*Promise: `<promise>PLAYBOOK_MCP_REQUIREMENTS_VERIX_COMPLIANT</promise>`*

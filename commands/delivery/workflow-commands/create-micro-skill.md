@@ -14,6 +14,11 @@ version: 1.0.0
 
 # /create-micro-skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Creates atomic, focused micro-skills with evidence-based specialist agents.
 
 ## Usage
@@ -95,3 +100,7 @@ After creation, skill is automatically:
 ## See also
 - `/create-cascade` - Create workflow orchestration
 - `/create-command` - Create slash command binding
+
+
+---
+*Promise: `<promise>CREATE_MICRO_SKILL_VERIX_COMPLIANT</promise>`*

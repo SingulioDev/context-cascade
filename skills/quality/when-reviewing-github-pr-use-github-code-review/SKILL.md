@@ -17,6 +17,11 @@ mcp_tools:
 
 # GitHub Code Review Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Execute comprehensive, multi-dimensional code reviews for GitHub pull requests using coordinated agent swarms. This skill orchestrates five specialized agents working in parallel to analyze security, performance, code quality, test coverage, and documentation, then synthesizes findings into actionable feedback with merge readiness assessment.
@@ -447,3 +452,7 @@ The GitHub Code Review skill transforms pull request reviews from manual, subjec
 The evidence-based approach, combining automated scanning tools with agent analysis, ensures findings are grounded in measurable metrics rather than subjective opinions. Organizations implementing this skill see dramatic reductions in review cycle times (2.8-4.4x faster), increased consistency in review quality, and higher developer satisfaction through actionable feedback. The auto-fix suggestion system accelerates improvement cycles by providing concrete solutions rather than just problem identification.
 
 When integrated with CI/CD pipelines through GitHub Actions, this skill creates an automated quality enforcement system that blocks merges until comprehensive review approval is obtained. The weighted merge readiness scoring (35% security, 20% performance, 20% quality, 15% testing, 10% documentation) provides clear, objective criteria for merge decisions while surfacing specific improvements needed for approval. This systematic approach elevates code review from a manual chore to an intelligent, automated quality assurance system that catches issues before they reach production.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

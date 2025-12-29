@@ -64,6 +64,11 @@ estimated_time: 30-45 minutes
 
 # GitHub Project Management
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 A comprehensive skill for managing GitHub projects using AI swarm coordination. This skill combines intelligent issue management, automated project board synchronization, and swarm-based coordination for efficient project delivery.
@@ -1357,3 +1362,7 @@ GitHub Project Management transforms project boards from static planning tools i
 This skill is essential when managing Agile/Scrum workflows on GitHub Projects, coordinating multi-repository development efforts, or tracking complex features with many interdependent tasks. It excels at automated triage, dependency management, and progress transparency that manual board updates cannot sustain.
 
 Use this skill when setting up project boards for new teams, when existing boards have low adoption due to manual update burden, or when you need cross-repository sprint coordination with unified reporting. The swarm coordination patterns enable parallel task decomposition, automated progress updates, and intelligent work distribution that traditional project management tools require manual effort to achieve.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

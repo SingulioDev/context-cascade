@@ -1,5 +1,10 @@
 # github swarm
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: Requires GitHub CLI (gh) or GitHub API token for authentication
 - Authentication/token requirements: Use GITHUB_TOKEN env var or gh auth login for GitHub operations
@@ -149,3 +154,7 @@ mcp__claude-flow__github_swarm {
 - `pr enhance` - Enhance pull requests
 - `issue triage` - Intelligent issue management
 - `code review` - Automated reviews
+
+
+---
+*Promise: `<promise>GITHUB_SWARM_VERIX_COMPLIANT</promise>`*

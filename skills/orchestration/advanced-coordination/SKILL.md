@@ -29,11 +29,11 @@ author: ruv
 - **Static topologies** not requiring adaptive scaling
 
 ### Success Criteria
-- **Coordination topology established** (mesh/hierarchical/star)
-- **All agents registered** in coordination namespace
-- **Event routing functional** with <50ms message latency
-- **No coordination deadlocks** - All agents progressing
-- **Scalability validated** - Handles target agent count
+- [assert|neutral] *Coordination topology established** (mesh/hierarchical/star) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *All agents registered** in coordination namespace [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Event routing functional** with <50ms message latency [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *No coordination deadlocks** - All agents progressing [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Scalability validated** - Handles target agent count [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases to Handle
 - **Network partitions** - Implement partition tolerance with eventual consistency
@@ -43,11 +43,11 @@ author: ruv
 - **Rate limiting** - Handle cloud API rate limits with backoff
 
 ### Guardrails (NEVER Violate)
-- **NEVER lose coordination state** - Persist topology and agent registry
-- **ALWAYS validate topology** - Check for cycles, orphaned nodes
-- **ALWAYS monitor message queues** - Prevent queue overflow
-- **NEVER skip health checks** - Continuous agent liveness monitoring
-- **ALWAYS handle failures gracefully** - No cascading failures
+- [assert|emphatic] NEVER: lose coordination state** - Persist topology and agent registry [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: validate topology** - Check for cycles, orphaned nodes [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: monitor message queues** - Prevent queue overflow [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip health checks** - Continuous agent liveness monitoring [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|neutral] ALWAYS: handle failures gracefully** - No cascading failures [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Evidence-Based Validation
 - **Verify topology structure** - Validate graph properties (connected, acyclic if needed)
@@ -58,6 +58,11 @@ author: ruv
 
 
 # Advanced Coordination - Distributed Agent Management
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Sophisticated coordination protocols for large-scale multi-agent systems with fault tolerance and consensus requirements.
 
@@ -170,3 +175,7 @@ Advanced Coordination provides the distributed systems foundation for large-scal
 The core contributions are: (1) consensus protocol selection (RAFT/Gossip/Byzantine) optimizes the consistency-availability-partition tolerance tradeoff for specific system requirements, (2) partition tolerance with graceful degradation enables continued operation during network failures and automatic healing on reconnection, and (3) dynamic task dependency graphs adapt execution plans in real-time based on intermediate results and runtime conditions.
 
 Use Advanced Coordination when building distributed systems with 20+ agents spanning multiple execution environments, implementing security-critical workflows requiring Byzantine fault tolerance, or managing complex task graphs with dynamic dependencies determined at runtime. The architecture scales from small clusters (5-10 agents with RAFT) to massive swarms (1000+ agents with Gossip). The key insight: coordination is the hard problem in distributed systems - consensus protocols, partition tolerance, and dynamic scheduling are not optional features but fundamental requirements for correctness at scale.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

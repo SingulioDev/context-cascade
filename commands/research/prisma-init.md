@@ -27,6 +27,11 @@ description: Initialize PRISMA 2020 systematic literature review protocol with s
 
 # 📚 Initialize PRISMA 2020 Systematic Literature Review
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Sets up complete PRISMA 2020 systematic literature review protocol with search strategies, screening criteria, and data extraction forms for comprehensive literature gap analysis.
 
 ## Purpose
@@ -255,3 +260,7 @@ After protocol initialization:
 3. Configure citation manager integration
 4. Set up dual-reviewer workflow
 5. Plan synthesis approach (meta-analysis, narrative, etc.)
+
+
+---
+*Promise: `<promise>PRISMA_INIT_VERIX_COMPLIANT</promise>`*

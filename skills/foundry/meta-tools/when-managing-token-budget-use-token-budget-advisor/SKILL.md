@@ -34,7 +34,7 @@ author: ruv
 
 ### Success Criteria
 - primary_outcome: "[SKILL-SPECIFIC measurable result based on skill purpose]"
-- quality_threshold: 0.85
+- [assert|neutral] quality_threshold: 0.85 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 - verification_method: "[How to validate skill executed correctly and produced expected outcome]"
 
 ### Edge Cases
@@ -62,6 +62,11 @@ plan_and_solve: "Plan: [SKILL-SPECIFIC planning phase] -> Execute: [SKILL-SPECIF
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Token Budget Advisor
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 **Purpose:** Proactively manage token budgets by analyzing current usage, estimating task complexity, generating intelligent chunking strategies, prioritizing work, and creating step-by-step execution plans that stay within budget limits.
 
@@ -885,3 +890,7 @@ The Token Budget Advisor transforms token management from reactive crisis respon
 The key insight is that token budget is a finite resource that must be managed explicitly, not assumed to be infinite. The skill's multi-phase approach provides objective data for go/no-go decisions on large tasks. Teams using this systematic approach report zero budget overruns (tasks never fail due to token exhaustion), 95%+ budget adherence (chunks complete within estimates), and less than 15% unused budget per session (efficient utilization without waste). Historical tracking and estimation refinement enable continuous improvement in prediction accuracy.
 
 Use this skill before any large or complex task (>20,000 token estimate), when approaching token budget limits (>75% used), or during multi-phase project planning. The upfront time investment in budget assessment and chunking strategy pays dividends through reliable execution, no mid-task failures, and optimal budget utilization. Remember: it's better to defer a task or reduce scope proactively than to start ambitiously and fail mid-execution when budget runs out. Plan the work, work the plan, stay within budget.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

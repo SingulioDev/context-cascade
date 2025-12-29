@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /docker-build
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Build optimized Docker container images with multi-stage builds and security scanning.
 
 ## Usage
@@ -201,3 +206,7 @@ Image Tagged:
 - `/security-audit` - Pre-build security scan
 - `/workflow:cicd` - CI/CD workflow orchestration
 - `/smoke-test` - Quick container validation
+
+
+---
+*Promise: `<promise>DOCKER_BUILD_VERIX_COMPLIANT</promise>`*

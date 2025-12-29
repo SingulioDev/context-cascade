@@ -52,6 +52,11 @@ version: 1.0.0
 
 # /smoke-test
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Quick smoke tests to verify critical functionality and system health after deployment.
 
 ## Usage
@@ -370,3 +375,7 @@ Report Generated:
 - `/production-readiness` - Pre-deployment validation
 - `/k8s-deploy` - Kubernetes deployment
 - `/monitoring-configure` - Setup monitoring
+
+
+---
+*Promise: `<promise>SMOKE_TEST_VERIX_COMPLIANT</promise>`*

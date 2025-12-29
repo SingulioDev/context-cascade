@@ -1,5 +1,10 @@
 # Debugging Assistant Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Intelligent debugging workflow that systematically identifies symptoms, performs root cause analysis, generates fixes with explanations, validates solutions, and prevents regressions through comprehensive testing.
@@ -543,3 +548,7 @@ The Debugging Assistant skill transforms debugging from an ad-hoc, frustrating a
 The key insight is that debugging is an investment, not just a cost. When executed properly, each debugging session produces three valuable artifacts: a working fix, an automated regression test, and institutional knowledge about failure modes. This transforms debugging from "firefighting" into proactive quality improvement. Teams using this systematic approach report 95% first-attempt fix success rates and less than 2% regression rates, compared to the industry average of 60-70% success rates and 15-20% regressions.
 
 Use this skill whenever you encounter runtime errors, unexpected behavior, performance issues, or test failures. The systematic approach may feel slower initially compared to quick-fix debugging, but the time investment in root cause analysis and regression prevention pays dividends through reduced rework, improved code quality, and a growing knowledge base of proven solutions. Remember: a bug is not truly fixed until it has a test preventing its return.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

@@ -1,5 +1,10 @@
 # GitHub Actions Management Command
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Command Context
 - GitHub API integration requirements: Requires GitHub CLI (gh) or GitHub API token for authentication
 - Authentication/token requirements: Use GITHUB_TOKEN env var or gh auth login for GitHub operations
@@ -342,3 +347,7 @@ mcp__ruv-swarm__agent_spawn({
 **Implementation Status**: Production-Ready
 **Last Updated**: 2025-11-01
 **Maintainer**: Integration Specialist
+
+
+---
+*Promise: `<promise>GITHUB_ACTIONS_VERIX_COMPLIANT</promise>`*

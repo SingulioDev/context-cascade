@@ -14,6 +14,11 @@ author: Context Cascade (integrated from Anthropic's Ralph Wiggum plugin)
 
 # Ralph Loop (Persistence Loop System)
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 An orchestration skill that implements continuous self-referential AI loops for iterative development until task completion.
 
 ## SKILL-SPECIFIC GUIDANCE
@@ -35,11 +40,10 @@ An orchestration skill that implements continuous self-referential AI loops for 
 - When max iterations would be reached quickly
 
 ### Success Criteria
-
-- Task completes with completion promise output
-- All automated checks pass (tests, linters)
-- Work persists in files after loop ends
-- Iteration count within max-iterations limit
+- [assert|neutral] Task completes with completion promise output [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] All automated checks pass (tests, linters) [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Work persists in files after loop ends [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Iteration count within max-iterations limit [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ### Edge Cases & Limitations
 

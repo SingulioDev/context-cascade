@@ -14,6 +14,11 @@ version: 1.0.0
 
 # /codex-auto
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Unattended rapid prototyping in sandboxed environment with Full Auto mode.
 
 ## Usage
@@ -95,3 +100,7 @@ for failing_test in test_results:
 - `/functionality-audit` - Uses Codex for auto-fixing
 - `/gemini-megacontext` - Large context analysis
 - `/claude-reason` - Best reasoning (default)
+
+
+---
+*Promise: `<promise>CODEX_AUTO_VERIX_COMPLIANT</promise>`*

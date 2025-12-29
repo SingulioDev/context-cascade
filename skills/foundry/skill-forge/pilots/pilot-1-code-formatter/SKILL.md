@@ -27,7 +27,7 @@ tags:
 
 ### Success Criteria
 - primary_outcome: "[SKILL-SPECIFIC measurable result based on skill purpose]"
-- quality_threshold: 0.85
+- [assert|neutral] quality_threshold: 0.85 [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 - verification_method: "[How to validate skill executed correctly and produced expected outcome]"
 
 ### Edge Cases
@@ -55,6 +55,11 @@ plan_and_solve: "Plan: [SKILL-SPECIFIC planning phase] -> Execute: [SKILL-SPECIF
 <!-- END SKILL SOP IMPROVEMENT -->
 
 # Code Formatter
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 
 Automatically format code files using language-specific formatters with comprehensive error handling.
 
@@ -436,3 +441,7 @@ Code Formatter provides a production-ready automated formatting system with comp
 This skill excels at pre-commit formatting hooks, CI/CD style enforcement, and codebase-wide style consistency. Use this when you need automated formatting that won't corrupt files, respects project conventions, and provides clear feedback on changes. The comprehensive error code system (1-7) ensures every failure mode has a documented recovery path.
 
 The key differentiator is the safety-first approach - backup before modification, syntax check before formatting, timeout protection during execution, and automatic restoration on failure. This makes it suitable for production environments where file corruption is unacceptable and manual intervention should be minimized.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

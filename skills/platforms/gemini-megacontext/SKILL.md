@@ -7,6 +7,11 @@ version: 1.0.0
 
 # Gemini Mega-Context Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 Leverage Gemini CLI's massive 1 million token context window to analyze entire codebases, architectural patterns, and multi-file dependencies in a single pass - something Claude Code's context window cannot achieve.
 
@@ -220,14 +225,11 @@ gemini --all-files "Your analysis question here"
 - `multi-model`: Let orchestrator decide when to use mega-context
 
 ## Success Indicators
-
-✅ Got comprehensive architectural understanding
-✅ Identified all affected files for a change
-✅ Mapped dependencies across entire system
-✅ Understood how components interact
-✅ Generated documentation from full codebase
-✅ Found patterns across many files
-
----
-
-**Remember**: Use Gemini's mega-context for BREADTH (understanding the whole system), use Claude Code for DEPTH (implementing and refining solutions).
+- [assert|neutral] ✅ Got comprehensive architectural understanding [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Identified all affected files for a change [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Mapped dependencies across entire system [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Understood how components interact [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Generated documentation from full codebase [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Found patterns across many files [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Remember**: Use Gemini's mega-context for BREADTH (understanding the whole system), use Claude Code for DEPTH (implementing and refining solutions). [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`* [ground:acceptance-criteria] [conf:0.90] [state:provisional]

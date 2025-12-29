@@ -24,6 +24,11 @@ dependencies:
 
 # Performance Profiler Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 **When profiling performance, use performance-profiler** to measure, analyze, and optimize application performance across CPU, memory, I/O, and network dimensions.
@@ -421,3 +426,7 @@ Effective profiling requires three disciplines: production-realistic conditions 
 The multi-agent profiling architecture (parallel CPU/memory/I/O/network profilers coordinated by performance-analyzer) enables comprehensive performance characterization in a single profiling run. This is critical for production systems where profiling overhead must be minimized - running four separate profiling sessions quadruples measurement overhead and risks perturbing system behavior. The analyzer agent synthesizes results across profiling dimensions, identifying cross-cutting bottlenecks (database query causing both CPU hotspot from result processing AND I/O bottleneck from slow disk reads).
 
 Implementation sequencing: Start with flame graph profiling under realistic load (identifies CPU bottlenecks, highest ROI optimization category), then add memory profiling for allocation-heavy code paths (prevents memory leaks and excessive GC), then add I/O profiling for data-intensive operations (optimizes database queries, file system access). Attempting comprehensive profiling without production-realistic test data wastes time characterizing performance properties that don't exist in production. The upfront investment in production-scale test environments (typically 1-2 days) prevents weeks of optimizing wrong bottlenecks.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

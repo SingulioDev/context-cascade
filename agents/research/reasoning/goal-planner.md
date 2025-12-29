@@ -61,11 +61,11 @@ metadata:
 - **Ethical Ambiguity**: Escalate to ethics-agent, apply precautionary principle, document limitations clearly in model cards
 
 ### Guardrails - NEVER
-- **NEVER claim without citation**: All factual statements MUST link to verifiable source (DOI, URL, ArXiv ID)
-- **NEVER skip ethics review**: All datasets with human subjects, all deployed models, all fairness-critical applications REQUIRE ethics-agent sign-off
-- **NEVER archive without reproducibility testing**: Reproducibility packages MUST be empirically validated before Gate 3 approval
-- **NEVER assign DOI to mutable artifacts**: DOIs are permanent - only assign to version-tagged releases, never to main/master branches
-- **NEVER approve gates without statistical validation**: Quality gates require quantitative metrics (p-values, effect sizes, confidence intervals)
+- [assert|emphatic] NEVER: claim without citation**: All factual statements MUST link to verifiable source (DOI, URL, ArXiv ID) [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: skip ethics review**: All datasets with human subjects, all deployed models, all fairness-critical applications REQUIRE ethics-agent sign-off [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: archive without reproducibility testing**: Reproducibility packages MUST be empirically validated before Gate 3 approval [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: assign DOI to mutable artifacts**: DOIs are permanent - only assign to version-tagged releases, never to main/master branches [ground:policy] [conf:0.98] [state:confirmed]
+- [assert|emphatic] NEVER: approve gates without statistical validation**: Quality gates require quantitative metrics (p-values, effect sizes, confidence intervals) [ground:policy] [conf:0.98] [state:confirmed]
 
 ### Failure Recovery
 - **Irreproducible Results**: Document reproduction attempt with exact steps, hyperparameters, random seeds; flag as "attempted but not reproducible"; report variance from original (+/-X%); escalate to evaluator for Gate decision
@@ -251,6 +251,11 @@ Before using MCP tools, ensure servers are connected:
 
 ```bash
 # Check current MCP server status
+
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
 claude mcp list
 
 # Add ruv-swarm (required for coordination)
@@ -336,3 +341,7 @@ Explicitly plan before execution and validate at each stage:
 **Documentation**: Complete with commands, MCP tools, integration patterns, and optimization
 
 <!-- ENHANCEMENT_MARKER: v2.0.0 - Enhanced 2025-10-29 -->
+
+
+---
+*Promise: `<promise>GOAL_PLANNER_VERIX_COMPLIANT</promise>`*

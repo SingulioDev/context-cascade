@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /style-audit
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Audits code against style rules, quality guidelines, and best practices, then rewrites to meet standards.
 
 ## Usage
@@ -79,3 +84,7 @@ Audits code against style rules, quality guidelines, and best practices, then re
 - `/functionality-audit` - Verify functionality first
 - `/audit-pipeline` - Run all audits
 - `/lint-code` - Quick linting only
+
+
+---
+*Promise: `<promise>STYLE_AUDIT_VERIX_COMPLIANT</promise>`*

@@ -30,3 +30,7 @@ success_metrics:
   execution_success: ">95%"
 <!-- END META-LOOP -->
 
+
+
+---
+*Promise: `<promise>ALERT_CONFIGURE_VERIX_COMPLIANT</promise>`*

@@ -24,6 +24,11 @@ outputs:
 
 # Skill Builder - Claude Code Skill Template Generator
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Overview
 
 Creates new Claude Code Skills with proper structure, YAML frontmatter, progressive disclosure, and complete documentation. Ensures skills follow best practices and specification requirements.
@@ -165,7 +170,7 @@ npx claude-flow@alpha hooks pre-task --description "${phase1.description}"
 ## [Repeat for all phases]
 
 ## Success Metrics
-${successCriteria}
+- [assert|neutral] ${successCriteria} [ground:acceptance-criteria] [conf:0.90] [state:provisional]
 
 ## Memory Schema
 \`\`\`javascript
@@ -557,3 +562,7 @@ Skill Builder provides a systematic 5-phase approach to creating well-structured
 This skill excels at standardizing skill creation across teams, building reusable skill libraries, and ensuring new skills follow best practices from the start. Use this when you need to create new skills that will be used repeatedly, shared with others, or integrated into automation workflows where proper structure and metadata are essential.
 
 The key innovation is treating skills as first-class artifacts with structured metadata (YAML), multiple documentation layers (SKILL.md, README.md, PROCESS.md), visual representations (GraphViz diagrams), and automated validation (syntax checks, execution tests, completeness checks). This transforms skill creation from ad-hoc documentation to systematic engineering with quality gates.
+
+
+---
+*Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`*

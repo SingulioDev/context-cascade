@@ -7,6 +7,11 @@ version: 1.0.0
 
 # Gemini Media Generation Skill
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 ## Purpose
 Leverage Gemini CLI's integration with Imagen (image generation) and Veo (video generation) to create visual content, diagrams, UI mockups, and demo videos - capabilities Claude Code cannot provide.
 
@@ -290,14 +295,11 @@ gemini "Generate a video: [detailed description]. Duration: [seconds]. Save to [
 - `multi-model`: Let orchestrator decide when visualization needed
 
 ## Success Indicators
-
-✅ Generated image/video matches description
-✅ Quality suitable for intended use
-✅ File saved to correct location
-✅ Asset integrated into documentation/project
-✅ Time saved vs manual creation
-✅ Visualization enhances understanding
-
----
-
-**Remember**: Use Gemini Media for GENERATION (creating new visual assets), not EDITING (modifying existing ones). Best for rapid prototyping and documentation.
+- [assert|neutral] ✅ Generated image/video matches description [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Quality suitable for intended use [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ File saved to correct location [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Asset integrated into documentation/project [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Time saved vs manual creation [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] ✅ Visualization enhances understanding [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] *Remember**: Use Gemini Media for GENERATION (creating new visual assets), not EDITING (modifying existing ones). Best for rapid prototyping and documentation. [ground:acceptance-criteria] [conf:0.90] [state:provisional]
+- [assert|neutral] Promise: `<promise>SKILL_VERIX_COMPLIANT</promise>`* [ground:acceptance-criteria] [conf:0.90] [state:provisional]

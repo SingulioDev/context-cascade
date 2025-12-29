@@ -39,6 +39,11 @@ version: 1.0.0
 
 # /re:firmware
 
+## Kanitsal Cerceve (Evidential Frame Activation)
+Kaynak dogrulama modu etkin.
+
+
+
 Firmware extraction and embedded system analysis for IoT, routers, and embedded devices (Level 5: Firmware Analysis).
 
 **Timebox**: 2-8 hours
@@ -244,3 +249,7 @@ connascence-analyzer.analyze_workspace(./firmware/extracted/squashfs-root)
 - `/re:deep` - Deep binary analysis
 - `/re:strings` - String analysis on extracted binaries
 - `/security-review` - Security audit
+
+
+---
+*Promise: `<promise>FIRMWARE_VERIX_COMPLIANT</promise>`*
