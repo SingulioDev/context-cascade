@@ -1,5 +1,8 @@
 """
-Cascade Optimizer - Full Context Cascade Optimization
+Cascade Optimizer - Full Context Cascade LEVEL Optimization.
+
+THIS MODULE: Optimizes across cascade LEVELS (commands, agents, skills, playbooks).
+DIFFERENT FROM: cascade.py which runs Three-MOO PHASES (A, B, C).
 
 Applies DSPy x GlobalMOO optimization across the entire Context Cascade:
   Commands (127) -> Agents (216) -> Skills (196) -> Playbooks (30)
@@ -16,10 +19,10 @@ The cascade optimization:
 5. Distill into named modes (Audit, Speed, Research, etc.)
 6. Apply modes to future executions
 
-This is TRUE SELF-REFERENTIAL OPTIMIZATION:
-- The system uses VERIX/VERILINGUA to optimize itself
-- The optimization improves VERIX/VERILINGUA usage
-- The cycle continues, improving with each iteration
+Key Classes:
+- CascadeOptimizer: Main orchestrator
+- CascadeLevel: Enum of levels (COMMAND, AGENT, SKILL, PLAYBOOK)
+- OptimizationCycleResult: Result of optimization cycle
 """
 
 import os

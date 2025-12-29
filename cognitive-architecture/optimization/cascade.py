@@ -1,5 +1,9 @@
 """
-Three-MOO Cascade orchestration.
+Three-MOO Cascade orchestration (Phase-based MOO).
+
+THIS MODULE: Runs multi-objective optimization in 3 phases (A, B, C).
+DIFFERENT FROM: cascade_optimizer.py which optimizes across cascade LEVELS
+(commands, agents, skills, playbooks).
 
 Phases:
 - Phase A: Framework structure optimization (frame selection, VERIX strictness)
@@ -7,6 +11,11 @@ Phases:
 - Phase C: Production frontier refinement (final Pareto points)
 
 Each phase runs a full GlobalMOO optimization loop with different objectives.
+
+Key Classes:
+- ThreeMOOCascade: Main orchestrator
+- CascadePhase: Enum of phases (PHASE_A, PHASE_B, PHASE_C)
+- CascadeResult: Result of full cascade run
 """
 
 import os
