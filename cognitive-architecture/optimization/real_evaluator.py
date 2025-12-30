@@ -1,10 +1,13 @@
 """
-Real Task Evaluator - Execute actual tasks and measure real outcomes.
+Real Task Evaluator v3.0 - Execute actual tasks and measure real outcomes.
 
 Replaces synthetic objective functions with real LLM execution and grading.
 
 This is the KEY component that closes the optimization loop:
   Config -> Prompt -> LLM Execution -> Response -> Grading -> Telemetry -> MOO
+
+v3.0: Uses x- prefixed custom fields for Anthropic compliance.
+      Telemetry storage automatically uses v3.0 format via ExecutionTelemetry.
 """
 
 import os

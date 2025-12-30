@@ -1,5 +1,5 @@
 """
-Telemetry schema for cognitive architecture execution data.
+Telemetry schema for cognitive architecture execution data v3.0.
 
 Captures real-world execution data for:
 - Layer 2 optimization (per-task prompt caching)
@@ -7,6 +7,12 @@ Captures real-world execution data for:
 
 Data flows:
   Hook captures -> Memory MCP -> Aggregator -> Dual MOO -> Named Modes
+
+v3.0: Uses x- prefixed custom fields for Anthropic compliance
+- agent_type -> x-agent-type (in serialized output)
+- skill_name -> x-skill-name (in serialized output)
+- command_name -> x-command-name (in serialized output)
+- Backward compatibility maintained for reading old format
 """
 
 import os
@@ -96,13 +102,45 @@ class ExecutionTelemetry:
     command_name: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
-        """Convert to dictionary for JSON serialization."""
-        return asdict(self)
+        """Convert to dictionary for JSON serialization.
+
+        v3.0: Outputs x- prefixed custom fields for Anthropic compliance.
+        """
+        base = asdict(self)
+
+        # v3.0: Convert custom metadata fields to x- prefix format
+        result = {}
+        for key, value in base.items():
+            if key in ('agent_type', 'skill_name', 'command_name'):
+                # Custom metadata fields use x- prefix
+                result[f'x-{key.replace("_", "-")}'] = value
+            else:
+                result[key] = value
+
+        # Add schema version marker
+        result['_schema_version'] = '3.0'
+        return result
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "ExecutionTelemetry":
-        """Create from dictionary."""
-        return cls(**{k: v for k, v in data.items() if k in cls.__dataclass_fields__})
+        """Create from dictionary.
+
+        v3.0: Supports both old format and new x- prefixed format.
+        """
+        # Normalize x- prefixed fields back to internal format
+        normalized = {}
+        for key, value in data.items():
+            if key.startswith('x-'):
+                # Convert x-agent-type -> agent_type
+                internal_key = key[2:].replace('-', '_')
+                normalized[internal_key] = value
+            elif key == '_schema_version':
+                # Skip schema version marker
+                continue
+            else:
+                normalized[key] = value
+
+        return cls(**{k: v for k, v in normalized.items() if k in cls.__dataclass_fields__})
 
     def memory_key(self) -> str:
         """Generate memory-mcp key for this record."""

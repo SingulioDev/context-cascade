@@ -1,5 +1,5 @@
 """
-Task Prompt Optimizer - Optimize Claude Code's Task() calls to subagents.
+Task Prompt Optimizer v3.0 - Optimize Claude Code's Task() calls to subagents.
 
 This is the REAL runtime prompt optimization:
 - Claude Code spawns agents via Task()
@@ -13,6 +13,8 @@ The optimization loop:
 4. Track agent success/failure
 5. Report outcomes to GlobalMOO
 6. Learn better config vectors over time
+
+v3.0: Uses x- prefixed custom fields for Anthropic compliance
 """
 
 import os
@@ -429,17 +431,20 @@ Mark completion status and confidence levels for key deliverables.
         Record task result for learning.
 
         Updates GlobalMOO with outcome metrics.
+
+        v3.0: Uses x- prefixed custom fields for Anthropic compliance.
         """
-        # Save to results file
+        # Save to results file (v3.0 format with x- prefixed custom fields)
         with open(self.results_file, "a") as f:
             f.write(json.dumps({
                 "task_id": result.task_id,
-                "agent_type": result.agent_type,
+                "x-agent-type": result.agent_type,
                 "success": result.success,
                 "iterations": result.iterations,
                 "duration_ms": result.duration_ms,
-                "verix_compliance": result.verix_compliance,
+                "x-verix-compliance": result.verix_compliance,
                 "timestamp": result.timestamp,
+                "_schema_version": "3.0",
             }) + "\n")
 
         # Report to GlobalMOO if project exists
@@ -452,8 +457,9 @@ Mark completion status and confidence levels for key deliverables.
                 config_vector=config_vector,
                 outcomes=result.to_outcome_metrics(),
                 metadata={
-                    "agent_type": result.agent_type,
-                    "task_id": result.task_id,
+                    "x-agent-type": result.agent_type,
+                    "x-task-id": result.task_id,
+                    "_schema_version": "3.0",
                 },
             )
 
