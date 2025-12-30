@@ -2,13 +2,8 @@
 name: prompt-architect
 description: Meta-loop skill for prompt optimization using VERILINGUA x VERIX
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 3.0.0
-x-category: foundry
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] [assert|neutral] Meta-loop skill for prompt optimization using VERILINGUA x VERIX [ground:witnessed] [conf:0.99] [state:confirmed]  [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

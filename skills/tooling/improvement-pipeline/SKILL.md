@@ -2,17 +2,8 @@
 name: improvement-pipeline
 description: Executable implementation of the Propose -> Test -> Compare -> Commit -> Rollback pipeline for recursive self-improvement. Provides concrete commands and workflows for each stage.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: foundry
-x-tags:
-  - pipeline
-  - improvement
-  - testing
-  - versioning
-  - rollback
-x-author: system
-x-verix-description: [assert|neutral] Executable implementation of the Propose -> Test -> Compare -> Commit -> Rollback pipeline for recursive self-improvement. Provides concrete commands and workflows for each stage. [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -1,17 +1,9 @@
 ---
-name: when-analyzing-user-intent-use-intent-analyzer
+name: intent-analyzer
 description: Advanced intent interpretation system using cognitive science principles and probabilistic intent mapping
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: utilities
-x-tags:
-  - intent-analysis
-  - cognitive-science
-  - disambiguation
-  - user-understanding
-x-author: ruv
-x-verix-description: [assert|neutral] Advanced intent interpretation system using cognitive science principles and probabilistic intent mapping [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

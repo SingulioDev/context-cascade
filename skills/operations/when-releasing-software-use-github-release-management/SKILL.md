@@ -1,14 +1,9 @@
 ---
-name: when-releasing-software-use-github-release-management
+name: github-release-management
 description: Comprehensive GitHub release orchestration with AI swarm coordination for automated versioning, testing, deployment, and rollback management. Coordinates release-manager, cicd-engineer, tester, and do
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: operations
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Comprehensive GitHub release orchestration with AI swarm coordination for automated versioning, testing, deployment, and rollback management. Coordinates release-manager, cicd-engineer, tester, and do [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,13 +2,8 @@
 name: ui-ux-excellence
 description: Comprehensive UI/UX enhancement cascade that transforms generic websites into polished, accessible, brand-differentiated experiences. Combines constraint-based design, WCAG accessibility, micro-intera
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Frontend Development
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Comprehensive UI/UX enhancement cascade that transforms generic websites into polished, accessible, brand-differentiated experiences. Combines constraint-based design, WCAG accessibility, micro-intera [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

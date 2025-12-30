@@ -2,17 +2,8 @@
 name: cascade-orchestrator
 description: Creates sophisticated workflow cascades coordinating multiple micro-skills with sequential pipelines, parallel execution, conditional branching, and Codex sandbox iteration. Enhanced with multi-model
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.1.0
-x-category: orchestration
-x-tags:
-  - orchestration
-  - workflows
-  - cascades
-  - multi-model
-  - codex-integration
-x-author: ruv
-x-verix-description: [assert|neutral] Creates sophisticated workflow cascades coordinating multiple micro-skills with sequential pipelines, parallel execution, conditional branching, and Codex sandbox iteration. Enhanced with multi-model  [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

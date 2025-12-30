@@ -1,18 +1,9 @@
 ---
-name: when-chaining-workflows-use-cascade-orchestrator
+name: cascade-orchestrator
 description: Create sophisticated workflow cascades with sequential pipelines, parallel execution, and conditional branching
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: coordination
-x-tags:
-  - cascade
-  - workflows
-  - orchestration
-  - conditional
-  - branching
-x-author: system
-x-verix-description: [assert|neutral] Create sophisticated workflow cascades with sequential pipelines, parallel execution, and conditional branching [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

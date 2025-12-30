@@ -1,17 +1,9 @@
 ---
-name: when-optimizing-agent-learning-use-reasoningbank-intelligence
+name: reasoningbank-intelligence
 description: Implement adaptive learning with ReasoningBank for pattern recognition, strategy optimization, and continuous improvement
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: utilities
-x-tags:
-  - machine-learning
-  - adaptive-learning
-  - pattern-recognition
-  - optimization
-x-author: ruv
-x-verix-description: [assert|neutral] Implement adaptive learning with ReasoningBank for pattern recognition, strategy optimization, and continuous improvement [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

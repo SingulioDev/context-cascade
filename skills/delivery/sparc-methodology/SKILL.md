@@ -2,17 +2,8 @@
 name: sparc-methodology
 description: SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.7.0
-x-category: development
-x-tags:
-  - sparc
-  - tdd
-  - architecture
-  - orchestration
-  - methodology
-x-author: Claude Flow
-x-verix-description: [assert|neutral] SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

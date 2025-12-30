@@ -2,15 +2,8 @@
 name: sop-dogfooding-pattern-retrieval
 description: 3-part dogfooding workflow Phase 2 - Query Memory-MCP for similar past fixes using vector search, rank patterns, optionally apply transformations. 10-30 seconds execution time.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] 3-part dogfooding workflow Phase 2 - Query Memory-MCP for similar past fixes using vector search, rank patterns, optionally apply transformations. 10-30 seconds execution time. [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

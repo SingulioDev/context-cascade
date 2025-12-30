@@ -2,17 +2,8 @@
 name: quick-quality-check
 description: Lightning-fast quality check using parallel command execution. Runs theater detection, linting, security scan, and basic tests in parallel for instant feedback on code quality.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: quality
-x-tags:
-  - quality
-  - quick
-  - parallel
-  - essential
-  - tier-enhanced
-x-author: ruv
-x-verix-description: [assert|neutral] Lightning-fast quality check using parallel command execution. Runs theater detection, linting, security scan, and basic tests in parallel for instant feedback on code quality. [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

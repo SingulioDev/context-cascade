@@ -2,13 +2,8 @@
 name: testing-quality
 description: Testing quality assessment for test suite health, coverage analysis, and test effectiveness. Use when auditing test quality, improving test coverage, or assessing test reliability and maintainability.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.1.0
-x-category: research
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Testing quality assessment for test suite health, coverage analysis, and test effectiveness. Use when auditing test quality, improving test coverage, or assessing test reliability and maintainability. [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

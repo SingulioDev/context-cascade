@@ -2,13 +2,8 @@
 name: platform
 description: Platform services hub routing to Flow Nexus platform skills. Use for cloud AI platform management, neural network training, swarm deployment, and platform authentication. Routes to flow-nexus-neural,
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.1.0
-x-category: platforms
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Platform services hub routing to Flow Nexus platform skills. Use for cloud AI platform management, neural network training, swarm deployment, and platform authentication. Routes to flow-nexus-neural,  [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,15 +2,8 @@
 name: holistic-evaluation
 description: Comprehensive multi-dimensional model evaluation across accuracy, fairness, robustness, efficiency, interpretability, and safety for Deep Research SOP Pipeline E. Use after method development when Qua
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive multi-dimensional model evaluation across accuracy, fairness, robustness, efficiency, interpretability, and safety for Deep Research SOP Pipeline E. Use after method development when Qua [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

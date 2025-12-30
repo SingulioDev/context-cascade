@@ -2,13 +2,8 @@
 name: kubernetes-specialist
 description: Kubernetes orchestration expert for Helm chart development, custom operators and CRDs, service mesh (Istio/Linkerd), auto-scaling strategies (HPA/VPA/Cluster Autoscaler), multi-cluster management, and
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Cloud Platforms
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Kubernetes orchestration expert for Helm chart development, custom operators and CRDs, service mesh (Istio/Linkerd), auto-scaling strategies (HPA/VPA/Cluster Autoscaler), multi-cluster management, and [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

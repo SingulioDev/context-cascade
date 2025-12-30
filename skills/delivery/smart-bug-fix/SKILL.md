@@ -2,17 +2,8 @@
 name: smart-bug-fix
 description: Intelligent bug fixing workflow combining root cause analysis, multi-model reasoning, Codex auto-fix, and comprehensive testing. Uses RCA agent, Codex iteration, and validation to systematically fix b
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.1.0
-x-category: delivery
-x-tags:
-  - debugging
-  - rca
-  - codex
-  - testing
-  - essential
-x-author: ruv
-x-verix-description: [assert|neutral] Intelligent bug fixing workflow combining root cause analysis, multi-model reasoning, Codex auto-fix, and comprehensive testing. Uses RCA agent, Codex iteration, and validation to systematically fix b [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

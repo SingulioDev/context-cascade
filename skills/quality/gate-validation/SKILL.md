@@ -2,15 +2,8 @@
 name: gate-validation
 description: Validate Deep Research SOP quality gates (Gates 1-3) ensuring rigorous GO/NO-GO decisions based on comprehensive requirement checklists with statistical validation. Use at end of research phases (Foun
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Validate Deep Research SOP quality gates (Gates 1-3) ensuring rigorous GO/NO-GO decisions based on comprehensive requirement checklists with statistical validation. Use at end of research phases (Foun [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

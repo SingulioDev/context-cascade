@@ -2,15 +2,8 @@
 name: reproducibility-audit
 description: Comprehensive audit of ML reproducibility packages ensuring ACM Artifact Evaluation compliance with statistical validation for Deep Research SOP Pipeline G. Use before Quality Gate 3 validation when r
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive audit of ML reproducibility packages ensuring ACM Artifact Evaluation compliance with statistical validation for Deep Research SOP Pipeline G. Use before Quality Gate 3 validation when r [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

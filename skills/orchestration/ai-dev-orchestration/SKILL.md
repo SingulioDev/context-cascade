@@ -2,13 +2,8 @@
 name: ai-dev-orchestration
 description: Meta-orchestrator for AI-assisted app development with behavioral guardrails and prompt templates. 5-phase SOP - Product Framing (planner) -> Setup & Foundations (system-architect) -> Feature Developm
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.1.0
-x-category: orchestration
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Meta-orchestrator for AI-assisted app development with behavioral guardrails and prompt templates. 5-phase SOP - Product Framing (planner) -> Setup & Foundations (system-architect) -> Feature Developm [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

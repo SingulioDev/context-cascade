@@ -1,16 +1,9 @@
 ---
-name: agentdb-learning-plugins
+name: agentdb-learning
 description: Create AI learning plugins using AgentDB's 9 reinforcement learning algorithms. Train Decision Transformer, Q-Learning, SARSA, and Actor-Critic models. Deploy these plugins to build self-learning agen
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - platforms
-  - integration
-  - tools
-x-author: ruv
-x-verix-description: [assert|neutral] Create AI learning plugins using AgentDB's 9 reinforcement learning algorithms. Train Decision Transformer, Q-Learning, SARSA, and Actor-Critic models. Deploy these plugins to build self-learning agen [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

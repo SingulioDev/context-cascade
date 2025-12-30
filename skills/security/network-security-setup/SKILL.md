@@ -2,17 +2,8 @@
 name: network-security-setup
 description: Configure Claude Code sandbox network isolation with trusted domains, custom access policies, and environment variables
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: security
-x-tags:
-  - security
-  - network
-  - isolation
-  - trusted-domains
-  - configuration
-x-author: ruv
-x-verix-description: [assert|neutral] Configure Claude Code sandbox network isolation with trusted domains, custom access policies, and environment variables [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

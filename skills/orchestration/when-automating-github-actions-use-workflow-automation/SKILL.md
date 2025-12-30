@@ -1,14 +1,9 @@
 ---
-name: when-automating-github-actions-use-workflow-automation
+name: workflow-automation
 description: Advanced GitHub Actions workflow automation with AI swarm coordination, intelligent CI/CD pipelines, and comprehensive repository management. Coordinates cicd-engineer, workflow-automation, tester, an
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: orchestration
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Advanced GitHub Actions workflow automation with AI swarm coordination, intelligent CI/CD pipelines, and comprehensive repository management. Coordinates cicd-engineer, workflow-automation, tester, an [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

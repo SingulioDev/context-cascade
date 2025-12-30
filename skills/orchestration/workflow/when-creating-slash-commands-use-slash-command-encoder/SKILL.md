@@ -1,18 +1,9 @@
 ---
-name: when-creating-slash-commands-use-slash-command-encoder
+name: slash-command-encoder
 description: Create ergonomic slash commands for fast access to micro-skills with auto-discovery and parameter validation
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: workflow
-x-tags:
-  - slash-commands
-  - cli
-  - automation
-  - micro-skills
-  - encoding
-x-author: ruv
-x-verix-description: [assert|neutral] Create ergonomic slash commands for fast access to micro-skills with auto-discovery and parameter validation [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

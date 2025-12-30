@@ -2,17 +2,8 @@
 name: flow-nexus-platform
 description: Comprehensive Flow Nexus platform management - authentication, sandboxes, app deployment, payments, and challenges (Gold Tier)
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: platform
-x-tags:
-  - authentication
-  - sandboxes
-  - deployment
-  - payments
-  - gamification
-x-author: Flow Nexus
-x-verix-description: [assert|neutral] Comprehensive Flow Nexus platform management - authentication, sandboxes, app deployment, payments, and challenges (Gold Tier) [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

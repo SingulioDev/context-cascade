@@ -2,17 +2,8 @@
 name: slash-command-encoder
 description: Creates ergonomic slash commands (/command) that provide fast, unambiguous access to micro-skills, cascades, and agents. Enhanced with auto-discovery, intelligent routing, parameter validation, and co
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: orchestration
-x-tags:
-  - commands
-  - interface
-  - ergonomics
-  - auto-discovery
-  - composition
-x-author: ruv
-x-verix-description: [assert|neutral] Creates ergonomic slash commands (/command) that provide fast, unambiguous access to micro-skills, cascades, and agents. Enhanced with auto-discovery, intelligent routing, parameter validation, and co [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

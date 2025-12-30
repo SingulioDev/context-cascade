@@ -1,18 +1,9 @@
 ---
-name: when-bridging-web-cli-use-web-cli-teleport
+name: web-cli-teleport
 description: Bridge web interfaces with CLI workflows for seamless bidirectional integration
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: workflow
-x-tags:
-  - web
-  - cli
-  - integration
-  - bridge
-  - teleport
-x-author: ruv
-x-verix-description: [assert|neutral] Bridge web interfaces with CLI workflows for seamless bidirectional integration [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

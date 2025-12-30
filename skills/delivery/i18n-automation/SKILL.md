@@ -2,17 +2,8 @@
 name: i18n-automation
 description: Automate internationalization and localization workflows for web applications with translation, key generation, and library setup
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: delivery
-x-tags:
-  - i18n
-  - translation
-  - localization
-  - automation
-  - react
-x-author: ruv
-x-verix-description: [assert|neutral] Automate internationalization and localization workflows for web applications with translation, key generation, and library setup [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,13 +2,8 @@
 name: opentelemetry-observability
 description: OpenTelemetry specialist for distributed tracing, metrics collection, log correlation, auto-instrumentation, custom spans, trace context propagation, and sampling strategies. Use when implementing obs
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Observability
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] OpenTelemetry specialist for distributed tracing, metrics collection, log correlation, auto-instrumentation, custom spans, trace context propagation, and sampling strategies. Use when implementing obs [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

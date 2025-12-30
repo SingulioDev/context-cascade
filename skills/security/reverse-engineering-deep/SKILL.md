@@ -1,16 +1,9 @@
 ---
-name: reverse-engineering-deep-analysis
+name: reverse-engineering-deep
 description: Advanced binary analysis with runtime execution and symbolic path exploration (RE Levels 3-4). Use when need runtime behavior, memory dumps, secret extraction, or input synthesis to reach specific pro
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: security
-x-tags:
-  - security
-  - compliance
-  - safety
-x-author: ruv
-x-verix-description: [assert|neutral] Advanced binary analysis with runtime execution and symbolic path exploration (RE Levels 3-4). Use when need runtime behavior, memory dumps, secret extraction, or input synthesis to reach specific pro [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

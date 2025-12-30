@@ -2,17 +2,8 @@
 name: ralph-loop
 description: Persistence loop system that prevents premature task completion by using Stop hooks to re-inject prompts until success criteria are met. Named after Ralph Wiggum from The Simpsons. Use for iterative t
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: orchestration
-x-tags:
-  - orchestration
-  - persistence
-  - iteration
-  - automation
-  - tdd
-x-author: Context Cascade (integrated from Anthropic's Ralph Wiggum plugin)
-x-verix-description: [assert|neutral] Persistence loop system that prevents premature task completion by using Stop hooks to re-inject prompts until success criteria are met. Named after Ralph Wiggum from The Simpsons. Use for iterative t [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

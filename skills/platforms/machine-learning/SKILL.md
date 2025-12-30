@@ -2,17 +2,8 @@
 name: machine-learning
 description: Comprehensive machine learning development with training, evaluation, and deployment capabilities. Use when training models, developing ML pipelines, or deploying machine learning systems.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: platforms
-x-tags:
-  - ml
-  - deep-learning
-  - training
-  - evaluation
-  - deployment
-x-author: SPARC System
-x-verix-description: [assert|neutral] Comprehensive machine learning development with training, evaluation, and deployment capabilities. Use when training models, developing ML pipelines, or deploying machine learning systems. [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

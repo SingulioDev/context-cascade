@@ -1,18 +1,9 @@
 ---
-name: when-managing-token-budget-use-token-budget-advisor
+name: token-budget-advisor
 description: Proactive token budget management tool for assessing usage, analyzing task complexity, generating chunking strategies, and creating execution plans that stay within budget limits
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: foundry
-x-tags:
-  - meta-tool
-  - token-management
-  - budget-optimization
-  - task-planning
-  - chunking
-x-author: ruv
-x-verix-description: [assert|neutral] Proactive token budget management tool for assessing usage, analyzing task complexity, generating chunking strategies, and creating execution plans that stay within budget limits [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

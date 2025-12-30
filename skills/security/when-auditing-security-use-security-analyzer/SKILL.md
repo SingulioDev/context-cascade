@@ -1,16 +1,9 @@
 ---
-name: when-auditing-security-use-security-analyzer
+name: security-analyzer
 description: Comprehensive security auditing across static analysis, dynamic testing, dependency vulnerabilities, secrets detection, and OWASP compliance
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: security
-x-tags:
-  - security
-  - compliance
-  - safety
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive security auditing across static analysis, dynamic testing, dependency vulnerabilities, secrets detection, and OWASP compliance [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

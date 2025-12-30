@@ -2,17 +2,8 @@
 name: cognitive-lensing
 description: Cross-lingual cognitive framing system that activates different reasoning patterns by embedding multi-lingual activation phrases. Use when facing complex tasks that benefit from specific thinking patt
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.1
-x-category: foundry
-x-tags:
-  - cognitive-science
-  - cross-lingual
-  - meta-prompting
-  - frame-selection
-  - reasoning-enhancement
-x-author: system
-x-verix-description: [assert|neutral] Cross-lingual cognitive framing system that activates different reasoning patterns by embedding multi-lingual activation phrases. Use when facing complex tasks that benefit from specific thinking patt [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

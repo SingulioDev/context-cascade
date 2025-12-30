@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: codex-reasoning
 description: Use GPT-5-Codex's specialized reasoning for alternative approaches and second opinions
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - codex
-  - openai
-  - gpt-5-codex
-  - reasoning
-  - alternative-solutions
-x-author: system
-x-verix-description: [assert|neutral] Use GPT-5-Codex's specialized reasoning for alternative approaches and second opinions [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

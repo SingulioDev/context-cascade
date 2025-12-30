@@ -2,13 +2,8 @@
 name: visual-art-composition
 description: Orthogonal framework for generating image prompts using 13 independently combinable aesthetic dimensions from 29+ cultural and theoretical art traditions
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: specialists
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Orthogonal framework for generating image prompts using 13 independently combinable aesthetic dimensions from 29+ cultural and theoretical art traditions [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

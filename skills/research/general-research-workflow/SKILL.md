@@ -2,13 +2,8 @@
 name: general-research-workflow
 description: Systematic 6-phase research methodology for history, mythology, and literature implementing Red's (OSP) evidence-based approach. Use when researching topics outside academic ML scope that require prim
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 3.0
-x-category: research
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Systematic 6-phase research methodology for history, mythology, and literature implementing Red's (OSP) evidence-based approach. Use when researching topics outside academic ML scope that require prim [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

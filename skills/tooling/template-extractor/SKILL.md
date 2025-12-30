@@ -2,13 +2,8 @@
 name: template-extractor
 description: Reverse-engineer document templates to extract exact design specifications and generate reusable AI prompts for pixel-perfect document recreation
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: tooling
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Reverse-engineer document templates to extract exact design specifications and generate reusable AI prompts for pixel-perfect document recreation [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

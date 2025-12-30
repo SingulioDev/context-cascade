@@ -2,17 +2,8 @@
 name: flow-nexus-neural
 description: Train and deploy neural networks in distributed E2B sandboxes with Flow Nexus
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: ai-ml
-x-tags:
-  - neural-networks
-  - distributed-training
-  - machine-learning
-  - deep-learning
-  - flow-nexus
-x-author: ruv
-x-verix-description: [assert|neutral] Train and deploy neural networks in distributed E2B sandboxes with Flow Nexus [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -1,16 +1,9 @@
 ---
-name: reverse-engineering-quick-triage
+name: reverse-engineering-quick
 description: Fast binary analysis with string reconnaissance and static disassembly (RE Levels 1-2). Use when triaging suspicious binaries, extracting IOCs quickly, or performing initial malware analysis. Complete
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: security
-x-tags:
-  - security
-  - compliance
-  - safety
-x-author: ruv
-x-verix-description: [assert|neutral] Fast binary analysis with string reconnaissance and static disassembly (RE Levels 1-2). Use when triaging suspicious binaries, extracting IOCs quickly, or performing initial malware analysis. Complete [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

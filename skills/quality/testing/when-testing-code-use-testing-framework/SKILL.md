@@ -1,16 +1,9 @@
 ---
-name: when-testing-code-use-testing-framework
+name: testing-framework
 description: - **Skill ID**: when-testing-code-use-testing-framework
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] - **Skill ID**: when-testing-code-use-testing-framework [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

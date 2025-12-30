@@ -1,18 +1,9 @@
 ---
-name: when-debugging-ml-training-use-ml-training-debugger
+name: ml-training-debugger
 description: Debug ML training issues and optimize performance including loss divergence, overfitting, and slow convergence
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: machine-learning
-x-tags:
-  - debugging
-  - ml
-  - training
-  - optimization
-  - troubleshooting
-x-author: ruv
-x-verix-description: [assert|neutral] Debug ML training issues and optimize performance including loss divergence, overfitting, and slow convergence [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

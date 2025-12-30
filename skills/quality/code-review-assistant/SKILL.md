@@ -2,17 +2,8 @@
 name: code-review-assistant
 description: Comprehensive PR review using multi-agent swarm with specialized reviewers for security, performance, style, tests, and documentation. Provides detailed feedback with auto-fix suggestions and merge re
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.1.0
-x-category: quality
-x-tags:
-  - review
-  - pr
-  - github
-  - swarm
-  - essential
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive PR review using multi-agent swarm with specialized reviewers for security, performance, style, tests, and documentation. Provides detailed feedback with auto-fix suggestions and merge re [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

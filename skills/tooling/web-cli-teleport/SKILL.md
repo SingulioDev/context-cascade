@@ -2,17 +2,8 @@
 name: web-cli-teleport
 description: Guide users on when to use Claude Code Web vs CLI and seamlessly teleport sessions between environments
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: tooling
-x-tags:
-  - workflow
-  - teleport
-  - session-management
-  - web
-  - cli
-x-author: ruv
-x-verix-description: [assert|neutral] Guide users on when to use Claude Code Web vs CLI and seamlessly teleport sessions between environments [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

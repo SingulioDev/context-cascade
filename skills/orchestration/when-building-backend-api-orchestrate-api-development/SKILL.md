@@ -2,13 +2,8 @@
 name: when-building-backend-api-orchestrate-api-development
 description: Use when building a production-ready REST API from requirements through deployment. Orchestrates 8-12 specialist agents across 5 phases using Test-Driven Development methodology. Covers planning, arch
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: orchestration
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Use when building a production-ready REST API from requirements through deployment. Orchestrates 8-12 specialist agents across 5 phases using Test-Driven Development methodology. Covers planning, arch [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

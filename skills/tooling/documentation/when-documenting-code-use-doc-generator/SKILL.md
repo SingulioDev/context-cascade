@@ -1,18 +1,9 @@
 ---
-name: when-documenting-code-use-doc-generator
+name: doc-generator
 description: Automated comprehensive code documentation generation with API docs, README files, inline comments, and architecture diagrams
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: tooling
-x-tags:
-  - documentation
-  - api-docs
-  - readme
-  - comments
-  - diagrams
-x-author: system
-x-verix-description: [assert|neutral] Automated comprehensive code documentation generation with API docs, README files, inline comments, and architecture diagrams [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

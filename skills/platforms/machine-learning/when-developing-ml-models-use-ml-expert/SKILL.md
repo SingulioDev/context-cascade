@@ -1,18 +1,9 @@
 ---
-name: when-developing-ml-models-use-ml-expert
+name: ml-expert
 description: Specialized ML model development, training, and deployment workflow
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: machine-learning
-x-tags:
-  - ml
-  - training
-  - deployment
-  - model-development
-  - neural-networks
-x-author: ruv
-x-verix-description: [assert|neutral] Specialized ML model development, training, and deployment workflow [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

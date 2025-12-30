@@ -1,18 +1,9 @@
 ---
-name: when-profiling-performance-use-performance-profiler
+name: performance-profiler
 description: Comprehensive performance profiling, bottleneck detection, and optimization system
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: performance
-x-tags:
-  - performance
-  - profiling
-  - optimization
-  - benchmarking
-  - mece
-x-author: Claude Code
-x-verix-description: [assert|neutral] Comprehensive performance profiling, bottleneck detection, and optimization system [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,15 +2,8 @@
 name: style-audit
 description: Audits code against CI/CD style rules, quality guidelines, and best practices, then rewrites code to meet standards without breaking functionality. Use this skill after functionality validation to ens
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Audits code against CI/CD style rules, quality guidelines, and best practices, then rewrites code to meet standards without breaking functionality. Use this skill after functionality validation to ens [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

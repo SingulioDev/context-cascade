@@ -1,16 +1,9 @@
 ---
-name: code-formatter
+name: pilot-1-code-formatter
 description: Automatically format code files using the appropriate formatter based on file type, providing clear feedback on changes made
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: foundry
-x-tags:
-  - foundry
-  - creation
-  - meta-tools
-x-author: pilot-test
-x-verix-description: [assert|neutral] Automatically format code files using the appropriate formatter based on file type, providing clear feedback on changes made [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

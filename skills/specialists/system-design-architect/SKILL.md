@@ -2,17 +2,8 @@
 name: system-design-architect
 description: Comprehensive system design methodology using Dr. Synthara's organism-based approach. Treats systems as living organisms with specialized organs (API, DB, cache, queues), circulation (load balancing),
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: specialists
-x-tags:
-  - system-design
-  - architecture
-  - scaling
-  - infrastructure
-  - interviews
-x-author: Context Cascade (Dr. Synthara methodology)
-x-verix-description: [assert|neutral] Comprehensive system design methodology using Dr. Synthara's organism-based approach. Treats systems as living organisms with specialized organs (API, DB, cache, queues), circulation (load balancing), [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

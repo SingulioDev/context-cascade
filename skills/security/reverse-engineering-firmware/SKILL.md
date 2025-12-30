@@ -1,16 +1,9 @@
 ---
-name: reverse-engineering-firmware-analysis
+name: reverse-engineering-firmware
 description: Firmware extraction and IoT security analysis (RE Level 5) for routers and embedded systems. Use when analyzing IoT firmware, extracting embedded filesystems (SquashFS/JFFS2/CramFS), finding hardcoded
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: IoT Security, Embedded Systems, Firmware Reverse Engineering
-x-tags:
-  - security
-  - compliance
-  - safety
-x-author: ruv
-x-verix-description: [assert|neutral] Firmware extraction and IoT security analysis (RE Level 5) for routers and embedded systems. Use when analyzing IoT firmware, extracting embedded filesystems (SquashFS/JFFS2/CramFS), finding hardcoded [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

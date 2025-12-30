@@ -1,14 +1,9 @@
 ---
-name: SKILL
+name: flow-nexus-platform
 description: SKILL skill for platforms workflows
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] SKILL skill for platforms workflows [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

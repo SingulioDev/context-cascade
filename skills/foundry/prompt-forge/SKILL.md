@@ -2,17 +2,8 @@
 name: prompt-forge
 description: Meta-prompt that generates improved prompts and templates. Can improve other prompts including Skill Forge and even itself. All improvements are gated by frozen eval harness. Use when optimizing promp
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.1
-x-category: foundry
-x-tags:
-  - meta-prompt
-  - self-improvement
-  - recursive
-  - dogfooding
-  - cognitive-frames
-x-author: system
-x-verix-description: [assert|neutral] Meta-prompt that generates improved prompts and templates. Can improve other prompts including Skill Forge and even itself. All improvements are gated by frozen eval harness. Use when optimizing promp [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,17 +2,8 @@
 name: ml
 description: Machine Learning development workflow with experiment tracking, hyperparameter optimization, and MLOps integration
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: specialized-development
-x-tags:
-  - machine-learning
-  - mlops
-  - experiment-tracking
-  - hyperparameter-tuning
-  - model-registry
-x-author: ruv
-x-verix-description: [assert|neutral] Machine Learning development workflow with experiment tracking, hyperparameter optimization, and MLOps integration [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

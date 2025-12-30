@@ -108,9 +108,15 @@ function parseYamlFrontmatter(content) {
   return result;
 }
 
-// Official fields that don't need x- prefix
-const OFFICIAL_SKILL_FIELDS = ['name', 'description', 'allowed-tools'];
+// Official fields (Anthropic format) - only these allowed in SKILL.md/agent frontmatter
+const OFFICIAL_SKILL_FIELDS = ['name', 'description', 'allowed-tools', 'model'];
 const OFFICIAL_AGENT_FIELDS = ['name', 'description', 'tools', 'model', 'permissionMode', 'skills'];
+
+// Sidecar tracking
+const sidecarStats = {
+  withSidecar: 0,
+  withoutSidecar: 0
+};
 
 // Validate custom field has x- prefix
 function validateCustomFieldPrefix(frontmatter, officialFields) {
@@ -123,11 +129,12 @@ function validateCustomFieldPrefix(frontmatter, officialFields) {
   return warnings;
 }
 
-// Validate a skill file
+// Validate a skill file (Option C: official format + metadata.json sidecar)
 function validateSkill(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
   const frontmatter = parseYamlFrontmatter(content);
   const errors = [];
+  const skillDir = path.dirname(filePath);
 
   if (!frontmatter) {
     errors.push('No YAML frontmatter found');
@@ -138,7 +145,7 @@ function validateSkill(filePath) {
     if (!frontmatter.description) {
       errors.push('Missing required field: description');
     }
-    // Check for allowed-tools (required in Anthropic format)
+    // Check for allowed-tools (recommended in Anthropic format)
     if (!frontmatter['allowed-tools']) {
       errors.push('WARNING: Missing recommended field: allowed-tools');
     }
@@ -146,9 +153,28 @@ function validateSkill(filePath) {
     if (frontmatter.description && frontmatter.description.includes('[assert|')) {
       errors.push('WARNING: description contains VERIX notation (should be plain text)');
     }
-    // Check for x- prefix on custom fields
-    const prefixWarnings = validateCustomFieldPrefix(frontmatter, OFFICIAL_SKILL_FIELDS);
-    errors.push(...prefixWarnings);
+    // In Option C format, no custom fields allowed in SKILL.md - they go in metadata.json
+    const nonOfficialFields = Object.keys(frontmatter).filter(k => !OFFICIAL_SKILL_FIELDS.includes(k));
+    if (nonOfficialFields.length > 0) {
+      errors.push(`WARNING: Non-official fields in SKILL.md (should be in metadata.json): ${nonOfficialFields.join(', ')}`);
+    }
+  }
+
+  // Check for metadata.json sidecar (Option C format)
+  const metadataPath = path.join(skillDir, 'metadata.json');
+  if (fs.existsSync(metadataPath)) {
+    sidecarStats.withSidecar++;
+    // Validate metadata.json structure
+    try {
+      const metadata = JSON.parse(fs.readFileSync(metadataPath, 'utf-8'));
+      if (!metadata.version && !metadata.category) {
+        errors.push('WARNING: metadata.json missing version or category');
+      }
+    } catch (e) {
+      errors.push(`ERROR: Invalid metadata.json: ${e.message}`);
+    }
+  } else {
+    sidecarStats.withoutSidecar++;
   }
 
   return errors;
@@ -268,11 +294,13 @@ function generateReport() {
     results.pluginJson.errors.forEach(e => console.log(`   - ${e}`));
   }
 
-  console.log('\n2. SKILLS');
+  console.log('\n2. SKILLS (Option C: SKILL.md + metadata.json)');
   console.log('-'.repeat(40));
   console.log(`   Total:  ${results.skills.total}`);
   console.log(`   Valid:  ${results.skills.valid}`);
   console.log(`   Invalid: ${results.skills.errors.length}`);
+  console.log(`   With metadata.json sidecar: ${sidecarStats.withSidecar}`);
+  console.log(`   Without sidecar: ${sidecarStats.withoutSidecar}`);
   if (results.skills.errors.length > 0 && VERBOSE) {
     results.skills.errors.slice(0, 10).forEach(e => {
       console.log(`   - ${e.file}: ${e.errors.join(', ')}`);

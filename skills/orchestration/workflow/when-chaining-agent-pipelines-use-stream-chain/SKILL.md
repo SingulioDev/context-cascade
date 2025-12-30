@@ -1,18 +1,9 @@
 ---
-name: when-chaining-agent-pipelines-use-stream-chain
+name: stream-chain
 description: Chain agent outputs as inputs in sequential or parallel pipelines for data flow orchestration
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: workflow
-x-tags:
-  - pipeline
-  - streaming
-  - data-flow
-  - chaining
-  - orchestration
-x-author: ruv
-x-verix-description: [assert|neutral] Chain agent outputs as inputs in sequential or parallel pipelines for data flow orchestration [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

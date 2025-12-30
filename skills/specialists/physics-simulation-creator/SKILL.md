@@ -2,17 +2,8 @@
 name: physics-simulation-creator
 description: Create optimal physics simulations using Non-Newtonian Calculus (NNC) parameter tuning. Use for ANY physics simulation to maximize accuracy and minimize computational complexity. The k parameter optim
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.1.0
-x-category: specialists
-x-tags:
-  - physics
-  - simulation
-  - numerical-methods
-  - optimization
-  - NNC
-x-author: meta-calculus-toolkit
-x-verix-description: [assert|neutral] Create optimal physics simulations using Non-Newtonian Calculus (NNC) parameter tuning. Use for ANY physics simulation to maximize accuracy and minimize computational complexity. The k parameter optim [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -1,18 +1,9 @@
 ---
-name: when-mapping-dependencies-use-dependency-mapper
+name: dependency-mapper
 description: Comprehensive dependency mapping, analysis, and visualization tool for software projects
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: analysis
-x-tags:
-  - dependencies
-  - graph-analysis
-  - security
-  - visualization
-  - mece
-x-author: Claude Code
-x-verix-description: [assert|neutral] Comprehensive dependency mapping, analysis, and visualization tool for software projects [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

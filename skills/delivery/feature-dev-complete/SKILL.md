@@ -2,17 +2,8 @@
 name: feature-dev-complete
 description: Complete feature development lifecycle from research to deployment. Uses Gemini Search for best practices, architecture design, Codex prototyping, comprehensive testing, and documentation generation.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.1.0
-x-category: delivery
-x-tags:
-  - feature
-  - development
-  - lifecycle
-  - multi-model
-  - essential
-x-author: ruv
-x-verix-description: [assert|neutral] Complete feature development lifecycle from research to deployment. Uses Gemini Search for best practices, architecture design, Codex prototyping, comprehensive testing, and documentation generation.  [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

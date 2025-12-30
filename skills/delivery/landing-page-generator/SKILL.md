@@ -2,13 +2,8 @@
 name: landing-page-generator
 description: Comprehensive 6-phase SOP for AI-driven landing page creation (Research -> Copy -> Inspiration -> Build -> Iterate -> Deploy). Use when building marketing pages, sales pages, or product landing pages.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: delivery
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Comprehensive 6-phase SOP for AI-driven landing page creation (Research -> Copy -> Inspiration -> Build -> Iterate -> Deploy). Use when building marketing pages, sales pages, or product landing pages. [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

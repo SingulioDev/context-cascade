@@ -1,18 +1,9 @@
 ---
-name: when-coordinating-collective-intelligence-use-hive-mind
+name: hive-mind
 description: Advanced Hive Mind collective intelligence for queen-led multi-agent coordination with consensus and memory
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: coordination
-x-tags:
-  - hive-mind
-  - collective-intelligence
-  - consensus
-  - queen-coordinator
-  - distributed-memory
-x-author: system
-x-verix-description: [assert|neutral] Advanced Hive Mind collective intelligence for queen-led multi-agent coordination with consensus and memory [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,13 +2,8 @@
 name: react-specialist
 description: Modern React development specialist for React 18+ with hooks, context, suspense, server components (Next.js 13+), state management (Redux/Zustand/Jotai), performance optimization (React.memo, useMemo,
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Frontend Specialists
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Modern React development specialist for React 18+ with hooks, context, suspense, server components (Next.js 13+), state management (Redux/Zustand/Jotai), performance optimization (React.memo, useMemo, [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

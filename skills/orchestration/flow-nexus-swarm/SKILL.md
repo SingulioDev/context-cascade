@@ -2,17 +2,8 @@
 name: flow-nexus-swarm
 description: Cloud-based AI swarm deployment and event-driven workflow automation with Flow Nexus platform
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: orchestration
-x-tags:
-  - swarm
-  - workflow
-  - cloud
-  - agents
-  - automation
-x-author: ruv
-x-verix-description: [assert|neutral] Cloud-based AI swarm deployment and event-driven workflow automation with Flow Nexus platform [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

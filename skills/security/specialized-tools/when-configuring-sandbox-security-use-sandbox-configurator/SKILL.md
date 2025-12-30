@@ -1,16 +1,9 @@
 ---
-name: when-configuring-sandbox-security-use-sandbox-configurator
+name: sandbox-configurator
 description: ```yaml
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: security
-x-tags:
-  - security
-  - compliance
-  - safety
-x-author: ruv
-x-verix-description: [assert|neutral] ```yaml [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

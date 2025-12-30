@@ -2,13 +2,8 @@
 name: agent-selector
 description: Intelligent agent selection from 203-agent registry using semantic matching and capability analysis
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.1.0
-x-category: orchestration
-x-tags:
-  - general
-x-author: System
-x-verix-description: [assert|neutral] Intelligent agent selection from 203-agent registry using semantic matching and capability analysis [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

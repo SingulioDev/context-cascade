@@ -1,16 +1,9 @@
 ---
-name: when-detecting-fake-code-use-theater-detection
+name: theater-detection
 description: Detects non-functional 'theater' code that appears complete but doesn't actually work. Use this skill to identify code that looks correct in static analysis but fails during execution, preventing fake
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Detects non-functional 'theater' code that appears complete but doesn't actually work. Use this skill to identify code that looks correct in static analysis but fails during execution, preventing fake [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

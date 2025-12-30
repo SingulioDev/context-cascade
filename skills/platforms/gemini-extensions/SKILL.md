@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: gemini-extensions
 description: Access Gemini's 70+ extensions ecosystem including Figma, Stripe, Postman, Shopify
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - gemini
-  - extensions
-  - figma
-  - stripe
-  - integrations
-x-author: system
-x-verix-description: [assert|neutral] Access Gemini's 70+ extensions ecosystem including Figma, Stripe, Postman, Shopify [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

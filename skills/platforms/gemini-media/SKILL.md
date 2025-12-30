@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: gemini-media
 description: Generate images and videos using Gemini's Imagen and Veo integration
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - gemini
-  - image-generation
-  - video-generation
-  - visualization
-  - media
-x-author: system
-x-verix-description: [assert|neutral] Generate images and videos using Gemini's Imagen and Veo integration [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

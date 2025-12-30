@@ -2,13 +2,8 @@
 name: when-reviewing-pull-request-orchestrate-comprehensive-code-review
 description: Use when conducting comprehensive code review for pull requests across multiple quality dimensions. Orchestrates 12-15 specialized reviewer agents across 4 phases using star topology coordination. Cov
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: orchestration
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Use when conducting comprehensive code review for pull requests across multiple quality dimensions. Orchestrates 12-15 specialized reviewer agents across 4 phases using star topology coordination. Cov [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

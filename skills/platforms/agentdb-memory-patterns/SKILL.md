@@ -2,15 +2,8 @@
 name: agentdb-memory-patterns
 description: Apply persistent memory patterns for AI agents using AgentDB. Implement session memory, configure long-term storage, enable pattern learning, and manage context across sessions. Use when building stat
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - platforms
-  - integration
-  - tools
-x-author: ruv
-x-verix-description: [assert|neutral] Apply persistent memory patterns for AI agents using AgentDB. Implement session memory, configure long-term storage, enable pattern learning, and manage context across sessions. Use when building stat [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

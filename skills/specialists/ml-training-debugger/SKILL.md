@@ -2,14 +2,8 @@
 name: ml-training-debugger
 description: **Version**: 1.0.0
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: specialists
-x-tags:
-  - specialists
-  - domain-expert
-x-author: ruv
-x-verix-description: [assert|neutral] **Version**: 1.0.0 [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,15 +2,8 @@
 name: base-template-generator
 description: Generate clean, production-ready boilerplate templates for Node.js, Python, Go, React, Vue, and other frameworks. Use when starting new projects or creating consistent foundational code structures. Pr
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: foundry
-x-tags:
-  - foundry
-  - creation
-  - meta-tools
-x-author: ruv
-x-verix-description: [assert|neutral] Generate clean, production-ready boilerplate templates for Node.js, Python, Go, React, Vue, and other frameworks. Use when starting new projects or creating consistent foundational code structures. Pr [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

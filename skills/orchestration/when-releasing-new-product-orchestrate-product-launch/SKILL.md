@@ -2,13 +2,8 @@
 name: when-releasing-new-product-orchestrate-product-launch
 description: Use when launching a new product end-to-end from market research through post-launch monitoring. Orchestrates 15+ specialist agents across 5 phases in a 10-week coordinated workflow including research
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: orchestration
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Use when launching a new product end-to-end from market research through post-launch monitoring. Orchestrates 15+ specialist agents across 5 phases in a 10-week coordinated workflow including research [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,14 +2,8 @@
 name: language-specialists
 description: Unified language specialists for Python and TypeScript development, providing expert guidance for modern backend APIs, type-safe development, async optimization, and framework integration (Django/Flas
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Specialized Development
-x-tags:
-  - specialists
-  - domain-expert
-x-author: ruv
-x-verix-description: [assert|neutral] Unified language specialists for Python and TypeScript development, providing expert guidance for modern backend APIs, type-safe development, async optimization, and framework integration (Django/Flas [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

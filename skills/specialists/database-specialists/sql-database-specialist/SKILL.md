@@ -2,13 +2,8 @@
 name: sql-database-specialist
 description: SQL database specialist for PostgreSQL/MySQL optimization, EXPLAIN plan analysis, index optimization, query rewriting, partitioning strategies, connection pooling, and database performance tuning. Use
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Database Specialists
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] SQL database specialist for PostgreSQL/MySQL optimization, EXPLAIN plan analysis, index optimization, query rewriting, partitioning strategies, connection pooling, and database performance tuning. Use [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

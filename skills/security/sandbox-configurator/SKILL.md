@@ -2,16 +2,8 @@
 name: sandbox-configurator
 description: Configure Claude Code sandbox security with file system and network isolation boundaries
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: security
-x-tags:
-  - security
-  - sandbox
-  - configuration
-  - network-isolation
-x-author: ruv
-x-verix-description: [assert|neutral] Configure Claude Code sandbox security with file system and network isolation boundaries [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

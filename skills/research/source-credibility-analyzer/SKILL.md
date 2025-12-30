@@ -2,13 +2,8 @@
 name: source-credibility-analyzer
 description: Standalone tool for automated source evaluation using program-of-thought scoring rubrics. Outputs credibility (1-5), bias (1-5), and priority (1-5) scores with transparent explanations. Use when evalu
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0
-x-category: research
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Standalone tool for automated source evaluation using program-of-thought scoring rubrics. Outputs credibility (1-5), bias (1-5), and priority (1-5) scores with transparent explanations. Use when evalu [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

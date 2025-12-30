@@ -2,17 +2,8 @@
 name: meta-loop-orchestrator
 description: Orchestrates the recursive self-improvement meta loop by coordinating foundry skills (agent-creator, skill-forge, prompt-forge) with Ralph Wiggum persistence loops. Use when running recursive improvem
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: orchestration
-x-tags:
-  - orchestration
-  - meta-loop
-  - recursive-improvement
-  - foundry
-  - ralph-wiggum
-x-author: Context Cascade
-x-verix-description: [assert|neutral] Orchestrates the recursive self-improvement meta loop by coordinating foundry skills (agent-creator, skill-forge, prompt-forge) with Ralph Wiggum persistence loops. Use when running recursive improvem [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

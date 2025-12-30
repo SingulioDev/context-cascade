@@ -1,14 +1,9 @@
 ---
-name: SKILL
+name: flow-nexus-neural
 description: SKILL skill for security workflows
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: security
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] SKILL skill for security workflows [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

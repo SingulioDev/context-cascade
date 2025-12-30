@@ -1,18 +1,9 @@
 ---
-name: verification-and-quality-assurance
+name: verification-quality
 description: Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: quality-assurance
-x-tags:
-  - verification
-  - truth-scoring
-  - quality
-  - rollback
-  - metrics
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

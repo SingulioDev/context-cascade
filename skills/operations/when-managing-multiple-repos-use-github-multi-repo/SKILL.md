@@ -1,14 +1,9 @@
 ---
-name: when-managing-multiple-repos-use-github-multi-repo
+name: github-multi-repo
 description: Multi-repository coordination, synchronization, and architecture management with AI swarm orchestration. Coordinates repo-architect, code-analyzer, and coordinator agents across multiple repositories
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: operations
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Multi-repository coordination, synchronization, and architecture management with AI swarm orchestration. Coordinates repo-architect, code-analyzer, and coordinator agents across multiple repositories  [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

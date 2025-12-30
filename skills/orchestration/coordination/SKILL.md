@@ -2,17 +2,8 @@
 name: coordination
 description: Advanced multi-agent coordination patterns including mesh, hierarchical, and adaptive topologies with state synchronization, consensus mechanisms, and distributed task execution. Use when orchestratin
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: orchestration
-x-tags:
-  - coordination
-  - multi-agent
-  - orchestration
-  - topology
-  - consensus
-x-author: ruv
-x-verix-description: [assert|neutral] Advanced multi-agent coordination patterns including mesh, hierarchical, and adaptive topologies with state synchronization, consensus mechanisms, and distributed task execution. Use when orchestratin [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

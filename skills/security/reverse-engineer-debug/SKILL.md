@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: reverse-engineer-debug
 description: Perform systematic reverse engineering root cause analysis to debug issues and find real underlying problems
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.1.0
-x-category: security
-x-tags:
-  - debugging
-  - rca
-  - root-cause-analysis
-  - reverse-engineering
-  - investigation
-x-author: system
-x-verix-description: [assert|neutral] Perform systematic reverse engineering root cause analysis to debug issues and find real underlying problems [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

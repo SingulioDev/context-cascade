@@ -1,14 +1,9 @@
 ---
-name: ReasoningBank Adaptive Learning with AgentDB
+name: reasoningbank-agentdb
 description: ReasoningBank Adaptive Learning with AgentDB skill for agentdb workflows
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: agentdb
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] ReasoningBank Adaptive Learning with AgentDB skill for agentdb workflows [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

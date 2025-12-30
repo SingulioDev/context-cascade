@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: gemini-search
 description: Get real-time web information using Gemini's built-in Google Search grounding
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - gemini
-  - web-search
-  - real-time
-  - documentation
-  - current-info
-x-author: system
-x-verix-description: [assert|neutral] Get real-time web information using Gemini's built-in Google Search grounding [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

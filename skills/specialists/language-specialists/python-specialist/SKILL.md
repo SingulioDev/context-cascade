@@ -2,13 +2,8 @@
 name: python-specialist
 description: Expert Python development specialist for backend APIs, async/await optimization, Django/Flask/FastAPI frameworks, type hints, packaging, and performance profiling. Use when building Python backend ser
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Language Specialists
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Expert Python development specialist for backend APIs, async/await optimization, Django/Flask/FastAPI frameworks, type hints, packaging, and performance profiling. Use when building Python backend ser [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

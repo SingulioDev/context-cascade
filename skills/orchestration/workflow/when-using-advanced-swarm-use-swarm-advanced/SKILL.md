@@ -1,18 +1,9 @@
 ---
-name: when-using-advanced-swarm-use-swarm-advanced
+name: swarm-advanced
 description: Advanced swarm patterns with dynamic topology switching and self-organizing behaviors for complex multi-agent coordination
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: workflow
-x-tags:
-  - swarm
-  - advanced
-  - coordination
-  - topology
-  - self-organizing
-x-author: ruv
-x-verix-description: [assert|neutral] Advanced swarm patterns with dynamic topology switching and self-organizing behaviors for complex multi-agent coordination [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

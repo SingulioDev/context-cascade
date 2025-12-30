@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: gemini-megacontext
 description: Analyze entire codebases with Gemini's 1 million token context window - process 30K lines at once
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - gemini
-  - codebase-analysis
-  - architecture
-  - large-context
-  - multi-file
-x-author: system
-x-verix-description: [assert|neutral] Analyze entire codebases with Gemini's 1 million token context window - process 30K lines at once [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

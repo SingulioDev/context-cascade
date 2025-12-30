@@ -2,15 +2,8 @@
 name: compliance
 description: Regulatory compliance validation and documentation for GDPR, HIPAA, SOC 2, PCI-DSS, and ISO 27001. Use when implementing compliance controls, conducting compliance audits, or preparing for certificati
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: security
-x-tags:
-  - security
-  - compliance
-  - safety
-x-author: ruv
-x-verix-description: [assert|neutral] Regulatory compliance validation and documentation for GDPR, HIPAA, SOC 2, PCI-DSS, and ISO 27001. Use when implementing compliance controls, conducting compliance audits, or preparing for certificati [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

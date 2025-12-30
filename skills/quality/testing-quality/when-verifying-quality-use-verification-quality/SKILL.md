@@ -1,16 +1,9 @@
 ---
-name: when-verifying-quality-use-verification-quality
+name: verification-quality
 description: Comprehensive quality verification and validation through static analysis, dynamic testing, integration validation, and certification gates
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: testing-quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive quality verification and validation through static analysis, dynamic testing, integration validation, and certification gates [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

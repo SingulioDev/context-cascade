@@ -2,17 +2,8 @@
 name: stream-chain
 description: Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: workflow
-x-tags:
-  - streaming
-  - pipeline
-  - chaining
-  - multi-agent
-  - workflow
-x-author: ruv
-x-verix-description: [assert|neutral] Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,15 +2,8 @@
 name: sop-dogfooding-quality-detection
 description: 3-part dogfooding workflow Phase 1 - Run Connascence analysis, store results in Memory-MCP with WHO/WHEN/PROJECT/WHY tagging. 30-60 seconds execution time.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] 3-part dogfooding workflow Phase 1 - Run Connascence analysis, store results in Memory-MCP with WHO/WHEN/PROJECT/WHY tagging. 30-60 seconds execution time. [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

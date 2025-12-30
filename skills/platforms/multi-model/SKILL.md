@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: multi-model
 description: Intelligent multi-model orchestrator that routes tasks to Gemini or Codex based on their strengths
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - orchestration
-  - multi-model
-  - routing
-  - automation
-  - gemini
-x-author: system
-x-verix-description: [assert|neutral] Intelligent multi-model orchestrator that routes tasks to Gemini or Codex based on their strengths [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

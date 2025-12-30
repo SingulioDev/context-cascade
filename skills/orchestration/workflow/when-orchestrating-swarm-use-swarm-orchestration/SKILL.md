@@ -1,18 +1,9 @@
 ---
-name: when-orchestrating-swarm-use-swarm-orchestration
+name: swarm-orchestration
 description: Complex multi-agent swarm orchestration with task decomposition, distributed execution, and result synthesis
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: workflow
-x-tags:
-  - swarm
-  - orchestration
-  - coordination
-  - task-decomposition
-  - result-synthesis
-x-author: ruv
-x-verix-description: [assert|neutral] Complex multi-agent swarm orchestration with task decomposition, distributed execution, and result synthesis [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

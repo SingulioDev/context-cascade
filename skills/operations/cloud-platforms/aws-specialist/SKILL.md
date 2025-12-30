@@ -2,13 +2,8 @@
 name: aws-specialist
 description: AWS cloud specialist for infrastructure as code with CloudFormation/CDK, serverless with Lambda, container orchestration with ECS/Fargate, database management with RDS, storage with S3/CloudFront CDN,
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Cloud Platforms
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] AWS cloud specialist for infrastructure as code with CloudFormation/CDK, serverless with Lambda, container orchestration with ECS/Fargate, database management with RDS, storage with S3/CloudFront CDN, [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

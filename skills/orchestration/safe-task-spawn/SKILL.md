@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: safe-task-spawn
 description: Validated wrapper around Task() calls that enforces agent registry compliance, prevents invalid spawns, and logs all spawn attempts for audit trails
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: orchestration
-x-tags:
-  - orchestration
-  - validation
-  - safety
-  - task-spawning
-  - audit
-x-author: system
-x-verix-description: [assert|neutral] Validated wrapper around Task() calls that enforces agent registry compliance, prevents invalid spawns, and logs all spawn attempts for audit trails [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

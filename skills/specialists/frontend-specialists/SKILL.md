@@ -2,14 +2,8 @@
 name: frontend-specialists
 description: Comprehensive frontend development system with specialist agents for React, Vue, UI components, CSS styling, accessibility, and performance optimization. Use when building modern web applications, com
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Frontend Development
-x-tags:
-  - specialists
-  - domain-expert
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive frontend development system with specialist agents for React, Vue, UI components, CSS styling, accessibility, and performance optimization. Use when building modern web applications, com [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

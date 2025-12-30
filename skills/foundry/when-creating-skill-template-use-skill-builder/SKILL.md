@@ -1,17 +1,9 @@
 ---
-name: when-creating-skill-template-use-skill-builder
+name: skill-builder
 description: Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: utilities
-x-tags:
-  - skill-creation
-  - templates
-  - yaml
-  - documentation
-x-author: system
-x-verix-description: [assert|neutral] Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -1,17 +1,9 @@
 ---
-name: when-analyzing-skill-gaps-use-skill-gap-analyzer
+name: skill-gap-analyzer
 description: Analyze skill library to identify coverage gaps, redundant overlaps, optimization opportunities, and provide recommendations for skill portfolio improvement
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: foundry
-x-tags:
-  - meta-tool
-  - skill-management
-  - gap-analysis
-  - portfolio-optimization
-x-author: ruv
-x-verix-description: [assert|neutral] Analyze skill library to identify coverage gaps, redundant overlaps, optimization opportunities, and provide recommendations for skill portfolio improvement [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

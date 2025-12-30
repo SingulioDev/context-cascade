@@ -2,13 +2,8 @@
 name: academic-reading-workflow
 description: Systematic reading methodology for academic papers and complex texts implementing Blue's (OSP) 3-phase approach. Use when reading papers/books that require deep understanding, searchable annotation sy
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0
-x-category: research
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Systematic reading methodology for academic papers and complex texts implementing Blue's (OSP) 3-phase approach. Use when reading papers/books that require deep understanding, searchable annotation sy [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

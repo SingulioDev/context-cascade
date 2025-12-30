@@ -2,15 +2,8 @@
 name: skill-forge
 description: Advanced skill creation system for Claude Code that combines deep intent analysis, evidence-based prompting principles, and systematic skill engineering. Use when creating new skills or refining exist
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 3.0.1
-x-category: foundry
-x-tags:
-  - foundry
-  - creation
-  - meta-tools
-x-author: ruv
-x-verix-description: [assert|neutral] Advanced skill creation system for Claude Code that combines deep intent analysis, evidence-based prompting principles, and systematic skill engineering. Use when creating new skills or refining exist [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

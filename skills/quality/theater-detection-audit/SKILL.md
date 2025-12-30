@@ -2,15 +2,8 @@
 name: theater-detection-audit
 description: Performs comprehensive audits to detect placeholder code, mock data, TODO markers, and incomplete implementations in codebases. Use this skill when you need to find all instances of 'theater' in code
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Performs comprehensive audits to detect placeholder code, mock data, TODO markers, and incomplete implementations in codebases. Use this skill when you need to find all instances of 'theater' in code  [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

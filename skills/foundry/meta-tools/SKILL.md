@@ -2,15 +2,8 @@
 name: meta-tools
 description: Meta-tools is a comprehensive framework for creating, validating, optimizing, and composing development tools. It provides automated workflows for tool generation, cross-tool composition, and orchestr
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: foundry
-x-tags:
-  - foundry
-  - creation
-  - meta-tools
-x-author: ruv
-x-verix-description: [assert|neutral] Meta-tools is a comprehensive framework for creating, validating, optimizing, and composing development tools. It provides automated workflows for tool generation, cross-tool composition, and orchestr [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

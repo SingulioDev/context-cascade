@@ -1,16 +1,9 @@
 ---
-name: agentdb-performance-optimization
+name: agentdb-optimization
 description: Apply quantization to reduce memory by 4-32x. Enable HNSW indexing for 150x faster search. Configure caching strategies and implement batch operations. Use when optimizing memory usage, improving sear
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - platforms
-  - integration
-  - tools
-x-author: ruv
-x-verix-description: [assert|neutral] Apply quantization to reduce memory by 4-32x. Enable HNSW indexing for 150x faster search. Configure caching strategies and implement batch operations. Use when optimizing memory usage, improving sear [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

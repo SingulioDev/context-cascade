@@ -1,18 +1,9 @@
 ---
-name: when-creating-presentations-use-pptx-generation
+name: pptx-generation
 description: Enterprise-grade PowerPoint deck generation using evidence-based prompting, workflow enforcement, constraint-based design
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: utilities
-x-tags:
-  - presentation
-  - pptx
-  - slides
-  - enterprise
-  - documentation
-x-author: ruv
-x-verix-description: [assert|neutral] Enterprise-grade PowerPoint deck generation using evidence-based prompting, workflow enforcement, constraint-based design [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

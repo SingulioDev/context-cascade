@@ -1,18 +1,9 @@
 ---
-name: when-optimizing-prompts-use-prompt-optimization-analyzer
+name: prompt-optimization-analyzer
 description: Active diagnostic tool for analyzing prompt quality, detecting anti-patterns, identifying token waste, and providing optimization recommendations
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: foundry
-x-tags:
-  - meta-tool
-  - prompt-engineering
-  - optimization
-  - analysis
-  - diagnostics
-x-author: ruv
-x-verix-description: [assert|neutral] Active diagnostic tool for analyzing prompt quality, detecting anti-patterns, identifying token waste, and providing optimization recommendations [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

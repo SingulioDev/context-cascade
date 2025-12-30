@@ -2,17 +2,8 @@
 name: expertise-manager
 description: Manages domain expertise files for Agent Experts-style learning. Handles expertise creation, validation, pre-action loading, and post-build auto-updates. Enables agents to accumulate persistent domain
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.1.0
-x-category: foundry
-x-tags:
-  - expertise
-  - learning
-  - mental-model
-  - self-improve
-  - agent-experts
-x-author: system
-x-verix-description: [assert|neutral] Manages domain expertise files for Agent Experts-style learning. Handles expertise creation, validation, pre-action loading, and post-build auto-updates. Enables agents to accumulate persistent domain [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

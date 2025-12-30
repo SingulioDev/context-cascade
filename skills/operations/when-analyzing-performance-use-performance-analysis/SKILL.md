@@ -1,18 +1,9 @@
 ---
-name: when-analyzing-performance-use-performance-analysis
+name: performance-analysis
 description: Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Claude Flow swarms
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: performance
-x-tags:
-  - performance
-  - analysis
-  - bottleneck
-  - optimization
-  - profiling
-x-author: system
-x-verix-description: [assert|neutral] Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Claude Flow swarms [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

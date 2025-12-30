@@ -1,16 +1,9 @@
 ---
-name: when-reviewing-code-comprehensively-use-code-review-assistant
+name: code-review-assistant
 description: Comprehensive PR review with multi-agent swarm specialization for security, performance, style, tests, and documentation
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: testing-quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive PR review with multi-agent swarm specialization for security, performance, style, tests, and documentation [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

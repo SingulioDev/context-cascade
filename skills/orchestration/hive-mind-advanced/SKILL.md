@@ -2,17 +2,8 @@
 name: hive-mind-advanced
 description: Advanced Hive Mind collective intelligence system for queen-led multi-agent coordination with consensus mechanisms and persistent memory
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: coordination
-x-tags:
-  - hive-mind
-  - swarm
-  - queen-worker
-  - consensus
-  - collective-intelligence
-x-author: Claude Flow Team
-x-verix-description: [assert|neutral] Advanced Hive Mind collective intelligence system for queen-led multi-agent coordination with consensus mechanisms and persistent memory [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

@@ -2,17 +2,8 @@
 name: github-code-review
 description: Comprehensive GitHub code review with AI-powered swarm coordination
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: github
-x-tags:
-  - code-review
-  - github
-  - swarm
-  - pr-management
-  - automation
-x-author: Claude Code Flow
-x-verix-description: [assert|neutral] Comprehensive GitHub code review with AI-powered swarm coordination [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

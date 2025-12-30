@@ -2,13 +2,8 @@
 name: typescript-specialist
 description: Modern TypeScript development specialist for Node.js backends, Express/Nest.js frameworks, type-safe frontend development, npm package creation, and monorepo management with Turborepo/nx. Use when bui
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: Language Specialists
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Modern TypeScript development specialist for Node.js backends, Express/Nest.js frameworks, type-safe frontend development, npm package creation, and monorepo management with Turborepo/nx. Use when bui [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

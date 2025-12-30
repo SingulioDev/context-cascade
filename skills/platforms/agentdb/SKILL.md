@@ -2,15 +2,8 @@
 name: agentdb
 description: High-performance vector search and semantic memory for AI agents. Use when implementing RAG systems, semantic document retrieval, or persistent agent memory. Provides 150x faster vector search vs trad
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - platforms
-  - integration
-  - tools
-x-author: ruv
-x-verix-description: [assert|neutral] High-performance vector search and semantic memory for AI agents. Use when implementing RAG systems, semantic document retrieval, or persistent agent memory. Provides 150x faster vector search vs trad [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

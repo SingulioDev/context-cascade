@@ -2,17 +2,8 @@
 name: micro-skill-creator
 description: Rapidly creates atomic, focused skills optimized with evidence-based prompting, specialist agents, and systematic testing. Each micro-skill does one thing exceptionally well using self-consistency, pr
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: foundry
-x-tags:
-  - skill-creation
-  - atomic
-  - modular
-  - evidence-based
-  - specialist-agents
-x-author: ruv
-x-verix-description: [assert|neutral] Rapidly creates atomic, focused skills optimized with evidence-based prompting, specialist agents, and systematic testing. Each micro-skill does one thing exceptionally well using self-consistency, pr [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

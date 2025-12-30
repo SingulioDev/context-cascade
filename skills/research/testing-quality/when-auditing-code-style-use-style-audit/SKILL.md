@@ -1,14 +1,9 @@
 ---
-name: when-auditing-code-style-use-style-audit
+name: style-audit
 description: Code style and conventions audit with auto-fix capabilities for comprehensive style enforcement
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: testing-quality
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Code style and conventions audit with auto-fix capabilities for comprehensive style enforcement [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

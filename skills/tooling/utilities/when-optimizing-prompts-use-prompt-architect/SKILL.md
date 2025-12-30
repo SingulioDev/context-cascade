@@ -1,17 +1,9 @@
 ---
-name: when-optimizing-prompts-use-prompt-architect
+name: prompt-architect
 description: Comprehensive framework for analyzing, creating, and refining prompts for AI systems using evidence-based techniques
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: utilities
-x-tags:
-  - prompt-engineering
-  - optimization
-  - ai-systems
-  - llm
-x-author: ruv
-x-verix-description: [assert|neutral] Comprehensive framework for analyzing, creating, and refining prompts for AI systems using evidence-based techniques [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

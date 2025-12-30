@@ -2,13 +2,8 @@
 name: clarity-linter
 description: Machine-readable code clarity auditing with cognitive load optimization. 3-phase SOP - Metrics Collection (code-analyzer) -> Rubric Evaluation (reviewer) -> Fix Generation (coder + analyst). Detects t
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.1.0
-x-category: quality
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Machine-readable code clarity auditing with cognitive load optimization. 3-phase SOP - Metrics Collection (code-analyzer) -> Rubric Evaluation (reviewer) -> Fix Generation (coder + analyst). Detects t [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

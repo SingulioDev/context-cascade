@@ -2,17 +2,8 @@
 name: swarm-advanced
 description: Advanced swarm orchestration patterns for research, development, testing, and complex distributed workflows
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 2.0.0
-x-category: orchestration
-x-tags:
-  - swarm
-  - distributed
-  - parallel
-  - research
-  - testing
-x-author: Claude Flow Team
-x-verix-description: [assert|neutral] Advanced swarm orchestration patterns for research, development, testing, and complex distributed workflows [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

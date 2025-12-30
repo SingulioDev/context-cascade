@@ -1,14 +1,9 @@
 ---
-name: when-managing-github-projects-use-github-project-management
+name: github-project-management
 description: Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning. Coordinates planner, issue-tracker, and project-board-sync agents to autom
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: operations
-x-tags:
-  - general
-x-author: system
-x-verix-description: [assert|neutral] Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning. Coordinates planner, issue-tracker, and project-board-sync agents to autom [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

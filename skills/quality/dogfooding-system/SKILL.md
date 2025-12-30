@@ -2,15 +2,8 @@
 name: dogfooding-system
 description: Self-improvement system enabling Claude Code to detect code quality violations, retrieve past fix patterns from memory, and orchestrate automated improvement cycles. Uses Connascence Analyzer for 7+ v
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: quality
-x-tags:
-  - quality
-  - testing
-  - validation
-x-author: ruv
-x-verix-description: [assert|neutral] Self-improvement system enabling Claude Code to detect code quality violations, retrieve past fix patterns from memory, and orchestrate automated improvement cycles. Uses Connascence Analyzer for 7+ v [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->

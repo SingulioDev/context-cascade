@@ -1,18 +1,9 @@
 ---
-name: SKILL
+name: codex-auto
 description: Use Codex CLI's Full Auto mode for unattended sandboxed prototyping and scaffolding
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - codex
-  - openai
-  - prototyping
-  - automation
-  - full-auto
-x-author: system
-x-verix-description: [assert|neutral] Use Codex CLI's Full Auto mode for unattended sandboxed prototyping and scaffolding [ground:given] [conf:0.95] [state:confirmed]
 ---
+
 
 ---
 <!-- S0 META-IDENTITY                                                             -->
