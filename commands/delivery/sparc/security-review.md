@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC-SECURITY-REVIEW COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc-security-review
+description: Primary input
 version: 1.0.0
 binding: skill:sparc-security-review
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

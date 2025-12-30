@@ -1,6 +1,6 @@
 {
   "name": "context-cascade",
-  "description": "Context-saving nested plugin architecture for Claude Code. Playbooks contain skills, skills contain agents, agents contain commands. Only load what you need - context cascades down through layers on demand, saving 90%+ context space. Includes 203 agents, 122 skills, 29 playbooks, SPARC methodology, Three-Loop system, and Byzantine consensus.",
+  "description": "Context-saving nested plugin architecture for Claude Code. Playbooks contain skills, skills contain agents, agents contain commands. Only load what you need - context cascades down through layers on demand, saving 90%+ context space. Includes 223 agents, 225 skills, 229 commands, SPARC methodology, Three-Loop system, and Byzantine consensus.",
   "version": "3.0.0",
   "author": {
     "name": "DNYoussef",
@@ -36,7 +36,7 @@
   },
   "x-contents": {
     "playbooks": {
-      "count": 30,
+      "count": 1,
       "note": "Top-level entry points - only playbooks loaded initially",
       "categories": [
         "delivery",
@@ -50,7 +50,7 @@
       ]
     },
     "skills": {
-      "count": 196,
+      "count": 225,
       "note": "Loaded by playbooks on demand",
       "categories": [
         "delivery",
@@ -66,7 +66,7 @@
       ]
     },
     "agents": {
-      "count": 211,
+      "count": 229,
       "note": "Loaded by skills on demand",
       "categories": [
         "delivery",
@@ -82,7 +82,7 @@
       ]
     },
     "commands": {
-      "count": 223,
+      "count": 229,
       "note": "Embedded in agents, loaded last",
       "prefixes": [
         "/sparc",
@@ -111,9 +111,9 @@
   "x-features": [
     "Context Cascade Architecture - Load only what you need (90%+ context savings)",
     "Nested Hierarchy: Playbooks -> Skills -> Agents -> Commands",
-    "211 AI Agents organized in 10 categories",
-    "196 Skills with SKILL.md format",
-    "30 Playbooks for common workflows",
+    "223 AI Agents organized in 10 categories",
+    "225 Skills with SKILL.md format",
+    "1 Playbook for common workflows",
     "MCP Auto-Initialization - Agents declare their MCP requirements",
     "Three-Loop Integrated Development System",
     "SPARC Methodology (Specification, Pseudocode, Architecture, Refinement, Completion)",

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC:API-DESIGNER COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc:api-designer
+description: Primary input
 version: 2.0.0
 binding: skill:sparc:api-designer
 category: sparc-specialists
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* CREATE-CASCADE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: create-cascade
+description: Workflow goal description
 version: 1.0.0
 binding: skill:cascade-orchestrator
 category: workflow
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

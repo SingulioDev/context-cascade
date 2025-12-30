@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* MONITORING-CONFIGURE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: monitoring-configure
+description: Primary input
 version: 1.0.0
 binding: skill:monitoring-configure
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

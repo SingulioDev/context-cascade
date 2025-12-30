@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC:DATABASE-ARCHITECT COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc:database-architect
+description: Primary input
 version: 2.0.0
 binding: skill:sparc:database-architect
 category: sparc-specialists
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

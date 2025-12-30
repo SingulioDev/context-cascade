@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* AUTOMATION:SCHEDULE-TASK COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: automation:schedule-task
+description: Primary input
 version: 1.0.0
 binding: skill:automation:schedule-task
 category: Automation Hooks
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

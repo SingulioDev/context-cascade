@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* AUDIT-PIPELINE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: audit-pipeline
+description: File or directory to audit
 version: 1.0.0
 binding: skill:cascade:audit-pipeline
 category: workflow
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

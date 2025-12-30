@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RE:QUICK COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: re:quick
+description: Path to binary/executable to analyze
 version: 1.0.0
 binding: skill:reverse-engineering-quick
 category: reverse-engineering
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

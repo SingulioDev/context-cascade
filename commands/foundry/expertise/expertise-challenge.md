@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* EXPERTISE-CHALLENGE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: expertise-challenge
+description: Domain to challenge
 version: 1.0.0
 binding: skill:agent:expertise-adversary
 category: foundry
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

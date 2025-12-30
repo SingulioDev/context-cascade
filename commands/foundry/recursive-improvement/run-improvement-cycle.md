@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RUN-IMPROVEMENT-CYCLE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: run-improvement-cycle
+description: Primary input
 version: 1.0.0
 binding: skill:run-improvement-cycle
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

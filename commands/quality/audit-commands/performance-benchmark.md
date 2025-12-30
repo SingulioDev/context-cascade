@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* PERFORMANCE-BENCHMARK COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: performance-benchmark
+description: Primary input
 version: 2.0.0
 binding: skill:performance-benchmark
 category: audit-commands
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

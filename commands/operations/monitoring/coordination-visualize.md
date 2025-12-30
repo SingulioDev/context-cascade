@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* COORDINATION-VISUALIZE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: coordination-visualize
+description: Primary input
 version: 1.0.0
 binding: skill:coordination-visualize
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

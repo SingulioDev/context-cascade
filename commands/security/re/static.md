@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RE:STATIC COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: re:static
+description: Path to binary/executable to analyze
 version: 1.0.0
 binding: skill:agent:RE-Disassembly-Expert
 category: reverse-engineering
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

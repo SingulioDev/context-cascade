@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* PHASE4_COMPLETION_SUMMARY COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: PHASE4_COMPLETION_SUMMARY
+description: Primary input
 version: 1.0.0
 binding: skill:PHASE4_COMPLETION_SUMMARY
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

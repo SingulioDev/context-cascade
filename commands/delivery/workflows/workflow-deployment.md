@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* WORKFLOW-DEPLOYMENT COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: workflow-deployment
+description: Primary input
 version: 1.0.0
 binding: skill:workflow-deployment
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RESEARCH:DATA-ANALYSIS COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: research:data-analysis
+description: Primary input
 version: 1.0.0
 binding: skill:research:data-analysis
 category: Research Workflows
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* AUTOMATION:CRON-JOB COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: automation:cron-job
+description: Primary input
 version: 1.0.0
 binding: skill:automation:cron-job
 category: Automation Hooks
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

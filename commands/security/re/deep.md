@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RE:DEEP COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: re:deep
+description: Path to binary/executable to analyze
 version: 1.0.0
 binding: skill:reverse-engineering-deep
 category: reverse-engineering
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* FUNCTIONALITY-AUDIT COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: functionality-audit
+description: File or directory to test
 version: 1.0.0
 binding: skill:micro-functionality-audit
 category: audit
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC-SUPABASE-ADMIN COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc-supabase-admin
+description: Primary input
 version: 1.0.0
 binding: skill:sparc-supabase-admin
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* AUTOMATION:RETRY-FAILED COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: automation:retry-failed
+description: Primary input
 version: 1.0.0
 binding: skill:automation:retry-failed
 category: Automation Hooks
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

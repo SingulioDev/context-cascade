@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* ACCESSIBILITY-AUDIT COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: accessibility-audit
+description: Primary input
 version: 2.0.0
 binding: skill:accessibility-audit
 category: audit-commands
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

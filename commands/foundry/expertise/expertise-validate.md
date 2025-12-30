@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* EXPERTISE-VALIDATE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: expertise-validate
+description: Domain to validate
 version: 1.0.0
 binding: skill:expertise-manager
 category: foundry
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

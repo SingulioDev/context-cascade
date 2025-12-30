@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* CREATE-MICRO-SKILL COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: create-micro-skill
+description: Single responsibility description
 version: 1.0.0
 binding: skill:micro-skill-creator
 category: workflow
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC-SPEC-PSEUDOCODE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc-spec-pseudocode
+description: Primary input
 version: 1.0.0
 binding: skill:sparc-spec-pseudocode
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* PHASE4_QUICK_REFERENCE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: PHASE4_QUICK_REFERENCE
+description: Primary input
 version: 1.0.0
 binding: skill:PHASE4_QUICK_REFERENCE
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

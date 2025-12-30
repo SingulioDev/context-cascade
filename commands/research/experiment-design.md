@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RESEARCH:EXPERIMENT-DESIGN COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: research:experiment-design
+description: Primary input
 version: 1.0.0
 binding: skill:research:experiment-design
 category: Research Workflows
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

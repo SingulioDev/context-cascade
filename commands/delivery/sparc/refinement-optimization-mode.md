@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC-REFINEMENT-OPTIMIZATION-MODE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc-refinement-optimization-mode
+description: Primary input
 version: 1.0.0
 binding: skill:sparc-refinement-optimization-mode
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RE:FIRMWARE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: re:firmware
+description: Path to firmware image/binary
 version: 1.0.0
 binding: skill:reverse-engineering-firmware
 category: reverse-engineering
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

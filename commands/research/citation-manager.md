@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RESEARCH:CITATION-MANAGER COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: research:citation-manager
+description: Primary input
 version: 1.0.0
 binding: skill:research:citation-manager
 category: Research Workflows
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

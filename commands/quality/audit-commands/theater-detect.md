@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* THEATER-DETECT COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: theater-detect
+description: File or directory to scan
 version: 1.0.0
 binding: skill:micro-theater-detection-audit
 category: audit
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

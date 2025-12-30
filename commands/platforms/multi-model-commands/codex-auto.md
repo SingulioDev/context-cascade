@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* CODEX-AUTO COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: codex-auto
+description: Implementation task description
 version: 1.0.0
 binding: skill:multi-model:codex-auto
 category: multi-model
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

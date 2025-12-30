@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC-POST-DEPLOYMENT-MONITORING-MODE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc-post-deployment-monitoring-mode
+description: Primary input
 version: 1.0.0
 binding: skill:sparc-post-deployment-monitoring-mode
 category: delivery
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

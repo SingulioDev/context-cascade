@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* GEMINI-MEGACONTEXT COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: gemini-megacontext
+description: Analysis task description
 version: 1.0.0
 binding: skill:multi-model:gemini-megacontext
 category: multi-model
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

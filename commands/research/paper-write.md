@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RESEARCH:PAPER-WRITE COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: research:paper-write
+description: Primary input
 version: 1.0.0
 binding: skill:research:paper-write
 category: Research Workflows
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

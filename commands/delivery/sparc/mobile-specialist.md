@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC:MOBILE-SPECIALIST COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc:mobile-specialist
+description: Primary input
 version: 2.0.0
 binding: skill:sparc:mobile-specialist
 category: sparc-specialists
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

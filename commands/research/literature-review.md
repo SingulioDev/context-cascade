@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RESEARCH:LITERATURE-REVIEW COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: research:literature-review
+description: Primary input
 version: 1.0.0
 binding: skill:research:literature-review
 category: Research Workflows
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

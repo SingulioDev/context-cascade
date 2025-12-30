@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* SPARC:FRONTEND-SPECIALIST COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: sparc:frontend-specialist
+description: Primary input
 version: 2.0.0
 binding: skill:sparc:frontend-specialist
 category: sparc-specialists
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

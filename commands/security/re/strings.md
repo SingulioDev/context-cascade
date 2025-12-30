@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RE:STRINGS COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: re:strings
+description: Path to binary/executable to analyze
 version: 1.0.0
 binding: skill:agent:RE-String-Analyst
 category: reverse-engineering
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */

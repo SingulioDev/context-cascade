@@ -1,13 +1,12 @@
-/*============================================================================*/
-/* RE:DYNAMIC COMMAND :: VERILINGUA x VERIX EDITION                   */
-/*============================================================================*/
-
 ---
 name: re:dynamic
+description: Path to binary/executable to analyze
 version: 1.0.0
 binding: skill:agent:RE-Runtime-Tracer
 category: reverse-engineering
 ---
+/*============================================================================*/
+
 
 /*----------------------------------------------------------------------------*/
 /* S0 COMMAND IDENTITY                                                         */
