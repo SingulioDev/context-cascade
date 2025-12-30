@@ -86,6 +86,18 @@ from .cascade_optimizer import (
     optimize_cascade_prompt,
 )
 
+# Phase D: Two-Stage Optimizer and Holdout Validation
+from .two_stage_optimizer import (
+    TwoStageOptimizer,
+    CognitiveOptProblem,
+)
+from .holdout_validator import (
+    HoldoutValidator,
+    ValidationResult,
+    ValidationHistory,
+    create_holdout_validator,
+)
+
 __all__ = [
     # GlobalMOO
     "GlobalMOOClient",
@@ -138,4 +150,12 @@ __all__ = [
     "track_cascade_start",
     "track_cascade_end",
     "optimize_cascade_prompt",
+    # Two-Stage Optimizer
+    "TwoStageOptimizer",
+    "CognitiveOptProblem",
+    # Holdout Validator
+    "HoldoutValidator",
+    "ValidationResult",
+    "ValidationHistory",
+    "create_holdout_validator",
 ]

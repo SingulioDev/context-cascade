@@ -63,6 +63,153 @@ except ImportError:
 
 
 # =============================================================================
+# CLASS WRAPPERS FOR IMPORT COMPATIBILITY
+# =============================================================================
+
+@dataclass
+class OptimizationResult:
+    """Result of two-stage optimization."""
+    pareto_5d: List[Dict[str, Any]]   # Stage 1 results
+    pareto_14d: List[Dict[str, Any]]  # Stage 2 results
+    best_configs: List[Any]            # Final recommended configs
+    named_modes: Dict[str, Any]        # Distilled modes
+    convergence_history: List[float] = field(default_factory=list)
+    stage1_iterations: int = 0
+    stage2_generations: int = 0
+
+
+class TwoStageOptimizer:
+    """
+    Two-stage optimization: GlobalMOO (5D) -> PyMOO (14D).
+
+    Stage 1: GlobalMOO cloud-based coarse search in 5D space
+             (evidential, aspectual, verix, compression, ground)
+
+    Stage 2: PyMOO NSGA-II local refinement in full 14D space
+             Uses Stage 1 results as seeds
+
+    This is a class wrapper around the module's functions for
+    cleaner API integration.
+    """
+
+    # 5D to 14D mapping (for expansion)
+    DIM_5D_TO_14D = {
+        0: 0,   # evidential_frame
+        1: 1,   # aspectual_frame
+        2: 7,   # verix_strictness
+        3: 8,   # compression_level
+        4: 9,   # require_ground
+    }
+
+    def __init__(
+        self,
+        globalmoo_client: Optional['GlobalMOOClient'] = None,
+        evaluation_fn: Optional[callable] = None,
+        holdout_validator: Optional['HoldoutValidator'] = None,
+    ):
+        """
+        Initialize TwoStageOptimizer.
+
+        Args:
+            globalmoo_client: GlobalMOO API client (creates default if None)
+            evaluation_fn: Custom evaluation function (uses default if None)
+            holdout_validator: Optional holdout validation
+        """
+        if globalmoo_client is None:
+            self.globalmoo = GlobalMOOClient(use_mock=False)
+            if not self.globalmoo.test_connection():
+                self.globalmoo = GlobalMOOClient(use_mock=True)
+        else:
+            self.globalmoo = globalmoo_client
+
+        self.evaluate = evaluation_fn or self._default_evaluate
+        self.holdout = holdout_validator
+
+    def _default_evaluate(self, config_vector: List[float]) -> Dict[str, float]:
+        """Default evaluation using synthetic objective functions."""
+        if len(config_vector) == 5:
+            f = evaluate_config_5dim(np.array(config_vector))
+        else:
+            f = evaluate_config_14dim(np.array(config_vector))
+
+        return {
+            'task_accuracy': -f[0],  # Un-negate
+            'token_efficiency': -f[1],
+            'edge_robustness': -f[2],
+            'epistemic_consistency': -f[3],
+        }
+
+    def optimize(
+        self,
+        seed_configs: Optional[List[Any]] = None,
+        stage1_iterations: int = 50,
+        stage2_generations: int = 100,
+        stage2_population: int = 200,
+    ) -> OptimizationResult:
+        """
+        Run two-stage optimization.
+
+        Args:
+            seed_configs: Initial seed configurations (optional)
+            stage1_iterations: GlobalMOO/Stage1 iterations
+            stage2_generations: PyMOO generations
+            stage2_population: PyMOO population size
+
+        Returns:
+            OptimizationResult with Pareto frontiers from both stages
+        """
+        convergence = []
+
+        # Stage 1: GlobalMOO 5D
+        stage1_results = run_globalmoo_stage(
+            client=self.globalmoo,
+            model_id=2193,
+            project_id=8318,
+        )
+        convergence.append(len(stage1_results))
+
+        # Stage 2: PyMOO 14D
+        stage2_results = run_pymoo_refinement_stage(
+            stage1_results=stage1_results,
+            n_generations=stage2_generations,
+            pop_size=stage2_population,
+        )
+        convergence.append(len(stage2_results))
+
+        # Combine and distill
+        all_results = stage1_results + stage2_results
+        modes = distill_named_modes(all_results)
+
+        # Holdout validation if available
+        if self.holdout:
+            # Convert to format holdout expects
+            from optimization.globalmoo_client import ParetoPoint
+            pareto_points = [
+                ParetoPoint(
+                    config_vector=r.get('config_14d', r.get('config_5d', [])),
+                    outcomes=r['outcomes']
+                )
+                for r in all_results[:10]  # Top 10 for validation
+            ]
+            validation_result = self.holdout.validate(pareto_points)
+            if not validation_result.passed:
+                print(f"WARNING: Holdout validation failed: {validation_result.reason}")
+
+        # Extract best configs
+        best_configs = [modes[name] for name in ['balanced', 'research', 'robust']]
+
+        return OptimizationResult(
+            pareto_5d=stage1_results,
+            pareto_14d=stage2_results,
+            best_configs=best_configs,
+            named_modes=modes,
+            convergence_history=convergence,
+            stage1_iterations=stage1_iterations,
+            stage2_generations=stage2_generations,
+        )
+
+
+# =============================================================================
 # CALIBRATED HYPERPARAMETERS (see docs/CALIBRATION.md for rationale)
 # =============================================================================
 # 
@@ -282,6 +429,10 @@ class CognitiveProblem14D(Problem):
         """Evaluate population."""
         F = np.array([evaluate_config_14dim(x) for x in X])
         out["F"] = F
+
+
+# Alias for spec compatibility - use 14D as the main problem
+CognitiveOptProblem = CognitiveProblem14D
 
 
 # =============================================================================

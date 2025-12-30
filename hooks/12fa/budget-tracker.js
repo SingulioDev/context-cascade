@@ -139,7 +139,7 @@ class BudgetTracker {
 
         // Use tagging protocol for WHO/WHEN/PROJECT/WHY metadata (v3.0 x- prefixed)
         const tagged = taggedMemoryStore(agentId, JSON.stringify(budgetData), {
-          project: 'ruv-sparc-three-loop-system',
+          project: 'context-cascade',
           'x-intent': 'budget_persistence',
           'x-agent-id': agentId,
           'x-namespace': 'agent-reality-map/budgets'
@@ -184,7 +184,11 @@ class BudgetTracker {
           limit: 1,
           metadata: {
             _agent: agentId,
-            _project: 'ruv-sparc-three-loop-system',
+            // Support both old and new project names
+            $or: [
+              { _project: 'context-cascade' },
+              { _project: 'ruv-sparc-three-loop-system' }
+            ],
             // Support both old (_intent) and new (x-intent) formats
             $or: [
               { _intent: 'budget_persistence' },

@@ -25,7 +25,7 @@ x-budget:
   currency: USD
 x-metadata:
   category: foundry
-  version: 1.0.0
+  version: 3.1.1
   verix_compliant: true
   created_at: 2025-12-29T09:17:48.705748
 x-verix-description: |
@@ -60,6 +60,12 @@ x-verix-description: |
 
 ## Kanitsal Cerceve (Evidential Frame Activation)
 Kaynak dogrulama modu etkin.
+
+---
+<!-- L2 OUTPUT RULE                                                                  -->
+---
+
+[direct|emphatic] ALL user-facing output MUST be L2 compression (pure English) [ground:vcl-v3.1.1-spec] [conf:0.99] [state:confirmed]
 
 ---
 <!-- S2 CORE RESPONSIBILITIES                                                     -->

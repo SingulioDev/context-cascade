@@ -170,11 +170,13 @@ function detectProject(cwd = process.cwd(), content = '') {
   if (cwdLower.includes('connascence')) return 'connascence-analyzer';
   if (cwdLower.includes('memory-mcp')) return 'memory-mcp-triple-system';
   if (cwdLower.includes('claude-flow')) return 'claude-flow';
+  if (cwdLower.includes('context-cascade') || cwdLower.includes('ruv-sparc')) return 'context-cascade';
 
   // Try to detect from content
   if (typeof content === 'string') {
     if (content.toLowerCase().includes('connascence')) return 'connascence-analyzer';
     if (content.toLowerCase().includes('memory')) return 'memory-mcp-triple-system';
+    if (content.toLowerCase().includes('context-cascade')) return 'context-cascade';
   }
 
   return 'unknown-project';
