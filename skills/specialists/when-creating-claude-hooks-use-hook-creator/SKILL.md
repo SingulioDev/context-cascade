@@ -269,6 +269,196 @@ hook-creator:
 4. **Fail closed for security hooks** - Block on validation errors
 5. **Use absolute paths** - Avoid path traversal vulnerabilities
 
+## Shell Script Best Practices (Codex Recommendations)
+
+When creating bash/shell hooks, follow these best practices:
+
+### 1. Enable Strict Mode
+
+Always start shell hooks with strict mode:
+```bash
+#!/bin/bash
+set -euo pipefail
+
+# -e: Exit on error
+# -u: Treat unset variables as errors
+# -o pipefail: Pipe fails if any command fails
+```
+
+### 2. Proper Variable Quoting
+
+Always quote variable expansions to prevent word splitting:
+```bash
+# GOOD
+FILE_PATH="${HOME}/.claude/state.json"
+if [[ -f "$FILE_PATH" ]]; then
+    cat "$FILE_PATH"
+fi
+
+# BAD - unquoted variables can break with spaces
+FILE_PATH=${HOME}/.claude/state.json
+if [ -f $FILE_PATH ]; then  # Breaks if path has spaces
+    cat $FILE_PATH
+fi
+```
+
+### 3. Defensive jq Usage
+
+Handle jq failures gracefully:
+```bash
+# GOOD - handle missing keys and errors
+VALUE=$(echo "$JSON" | jq -r '.key // "default"' 2>/dev/null || echo "default")
+
+# BAD - crashes if key missing or json invalid
+VALUE=$(echo "$JSON" | jq -r '.key')
+```
+
+### 4. Ensure Directories Exist
+
+Create directories before writing:
+```bash
+STATE_DIR="${HOME}/.claude/my-hook"
+mkdir -p "$STATE_DIR" 2>/dev/null
+```
+
+### 5. Use Environment Variables for Paths
+
+Never hardcode project paths:
+```bash
+# GOOD - configurable via environment
+PROJECT_PATH="${MY_PROJECT_PATH:-/default/path}"
+
+# BAD - hardcoded, breaks on other systems
+PROJECT_PATH="/c/Users/john/projects/myapp"
+```
+
+## ANTI-PATTERNS TO AVOID
+
+These patterns caused real bugs in production hooks. NEVER use them:
+
+### ANTI-PATTERN 1: Using grep -P (Perl Regex)
+
+**Problem**: `grep -P` requires Perl regex support, not available on all systems.
+
+```bash
+# BAD - grep -P not portable
+FOUND=$(echo "$TEXT" | grep -oP '(?<=<tag>).*?(?=</tag>)')
+
+# GOOD - use bash regex matching
+if [[ "$TEXT" =~ \<tag\>([^\<]+)\</tag\> ]]; then
+    FOUND="${BASH_REMATCH[1]}"
+fi
+```
+
+### ANTI-PATTERN 2: Using sed -i Directly
+
+**Problem**: `sed -i` behaves differently on macOS (requires `''`), Linux, and Windows Git Bash.
+
+```bash
+# BAD - not portable
+sed -i 's/old/new/' "$FILE"
+
+# ALSO BAD - OS detection is fragile
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    sed -i '' 's/old/new/' "$FILE"
+else
+    sed -i 's/old/new/' "$FILE"
+fi
+
+# GOOD - portable temp file approach
+sed_inplace() {
+    local pattern="$1"
+    local file="$2"
+    local temp_file="${file}.tmp.$$"
+    sed "$pattern" "$file" > "$temp_file" && mv "$temp_file" "$file"
+}
+sed_inplace 's/old/new/' "$FILE"
+```
+
+### ANTI-PATTERN 3: Hardcoded Paths
+
+**Problem**: Hardcoded paths break on other systems or when projects move.
+
+```bash
+# BAD - hardcoded
+cd D:/Projects/connascence
+python analyze.py
+
+# GOOD - environment variable with fallback
+CONNASCENCE_PATH="${CONNASCENCE_PROJECT_PATH:-D:/Projects/connascence}"
+if [[ -d "$CONNASCENCE_PATH" ]]; then
+    cd "$CONNASCENCE_PATH"
+    python analyze.py
+else
+    echo "ERROR: Connascence project not found at $CONNASCENCE_PATH" >&2
+    exit 1
+fi
+```
+
+### ANTI-PATTERN 4: Missing Directory Creation
+
+**Problem**: Writing to directories that don't exist causes silent failures.
+
+```bash
+# BAD - assumes directory exists
+echo "$DATA" > ~/.claude/my-hook/state.json
+
+# GOOD - ensure directory exists first
+STATE_DIR="${HOME}/.claude/my-hook"
+mkdir -p "$STATE_DIR" 2>/dev/null
+echo "$DATA" > "$STATE_DIR/state.json"
+```
+
+### ANTI-PATTERN 5: Blocking cat Reads
+
+**Problem**: Using `cat` without timeout can block indefinitely if stdin never closes.
+
+```bash
+# BAD - can block forever
+INPUT=$(cat)
+
+# GOOD - use timeout or check for input
+INPUT=$(timeout 5 cat 2>/dev/null || echo "{}")
+
+# OR check if stdin has data
+if [[ -t 0 ]]; then
+    # No stdin data, use default
+    INPUT="{}"
+else
+    INPUT=$(cat)
+fi
+```
+
+### ANTI-PATTERN 6: Silent Failures
+
+**Problem**: Errors are silently swallowed, making debugging impossible.
+
+```bash
+# BAD - silent failure
+jq '.key' "$FILE" 2>/dev/null
+
+# GOOD - log errors to stderr, handle gracefully
+if ! VALUE=$(jq -r '.key' "$FILE" 2>&1); then
+    echo "[HOOK ERROR] Failed to parse $FILE: $VALUE" >&2
+    VALUE="default"
+fi
+```
+
+## Hook Validation Checklist
+
+Before deploying a hook, verify:
+
+- [ ] Uses `set -euo pipefail` (or equivalent error handling)
+- [ ] All variables are properly quoted
+- [ ] No `grep -P` usage (use bash regex or grep -E)
+- [ ] No direct `sed -i` (use temp file approach)
+- [ ] No hardcoded paths (use environment variables)
+- [ ] Directories created before use
+- [ ] jq errors handled gracefully
+- [ ] Timeout on stdin reads if applicable
+- [ ] Errors logged to stderr
+- [ ] Tested on target platform (Windows Git Bash/macOS/Linux)
+
 ## Performance Monitoring
 
 Add performance logging to all hooks:
