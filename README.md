@@ -217,7 +217,61 @@ claude mcp add memory-mcp /path/to/memory-mcp/venv/Scripts/python.exe -u -m src.
 
 ---
 
-## 📋 Complete Command Taxonomy
+## Cognitive Architecture: VeriLingua x VERIX x GlobalMOO
+
+Context Cascade includes a sophisticated cognitive architecture for improved AI reasoning:
+
+### VeriLingua: 7 Cognitive Frames
+
+VeriLingua forces explicit cognitive distinctions drawn from natural languages:
+
+| Frame | Source Language | Forces Distinction |
+|-------|-----------------|-------------------|
+| **Evidential** | Turkish (-mis/-di) | How do you know? (witnessed/reported/inferred/assumed) |
+| **Aspectual** | Russian (perfective/imperfective) | Complete or ongoing? |
+| **Morphological** | Arabic (trilateral roots) | What are the semantic components? |
+| **Compositional** | German (compounding) | Build from primitives |
+| **Honorific** | Japanese (keigo) | Who is the audience? |
+| **Classifier** | Chinese (measure words) | What type/category? |
+| **Spatial** | Guugu Yimithirr (absolute direction) | Absolute position in codebase |
+
+### VERIX: Epistemic Notation
+
+Every claim encodes its epistemic status:
+
+```
+[illocution|affect] content [ground:source] [conf:0.XX] [state:status]
+```
+
+Example: `[assert|positive] Use async/await here [ground:performance_testing] [conf:0.92] [state:confirmed]`
+
+### Three-Loop Architecture
+
+| Loop | Trigger | Duration | Purpose |
+|------|---------|----------|---------|
+| **Loop 1: Execution** | Every request | Seconds-minutes | 5-phase workflow |
+| **Loop 2: Quality** | Per session | Minutes-hours | Theater detection, audits |
+| **Loop 3: Meta** | Every 3 days | Hours | Self-optimization via GlobalMOO |
+
+### GlobalMOO Integration
+
+Multi-objective optimization for cognitive architecture tuning:
+- **Pattern**: GlobalMOO (5D exploration) -> PyMOO NSGA-II (14D refinement)
+- **Objectives**: Accuracy, Efficiency, Reliability, User Satisfaction
+- **Output**: Named modes (audit, speed, research, robust, balanced)
+
+| Mode | Accuracy | Efficiency | Use Case |
+|------|----------|------------|----------|
+| audit | 0.960 | 0.763 | Code review, security |
+| speed | 0.734 | 0.950 | Quick tasks |
+| research | 0.980 | 0.824 | Deep research |
+| balanced | 0.882 | 0.928 | General purpose |
+
+**Full Documentation**: [docs/COGNITIVE-ARCHITECTURE.md](docs/COGNITIVE-ARCHITECTURE.md)
+
+---
+
+## Complete Command Taxonomy
 
 **Total Commands**: 223 (149 original + 75 new)
 **MECE Coverage**: 100% across 10 domains
