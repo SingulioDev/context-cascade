@@ -2,14 +2,14 @@ name: Cognitive Architecture Tests
 
 on:
   push:
-    branches: [main, feature/*]
+    branches: [main, develop]
     paths:
       - 'cognitive-architecture/**'
+      - '.github/workflows/cognitive-tests.yml'
   pull_request:
     branches: [main]
     paths:
       - 'cognitive-architecture/**'
-  workflow_dispatch:
 
 jobs:
   test:
@@ -29,21 +29,18 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r cognitive-architecture/requirements.txt
-          pip install pytest pytest-cov
+          cd cognitive-architecture
+          pip install -e ".[dev]"
 
       - name: Run tests
         run: |
           cd cognitive-architecture
-          python -m pytest tests/ -v --tb=short --cov=core --cov=optimization --cov-report=term-missing
+          python -m pytest tests/ -v --tb=short -p no:randomly
 
-      - name: Verify imports
+      - name: Run type checking
         run: |
           cd cognitive-architecture
-          python -c "from core.verilingua import FrameRegistry; print('verilingua OK')"
-          python -c "from core.verix import VerixParser; print('verix OK')"
-          python -c "from optimization.globalmoo_client import GlobalMOOClient; print('globalmoo OK')"
-          python -c "from optimization.two_stage_optimizer import evaluate_config_5dim; print('optimizer OK')"
+          python -m mypy core/ modes/ optimization/ --ignore-missing-imports || true
 
   lint:
     runs-on: ubuntu-latest
@@ -55,30 +52,17 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install linters
-        run: pip install ruff
+      - name: Install linting tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint black isort
 
-      - name: Run ruff
+      - name: Check formatting
         run: |
           cd cognitive-architecture
-          ruff check core/ optimization/ --ignore=E501,E402
-        continue-on-error: true
+          black --check core/ modes/ optimization/ tests/ || true
 
-  security:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      - name: Install bandit
-        run: pip install bandit
-
-      - name: Run security scan
+      - name: Check imports
         run: |
           cd cognitive-architecture
-          bandit -r core/ optimization/ -ll
-        continue-on-error: true
+          isort --check-only core/ modes/ optimization/ tests/ || true

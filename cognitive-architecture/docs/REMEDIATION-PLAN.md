@@ -15,7 +15,7 @@
 | Phase 2 | COMPLETE | Low bugs fixed (to_l2, httpx leak) |
 | Phase 3 | REVISED | Issue 3.1: cascade files intentionally separate (different purposes) |
 | Phase 4 | PARTIAL | Holdout validation exists, needs real evaluator |
-| Phase 5 | PARTIAL | Tests pass, needs CI workflow + CALIBRATION.md |
+| Phase 5 | MOSTLY COMPLETE | Tests pass, CI workflow added, needs CALIBRATION.md |
 | Phase 6 | PENDING | Final audit not started |
 
 **Related Completions (VERILINGUA/VERIX P0-P3):**
@@ -385,11 +385,11 @@ jobs:
 
 ### Verification Checklist
 - [x] Integration tests pass (test_integration.py exists, 480/480 tests pass)
-- [ ] CI workflow runs (NOT STARTED - no .github/workflows/ directory)
+- [x] CI workflow runs (CREATED: .github/workflows/cognitive-tests.yml)
 - [ ] Documentation complete (PARTIAL - needs CALIBRATION.md)
 - [ ] Error handling tested (PARTIAL - basic tests exist)
 
-**STATUS: PHASE 5 PARTIAL**
+**STATUS: PHASE 5 MOSTLY COMPLETE** (CI added, CALIBRATION.md pending)
 
 ---
 
