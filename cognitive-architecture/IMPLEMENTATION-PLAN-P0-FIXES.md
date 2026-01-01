@@ -532,16 +532,89 @@ The changes are additive and use try/except with graceful degradation, so partia
 
 After implementation, verify:
 
-- [ ] `ClaudeRuntime.execute()` returns `compliance_score` field
-- [ ] `ClaudeRuntime.execute()` returns `validation_feedback` field
-- [ ] `FrameValidationBridge.validate_and_feedback()` is invoked on each execution
-- [ ] `record_mode_outcome()` is called after each execution
-- [ ] `TelemetrySteeringEngine.record_outcome()` receives data
-- [ ] Pareto frontiers are updated based on new data
-- [ ] `ModeSelector.select()` uses steering recommendations
-- [ ] Hooks `on_response_complete()` records telemetry
-- [ ] All tests pass
-- [ ] No regressions in existing functionality
+- [x] `ClaudeRuntime.execute()` returns `compliance_score` field (Commit: 0f64dbc)
+- [x] `ClaudeRuntime.execute()` returns `validation_feedback` field (Commit: 0f64dbc)
+- [x] `FrameValidationBridge.validate_and_feedback()` is invoked on each execution (Commit: 0f64dbc)
+- [x] `record_mode_outcome()` is called after each execution (Commit: 0f64dbc)
+- [x] `TelemetrySteeringEngine.record_outcome()` receives data (Commit: 0f64dbc)
+- [x] Pareto frontiers are updated based on new data (Commit: 0f64dbc)
+- [x] `ModeSelector.select()` uses steering recommendations (Commit: 0f64dbc)
+- [x] Hooks `on_response_complete()` records telemetry (Commit: 0f64dbc)
+- [x] All tests pass (480/480 passing - Commit: 29e7a51)
+- [x] No regressions in existing functionality (Verified)
+
+---
+
+## IMPLEMENTATION STATUS: COMPLETE
+
+### Commits Applied
+
+| Commit | Description | Phase |
+|--------|-------------|-------|
+| `0f64dbc` | P0 fixes (feedback loop closure) | P0 |
+| `f6d61cb` | P1 fixes (richer cognitive forcing + VCL integration) | P1 |
+| `4044868` | P2 fixes (Hofstadter recursion controls) | P2 |
+| `c7cd5c7` | P3 fixes (agent disambiguation + meta-level handling) | P3 |
+| `29e7a51` | Test fixes (update tests for new defaults, fix P3-7 bug) | P3 |
+
+### P0 Fixes (Feedback Loops) - COMPLETE
+- [x] P0-1: Wire `validate_response()` into `ClaudeRuntime.execute()` (core/runtime.py)
+- [x] P0-2: Call `record_mode_outcome()` after task completion (core/runtime.py, hooks/__init__.py)
+
+### P1 Fixes (Richer Cognitive Forcing) - COMPLETE
+- [x] P1-3: Enable morphological/compositional frames by default (core/config.py)
+- [x] P1-4: Integrate VCLValidator into prompt_builder.py validate_response() (core/prompt_builder.py)
+
+### P2 Fixes (Hofstadter Recursion Controls) - COMPLETE
+- [x] P2-5: Add depth parameter to FrameRegistry.get_active() with max_frame_depth enforcement (core/verilingua.py)
+- [x] P2-6: Add detect_ground_cycles() call in verix.py validate() (core/verix.py)
+
+### P3 Fixes (Agent/Meta-Level Handling) - COMPLETE
+- [x] P3-7: Add agent-based validation strictness with _get_agent_strictness() (core/verix.py)
+- [x] P3-8: Add _validate_meta_level() for META/META_VERIX claim handling (core/verix.py)
+
+### Test Suite Status
+- **Total Tests**: 480
+- **Passed**: 480
+- **Failed**: 0
+- **Warnings**: 314 (mostly deprecation warnings)
+
+---
+
+## NEXT PHASE: REMEDIATION-PLAN PHASE 1-6
+
+The P0-P3 VERILINGUA/VERIX fixes are complete. The next work items are from `docs/REMEDIATION-PLAN.md`:
+
+### Phase 1: MEDIUM SEVERITY BUG FIXES
+- Issue 1.1: Case Sensitivity in Frame Scoring
+- Issue 1.2: Shared Mutable State in FrameRegistry
+
+### Phase 2: LOW SEVERITY BUG FIXES
+- Issue 2.1: to_l2() Confidence Logic
+- Issue 2.2: httpx Client Resource Leak
+
+### Phase 3: REDUNDANCY ELIMINATION
+- Issue 3.1: Cascade Implementation Consolidation
+- Issue 3.2: Agent Cognitive Frame Template
+- Issue 3.3: Cascade Storage Deduplication
+
+### Phase 4: ARCHITECTURAL IMPROVEMENTS
+- Issue 4.1: Real Evaluation Loop
+- Issue 4.2: GlobalMOO Error Recovery
+- Issue 4.3: Hyperparameter Documentation
+- Issue 4.4: Named Mode Validation
+
+### Phase 5: MISSING PIECES
+- Issue 5.1: Integration Tests
+- Issue 5.2: CI Integration
+- Issue 5.3: CALIBRATION.md Documentation
+- Issue 5.4: API Error Handling Tests
+
+### Phase 6: FINAL AUDIT
+- Full test suite
+- Theater detection
+- Functionality audit
+- Connascence analysis
 
 ---
 

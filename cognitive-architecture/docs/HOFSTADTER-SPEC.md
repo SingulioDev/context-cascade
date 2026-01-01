@@ -181,19 +181,19 @@ Apply insights from Hofstadter's Metamagical Themas to improve the cognitive arc
 
 ## Implementation Priority
 
-| Priority | Item | Target | Complexity | Impact |
-|----------|------|--------|------------|--------|
-| P0 | Agent identity markers | VERIX | Low | High |
-| P0 | Frame self-reference mode | VERILINGUA | Low | Medium |
-| P1 | Thrashing prevention | VERILINGUA | Medium | High |
-| P1 | Two-tier bounds | GlobalMOO | Low | Medium |
-| P1 | Recursion limits | VERIX | Medium | Medium |
-| P2 | Meta-VERIX levels | VERIX | Medium | Medium |
-| P2 | Self-mod objective | PyMOO | Medium | High |
-| P2 | Thrashing detection | PyMOO | Medium | Medium |
-| P3 | Self-ref signatures | DSPy | High | Medium |
-| P3 | Homoiconic sigs | DSPy | High | High |
-| P3 | Hofstadter optimizer | DSPy | High | High |
+| Priority | Item | Target | Complexity | Impact | Status |
+|----------|------|--------|------------|--------|--------|
+| P0 | Agent identity markers | VERIX | Low | High | DONE (P3-7, commit c7cd5c7) |
+| P0 | Frame self-reference mode | VERILINGUA | Low | Medium | DONE (P3-8, commit c7cd5c7) |
+| P1 | Thrashing prevention | VERILINGUA | Medium | High | DONE (P2-5, commit 4044868) |
+| P1 | Two-tier bounds | GlobalMOO | Low | Medium | DONE (P1-3, commit f6d61cb) |
+| P1 | Recursion limits | VERIX | Medium | Medium | DONE (P2-6, commit 4044868) |
+| P2 | Meta-VERIX levels | VERIX | Medium | Medium | DONE (MetaLevel enum, commit c7cd5c7) |
+| P2 | Self-mod objective | PyMOO | Medium | High | PENDING |
+| P2 | Thrashing detection | PyMOO | Medium | Medium | PENDING |
+| P3 | Self-ref signatures | DSPy | High | Medium | PENDING |
+| P3 | Homoiconic sigs | DSPy | High | High | PENDING |
+| P3 | Hofstadter optimizer | DSPy | High | High | PENDING |
 
 ---
 
