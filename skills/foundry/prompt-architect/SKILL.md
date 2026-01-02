@@ -68,3 +68,54 @@ x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 
 [[HON:teineigo]] [[MOR:root:K-M-T]] [[COM:Commit+Garanti]] [[CLS:ge_promise]] [[EVD:-DI<gozlem>]] [[ASP:sov.]] [[SPC:coord:commit]]
 [commit|confident] <promise>PROMPT_ARCHITECT_VCL_VERIX_V3.1.1_COMPLIANT</promise> kanitli dogfooding ile korunur. [ground:SKILL.md] [conf:0.85] [state:confirmed]
+
+---
+
+## STANDARD OPERATING PROCEDURE (L2 English)
+
+### Purpose
+Optimize user prompts for clarity, structure, and effectiveness while maintaining epistemic hygiene.
+
+### Trigger Conditions
+- Positive: "optimize prompt", "design prompt", "improve my prompt", "self-consistency check"
+- Negative: Route to agent-creator, prompt-forge, or skill-forge instead
+
+### Execution Phases
+
+#### Phase 1: Intent Analysis (NiyetAnalizi)
+1. Parse the user's original prompt
+2. Identify primary intent and constraints
+3. Extract implicit requirements
+4. Ask clarifying questions if ambiguity exists
+5. Document evidence: `[witnessed:user-input]`
+
+#### Phase 2: Prompt Optimization (IstemOptimizasyon)
+1. Restructure for clarity (subject-verb-object)
+2. Add missing context and constraints
+3. Specify success criteria explicitly
+4. Remove ambiguous language
+5. Apply anti-pattern detection:
+   - Epistemic cosplay (overclaiming certainty)
+   - VCL marker leakage (internal notation in output)
+   - Premature optimization
+   - Confidence inflation
+
+#### Phase 3: Validation (Dogrulama)
+1. Verify all constraints addressed
+2. Check epistemic compliance (confidence ceilings)
+3. Validate L2 purity (pure English output)
+4. Generate evidence chain
+5. Confirm aspect marking (task complete vs ongoing)
+
+### Output Format
+Provide the optimized prompt in pure English (L2) with:
+- Clear structure
+- Explicit success criteria
+- Confidence assessment
+- Evidence grounding
+
+### Quality Gates
+- Intent accuracy > 0.8
+- Constraint coverage > 0.9
+- L2 purity = 1.0 (no VCL markers in output)
+- Confidence within ceilings (inference: 0.70, research: 0.85, definition: 0.95)

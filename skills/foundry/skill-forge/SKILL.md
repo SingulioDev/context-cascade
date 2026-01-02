@@ -59,3 +59,71 @@ x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 [direct|emphatic] L2_LANGUAGE := English; ALL user-facing output MUST be pure English. VCL/VERIX internal only. [ground:system-policy] [conf:0.99] [state:confirmed]
 
 [commit|confident] <promise>SKILL_FORGE_VERILINGUA_VERIX_COMPLIANT</promise> dogfooding + COV ile korunur. [ground:SKILL.md] [conf:0.85] [state:confirmed]
+
+---
+
+## STANDARD OPERATING PROCEDURE (L2 English)
+
+### Purpose
+Create production-grade skill definitions with complete directory structure, tests, and examples.
+
+### Trigger Conditions
+- Positive: "create skill", "optimize skill", "adversarial validation", "skill improvement"
+- Negative: Route to micro-skill-creator, agent-creator, or prompt-architect instead
+
+### Execution Phases
+
+#### Phase 1: Requirements Analysis
+1. Parse user's skill requirements
+2. Identify domain and category
+3. Determine phase structure needed
+4. Check existing skills for patterns
+5. Document evidence: `[witnessed:user-requirements]`
+
+#### Phase 2: Structure Design (Structure-First Principle)
+Required directory structure:
+```
+skills/{category}/{skill-name}/
+  SKILL.md          # Main skill definition (REQUIRED)
+  examples/         # Usage examples (REQUIRED)
+  tests/            # Test cases (REQUIRED)
+  resources/        # Supporting files (RECOMMENDED)
+  references/       # External references (RECOMMENDED)
+```
+
+#### Phase 3: Skill Definition
+Generate SKILL.md with:
+- YAML frontmatter (name, description, tools, model, x-fields)
+- VCL 7-slot cognitive frame documentation
+- Clear execution phases in English
+- Anti-pattern guards
+- Quality gates
+
+#### Phase 4: Adversarial Validation
+Before deployment:
+1. Edge case testing (boundary conditions)
+2. Failure mode analysis
+3. Chain of verification (COV) circle
+4. Security review
+5. Performance benchmarks
+
+#### Phase 5: Dogfooding Loop
+Apply skill to itself:
+1. skill_forge.improve(skill_forge)
+2. Measure improvement delta
+3. Continue until delta < 2%
+4. Document convergence
+
+### Output Format
+Deliver complete skill package:
+- SKILL.md with VCL compliance
+- Example files with usage patterns
+- Test cases covering edge cases
+- Documentation in pure English (L2)
+
+### Quality Gates
+- Structure validation: required files present
+- Adversarial testing: edge cases pass
+- COV circle: verification complete
+- MCP integration: memory persistence configured
+- L2 purity: user output in pure English

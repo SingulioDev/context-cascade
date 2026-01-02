@@ -62,3 +62,68 @@ x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 [direct|emphatic] L2_LANGUAGE := English; ALL user-facing output MUST be pure English. VCL/VERIX internal only. [ground:system-policy] [conf:0.99] [state:confirmed]
 
 [commit|confident] <promise>AGENT_CREATOR_VCL_V3.1.1_FULL_7SLOT_COMPLIANT</promise> dogfooding ile denetlenir. [ground:SKILL.md] [conf:0.85] [state:confirmed]
+
+---
+
+## STANDARD OPERATING PROCEDURE (L2 English)
+
+### Purpose
+Create production-grade agent definitions in YAML format with complete system prompts.
+
+### Trigger Conditions
+- Positive: "create agent", "design agent", "domain expert agent", "multi-agent coordination"
+- Negative: Route to micro-skill-creator, prompt-architect, or skill-forge instead
+
+### Critical Rule
+**MUST output complete agent YAML file (frontmatter + body) in response.** Never respond with just "created" message.
+
+### Execution Phases
+
+#### Phase 1: Requirements Analysis
+1. Parse user's agent requirements
+2. Identify domain expertise needed
+3. Determine tool requirements
+4. Check AGENT_REGISTRY for existing similar agents
+5. Document evidence: `[witnessed:user-requirements]`
+
+#### Phase 2: Agent Design
+1. Design system prompt structure
+2. Define capabilities and constraints
+3. Specify allowed tools
+4. Set model preference (opus/sonnet/haiku)
+5. Document x- prefixed custom fields
+
+#### Phase 3: YAML Generation
+Generate complete agent definition:
+```yaml
+---
+name: {agent-name}
+description: {clear English description}
+allowed-tools: [Tool1, Tool2]
+model: sonnet
+x-category: {category}
+x-capabilities: [{cap1}, {cap2}]
+---
+
+{System prompt content with clear instructions}
+```
+
+#### Phase 4: Registry Validation
+1. Verify agent not already in registry (no duplicates)
+2. Check naming conventions match category
+3. Validate YAML schema compliance
+4. Ensure VCL 7-slot documentation in body
+
+#### Phase 5: Output Delivery
+Respond with COMPLETE agent file including:
+- Full YAML frontmatter
+- Complete system prompt body
+- Usage examples
+- Registry path location
+
+### Quality Gates
+- Registry compliance: agent exists in AGENT_REGISTRY before deploy
+- YAML validity: parseable frontmatter
+- VCL documentation: 7-slot coverage in body
+- No VERIX markers in description field
+- L2 purity: pure English output to user
