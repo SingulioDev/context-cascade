@@ -1,123 +1,70 @@
 ---
 name: sparc-methodology
-description: SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration
+description: SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) delivery framework with explicit constraints, checkpoints, and confidence ceilings.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
+
+### Purpose
+Guide complex delivery work through SPARC phases with structure-first discipline, adversarial validation, and clear evidence trails.
+
+### Trigger Conditions
+- **Positive:** multi-step builds needing formal specification → pseudocode → architecture → refinement → completion flow.
+- **Negative:** narrow bug fixes (route to `debugging`/`smart-bug-fix`) or pure documentation tasks.
+
+### Guardrails
+- **Structure-first:** ensure `examples/`, `tests/`, `resources/`, `references/` exist.
+- **Constraint extraction:** HARD (scope, timelines, compliance), SOFT (patterns, style), INFERRED (risk appetite) — confirm inferred.
+- **SPARC discipline:** do not skip phases; maintain traceability between artifacts.
+- **Confidence ceilings:** `{inference/report:0.70, research:0.85, observation/definition:0.95}` on specs, designs, and validation claims.
+- **Adversarial checks:** boundary/negative cases and change-impact review before completion.
+
+### Execution Phases (SPARC)
+1. **Specification**
+   - Clarify problem, success metrics, and constraints; produce concise spec stored in `resources/`.
+2. **Pseudocode**
+   - Draft algorithm/process steps; highlight unknowns; keep in `examples/`.
+3. **Architecture**
+   - Define modules, data flows, interfaces; consider performance/security/operability.
+   - Record decisions and alternatives with ceilings; cite sources in `references/`.
+4. **Refinement**
+   - Implement incrementally; pair code with tests; resolve edge cases and perf/security concerns.
+5. **Completion**
+   - Validate against spec; run tests in `tests/`; prepare docs and rollout/rollback notes; issue final confidence statement.
+
+### Output Format
+- Constraints ledger (HARD/SOFT/INFERRED) + confirmations.
+- SPARC artifacts (spec, pseudocode, architecture, refinement notes, completion checklist).
+- Validation results and evidence with **Confidence: X.XX (ceiling: TYPE Y.YY)**.
+
+### Validation Checklist
+- [ ] Spec approved; constraints confirmed.
+- [ ] Pseudocode and architecture captured with alternatives.
+- [ ] Tests cover happy/edge/negative paths; results stored.
+- [ ] Security/perf considerations addressed; rollback available.
+- [ ] Documentation and references updated; confidence ceilings applied.
+
+### MCP / Memory Tags
+- Namespace: `skills/delivery/sparc-methodology/{project}/{artifact}`
+- Tags: `WHO=sparc-methodology-{session}`, `WHY=skill-execution`, `WHAT=sp-arc-flow`
+
+Confidence: 0.70 (ceiling: inference 0.70) - SOP reflects skill-forge structure-first and prompt-architect ceiling/constraint rigor.
 
 ---
-<!-- S0 META-IDENTITY                                                             -->
----
 
-[define|neutral] SKILL := {
-  name: "sparc-methodology",
-  category: "development",
-  version: "2.7.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
-
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Aspectual",
-  source: "Russian",
-  force: "Complete or ongoing?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
-
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["sparc-methodology", "development", "workflow"],
-  context: "user needs sparc-methodology capability"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# SPARC Methodology - Comprehensive Development Framework
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-
-## When to Use This Skill
-
-- **Domain-Specific Work**: Tasks requiring specialized domain knowledge
-- **Complex Problems**: Multi-faceted challenges needing systematic approach
-- **Best Practice Implementation**: Following industry-standard methodologies
-- **Quality-Critical Work**: Production code requiring high standards
-- **Team Collaboration**: Coordinated work following shared processes
-
-## When NOT to Use This Skill
-
-- **Outside Domain**: Tasks outside this skill specialty area
-- **Incompatible Tech Stack**: Technologies not covered by this skill
-- **Simple Tasks**: Trivial work not requiring specialized knowledge
-- **Exploratory Work**: Experimental code without production requirements
-
-## Success Criteria
-
-- [ ] Implementation complete and functional
-- [ ] Tests passing with adequate coverage
-- [ ] Code reviewed and approved
-- [ ] Documentation updated
-- [ ] Performance benchmarks met
-- [ ] Security considerations addressed
-- [ ] Deployed or integrated successfully
-
-## Edge Cases to Handle
-
-- **Legacy Integration**: Working with older codebases or deprecated APIs
-- **Missing Dependencies**: Unavailable libraries or external services
-- **Version Conflicts**: Dependency version incompatibilities
-- **Data Issues**: Malformed input or edge case data
-- **Concurrency**: Race conditions or synchronization challenges
-- **Error Handling**: Graceful degradation and recovery
-
-## Guardrails
-
-- **NEVER** skip testing to ship faster
-- **ALWAYS** follow domain-specific best practices
-- **NEVER** commit untested or broken code
-- **ALWAYS** document complex logic and decisions
-- **NEVER** hardcode sensitive data or credentials
-- **ALWAYS** validate input and handle errors gracefully
-- **NEVER** deploy without reviewing changes
-
-## Evidence-Based Validation
-
-- [ ] Automated tests passing
-- [ ] Code linter/formatter passing
-- [ ] Security scan completed
-- [ ] Performance within acceptable range
-- [ ] Manual testing completed
-- [ ] Peer review approved
-- [ ] Documentation reviewed
-
-## Overview
-
-SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) is a systematic development methodology integrated with Claude Flow's multi-agent orchestration capabilities. It provides 17 specialized modes for comprehensive software development, from initial research through deployment and monitoring.
-
-## Table of Contents
-
-1. [Core Philosophy](#core-philosophy)
-2. [Development Phases](#development-phases)
-3. [Available Modes](#available-modes)
-4. [Activation Methods](#activation-methods)
-5. [Orchestration Patterns](#orchestration-patterns)
-6. [TDD Workflows](#tdd-workflows)
-7. [Best Practices](#best-practices)
-8. [Integration Examples](#integration-examples)
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:S-P-R]] [[COM:SPARC+Flow]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/sparc-methodology]]
+  - Structure-first directories required.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints confirmed through phases.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings bound claims for specs, designs, and validation.
 9. [Common Workflows](#common-workflows)
 
 ---

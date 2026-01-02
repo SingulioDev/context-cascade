@@ -1,123 +1,75 @@
 ---
 name: api-docs
-description: Generate and maintain comprehensive API documentation using OpenAPI 3.0, Swagger UI, and GraphQL Playground. Use when documenting REST APIs, GraphQL services, or creating API reference materials. Ensu
+description: Generate, validate, and maintain API documentation (REST/OpenAPI and GraphQL) with reproducible structure and evidence-backed confidence.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
+
+### Purpose
+Ship accurate, consumable API docs with validated schemas, runnable examples, and clear auth/error guidance.
+
+### Trigger Conditions
+- **Positive:** REST/GraphQL doc creation or updates, versioned API rollouts, deprecation notices, interactive explorer setup.
+- **Negative:** Narrative/internal docs (route to `documentation`) or prompt-focused tasks (route to `prompt-architect`).
+
+### Guardrails
+- **Structure-first:** maintain `examples/`, `tests/`, `resources/`, `references/` alongside `SKILL.md`.
+- **Constraint extraction:** capture HARD/SOFT/INFERRED constraints on audience, security posture, and versioning; confirm inferred.
+- **Validation:** run spec validators (OpenAPI/GraphQL), exercise examples, and note unrun commands.
+- **Confidence ceilings:** apply `{inference/report:0.70, research:0.85, observation/definition:0.95}` to all claims.
+- **Safety:** no secret exposure; redact internal endpoints when producing public docs.
+
+### Execution Phases
+1. **Scope & Sources**
+   - Identify surfaces (REST/GraphQL), auth schemes, target audience, and supported versions.
+   - Gather schemas, code annotations, and existing references; log constraints.
+2. **Outline & Contracts**
+   - Define required sections: overview, auth, endpoints/operations, errors, rate limits, changelog.
+   - Confirm INFERRED needs (SDK snippets, language coverage).
+3. **Author & Validate**
+   - Draft OpenAPI/GraphQL artifacts; generate runnable examples in `examples/`.
+   - Validate specs (swagger-cli, graphql-schema-linter) and sample requests.
+4. **Publish & Harden**
+   - Wire interactive explorer (Swagger UI/GraphQL Playground) if in scope.
+   - Add tests in `tests/` (lint, link check, example execution) and store outputs in `resources/`.
+5. **Review & Deliver**
+   - Summarize deltas, risks, and next steps; cite sources in `references/`.
+   - Provide confidence statement with ceiling.
+
+### Output Format
+- Scope summary + constraints (HARD/SOFT/INFERRED, confirmed).
+- Spec status and validation results.
+- Example calls and changelog notes.
+- Evidence with **Confidence: X.XX (ceiling: TYPE Y.YY)**.
+
+### Validation Checklist
+- [ ] Audience and version coverage confirmed; inferred asks resolved.
+- [ ] Specs validated; examples executed or annotated as not run.
+- [ ] Auth, errors, and rate limits documented.
+- [ ] Tests present in `tests/`; artifacts stored in `resources/`; references recorded.
+- [ ] Confidence ceilings applied to claims and guidance.
+
+### MCP / Memory Tags
+- Namespace: `skills/delivery/api-docs/{api}/{version}`
+- Tags: `WHO=api-docs-{session}`, `WHY=skill-execution`, `WHAT=spec+docs`
+
+Confidence: 0.70 (ceiling: inference 0.70) - SOP integrates skill-forge structure-first and prompt-architect constraint/ceiling rules.
 
 ---
-<!-- S0 META-IDENTITY                                                             -->
----
 
-[define|neutral] SKILL := {
-  name: "api-docs",
-  category: "delivery",
-  version: "1.0.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
-
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Aspectual",
-  source: "Russian",
-  force: "Complete or ongoing?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
-
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["api-docs", "delivery", "workflow"],
-  context: "user needs api-docs capability"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# API Documentation Generator (Gold Tier)
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-
-## When to Use This Skill
-
-- **API Development**: Building or documenting REST APIs, GraphQL APIs, or other web services
-- **API Versioning**: Managing multiple API versions or migration strategies
-- **Developer Experience**: Creating interactive documentation for API consumers
-- **OpenAPI/Swagger**: Generating or maintaining OpenAPI specifications
-- **Integration Work**: Helping external teams understand and use your APIs
-
-## When NOT to Use This Skill
-
-- **Non-API Documentation**: General code documentation, user manuals, or internal wikis
-- **No API Surface**: Pure frontend apps, CLI tools, or embedded systems without APIs
-- **Legacy Systems**: APIs without code access or with undocumented proprietary protocols
-- **Incompatible Stacks**: Non-HTTP protocols (MQTT, gRPC) requiring specialized tooling
-
-## Success Criteria
-
-- [ ] API endpoints fully documented with request/response schemas
-- [ ] Authentication and authorization flows clearly explained
-- [ ] Interactive API explorer (Swagger UI/GraphQL Playground) functional
-- [ ] Error codes and handling strategies documented
-- [ ] Rate limiting and usage guidelines specified
-- [ ] Code examples provided for common use cases
-- [ ] Versioning strategy documented if applicable
-
-## Edge Cases to Handle
-
-- **Missing Type Annotations**: Infer schemas from runtime behavior or database models
-- **Dynamic Routes**: Document parameterized endpoints and path variables
-- **Nested Resources**: Handle complex resource hierarchies and relationships
-- **File Uploads**: Document multipart/form-data and binary payloads
-- **Webhooks**: Document callback URLs and event payloads
-- **Deprecated Endpoints**: Mark sunset dates and migration paths
-
-## Guardrails
-
-- **NEVER** expose internal implementation details or security vulnerabilities in public docs
-- **ALWAYS** validate generated specs against OpenAPI/GraphQL schema validators
-- **NEVER** ship documentation without testing example requests
-- **ALWAYS** include authentication requirements for protected endpoints
-- **NEVER** assume default values - explicitly document all parameters
-- **ALWAYS** document error responses, not just success cases
-
-## Evidence-Based Validation
-
-- [ ] Run generated OpenAPI spec through swagger-cli validate
-- [ ] Test all documented endpoints with actual HTTP requests
-- [ ] Verify GraphQL schema with graphql-schema-linter
-- [ ] Check accessibility of interactive docs with axe-core
-- [ ] Validate examples compile and execute successfully
-- [ ] Review documentation with API consumers for clarity
-
-Generate production-quality API documentation with OpenAPI 3.0, automated validation, and interactive documentation formats.
-
-## When to Use This Skill
-
-Use when documenting new or existing APIs, creating REST API specifications, maintaining GraphQL schema documentation, or generating interactive API explorers with Swagger UI/GraphQL Playground. Ideal for API-first development, maintaining accurate documentation, and ensuring OpenAPI 3.0 compliance.
-
-## API Documentation Types
-
-### REST API Documentation
-- OpenAPI 3.0 specifications
-- Endpoint descriptions and parameters
-- Request/response examples
-- Authentication schemes
-- Error codes and handling
-
-### GraphQL Documentation
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:A-P-I]] [[COM:API+Docs]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/api-docs]]
+  - Structure-first directories must exist before doc work.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints documented and confirmed.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings enforced for specs, examples, and guidance.
 - Schema definitions
 - Query and mutation documentation
 - Type system reference

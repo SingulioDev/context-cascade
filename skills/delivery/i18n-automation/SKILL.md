@@ -1,123 +1,75 @@
 ---
 name: i18n-automation
-description: Automate internationalization and localization workflows for web applications with translation, key generation, and library setup
+description: Automate internationalization and localization with safe key management, locale plumbing, and validated translations.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
+
+### Purpose
+Enable reliable multi-lingual delivery by externalizing strings, wiring locale infrastructure, and validating translations.
+
+### Trigger Conditions
+- **Positive:** adding new locales, fixing missing translations, setting up i18n libraries, RTL enablement, pluralization issues.
+- **Negative:** content-only rewrites without code changes (route to `documentation`).
+
+### Guardrails
+- **Structure-first:** maintain `examples/`, `tests/`, `resources/`, `references/`.
+- **Constraint extraction:** HARD (locales, privacy/PII rules, release windows), SOFT (copy tone), INFERRED (fallback order, locale negotiation) — confirm inferred.
+- **Confidence ceilings:** `{inference/report:0.70, research:0.85, observation/definition:0.95}` for locale behavior and translation claims.
+- **Safety:** never hardcode secrets/PII in translations; keep placeholders intact.
+- **Validation:** syntax-check translation files; test RTL, plural rules, and formatting boundaries.
+
+### Execution Phases
+1. **Assessment & Plan**
+   - Identify target locales, libraries, file formats, and delivery constraints.
+   - Inventory untranslated strings; design key namespaces.
+2. **Implementation**
+   - Externalize strings; add interpolation context; implement locale detection + fallback.
+   - Wire date/number formatting and RTL toggles; store snippets in `examples/`.
+3. **Translation Workflow**
+   - Prepare source files; protect placeholders; integrate vendor pipelines if applicable.
+   - Record guidance and glossaries in `references/`.
+4. **Validation**
+   - Run lint/schema checks on locale files; test pluralization + ICU messages.
+   - Exercise UI in each locale (including RTL); capture artifacts in `resources/`.
+5. **Release & Monitor**
+   - Add regression tests in `tests/`; document rollout/rollback.
+   - Summarize coverage, risks, and **Confidence: X.XX (ceiling: TYPE Y.YY)**.
+
+### Output Format
+- Constraints (HARD/SOFT/INFERRED) with confirmation status.
+- Key namespaces, locale settings, and validation results.
+- Deployment/rollback notes and evidence references.
+- Confidence statement with ceiling.
+
+### Validation Checklist
+- [ ] Strings externalized; keys namespaced; placeholders preserved.
+- [ ] Locale detection + fallback verified; RTL support tested when relevant.
+- [ ] Pluralization and formatting checked with boundary values.
+- [ ] Lint/schema checks run; tests captured in `tests/`.
+- [ ] Sources and advisories stored in `references/`; artifacts in `resources/`.
+
+### MCP / Memory Tags
+- Namespace: `skills/delivery/i18n-automation/{project}/{locale}`
+- Tags: `WHO=i18n-automation-{session}`, `WHY=skill-execution`, `WHAT=localization`
+
+Confidence: 0.70 (ceiling: inference 0.70) - SOP integrates skill-forge structure-first and prompt-architect constraint/ceiling discipline.
 
 ---
-<!-- S0 META-IDENTITY                                                             -->
----
 
-[define|neutral] SKILL := {
-  name: "i18n-automation",
-  category: "delivery",
-  version: "1.0.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
-
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Aspectual",
-  source: "Russian",
-  force: "Complete or ongoing?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
-
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["i18n-automation", "delivery", "workflow"],
-  context: "user needs i18n-automation capability"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# i18n Automation
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-
-## When to Use This Skill
-
-- **Multi-Language Support**: Building apps for international markets
-- **Translation Workflows**: Automating translation key extraction and management
-- **Localization**: Adapting content for regional formats (dates, currencies, numbers)
-- **RTL Support**: Implementing right-to-left languages (Arabic, Hebrew)
-- **Pluralization**: Handling complex plural rules across languages
-- **Dynamic Content**: Translating user-generated or CMS content
-
-## When NOT to Use This Skill
-
-- **Single-Language Apps**: English-only applications with no internationalization plans
-- **Static Content**: Hardcoded strings that will not change
-- **Non-Web Projects**: Embedded systems or native apps with platform-specific i18n
-- **Third-Party Managed**: Apps using fully-managed translation services (Lokalise, Phrase)
-
-## Success Criteria
-
-- [ ] All user-facing strings externalized to translation files
-- [ ] Translation keys organized by feature/namespace
-- [ ] Pluralization rules implemented correctly
-- [ ] Date/time/currency formatting respects locale
-- [ ] RTL layouts functional (if applicable)
-- [ ] Language switching works without reload
-- [ ] Missing translation handling implemented
-- [ ] Translation files validated for syntax errors
-
-## Edge Cases to Handle
-
-- **Interpolated Variables**: Preserve placeholders in translations
-- **HTML in Translations**: Sanitize translated content safely
-- **Nested Keys**: Manage deeply nested translation structures
-- **Missing Translations**: Fallback to default language gracefully
-- **Dynamic Keys**: Handle runtime-computed translation keys
-- **Context-Sensitive**: Same word different meanings (e.g., Post noun vs verb)
-
-## Guardrails
-
-- **NEVER** hardcode user-facing strings in components
-- **ALWAYS** use i18n library functions (t(), useTranslation(), etc.)
-- **NEVER** assume left-to-right text direction
-- **ALWAYS** validate translation file JSON/YAML syntax
-- **NEVER** concatenate translated strings (breaks grammar)
-- **ALWAYS** provide context for translators (comments in translation files)
-- **NEVER** ship with empty or placeholder translations
-
-## Evidence-Based Validation
-
-- [ ] Run i18n linter to detect untranslated strings
-- [ ] Test app in all supported locales
-- [ ] Validate translation files with JSON Schema
-- [ ] Check RTL layout in browser DevTools
-- [ ] Test pluralization with boundary values (0, 1, 2, 5, 100)
-- [ ] Verify date/number formatting with Intl API
-- [ ] Review translations with native speakers
-
-## Purpose
-Automate complete internationalization workflows including translation, key-value generation, library installation, and locale configuration for web applications.
-
-## Specialist Agent
-
-I am an internationalization specialist with expertise in:
-- i18n library selection and configuration (react-i18n, next-intl, i18next)
-- Translation key architecture and organization
-- Locale file formats (JSON, YAML, PO, XLIFF)
-- RTL (Right-to-Left) language support
-- SEO and metadata localization
-- Dynamic content translation strategies
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:I-18-N]] [[COM:I18n+Automation]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/i18n-automation]]
+  - Structure-first directories enforced for localization tasks.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints documented and confirmed.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings applied to translation, locale, and rollout claims.
 
 ### Methodology (Plan-and-Solve Pattern)
 

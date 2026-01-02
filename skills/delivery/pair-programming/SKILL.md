@@ -1,123 +1,74 @@
 ---
 name: pair-programming
-description: AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning se
+description: Structured AI-assisted pairing with clear roles, cadence, and validation to keep quality and knowledge flow high.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
+
+### Purpose
+Deliver collaborative coding sessions (driver/navigator/switch/TDD) with explicit guardrails, shared context, and validated output.
+
+### Trigger Conditions
+- **Positive:** collaborative coding, live code review, debugging together, mentoring/onboarding, TDD sessions.
+- **Negative:** solo quick fixes or documentation-only asks.
+
+### Guardrails
+- **Structure-first:** maintain `examples/`, `tests/`, `resources/`, `references/` to capture session artifacts.
+- **Constraint extraction:** HARD (timebox, repo rules, CI gates), SOFT (tooling preferences), INFERRED (communication cadence) — confirm inferred.
+- **Cadence:** rotate roles every 20–30 minutes; schedule breaks; keep decisions in notes.
+- **Confidence ceilings:** `{inference/report:0.70, research:0.85, observation/definition:0.95}` for recommendations and reviews.
+- **Psychological safety:** critique code, not people; narrate reasoning.
+
+### Execution Phases
+1. **Session Setup**
+   - Define goal, CTA (e.g., implement test, fix bug), and done criteria.
+   - Choose mode (driver/navigator/switch/TDD) and tools; record constraints.
+2. **Context Load**
+   - Review relevant files/tests; capture open questions; store in `resources/`.
+3. **Collaborative Build**
+   - Driver codes aloud; navigator challenges assumptions and tracks constraints.
+   - Keep diffs small; log decisions and TODOs; add/adjust tests in `tests/`.
+4. **Review & Validation**
+   - Swap roles; run tests/linters; perform quick perf/security sanity checks.
+   - Note confidence with ceilings for approvals or concerns.
+5. **Close & Handoff**
+   - Summarize changes, risks, and next steps; ensure commits/notes ready.
+   - Save snippets and lessons in `examples/`; cite references.
+
+### Output Format
+- Goal + constraints (HARD/SOFT/INFERRED) with confirmations.
+- Mode chosen, decisions made, and validation results.
+- Action items/next steps with owners.
+- Evidence and **Confidence: X.XX (ceiling: TYPE Y.YY)**.
+
+### Validation Checklist
+- [ ] Constraints agreed; mode + cadence set.
+- [ ] Tests/linters run; results captured.
+- [ ] Decisions and risks documented; references linked.
+- [ ] Confidence ceilings noted for approvals/concerns.
+- [ ] Artifacts saved to `examples/` or `resources/`.
+
+### MCP / Memory Tags
+- Namespace: `skills/delivery/pair-programming/{project}/{session}`
+- Tags: `WHO=pair-programming-{session}`, `WHY=skill-execution`, `WHAT=collab-coding`
+
+Confidence: 0.70 (ceiling: inference 0.70) - SOP integrates skill-forge structure-first and prompt-architect constraint/ceiling guidance.
 
 ---
-<!-- S0 META-IDENTITY                                                             -->
----
 
-[define|neutral] SKILL := {
-  name: "pair-programming",
-  category: "delivery",
-  version: "1.0.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
-
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Evidential",
-  source: "Turkish",
-  force: "How do you know?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
-
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["pair-programming", "delivery", "workflow"],
-  context: "user needs pair-programming capability"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# Pair Programming
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-
-## When to Use This Skill
-
-- **Learning Sessions**: Teaching or learning new technologies, patterns, or codebases
-- **Complex Features**: Tackling features requiring deep collaboration
-- **Debugging Sessions**: Pair debugging to solve difficult bugs faster
-- **Code Reviews**: Real-time collaborative code review and refactoring
-- **Knowledge Transfer**: Onboarding new team members or sharing expertise
-- **TDD Sessions**: Test-driven development with navigator/driver roles
-
-## When NOT to Use This Skill
-
-- **Simple Tasks**: Trivial changes or routine maintenance
-- **Independent Work**: Tasks requiring deep focus without interruption
-- **Different Timezones**: Async code review more appropriate
-- **Solo Learning**: Self-paced tutorials or experimentation
-
-## Success Criteria
-
-- [ ] Both participants understand the implementation
-- [ ] Code meets team quality standards
-- [ ] Tests written and passing
-- [ ] Knowledge successfully shared
-- [ ] Documentation updated if needed
-- [ ] Both participants satisfied with collaboration
-- [ ] No blockers remaining
-
-## Edge Cases to Handle
-
-- **Skill Imbalance**: Significant experience gap between pair members
-- **Disagreement**: Conflicting approaches or opinions
-- **Fatigue**: Long sessions reducing effectiveness
-- **Tool Differences**: Different IDE preferences or setups
-- **Communication Styles**: Different working or communication preferences
-- **Remote Pairing**: Latency, screen sharing issues, or connectivity problems
-
-## Guardrails
-
-- **NEVER** dominate the keyboard without switching roles
-- **ALWAYS** switch driver/navigator roles every 25-30 minutes
-- **NEVER** criticize or dismiss partner ideas
-- **ALWAYS** explain reasoning for technical decisions
-- **NEVER** skip breaks - take 5-10 minute breaks hourly
-- **ALWAYS** commit working code at session end
-- **NEVER** pair for more than 4-5 hours continuously
-
-## Evidence-Based Validation
-
-- [ ] Code compiles and runs successfully
-- [ ] All tests passing (unit, integration)
-- [ ] Both participants can explain implementation
-- [ ] Code reviewed against team style guide
-- [ ] Git commits follow team conventions
-- [ ] Documentation reflects changes
-- [ ] Security considerations addressed
-
-Collaborative AI pair programming with intelligent role management, real-time quality monitoring, and comprehensive development workflows.
-
-## What This Skill Does
-
-This skill provides professional pair programming capabilities with AI assistance, supporting multiple collaboration modes, continuous verification, and integrated testing. It manages driver/navigator roles, performs real-time code review, tracks quality metrics, and ensures high standards through truth-score verification.
-
-**Key Capabilities:**
-- **Multiple Modes**: Driver, Navigator, Switch, TDD, Review, Mentor, Debug
-- **Real-Time Verification**: Automatic quality scoring with rollback on failures
-- **Role Management**: Seamless switching between driver/navigator roles
-- **Testing Integration**: Auto-generate tests, track coverage, continuous testing
-- **Code Review**: Security scanning, performance analysis, best practice enforcement
-- **Session Persistence**: Auto-save, recovery, export, and sharing
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:P-R-P]] [[COM:Pair+Programming]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/pair-programming]]
+  - Structure-first directories enforced for session artifacts.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints documented and confirmed.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings applied to pairing decisions and approvals.
 
 ## Prerequisites
 
