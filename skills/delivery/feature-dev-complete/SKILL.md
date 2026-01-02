@@ -1,122 +1,76 @@
 ---
 name: feature-dev-complete
-description: Complete feature development lifecycle from research to deployment. Uses Gemini Search for best practices, architecture design, Codex prototyping, comprehensive testing, and documentation generation.
+description: End-to-end feature delivery (discovery → design → build → test → release) with explicit quality gates and confidence ceilings.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
+
+### Purpose
+Deliver production-ready features with clear scope, architecture, validated code, docs, and release notes.
+
+### Trigger Conditions
+- **Positive:** net-new feature requests, multi-story implementations, end-to-end delivery ownership.
+- **Negative:** pure bugfix (route to `debugging`/`smart-bug-fix`) or doc-only asks (route to `documentation`).
+
+### Guardrails
+- **Structure-first:** ensure `examples/`, `tests/`, `resources/` exist; `references/` recommended for ADRs.
+- **Constraint extraction:** HARD (scope, deadlines, SLAs), SOFT (tech preferences), INFERRED (UX tone); confirm inferred.
+- **Confidence ceilings:** `{inference/report:0.70, research:0.85, observation/definition:0.95}` for requirements, estimates, and validation claims.
+- **Quality gates:** architecture review, security/perf considerations, test coverage, rollback and release notes.
+
+### Execution Phases
+1. **Discovery & Framing**
+   - Clarify intent, success metrics, dependencies, and blockers.
+   - Produce acceptance criteria and definition of done; tag constraints.
+2. **Design**
+   - Draft architecture, sequence diagrams, and data contracts; store in `resources/`.
+   - Validate feasibility; capture alternatives with ceilings on risk/effort.
+3. **Plan & Traceability**
+   - Break down into stories/tasks/subtasks with ownership and status.
+   - Define tests to add; map them to acceptance criteria.
+4. **Build**
+   - Implement smallest viable increments; keep code + tests paired.
+   - Maintain changelog notes and migration steps if schema/config changes occur.
+5. **Validate**
+   - Run unit/integration/e2e and non-functional checks as applicable.
+   - Ensure rollback plan; document results in `tests/` artifacts.
+6. **Document & Release**
+   - Update READMEs/API docs as needed; prepare release notes.
+   - Store decisions in `references/`; add reusable flows to `examples/`.
+
+### Output Format
+- Feature summary + constraints (HARD/SOFT/INFERRED) and confirmations.
+- Design decisions, task breakdown, and planned/actual validation.
+- Delivery state (ready/requires follow-up) and **Confidence: X.XX (ceiling: TYPE Y.YY)**.
+
+### Validation Checklist
+- [ ] Acceptance criteria confirmed; constraints logged and resolved/waived.
+- [ ] Design reviewed; risks and alternatives recorded.
+- [ ] Tests added/updated; results captured; rollback path defined.
+- [ ] Docs/release notes updated; artifacts stored in `resources/` and `references/`.
+- [ ] Confidence ceilings attached to estimates and claims.
+
+### MCP / Memory Tags
+- Namespace: `skills/delivery/feature-dev-complete/{project}/{feature}`
+- Tags: `WHO=feature-dev-complete-{session}`, `WHY=skill-execution`, `WHAT=delivery`
+
+Confidence: 0.70 (ceiling: inference 0.70) - SOP follows skill-forge structure-first and prompt-architect constraint/ceiling requirements.
 
 ---
-<!-- S0 META-IDENTITY                                                             -->
----
 
-[define|neutral] SKILL := {
-  name: "feature-dev-complete",
-  category: "delivery",
-  version: "1.1.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
-
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Evidential",
-  source: "Turkish",
-  force: "How do you know?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
-
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["feature-dev-complete", "delivery", "workflow"],
-  context: "user needs feature-dev-complete capability"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# Feature Development Complete
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-## Aspektual'naya Ramka Aktivatsiya (Aspectual State Tracking)
-
-Kazhdyy etap razvertyvaniya (Each stage of deployment):
-
-### Tipy Sostoyaniya (State Types)
-
-- **[SV:COMPLETED]** Polnost'yu zaversheno - Stage complete, move to next
-- **[NSV:IN_PROGRESS]** V protsesse - Stage active, work ongoing
-- **[BLOCKED]** Ozhidaet zavisimosti - Waiting for dependency
-- **[INITIATED]** Nachato - Stage started, not yet in progress
-
-### 12-Stage State Markers
-
-Track each stage with explicit state markers:
-
-1. **Stage 1 [RESEARCH]**: [SV|NSV|BLOCKED|INITIATED]
-2. **Stage 2 [CODEBASE_ANALYSIS]**: [SV|NSV|BLOCKED|INITIATED]
-3. **Stage 3 [SWARM_INIT]**: [SV|NSV|BLOCKED|INITIATED]
-4. **Stage 4 [ARCHITECTURE]**: [SV|NSV|BLOCKED|INITIATED]
-5. **Stage 5 [DIAGRAMS]**: [SV|NSV|BLOCKED|INITIATED]
-6. **Stage 6 [PROTOTYPE]**: [SV|NSV|BLOCKED|INITIATED]
-7. **Stage 7 [THEATER_DETECTION]**: [SV|NSV|BLOCKED|INITIATED]
-8. **Stage 8 [TESTING]**: [SV|NSV|BLOCKED|INITIATED]
-9. **Stage 9 [STYLE_POLISH]**: [SV|NSV|BLOCKED|INITIATED]
-10. **Stage 10 [SECURITY]**: [SV|NSV|BLOCKED|INITIATED]
-11. **Stage 11 [DOCUMENTATION]**: [SV|NSV|BLOCKED|INITIATED]
-12. **Stage 12 [PRODUCTION_READY]**: [SV|NSV|BLOCKED|INITIATED]
-
-### State Transition Rules
-
-**Transition Protocols**:
-- **[NSV->SV]**: All acceptance criteria met, tests passing, artifacts complete
-- **[SV->NSV]**: Regression detected, failed tests, reopened for fixes
-- **[*->BLOCKED]**: Missing dependency, external blocker, prerequisite incomplete
-- **[BLOCKED->NSV]**: Blocker resolved, dependency met, work can resume
-- **[INITIATED->NSV]**: Work has begun, active development underway
-
-**Validation Checkpoints**:
-Each transition requires evidence:
-- Test results (for TESTING stage)
-- Coverage reports (for quality gates)
-- Security scan output (for SECURITY stage)
-- Artifact existence (for DIAGRAMS, DOCUMENTATION)
-
-## Keigo Wakugumi (Hierarchical Work Breakdown)
-
-### Work Structure Hierarchy
-
-```
-EPIC: [Feature Name]
-  |
-  +-- STORY: User story 1 (Business value)
-      |
-      +-- TASK: Implementation task 1
-          |
-          +-- SUBTASK: Atomic work item 1.1
-          +-- SUBTASK: Atomic work item 1.2
-      |
-      +-- TASK: Implementation task 2
-          |
-          +-- SUBTASK: Atomic work item 2.1
-  |
-  +-- STORY: User story 2 (Business value)
-      |
-      +-- TASK: Implementation task 3
-```
-
-### Hierarchy Levels Explained
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:F-T-R]] [[COM:Feature+Delivery]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/feature-dev-complete]]
+  - Structure-first directories enforced.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints confirmed before build.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings bound estimates, designs, and validation claims.
 
 1. **EPIC Level**: Overall feature (e.g., "User Authentication System")
 2. **STORY Level**: User-facing value (e.g., "As a user, I can log in securely")

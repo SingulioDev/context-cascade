@@ -1,122 +1,74 @@
 ---
 name: sop-api-development
-description: Complete REST API development workflow coordinating backend, database, testing, documentation, and DevOps agents. 2-week timeline with TDD approach.
+description: End-to-end REST/HTTP API delivery SOP with clear contracts, TDD focus, and deployment readiness.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
 
----
-<!-- S0 META-IDENTITY                                                             -->
----
+### Purpose
+Design, build, and release APIs with reliable contracts, tests, documentation, and rollout controls.
 
-[define|neutral] SKILL := {
-  name: "sop-api-development",
-  category: "delivery",
-  version: "1.0.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
+### Trigger Conditions
+- **Positive:** new REST endpoints, breaking changes, contract updates, or API hardening.
+- **Negative:** doc-only requests (route to `documentation`) or non-API feature builds (route to `feature-dev-complete`).
 
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
+### Guardrails
+- **Structure-first:** ensure `examples/`, `tests/`, `resources/`, `references/` accompany `SKILL.md`.
+- **Constraint extraction:** HARD (SLAs, auth, compliance), SOFT (style, versioning), INFERRED (traffic patterns, migration risk); confirm inferred.
+- **Contract-first:** define OpenAPI/JSON schema before coding; keep error model and versioning explicit.
+- **Confidence ceilings:** `{inference/report:0.70, research:0.85, observation/definition:0.95}` across design, performance, and rollout claims.
 
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Evidential",
-  source: "Turkish",
-  force: "How do you know?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
+### Execution Phases
+1. **Intent & Contract**
+   - Capture objectives, consumers, and constraints; produce OpenAPI/JSON schema; store in `resources/`.
+   - Define auth, rate limits, idempotency, and error formats.
+2. **Plan & Test Design**
+   - Outline endpoints, data flows, and dependencies; map acceptance criteria to tests in `tests/`.
+   - Identify migration/deprecation plan; log in `references/`.
+3. **Implement**
+   - Build handlers, validation, and persistence with smallest increments.
+   - Keep logging/observability consistent; add feature flags if needed.
+4. **Validate**
+   - Run unit/integration/contract tests; fuzz critical inputs; load/perf sample if relevant.
+   - Verify backward compatibility and security (authz/authn, input sanitization).
+5. **Document & Release**
+   - Update API docs and changelog; provide rollout/rollback steps.
+   - Summarize evidence and **Confidence: X.XX (ceiling: TYPE Y.YY)**.
 
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
+### Output Format
+- Constraint ledger (HARD/SOFT/INFERRED) with confirmations.
+- Contract artifacts, implementation status, and validation results.
+- Release/rollback guidance and evidence links.
+- Confidence statement with ceiling.
 
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
+### Validation Checklist
+- [ ] Contracts defined and versioned; constraints confirmed.
+- [ ] Tests mapped to acceptance criteria; results captured.
+- [ ] Security, auth, and error models validated.
+- [ ] Docs and changelog updated; references stored.
+- [ ] Confidence ceilings applied to claims and rollout readiness.
 
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["sop-api-development", "delivery", "workflow"],
-  context: "user needs sop-api-development capability"
-} [ground:given] [conf:1.0] [state:confirmed]
+### MCP / Memory Tags
+- Namespace: `skills/delivery/sop-api-development/{service}/{version}`
+- Tags: `WHO=sop-api-development-{session}`, `WHY=skill-execution`, `WHAT=api-delivery`
 
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# SOP: REST API Development
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-
-## When to Use This Skill
-
-- **Domain-Specific Work**: Tasks requiring specialized domain knowledge
-- **Complex Problems**: Multi-faceted challenges needing systematic approach
-- **Best Practice Implementation**: Following industry-standard methodologies
-- **Quality-Critical Work**: Production code requiring high standards
-- **Team Collaboration**: Coordinated work following shared processes
-
-## When NOT to Use This Skill
-
-- **Outside Domain**: Tasks outside this skill specialty area
-- **Incompatible Tech Stack**: Technologies not covered by this skill
-- **Simple Tasks**: Trivial work not requiring specialized knowledge
-- **Exploratory Work**: Experimental code without production requirements
-
-## Success Criteria
-
-- [ ] Implementation complete and functional
-- [ ] Tests passing with adequate coverage
-- [ ] Code reviewed and approved
-- [ ] Documentation updated
-- [ ] Performance benchmarks met
-- [ ] Security considerations addressed
-- [ ] Deployed or integrated successfully
-
-## Edge Cases to Handle
-
-- **Legacy Integration**: Working with older codebases or deprecated APIs
-- **Missing Dependencies**: Unavailable libraries or external services
-- **Version Conflicts**: Dependency version incompatibilities
-- **Data Issues**: Malformed input or edge case data
-- **Concurrency**: Race conditions or synchronization challenges
-- **Error Handling**: Graceful degradation and recovery
-
-## Guardrails
-
-- **NEVER** skip testing to ship faster
-- **ALWAYS** follow domain-specific best practices
-- **NEVER** commit untested or broken code
-- **ALWAYS** document complex logic and decisions
-- **NEVER** hardcode sensitive data or credentials
-- **ALWAYS** validate input and handle errors gracefully
-- **NEVER** deploy without reviewing changes
-
-## Evidence-Based Validation
-
-- [ ] Automated tests passing
-- [ ] Code linter/formatter passing
-- [ ] Security scan completed
-- [ ] Performance within acceptable range
-- [ ] Manual testing completed
-- [ ] Peer review approved
-- [ ] Documentation reviewed
-
-Complete REST API development using Test-Driven Development and multi-agent coordination.
-
-## Timeline: 2 Weeks
-
-**Phases**:
-1. Planning & Design (Days 1-2)
-2. Development (Days 3-8)
-3. Testing & Documentation (Days 9-11)
-4. Deployment (Days 12-14)
+Confidence: 0.70 (ceiling: inference 0.70) - SOP mirrors skill-forge structure-first and prompt-architect constraint/ceiling rules.
 
 ---
 
-## Phase 1: Planning & Design (Days 1-2)
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:A-P-I]] [[COM:API+SOP]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/sop-api-development]]
+  - Structure-first directories enforced for API delivery.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints documented and confirmed.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings bound design and rollout assertions.
 
 ### Day 1: Requirements & Architecture
 

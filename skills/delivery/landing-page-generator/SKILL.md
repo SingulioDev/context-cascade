@@ -1,119 +1,77 @@
 ---
 name: landing-page-generator
-description: Comprehensive 6-phase SOP for AI-driven landing page creation (Research -> Copy -> Inspiration -> Build -> Iterate -> Deploy). Use when building marketing pages, sales pages, or product landing pages.
+description: Research-to-release SOP for high-conversion landing pages with validated copy, design, and deployment steps.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
+
+### Purpose
+Produce deployable landing pages that convert, using evidence-based research, structured copy, consistent design, and validated builds.
+
+### Trigger Conditions
+- **Positive:** requests for marketing/landing pages, CRO experiments, new product launches, or redesigns requiring copy + build + deploy.
+- **Negative:** app-level feature builds (route to `feature-dev-complete`) or doc-only needs (route to `documentation`).
+
+### Guardrails
+- **Structure-first:** keep `examples/`, `tests/`, `resources/`, `references/` alongside `SKILL.md`.
+- **Constraint extraction:** HARD (brand, CTA, compliance, timelines), SOFT (tone, visuals), INFERRED (audience segments) — confirm inferred.
+- **Confidence ceilings:** `{inference/report:0.70, research:0.85, observation/definition:0.95}` for claims on conversion tactics and implementation safety.
+- Separate **copy before design**; one page = one primary CTA; avoid leaking secrets in examples.
+
+### Execution Phases
+1. **Research & Positioning**
+   - Gather audience insights, competitors, and current CRO patterns; log sources in `references/`.
+   - Define single CTA, value props, and objections to address.
+2. **Copy & IA**
+   - Draft messaging using frameworks (AIDA/PAS/FAB); map sections and hierarchy.
+   - Confirm tone/voice; store drafts and snippets in `examples/`.
+3. **Design System Alignment**
+   - Extract brand tokens (color, typography, spacing) from sources; avoid copying content.
+   - Plan layout wireframe; capture assets in `resources/`.
+4. **Build**
+   - Implement page with accessibility and performance budget; keep code + tests paired.
+   - Set analytics/feature flags if applicable; add screenshot baselines.
+5. **Validate & Iterate**
+   - Run lint/tests in `tests/`; verify responsive/RTL/localization if in scope.
+   - Check lighthouse/perf; confirm tracking events.
+6. **Deploy & Document**
+   - Prepare deploy steps + rollback; publish release notes and QA checklist.
+   - Record evidence, risks, and **Confidence: X.XX (ceiling: TYPE Y.YY)**.
+
+### Output Format
+- Constraints and decisions (HARD/SOFT/INFERRED) with confirmations.
+- Copy outline, design tokens, build status, and validation results.
+- Deploy/rollback plan and evidence links.
+- Confidence statement with ceiling.
+
+### Validation Checklist
+- [ ] CTA and success metrics defined; constraints confirmed.
+- [ ] Copy reviewed; design tokens captured; layout agreed.
+- [ ] Tests + accessibility/performance checks recorded in `tests/`.
+- [ ] Assets and research stored in `resources/` and `references/`.
+- [ ] Deployment + rollback documented; confidence ceilings attached.
+
+### MCP / Memory Tags
+- Namespace: `skills/delivery/landing-page-generator/{project}/{page}`
+- Tags: `WHO=landing-page-generator-{session}`, `WHY=skill-execution`, `WHAT=cro+delivery`
+
+Confidence: 0.70 (ceiling: inference 0.70) - SOP applies skill-forge structure-first and prompt-architect constraint/ceiling guidance.
 
 ---
-<!-- S0 META-IDENTITY                                                             -->
----
 
-[define|neutral] SKILL := {
-  name: "landing-page-generator",
-  category: "delivery",
-  version: "2.0.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
-
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Evidential",
-  source: "Turkish",
-  force: "How do you know?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
-
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["landing-page-generator", "delivery", "workflow"],
-  context: "user needs landing-page-generator capability"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# Landing Page Generator
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-A comprehensive 6-phase SOP for AI-driven landing page creation, from research to deployment. Converts product/service briefs into high-converting, deployable landing pages using evidence-based design patterns and conversion psychology.
-
-## Overview
-
-Landing Page Generator represents a systematic approach to creating landing pages that actually convert. Rather than generating generic templates, it employs a research-driven methodology that ensures every page is optimized for its specific audience, product, and conversion goal.
-
-This skill draws inspiration from direct response marketing principles--understanding that a landing page is not just a website, but a carefully crafted argument that guides visitors toward a single action. The 6-phase workflow mirrors how professional conversion rate optimization (CRO) teams work: research the market, craft compelling copy, gather design inspiration, build with purpose, iterate based on feedback, and deploy with confidence.
-
-**Key Innovation**: This skill combines:
-- **Web research** for current best practices and conversion tactics
-- **Structured copywriting** using proven frameworks (AIDA, PAS, FAB)
-- **Design system extraction** via Firecrawl for brand consistency
-- **Multi-model code generation** using highest-capability models
-- **Context-aware iteration** to prevent quality degradation
-- **Automated deployment** via Netlify CLI
-
-The result is landing pages that don't just look good--they convert visitors into customers.
-
-## Core Principles
-
-Landing Page Generator operates on five fundamental principles that ensure every page achieves its conversion goal:
-
-### Principle 1: Copy Before Design
-
-The words on the page matter more than how it looks. A well-written page with mediocre design will outperform a beautiful page with weak copy. This is why Phase 2 (Copy) comes before Phase 3 (Inspiration) and Phase 4 (Build).
-
-In practice:
-- Always complete copy review before moving to design
-- Never let design decisions compromise copy clarity
-- Test copy with the "squint test"--if you squint, can you still understand the hierarchy?
-- Headlines should stand alone as complete value propositions
-
-### Principle 2: One Page, One Goal
-
-Every landing page should have exactly one conversion goal. Multiple CTAs, competing messages, or confusing navigation kill conversions. The page exists to drive one specific action.
-
-In practice:
-- Define the single desired action before starting
-- Remove anything that doesn't support that action
-- Use the "newspaper test"--could someone scanning for 5 seconds understand what to do?
-- Secondary CTAs (like "Learn More") should be visually subordinate
-
-### Principle 3: Research-Driven, Not Assumption-Driven
-
-What worked last year may not work today. Landing page best practices evolve constantly. Phase 1 (Research) ensures every page is built on current, evidence-based tactics rather than outdated assumptions.
-
-In practice:
-- Always emphasize "as of today's date" in research prompts
-- Look for specific conversion rate data, not just design trends
-- Research competitor landing pages for inspiration and differentiation
-- Update the playbook regularly as tactics evolve
-
-### Principle 4: Inspiration, Not Imitation
-
-Extracting branding from inspiration sites creates consistency, not copycats. The goal is to capture design systems (colors, fonts, spacing) while maintaining unique value propositions and messaging.
-
-In practice:
-- Use Firecrawl for objective branding data, not subjective "feel"
-- Screenshots capture layout patterns, not copy to replicate
-- Adapt inspiration to your brand, don't adopt it wholesale
-- Multiple inspiration sources prevent single-source bias
-
-### Principle 5: Iterate in the Right Environment
-
-AI context windows have limits. After 2-3 iterations, quality degrades as the context fills. Moving to dedicated coding environments (like Cursor) pre
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:L-N-D]] [[COM:Landing+Generator]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/landing-page-generator]]
+  - Structure-first directories enforced before build.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints documented and confirmed.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings applied to research, build, and deployment claims.
 
 ---
 <!-- S4 SUCCESS CRITERIA                                                          -->

@@ -2,8 +2,8 @@
   "$schema": "../../../schemas/skill-metadata.schema.json",
   "migrated_from": "SKILL.md frontmatter",
   "migration_date": "2025-12-30",
-  "version": "2.7.0",
-  "category": "development",
+  "version": "3.2.0",
+  "category": "delivery",
   "tags": [
     "sparc",
     "tdd",
@@ -13,10 +13,6 @@
   ],
   "author": "Claude Flow",
   "verix-description": [
-    "assert|neutral] SPARC (Specification",
-    "Pseudocode",
-    "Architecture",
-    "Refinement",
-    "Completion) comprehensive development methodology with multi-agent orchestration [ground:given] [conf:0.95] [state:confirmed"
+    "assert|neutral] SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) delivery framework with explicit checkpoints and validation [ground:given] [conf:0.95] [state:confirmed"
   ]
 }

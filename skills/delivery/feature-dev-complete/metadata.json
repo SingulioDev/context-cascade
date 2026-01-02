@@ -2,7 +2,7 @@
   "$schema": "../../../schemas/skill-metadata.schema.json",
   "migrated_from": "SKILL.md frontmatter",
   "migration_date": "2025-12-30",
-  "version": "1.1.0",
+  "version": "3.2.0",
   "category": "delivery",
   "tags": [
     "feature",
@@ -13,10 +13,6 @@
   ],
   "author": "ruv",
   "verix-description": [
-    "assert|neutral] Complete feature development lifecycle from research to deployment. Uses Gemini Search for best practices",
-    "architecture design",
-    "Codex prototyping",
-    "comprehensive testing",
-    "and documentation generation.  [ground:given] [conf:0.95] [state:confirmed"
+    "assert|neutral] End-to-end feature delivery with scoped constraints, architecture, paired code+tests, and confidence ceilings [ground:SKILL.md] [conf:0.95] [state:confirmed"
   ]
 }

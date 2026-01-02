@@ -1,123 +1,75 @@
 ---
 name: smart-bug-fix
-description: Intelligent bug fixing workflow combining root cause analysis, multi-model reasoning, Codex auto-fix, and comprehensive testing. Uses RCA agent, Codex iteration, and validation to systematically fix b
+description: Advanced defect eradication with hypothesis-driven RCA, guarded fixes, and comprehensive validation.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
+
+### Purpose
+Handle complex or high-risk bugs with structured root-cause analysis, evidence-backed fixes, and regression protection.
+
+### Trigger Conditions
+- **Positive:** production-grade defects, performance degradations, security/regression issues, multi-service failures.
+- **Negative:** simple fixes or greenfield work (route to `debugging` or `feature-dev-complete` respectively).
+
+### Guardrails
+- **Structure-first:** maintain `examples/`, `tests/`, `resources/`, `references/` for each incident.
+- **Constraint extraction:** HARD (blast radius, uptime targets, data safety), SOFT (tooling preferences), INFERRED (rollback tolerance) — confirm inferred.
+- **Hypothesis discipline:** every suspected cause must include evidence and ceilinged confidence.
+- **Confidence ceilings:** `{inference/report:0.70, research:0.85, observation/definition:0.95}` on diagnosis and fix claims.
+- **Safety:** avoid production mutations without backups; preserve audit logs.
+
+### Execution Phases
+1. **Intake & Repro**
+   - Capture signals, incidents, and constraints; build minimal repro.
+   - Store logs/traces in `resources/`.
+2. **Root-Cause Analysis**
+   - Form hypotheses with evidence; iterate 5-Whys; tag ceilings.
+   - Document rejected hypotheses in `references/` for reuse.
+3. **Fix Design**
+   - Choose minimal, reversible change; plan rollout + rollback.
+   - Define required tests; stage diff for review.
+4. **Implement & Validate**
+   - Implement fix; add regression tests in `tests/`.
+   - Run unit/integration/perf/security checks as applicable; record outputs.
+5. **Stabilize & Document**
+   - Monitor post-fix signals; ensure no secondary failures.
+   - Summarize cause, fix, validation, residual risk, and **Confidence: X.XX (ceiling: TYPE Y.YY)**.
+
+### Output Format
+- Constraints ledger (HARD/SOFT/INFERRED) with confirmations.
+- Hypotheses, evidence, and status (accepted/rejected) with confidence ceilings.
+- Fix plan, validation results, rollback path.
+- Artifacts/links and next steps.
+
+### Validation Checklist
+- [ ] Repro confirmed; blast radius understood.
+- [ ] Hypotheses evidenced; ceilings stated; rejected items logged.
+- [ ] Tests added/updated and passing; monitoring plan noted.
+- [ ] Rollback path defined; artifacts stored in `resources/` and `references/`.
+- [ ] Confidence ceilings attached to diagnosis and validation claims.
+
+### MCP / Memory Tags
+- Namespace: `skills/delivery/smart-bug-fix/{project}/{incident}`
+- Tags: `WHO=smart-bug-fix-{session}`, `WHY=skill-execution`, `WHAT=complex-fix`
+
+Confidence: 0.70 (ceiling: inference 0.70) - SOP incorporates skill-forge structure-first and prompt-architect constraint/ceiling discipline.
 
 ---
-<!-- S0 META-IDENTITY                                                             -->
----
 
-[define|neutral] SKILL := {
-  name: "smart-bug-fix",
-  category: "delivery",
-  version: "1.1.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
-
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Evidential",
-  source: "Turkish",
-  force: "How do you know?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
-
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["smart-bug-fix", "delivery", "workflow"],
-  context: "user needs smart-bug-fix capability"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# Smart Bug Fix
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-## Kanitsal Hata Ayiklama (Evidential Debugging)
-
-Every bug hypothesis requires evidence. The evidential frame ensures no fix is applied without proof of causation.
-
-**Evidence Requirements**:
-- **GOZLEM** (Observation): Bug observed with concrete reproduction steps
-- **HIPOTEZ** (Hypothesis): Theory X based on evidence Y
-- **DOGRULAMA** (Verification): Fix verified by test results Z
-- **RED** (Rejection): Hypothesis rejected due to counter-evidence W
-
-**Example**:
-```
-GOZLEM: API timeout after 30s under load (reproduction: 1000 concurrent requests)
-HIPOTEZ: Database connection pool exhausted (evidence: pool size=10, active=10, waiting=990)
-DOGRULAMA: Increased pool to 100, timeout resolved (evidence: 0 timeouts in 10k requests)
-```
-
-## Al-Itar al-Sarfi li-Tahlil al-Sabab (Root Cause Morphology)
-
-Symptoms are composed of causes. Decompose systematically using the "Why Chain" until the root is reached.
-
-**Morphological Decomposition**:
-- **SYMPTOM**: Observable error or behavior (surface manifestation)
-- **CAUSE-1**: Immediate cause (why-1: "Why did this symptom occur?")
-- **CAUSE-2**: Deeper cause (why-2: "Why did cause-1 occur?")
-- **ROOT**: True root cause (why-N: "Why did cause-(N-1) occur?" until no further "why" exists)
-
-**Example**:
-```
-SYMPTOM: Login fails on Firefox
-CAUSE-1: JWT token not in cookie (why-1)
-CAUSE-2: SameSite=Strict blocks cross-site cookies (why-2)
-ROOT: Auth server on different subdomain than app (why-3 - architectural root)
-```
-
-**NASA 5 Whys Integration**:
-The morphological frame is implemented through the 5 Whys methodology:
-1. Why-1: Immediate cause (technical layer)
-2. Why-2: Systemic cause (design layer)
-3. Why-3: Process cause (architectural layer)
-4. Why-4: Cultural cause (organizational layer)
-5. Why-5: Root cause (foundational layer)
-
-## When to Use This Skill
-
-- **Domain-Specific Work**: Tasks requiring specialized domain knowledge
-- **Complex Problems**: Multi-faceted challenges needing systematic approach
-- **Best Practice Implementation**: Following industry-standard methodologies
-- **Quality-Critical Work**: Production code requiring high standards
-- **Team Collaboration**: Coordinated work following shared processes
-
-## When NOT to Use This Skill
-
-- **Outside Domain**: Tasks outside this skill specialty area
-- **Incompatible Tech Stack**: Technologies not covered by this skill
-- **Simple Tasks**: Trivial work not requiring specialized knowledge
-- **Exploratory Work**: Experimental code without production requirements
-
-## Success Criteria
-
-- [ ] Implementation complete and functional
-- [ ] Tests passing with adequate coverage
-- [ ] Code reviewed and approved
-- [ ] Documentation updated
-- [ ] Performance benchmarks met
-- [ ] Security considerations addressed
-- [ ] Deployed or integrated successfully
-
-## Edge Cases to Handle
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:S-M-T]] [[COM:Smart+Fix]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/smart-bug-fix]]
+  - Structure-first directories enforced for incident artifacts.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints documented and confirmed.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings applied to RCA and fix validation.
 
 - **Legacy Integration**: Working with older codebases or deprecated APIs
 - **Missing Dependencies**: Unavailable libraries or external services
