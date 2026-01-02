@@ -2,7 +2,7 @@
   "$schema": "../../../schemas/skill-metadata.schema.json",
   "migrated_from": "SKILL.md frontmatter",
   "migration_date": "2025-12-30",
-  "version": "1.0.0",
+  "version": "3.2.0",
   "category": "delivery",
   "tags": [
     "i18n",
@@ -13,8 +13,6 @@
   ],
   "author": "ruv",
   "verix-description": [
-    "assert|neutral] Automate internationalization and localization workflows for web applications with translation",
-    "key generation",
-    "and library setup [ground:given] [conf:0.95] [state:confirmed"
+    "assert|neutral] Automate localization with structured key management, locale plumbing, validation, and ceilinged confidence [ground:SKILL.md] [conf:0.95] [state:confirmed"
   ]
 }

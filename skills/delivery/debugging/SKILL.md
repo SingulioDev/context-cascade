@@ -1,202 +1,77 @@
 ---
 name: debugging
-description: Systematic debugging methodology using a 5-phase protocol. Use when troubleshooting code failures, investigating bugs, or analyzing unexpected behavior. Applies 10 proven debugging techniques includin
+description: Structured debugging protocol for rapid triage, isolation, and fix verification with evidence-backed confidence ceilings.
 allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
+model: sonnet
+x-version: 3.2.0
+x-category: delivery
+x-vcl-compliance: v3.1.1
+x-cognitive-frames: [HON, MOR, COM, CLS, EVD, ASP, SPC]
 ---
 
+## STANDARD OPERATING PROCEDURE
+
+### Purpose
+Diagnose and resolve code defects quickly while preventing regressions and documenting learning.
+
+### Trigger Conditions
+- **Positive:** bug reports, failing tests, production incidents, performance regressions, flaky behavior, unexplained logs.
+- **Negative:** net-new feature asks (route to feature-dev-complete) or pure prompt design (route to prompt-architect).
+
+### Guardrails
+- Enforce **structure-first**: keep `examples/`, `tests/`, `resources/`, and `references/` populated for each debugging effort.
+- Apply **constraint extraction** (HARD/SOFT/INFERRED) on scope, environments, and risk tolerance; confirm inferred constraints.
+- **Do not** modify production data or disable tests; use safe repro environments first.
+- State **confidence with ceilings** `{inference/report:0.70, research:0.85, observation/definition:0.95}` for diagnoses and fixes.
+
+### Execution Phases
+1. **Triage & Intake**
+   - Capture signals (logs, traces, alerts) and classify severity.
+   - Create a minimal repro goal; log HARD constraints (uptime, data safety).
+2. **Reproduce**
+   - Build minimal failing case; note environment and dataset.
+   - Record what was tried; store artifacts under `resources/`.
+3. **Isolate**
+   - Use hypothesis-driven narrowing (binary search, feature flags, diff analysis).
+   - Trace data flow; identify confidence ceiling for suspected root causes.
+4. **Design & Implement Fix**
+   - Choose smallest safe change; plan rollback.
+   - Add/adjust tests in `tests/` for the repro path.
+5. **Validate**
+   - Run unit/integration/perf checks; verify no new errors.
+   - Confirm logs/metrics recovered; update `references/` with evidence links.
+6. **Document & Hand-off**
+   - Summarize root cause, fix, test coverage, and residual risk.
+   - Capture lessons in `examples/` for future cases.
+
+### Output Format
+- Intent + constraints (HARD/SOFT/INFERRED) with confirmations.
+- Repro notes, suspected root causes with **Confidence: X.XX (ceiling: TYPE Y.YY)**.
+- Fix plan, validation steps, and rollback instructions.
+- Evidence links and updated artifacts.
+
+### Validation Checklist
+- [ ] Repro established; scope and environment captured.
+- [ ] Root cause stated with ceilinged confidence.
+- [ ] Tests added/updated; all suites relevant to the change pass.
+- [ ] Rollback path defined; production impact assessed.
+- [ ] Documentation and artifacts stored in `resources/` and `references/`.
+
+### MCP / Memory Tags
+- Namespace: `skills/delivery/debugging/{project}/{incident}`
+- Tags: `WHO=debugging-{session}`, `WHY=skill-execution`, `WHAT=triage+fix`
+
+Confidence: 0.70 (ceiling: inference 0.70) - SOP aligns with skill-forge structure-first and prompt-architect confidence/constraint rules.
 
 ---
-<!-- S0 META-IDENTITY                                                             -->
----
 
-[define|neutral] SKILL := {
-  name: "debugging",
-  category: "delivery",
-  version: "1.0.0",
-  layer: L1
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S1 COGNITIVE FRAME                                                           -->
----
-
-[define|neutral] COGNITIVE_FRAME := {
-  frame: "Aspectual",
-  source: "Russian",
-  force: "Complete or ongoing?"
-} [ground:cognitive-science] [conf:0.92] [state:confirmed]
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
----
-<!-- S2 TRIGGER CONDITIONS                                                        -->
----
-
-[define|neutral] TRIGGER_POSITIVE := {
-  keywords: ["debugging", "delivery", "workflow"],
-  context: "user needs debugging capability"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S3 CORE CONTENT                                                              -->
----
-
-# Debugging - Systematic Code Investigation
-
-## Kanitsal Cerceve (Evidential Frame Activation)
-Kaynak dogrulama modu etkin.
-
-
-
-
-## When to Use This Skill
-
-- **Production Incidents**: Critical bugs affecting live users requiring rapid diagnosis
-- **Intermittent Failures**: Flaky tests, race conditions, or timing-dependent bugs
-- **Performance Issues**: Slow endpoints, memory leaks, or CPU spikes
-- **Integration Failures**: Third-party API errors, database connectivity issues
-- **Regression Analysis**: New bugs introduced by recent changes
-- **Complex Stack Traces**: Multi-layered errors spanning multiple services
-
-## When NOT to Use This Skill
-
-- **Feature Development**: Building new functionality (use feature-dev-complete instead)
-- **Code Reviews**: Reviewing code quality or architecture (use code-review-assistant)
-- **Refactoring**: Restructuring code without fixing bugs (use refactoring skills)
-- **Known Issues**: Bugs with clear root cause already identified
-
-## Success Criteria
-
-- [ ] Root cause identified with supporting evidence
-- [ ] Fix implemented and tested
-- [ ] Regression test added to prevent recurrence
-- [ ] All related test suites passing
-- [ ] Fix validated in production-like environment
-- [ ] Documentation updated with troubleshooting notes
-- [ ] Monitoring/alerting adjusted if needed
-
-## Edge Cases to Handle
-
-- **Heisenbugs**: Bugs that disappear when debugger attached
-- **Multi-Service Failures**: Cascading errors across microservices
-- **Data Corruption**: State inconsistencies requiring rollback
-- **Timezone Issues**: Date/time bugs across regions
-- **Concurrency Bugs**: Race conditions, deadlocks, or thread safety
-- **Memory Corruption**: Pointer errors, buffer overflows in native code
-
-## Guardrails
-
-- **NEVER** deploy debug code or verbose logging to production
-- **ALWAYS** reproduce bugs locally before proposing fixes
-- **NEVER** fix symptoms without understanding root cause
-- **ALWAYS** add regression tests for fixed bugs
-- **NEVER** disable tests to make CI pass
-- **ALWAYS** verify fixes do not introduce new bugs
-- **NEVER** modify production data without backup
-
-## Evidence-Based Validation
-
-- [ ] Bug reproduced consistently with minimal test case
-- [ ] Stack traces analyzed with error tracking tools (Sentry, Rollbar)
-- [ ] Performance profiled with appropriate tools (Chrome DevTools, py-spy)
-- [ ] Fix verified with automated tests
-- [ ] Integration tests passing
-- [ ] No new errors in application logs
-- [ ] Memory/CPU usage within normal bounds
-
-Systematic debugging through proven methodologies and comprehensive error analysis.
-
-## When to Use This Skill
-
-Use when code fails or produces unexpected results, investigating intermittent bugs, analyzing production errors, or debugging complex race conditions and edge cases.
-
-## 5-Phase Debugging Protocol
-
-### Phase 1: Reproduce Reliably
-- Create minimal test case that triggers the bug
-- Document exact sequence of inputs/conditions
-- Verify bug occurs consistently
-- Strip away unnecessary complexity
-
-### Phase 2: Understand Root Cause
-- Trace execution path leading to failure
-- Examine variable values and state
-- Identify incorrect assumptions
-- Understand what code should do vs. what it does
-
-### Phase 3: Design the Fix
-- Determine changes needed to eliminate bug
-- Consider impact on other functionality
-- Check for similar bugs elsewhere
-- Plan testing strategy
-
-### Phase 4: Implement Using Best Practices
-- Write clear, readable code
-- Add comprehensive comments
-- Handle edge cases properly
-- Validate assumptions
-
-### Phase 5: Verify the Fix
-- Confirm bug no longer occurs
-- Run regression tests
-- Test edge cases
-- Validate under original conditions
-
-## 10 Debugging Methodologies
-
-1. **Binary Search Debugging** - Divide and conquer to isolate bug location
-2. **Rubber Duck Debugging** - Explain code to surface blind spots
-3. **Hypothesis-Driven** - Form and test explicit hypotheses
-4. **Differential Debugging** - Compare working vs. broken code
-5. **Logg
-
----
-<!-- S4 SUCCESS CRITERIA                                                          -->
----
-
-[define|neutral] SUCCESS_CRITERIA := {
-  primary: "Skill execution completes successfully",
-  quality: "Output meets quality thresholds",
-  verification: "Results validated against requirements"
-} [ground:given] [conf:1.0] [state:confirmed]
-
----
-<!-- S5 MCP INTEGRATION                                                           -->
----
-
-[define|neutral] MCP_INTEGRATION := {
-  memory_mcp: "Store execution results and patterns",
-  tools: ["mcp__memory-mcp__memory_store", "mcp__memory-mcp__vector_search"]
-} [ground:witnessed:mcp-config] [conf:0.95] [state:confirmed]
-
----
-<!-- S6 MEMORY NAMESPACE                                                          -->
----
-
-[define|neutral] MEMORY_NAMESPACE := {
-  pattern: "skills/delivery/debugging/{project}/{timestamp}",
-  store: ["executions", "decisions", "patterns"],
-  retrieve: ["similar_tasks", "proven_patterns"]
-} [ground:system-policy] [conf:1.0] [state:confirmed]
-
-[define|neutral] MEMORY_TAGGING := {
-  WHO: "debugging-{session_id}",
-  WHEN: "ISO8601_timestamp",
-  PROJECT: "{project_name}",
-  WHY: "skill-execution"
-} [ground:system-policy] [conf:1.0] [state:confirmed]
-
----
-<!-- S7 SKILL COMPLETION VERIFICATION                                             -->
----
-
-[direct|emphatic] COMPLETION_CHECKLIST := {
-  agent_spawning: "Spawn agents via Task()",
-  registry_validation: "Use registry agents only",
-  todowrite_called: "Track progress with TodoWrite",
-  work_delegation: "Delegate to specialized agents"
-} [ground:system-policy] [conf:1.0] [state:confirmed]
+## VCL COMPLIANCE APPENDIX
+- [[HON:teineigo]] [[MOR:root:D-B-G]] [[COM:Debug+Discipline]] [[CLS:ge_skill]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:path:/skills/delivery/debugging]]
+  - Structure-first directories must be present before debugging starts.
+- [[HON:teineigo]] [[MOR:root:C-N-S]] [[COM:Constraint+Extraction]] [[CLS:ge_principle]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:axis:analysis]]
+  - HARD/SOFT/INFERRED constraints recorded and confirmed.
+- [[HON:teineigo]] [[MOR:root:E-P-S]] [[COM:Epistemic+Ceiling]] [[CLS:ge_rule]] [[EVD:-DI<gozlem>]] [[ASP:nesov.]] [[SPC:coord:EVD-CONF]]
+  - Confidence ceilings enforced for diagnoses, fixes, and validation claims.
 
 ---
 <!-- S8 ABSOLUTE RULES                                                            -->
