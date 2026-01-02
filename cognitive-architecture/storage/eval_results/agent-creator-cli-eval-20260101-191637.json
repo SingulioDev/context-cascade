@@ -1,0 +1,69 @@
+{
+  "skill_name": "agent-creator",
+  "version": "3.2.0",
+  "timestamp": "2026-01-02T00:16:37.025912+00:00",
+  "evaluation_type": "cli",
+  "total_tasks": 5,
+  "passed_tasks": 3,
+  "easy_score": 0.774,
+  "medium_score": 0,
+  "hard_score": 0,
+  "intent_accuracy": 0.8799999999999999,
+  "constraint_coverage": 0.75,
+  "output_quality": 0.774,
+  "verix_compliance": 0.73,
+  "l2_purity": 0.99,
+  "overall_score": 0.6,
+  "task_results": [
+    {
+      "task_id": "AC-001",
+      "difficulty": "easy",
+      "category": "agent_definition",
+      "passed": false,
+      "intent_accuracy": 0.7,
+      "output_quality": 0.3,
+      "execution_time_ms": 187111,
+      "reasoning": "The skill output indicates an agent definition was created but does not include the actual agent definition content in the output. The success criteria specifically requires 'valid agent definition with proper frontmatter' to be produced, but only a completion message is shown. The intent was partially understood (code review agent creation), but the output lacks the actual deliverable. No frontmatter, agent structure, or definition content is visible to evaluate. The output is in pure English (L2 compliant), but without the actual agent definition, the core task requirements are unmet."
+    },
+    {
+      "task_id": "AC-002",
+      "difficulty": "easy",
+      "category": "agent_definition",
+      "passed": false,
+      "intent_accuracy": 0.85,
+      "output_quality": 0.9,
+      "execution_time_ms": 234094,
+      "reasoning": "The skill correctly created a documentation generation agent with comprehensive capabilities and a well-structured 4-phase workflow. However, the success criteria specified 'delivery category' but the agent was placed in 'specialists' category instead. The output is high quality with clear features, usage examples, and integration points. Output is pure L2 English with no VCL markers. VERIX compliance is moderate - claims are reasonable but lack explicit epistemic grounding. The category mismatch is the primary failure point."
+    },
+    {
+      "task_id": "AC-003",
+      "difficulty": "easy",
+      "category": "agent_definition",
+      "passed": true,
+      "intent_accuracy": 0.95,
+      "output_quality": 0.85,
+      "execution_time_ms": 188698,
+      "reasoning": "The skill correctly understood the intent to create a test writing agent and produced a well-structured agent definition. The agent is properly placed in the 'quality' category (x-category: quality) as required by success criteria. The output includes comprehensive YAML definition with appropriate tools, capabilities, and metadata. Output quality is slightly reduced because the response appears truncated (cuts off mid-sentence at 'Valida'). VERIX compliance is moderate - while the output uses clear factual statements, it lacks explicit epistemic markers for internal documentation. L2 purity is high as the output is in clean English without VCL notation markers visible to users. Overall, the agent definition is practical and follows the registry patterns."
+    },
+    {
+      "task_id": "AC-004",
+      "difficulty": "easy",
+      "category": "agent_definition",
+      "passed": true,
+      "intent_accuracy": 0.95,
+      "output_quality": 0.92,
+      "execution_time_ms": 255423,
+      "reasoning": "The skill correctly identified the intent to create a security scanning agent and produced a comprehensive agent definition with the 'security' category as required by success criteria. The agent includes appropriate security-focused capabilities (SAST, SCA, secret detection, OWASP Top 10), follows the expected agent structure with name, category, type, model, and tools specified. Output is well-organized with clear tables and sections. The file wasn't actually written due to permissions, but the definition is complete and actionable. Pure L2 English throughout with no VCL markers. Minor deduction on constraint coverage as actual file creation wasn't completed, and verix compliance slightly lower as no explicit confidence levels or evidence chains are present (though this is appropriate for L2 user output)."
+    },
+    {
+      "task_id": "AC-005",
+      "difficulty": "easy",
+      "category": "agent_definition",
+      "passed": true,
+      "intent_accuracy": 0.95,
+      "output_quality": 0.9,
+      "execution_time_ms": 202326,
+      "reasoning": "The skill correctly identified the intent to create an API design agent and produced a comprehensive specialist agent. The output confirms proper YAML frontmatter format following Anthropic conventions, includes 10 specialized capabilities, and covers major API paradigms (REST, GraphQL, OpenAPI). The output is in pure L2 English with no VCL markers visible. Minor deductions: constraint_coverage slightly lower as no explicit constraints were provided to verify against; verix_compliance reduced because while the output makes claims about the agent's capabilities, it doesn't include evidence markers for verification (though this may be appropriate for L2 output). Overall, the skill successfully delivered a well-structured API specialist agent definition."
+    }
+  ]
+}
