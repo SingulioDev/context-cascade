@@ -7,16 +7,16 @@
 ## The Context Cascade Architecture
 
 ```
-PLAYBOOKS (30)     <-- Only these are loaded initially (~2k tokens)
+PLAYBOOKS (7)     <-- Only these are loaded initially (~2k tokens)
     |
     v
-SKILLS (196)       <-- Loaded when playbook invokes them
+SKILLS (171)       <-- Loaded when playbook invokes them
     |
     v
-AGENTS (211)       <-- Loaded when skill needs them
+AGENTS (217)       <-- Loaded when skill needs them
     |
     v
-COMMANDS (223)    <-- Embedded in agents, loaded last
+COMMANDS (245)    <-- Embedded in agents, loaded last
 ```
 
 **Why Context Cascade?**
@@ -141,12 +141,12 @@ flowchart TD
 
 **Option A - Core Only** (Recommended for beginners):
 ```bash
-/plugin install context-cascade-core
+/plugin install 12fa-core
 ```
 
 **Option B - Full Stack** (Everything):
 ```bash
-/plugin install context-cascade-core context-cascade-three-loop context-cascade-security context-cascade-visual-docs context-cascade-swarm
+/plugin install 12fa-core 12fa-three-loop 12fa-security 12fa-visual-docs 12fa-swarm
 ```
 
 ### 3. Setup MCP Servers
