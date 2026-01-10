@@ -1,19 +1,6 @@
 ---
 name: reverse-engineer-debug
 description: Rapid triage and debug of binaries or artifacts with static + light dynamic analysis for safe insights.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: security
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

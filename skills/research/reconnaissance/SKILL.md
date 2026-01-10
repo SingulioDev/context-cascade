@@ -1,27 +1,6 @@
 ---
 name: reconnaissance
 description: Systematic technology and market reconnaissance for extracting actionable intelligence from repositories, papers, and competitive landscapes.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite, WebFetch, WebSearch
-model: sonnet
-x-version: 1.0.0
-x-category: research
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
-x-triggers:
-  - reconnaissance
-  - competitive analysis
-  - technology scan
-  - extract patterns
-  - market research
-  - paper extraction
-  - repo analysis
 ---
 
 

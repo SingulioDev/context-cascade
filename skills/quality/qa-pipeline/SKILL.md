@@ -1,24 +1,6 @@
 ---
 name: qa-pipeline
 description: Self-validating QA loop extracted from AutoClaude - reviews acceptance criteria and auto-fixes issues until approval or escalation.
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-  - Task
-  - TodoWrite
-model: sonnet
-x-version: 1.0.0
-x-category: quality
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - EVD
-  - ASP
-  - SPC
-x-life-os-integration: true
 ---
 
 

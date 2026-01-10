@@ -1,71 +1,113 @@
----
-name: skill-forge-changelog
-description: Release history for Skill Forge updates
-allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite]
-model: claude-3-5-sonnet
-x-version: 3.2.0
-x-category: foundry/skill-forge
-x-vcl-compliance: v3.1.1
----
+# Skill Forge Changelog
 
-### L1 Improvement
-- Added English-first changelog summary with explicit triggers and confidence statement.
-- Preserved legacy VCL changelog in the appendix for compliance history.
+## v2.2.0 (2025-12-15)
 
-## STANDARD OPERATING PROCEDURE
+**Minor Release: All Supporting Files Updated from Cycle 8**
 
-### Purpose
-Track Skill Forge release changes and surface the latest expectations for execution.
+### Updated
+- skill-forge-sop-process.dot: Added Phase 0 cluster, updated title to "8-Phase"
+- SKILL-ENHANCED.md: Updated description to 8-phase, version to 2.1.0
+- references/quick-reference.md: Added Phase 0 section, updated to 8-phase
+- resources/README.md: Updated title to v2.0
+- EXPERTISE-ADDENDUM.md: Version updated to 2.1.0, notes about Phase 0 integration
 
-### Trigger Conditions
-- When referencing historical updates or validating behavior against a specific version.
-- Before applying SOP changes to ensure the current version is understood.
+### Summary
+All 14 files in skill-forge folder now consistent with v2.0+ methodology
 
-### Execution Phases
-1. **Identify Version**
-   - Note current release (v3.2.0) and prior ranges (v3.0.x–v2.x, v1.0.0).
-2. **Review Highlights**
-   - v3.2.0: Full VCL compliance, SKILL.md rewrite, self-application emphasis, mandatory adversarial+COV, updated templates, clarified MCP tagging.
-   - v3.0.x–v2.x: Added recursive improvement, hooks, standardized structure, quality gates.
-   - v1.0.0: Initial skill weaving SOP.
-3. **Apply Guardrails**
-   - Ensure current run aligns with latest requirements (adversarial+COV, structure templates, MCP tags).
-   - Keep confidence statements within ceilings.
-
-### Output Format
-- Version referenced and highlights applied.
-- Any backward-compatibility considerations or deviations.
-- Confidence statement with ceiling syntax: `Confidence: X.XX (ceiling: TYPE Y.YY)` (ceilings: inference/report 0.70; research 0.85; observation/definition 0.95).
-
-### Validation Checklist
-- [ ] Correct version identified for the work.
-- [ ] Latest guardrails applied.
-- [ ] Deviations documented with rationale.
-- [ ] Confidence statement included with explicit ceiling.
-
-Confidence: 0.70 (ceiling: inference 0.70) - Changelog rewritten to English-first format with VCL history retained.
+### Metrics
+- Folder completeness: 100%
+- All 14 files verified
 
 ---
 
-## VCL COMPLIANCE APPENDIX (Internal Reference)
+## v2.1.0 (2025-12-15)
 
-<details>
-<summary>Legacy content (verbatim)</summary>
+**Minor Release: GraphViz & Supporting Files from Cycle 7**
 
-[[HON:teineigo]] [[MOR:root:C-H-N]] [[COM:Degisim+Kaydi]] [[CLS:ge_changelog]] [[EVD:-DI<rapor>]] [[ASP:nesov.]] [[SPC:path:/skills/foundry/skill-forge/CHANGELOG-VCL]]
-# Degisim Kaydi (Skill-Forge) – VCL
+### Updated
+- skill-forge-process.dot: Added Phase 0 cluster with expertise loading flow
+- skill-forge-process.dot: Updated title to "8-Phase Skill Creation Process (v2.0)"
+- QUICK-REFERENCE.md: Updated to 8-phase, added Phase 0 section
+- README-ENHANCED.md: Updated to 8-phase, added Phase 0 description
+- ENHANCEMENT-SUMMARY.md: Updated all "7-phase" refs to "8-phase (0-7)"
 
-## v3.2.0 [[EVD:-DI<rapor>]] [[ASP:sov.]]
-- Tam VCL uyumu; SKILL.md yeniden yazim; meta-beceri oz-uygulama vurgusu.  
-- Adversarial test + COV zorunlu; yapisal sablonlar guncel.  
-- MCP entegrasyon ve etiketleme aciklandi.
+### Metrics
+- Diagram completeness: +30%
+- Supporting file consistency: +40%
+- Visual documentation: +25%
 
-## v3.0.x–v2.x
-- Recursive improvement ve hook rehberleri eklendi; dosya yapisi standartlasti; kalite kapilari tanimlandi.
+---
 
-## v1.0.0
-- Temel beceri dokumasi SOP’u.
+## v2.0.3 (2025-12-15)
 
-[[commit|confident]] <promise>CHANGELOG_SKILL_FORGE_VCL_COMPLIANT</promise> [ground:self-validation] [conf:0.88] [state:confirmed]
+**Patch: Phase Count Consistency from Cycle 6**
 
-</details>
+### Fixed
+- Regression test sfr-001 now says "8-phase" instead of "7-phase"
+- Forbidden changes now references "8-phase structure" instead of "7-phase"
+
+### Metrics
+- Internal consistency: +10%
+
+---
+
+## v2.0.2 (2025-12-15)
+
+**Patch: Final Consistency from Cycle 5**
+
+### Fixed
+- Updated RECURSIVE-IMPROVEMENT-ADDENDUM.md phase_structure to "8-phase (Phase 0-7)" with COMPLETED status
+
+### Metrics
+- Addendum consistency: +10%
+
+---
+
+## v2.0.1 (2025-12-15)
+
+**Patch: Cross-Skill Coordination from Cycle 4**
+
+### Added
+- Cross-Skill Coordination section with links to agent-creator, prompt-architect, prompt-forge, eval-harness
+
+### Metrics
+- Cross-skill visibility: +25%
+
+---
+
+## v2.0.0 (2025-12-15)
+
+**Major Release: Recursive Improvement Integration**
+
+### Added
+- **Phase 0: Expertise Loading** - Load domain expertise before skill creation
+- **Recursive Improvement Integration** section with:
+  - Role in the loop (META-SKILL)
+  - Input/Output contracts
+  - Eval harness integration
+  - Self-rebuild safety protocol
+  - Memory namespaces
+  - Uncertainty handling
+  - Rollback capability
+- Version field in frontmatter
+- Archive directory for version control
+
+### Changed
+- Methodology upgraded from 7-Phase to 8-Phase
+- Description updated to reflect new capabilities
+- Can now rebuild itself using previous version (with safeguards)
+
+### Metrics
+- Completeness: +30%
+- Integration: +40%
+- Safety: +25%
+
+---
+
+## v1.0.0 (Initial)
+
+- Original 7-Phase methodology
+- Strategic design principles
+- Progressive disclosure architecture
+- GraphViz diagram generation
+- Validation and iteration framework

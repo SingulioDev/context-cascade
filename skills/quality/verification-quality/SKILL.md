@@ -1,27 +1,6 @@
 ---
 name: verification-quality
 description: Verify outputs and claims for accuracy, grounding, and policy compliance with explicit evidence and confidence ceilings.
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-  - Task
-  - TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: quality
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

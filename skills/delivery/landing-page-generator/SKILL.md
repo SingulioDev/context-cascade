@@ -1,19 +1,6 @@
 ---
 name: landing-page-generator
 description: Research-to-release SOP for high-conversion landing pages with validated copy, design, and deployment steps.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: delivery
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

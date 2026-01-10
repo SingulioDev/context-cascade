@@ -1,21 +1,6 @@
 ---
 name: hooks-automation
 description: Manage event hooks and connectors with secure routing and backoff
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.1
-x-last-reflection: 2026-01-09T12:00:00Z
-x-reflection-count: 1
-x-category: operations
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

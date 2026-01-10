@@ -1,19 +1,6 @@
 ---
 name: platform
 description: Platform selection and orchestration meta-skill across Flow Nexus, Codex, Gemini, and AgentDB.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: platforms
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

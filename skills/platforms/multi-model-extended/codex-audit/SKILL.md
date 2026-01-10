@@ -1,7 +1,6 @@
 ---
 name: codex-audit
 description: Use Codex CLI for sandboxed auditing, debugging, and autonomous prototyping
-allowed-tools: Bash, Read, Write, TodoWrite, Glob, Grep
 ---
 
 

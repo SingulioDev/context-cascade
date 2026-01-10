@@ -1,73 +1,326 @@
----
-name: skill-forge-recursive-improvement-addendum
-description: Recursive improvement loop and guardrails for Skill Forge
-allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite]
-model: claude-3-5-sonnet
-x-version: 3.2.0
-x-category: foundry/skill-forge
-x-vcl-compliance: v3.1.1
----
+# Skill Forge - Recursive Improvement Addendum
 
-### L1 Improvement
-- Introduced an English-first SOP describing the recursive loop, controls, and memory tagging.
-- Preserved VCL notation in the appendix for compliance and traceability.
+## Purpose
 
-## STANDARD OPERATING PROCEDURE
-
-### Purpose
-Maintain the Skill Forge recursive improvement loop with required controls and memory practices.
-
-### Trigger Conditions
-- When iterating on Skill Forge outputs or running dogfooding loops.
-- Before final delivery to ensure adversarial validation and structure checks are complete.
-
-### Execution Phases
-1. **Run the Loop**
-   - Sequence: design → weave/build → test → verify → observe → refine.
-   - Keep ASP in non-terminal mode; record EVD/ASP each iteration.
-2. **Apply Controls**
-   - Adversarial testing required with COV measurement.
-   - Structural validation: ensure `examples/`, `tests/`, `resources/`, `references/` exist.
-   - Watch anti-patterns: skipping adversarial tests, missing structure, generic coordination, MCP neglect.
-3. **Persist Memory**
-   - Use MCP namespace `skills/foundry/skill-forge/{project}/{timestamp}`.
-   - Tag WHO=`skill-forge-{session}` for traceability.
-
-### Output Format
-- Iteration summary with actions taken and findings.
-- Validation results and anti-pattern checks.
-- Memory keys used and status.
-- Confidence statement with ceiling syntax: `Confidence: X.XX (ceiling: TYPE Y.YY)` (ceilings: inference/report 0.70; research 0.85; observation/definition 0.95).
-
-### Validation Checklist
-- [ ] Loop executed with evidence recorded.
-- [ ] Adversarial + COV completed.
-- [ ] Required structure validated.
-- [ ] Anti-patterns checked and mitigated.
-- [ ] MCP namespace tagged; confidence statement included.
-
-Confidence: 0.70 (ceiling: inference 0.70) - Recursive improvement addendum rewritten to English-first SOP with legacy details retained.
+Connect **skill-forge** with the **Recursive Self-Improvement System** to enable:
+1. Skill Forge improving itself
+2. Skill Forge being improved by Prompt Forge
+3. Skill Forge applying improvements to other skills
 
 ---
 
-## VCL COMPLIANCE APPENDIX (Internal Reference)
+## Role in Recursive Loop
 
-<details>
-<summary>Legacy content (verbatim)</summary>
+```
++------------------+         +------------------+
+|   PROMPT FORGE   |-------->|   SKILL FORGE    |
+| (Generates       |         |   (Applies       |
+|  proposals)      |<--------|    proposals)    |
++------------------+         +------------------+
+                                     |
+                                     v
+                            +------------------+
+                            |   ALL SKILLS     |
+                            | (Improvement     |
+                            |  targets)        |
+                            +------------------+
+```
 
-[[HON:teineigo]] [[MOR:root:R-K-R]] [[COM:Ozyinelemeli+Iyilestirme+Ek]] [[CLS:ge_addendum]] [[EVD:-DI<rapor>]] [[ASP:nesov.]] [[SPC:path:/skills/foundry/skill-forge/RECURSIVE-IMPROVEMENT-ADDENDUM-VCL]]
-# Ozyinelemeli Iyilestirme Ek (Skill-Forge) – VCL
+**Skill Forge has two modes:**
 
-## Dongu
-[[define|neutral]] LOOP := {tasarla→dok→test_et→dogrula→gozle→refine}. ASP:nesov. devam; her iterasyonda EVD/ASP kaydı. [ground:RECURSIVE-IMPROVEMENT-ADDENDUM.md] [conf:0.82] [state:confirmed]
+1. **Target Mode**: Being improved by Prompt Forge
+2. **Applier Mode**: Applying improvements to other skills (including itself)
 
-## Kontroller
-[[HON:teineigo]] [[MOR:root:K-N-T]] [[COM:Kontrol+Set]] [[CLS:ge_guardrail]] [[EVD:-DI<policy>]] [[ASP:nesov.]]
-- Adversarial test zorunlu; COV ölç.  
-- Yapı dogrulama: examples/tests/resources/references var.  
-- Anti-kalip: dusmanca_test_atlama, eksik_yapi, genel_koordinasyon, MCP_ihmal.
+---
 
-## Hafiza
-[[assert|neutral]] MCP namespace: skills/foundry/skill-forge/{proje}/{timestamp}; etiket WHO=skill-forge-{session}. [ground:RECURSIVE-IMPROVEMENT-ADDENDUM.md] [conf:0.78] [state:provisional]
+## Integration Points
 
-</details>
+### 1. As Improvement Target
+
+Prompt Forge analyzes Skill Forge and generates proposals.
+
+```yaml
+target_integration:
+  auditor: "skill-auditor"
+  evaluator: "eval-harness"
+  benchmarks:
+    - "skill-generation-benchmark-v1"
+  regressions:
+    - "skill-forge-regression-v1"
+
+  improvement_areas:
+    phase_structure:
+      current: "8-phase (Phase 0-7)"
+      status: "COMPLETED - Phase 0 expertise loading added in v2.0"
+    contract_compliance:
+      current: "Phase 5"
+      potential: "Stricter schema validation"
+    failure_handling:
+      current: "Phase 6"
+      potential: "Add timeout defaults"
+```
+
+### 2. As Improvement Applier
+
+Skill Forge applies proposals generated by Prompt Forge.
+
+```yaml
+applier_integration:
+  input:
+    - proposal: "From prompt-forge"
+    - target: "Path to skill to improve"
+    - audit_report: "From skill-auditor"
+
+  process:
+    - step: "Parse proposal changes"
+    - step: "Apply changes to target skill"
+    - step: "Validate structure compliance"
+    - step: "Generate test cases for new version"
+    - step: "Output candidate version"
+
+  output:
+    - candidate_skill: "Modified skill content"
+    - validation_report: "Structure compliance check"
+    - test_cases: "For eval harness"
+```
+
+### 3. Self-Improvement Mode
+
+Skill Forge rebuilding itself (with safeguards).
+
+```yaml
+self_improvement:
+  trigger: "Bootstrap loop cycle"
+
+  safeguards:
+    - "Uses PREVIOUS version to rebuild (not modified)"
+    - "Changes must pass skill-generation-benchmark-v1"
+    - "Changes must pass skill-forge-regression-v1"
+    - "Previous version archived before apply"
+    - "Human gate for breaking changes"
+
+  process:
+    1. "skill-auditor analyzes current skill-forge"
+    2. "prompt-forge generates improvement proposals"
+    3. "skill-forge (PREVIOUS version) applies proposals"
+    4. "eval-harness tests new skill-forge"
+    5. "If improved: commit. If regressed: reject."
+
+  forbidden_changes:
+    - "Removing safeguards"
+    - "Bypassing eval harness"
+    - "Removing phase structure"
+    - "Weakening contract requirements"
+```
+
+---
+
+## Modified Workflow
+
+### Standard Skill Creation (unchanged)
+```
+User Request -> Skill Forge -> New Skill
+```
+
+### Skill Improvement (new)
+```
+Audit Report -> Prompt Forge -> Proposal
+Proposal -> Skill Forge -> Improved Skill
+Improved Skill -> Eval Harness -> ACCEPT/REJECT
+```
+
+### Self-Improvement (new)
+```
+Audit Report -> Prompt Forge -> Proposal for Skill Forge
+Proposal -> Skill Forge (PREV) -> Improved Skill Forge
+Improved Skill Forge -> Eval Harness -> ACCEPT/REJECT
+```
+
+---
+
+## New Operations
+
+### Operation: Apply Improvement Proposal
+
+```yaml
+apply_proposal:
+  input:
+    proposal_id: "prop-123"
+    target_path: ".claude/skills/example/SKILL.md"
+
+  process:
+    - step: "Load proposal from memory"
+      memory_key: "improvement/proposals/{proposal_id}"
+
+    - step: "Read target skill"
+      validate: "File exists"
+
+    - step: "Apply each change"
+      for_each: "proposal.changes"
+      action: "Replace before with after"
+      validate: "Before text found in file"
+
+    - step: "Verify structure compliance"
+      check: "All 8 phases present (0-7)"
+      check: "Contracts defined for operations"
+      check: "Error handling present"
+
+    - step: "Generate output"
+      output: "Modified skill content"
+      output: "Validation report"
+      output: "New test cases"
+
+  output:
+    candidate_content: "Full skill with changes"
+    validation:
+      structure_compliant: true|false
+      phases_present: [0,1,2,3,4,5,6,7]
+      issues: []
+    new_test_cases:
+      - test: "Test for change 1"
+        expected: "..."
+```
+
+### Operation: Rebuild Self
+
+```yaml
+rebuild_self:
+  trigger: "Bootstrap loop self-improvement"
+
+  safeguards:
+    - condition: "Only triggered by bootstrap-loop"
+      enforce: true
+    - condition: "Uses archived PREVIOUS version"
+      enforce: true
+    - condition: "Human gate for breaking changes"
+      enforce: true
+
+  process:
+    - step: "Get previous version path"
+      source: ".claude/skills/skill-forge/.archive/SKILL-v{N-1}.md"
+
+    - step: "Load previous Skill Forge"
+      validate: "Archive exists"
+
+    - step: "Load proposal for current Skill Forge"
+      source: "improvement/proposals/{proposal_id}"
+
+    - step: "Apply proposal using PREVIOUS version"
+      note: "This prevents infinite self-reference"
+
+    - step: "Output candidate"
+      output: "skill-forge-v{N+1} candidate"
+
+  output:
+    candidate_path: ".claude/skills/skill-forge/SKILL-candidate.md"
+    applied_with_version: "v{N-1}"
+```
+
+---
+
+## Eval Harness Integration
+
+### Benchmarks
+
+```yaml
+skill_generation_benchmark:
+  id: "skill-generation-benchmark-v1"
+
+  tests:
+    - id: "sg-001"
+      input: "Create micro-skill for JSON validation"
+      expected:
+        - has_7_phases: true
+        - has_contracts: true
+        - has_error_handling: true
+      scoring:
+        functionality: 0.0-1.0
+        contract_compliance: 0.0-1.0
+        error_coverage: 0.0-1.0
+
+  minimum_passing:
+    functionality: 0.75
+    contract_compliance: 0.80
+    error_coverage: 0.75
+```
+
+### Regressions
+
+```yaml
+skill_forge_regression:
+  id: "skill-forge-regression-v1"
+
+  tests:
+    - id: "sfr-001"
+      name: "8-phase structure preserved"
+      expected: "Output has all 8 phases (0-7)"
+      must_pass: true
+
+    - id: "sfr-002"
+      name: "Contract specification present"
+      expected: "Output has input/output contracts"
+      must_pass: true
+
+    - id: "sfr-003"
+      name: "Error handling included"
+      expected: "Output has error handling section"
+      must_pass: true
+
+    - id: "sfr-004"
+      name: "Test cases generated"
+      expected: "Output includes test cases"
+      must_pass: true
+
+  failure_threshold: 0  # ANY failure = REJECT
+```
+
+---
+
+## Memory Namespaces
+
+| Namespace | Purpose |
+|-----------|---------|
+| `skill-forge/generations/{id}` | Skills created by Skill Forge |
+| `skill-forge/improvements/{id}` | Improvements applied |
+| `skill-forge/self-rebuilds/{id}` | Self-improvement cycles |
+| `improvement/commits/skill-forge` | Version history |
+
+---
+
+## Safety Constraints
+
+### NEVER:
+
+1. **Skip eval harness** when self-improving
+2. **Use current version** to rebuild self (must use N-1)
+3. **Accept breaking changes** without human gate
+4. **Remove safeguards** through improvement
+5. **Weaken contract requirements** through improvement
+
+### ALWAYS:
+
+1. **Archive before apply**
+2. **Run full regression suite**
+3. **Require positive improvement delta**
+4. **Log all self-improvement attempts**
+5. **Respect human gates**
+
+---
+
+## Version Control
+
+```
+.claude/skills/skill-forge/
+  SKILL.md                           # Current version
+  RECURSIVE-IMPROVEMENT-ADDENDUM.md  # This file
+  .archive/
+    SKILL-v1.0.0.md                 # Previous versions
+    SKILL-v1.1.0.md
+  CHANGELOG.md                       # Version history
+```
+
+---
+
+**Version**: 1.0.0
+**Last Updated**: 2025-12-15
+**Key Constraint**: Self-improvement uses PREVIOUS version, never current

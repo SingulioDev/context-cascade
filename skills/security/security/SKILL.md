@@ -1,19 +1,6 @@
 ---
 name: security
 description: Central hub for secure design, vulnerability assessment, and remediation routing across the security skill group.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: security
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

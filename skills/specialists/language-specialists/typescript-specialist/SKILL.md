@@ -1,19 +1,6 @@
 ---
 name: typescript-specialist
 description: Build and review TypeScript applications and libraries with strong typing, tooling, and delivery quality.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-category: specialists
-x-version: 1.1.0
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

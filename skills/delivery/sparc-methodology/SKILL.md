@@ -1,19 +1,6 @@
 ---
 name: sparc-methodology
 description: SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) delivery framework with explicit constraints, checkpoints, and confidence ceilings.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: delivery
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

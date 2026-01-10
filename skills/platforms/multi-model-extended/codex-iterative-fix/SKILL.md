@@ -1,18 +1,6 @@
 ---
 name: codex-iterative-fix
 description: Use Codex CLI in full-auto mode to fix issues iteratively until tests pass. Autonomous debugging and test-fixing loop with sandbox safety.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - codex
-  - debugging
-  - testing
-  - multi-model
-  - autonomous
-x-author: context-cascade
-x-verix-description: |
-  
 ---
 
 

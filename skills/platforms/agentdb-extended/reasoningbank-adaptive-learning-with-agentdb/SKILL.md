@@ -1,7 +1,6 @@
 ---
 name: reasoningbank-adaptive-learning-with-agentdb
 description: ---
-allowed-tools: Read, Write, Edit, Task, TodoWrite, Glob, Grep
 ---
 
 

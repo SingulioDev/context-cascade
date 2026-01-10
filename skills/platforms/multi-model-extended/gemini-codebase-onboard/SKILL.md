@@ -1,18 +1,6 @@
 ---
 name: gemini-codebase-onboard
 description: Use Gemini CLI's 1M token context to understand entire codebases in one pass. Full architecture mapping, pattern discovery, and onboarding documentation.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - gemini
-  - codebase-analysis
-  - architecture
-  - multi-model
-  - onboarding
-x-author: context-cascade
-x-verix-description: |
-  
 ---
 
 

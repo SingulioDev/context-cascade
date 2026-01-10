@@ -10,13 +10,13 @@
 PLAYBOOKS (30)     <-- Only these are loaded initially (~2k tokens)
     |
     v
-SKILLS (171)       <-- Loaded when playbook invokes them
+SKILLS (176)       <-- Loaded when playbook invokes them
     |
     v
-AGENTS (219)       <-- Loaded when skill needs them
+AGENTS (260)       <-- Loaded when skill needs them
     |
     v
-COMMANDS (231)    <-- Embedded in agents, loaded last
+COMMANDS (249)    <-- Embedded in agents, loaded last
 ```
 
 **Why Context Cascade?**
@@ -116,7 +116,7 @@ flowchart TD
 
 ## 🎉 What's New in v3.0.0
 
-- ✅ **Current component counts**: 30 playbooks, 171 skills, 219 agents, and 231 commands (see `docs/COMPONENT-COUNTS.json`).
+- ✅ **Current component counts**: 30 playbooks, 196 skills (176 core + 20 supplementary), 260 agents, and 249 commands (see `docs/COMPONENT-COUNTS.json`).
 - ✅ **Discovery indexes**: `discovery/SKILL-INDEX.md`, `discovery/AGENT-REGISTRY.md`, and `discovery/COMMAND-INDEX.md` map routing across the hierarchy.
 - ✅ **Modular marketplace**: Five installable plugin packages defined in `.claude-plugin/marketplace.json`.
 - ✅ **Graphviz library**: 41 workflow diagrams live in `docs/workflows/graphviz/` with an index and README.
@@ -704,7 +704,7 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 
 | Item | Current State (repository data) |
 |------|---------------------------------|
-| **Component counts** | 30 playbooks, 171 skills, 219 agents, 231 commands (`docs/COMPONENT-COUNTS.json`) |
+| **Component counts** | 30 playbooks, 196 skills (176 core + 20 supplementary), 260 agents, 249 commands (`docs/COMPONENT-COUNTS.json`) |
 | **Plugin bundles** | 5 marketplace packages in `.claude-plugin/marketplace.json` |
 | **Graphviz library** | 41 DOT diagrams in `docs/workflows/graphviz/` |
 | **Discovery indexes** | Skill/agent/command indexes under `discovery/` |

@@ -1,19 +1,6 @@
 ---
 name: ralph-loop
 description: Run Ralph-style iterative loops for reasoning, alignment, learning, planning, and handoff with strong evidence discipline.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: orchestration
-x-vcl-compliance: v3.2.0
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

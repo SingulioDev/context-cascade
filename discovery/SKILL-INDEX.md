@@ -1,8 +1,8 @@
 # Skill Discovery Index
 
 **Purpose:** Top-level model uses this to discover and route to skills
-**Updated:** 2026-01-02
-**Total Skills:** 237
+**Updated:** 2026-01-09
+**Total Skills:** 175 (all consolidated, duplicates removed, structures fixed)
 
 ---
 
@@ -18,6 +18,10 @@
 | Create agent | `agent-creator` | agent-architect -> validator |
 | Deploy app | `production-readiness` | devops -> tester -> deployer |
 | Analyze code | `functionality-audit` | analyzer -> reporter |
+| Use Codex CLI | `codex-auto` | codex-agent |
+| Use Gemini CLI | `gemini-megacontext` | gemini-agent |
+| Check system health | `health-system` | health-agents |
+| Respond to recruiters | `recruiter-outreach-pipeline` | writer -> scheduler |
 
 ---
 
@@ -117,6 +121,51 @@ Utilities and adapters.
 | `web-cli-teleport` | Web-to-CLI bridge | teleporter |
 | `pptx-generation` | Presentation creation | pptx-generator |
 | `intent-analyzer` | Analyze user intent | intent-parser |
+
+---
+
+## Consolidated Skills (formerly supplementary)
+
+All skills now unified in `context-cascade/skills/`. Former supplementary skills merged.
+
+### foundry/recursive-improvement/ (5 skills)
+Self-improvement and meta-optimization loops.
+
+| Skill | Purpose | Key Agents | Location |
+|-------|---------|------------|----------|
+| `recursive-improvement` | Parent skill for recursive loops | coordinator | `skills/foundry/recursive-improvement/` |
+| `bootstrap-loop` | Self-improvement bootstrap cycle | coordinator | `skills/foundry/recursive-improvement/bootstrap-loop/` |
+| `eval-harness` | Evaluation framework for skill quality | evaluator | `skills/foundry/recursive-improvement/eval-harness/` |
+| `improvement-pipeline` | Automated improvement workflow | optimizer | `skills/foundry/recursive-improvement/improvement-pipeline/` |
+| `prompt-forge` | Iterative prompt refinement | prompt-engineer | `skills/foundry/recursive-improvement/prompt-forge/` |
+
+### guards/ (1 skill)
+Pre-execution safety checks.
+
+| Skill | Purpose | Key Agents | Location |
+|-------|---------|------------|----------|
+| `library-check` | Pre-coding library reuse guard | scanner | `skills/guards/library-check/` |
+
+### specialists/health-system/ (1 skill)
+System monitoring and self-repair.
+
+| Skill | Purpose | Key Agents | Location |
+|-------|---------|------------|----------|
+| `health-system` | 7-agent health monitoring | health-agents | `skills/specialists/health-system/` |
+
+### security/ (1 skill)
+Security and reverse engineering.
+
+| Skill | Purpose | Key Agents | Location |
+|-------|---------|------------|----------|
+| `reverse-engineer-debug` | Binary/protocol RE debugging | reverse-engineer | `skills/security/reverse-engineer-debug/` |
+
+### tooling/ (1 skill)
+Professional automation.
+
+| Skill | Purpose | Key Agents | Location |
+|-------|---------|------------|----------|
+| `recruiter-outreach-pipeline` | Automated recruiter response | writer, scheduler | `skills/tooling/recruiter-outreach-pipeline/` |
 
 ---
 

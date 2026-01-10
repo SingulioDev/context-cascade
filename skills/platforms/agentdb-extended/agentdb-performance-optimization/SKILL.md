@@ -1,7 +1,6 @@
 ---
 name: agentdb-performance-optimization
 description: Apply quantization to reduce memory by 4-32x. Enable HNSW indexing for 150x faster search. Configure caching strategies and implement batch operations. Use when optimizing memory usage, improving search speed, or scaling to millions of vectors. Deploy these optimizations to achieve 12,500x performance gains.
-allowed-tools: Read, Write, Edit, Bash, Task, TodoWrite, Glob, Grep, WebFetch
 ---
 
 

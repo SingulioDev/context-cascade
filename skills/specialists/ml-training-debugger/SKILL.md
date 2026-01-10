@@ -1,19 +1,6 @@
 ---
 name: ml-training-debugger
 description: Diagnose and stabilize ML training runs, recover from failures, and deliver validated fixes.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-category: specialists
-x-version: 1.1.0
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

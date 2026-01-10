@@ -1,7 +1,6 @@
 ---
 name: reasoningbank-with-agentdb
 description: Implement ReasoningBank adaptive learning with AgentDBs 150x faster vector database. Includes trajectory tracking, verdict judgment, memory distillation, and pattern recognition. Use when building self-learning agents, optimizing decision-making, or implementing experience replay systems.
-allowed-tools: Read, Write, Edit, Bash, Task, TodoWrite, Glob, Grep, WebFetch
 ---
 
 

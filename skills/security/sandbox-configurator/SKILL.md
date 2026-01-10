@@ -1,19 +1,6 @@
 ---
 name: sandbox-configurator
 description: Secure sandbox policy design (filesystem, network, secrets, observability) with auditable guardrails for development runtimes.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: security
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

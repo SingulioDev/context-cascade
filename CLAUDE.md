@@ -44,9 +44,11 @@ L2 (User):     Pure English        // ALL responses to user
 
 | Component | Count | Evidence |
 |-----------|-------|----------|
-| Skills | 171 | [witnessed:readme] |
-| Agents | 217 | [witnessed:readme] |
-| Commands | 245 | [witnessed:readme] |
+| Skills (core) | 176 | [witnessed:file-count] (context-cascade/skills/) |
+| Skills (supplementary) | 20 | [witnessed:file-count] (~/.claude/skills/) |
+| Skills Total | 196 | [computed:sum] |
+| Agents | 260 | [witnessed:file-count] |
+| Commands | 249 | [witnessed:file-count] |
 | Playbooks | 7 | [witnessed:readme] |
 
 ---
@@ -84,13 +86,13 @@ User Request
 
 ### Slash Commands (Registered)
 
-[assert|neutral] 708 components registered in ~/.claude/commands/ [ground:witnessed:registration] [conf:0.95] [state:confirmed]
+[assert|neutral] 685 components registered in ~/.claude/commands/ [ground:witnessed:registration] [conf:0.95] [state:confirmed]
 
 ```
 ~/.claude/commands/
-  *.md           (258 commands)
-  skills/*.md    (233 skills)
-  agents/*.md    (217 agents)
+  *.md           (249 commands)
+  skills/*.md    (176 core skills + 20 supplementary = 196 total)
+  agents/*.md    (260 agents)
 ```
 
 ### Auto-Routing Hook
@@ -145,7 +147,7 @@ Route each task to playbook based on:
 
 ## AGENT REGISTRY
 
-[assert|neutral] 211 agents across 10 categories [ground:witnessed:registry-count] [conf:0.99] [state:confirmed]
+[assert|neutral] 260 agents across 10 categories [ground:witnessed:file-count] [conf:0.99] [state:confirmed]
 
 ```
 Category        Count   Evidence
@@ -195,7 +197,7 @@ Skill("reflect")                                     // Session reflection & lea
 
 ### Task() Tool Syntax (for Agents)
 
-[direct|emphatic] CRITICAL: The 217 agents are CONCEPTUAL PERSONAS, not Task tool subagent_types [ground:api-spec] [conf:0.99] [state:confirmed]
+[direct|emphatic] CRITICAL: The 260 agents are CONCEPTUAL PERSONAS, not Task tool subagent_types [ground:api-spec] [conf:0.99] [state:confirmed]
 
 **Valid subagent_types (ONLY these 6 work)**:
 | subagent_type | Use For |
@@ -252,7 +254,7 @@ TodoWrite({ todos })          // Track progress
 
 ---
 
-## SKILL INDEX (171 Skills)
+## SKILL INDEX (196 Skills: 176 Core + 20 Supplementary)
 
 [assert|neutral] Complete skill catalog by category [ground:witnessed:readme] [conf:0.95] [state:confirmed]
 
@@ -523,7 +525,7 @@ TodoWrite({ todos })          // Track progress
 
 ---
 
-## AGENT INDEX (217 Conceptual Personas)
+## AGENT INDEX (260 Conceptual Personas)
 
 [assert|neutral] Complete agent persona catalog by category [ground:witnessed:agent-registry] [conf:0.95] [state:confirmed]
 

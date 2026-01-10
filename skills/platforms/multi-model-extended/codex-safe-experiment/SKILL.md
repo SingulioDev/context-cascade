@@ -1,18 +1,6 @@
 ---
 name: codex-safe-experiment
 description: Use Codex CLI sandbox mode to try risky changes safely. Isolated experimentation with network disabled and directory restrictions.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - codex
-  - sandbox
-  - experimentation
-  - multi-model
-  - safe-refactoring
-x-author: context-cascade
-x-verix-description: |
-  
 ---
 
 

@@ -1,19 +1,6 @@
 ---
 name: agentdb-advanced
 description: Advanced AgentDB deployment patterns, multi-tenant controls, and durability hardening.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: platforms
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

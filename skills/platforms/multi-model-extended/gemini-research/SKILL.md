@@ -1,7 +1,6 @@
 ---
 name: gemini-research
 description: Use Gemini CLI for research with Google Search grounding and 1M token context
-allowed-tools: Bash, Read, Write, TodoWrite, WebFetch, Glob, Grep
 ---
 
 

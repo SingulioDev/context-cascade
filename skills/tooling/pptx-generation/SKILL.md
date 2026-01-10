@@ -1,29 +1,6 @@
 ---
 name: pptx-generation
 description: Generate production-ready PowerPoint decks with structured prompts, design guardrails, and validation checkpoints.
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-  - Task
-  - TodoWrite
-model: claude-3-5-sonnet
-x-version: 3.2.1
-x-category: tooling
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
-x-last-reflection: 2026-01-08T20:55:00Z
-x-reflection-count: 1
 ---
 
 

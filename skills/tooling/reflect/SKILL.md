@@ -1,30 +1,6 @@
 ---
 name: reflect
 description: Extract learnings from session corrections and patterns, update skill files with persistent memory. Implements Loop 1.5 - per-session micro-learning between execution and meta-optimization.
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-  - Task
-  - TodoWrite
-model: sonnet
-x-version: 1.0.5
-x-category: tooling
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
-x-loop: 1.5
-x-last-reflection: 2026-01-09T14:30:00Z
-x-reflection-count: 6
 ---
 
 
@@ -722,3 +698,39 @@ cp /tmp/skill-update/skill-name.zip skills/packaged/skill-name.skill
 - Self-test on creation session validates the workflow and demonstrates dogfooding [ground:observation:2026-01-05]
 - Python standalone scripts: Use Path(__file__).parent.parent to get project root, add to sys.path, and os.chdir() to project root before imports to avoid relative import issues [ground:observation:fix:2026-01-08]
 - Users reporting hook errors prefer quick diagnosis over verbose explanations [ground:observation:1-session:2026-01-09]
+
+---
+
+## SESSION LEARNINGS (2026-01-09)
+
+### Discovery Index Maintenance [conf:0.90]
+
+When maintaining Context Cascade component counts and discovery indexes:
+
+#### 4-File Sync Requirement
+| File | Update Action |
+|------|---------------|
+| `context-cascade/CLAUDE.md` | Update component count table |
+| `discovery/SKILL-INDEX.md` | Add skill entries with category tables |
+| `scripts/skill-index/skill-index.json` | Add skill routing data |
+| `~/.claude/CLAUDE.md` | Sync total counts |
+
+#### Verification Commands
+```bash
+# Count core skills
+find "/c/Users/17175/claude-code-plugins/context-cascade/skills" -name "SKILL.md" | wc -l
+
+# Count supplementary skills
+find "/c/Users/17175/.claude/skills" -name "*.md" | wc -l
+
+# Count agents
+find "/c/Users/17175/claude-code-plugins/context-cascade/agents" -name "*.md" | wc -l
+
+# Count commands
+find "/c/Users/17175/claude-code-plugins/context-cascade/commands" -name "*.md" | wc -l
+```
+
+#### Key Insight
+- Index generation scripts (`build-skill-index.py`, `generate-index.js`) only scan core `skills/` directory
+- Supplementary skills in `.claude/skills/` require manual addition OR script update
+- [ground:user-correction:2026-01-09]

@@ -1,27 +1,6 @@
 ---
 name: sop-dogfooding-pattern-retrieval
 description: SOP for retrieving, curating, and applying patterns discovered through dogfooding runs.
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-  - Task
-  - TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: quality
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

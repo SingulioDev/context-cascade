@@ -1,7 +1,6 @@
 ---
 name: codex-zdr
 description: Zero Data Retention mode for sensitive/proprietary code - no code stored on OpenAI servers
-allowed-tools: Bash, Read, Write, TodoWrite
 ---
 
 

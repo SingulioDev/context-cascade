@@ -1,7 +1,6 @@
 ---
 name: codex-sandbox
 description: Run code in Codex fully isolated sandbox - network disabled, CWD only, Seatbelt/Docker isolation
-allowed-tools: Bash, Read, Write, TodoWrite, Glob, Grep
 ---
 
 

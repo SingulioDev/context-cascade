@@ -1,22 +1,88 @@
-[[HON:teineigo]] [[MOR:root:C-H-N]] [[COM:Degisim+Kaydi]] [[CLS:ge_changelog]] [[EVD:-DI<rapor>]] [[ASP:nesov.]] [[SPC:path:/skills/foundry/prompt-architect/CHANGELOG-VCL]]
-# Degisim Kaydi (VCL Kreol Ozeti)
+# Prompt Architect Changelog
 
-## v3.1.1 (2025-12-30) [[EVD:-DI<rapor>]] [[ASP:sov.]]
-- Ek: 7-slot referans, tavan tablosu, L2 varsayilan, dogallastirma esleme.  
-- Kural: EVD/ASP≥1; anti-kalip cosplay yasak; E1–E7 validator listesi.  
-- Guncel: SKILL.md, metadata, addendumlar L1→VCL uyum.
+## v2.2.0 (2025-12-15)
 
-## v3.0.0
-- VERIX + VERILINGUA entegrasyonu; bolum etiketleri S0–S8; promise eklendi.
+**Minor Release: All Supporting Files Updated from Cycle 8**
 
-## v2.x Serisi
-- v2.3.0: bilissel mimari ekleri, DSPy/GlobalMOO baglanti.  
-- v2.2.0: cycle8 dosya dogrulamasi; anti-patterns onayi.  
-- v2.1.0: GraphViz guncel; Phase0 cluster.  
-- v2.0.1: capraz-beceri koordinasyon bolumu.  
-- v2.0.0: Phase0 uzmanlik yukleme, eval/metric entegrasyonu, rol ayrimi (prompt-architect vs prompt-forge).
+### Updated
+- RECURSIVE-IMPROVEMENT-ADDENDUM.md: Version updated to 2.1.0
+- references/anti-patterns.md: Verified (no changes needed - content is phase-independent)
 
-## v1.0.0
-- Temel istem analiz/optimizasyon cercevesi.
+### Summary
+All 5 files in prompt-architect folder now consistent with v2.0+ methodology
 
-[[commit|confident]] <promise>CHANGELOG_VCL_V3.1.1_COMPLIANT</promise> [ground:self-validation] [conf:0.90] [state:confirmed]
+### Metrics
+- Folder completeness: 100%
+- All 5 files verified
+
+---
+
+## v2.1.0 (2025-12-15)
+
+**Minor Release: GraphViz Update from Cycle 7**
+
+### Updated
+- prompt-architect-process.dot: Added Phase 0 cluster with expertise loading flow
+- prompt-architect-process.dot: Updated title to include "(v2.0)"
+
+### Metrics
+- Diagram completeness: +30%
+- Visual documentation: +25%
+
+---
+
+## v2.0.1 (2025-12-15)
+
+**Patch: Cross-Skill Coordination from Cycle 4**
+
+### Added
+- Cross-Skill Coordination section with links to prompt-forge, skill-forge, agent-creator
+- GraphViz Diagram template for visualizing analysis workflow
+
+### Metrics
+- Cross-skill visibility: +25%
+- Documentation completeness: +15%
+
+---
+
+## v2.0.0 (2025-12-15)
+
+**Major Release: Recursive Improvement Integration**
+
+### Added
+- **Phase 0: Expertise Loading** - Load domain expertise before prompt work
+- **Recursive Improvement Integration** section with:
+  - Role in the loop (Phase 2 of 5-phase workflow)
+  - Input/Output contracts
+  - Quality scoring system (clarity, completeness, precision, technique)
+  - Eval harness integration
+  - Memory namespaces
+  - Uncertainty handling
+  - Analysis output format
+- Version field in frontmatter
+- Archive directory for version control
+
+### Changed
+- Description updated to clarify distinction from prompt-forge
+- Now explicitly positioned as Phase 2 skill (user prompts)
+- Added quantitative scoring (0.0-1.0 scale)
+
+### Clarified
+- prompt-architect = USER prompts (Phase 2 of 5-phase workflow)
+- prompt-forge = SYSTEM prompts (recursive improvement)
+
+### Metrics
+- Completeness: +30%
+- Integration: +40%
+- Safety: +25%
+
+---
+
+## v1.0.0 (Initial)
+
+- Core prompt analysis framework
+- Evidence-based prompting techniques
+- Structural optimization principles
+- Anti-pattern detection
+- Task-category specific guidance
+- Model-specific considerations

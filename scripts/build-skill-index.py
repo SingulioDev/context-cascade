@@ -34,6 +34,7 @@ from typing import Dict, List, Optional, Set
 
 PLUGIN_DIR = Path("C:/Users/17175/claude-code-plugins/context-cascade")
 SKILLS_DIR = PLUGIN_DIR / "skills"
+SUPPLEMENTARY_SKILLS_DIR = Path("C:/Users/17175/.claude/skills")
 DEFAULT_OUTPUT = PLUGIN_DIR / "scripts" / "skill-index" / "skill-index.json"
 
 # Stopwords to filter from extracted keywords
@@ -323,9 +324,20 @@ def process_skill_file(skill_path: Path, skills_dir: Path) -> Optional[SkillData
     # Get supporting files
     files = get_supporting_files(skill_dir)
 
+    # Calculate relative path - handle both core and supplementary skills
+    try:
+        rel_path = str(skill_dir.relative_to(PLUGIN_DIR)).replace('\\', '/') + '/'
+    except ValueError:
+        # Supplementary skill - use path relative to home/.claude/skills
+        try:
+            rel_path = '.claude/skills/' + str(skill_dir.relative_to(SUPPLEMENTARY_SKILLS_DIR)).replace('\\', '/') + '/'
+        except ValueError:
+            # Standalone file (not in a subdirectory)
+            rel_path = '.claude/skills/' + skill_path.stem + '/'
+
     return SkillData(
         name=name,
-        path=str(skill_dir.relative_to(PLUGIN_DIR)).replace('\\', '/') + '/',
+        path=rel_path,
         category=category,
         description=description,
         triggers=triggers,
@@ -383,26 +395,49 @@ def main():
 
     print(f"Building skill index...")
     print(f"Skills directory: {SKILLS_DIR}")
+    print(f"Supplementary directory: {SUPPLEMENTARY_SKILLS_DIR}")
     print(f"Output: {output_path}")
 
-    # Find all SKILL.md files
+    # Find all SKILL.md files from core skills
     skill_files = find_skill_files(SKILLS_DIR)
-    print(f"\nFound {len(skill_files)} SKILL.md files")
+    print(f"\nFound {len(skill_files)} core SKILL.md files")
+
+    # Find supplementary skills (including standalone .md files)
+    supplementary_files = []
+    if SUPPLEMENTARY_SKILLS_DIR.exists():
+        # Find SKILL.md files in subdirectories
+        supplementary_files.extend(find_skill_files(SUPPLEMENTARY_SKILLS_DIR))
+        # Also find standalone skill .md files (like codex-auto.md, gemini-search.md)
+        for md_file in SUPPLEMENTARY_SKILLS_DIR.glob("*.md"):
+            if md_file.name not in ['README.md', 'CHANGELOG.md', 'MASTER-SKILLS-INDEX.md']:
+                supplementary_files.append(md_file)
+        print(f"Found {len(supplementary_files)} supplementary skill files")
+
+    # Combine all skill files
+    all_skill_files = skill_files + supplementary_files
+    print(f"Total: {len(all_skill_files)} skill files")
 
     # Process each skill
     skills: Dict[str, dict] = {}
     trigger_positive_count = 0
+    supplementary_count = 0
 
-    for skill_path in skill_files:
-        skill_data = process_skill_file(skill_path, SKILLS_DIR)
+    for skill_path in all_skill_files:
+        is_supplementary = str(skill_path).startswith(str(SUPPLEMENTARY_SKILLS_DIR))
+        base_dir = SUPPLEMENTARY_SKILLS_DIR if is_supplementary else SKILLS_DIR
+        skill_data = process_skill_file(skill_path, base_dir)
         if skill_data:
+            # Mark supplementary skills
+            if is_supplementary:
+                skill_data.tags.append("supplementary")
+                supplementary_count += 1
             skills[skill_data.name] = skill_data.to_dict()
             if skill_data.trigger_positive_raw:
                 trigger_positive_count += 1
                 if args.verbose:
                     print(f"  [TRIGGER+] {skill_data.name}")
 
-    print(f"Processed {len(skills)} skills")
+    print(f"Processed {len(skills)} skills ({supplementary_count} supplementary)")
     print(f"Skills with TRIGGER_POSITIVE: {trigger_positive_count}")
 
     # Build indices
@@ -411,10 +446,12 @@ def main():
 
     # Build final index
     index = {
-        'version': '2.0.0',
+        'version': '2.1.0',
         'generated': datetime.utcnow().isoformat() + 'Z',
         'generator': 'build-skill-index.py',
         'total_skills': len(skills),
+        'core_skills': len(skills) - supplementary_count,
+        'supplementary_skills': supplementary_count,
         'skills_with_trigger_positive': trigger_positive_count,
         'categories': categories,
         'skills': skills,
@@ -431,7 +468,7 @@ def main():
 
     # Print summary
     print("\n=== Summary ===")
-    print(f"Total skills: {index['total_skills']}")
+    print(f"Total skills: {index['total_skills']} (core: {index['core_skills']}, supplementary: {index['supplementary_skills']})")
     print(f"With TRIGGER_POSITIVE: {trigger_positive_count}")
     print(f"Categories: {len(categories)}")
     print(f"Keywords indexed: {len(keyword_index)}")

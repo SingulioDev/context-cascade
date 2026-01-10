@@ -1,7 +1,6 @@
 ---
 name: agentdb-semantic-vector-search
 description: ---
-allowed-tools: Read, Write, Edit, Task, TodoWrite, Glob, Grep
 ---
 
 

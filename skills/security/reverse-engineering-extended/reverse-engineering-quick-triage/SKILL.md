@@ -1,19 +1,6 @@
 ---
 name: reverse-engineering-quick-triage
 description: Extended quick triage for rapid IOC and capability extraction with stricter timeboxes and safety rails.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: security
-x-vcl-compliance: v3.1.1
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 

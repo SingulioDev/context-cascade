@@ -1,18 +1,6 @@
 ---
 name: multi-model-discovery
 description: Use Gemini to find existing solutions before building from scratch. Leverages Google Search grounding to discover code examples, libraries, and best practices to avoid reinventing the wheel.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-x-version: 1.0.0
-x-category: platforms
-x-tags:
-  - gemini
-  - research
-  - discovery
-  - multi-model
-  - code-reuse
-x-author: context-cascade
-x-verix-description: |
-  
 ---
 
 

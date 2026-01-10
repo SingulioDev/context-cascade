@@ -1,19 +1,6 @@
 ---
 name: swarm-advanced
 description: Operate advanced swarms with adaptive routing, health-aware scaling, and validated convergence patterns.
-allowed-tools: Read, Write, Edit, Bash, Glob, Grep, Task, TodoWrite
-model: sonnet
-x-version: 3.2.0
-x-category: orchestration
-x-vcl-compliance: v3.2.0
-x-cognitive-frames:
-  - HON
-  - MOR
-  - COM
-  - CLS
-  - EVD
-  - ASP
-  - SPC
 ---
 
 
