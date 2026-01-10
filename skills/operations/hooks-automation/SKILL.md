@@ -193,6 +193,23 @@ When consolidating hooks from multiple locations to a single source of truth:
 
 [ground:user-workflow:2026-01-09]
 
+#### Cross-Platform Validation (MANDATORY)
+Always run `hooks/validate-cross-platform.sh` before committing hook changes:
+
+```bash
+# Run validation
+./hooks/validate-cross-platform.sh
+
+# Expected output for success:
+# PASS: All hooks have cross-platform counterparts
+
+# On failure, create missing counterparts before commit
+```
+
+**Why this matters**: Missing .sh counterparts break Unix/Mac users. Missing .ps1 counterparts break Windows users. The plugin should work identically on all platforms.
+
+[ground:missed-in-consolidation:2026-01-09]
+
 ### Low Confidence [conf:0.55]
 
 - Plan mode users likely prefer quality over speed - willing to accept 2-4x token cost for deeper analysis [ground:observation:2026-01-09]
