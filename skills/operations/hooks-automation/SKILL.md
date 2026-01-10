@@ -144,7 +144,58 @@ fi
 
 - **A/B Validation Strategy**: When creating reasoning enhancement hooks, recommend A/B testing: run same prompt with/without hook and compare outputs on completeness, risk identification, actionability. [ground:approval-pattern:2026-01-09]
 
+#### Claude Code 2026 Hook Format
+The 2026 Claude Code hook format uses simple string matchers instead of nested regex objects:
+
+```json
+// DEPRECATED (2025 format)
+"matcher": { "tool_name_regex": "^(Write|Edit)$" }
+
+// CORRECT (2026 format)
+"matcher": "Write|Edit"
+```
+
+**Supported Events:**
+- `UserPromptSubmit` - Before user message processing
+- `PreToolUse` - Before tool execution (supports matchers: Skill, Task, Write|Edit)
+- `PostToolUse` - After tool execution (supports matchers: Task, TodoWrite, Skill, Write|Edit)
+- `PreCompact` - Before context compaction
+- `Stop` - Session termination
+- `SessionStart` - New session initialization
+
+[ground:witnessed:2026-01-09]
+
+#### Hook Consolidation Workflow
+When consolidating hooks from multiple locations to a single source of truth:
+
+1. **Inventory all hooks** from both locations
+   ```powershell
+   Get-ChildItem $userHooks -Recurse -Filter "*.ps1"
+   Get-ChildItem $pluginHooks -Recurse -Filter "*.ps1"
+   ```
+
+2. **Copy user hooks to plugin** (preserving folder structure)
+   ```powershell
+   foreach ($file in $files) {
+       $relativePath = $file.FullName.Substring($src.Length + 1)
+       $destPath = Join-Path $dst $relativePath
+       Copy-Item $file.FullName $destPath -Force
+   }
+   ```
+
+3. **Update hooks.json to 2026 format** (simple string matchers)
+
+4. **Update settings.local.json** to point to consolidated location
+
+5. **Update plugin.json** with correct hook counts
+
+6. **Git commit and push** with descriptive message
+
+[ground:user-workflow:2026-01-09]
+
 ### Low Confidence [conf:0.55]
 
 - Plan mode users likely prefer quality over speed - willing to accept 2-4x token cost for deeper analysis [ground:observation:2026-01-09]
 - Hook registration in settings.local.json works for project-specific customization without affecting global settings [ground:observation:2026-01-09]
+- Windows requires PowerShell (.ps1) hooks alongside Unix shell (.sh) hooks for cross-platform support [ground:platform-requirement:2026-01-09]
+- Plugin directory should be canonical source of truth for hooks to enable version control and distribution [ground:architecture-pattern:2026-01-09]
