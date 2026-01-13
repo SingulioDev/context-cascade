@@ -166,15 +166,44 @@ claude mcp add flow-nexus npx flow-nexus@latest mcp start
 ```
 
 **Production MCP Systems** (code quality & persistent memory):
-```bash
-# Connascence Safety Analyzer - Code quality analysis
-# (requires installation from https://github.com/DNYoussef/connascence-safety-analyzer)
-claude mcp add connascence-analyzer /path/to/connascence/venv/Scripts/python.exe -u mcp/cli.py mcp-server
 
-# Memory MCP Triple System - Persistent cross-session memory
-# (requires installation from https://github.com/DNYoussef/memory-mcp-triple-system)
-claude mcp add memory-mcp /path/to/memory-mcp/venv/Scripts/python.exe -u -m src.mcp.stdio_server
+1. **Install the projects:**
+```bash
+# Clone to your preferred location (e.g., ~/Projects or D:/Projects)
+git clone https://github.com/DNYoussef/connascence.git
+git clone https://github.com/DNYoussef/memory-mcp-triple-system.git
+
+# Install dependencies
+cd connascence && pip install -e . && cd ..
+cd memory-mcp-triple-system && pip install -e . && cd ..
 ```
+
+2. **Configure MCP servers** (add to `claude_desktop_config.json`):
+```json
+{
+  "mcpServers": {
+    "connascence-analyzer": {
+      "command": "python",
+      "args": ["mcp_local/stdio_server.py"],
+      "cwd": "/path/to/connascence"
+    },
+    "memory-mcp": {
+      "command": "python",
+      "args": ["-m", "src.mcp.stdio_server"],
+      "cwd": "/path/to/memory-mcp-triple-system"
+    }
+  }
+}
+```
+
+3. **Optional environment variables** (for custom paths):
+```bash
+# Set these if projects are not in standard locations
+export CONNASCENCE_PATH=/your/path/to/connascence
+export MEMORY_MCP_PATH=/your/path/to/memory-mcp-triple-system
+```
+
+The cognitive architecture will auto-discover project paths from your MCP config.
 
 **Done!** 🎉 You can now use `/sparc`, `/audit-pipeline`, `/quick-check`, and all other commands.
 
