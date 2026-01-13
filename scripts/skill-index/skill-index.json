@@ -1,11 +1,11 @@
 {
   "version": "3.0.0",
-  "generated": "2026-01-10T14:12:27.941844-05:00",
+  "generated": "2026-01-12T19:54:45.543-05:00",
   "generator": "build-skill-index.py",
-  "total_skills": 222,
-  "packaged_skills": 221,
+  "total_skills": 226,
+  "packaged_skills": 223,
   "supplementary_skills": 9,
-  "skills_with_trigger_positive": 189,
+  "skills_with_trigger_positive": 225,
   "categories": {
     "packaged": {
       "description": "",
@@ -36,6 +36,10 @@
         "base-template-generator",
         "baseline-replication",
         "bootstrap-loop",
+        "browser-automation",
+        "e2e-test",
+        "visual-testing",
+        "web-scraping",
         "cascade-orchestrator",
         "cicd-intelligent-recovery",
         "clarity-linter",
@@ -10752,6 +10756,111 @@
         "supplementary"
       ],
       "hasTriggerPositive": false
+    },
+    "browser-automation": {
+      "name": "browser-automation",
+      "path": "skills/packaged/browser-automation.skill",
+      "category": "packaged",
+      "description": "Complex browser automation with mandatory sequential-thinking planning phase for multi-step workflows",
+      "triggers": [
+        "browser",
+        "automation",
+        "web",
+        "tooling",
+        "------------------",
+        "browser-automation",
+        "sequential-thinking",
+        "multi-step",
+        "workflow",
+        "planning",
+        "scraping",
+        "testing",
+        "e2e",
+        "playwright",
+        "puppeteer",
+        "selenium",
+        "click",
+        "navigate",
+        "form",
+        "interact"
+      ]
+    },
+    "web-scraping": {
+      "name": "web-scraping",
+      "path": "skills/packaged/web-scraping.skill",
+      "category": "tooling",
+      "description": "Structured data extraction from web pages with pagination handling and output format templates",
+      "triggers": [
+        "scraping",
+        "extraction",
+        "data",
+        "tooling",
+        "------------------",
+        "web-scraping",
+        "scrape",
+        "extract",
+        "crawl",
+        "harvest",
+        "table",
+        "catalog",
+        "product",
+        "article",
+        "pagination",
+        "csv",
+        "json",
+        "structured"
+      ]
+    },
+    "e2e-test": {
+      "name": "e2e-test",
+      "path": "skills/packaged/e2e-test.skill",
+      "category": "tooling",
+      "description": "End-to-end testing with assertions, test suites, and pass/fail reporting",
+      "triggers": [
+        "testing",
+        "e2e",
+        "end-to-end",
+        "tooling",
+        "------------------",
+        "e2e-test",
+        "test",
+        "assert",
+        "verify",
+        "validate",
+        "suite",
+        "fixture",
+        "login-test",
+        "form-test",
+        "user-journey",
+        "regression",
+        "pass",
+        "fail"
+      ]
+    },
+    "visual-testing": {
+      "name": "visual-testing",
+      "path": "skills/packaged/visual-testing.skill",
+      "category": "tooling",
+      "description": "Screenshot-based visual regression testing with baseline management and diff reports",
+      "triggers": [
+        "visual",
+        "screenshot",
+        "regression",
+        "tooling",
+        "------------------",
+        "visual-testing",
+        "visual-regression",
+        "baseline",
+        "diff",
+        "compare",
+        "viewport",
+        "responsive",
+        "golden-image",
+        "pixel",
+        "layout",
+        "gif",
+        "animation"
+      ]
     }
   },
   "keyword_index": {
@@ -19033,6 +19142,34 @@
       "release",
       "tool",
       "integration"
+    ]
+  },
+  "browser-automation": {
+    "name": "browser-automation",
+    "path": "skills/packaged/browser-automation.skill",
+    "category": "packaged",
+    "description": "Complex browser automation with mandatory sequential-thinking planning phase for multi-step workflows",
+    "triggers": [
+      "browser",
+      "automation",
+      "web",
+      "tooling",
+      "------------------",
+      "browser-automation",
+      "sequential-thinking",
+      "multi-step",
+      "workflow",
+      "planning",
+      "scraping",
+      "testing",
+      "e2e",
+      "playwright",
+      "puppeteer",
+      "selenium",
+      "click",
+      "navigate",
+      "form",
+      "interact"
     ]
   }
 }

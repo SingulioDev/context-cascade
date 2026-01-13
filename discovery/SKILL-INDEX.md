@@ -1,8 +1,8 @@
 # Skill Discovery Index
 
 **Purpose:** Top-level model uses this to discover and route to skills
-**Updated:** 2026-01-09
-**Total Skills:** 175 (all consolidated, duplicates removed, structures fixed)
+**Updated:** 2026-01-12
+**Total Skills:** 180 (all consolidated, duplicates removed, structures fixed)
 
 ---
 
@@ -10,6 +10,7 @@
 
 | User Intent | Skill | Agent Chain |
 |-------------|-------|-------------|
+| Automate browser | `browser-automation` | browser-agent |
 | Build a feature | `feature-dev-complete` | planner -> coder -> tester -> reviewer |
 | Fix a bug | `smart-bug-fix` | debugger -> coder -> tester |
 | Review code | `code-review-assistant` | reviewer -> security-auditor |
@@ -113,11 +114,15 @@ Domain experts.
 | `ml-expert` | ML expertise | ml-specialist |
 | `language-specialists` | Multi-language | lang-experts |
 
-### tooling/ (17+ skills)
+### tooling/ (21+ skills)
 Utilities and adapters.
 
 | Skill | Purpose | Key Agents |
 |-------|---------|------------|
+| `browser-automation` | Complex browser automation with mandatory sequential-thinking planning | browser-agent |
+| `web-scraping` | Structured data extraction from web pages | scraper-agent |
+| `e2e-test` | End-to-end testing with assertions and reports | e2e-tester |
+| `visual-testing` | Screenshot-based visual regression testing | visual-tester |
 | `web-cli-teleport` | Web-to-CLI bridge | teleporter |
 | `pptx-generation` | Presentation creation | pptx-generator |
 | `intent-analyzer` | Analyze user intent | intent-parser |
