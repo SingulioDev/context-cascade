@@ -1,175 +1,53 @@
 {
   "name": "context-cascade-marketplace",
   "owner": {
-    "name": "DNYoussef",
-    "email": "youssef@example.com"
+    "name": "DNYoussef"
   },
   "plugins": [
     {
-      "name": "context-cascade",
-      "source": ".",
-      "description": "Context-saving nested plugin architecture for Claude Code. Playbooks contain skills, skills contain agents, agents contain commands. Only load what you need - context cascades down through layers on demand, saving 90%+ context space. Includes 224 agents, 251 skills, 249 commands, 115 hooks, SPARC methodology, Three-Loop system, and Byzantine consensus.",
-      "version": "3.0.2",
+      "name": "12fa-core",
+      "description": "Essential 12-Factor Agent tools: SPARC methodology, core agents (coder/reviewer/tester/planner/researcher), audit pipeline, and quality gates",
+      "version": "3.0.0",
+      "source": "./plugins/12fa-core",
       "author": {
-        "name": "DNYoussef",
-        "email": "youssef@example.com",
-        "url": "https://github.com/DNYoussef"
-      },
-      "commands": "./commands/",
-      "agents": "./agents/",
-      "skills": "./skills/",
-      "hooks": "./hooks/hooks.json",
-      "mcpServers": "./.mcp.json",
-      "x-license": "Apache-2.0",
-      "x-repository": "https://github.com/DNYoussef/context-cascade",
-      "x-homepage": "https://github.com/DNYoussef/context-cascade#readme",
-      "x-keywords": [
-        "context-cascade",
-        "lazy-loading",
-        "nested-context",
-        "playbooks",
-        "skills",
-        "agents",
-        "commands",
-        "sparc",
-        "three-loop",
-        "claude-code",
-        "plugin",
-        "ai-agents",
-        "swarm-intelligence"
-      ],
-      "x-claudeCode": {
-        "minVersion": "1.0.0",
-        "compatibility": "2026.02+"
-      },
-      "x-contents": {
-        "playbooks": {
-          "count": 1,
-          "note": "Top-level entry points - only playbooks loaded initially",
-          "categories": [
-            "delivery",
-            "operations",
-            "research",
-            "security",
-            "quality",
-            "platform",
-            "github",
-            "specialist"
-          ]
-        },
-        "skills": {
-          "count": 251,
-          "note": "Loaded by playbooks on demand (SKILL.md files)",
-          "categories": [
-            "platforms (46)",
-            "research (20)",
-            "quality (19)",
-            "operations (19)",
-            "orchestration (16)",
-            "foundry (15)",
-            "tooling (13)",
-            "security (12)",
-            "delivery (11)",
-            "specialists (11)"
-          ]
-        },
-        "agents": {
-          "count": 224,
-          "note": "Loaded by skills on demand",
-          "categories": [
-            "platforms (46)",
-            "operations (29)",
-            "foundry (25)",
-            "specialists (24)",
-            "tooling (24)",
-            "orchestration (23)",
-            "delivery (18)",
-            "quality (18)",
-            "research (12)",
-            "security (5)"
-          ]
-        },
-        "commands": {
-          "count": 249,
-          "note": "Embedded in agents, loaded last",
-          "prefixes": [
-            "/sparc",
-            "/claude-flow",
-            "/research",
-            "/workflows",
-            "/github",
-            "/agents"
-          ]
-        },
-        "hooks": {
-          "count": 115,
-          "note": "Event handlers for Claude Code lifecycle (53 .sh + 62 .ps1 for Windows)",
-          "categories": [
-            "enforcement",
-            "memory-mcp",
-            "ralph-wiggum",
-            "multi-model",
-            "guards",
-            "connascence-audit",
-            "reflect",
-            "Stop"
-          ]
-        },
-        "mcpServers": {
-          "count": 6,
-          "note": "Auto-initialized based on agent requirements",
-          "core": ["memory-mcp", "connascence-analyzer", "sequential-thinking"],
-          "situational": ["ruv-swarm", "flow-nexus", "playwright"]
-        }
-      },
-      "x-features": {
-        "architecture": "Context Cascade Architecture - Load only what you need (90%+ context savings)",
-        "hierarchy": "Nested Hierarchy: Playbooks -> Skills -> Agents -> Commands",
-        "agents": "224 AI Agents organized in 10 categories",
-        "skills": "251 Skills with SKILL.md format",
-        "commands": "249 Commands for slash-command invocation",
-        "hooks": "115 Hooks for lifecycle automation (62 PowerShell for Windows)",
-        "playbook": "1 Playbook for common workflows",
-        "mcp": "MCP Auto-Initialization - Agents declare their MCP requirements",
-        "methodology": "Three-Loop Integrated Development System",
-        "sparc": "SPARC Methodology (Specification, Pseudocode, Architecture, Refinement, Completion)",
-        "prompting": "Evidence-Based Prompting (Self-consistency, Byzantine consensus)",
-        "validation": "Theater Detection & Reality Validation",
-        "swarm": "Multi-Agent Swarm Coordination (2.5-8x speedup)"
-      },
-      "x-installation": {
-        "steps": [
-          "Clone plugin repository",
-          "Install MCP servers (claude-flow required, others optional)",
-          "Configure agent registry",
-          "Load skills and commands",
-          "Verify installation"
-        ],
-        "mcpSetup": {
-          "required": {
-            "claude-flow": "npx claude-flow@alpha mcp start"
-          },
-          "optional": {
-            "ruv-swarm": "npx ruv-swarm mcp start",
-            "flow-nexus": "npx flow-nexus@latest mcp start"
-          }
-        }
-      },
-      "x-documentation": {
-        "quickStart": "docs/QUICK-START.md",
-        "architecture": "docs/ARCHITECTURE.md",
-        "agentRegistry": "docs/AGENT-REGISTRY.md",
-        "skillMappings": "docs/SKILL-AGENT-MAPPINGS.md",
-        "mcpGuide": "docs/MCP-SETUP.md",
-        "examples": "docs/EXAMPLES.md"
-      },
-      "x-maintainers": [
-        {
-          "name": "ruv",
-          "email": "your-email@example.com",
-          "url": "https://github.com/DNYoussef"
-        }
-      ]
+        "name": "DNYoussef"
+      }
+    },
+    {
+      "name": "12fa-three-loop",
+      "description": "Advanced Three-Loop Architecture: Loop 1 (Research-Driven Planning with 5x pre-mortem), Loop 2 (Parallel Swarm Implementation), Loop 3 (CI/CD Intelligent Recovery)",
+      "version": "3.0.0",
+      "source": "./plugins/12fa-three-loop",
+      "author": {
+        "name": "DNYoussef"
+      }
+    },
+    {
+      "name": "12fa-security",
+      "description": "Enterprise security infrastructure: Agent Spec Generator CLI, Policy DSL Engine, Guardrail Enforcement, Agent Registry, Secrets Management, OpenTelemetry",
+      "version": "3.0.0",
+      "source": "./plugins/12fa-security",
+      "author": {
+        "name": "DNYoussef"
+      }
+    },
+    {
+      "name": "12fa-visual-docs",
+      "description": "Complete Graphviz workflow diagrams: 271 AI-comprehensible visualizations (73 skills, 104 agents, 94 commands) with validation tools and interactive HTML viewer",
+      "version": "3.0.0",
+      "source": "./plugins/12fa-visual-docs",
+      "author": {
+        "name": "DNYoussef"
+      }
+    },
+    {
+      "name": "12fa-swarm",
+      "description": "Multi-agent swarm systems: Hierarchical/Mesh/Adaptive topologies, Byzantine consensus, Hive Mind coordination, CRDT synchronization, Queen Seraphina orchestrator",
+      "version": "3.0.0",
+      "source": "./plugins/12fa-swarm",
+      "author": {
+        "name": "DNYoussef"
+      }
     }
   ]
 }
