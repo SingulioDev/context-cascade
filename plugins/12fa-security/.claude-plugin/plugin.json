@@ -1,0 +1,31 @@
+{
+  "name": "12fa-security",
+  "version": "3.0.0",
+  "description": "Enterprise security infrastructure with 6 production-ready components: Agent Spec Generator CLI, Policy DSL Engine, Guardrail Enforcement, Agent Registry, Secrets Management, OpenTelemetry",
+  "author": {
+    "name": "DNYoussef",
+    "email": "youssef@example.com",
+    "url": "https://github.com/DNYoussef"
+  },
+  "homepage": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "repository": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "license": "MIT",
+  "keywords": [
+    "security",
+    "vault",
+    "guardrails",
+    "policy",
+    "compliance",
+    "telemetry"
+  ],
+  "commands": [
+    "../../commands/delivery/sparc/security-review.md",
+    "../../commands/operations/hooks/setup.md"
+  ],
+  "skills": [
+    "../../skills/security/network-security-setup",
+    "../../skills/security/sandbox-configurator"
+  ],
+  "agents": "./agents",
+  "hooks": "./hooks/hooks.json"
+}

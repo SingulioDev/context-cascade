@@ -10,16 +10,6 @@
   "agents": "../../agents",
   "hooks": "../../hooks/hooks.json",
   "x-metadata": {
-    "license": "MIT",
-    "homepage": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
-    "repository": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
-    "keywords": [
-      "graphviz",
-      "visualization",
-      "documentation",
-      "workflows",
-      "diagrams"
-    ],
     "diagrams": {
       "skills": {
         "count": 73,
@@ -129,9 +119,7 @@
       }
     },
     "dependencies": {
-      "plugins": [
-        "12fa-core"
-      ],
+      "plugins": ["12fa-core"],
       "required_tools": {
         "graphviz": {
           "version": ">=2.44.0",

@@ -1,0 +1,42 @@
+{
+  "name": "12fa-swarm",
+  "version": "3.0.0",
+  "description": "Multi-agent swarm systems with 4 topologies (Hierarchical, Mesh, Adaptive, Ring), 3 consensus protocols (Byzantine, Raft, Gossip), Hive Mind coordination, and Queen Seraphina meta-orchestrator",
+  "author": {
+    "name": "DNYoussef",
+    "email": "youssef@example.com",
+    "url": "https://github.com/DNYoussef"
+  },
+  "homepage": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "repository": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "license": "MIT",
+  "keywords": [
+    "swarm",
+    "coordination",
+    "consensus",
+    "hive-mind",
+    "distributed",
+    "byzantine"
+  ],
+  "commands": [
+    "../../commands/tooling/claude-flow/claude-flow-swarm.md",
+    "../../commands/orchestration/coordination/swarm-init.md",
+    "../../commands/orchestration/coordination/agent-spawn.md",
+    "../../commands/orchestration/coordination/task-orchestrate.md",
+    "../../commands/orchestration/coordination/orchestrate.md",
+    "../../commands/operations/github/github-swarm.md",
+    "../../commands/operations/monitoring/swarm-monitor.md",
+    "../../commands/operations/optimization/auto-topology.md"
+  ],
+  "skills": [
+    "../../skills/orchestration/swarm-advanced",
+    "../../skills/orchestration/swarm-orchestration",
+    "../../skills/orchestration/hive-mind-advanced",
+    "../../skills/operations/github-multi-repo",
+    "../../skills/operations/github-project-management",
+    "../../skills/operations/github-release-management",
+    "../../skills/operations/github-workflow-automation"
+  ],
+  "agents": "./agents",
+  "hooks": "./hooks/hooks.json"
+}

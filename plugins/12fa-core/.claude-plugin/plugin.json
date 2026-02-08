@@ -1,0 +1,41 @@
+{
+  "name": "12fa-core",
+  "version": "3.0.0",
+  "description": "Essential 12-Factor Agent tools with SPARC methodology, core agents, audit pipeline, and quality gates",
+  "author": {
+    "name": "DNYoussef",
+    "email": "youssef@example.com",
+    "url": "https://github.com/DNYoussef"
+  },
+  "homepage": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "repository": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "license": "MIT",
+  "keywords": ["12-factor", "sparc", "tdd", "quality", "core"],
+  "commands": [
+    "../../commands/delivery/sparc/sparc.md",
+    "../../commands/delivery/sparc/code.md",
+    "../../commands/delivery/sparc/spec-pseudocode.md",
+    "../../commands/delivery/sparc/debug.md",
+    "../../commands/quality/audit-commands/audit-pipeline.md",
+    "../../commands/quality/audit-commands/theater-detect.md",
+    "../../commands/quality/audit-commands/functionality-audit.md",
+    "../../commands/delivery/essential-commands/quick-check.md",
+    "../../commands/delivery/essential-commands/fix-bug.md",
+    "../../commands/delivery/essential-commands/review-pr.md",
+    "../../commands/delivery/essential-commands/deploy-check.md"
+  ],
+  "skills": [
+    "../../skills/foundry/agent-creator",
+    "../../skills/delivery/sparc-methodology",
+    "../../skills/quality/functionality-audit",
+    "../../skills/quality/theater-detection-audit",
+    "../../skills/operations/production-readiness",
+    "../../skills/references/audit-pipeline.md",
+    "../../skills/quality/code-review-assistant",
+    "../../skills/quality/quick-quality-check",
+    "../../skills/delivery/smart-bug-fix",
+    "../../skills/foundry/prompt-architect"
+  ],
+  "agents": "./agents",
+  "hooks": "./hooks/hooks.json"
+}

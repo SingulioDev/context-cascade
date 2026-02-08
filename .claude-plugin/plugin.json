@@ -110,16 +110,8 @@
     "mcpServers": {
       "count": 6,
       "note": "Auto-initialized based on agent requirements",
-      "core": [
-        "memory-mcp",
-        "connascence-analyzer",
-        "sequential-thinking"
-      ],
-      "situational": [
-        "ruv-swarm",
-        "flow-nexus",
-        "playwright"
-      ]
+      "core": ["memory-mcp", "connascence-analyzer", "sequential-thinking"],
+      "situational": ["ruv-swarm", "flow-nexus", "playwright"]
     }
   },
   "x-features": [

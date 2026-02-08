@@ -1,0 +1,39 @@
+{
+  "name": "12fa-three-loop",
+  "version": "3.0.0",
+  "description": "Advanced Three-Loop Architecture: Loop 1 (Research-Driven Planning with 5x pre-mortem), Loop 2 (Parallel Swarm Implementation), Loop 3 (CI/CD Intelligent Recovery)",
+  "author": {
+    "name": "DNYoussef",
+    "email": "youssef@example.com",
+    "url": "https://github.com/DNYoussef"
+  },
+  "homepage": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "repository": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "license": "MIT",
+  "keywords": [
+    "three-loop",
+    "research",
+    "swarm",
+    "cicd",
+    "recovery",
+    "architecture"
+  ],
+  "commands": [
+    "../../commands/delivery/sparc/integration.md",
+    "../../commands/delivery/sparc/devops.md",
+    "../../commands/delivery/workflows/development.md",
+    "../../commands/delivery/essential-commands/build-feature.md",
+    "../../commands/platforms/multi-model-commands/gemini-search.md",
+    "../../commands/platforms/multi-model-commands/codex-auto.md"
+  ],
+  "skills": [
+    "../../skills/research/research-driven-planning",
+    "../../skills/orchestration/parallel-swarm-implementation",
+    "../../skills/operations/cicd-intelligent-recovery",
+    "../../skills/references/multi-model.md",
+    "../../skills/orchestration/cascade-orchestrator",
+    "../../skills/delivery/feature-dev-complete"
+  ],
+  "agents": "./agents",
+  "hooks": "./hooks/hooks.json"
+}

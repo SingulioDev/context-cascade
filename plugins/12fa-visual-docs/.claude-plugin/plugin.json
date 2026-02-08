@@ -1,0 +1,24 @@
+{
+  "name": "12fa-visual-docs",
+  "version": "3.0.0",
+  "description": "Complete Graphviz workflow diagrams: 271 AI-comprehensible visualizations (73 skills, 104 agents, 94 commands) with validation tools and interactive HTML viewer",
+  "author": {
+    "name": "DNYoussef",
+    "email": "youssef@example.com",
+    "url": "https://github.com/DNYoussef"
+  },
+  "homepage": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "repository": "https://github.com/DNYoussef/ruv-sparc-three-loop-system",
+  "license": "MIT",
+  "keywords": [
+    "graphviz",
+    "visualization",
+    "documentation",
+    "workflows",
+    "diagrams"
+  ],
+  "commands": [],
+  "skills": [],
+  "agents": "./agents",
+  "hooks": "./hooks/hooks.json"
+}
