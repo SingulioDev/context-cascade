@@ -1,12 +1,13 @@
 {
+  "name": "context-cascade-marketplace",
   "owner": {
     "name": "DNYoussef",
-    "email": "youssef@example.com",
-    "url": "https://github.com/DNYoussef"
+    "email": "youssef@example.com"
   },
   "plugins": [
     {
       "name": "context-cascade",
+      "source": ".",
       "description": "Context-saving nested plugin architecture for Claude Code. Playbooks contain skills, skills contain agents, agents contain commands. Only load what you need - context cascades down through layers on demand, saving 90%+ context space. Includes 224 agents, 251 skills, 249 commands, 115 hooks, SPARC methodology, Three-Loop system, and Byzantine consensus.",
       "version": "3.0.2",
       "author": {
