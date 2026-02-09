@@ -1,0 +1,25 @@
+{
+  "$comment": "MCP server configuration template for singuliodev-claude plugin. Copy to .mcp.json and adjust paths.",
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@anthropic-ai/mcp-playwright@latest"]
+    },
+    "memory-mcp": {
+      "$comment": "Optional: Custom memory MCP server. Set MEMORY_MCP_PATH to your installation.",
+      "command": "node",
+      "args": ["${MEMORY_MCP_PATH}/index.js"],
+      "env": {
+        "MEMORY_DIR": "${HOME}/.claude/memory"
+      }
+    }
+  }
+}

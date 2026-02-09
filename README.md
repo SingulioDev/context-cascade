@@ -1,6 +1,6 @@
 # Context Cascade - Nested Plugin Architecture for Claude Code
 
-**Official Claude Code Plugin** | Version 3.1.0 | Last updated: 2026-01-09 (see `docs/COMPONENT-COUNTS.json` for source counts)
+**Official Claude Code Plugin** | Version 1.0.0 | Last updated: 2026-02-08 (see `docs/COMPONENT-COUNTS.json` for source counts)
 
 **Context-saving nested architecture**: Playbooks -> Skills -> Agents -> Commands. Load only what you need, saving **90%+ context space**.
 
@@ -20,6 +20,7 @@ COMMANDS (249)    <-- Embedded in agents, loaded last
 ```
 
 **Why Context Cascade?**
+
 - Traditional approach: Load everything upfront = 100k+ tokens consumed
 - Context Cascade: Load on demand = ~2k tokens initially, expand as needed
 - Result: **90%+ context savings** while maintaining full capability
@@ -59,6 +60,7 @@ User Request
 ```
 
 **Example Flow**:
+
 ```
 User: "Build user authentication with JWT tokens"
 
@@ -98,6 +100,7 @@ flowchart TD
 ```
 
 **Stack Auto-Selection**:
+
 - **Delivery Stack** → `feature-dev-complete` (end-to-end feature shipping)
 - **Operations Stack** → `production-readiness` (deployment gates, security, performance)
 - **Research Stack** → `deep-research-orchestrator` (3-phase research SOP with quality gates)
@@ -105,6 +108,7 @@ flowchart TD
 - **Specialist Stack** → Language/platform specialists (Python, TypeScript, React, etc.)
 
 **Key Principles**:
+
 1. **Zero Decision Paralysis**: Router auto-selects optimal skill from 171 options
 2. **Context-Aware**: Detects intent from keywords, agent count, complexity signals
 3. **Transparent**: Provides selection rationale and alternatives
@@ -127,6 +131,7 @@ flowchart TD
 ## Quick Start (3 Steps)
 
 ### 1. Add Marketplace
+
 ```bash
 /plugin marketplace add DNYoussef/context-cascade
 ```
@@ -134,11 +139,13 @@ flowchart TD
 ### 2. Install Plugin(s)
 
 **Option A - Core Only** (Recommended for beginners):
+
 ```bash
 /plugin install 12fa-core
 ```
 
 **Option B - Full Stack** (Everything):
+
 ```bash
 /plugin install 12fa-core 12fa-three-loop 12fa-security 12fa-visual-docs 12fa-swarm
 ```
@@ -146,12 +153,14 @@ flowchart TD
 ### 3. Setup MCP Servers
 
 **Required** (Claude Flow - our foundation):
+
 ```bash
 npm install -g claude-flow@alpha
 claude mcp add claude-flow npx claude-flow@alpha mcp start
 ```
 
 **What This Gives You**:
+
 - 💾 **Memory System** - Persistent coordination across agents
 - 🔗 **Hooks** - Lifecycle events (pre-task, post-task, pre-edit, post-edit, session-end)
 - 🐝 **Swarm Intelligence** - Multi-agent coordination (2.8-4.4x baseline speedup)
@@ -159,6 +168,7 @@ claude mcp add claude-flow npx claude-flow@alpha mcp start
 - 🎯 **ReasoningBank** - Pattern learning with 46% faster performance
 
 **Recommended** (for advanced features):
+
 ```bash
 npm install -g ruv-swarm flow-nexus@latest
 claude mcp add ruv-swarm npx ruv-swarm mcp start
@@ -168,6 +178,7 @@ claude mcp add flow-nexus npx flow-nexus@latest mcp start
 **Production MCP Systems** (code quality & persistent memory):
 
 1. **Install the projects:**
+
 ```bash
 # Clone to your preferred location (e.g., ~/Projects or D:/Projects)
 git clone https://github.com/DNYoussef/connascence.git
@@ -179,6 +190,7 @@ cd memory-mcp-triple-system && pip install -e . && cd ..
 ```
 
 2. **Configure MCP servers** (add to `claude_desktop_config.json`):
+
 ```json
 {
   "mcpServers": {
@@ -197,6 +209,7 @@ cd memory-mcp-triple-system && pip install -e . && cd ..
 ```
 
 3. **Optional environment variables** (for custom paths):
+
 ```bash
 # Set these if projects are not in standard locations
 export CONNASCENCE_PATH=/your/path/to/connascence
@@ -214,6 +227,7 @@ The cognitive architecture will auto-discover project paths from your MCP config
 ## 🔗 Integration with Production MCP Systems
 
 **Connascence Safety Analyzer** - [https://github.com/DNYoussef/connascence-safety-analyzer](https://github.com/DNYoussef/connascence-safety-analyzer)
+
 - 7+ violation types (God Objects, Parameter Bombs, Complexity, Deep Nesting, etc.)
 - NASA compliance checking (Power of 10 Rules)
 - 0.018s analysis performance
@@ -221,6 +235,7 @@ The cognitive architecture will auto-discover project paths from your MCP config
 - MCP Integration: [docs/MCP-INTEGRATION.md](https://github.com/DNYoussef/connascence-safety-analyzer/blob/main/docs/MCP-INTEGRATION.md)
 
 **Memory MCP Triple System** - [https://github.com/DNYoussef/memory-mcp-triple-system](https://github.com/DNYoussef/memory-mcp-triple-system)
+
 - Triple-layer retention (24h/7d/30d+)
 - Mode-aware context adaptation (Execution/Planning/Brainstorming)
 - Automatic tagging protocol (WHO/WHEN/PROJECT/WHY)
@@ -232,6 +247,7 @@ The cognitive architecture will auto-discover project paths from your MCP config
 **Tagging Protocol**: See `hooks/12fa/memory-mcp-tagging-protocol.js` for automatic metadata injection
 
 **MCP Marketplace & Ecosystem**: See [docs/MCP-MARKETPLACE-GUIDE.md](docs/MCP-MARKETPLACE-GUIDE.md) for:
+
 - **FREE SERVERS ONLY** - No payment, API keys, or accounts required
 - Complete catalog of 11 free MCP servers (4 local + 7 official Anthropic)
 - Agent-to-MCP-server mapping for all 90 agents
@@ -248,15 +264,15 @@ Context Cascade includes a sophisticated cognitive architecture for improved AI 
 
 VeriLingua forces explicit cognitive distinctions drawn from natural languages:
 
-| Frame | Source Language | Forces Distinction |
-|-------|-----------------|-------------------|
-| **Evidential** | Turkish (-mis/-di) | How do you know? (witnessed/reported/inferred/assumed) |
-| **Aspectual** | Russian (perfective/imperfective) | Complete or ongoing? |
-| **Morphological** | Arabic (trilateral roots) | What are the semantic components? |
-| **Compositional** | German (compounding) | Build from primitives |
-| **Honorific** | Japanese (keigo) | Who is the audience? |
-| **Classifier** | Chinese (measure words) | What type/category? |
-| **Spatial** | Guugu Yimithirr (absolute direction) | Absolute position in codebase |
+| Frame             | Source Language                      | Forces Distinction                                     |
+| ----------------- | ------------------------------------ | ------------------------------------------------------ |
+| **Evidential**    | Turkish (-mis/-di)                   | How do you know? (witnessed/reported/inferred/assumed) |
+| **Aspectual**     | Russian (perfective/imperfective)    | Complete or ongoing?                                   |
+| **Morphological** | Arabic (trilateral roots)            | What are the semantic components?                      |
+| **Compositional** | German (compounding)                 | Build from primitives                                  |
+| **Honorific**     | Japanese (keigo)                     | Who is the audience?                                   |
+| **Classifier**    | Chinese (measure words)              | What type/category?                                    |
+| **Spatial**       | Guugu Yimithirr (absolute direction) | Absolute position in codebase                          |
 
 ### VERIX: Epistemic Notation
 
@@ -270,12 +286,12 @@ Example: `[assert|positive] Use async/await here [ground:performance_testing] [c
 
 ### Four-Loop Self-Improvement Architecture
 
-| Loop | Trigger | Duration | Purpose |
-|------|---------|----------|---------|
-| **Loop 1: Execution** | Every request | Seconds-minutes | 5-phase workflow |
-| **Loop 1.5: Reflect** | Per session | Minutes | Extract learnings from corrections/approvals |
-| **Loop 2: Quality** | Per session | Minutes-hours | Theater detection, audits |
-| **Loop 3: Meta** | Every 3 days | Hours | Self-optimization via GlobalMOO |
+| Loop                  | Trigger       | Duration        | Purpose                                      |
+| --------------------- | ------------- | --------------- | -------------------------------------------- |
+| **Loop 1: Execution** | Every request | Seconds-minutes | 5-phase workflow                             |
+| **Loop 1.5: Reflect** | Per session   | Minutes         | Extract learnings from corrections/approvals |
+| **Loop 2: Quality**   | Per session   | Minutes-hours   | Theater detection, audits                    |
+| **Loop 3: Meta**      | Every 3 days  | Hours           | Self-optimization via GlobalMOO              |
 
 ### Loop 1.5: Session Reflection (NEW)
 
@@ -298,6 +314,7 @@ Memory MCP Storage (for Loop 3 aggregation)
 ```
 
 **Commands**:
+
 - `/reflect` - Manual reflection on current session
 - `/reflect-on` - Enable automatic reflection on session end
 - `/reflect-off` - Disable automatic reflection
@@ -316,16 +333,17 @@ Memory MCP Storage (for Loop 3 aggregation)
 ### GlobalMOO Integration
 
 Multi-objective optimization for cognitive architecture tuning:
+
 - **Pattern**: GlobalMOO (5D exploration) -> PyMOO NSGA-II (14D refinement)
 - **Objectives**: Accuracy, Efficiency, Reliability, User Satisfaction
 - **Output**: Named modes (audit, speed, research, robust, balanced)
 
-| Mode | Accuracy | Efficiency | Use Case |
-|------|----------|------------|----------|
-| audit | 0.960 | 0.763 | Code review, security |
-| speed | 0.734 | 0.950 | Quick tasks |
-| research | 0.980 | 0.824 | Deep research |
-| balanced | 0.882 | 0.928 | General purpose |
+| Mode     | Accuracy | Efficiency | Use Case              |
+| -------- | -------- | ---------- | --------------------- |
+| audit    | 0.960    | 0.763      | Code review, security |
+| speed    | 0.734    | 0.950      | Quick tasks           |
+| research | 0.980    | 0.824      | Deep research         |
+| balanced | 0.882    | 0.928      | General purpose       |
 
 **Full Documentation**: [docs/COGNITIVE-ARCHITECTURE.md](docs/COGNITIVE-ARCHITECTURE.md)
 
@@ -371,25 +389,25 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 
 ### Smoke Test Results (2026-01-09)
 
-| Component | Status | Mode | Key Metrics |
-|-----------|--------|------|-------------|
-| FrozenHarness | PASS | cli_evaluator | overall: 0.79 |
-| ConnascenceBridge | PASS | cli (mock fallback) | sigma: 4.0, dpmo: 3132 |
-| TelemetryBridge | PASS | file-based | 17 items stored |
-| Library Catalog | PASS | json | 25 components |
-| Meta-Loop Runner | PASS | script ready | 9 functions |
-| Reflect-to-Memory | PASS | script ready | 6 functions |
-| Memory MCP Storage | PASS | mcp-fallback | 17+ items |
-| Scheduled Task | PASS | Windows Task Scheduler | Ready |
+| Component          | Status | Mode                   | Key Metrics            |
+| ------------------ | ------ | ---------------------- | ---------------------- |
+| FrozenHarness      | PASS   | cli_evaluator          | overall: 0.79          |
+| ConnascenceBridge  | PASS   | cli (mock fallback)    | sigma: 4.0, dpmo: 3132 |
+| TelemetryBridge    | PASS   | file-based             | 17 items stored        |
+| Library Catalog    | PASS   | json                   | 25 components          |
+| Meta-Loop Runner   | PASS   | script ready           | 9 functions            |
+| Reflect-to-Memory  | PASS   | script ready           | 6 functions            |
+| Memory MCP Storage | PASS   | mcp-fallback           | 17+ items              |
+| Scheduled Task     | PASS   | Windows Task Scheduler | Ready                  |
 
 ### Key Files
 
-| Component | Location | Purpose |
-|-----------|----------|---------|
-| FrozenHarness | `cognitive-architecture/loopctl/core.py` | Immutable evaluation harness |
-| ConnascenceBridge | `cognitive-architecture/integration/connascence_bridge.py` | 7-Analyzer quality metrics |
-| TelemetryBridge | `cognitive-architecture/integration/telemetry_bridge.py` | Memory MCP storage |
-| Information Flow | `cognitive-architecture/docs/INFORMATION-FLOW-DIAGRAM.md` | Complete flow documentation |
+| Component         | Location                                                   | Purpose                      |
+| ----------------- | ---------------------------------------------------------- | ---------------------------- |
+| FrozenHarness     | `cognitive-architecture/loopctl/core.py`                   | Immutable evaluation harness |
+| ConnascenceBridge | `cognitive-architecture/integration/connascence_bridge.py` | 7-Analyzer quality metrics   |
+| TelemetryBridge   | `cognitive-architecture/integration/telemetry_bridge.py`   | Memory MCP storage           |
+| Information Flow  | `cognitive-architecture/docs/INFORMATION-FLOW-DIAGRAM.md`  | Complete flow documentation  |
 
 **Full Documentation**: [cognitive-architecture/INTEGRATION-COMPLETE.md](cognitive-architecture/INTEGRATION-COMPLETE.md)
 
@@ -403,18 +421,18 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 
 ### Command Distribution
 
-| Category | Commands | Documentation |
-|----------|----------|---------------|
-| delivery | 67 | `commands/delivery/` |
-| foundry | 13 | `commands/foundry/` |
-| operations | 74 | `commands/operations/` |
-| orchestration | 32 | `commands/orchestration/` |
-| platforms | 4 | `commands/platforms/` |
-| quality | 16 | `commands/quality/` |
-| research | 9 | `commands/research/` |
-| security | 11 | `commands/security/` |
-| tooling | 7 | `commands/tooling/` (includes /reflect commands) |
-| root (quality loop + templates) | 2 | `commands/quality-loop.md`, `commands/VERIX-COMMAND-TEMPLATE.md` |
+| Category                        | Commands | Documentation                                                    |
+| ------------------------------- | -------- | ---------------------------------------------------------------- |
+| delivery                        | 67       | `commands/delivery/`                                             |
+| foundry                         | 13       | `commands/foundry/`                                              |
+| operations                      | 74       | `commands/operations/`                                           |
+| orchestration                   | 32       | `commands/orchestration/`                                        |
+| platforms                       | 4        | `commands/platforms/`                                            |
+| quality                         | 16       | `commands/quality/`                                              |
+| research                        | 9        | `commands/research/`                                             |
+| security                        | 11       | `commands/security/`                                             |
+| tooling                         | 7        | `commands/tooling/` (includes /reflect commands)                 |
+| root (quality loop + templates) | 2        | `commands/quality-loop.md`, `commands/VERIX-COMMAND-TEMPLATE.md` |
 
 **Complete Reference**: [MASTER-COMMAND-INDEX.md](docs/MASTER-COMMAND-INDEX.md)
 **Visual Workflows**: [GraphViz Diagrams](docs/workflows/graphviz/) (41 diagrams)
@@ -428,23 +446,27 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 **3 Production-Ready RE Skills** covering all 5 levels of reverse engineering:
 
 **1. reverse-engineering-quick** - RE Levels 1-2 (≤2 hours)
+
 - **String Reconnaissance** (Level 1, ≤30 min) - Extract URLs, IPs, IOCs, file paths, crypto indicators
 - **Static Analysis** (Level 2, 1-2 hrs) - Disassemble with Ghidra/radare2, map control flow, decompile to C
 - **Decision Gate**: Automatically evaluates if Level 2 is needed after Level 1
 - **Use cases**: Malware triage, IOC extraction, initial binary analysis, threat intelligence
 
 **2. reverse-engineering-deep** - RE Levels 3-4 (4-8 hours)
+
 - **Dynamic Analysis** (Level 3, 2-4 hrs) - GDB debugging, syscall tracing, runtime behavior analysis
 - **Symbolic Execution** (Level 4, 2-4 hrs) - Angr path exploration, constraint solving, vulnerability discovery
 - **Use cases**: Advanced malware analysis, vulnerability research, exploit development, CTF challenges
 
 **3. reverse-engineering-firmware** - RE Level 5 (2-8 hours)
+
 - **Firmware Extraction** - binwalk, unsquashfs, jefferson for embedded filesystems
 - **IoT Security Analysis** - Router firmware, embedded systems, hardcoded credentials
 - **Emulation** - QEMU + firmadyne for dynamic firmware analysis
 - **Use cases**: IoT security audits, router vulnerability research, embedded systems reverse engineering
 
 **Security Features**:
+
 - ⚠️ Comprehensive security warnings for VM/Docker/E2B sandboxing
 - 🛡️ Malware analysis best practices documented
 - 🔒 Required isolation for all binary execution
@@ -459,35 +481,31 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 **9 Production-Ready Skills** implementing comprehensive research methodology with quality gates:
 
 **Research Foundations (Pipelines A-B)**:
+
 1. **baseline-replication** - Pipeline B: Replicate published baselines with ±1% tolerance, statistical validation
 2. **literature-synthesis** - Pipeline A: Systematic literature review, gap analysis, research positioning
 
-**Method Development (Pipeline C)**:
-3. **method-development** - Pipeline C: Novel algorithm design, ablation studies, statistical rigor
+**Method Development (Pipeline C)**: 3. **method-development** - Pipeline C: Novel algorithm design, ablation studies, statistical rigor
 
-**Evaluation & Validation (Pipeline D)**:
-4. **holistic-evaluation** - Pipeline D: Multi-metric evaluation (performance, efficiency, robustness, interpretability)
+**Evaluation & Validation (Pipeline D)**: 4. **holistic-evaluation** - Pipeline D: Multi-metric evaluation (performance, efficiency, robustness, interpretability)
 
-**Production & Deployment (Pipeline E)**:
-5. **deployment-readiness** - Pipeline E: Production deployment, monitoring, A/B testing, rollback strategies
+**Production & Deployment (Pipeline E)**: 5. **deployment-readiness** - Pipeline E: Production deployment, monitoring, A/B testing, rollback strategies
 
-**Orchestration & Integration (Pipeline F)**:
-6. **deep-research-orchestrator** - Pipeline F: Full research workflow orchestrator, agent coordination
+**Orchestration & Integration (Pipeline F)**: 6. **deep-research-orchestrator** - Pipeline F: Full research workflow orchestrator, agent coordination
 
-**Reproducibility & Archival (Pipelines G-H)**:
-7. **reproducibility-audit** - Pipeline G: ACM Artifact Evaluation compliance, Docker validation, Zenodo archival
-8. **research-publication** - Pipeline H: Paper writing, conference submission, peer review response
+**Reproducibility & Archival (Pipelines G-H)**: 7. **reproducibility-audit** - Pipeline G: ACM Artifact Evaluation compliance, Docker validation, Zenodo archival 8. **research-publication** - Pipeline H: Paper writing, conference submission, peer review response
 
-**Quality Gates (GO/NO-GO Decision Framework)**:
-9. **gate-validation** - Quality Gates 1-3: Validate phase transitions with comprehensive requirement checklists
+**Quality Gates (GO/NO-GO Decision Framework)**: 9. **gate-validation** - Quality Gates 1-3: Validate phase transitions with comprehensive requirement checklists
 
 **Statistical Rigor Enhancements**:
+
 - ✅ Bonferroni multiple comparison correction
 - ✅ Cohen's d effect size calculation
 - ✅ Statistical power analysis (1-β ≥ 0.8 requirement)
 - ✅ Paired t-tests with significance thresholds
 
 **Quality Improvements**:
+
 - gate-validation: 7.2/10 → 9.0/10 (+1.8 points)
 - reproducibility-audit: 7.8/10 → 9.5/10 (+1.7 points)
 - **Average**: 8.5/10 → 9.4/10 (+0.9 points)
@@ -495,6 +513,7 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 **ACM Compliance**: Supports ACM Artifact Evaluation badges (Available, Functional, Reproduced, Reusable)
 
 **Use Cases**:
+
 - Academic ML research (NeurIPS, ICML, CVPR submissions)
 - Systematic experimentation with reproducibility
 - Baseline replication and comparative studies
@@ -507,18 +526,21 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 **4 NEW Skills** for rapid research with academic integrity:
 
 **1. rapid-idea-generator** - Generate research ideas in <5 minutes
+
 - 5-Whys causal analysis
 - MECE component decomposition
 - Root cause identification
 - 5-10 ranked ideas with literature pointers
 
 **2. research-gap-visualizer** - Visual gap maps from literature
+
 - Gap matrices (methods vs domains)
 - Research landscape diagrams
 - Opportunity quadrants
 - Prioritized gap lists with evidence
 
 **3. visual-asset-generator** - Auto diagrams, charts, tables
+
 - PRISMA flow diagrams
 - Methodology flowcharts
 - Comparison tables
@@ -526,12 +548,14 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 - NEVER fabricates data (uses [YOUR_DATA] placeholders)
 
 **4. rapid-manuscript-drafter** - Quick manuscript scaffolding
+
 - IMRaD structure (Introduction, Methods, Results, Discussion)
 - Section templates with writing tips
 - Placeholder insertion for your data
 - Completion checklists
 
 **Key Design Principles**:
+
 - NEVER fabricate data or results
 - All outputs use clear [YOUR_DATA] placeholders
 - Full transparency in reasoning
@@ -546,9 +570,11 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ## Available Plugins
 
 ### 1. 12fa-core - Core System ⭐ START HERE
+
 **Essential tools for production-grade AI development**
 
 **What you get**:
+
 - ✅ **SPARC 5-phase methodology** - Systematic development workflow
 - ✅ **10 Core Skills** - agent-creator, sparc-methodology, functionality-audit, theater-detection-audit, production-readiness, audit-pipeline, code-review-assistant, quick-quality-check, smart-bug-fix, prompt-architect
 - ✅ **12 Core Agents** - coder, reviewer, tester, planner, researcher, sparc-coord, sparc-coder, specification, pseudocode, architecture, refinement, production-validator
@@ -565,9 +591,11 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ---
 
 ### 2. 12fa-three-loop - Three-Loop Architecture
+
 **Advanced research → implementation → recovery workflow**
 
 **What you get**:
+
 - ✅ **Loop 1: Research-Driven Planning** - 5x pre-mortem validation, >97% planning accuracy
 - ✅ **Loop 2: Parallel Swarm Implementation** - 6.75x speedup, theater detection
 - ✅ **Loop 3: CI/CD Intelligent Recovery** - 100% recovery rate, automated debugging
@@ -584,9 +612,11 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ---
 
 ### 3. 12fa-security - Security Hardening
+
 **Enterprise-grade security infrastructure**
 
 **What you get**:
+
 - ✅ **6 Production Security Components**:
   - **Agent Spec Generator CLI** - Standardized agent specifications
   - **Policy DSL Engine** - Declarative YAML-based constraints
@@ -607,9 +637,11 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ---
 
 ### 4. 12fa-visual-docs - Visual Documentation
+
 **Graphviz workflow diagrams**
 
 **What you get**:
+
 - ✅ **41 Graphviz diagrams** in `docs/workflows/graphviz/` plus an `index.html` browser viewer
 - ✅ **Validation Tools** - Cross-platform validation scripts (Bash + PowerShell)
 - ✅ **Templates** - Skill, agent, and command process DOT templates
@@ -626,9 +658,11 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ---
 
 ### 5. 12fa-swarm - Advanced Swarm Coordination
+
 **Multi-agent swarm systems with Byzantine consensus**
 
 **What you get**:
+
 - ✅ **4 Topologies** - Hierarchical (6.3x), Mesh (8.3x), Adaptive (7.2x), Ring (4.5x)
 - ✅ **3 Consensus Protocols** - Byzantine (fault-tolerant), Raft (strong consistency), Gossip (scalable)
 - ✅ **Hive Mind Coordination** - Queen-led with workers, scouts, memory manager
@@ -647,6 +681,7 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ## 🎯 Use Cases: Auto-Triggered Workflows
 
 ### For Individual Developers
+
 **Start with**: `12fa-core`
 
 **Just describe what you want - the system handles the rest:**
@@ -666,6 +701,7 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ```
 
 **More examples**:
+
 ```bash
 # Auto-triggers quick-quality-check skill
 "Quick validation before I commit"
@@ -680,6 +716,7 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ---
 
 ### For Teams
+
 **Recommended**: `12fa-core` + `12fa-three-loop` + `12fa-security`
 
 **Context-aware team workflows:**
@@ -704,6 +741,7 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 ---
 
 ### For Enterprises
+
 **Full Stack**: All 5 plugins
 
 **Large-scale orchestration with automatic swarm coordination:**
@@ -731,19 +769,20 @@ User Request -> Loop 1 (Execution) -> FrozenHarness.grade()
 
 ## 📊 Repository Snapshot
 
-| Item | Current State (repository data) |
-|------|---------------------------------|
-| **Component counts** | 30 playbooks, 196 skills (176 core + 20 supplementary), 260 agents, 249 commands (`docs/COMPONENT-COUNTS.json`) |
-| **Plugin bundles** | 5 marketplace packages in `.claude-plugin/marketplace.json` |
-| **Graphviz library** | 41 DOT diagrams in `docs/workflows/graphviz/` |
-| **Discovery indexes** | Skill/agent/command indexes under `discovery/` |
-| **MCP template** | Sample servers listed in `.mcp.json` |
+| Item                  | Current State (repository data)                                                                                 |
+| --------------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Component counts**  | 30 playbooks, 196 skills (176 core + 20 supplementary), 260 agents, 249 commands (`docs/COMPONENT-COUNTS.json`) |
+| **Plugin bundles**    | 5 marketplace packages in `.claude-plugin/marketplace.json`                                                     |
+| **Graphviz library**  | 41 DOT diagrams in `docs/workflows/graphviz/`                                                                   |
+| **Discovery indexes** | Skill/agent/command indexes under `discovery/`                                                                  |
+| **MCP template**      | Sample servers listed in `.mcp.json`                                                                            |
 
 ---
 
 ## 🏗️ System Architecture
 
 ### Core Methodology: SPARC
+
 ```
 Specification → Pseudocode → Architecture → Refinement → Code
     ↓              ↓             ↓             ↓          ↓
@@ -752,6 +791,7 @@ Requirements   Algorithm    System       TDD        Integration
 ```
 
 ### Four-Loop Self-Improvement Architecture
+
 ```
 ┌─────────────────────────────────────────────────────┐
 │ Loop 1: Execution (Per-Request)                     │
@@ -786,6 +826,7 @@ Requirements   Algorithm    System       TDD        Integration
 ```
 
 ### Swarm Topologies (optional plugin)
+
 ```
 Hierarchical (6.3x)     Mesh (8.3x)        Adaptive (7.2x)     Ring (4.5x)
      Queen                 Agent1 ←→ Agent2    Auto-selects      Agent1
@@ -800,21 +841,25 @@ Hierarchical (6.3x)     Mesh (8.3x)        Adaptive (7.2x)     Ring (4.5x)
 ## 🔧 Requirements
 
 ### Minimum (for 12fa-core)
+
 - **Claude Code** ≥ 2.0.13
 - **Node.js** ≥ 18.0.0
 - **npm** ≥ 9.0.0
 - **Git**
 
 ### Required MCP Server
+
 - **claude-flow@alpha** - Core coordination (required for all plugins)
 
 ### Recommended MCP Servers
+
 - **ruv-swarm** - Enhanced swarm coordination (required for 12fa-swarm)
 - **flow-nexus** - Cloud features and neural training (optional)
 - **connascence-analyzer** - Code quality analysis (optional, 14 code quality agents)
 - **memory-mcp** - Persistent cross-session memory (optional, all agents)
 
 ### Optional Tools (by plugin)
+
 - **Graphviz** ≥ 2.44.0 - For 12fa-visual-docs rendering
 - **HashiCorp Vault** ≥ 1.15.0 - For 12fa-security secrets management
 - **Prometheus** ≥ 2.45.0 - For 12fa-security telemetry
@@ -826,6 +871,7 @@ Hierarchical (6.3x)     Mesh (8.3x)        Adaptive (7.2x)     Ring (4.5x)
 ## 📚 Documentation
 
 ### Main Documentation
+
 - **This README** - Quick start and plugin overview
 - **[CLAUDE-FLOW-INTEGRATION.md](CLAUDE-FLOW-INTEGRATION.md)** - How we integrate with and enhance Claude Flow ⭐
 - **[Marketplace README](.claude-plugin/README.md)** - Detailed installation guide
@@ -833,6 +879,7 @@ Hierarchical (6.3x)     Mesh (8.3x)        Adaptive (7.2x)     Ring (4.5x)
 - **[CHANGELOG.md](CHANGELOG.md)** - Complete version history
 
 ### Plugin Documentation
+
 - **[12fa-core README](plugins/12fa-core/README.md)** - Core system guide
 - **[12fa-three-loop README](plugins/12fa-three-loop/README.md)** - Three-Loop Architecture
 - **[12fa-security README](plugins/12fa-security/README.md)** - Security components
@@ -840,6 +887,7 @@ Hierarchical (6.3x)     Mesh (8.3x)        Adaptive (7.2x)     Ring (4.5x)
 - **[12fa-swarm README](plugins/12fa-swarm/README.md)** - Swarm coordination
 
 ### Phase Reports
+
 - **[Week 1: Quick Wins](docs/12fa/WEEK-1-QUICK-WINS-COMPLETE.md)** - Initial 12-FA deployment
 - **[Week 2: Integrations](docs/12fa/WEEK-2-INTEGRATIONS-COMPLETE.md)** - Integration layer
 - **[Week 3: Security](docs/12fa/WEEK-3-SECURITY-HARDENING-COMPLETE.md)** - Security hardening
@@ -848,6 +896,7 @@ Hierarchical (6.3x)     Mesh (8.3x)        Adaptive (7.2x)     Ring (4.5x)
 - **[Phase 3: Graphviz](docs/12fa/PHASE-3-GRAPHVIZ-VALIDATION-COMPLETE.md)** - Validation infrastructure
 
 ### API Documentation
+
 - **[Agent Registry OpenAPI](security/agent-registry/openapi.yaml)** - REST API spec
 - **[Policy DSL Reference](security/policy-dsl/POLICY-DSL.md)** - Policy language guide
 
@@ -856,11 +905,13 @@ Hierarchical (6.3x)     Mesh (8.3x)        Adaptive (7.2x)     Ring (4.5x)
 ## 🤝 Support & Credits
 
 ### Support
+
 - **Issues**: [GitHub Issues](https://github.com/DNYoussef/ruv-sparc-three-loop-system/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/DNYoussef/ruv-sparc-three-loop-system/discussions)
 - **Plugin Marketplace**: [Claude Code Plugins](https://claude.com/code/plugins)
 
 ### Built On
+
 - **[Claude Flow](https://github.com/ruvnet/claude-flow)** by [@ruvnet](https://github.com/ruvnet) - Enterprise-grade agent orchestration platform
   - Provides: Memory system, hooks, swarm intelligence, MCP protocol, AgentDB, ReasoningBank
   - We enhance with: Graphviz diagrams (`docs/workflows/graphviz/`), evidence-based prompting, SPARC methodology, Three-Loop Architecture, security hardening, 12-Factor compliance

@@ -1,0 +1,12 @@
+{
+  "name": "singuliodev-claude",
+  "version": "4.1.0",
+  "description": "Cognitive architecture plugin with skills, agents, SPARC methodology, multi-agent swarm coordination, and LSP code intelligence for TypeScript, Rust, and Elixir",
+  "author": {
+    "name": "DNYoussef",
+    "url": "https://github.com/DNYoussef"
+  },
+  "license": "Apache-2.0",
+  "keywords": ["sparc", "swarm", "agents", "skills", "cognitive-architecture", "lsp", "typescript", "rust", "elixir"],
+  "lspServers": "./.lsp.json"
+}

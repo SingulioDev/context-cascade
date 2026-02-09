@@ -1,0 +1,53 @@
+{
+  "typescript": {
+    "command": "typescript-language-server",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".ts": "typescript",
+      ".tsx": "typescriptreact",
+      ".js": "javascript",
+      ".jsx": "javascriptreact",
+      ".mts": "typescript",
+      ".mjs": "javascript",
+      ".cts": "typescript",
+      ".cjs": "javascript"
+    },
+    "initializationOptions": {
+      "preferences": {
+        "includeInlayParameterNameHints": "none",
+        "includeInlayVariableTypeHints": false,
+        "includeInlayFunctionLikeReturnTypeHints": false
+      }
+    }
+  },
+  "rust": {
+    "command": "rust-analyzer",
+    "args": [],
+    "extensionToLanguage": {
+      ".rs": "rust"
+    },
+    "settings": {
+      "rust-analyzer": {
+        "check": {
+          "command": "clippy"
+        },
+        "cargo": {
+          "allTargets": true
+        }
+      }
+    }
+  },
+  "elixir": {
+    "command": "expert",
+    "args": ["--stdio"],
+    "extensionToLanguage": {
+      ".ex": "elixir",
+      ".exs": "elixir",
+      ".heex": "phoenix-heex",
+      ".leex": "eex"
+    },
+    "startupTimeout": 60000,
+    "restartOnCrash": true,
+    "maxRestarts": 3
+  }
+}

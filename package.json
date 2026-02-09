@@ -1,12 +1,12 @@
 {
   "name": "context-cascade",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "description": "Context-saving nested plugin architecture for Claude Code. Playbooks -> Skills -> Agents -> Commands. Load only what you need - 90%+ context savings.",
   "main": "index.js",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DNYoussef/context-cascade.git"
+    "url": "git+https://github.com/SingulioDev/context-cascade.git"
   },
   "keywords": [
     "context-cascade",
@@ -21,12 +21,12 @@
     "three-loop",
     "swarm-intelligence"
   ],
-  "author": "DNYoussef",
+  "author": "SingulioDev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DNYoussef/context-cascade/issues"
+    "url": "https://github.com/SingulioDev/context-cascade/issues"
   },
-  "homepage": "https://github.com/DNYoussef/context-cascade#readme",
+  "homepage": "https://github.com/SingulioDev/context-cascade#readme",
   "engines": {
     "node": ">=18.0.0"
   },
