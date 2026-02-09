@@ -1,6 +1,6 @@
 {
   "plugin": "singuliodev-claude",
-  "version": "4.1.0",
+  "version": "1.0.0",
   "skills": 174,
   "agents": 246,
   "commands": 20,
