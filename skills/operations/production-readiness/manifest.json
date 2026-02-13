@@ -2,7 +2,7 @@
   "name": "production-readiness",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "SKILL skill for operations workflows",
   "files": [
     "SKILL.md",
     "examples\\performance-benchmarking.md",

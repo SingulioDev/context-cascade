@@ -2,7 +2,7 @@
   "name": "when-auditing-security-use-security-analyzer",
   "version": "1.0.0",
   "category": "security",
-  "description": "",
+  "description": "Comprehensive security auditing across static analysis, dynamic testing, dependency vulnerabilities, secrets detection, and OWASP compliance",
   "files": [
     "mcp-security-analyzer.json",
     "process-diagram.gv",

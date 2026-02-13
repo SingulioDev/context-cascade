@@ -2,7 +2,7 @@
   "name": "agent-selector",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Intelligent agent selection from 203-agent registry using semantic matching and capability analysis",
   "files": [
     "CHANGELOG.md",
     "process.dot",

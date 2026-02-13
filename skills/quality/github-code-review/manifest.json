@@ -2,7 +2,7 @@
   "name": "github-code-review",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Comprehensive GitHub code review with AI-powered swarm coordination",
   "files": [
     "SKILL.md",
     "examples\\example-1-pr-review-workflow.md",

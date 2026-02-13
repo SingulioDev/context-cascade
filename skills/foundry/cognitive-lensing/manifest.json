@@ -2,7 +2,7 @@
   "name": "cognitive-lensing",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Cross-lingual cognitive framing system that activates different reasoning patterns by embedding multi-lingual activation phrases. Use when facing complex tasks that benefit from specific thinking patt",
   "files": [
     "SKILL.md"
   ],

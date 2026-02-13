@@ -2,7 +2,7 @@
   "name": "reverse-engineer-debug",
   "version": "1.0.0",
   "category": "security",
-  "description": "",
+  "description": "Perform systematic reverse engineering root cause analysis to debug issues and find real underlying problems",
   "files": [
     "SKILL.md"
   ],

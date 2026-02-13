@@ -2,7 +2,7 @@
   "name": "bootstrap-loop",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Orchestrates the recursive self-improvement cycle where Prompt Forge improves Skill Forge, Skill Forge improves Prompt Forge, and both audit/improve everything else. All changes gated by frozen eval h",
   "files": [
     "SKILL.md"
   ],

@@ -19,23 +19,23 @@
     "byzantine"
   ],
   "commands": [
-    "../../commands/tooling/claude-flow/claude-flow-swarm.md",
-    "../../commands/orchestration/coordination/swarm-init.md",
-    "../../commands/orchestration/coordination/agent-spawn.md",
-    "../../commands/orchestration/coordination/task-orchestrate.md",
-    "../../commands/orchestration/coordination/orchestrate.md",
-    "../../commands/operations/github/github-swarm.md",
-    "../../commands/operations/monitoring/swarm-monitor.md",
-    "../../commands/operations/optimization/auto-topology.md"
+    "../../../commands/tooling/claude-flow/claude-flow-swarm.md",
+    "../../../commands/orchestration/coordination/swarm-init.md",
+    "../../../commands/orchestration/coordination/agent-spawn.md",
+    "../../../commands/orchestration/coordination/task-orchestrate.md",
+    "../../../commands/orchestration/coordination/orchestrate.md",
+    "../../../commands/operations/github/github-swarm.md",
+    "../../../commands/operations/monitoring/swarm-monitor.md",
+    "../../../commands/operations/optimization/auto-topology.md"
   ],
   "skills": [
-    "../../skills/orchestration/swarm-advanced",
-    "../../skills/orchestration/swarm-orchestration",
-    "../../skills/orchestration/hive-mind-advanced",
-    "../../skills/operations/github-multi-repo",
-    "../../skills/operations/github-project-management",
-    "../../skills/operations/github-release-management",
-    "../../skills/operations/github-workflow-automation"
+    "../../../skills/orchestration/swarm-advanced",
+    "../../../skills/orchestration/swarm-orchestration",
+    "../../../skills/orchestration/hive-mind-advanced",
+    "../../../skills/operations/github-multi-repo",
+    "../../../skills/operations/github-project-management",
+    "../../../skills/operations/github-release-management",
+    "../../../skills/operations/github-workflow-automation"
   ],
   "agents": "./agents",
   "hooks": "./hooks/hooks.json"

@@ -2,7 +2,7 @@
   "name": "feature-dev-complete",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Complete feature development lifecycle from research to deployment. Uses Gemini Search for best practices, architecture design, Codex prototyping, comprehensive testing, and documentation generation.",
   "files": [
     "SKILL.md",
     "examples\\example-1-auth-feature.md",

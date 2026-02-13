@@ -2,7 +2,7 @@
   "name": "kubernetes-specialist",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "Kubernetes orchestration expert for Helm chart development, custom operators and CRDs, service mesh (Istio/Linkerd), auto-scaling strategies (HPA/VPA/Cluster Autoscaler), multi-cluster management, and",
   "files": [
     "SKILL.md"
   ],

@@ -2,7 +2,7 @@
   "name": "aws-specialist",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "AWS cloud specialist for infrastructure as code with CloudFormation/CDK, serverless with Lambda, container orchestration with ECS/Fargate, database management with RDS, storage with S3/CloudFront CDN,",
   "files": [
     "SKILL.md"
   ],

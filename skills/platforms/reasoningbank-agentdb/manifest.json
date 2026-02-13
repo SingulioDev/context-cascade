@@ -2,7 +2,7 @@
   "name": "reasoningbank-agentdb",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Implement ReasoningBank adaptive learning with AgentDB's 150x faster vector database. Includes trajectory tracking, verdict judgment, memory distillation, and pattern recognition. Use when building se",
   "files": [
     "SKILL.md",
     "examples\\data-migration-example.js",

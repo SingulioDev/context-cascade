@@ -2,7 +2,7 @@
   "name": "when-using-advanced-swarm-use-swarm-advanced",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Advanced swarm patterns with dynamic topology switching and self-organizing behaviors for complex multi-agent coordination",
   "files": [
     "process-diagram.gv",
     "process.md",

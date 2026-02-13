@@ -2,7 +2,7 @@
   "name": "when-developing-complete-feature-use-feature-dev-complete",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Trigger skill: when developing complete feature, invoke feature dev complete",
   "files": [
     "skill.md"
   ],

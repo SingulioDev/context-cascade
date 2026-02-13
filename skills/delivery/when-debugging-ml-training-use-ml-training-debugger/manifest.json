@@ -2,7 +2,7 @@
   "name": "when-debugging-ml-training-use-ml-training-debugger",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Debug ML training issues and optimize performance including loss divergence, overfitting, and slow convergence",
   "files": [
     "process-diagram.gv",
     "process.md",

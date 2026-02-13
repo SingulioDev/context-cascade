@@ -2,7 +2,7 @@
   "name": "frontend-specialists",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Comprehensive frontend development system with specialist agents for React, Vue, UI components, CSS styling, accessibility, and performance optimization. Use when building modern web applications, com",
   "files": [
     "SKILL.md",
     "examples\\example-1-react-component.md",

@@ -2,7 +2,7 @@
   "name": "sql-database-specialist",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "SQL database specialist for PostgreSQL/MySQL optimization, EXPLAIN plan analysis, index optimization, query rewriting, partitioning strategies, connection pooling, and database performance tuning. Use",
   "files": [
     "readme.md",
     "SKILL.md",

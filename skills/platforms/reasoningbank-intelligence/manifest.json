@@ -2,7 +2,7 @@
   "name": "reasoningbank-intelligence",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Implement adaptive learning with ReasoningBank for pattern recognition, strategy optimization, and continuous improvement. Use when building self-learning agents, optimizing workflows, or implementing",
   "files": [
     "SKILL.md",
     "examples\\adaptive-learning-example.js",

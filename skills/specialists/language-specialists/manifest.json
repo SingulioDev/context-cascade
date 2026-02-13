@@ -2,7 +2,7 @@
   "name": "language-specialists",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Unified language specialists for Python and TypeScript development, providing expert guidance for modern backend APIs, type-safe development, async optimization, and framework integration (Django/Flas",
   "files": [
     "readme.md",
     "SKILL.md",

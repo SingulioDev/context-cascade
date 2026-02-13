@@ -2,7 +2,7 @@
   "name": "when-optimizing-prompts-use-prompt-architect",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Comprehensive framework for analyzing, creating, and refining prompts for AI systems using evidence-based techniques",
   "files": [
     "process-diagram.gv",
     "process.md",

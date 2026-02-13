@@ -2,7 +2,7 @@
   "name": "github-workflow-automation",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "SKILL skill for operations workflows",
   "files": [
     "readme.md",
     "SKILL.md",

@@ -2,7 +2,7 @@
   "name": "observability",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "Observability specialists hub for monitoring, logging, tracing, and alerting. Routes to specialists for metrics collection, log aggregation, distributed tracing, and incident response. Use for system",
   "files": [
     "CHANGELOG.md",
     "process.dot",

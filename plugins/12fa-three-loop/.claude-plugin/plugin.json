@@ -19,20 +19,20 @@
     "architecture"
   ],
   "commands": [
-    "../../commands/delivery/sparc/integration.md",
-    "../../commands/delivery/sparc/devops.md",
-    "../../commands/delivery/workflows/development.md",
-    "../../commands/delivery/essential-commands/build-feature.md",
-    "../../commands/platforms/multi-model-commands/gemini-search.md",
-    "../../commands/platforms/multi-model-commands/codex-auto.md"
+    "../../../commands/delivery/sparc/integration.md",
+    "../../../commands/delivery/sparc/devops.md",
+    "../../../commands/delivery/workflows/development.md",
+    "../../../commands/delivery/essential-commands/build-feature.md",
+    "../../../commands/platforms/multi-model-commands/gemini-search.md",
+    "../../../commands/platforms/multi-model-commands/codex-auto.md"
   ],
   "skills": [
-    "../../skills/research/research-driven-planning",
-    "../../skills/orchestration/parallel-swarm-implementation",
-    "../../skills/operations/cicd-intelligent-recovery",
-    "../../skills/references/multi-model.md",
-    "../../skills/orchestration/cascade-orchestrator",
-    "../../skills/delivery/feature-dev-complete"
+    "../../../skills/research/research-driven-planning",
+    "../../../skills/orchestration/parallel-swarm-implementation",
+    "../../../skills/operations/cicd-intelligent-recovery",
+    "../../../skills/references/multi-model.md",
+    "../../../skills/orchestration/cascade-orchestrator",
+    "../../../skills/delivery/feature-dev-complete"
   ],
   "agents": "./agents",
   "hooks": "./hooks/hooks.json"

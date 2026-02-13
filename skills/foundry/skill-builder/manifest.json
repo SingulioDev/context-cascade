@@ -2,7 +2,7 @@
   "name": "skill-builder",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, gene",
   "files": [
     "CHANGELOG.md",
     "process.dot",

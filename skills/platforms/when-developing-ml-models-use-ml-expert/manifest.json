@@ -2,7 +2,7 @@
   "name": "when-developing-ml-models-use-ml-expert",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Specialized ML model development, training, and deployment workflow",
   "files": [
     "process-diagram.gv",
     "process.md",

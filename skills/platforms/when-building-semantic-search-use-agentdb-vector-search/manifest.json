@@ -2,7 +2,7 @@
   "name": "when-building-semantic-search-use-agentdb-vector-search",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "AgentDB Semantic Vector Search skill for agentdb workflows",
   "files": [
     "process-diagram.gv",
     "PROCESS.md",

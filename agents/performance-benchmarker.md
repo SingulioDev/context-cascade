@@ -8,6 +8,7 @@ tools:
   - Bash
 model: inherit
 permissionMode: default
+max_tokens_per_session: 200000
 ---
 ---
 

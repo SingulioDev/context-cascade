@@ -2,7 +2,7 @@
   "name": "code-review-assistant",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Comprehensive PR review using multi-agent swarm with specialized reviewers for security, performance, style, tests, and documentation. Provides detailed feedback with auto-fix suggestions and merge re",
   "files": [
     "readme.md",
     "SKILL.md",

@@ -2,7 +2,7 @@
   "name": "when-mapping-dependencies-use-dependency-mapper",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Comprehensive dependency mapping, analysis, and visualization tool for software projects",
   "files": [
     "mcp-dependency-mapper.json",
     "process-diagram.gv",

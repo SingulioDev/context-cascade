@@ -2,7 +2,7 @@
   "name": "web-cli-teleport",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Guide users on when to use Claude Code Web vs CLI and seamlessly teleport sessions between environments",
   "files": [
     "SKILL.md",
     "web-cli-teleport-process.dot"

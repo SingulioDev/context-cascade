@@ -2,7 +2,7 @@
   "name": "machine-learning",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Comprehensive machine learning development with training, evaluation, and deployment capabilities. Use when training models, developing ML pipelines, or deploying machine learning systems.",
   "files": [
     "gold-tier-enhancement.md",
     "readme.md",

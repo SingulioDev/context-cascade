@@ -1,44 +1,5 @@
 {
   "mcpServers": {
-    "memory-mcp": {
-      "command": "C:\\Python312\\python.exe",
-      "args": [
-        "-u",
-        "-m",
-        "src.mcp.stdio_server"
-      ],
-      "cwd": "D:\\Projects\\memory-mcp-triple-system",
-      "env": {
-        "PYTHONPATH": "D:\\Projects\\memory-mcp-triple-system",
-        "PYTHONIOENCODING": "utf-8",
-        "MEMORY_MCP_DATA_DIR": "C:\\Users\\17175\\.claude\\memory-mcp-data",
-        "MEMORY_MCP_LOG_LEVEL": "INFO",
-        "OBSIDIAN_VAULT_PATH": "C:\\Users\\17175\\Documents\\Obsidian Vault",
-        "HF_HUB_OFFLINE": "0",
-        "TRANSFORMERS_OFFLINE": "0",
-        "HF_HOME": "D:\\AIVillage\\hf_cache"
-      },
-      "category": "core",
-      "description": "Triple-system memory with semantic search",
-      "contextCost": 2000
-    },
-    "connascence-analyzer": {
-      "command": "cmd",
-      "args": [
-        "/c",
-        "python",
-        "D:\\Projects\\connascence\\mcp\\cli.py",
-        "mcp-server"
-      ],
-      "cwd": "D:\\Projects\\connascence",
-      "env": {
-        "PYTHONPATH": "D:\\Projects\\connascence",
-        "PYTHONIOENCODING": "utf-8"
-      },
-      "category": "code-quality",
-      "description": "Code coupling analysis",
-      "contextCost": 1500
-    },
     "fetch": {
       "command": "npx",
       "args": [
@@ -49,10 +10,8 @@
       "contextCost": 500
     },
     "sequential-thinking": {
-      "command": "cmd",
+      "command": "npx",
       "args": [
-        "/c",
-        "npx",
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
       ],
@@ -64,7 +23,7 @@
       "command": "npx",
       "args": [
         "@modelcontextprotocol/server-filesystem",
-        "C:\\Users\\17175"
+        "/opt/dev"
       ],
       "category": "core",
       "description": "File system access",
@@ -80,10 +39,8 @@
       "contextCost": 2000
     },
     "agentic-payments": {
-      "command": "cmd",
+      "command": "npx",
       "args": [
-        "/c",
-        "npx",
         "agentic-payments@latest",
         "mcp"
       ],
@@ -111,10 +68,8 @@
       "contextCost": 500
     },
     "flow-nexus": {
-      "command": "cmd",
+      "command": "npx",
       "args": [
-        "/c",
-        "npx",
         "flow-nexus@latest",
         "mcp",
         "start"
@@ -124,10 +79,8 @@
       "contextCost": 2500
     },
     "ruv-swarm": {
-      "command": "cmd",
+      "command": "npx",
       "args": [
-        "/c",
-        "npx",
         "ruv-swarm",
         "mcp",
         "start"

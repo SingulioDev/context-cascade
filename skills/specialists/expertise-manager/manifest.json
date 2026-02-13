@@ -2,7 +2,7 @@
   "name": "expertise-manager",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Manages domain expertise files for Agent Experts-style learning. Handles expertise creation, validation, pre-action loading, and post-build auto-updates. Enables agents to accumulate persistent domain",
   "files": [
     "CHANGELOG.md",
     "process.dot",

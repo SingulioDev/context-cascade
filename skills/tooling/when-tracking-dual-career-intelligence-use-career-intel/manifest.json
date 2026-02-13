@@ -2,7 +2,7 @@
   "name": "when-tracking-dual-career-intelligence-use-career-intel",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Trigger skill: when tracking dual career intelligence, invoke career intel",
   "files": [
     "skill.md"
   ],

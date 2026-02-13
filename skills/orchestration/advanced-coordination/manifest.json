@@ -2,7 +2,7 @@
   "name": "advanced-coordination",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Advanced multi-agent coordination patterns for complex distributed systems. Use when coordinating 5+ agents with dynamic task dependencies, implementing Byzantine fault tolerance, or managing distribu",
   "files": [
     "readme.md",
     "SKILL.md",

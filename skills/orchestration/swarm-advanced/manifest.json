@@ -2,7 +2,7 @@
   "name": "swarm-advanced",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Advanced swarm orchestration patterns for research, development, testing, and complex distributed workflows",
   "files": [
     "SKILL.md"
   ],

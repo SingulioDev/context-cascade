@@ -2,7 +2,7 @@
   "name": "stream-chain",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows",
   "files": [
     "SKILL.md"
   ],

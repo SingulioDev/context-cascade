@@ -19,12 +19,12 @@
     "telemetry"
   ],
   "commands": [
-    "../../commands/delivery/sparc/security-review.md",
-    "../../commands/operations/hooks/setup.md"
+    "../../../commands/delivery/sparc/security-review.md",
+    "../../../commands/operations/hooks/setup.md"
   ],
   "skills": [
-    "../../skills/security/network-security-setup",
-    "../../skills/security/sandbox-configurator"
+    "../../../skills/security/network-security-setup",
+    "../../../skills/security/sandbox-configurator"
   ],
   "agents": "./agents",
   "hooks": "./hooks/hooks.json"

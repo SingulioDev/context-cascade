@@ -2,7 +2,7 @@
   "name": "when-protecting-physics-ip-use-tracker",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Trigger skill: when protecting physics ip, invoke tracker",
   "files": [
     "skill.md"
   ],

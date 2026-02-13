@@ -2,7 +2,7 @@
   "name": "testing-quality",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "Testing quality assessment for test suite health, coverage analysis, and test effectiveness. Use when auditing test quality, improving test coverage, or assessing test reliability and maintainability.",
   "files": [
     "CHANGELOG.md",
     "process.dot",

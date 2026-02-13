@@ -2,7 +2,7 @@
   "name": "ralph-loop",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Persistence loop system that prevents premature task completion by using Stop hooks to re-inject prompts until success criteria are met. Named after Ralph Wiggum from The Simpsons. Use for iterative t",
   "files": [
     "SKILL.md"
   ],

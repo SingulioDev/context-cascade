@@ -2,7 +2,7 @@
   "name": "codex-reasoning",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Use GPT-5-Codex's specialized reasoning for alternative approaches and second opinions",
   "files": [
     "SKILL.md"
   ],

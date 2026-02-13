@@ -2,7 +2,7 @@
   "name": "docker-containerization",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "Docker containerization specialist for multi-stage builds, layer caching optimization, security scanning with Trivy, Docker Compose orchestration, BuildKit advanced features, and production-grade Dock",
   "files": [
     "SKILL.md"
   ],

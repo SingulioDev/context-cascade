@@ -2,7 +2,7 @@
   "name": "when-optimizing-vector-search-use-agentdb-optimization",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "AgentDB Vector Search Optimization skill for agentdb workflows",
   "files": [
     "process-diagram.gv",
     "PROCESS.md",

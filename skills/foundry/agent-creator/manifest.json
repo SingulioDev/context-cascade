@@ -2,7 +2,7 @@
   "name": "agent-creator",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "SKILL skill for foundry workflows",
   "files": [
     "agent-creator-process.dot",
     "CHANGELOG.md",

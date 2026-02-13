@@ -2,7 +2,7 @@
   "name": "deep-research-orchestrator",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "SKILL skill for research workflows",
   "files": [
     "deep-research-orchestrator-process.dot",
     "SKILL.md"

@@ -2,7 +2,7 @@
   "name": "when-using-advanced-vector-search-use-agentdb-advanced",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Advanced AgentDB Vector Search Implementation skill for agentdb workflows",
   "files": [
     "process-diagram.gv",
     "PROCESS.md",

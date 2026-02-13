@@ -2,7 +2,7 @@
   "name": "when-managing-token-budget-use-token-budget-advisor",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Proactive token budget management tool for assessing usage, analyzing task complexity, generating chunking strategies, and creating execution plans that stay within budget limits",
   "files": [
     "process-diagram.gv",
     "process.md",

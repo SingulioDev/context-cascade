@@ -2,7 +2,7 @@
   "name": "source-credibility-analyzer",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "Standalone tool for automated source evaluation using program-of-thought scoring rubrics. Outputs credibility (1-5), bias (1-5), and priority (1-5) scores with transparent explanations. Use when evalu",
   "files": [
     "README.md",
     "SKILL.md",

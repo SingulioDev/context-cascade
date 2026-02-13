@@ -2,7 +2,7 @@
   "name": "when-creating-presentations-use-pptx-generation",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Enterprise-grade PowerPoint deck generation using evidence-based prompting, workflow enforcement, constraint-based design",
   "files": [
     "process-diagram.gv",
     "process.md",

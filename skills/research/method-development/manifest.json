@@ -2,7 +2,7 @@
   "name": "method-development",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "SKILL skill for research workflows",
   "files": [
     "method-development-process.dot",
     "SKILL.md"

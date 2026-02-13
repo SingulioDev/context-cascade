@@ -2,7 +2,7 @@
   "name": "multi-model",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Intelligent multi-model orchestrator that routes tasks to Gemini or Codex based on their strengths",
   "files": [
     "SKILL.md"
   ],

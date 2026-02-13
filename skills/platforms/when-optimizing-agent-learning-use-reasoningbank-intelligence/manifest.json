@@ -2,7 +2,7 @@
   "name": "when-optimizing-agent-learning-use-reasoningbank-intelligence",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Implement adaptive learning with ReasoningBank for pattern recognition, strategy optimization, and continuous improvement",
   "files": [
     "process-diagram.gv",
     "process.md",

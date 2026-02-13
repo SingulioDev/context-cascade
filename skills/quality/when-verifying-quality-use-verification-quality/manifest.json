@@ -2,7 +2,7 @@
   "name": "when-verifying-quality-use-verification-quality",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "Comprehensive quality verification and validation through static analysis, dynamic testing, integration validation, and certification gates",
   "files": [
     "process-diagram.gv",
     "PROCESS.md",

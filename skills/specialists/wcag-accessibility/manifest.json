@@ -2,7 +2,7 @@
   "name": "wcag-accessibility",
   "version": "1.0.0",
   "category": "security",
-  "description": "",
+  "description": "WCAG 2.1 AA/AAA accessibility compliance specialist for ARIA attributes, keyboard navigation, screen reader testing, color contrast validation, semantic HTML, and automated a11y testing with axe-core/",
   "files": [
     "SKILL.md"
   ],

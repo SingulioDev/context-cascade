@@ -2,7 +2,7 @@
   "name": "python-specialist",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Expert Python development specialist for backend APIs, async/await optimization, Django/Flask/FastAPI frameworks, type hints, packaging, and performance profiling. Use when building Python backend ser",
   "files": [
     "SKILL.md"
   ],

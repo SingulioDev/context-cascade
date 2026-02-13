@@ -2,7 +2,7 @@
   "name": "sop-dogfooding-pattern-retrieval",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "3-part dogfooding workflow Phase 2 - Query Memory-MCP for similar past fixes using vector search, rank patterns, optionally apply transformations. 10-30 seconds execution time.",
   "files": [
     "SKILL.md"
   ],

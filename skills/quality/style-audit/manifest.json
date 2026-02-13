@@ -2,7 +2,7 @@
   "name": "style-audit",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Audits code against CI/CD style rules, quality guidelines, and best practices, then rewrites code to meet standards without breaking functionality. Use this skill after functionality validation to ens",
   "files": [
     "SKILL.md",
     "style-audit-process.dot"

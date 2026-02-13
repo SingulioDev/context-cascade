@@ -2,7 +2,7 @@
   "name": "when-tracking-financial-runway-use-dashboard",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Trigger skill: when tracking financial runway, invoke dashboard",
   "files": [
     "skill.md"
   ],

@@ -2,7 +2,7 @@
   "name": "template-extractor",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Reverse-engineer document templates to extract exact design specifications and generate reusable AI prompts for pixel-perfect document recreation",
   "files": [
     "IMPROVEMENT-SUMMARY.md",
     "SKILL.md",

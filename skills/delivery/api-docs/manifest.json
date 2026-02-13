@@ -2,7 +2,7 @@
   "name": "api-docs",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Generate and maintain comprehensive API documentation using OpenAPI 3.0, Swagger UI, and GraphQL Playground. Use when documenting REST APIs, GraphQL services, or creating API reference materials. Ensu",
   "files": [
     "readme.md",
     "SKILL.md",

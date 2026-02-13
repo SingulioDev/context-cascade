@@ -2,7 +2,7 @@
   "name": "theater-detection-audit",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Performs comprehensive audits to detect placeholder code, mock data, TODO markers, and incomplete implementations in codebases. Use this skill when you need to find all instances of 'theater' in code",
   "files": [
     "SKILL.md",
     "theater-detection-audit-process.dot"

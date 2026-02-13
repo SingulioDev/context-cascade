@@ -2,7 +2,7 @@
   "name": "cicd-intelligent-recovery",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "SKILL skill for operations workflows",
   "files": [
     "cicd-intelligent-recovery-process.dot",
     "readme.md",

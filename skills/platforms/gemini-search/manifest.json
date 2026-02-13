@@ -2,7 +2,7 @@
   "name": "gemini-search",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Get real-time web information using Gemini's built-in Google Search grounding",
   "files": [
     "SKILL.md"
   ],

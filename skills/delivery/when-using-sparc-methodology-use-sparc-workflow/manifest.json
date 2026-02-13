@@ -2,7 +2,7 @@
   "name": "when-using-sparc-methodology-use-sparc-workflow",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Trigger skill: when using sparc methodology, invoke sparc workflow",
   "files": [
     "skill.md"
   ],

@@ -2,7 +2,7 @@
   "name": "landing-page-generator",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Comprehensive 6-phase SOP for AI-driven landing page creation (Research -> Copy -> Inspiration -> Build -> Iterate -> Deploy). Use when building marketing pages, sales pages, or product landing pages.",
   "files": [
     "CHANGELOG.md",
     "SKILL.md",

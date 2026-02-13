@@ -2,7 +2,7 @@
   "name": "terraform-iac",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "Terraform infrastructure as code specialist for multi-cloud deployments (AWS/GCP/Azure), state management with remote backends, module development, drift detection, policy as code with Sentinel/OPA, a",
   "files": [
     "SKILL.md"
   ],

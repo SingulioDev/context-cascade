@@ -2,7 +2,7 @@
   "name": "when-creating-slash-commands-use-slash-command-encoder",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Create ergonomic slash commands for fast access to micro-skills with auto-discovery and parameter validation",
   "files": [
     "process-diagram.gv",
     "process.md",

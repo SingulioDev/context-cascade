@@ -2,7 +2,7 @@
   "name": "dependencies",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Dependency management and analysis hub. Map project dependencies, analyze dependency graphs, identify vulnerabilities, and manage package versions. Routes to dependency-mapper and related analysis too",
   "files": [
     "CHANGELOG.md",
     "process.dot",

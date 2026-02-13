@@ -2,7 +2,7 @@
   "name": "intent-analyzer",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "SKILL skill for research workflows",
   "files": [
     "intent-analyzer-process.dot",
     "readme.md",

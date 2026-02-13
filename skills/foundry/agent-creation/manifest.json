@@ -2,7 +2,7 @@
   "name": "agent-creation",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Systematic agent creation using evidence-based prompting principles and 4-phase SOP methodology. Use when creating new specialist agents, refining existing agent prompts, or designing multi-agent syst",
   "files": [
     "agent-identity-generation-guide.md",
     "CHANGELOG-v3.0.md",

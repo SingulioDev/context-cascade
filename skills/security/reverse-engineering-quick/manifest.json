@@ -2,7 +2,7 @@
   "name": "reverse-engineering-quick",
   "version": "1.0.0",
   "category": "security",
-  "description": "",
+  "description": "Fast binary analysis with string reconnaissance and static disassembly (RE Levels 1-2). Use when triaging suspicious binaries, extracting IOCs quickly, or performing initial malware analysis. Complete",
   "files": [
     "SKILL.md",
     "resources\\README.md",

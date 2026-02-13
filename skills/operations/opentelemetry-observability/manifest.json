@@ -2,7 +2,7 @@
   "name": "opentelemetry-observability",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "Opentelemetry Observability skill",
   "files": [
     "skill.md"
   ],

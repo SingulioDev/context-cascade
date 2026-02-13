@@ -2,7 +2,7 @@
   "name": "when-finding-high-ev-hackathons-use-ev-optimizer",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Trigger skill: when finding high ev hackathons, invoke ev optimizer",
   "files": [
     "skill.md"
   ],

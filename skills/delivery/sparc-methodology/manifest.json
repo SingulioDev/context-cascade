@@ -2,7 +2,7 @@
   "name": "sparc-methodology",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration",
   "files": [
     "SKILL.md"
   ],

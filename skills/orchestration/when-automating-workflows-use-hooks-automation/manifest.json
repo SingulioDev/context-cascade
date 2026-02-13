@@ -2,7 +2,7 @@
   "name": "when-automating-workflows-use-hooks-automation",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Trigger skill: when automating workflows, invoke hooks automation",
   "files": [
     "skill.md"
   ],

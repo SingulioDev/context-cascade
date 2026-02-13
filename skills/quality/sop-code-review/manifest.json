@@ -2,7 +2,7 @@
   "name": "sop-code-review",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Comprehensive code review workflow coordinating quality, security, performance, and documentation reviewers. 4-hour timeline for thorough multi-agent review.",
   "files": [
     "SKILL.md"
   ],

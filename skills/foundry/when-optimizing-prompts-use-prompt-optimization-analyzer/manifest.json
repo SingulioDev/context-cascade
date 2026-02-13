@@ -2,7 +2,7 @@
   "name": "when-optimizing-prompts-use-prompt-optimization-analyzer",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Active diagnostic tool for analyzing prompt quality, detecting anti-patterns, identifying token waste, and providing optimization recommendations",
   "files": [
     "process-diagram.gv",
     "process.md",

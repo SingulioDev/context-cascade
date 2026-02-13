@@ -2,7 +2,7 @@
   "name": "agentdb-advanced",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Master advanced AgentDB features including QUIC synchronization, multi-database management, custom distance metrics, hybrid search, and distributed systems integration. Use when building distributed A",
   "files": [
     "readme.md",
     "SKILL.md",

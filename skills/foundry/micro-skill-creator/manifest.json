@@ -2,7 +2,7 @@
   "name": "micro-skill-creator",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Rapidly creates atomic, focused skills optimized with evidence-based prompting, specialist agents, and systematic testing. Each micro-skill does one thing exceptionally well using self-consistency, pr",
   "files": [
     "SKILL.md",
     "examples\\example-1-create-atomic-skill.md",

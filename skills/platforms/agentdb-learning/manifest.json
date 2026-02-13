@@ -2,7 +2,7 @@
   "name": "agentdb-learning",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Create AI learning plugins using AgentDB's 9 reinforcement learning algorithms. Train Decision Transformer, Q-Learning, SARSA, and Actor-Critic models. Deploy these plugins to build self-learning agen",
   "files": [
     "readme.md",
     "SKILL.md",

@@ -2,7 +2,7 @@
   "name": "sop-api-development",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Complete REST API development workflow coordinating backend, database, testing, documentation, and DevOps agents. 2-week timeline with TDD approach.",
   "files": [
     "SKILL.md"
   ],

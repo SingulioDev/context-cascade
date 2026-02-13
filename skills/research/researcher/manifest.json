@@ -2,7 +2,7 @@
   "name": "researcher",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "SKILL skill for research workflows",
   "files": [
     "readme.md",
     "SKILL.md",

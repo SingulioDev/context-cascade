@@ -2,7 +2,7 @@
   "name": "recursive-improvement",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "SKILL skill for foundry workflows",
   "files": [
     "SKILL.md"
   ],

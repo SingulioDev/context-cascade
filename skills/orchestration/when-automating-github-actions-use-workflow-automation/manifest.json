@@ -2,7 +2,7 @@
   "name": "when-automating-github-actions-use-workflow-automation",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Advanced GitHub Actions workflow automation with AI swarm coordination, intelligent CI/CD pipelines, and comprehensive repository management. Coordinates cicd-engineer, workflow-automation, tester, an",
   "files": [
     "SKILL.md",
     "workflow-automation-process.dot"

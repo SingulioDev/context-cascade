@@ -2,7 +2,7 @@
   "name": "gate-validation",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Validate Deep Research SOP quality gates (Gates 1-3) ensuring rigorous GO/NO-GO decisions based on comprehensive requirement checklists with statistical validation. Use at end of research phases (Foun",
   "files": [
     "gate-validation-process.dot",
     "SKILL.md"

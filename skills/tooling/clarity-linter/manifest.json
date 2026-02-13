@@ -2,7 +2,7 @@
   "name": "clarity-linter",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Machine-readable code clarity auditing with cognitive load optimization. 3-phase SOP - Metrics Collection (code-analyzer) -> Rubric Evaluation (reviewer) -> Fix Generation (coder + analyst). Detects t",
   "files": [
     "CHANGELOG.md",
     "process.dot",

@@ -2,7 +2,7 @@
   "name": "when-releasing-new-product-orchestrate-product-launch",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Use when launching a new product end-to-end from market research through post-launch monitoring. Orchestrates 15+ specialist agents across 5 phases in a 10-week coordinated workflow including research",
   "files": [
     "SKILL.md",
     "when-releasing-new-product-orchestrate-product-launch-process.dot"

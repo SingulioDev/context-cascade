@@ -2,7 +2,7 @@
   "name": "physics-simulation-creator",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Create optimal physics simulations using Non-Newtonian Calculus (NNC) parameter tuning. Use for ANY physics simulation to maximize accuracy and minimize computational complexity. The k parameter optim",
   "files": [
     "ai_simulation_helper.py",
     "ERROR-DETECTION.md",

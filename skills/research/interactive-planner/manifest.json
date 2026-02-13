@@ -2,7 +2,7 @@
   "name": "interactive-planner",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "SKILL skill for research workflows",
   "files": [
     "gold-tier-enhancement-summary.md",
     "interactive-planner-process.dot",

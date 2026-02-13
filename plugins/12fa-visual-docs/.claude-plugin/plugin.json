@@ -18,12 +18,12 @@
     "diagrams"
   ],
   "commands": [
-    "../../docs/workflows/graphviz/validate-all-diagrams.sh",
-    "../../docs/workflows/graphviz/validate-all-diagrams.ps1",
-    "../../docs/workflows/graphviz/index.html"
+    "../../../docs/workflows/graphviz/validate-all-diagrams.sh",
+    "../../../docs/workflows/graphviz/validate-all-diagrams.ps1",
+    "../../../docs/workflows/graphviz/index.html"
   ],
   "skills": [
-    "../../docs/workflows/graphviz"
+    "../../../docs/workflows/graphviz"
   ],
   "agents": "./agents",
   "hooks": "./hooks/hooks.json"

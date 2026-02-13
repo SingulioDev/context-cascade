@@ -2,7 +2,7 @@
   "name": "when-internationalizing-app-use-i18n-automation",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Trigger skill: when internationalizing app, invoke i18n automation",
   "files": [
     "skill.md"
   ],

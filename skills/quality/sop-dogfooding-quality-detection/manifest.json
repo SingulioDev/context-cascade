@@ -2,7 +2,7 @@
   "name": "sop-dogfooding-quality-detection",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "3-part dogfooding workflow Phase 1 - Run Connascence analysis, store results in Memory-MCP with WHO/WHEN/PROJECT/WHY tagging. 30-60 seconds execution time.",
   "files": [
     "SKILL.md"
   ],

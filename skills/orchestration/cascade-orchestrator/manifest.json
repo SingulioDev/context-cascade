@@ -2,7 +2,7 @@
   "name": "cascade-orchestrator",
   "version": "1.0.1",
   "category": "orchestration",
-  "description": "",
+  "description": "Creates sophisticated workflow cascades coordinating multiple micro-skills with sequential pipelines, parallel execution, conditional branching, and Codex sandbox iteration. Enhanced with multi-model",
   "files": [
     "CHANGELOG.md",
     "readme.md",

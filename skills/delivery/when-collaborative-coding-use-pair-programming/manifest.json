@@ -2,7 +2,7 @@
   "name": "when-collaborative-coding-use-pair-programming",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Trigger skill: when collaborative coding, invoke pair programming",
   "files": [
     "skill.md"
   ],

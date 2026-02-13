@@ -2,7 +2,7 @@
   "name": "when-gathering-requirements-use-interactive-planner",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "SKILL skill for research workflows",
   "files": [
     "process-diagram.gv",
     "process.md",

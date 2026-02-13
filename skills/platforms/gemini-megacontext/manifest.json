@@ -2,7 +2,7 @@
   "name": "gemini-megacontext",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Analyze entire codebases with Gemini's 1 million token context window - process 30K lines at once",
   "files": [
     "SKILL.md"
   ],

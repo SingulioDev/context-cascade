@@ -2,7 +2,7 @@
   "name": "when-managing-multiple-repos-use-github-multi-repo",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "Multi-repository coordination, synchronization, and architecture management with AI swarm orchestration. Coordinates repo-architect, code-analyzer, and coordinator agents across multiple repositories",
   "files": [
     "multi-repo-process.dot",
     "SKILL.md"

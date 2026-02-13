@@ -2,7 +2,7 @@
   "name": "visual-art-composition",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Orthogonal framework for generating image prompts using 13 independently combinable aesthetic dimensions from 29+ cultural and theoretical art traditions",
   "files": [
     "SKILL-v2.md",
     "SKILL.md",

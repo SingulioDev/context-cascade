@@ -2,7 +2,7 @@
   "name": "safe-task-spawn",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Validated wrapper around Task() calls that enforces agent registry compliance, prevents invalid spawns, and logs all spawn attempts for audit trails",
   "files": [
     "SKILL.md"
   ],

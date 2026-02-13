@@ -2,7 +2,7 @@
   "name": "pilot-1-code-formatter",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Automatically format code files using the appropriate formatter based on file type, providing clear feedback on changes made",
   "files": [
     "SKILL.md",
     "V0-SKILL.md",

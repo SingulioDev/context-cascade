@@ -2,7 +2,7 @@
   "name": "connascence-quality-gate",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "SKILL skill for quality workflows",
   "files": [
     "SKILL.md"
   ],

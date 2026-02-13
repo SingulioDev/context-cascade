@@ -2,7 +2,7 @@
   "name": "prompt-architect",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Meta-loop skill for prompt optimization using VERILINGUA x VERIX",
   "files": [
     "CHANGELOG.md",
     "COGNITIVE-ARCHITECTURE-ADDENDUM.md",

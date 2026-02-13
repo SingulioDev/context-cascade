@@ -2,7 +2,7 @@
   "name": "skill-forge",
   "version": "1.0.1",
   "category": "foundry",
-  "description": "",
+  "description": "Advanced skill creation system for Claude Code that combines deep intent analysis, evidence-based prompting principles, and systematic skill engineering. Use when creating new skills or refining exist",
   "files": [
     "CHANGELOG.md",
     "COGNITIVE-ARCHITECTURE-ADDENDUM.md",

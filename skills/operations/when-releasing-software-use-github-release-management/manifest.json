@@ -2,7 +2,7 @@
   "name": "when-releasing-software-use-github-release-management",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "Comprehensive GitHub release orchestration with AI swarm coordination for automated versioning, testing, deployment, and rollback management. Coordinates release-manager, cicd-engineer, tester, and do",
   "files": [
     "release-management-process.dot",
     "SKILL.md"

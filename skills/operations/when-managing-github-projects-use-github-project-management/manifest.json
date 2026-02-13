@@ -2,7 +2,7 @@
   "name": "when-managing-github-projects-use-github-project-management",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning. Coordinates planner, issue-tracker, and project-board-sync agents to autom",
   "files": [
     "project-management-process.dot",
     "SKILL.md"

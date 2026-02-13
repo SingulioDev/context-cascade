@@ -2,7 +2,7 @@
   "name": "when-chaining-workflows-use-cascade-orchestrator",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Create sophisticated workflow cascades with sequential pipelines, parallel execution, and conditional branching",
   "files": [
     "process-diagram.gv",
     "PROCESS.md",

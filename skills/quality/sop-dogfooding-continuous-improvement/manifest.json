@@ -2,7 +2,7 @@
   "name": "sop-dogfooding-continuous-improvement",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "3-part dogfooding workflow Phase 3 - Full cycle orchestration combining Quality Detection + Pattern Retrieval + Application with automated metrics tracking. 60-120 seconds execution time.",
   "files": [
     "SKILL.md"
   ],

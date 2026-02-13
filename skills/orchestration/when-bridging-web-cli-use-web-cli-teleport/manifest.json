@@ -2,7 +2,7 @@
   "name": "when-bridging-web-cli-use-web-cli-teleport",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Bridge web interfaces with CLI workflows for seamless bidirectional integration",
   "files": [
     "process-diagram.gv",
     "process.md",

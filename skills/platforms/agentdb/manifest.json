@@ -2,7 +2,7 @@
   "name": "agentdb",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "High-performance vector search and semantic memory for AI agents. Use when implementing RAG systems, semantic document retrieval, or persistent agent memory. Provides 150x faster vector search vs trad",
   "files": [
     "readme.md",
     "SKILL.md",

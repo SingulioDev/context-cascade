@@ -2,7 +2,7 @@
   "name": "when-chaining-agent-pipelines-use-stream-chain",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Chain agent outputs as inputs in sequential or parallel pipelines for data flow orchestration",
   "files": [
     "process-diagram.gv",
     "process.md",

@@ -2,7 +2,7 @@
   "name": "base-template-generator",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Generate clean, production-ready boilerplate templates for Node.js, Python, Go, React, Vue, and other frameworks. Use when starting new projects or creating consistent foundational code structures. Pr",
   "files": [
     "readme.md",
     "SKILL.md",

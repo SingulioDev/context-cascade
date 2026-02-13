@@ -2,7 +2,7 @@
   "name": "improvement-pipeline",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Executable implementation of the Propose -> Test -> Compare -> Commit -> Rollback pipeline for recursive self-improvement. Provides concrete commands and workflows for each stage.",
   "files": [
     "SKILL.md"
   ],

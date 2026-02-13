@@ -7,6 +7,7 @@ x-version: 1.0.0
 x-category: research
 x-vcl-compliance: v3.1.1
 x-origin-path: research/wolfram-computation-agent.md
+max_tokens_per_session: 200000
 ---
 ---
 

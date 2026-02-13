@@ -2,7 +2,7 @@
   "name": "flow-nexus-neural",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Train and deploy neural networks in distributed E2B sandboxes with Flow Nexus",
   "files": [
     "SKILL.md",
     "examples\\example-1-distributed-training.md",

@@ -2,7 +2,7 @@
   "name": "playbook-architect",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Playbook Architect skill",
   "files": [
     "README.md",
     "skill.md"

@@ -2,7 +2,7 @@
   "name": "documentation",
   "version": "1.0.1",
   "category": "tooling",
-  "description": "",
+  "description": "Documentation generation hub for code documentation, API docs, READMEs, and inline comments. Routes to doc-generator and related documentation tools. Use when generating or improving project documenta",
   "files": [
     "CHANGELOG.md",
     "process.dot",

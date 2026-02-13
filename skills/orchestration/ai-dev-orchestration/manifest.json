@@ -2,7 +2,7 @@
   "name": "ai-dev-orchestration",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Meta-orchestrator for AI-assisted app development with behavioral guardrails and prompt templates. 5-phase SOP - Product Framing (planner) -> Setup & Foundations (system-architect) -> Feature Developm",
   "files": [
     "CHANGELOG.md",
     "process.dot",

@@ -2,7 +2,7 @@
   "name": "codex-auto",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Use Codex CLI's Full Auto mode for unattended sandboxed prototyping and scaffolding",
   "files": [
     "SKILL.md"
   ],

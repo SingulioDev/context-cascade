@@ -2,7 +2,7 @@
   "name": "meta-loop-orchestrator",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Orchestrates the recursive self-improvement meta loop by coordinating foundry skills (agent-creator, skill-forge, prompt-forge) with Ralph Wiggum persistence loops. Use when running recursive improvem",
   "files": [
     "SKILL.md"
   ],

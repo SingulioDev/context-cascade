@@ -2,7 +2,7 @@
   "name": "security",
   "version": "1.0.0",
   "category": "security",
-  "description": "",
+  "description": "Security specialists hub for application security, vulnerability assessment, and secure coding. Routes to specialists for OWASP, penetration testing, and security hardening. Use for security audits, v",
   "files": [
     "CHANGELOG.md",
     "process.dot",

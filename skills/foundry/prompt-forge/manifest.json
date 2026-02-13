@@ -2,7 +2,7 @@
   "name": "prompt-forge",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Meta-prompt that generates improved prompts and templates. Can improve other prompts including Skill Forge and even itself. All improvements are gated by frozen eval harness. Use when optimizing promp",
   "files": [
     "SKILL.md"
   ],

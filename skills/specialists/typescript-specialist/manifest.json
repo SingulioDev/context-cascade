@@ -2,7 +2,7 @@
   "name": "typescript-specialist",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Modern TypeScript development specialist for Node.js backends, Express/Nest.js frameworks, type-safe frontend development, npm package creation, and monorepo management with Turborepo/nx. Use when bui",
   "files": [
     "SKILL.md"
   ],

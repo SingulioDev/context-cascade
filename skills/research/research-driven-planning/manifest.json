@@ -2,7 +2,7 @@
   "name": "research-driven-planning",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "SKILL skill for research workflows",
   "files": [
     "research-driven-planning-process.dot",
     "SKILL.md",

@@ -2,7 +2,7 @@
   "name": "flow-nexus-platform",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Comprehensive Flow Nexus platform management - authentication, sandboxes, app deployment, payments, and challenges (Gold Tier)",
   "files": [
     "SKILL.md",
     "examples\\example-1-sandbox-deployment.md",

@@ -2,7 +2,7 @@
   "name": "when-analyzing-performance-use-performance-analysis",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Claude Flow swarms",
   "files": [
     "process-diagram.gv",
     "PROCESS.md",

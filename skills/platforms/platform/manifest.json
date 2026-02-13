@@ -2,7 +2,7 @@
   "name": "platform",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Platform services hub routing to Flow Nexus platform skills. Use for cloud AI platform management, neural network training, swarm deployment, and platform authentication. Routes to flow-nexus-neural,",
   "files": [
     "CHANGELOG.md",
     "process.dot",

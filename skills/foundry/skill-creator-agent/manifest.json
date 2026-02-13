@@ -2,7 +2,7 @@
   "name": "skill-creator-agent",
   "version": "1.0.0",
   "category": "foundry",
-  "description": "",
+  "description": "Creates Claude Code skills where each skill is tied to a specialist agent optimized with evidence-based prompting techniques. Use this skill when users need to create reusable skills that leverage spe",
   "files": [
     "skill-creator-agent-process.dot",
     "SKILL.md",

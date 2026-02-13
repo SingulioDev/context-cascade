@@ -2,7 +2,7 @@
   "name": "i18n-automation",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Automate internationalization and localization workflows for web applications with translation, key generation, and library setup",
   "files": [
     "i18n-automation-process.dot",
     "readme.md",

@@ -7,6 +7,7 @@ x-version: 1.0.0
 x-category: specialists
 x-vcl-compliance: v3.1.1
 x-origin-path: specialists/metaloop-integrator-agent.md
+max_tokens_per_session: 200000
 ---
 ---
 

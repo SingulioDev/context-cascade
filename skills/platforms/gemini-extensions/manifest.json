@@ -2,7 +2,7 @@
   "name": "gemini-extensions",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "Access Gemini's 70+ extensions ecosystem including Figma, Stripe, Postman, Shopify",
   "files": [
     "SKILL.md"
   ],

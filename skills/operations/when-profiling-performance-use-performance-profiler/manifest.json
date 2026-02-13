@@ -2,7 +2,7 @@
   "name": "when-profiling-performance-use-performance-profiler",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "Comprehensive performance profiling, bottleneck detection, and optimization system",
   "files": [
     "mcp-performance-profiler.json",
     "process-diagram.gv",

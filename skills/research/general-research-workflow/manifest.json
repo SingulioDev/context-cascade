@@ -2,7 +2,7 @@
   "name": "general-research-workflow",
   "version": "1.0.0",
   "category": "research",
-  "description": "",
+  "description": "Systematic 6-phase research methodology for history, mythology, and literature implementing Red's (OSP) evidence-based approach. Use when researching topics outside academic ML scope that require prim",
   "files": [
     "general-research-process.dot",
     "README.md",

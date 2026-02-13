@@ -2,7 +2,7 @@
   "name": "ml",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Machine Learning development workflow with experiment tracking, hyperparameter optimization, and MLOps integration",
   "files": [
     ".quickstart",
     "readme.md",

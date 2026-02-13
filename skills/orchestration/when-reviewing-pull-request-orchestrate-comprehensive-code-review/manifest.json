@@ -2,7 +2,7 @@
   "name": "when-reviewing-pull-request-orchestrate-comprehensive-code-review",
   "version": "1.0.0",
   "category": "orchestration",
-  "description": "",
+  "description": "Use when conducting comprehensive code review for pull requests across multiple quality dimensions. Orchestrates 12-15 specialized reviewer agents across 4 phases using star topology coordination. Cov",
   "files": [
     "SKILL.md",
     "when-reviewing-pull-request-orchestrate-comprehensive-code-review-process.dot"

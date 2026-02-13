@@ -2,7 +2,7 @@
   "name": "pptx-generation",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Enterprise-grade PowerPoint deck generation system using evidence-based prompting techniques, workflow enforcement, and constraint-based design. Use when creating professional presentations (board dec",
   "files": [
     "SKILL.md",
     "examples\\board-deck-example.py",

@@ -2,7 +2,7 @@
   "name": "reproducibility-audit",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Comprehensive audit of ML reproducibility packages ensuring ACM Artifact Evaluation compliance with statistical validation for Deep Research SOP Pipeline G. Use before Quality Gate 3 validation when r",
   "files": [
     "reproducibility-audit-process.dot",
     "SKILL.md"

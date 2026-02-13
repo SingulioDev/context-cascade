@@ -2,7 +2,7 @@
   "name": "eval-harness",
   "version": "1.0.0",
   "category": "tooling",
-  "description": "",
+  "description": "Frozen evaluation harness that gates all self-improvement changes. Contains benchmark suites, regression tests, and human approval gates. Evaluates cognitive frame application and cross-lingual integr",
   "files": [
     "SKILL.md"
   ],

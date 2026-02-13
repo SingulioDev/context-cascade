@@ -2,7 +2,7 @@
   "name": "when-using-flow-nexus-platform-use-flow-nexus-platform",
   "version": "1.0.0",
   "category": "platforms",
-  "description": "",
+  "description": "SKILL skill for platforms workflows",
   "files": [
     "process-diagram.gv",
     "PROCESS.md",

@@ -195,7 +195,7 @@ rbac:
   requires_approval: undefined
   approval_threshold: 10
 budget:
-  max_tokens_per_session: 500000
+  max_tokens_per_session: 200000
   max_cost_per_day: 100
   currency: &quot;USD&quot;
 metadata:

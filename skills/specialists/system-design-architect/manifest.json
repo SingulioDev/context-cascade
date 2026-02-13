@@ -2,7 +2,7 @@
   "name": "system-design-architect",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Comprehensive system design methodology using Dr. Synthara's organism-based approach. Treats systems as living organisms with specialized organs (API, DB, cache, queues), circulation (load balancing),",
   "files": [
     "SKILL.md"
   ],

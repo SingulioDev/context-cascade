@@ -2,7 +2,7 @@
   "name": "react-specialist",
   "version": "1.0.0",
   "category": "specialists",
-  "description": "",
+  "description": "Modern React development specialist for React 18+ with hooks, context, suspense, server components (Next.js 13+), state management (Redux/Zustand/Jotai), performance optimization (React.memo, useMemo,",
   "files": [
     "SKILL.md"
   ],

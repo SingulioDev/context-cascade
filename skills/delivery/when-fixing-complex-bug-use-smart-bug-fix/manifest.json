@@ -2,7 +2,7 @@
   "name": "when-fixing-complex-bug-use-smart-bug-fix",
   "version": "1.0.0",
   "category": "delivery",
-  "description": "",
+  "description": "Trigger skill: when fixing complex bug, invoke smart bug fix",
   "files": [
     "skill.md"
   ],

@@ -2,7 +2,7 @@
   "name": "deployment-readiness",
   "version": "1.0.0",
   "category": "operations",
-  "description": "",
+  "description": "SKILL skill for operations workflows",
   "files": [
     "deployment-readiness-process.dot",
     "SKILL.md"

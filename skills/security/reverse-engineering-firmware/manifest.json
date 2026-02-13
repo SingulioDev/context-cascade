@@ -2,7 +2,7 @@
   "name": "reverse-engineering-firmware",
   "version": "1.0.0",
   "category": "security",
-  "description": "",
+  "description": "Firmware extraction and IoT security analysis (RE Level 5) for routers and embedded systems. Use when analyzing IoT firmware, extracting embedded filesystems (SquashFS/JFFS2/CramFS), finding hardcoded",
   "files": [
     "SKILL.md",
     "resources\\README.md",

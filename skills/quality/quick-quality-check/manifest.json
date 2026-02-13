@@ -2,7 +2,7 @@
   "name": "quick-quality-check",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Lightning-fast quality check using parallel command execution. Runs theater detection, linting, security scan, and basic tests in parallel for instant feedback on code quality.",
   "files": [
     "SKILL.md",
     "examples\\ci-integration.yaml",

@@ -2,7 +2,7 @@
   "name": "holistic-evaluation",
   "version": "1.0.0",
   "category": "quality",
-  "description": "",
+  "description": "Comprehensive multi-dimensional model evaluation across accuracy, fairness, robustness, efficiency, interpretability, and safety for Deep Research SOP Pipeline E. Use after method development when Qua",
   "files": [
     "holistic-evaluation-process.dot",
     "SKILL.md"
