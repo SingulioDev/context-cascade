@@ -1,15 +1,17 @@
 # Test 1: Sequential Workflow Execution
 
 ## Kanitsal Cerceve (Evidential Frame Activation)
+
 Kaynak dogrulama modu etkin.
 
-
-
 ## Test Objective
+
 Validate that the cascade orchestrator correctly executes a simple sequential workflow with proper stage ordering and data flow.
 
 ## Test Scenario
+
 Execute a linear data processing pipeline with 5 stages:
+
 1. Extract data from source
 2. Validate data schema
 3. Transform data
@@ -17,6 +19,7 @@ Execute a linear data processing pipeline with 5 stages:
 5. Export results
 
 ## Prerequisites
+
 - Workflow executor script installed
 - Sample data file available
 - Python 3.8+ with required dependencies
@@ -95,12 +98,14 @@ cat results.json | jq '.stages | to_entries[] | {stage: .key, status: .value.sta
 ## Expected Results
 
 ### Stage Execution
+
 - ✓ All 6 stages execute in order
 - ✓ No stages run in parallel
 - ✓ Each stage waits for previous to complete
 - ✓ Duration increases monotonically
 
 ### Data Flow
+
 - ✓ Extract stage produces raw_data
 - ✓ Validate stage reads raw_data, produces validated_data
 - ✓ Transform stage reads validated_data, produces final_data
@@ -109,11 +114,13 @@ cat results.json | jq '.stages | to_entries[] | {stage: .key, status: .value.sta
 - ✓ Report stage reads all metadata
 
 ### Memory Persistence
+
 - ✓ Memory keys written: raw_data, validation_results, validated_data, final_data, qa_score, qa_results, output_location, pipeline_report
 - ✓ Memory snapshot contains all expected keys
 - ✓ Values accessible across stages
 
 ### Error Handling
+
 - ✓ No errors occurred
 - ✓ Retry strategies not triggered
 - ✓ No stages skipped
@@ -130,6 +137,7 @@ cat results.json | jq '.stages | to_entries[] | {stage: .key, status: .value.sta
 ## Failure Scenarios to Test
 
 ### 1. Stage Failure with Retry
+
 Modify workflow to cause validation failure:
 
 ```bash
@@ -149,24 +157,27 @@ python3 ../resources/scripts/workflow_executor.py \
 ```
 
 **Expected:**
+
 - Validate stage fails
 - Retries up to max_retries (3)
 - Eventually fails cascade
 - Subsequent stages skipped
 
 ### 2. Dependency Violation
+
 Manually create workflow with circular dependency:
 
 ```json
 {
   "stages": [
-    {"stage_id": "a", "dependencies": ["b"]},
-    {"stage_id": "b", "dependencies": ["a"]}
+    { "stage_id": "a", "dependencies": ["b"] },
+    { "stage_id": "b", "dependencies": ["a"] }
   ]
 }
 ```
 
 **Expected:**
+
 - Executor detects cycle before execution
 - Raises ValueError
 - No stages executed
@@ -174,6 +185,7 @@ Manually create workflow with circular dependency:
 ## Performance Benchmarks
 
 ### Expected Timings (Mock Execution)
+
 - Extract: ~0.3s
 - Validate: ~0.3s
 - Transform: ~0.3s
@@ -183,6 +195,7 @@ Manually create workflow with circular dependency:
 - **Total: ~1.8-2.0s**
 
 ### Memory Usage
+
 - Peak memory: < 50MB
 - Memory growth: Linear with data size
 - Memory cleanup: All temporary data cleared after cascade
@@ -204,6 +217,7 @@ rm -rf /tmp/cascade-test-sequential
 **Test Duration:** X.XXs
 
 ### Results
+
 - ✓ Stage execution order correct
 - ✓ Data flow validated
 - ✓ Memory persistence working
@@ -211,6 +225,7 @@ rm -rf /tmp/cascade-test-sequential
 - ✓ Performance within benchmarks
 
 ### Metrics
+
 - Total stages: 6
 - Successful: 6
 - Failed: 0
@@ -219,9 +234,11 @@ rm -rf /tmp/cascade-test-sequential
 - Memory peak: XXmb
 
 ### Issues Found
+
 None
 
 ### Recommendations
+
 - Performance acceptable for production use
 - Consider caching for repeated runs
 ```
@@ -240,9 +257,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
@@ -259,6 +276,6 @@ jobs:
           path: /tmp/cascade-test-sequential/results.json
 ```
 
-
 ---
-*Promise: `<promise>TEST_1_SEQUENTIAL_VERIX_COMPLIANT</promise>`*
+
+_Promise: `<promise>TEST_1_SEQUENTIAL_VERIX_COMPLIANT</promise>`_

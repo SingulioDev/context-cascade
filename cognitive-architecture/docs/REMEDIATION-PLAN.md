@@ -9,28 +9,30 @@
 
 ## OVERALL STATUS (2026-01-01 - Updated)
 
-| Phase | Status | Notes |
-|-------|--------|-------|
-| Phase 1 | COMPLETE | Medium bugs fixed (case sensitivity, thread safety) |
-| Phase 2 | COMPLETE | Low bugs fixed (to_l2, httpx leak) |
-| Phase 3 | PARTIAL | 3.1 closed (intentional separation), 3.2-3.3 pending |
-| Phase 4 | PARTIAL | 2/4 complete (CALIBRATION.md done, needs real evaluator) |
-| Phase 5 | MOSTLY COMPLETE | 3/4 complete (CI + docs done, error tests pending) |
-| Phase 6 | PENDING | Final audit not started |
+| Phase   | Status          | Notes                                                    |
+| ------- | --------------- | -------------------------------------------------------- |
+| Phase 1 | COMPLETE        | Medium bugs fixed (case sensitivity, thread safety)      |
+| Phase 2 | COMPLETE        | Low bugs fixed (to_l2, httpx leak)                       |
+| Phase 3 | PARTIAL         | 3.1 closed (intentional separation), 3.2-3.3 pending     |
+| Phase 4 | PARTIAL         | 2/4 complete (CALIBRATION.md done, needs real evaluator) |
+| Phase 5 | MOSTLY COMPLETE | 3/4 complete (CI + docs done, error tests pending)       |
+| Phase 6 | PENDING         | Final audit not started                                  |
 
 ### Commits Applied This Session
-| Commit | Description |
-|--------|-------------|
-| `3f25aec` | docs: Update plan docs with P0-P3 completion status |
+
+| Commit    | Description                                                                    |
+| --------- | ------------------------------------------------------------------------------ |
+| `3f25aec` | docs: Update plan docs with P0-P3 completion status                            |
 | `e6eb320` | docs: Update REMEDIATION-PLAN Phase 3.1 - cascade files intentionally separate |
-| `460fe0d` | ci: Add GitHub Actions workflow for cognitive architecture tests |
-| `d808e48` | docs: Add UNFINISHED ITEMS quick reference to REMEDIATION-PLAN |
-| `95ad023` | docs: Add CALIBRATION.md hyperparameter documentation |
-| `ae44512` | docs: Integrate REMEDIATION-PLAN + HOFSTADTER-SPEC into VVV plan |
+| `460fe0d` | ci: Add GitHub Actions workflow for cognitive architecture tests               |
+| `d808e48` | docs: Add UNFINISHED ITEMS quick reference to REMEDIATION-PLAN                 |
+| `95ad023` | docs: Add CALIBRATION.md hyperparameter documentation                          |
+| `ae44512` | docs: Integrate REMEDIATION-PLAN + HOFSTADTER-SPEC into VVV plan               |
 
 **MASTER PLAN**: See `VVV-RECURSIVE-IMPROVEMENT-PLAN.md` for unified execution plan.
 
 **Related Completions (VERILINGUA/VERIX P0-P3):**
+
 - P0: Feedback loops closed (runtime, hooks)
 - P1: Cognitive forcing enhanced (4 default frames, VCL validation)
 - P2: Hofstadter controls (depth limits, cycle detection)
@@ -41,6 +43,7 @@
 ## UNFINISHED ITEMS (QUICK REFERENCE)
 
 ### High Priority (Blocking Final Audit)
+
 1. ~~**Phase 4.3/5.3: CALIBRATION.md**~~ - COMPLETE (commit 95ad023)
    - Location: `docs/CALIBRATION.md`
    - Documents all 9 categories of hyperparameters
@@ -50,6 +53,7 @@
    - Blocked by: Needs task corpus and grading rubric
 
 ### Medium Priority (Improves Quality)
+
 3. **Phase 3.2: Agent Template** - Extract 29 identical lines to YAML anchor
    - Location: `agents/_templates/cognitive-frames.yaml` (needs creation)
    - Impact: Reduces 150+ agent file redundancy
@@ -63,12 +67,14 @@
    - Impact: Ensures graceful degradation
 
 ### Low Priority (Final Polish)
+
 6. **Phase 6: Final Audit** - Complete verification
    - Theater detection on all files
    - Connascence analysis
    - Memory MCP summary
 
 ### HOFSTADTER-SPEC.md Remaining (P2-P3 DSPy/PyMOO)
+
 7. **P2: Self-mod objective** - Add self_modification_potential to PyMOO
 8. **P2: Thrashing detection** - Add detect_optimization_thrashing() to PyMOO
 9. **P3: Self-ref signatures** - MetaVerilinguaSignature for DSPy
@@ -83,12 +89,14 @@ which provides the master execution plan for completing all remaining work.
 ## EXECUTIVE SUMMARY
 
 This plan addresses ALL issues discovered in the code audit:
+
 - 4 bugs (2 MEDIUM, 2 LOW)
 - 3 redundancy areas
 - 4 architectural concerns
 - 4 missing pieces
 
 Each phase includes:
+
 - Implementation
 - Theater detection audit
 - Functionality audit
@@ -114,6 +122,7 @@ marker_count = sum(1 for m in self.MARKERS if m.lower() in response.lower())
 ```
 
 **Affected Methods**:
+
 - EvidentialFrame.score_response (line 93)
 - AspectualFrame.score_response (line 146)
 - MorphologicalFrame.score_response (line 197)
@@ -146,8 +155,9 @@ class FrameRegistry:
 ```
 
 ### Verification Checklist
+
 - [x] All 7 frame score_response methods fixed (uses m.lower() in response.lower())
-- [x] FrameRegistry thread-safe (_ensure_initialized with double-checked locking)
+- [x] FrameRegistry thread-safe (\_ensure_initialized with double-checked locking)
 - [x] Unit tests pass (480/480)
 - [x] No theater code introduced
 - [x] Connascence analysis clean
@@ -188,7 +198,7 @@ if self.confidence >= 1.0:
 
 **Location**: `optimization/globalmoo_client.py:172-178`
 **Problem**: Client created without context manager
-**Fix**: Add __enter__/__exit__ or explicit close()
+**Fix**: Add **enter**/**exit** or explicit close()
 
 ```python
 # AFTER (FIXED)
@@ -206,8 +216,9 @@ class GlobalMOOClient:
 ```
 
 ### Verification Checklist
+
 - [x] to_l2() returns correct phrases for all ranges (edge case >= 1.0 handled)
-- [x] GlobalMOOClient properly closes connections (__enter__/__exit__/close methods)
+- [x] GlobalMOOClient properly closes connections (**enter**/**exit**/close methods)
 - [x] Unit tests pass (480/480)
 - [x] No theater code introduced
 
@@ -220,6 +231,7 @@ class GlobalMOOClient:
 ### Issue 3.1: Cascade Implementation Consolidation
 
 **Original Problem**: 3 files assumed to have overlapping functionality
+
 - `optimization/cascade.py` (558 lines)
 - `optimization/cascade_optimizer.py` (718 lines)
 - `optimization/real_cascade_optimizer.py` (601 lines)
@@ -280,6 +292,7 @@ def save_cascade_result(result):
 ```
 
 ### Verification Checklist
+
 - [x] Cascade files analyzed (real_cascade_optimizer.py removed, 2 remaining files serve DIFFERENT purposes - KEEP SEPARATE)
 - [ ] Agent template working (NOT STARTED)
 - [ ] Storage uses delta compression (NOT STARTED - 16 cascade storage files exist)
@@ -368,6 +381,7 @@ def validate_named_modes():
 ```
 
 ### Verification Checklist
+
 - [ ] Real evaluator integrated (NOT STARTED)
 - [x] Error recovery working (GlobalMOOClient has retry/fallback)
 - [x] Constants documented (COMPLETE: docs/CALIBRATION.md, commit 95ad023)
@@ -421,10 +435,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6.0.2
+      - uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.11'
+          python-version: "3.11"
       - run: pip install -r cognitive-architecture/requirements.txt
       - run: pytest cognitive-architecture/tests/ -v
 ```
@@ -438,6 +452,7 @@ jobs:
 **Fix**: Add tests for error recovery paths
 
 ### Verification Checklist
+
 - [x] Integration tests pass (test_integration.py exists, 480/480 tests pass)
 - [x] CI workflow runs (CREATED: .github/workflows/cognitive-tests.yml, commit 460fe0d)
 - [x] Documentation complete (COMPLETE: docs/CALIBRATION.md, commit 95ad023)
@@ -450,6 +465,7 @@ jobs:
 ## PHASE 6: FINAL AUDIT
 
 ### Audit Steps
+
 1. Run full test suite
 2. Theater detection on all changed files
 3. Functionality audit (execute key paths)
@@ -457,6 +473,7 @@ jobs:
 5. Memory MCP summary
 
 ### Success Criteria
+
 - 0 theater code instances
 - 100% test pass rate
 - Connascence score improvement
@@ -467,6 +484,7 @@ jobs:
 ## MEMORY MCP TRACKING
 
 After each phase, store:
+
 ```json
 {
   "namespace": "remediation/cognitive-arch",
@@ -487,11 +505,13 @@ After each phase, store:
 ## CONNASCENCE CHECKPOINTS
 
 Run after each phase:
+
 ```bash
 mcp__connascence-analyzer__analyze_workspace --path cognitive-architecture/
 ```
 
 Track metrics:
+
 - CoP (Position) - should decrease
 - CoM (Meaning) - should decrease (magic numbers extracted)
 - CoN (Name) - acceptable
@@ -499,5 +519,5 @@ Track metrics:
 
 ---
 
-*Plan Version: 1.0*
-*Estimated Duration: 4-6 hours*
+_Plan Version: 1.0_
+_Estimated Duration: 4-6 hours_

@@ -1,20 +1,21 @@
 # Example: Automated Changelog Generation
 
 ## Kanitsal Cerceve (Evidential Frame Activation)
+
 Kaynak dogrulama modu etkin.
-
-
 
 ## CRITICAL: GITHUB OPERATIONS SAFETY GUARDRAILS
 
 **BEFORE any GitHub operation, validate**:
+
 - [ ] Branch protection rules respected (required reviews, status checks)
-- [ ] No force-push to protected branches (main, master, release/*)
+- [ ] No force-push to protected branches (main, master, release/\*)
 - [ ] PR template completed (description, tests, screenshots)
 - [ ] CI checks passing (build, lint, test, security scan)
 - [ ] Code review approved by domain experts
 
 **NEVER**:
+
 - Merge without passing CI checks
 - Delete branches with unmerged commits
 - Bypass CODEOWNERS approval requirements
@@ -22,6 +23,7 @@ Kaynak dogrulama modu etkin.
 - Force-push to shared branches
 
 **ALWAYS**:
+
 - Use conventional commits (feat:, fix:, refactor:, docs:)
 - Link PRs to issues for traceability
 - Update CHANGELOG.md with user-facing changes
@@ -29,17 +31,18 @@ Kaynak dogrulama modu etkin.
 - Document breaking changes in PR description
 
 **Evidence-Based Techniques for GitHub Operations**:
+
 - **Program-of-Thought**: Model PR workflow as state machine (draft -> review -> approved -> merged)
 - **Retrieval-Augmented**: Query similar PRs for review patterns
 - **Chain-of-Thought**: Trace commit history for root cause analysis
 - **Self-Consistency**: Apply same review checklist across all PRs
-
 
 This example demonstrates intelligent changelog generation from commits and pull requests with AI-powered categorization.
 
 ## Scenario
 
 You need to generate professional changelogs that:
+
 - Automatically categorize changes by type
 - Include PR links and contributor attribution
 - Detect breaking changes and migration needs
@@ -65,7 +68,7 @@ my-project/
 
 ## Step 1: Enhanced Changelog Generator Script
 
-```bash
+````bash
 #!/bin/bash
 # .github/scripts/generate-release-notes.sh
 
@@ -121,13 +124,14 @@ BREAKING_CHANGES_LIST
 1. **Update Dependencies**
    ```bash
    npm install package@VERSION_NEW
-   ```
+````
 
 2. **Update Code**
    Review breaking changes above and update your code accordingly.
 
 3. **Test**
    Run your test suite to verify everything works:
+
    ```bash
    npm test
    ```
@@ -140,22 +144,24 @@ BREAKING_CHANGES_LIST
 - Check our [documentation](https://docs.example.com)
 - Open an [issue](https://github.com/org/repo/issues)
 - Join our [community](https://discord.gg/example)
-EOF
+  EOF
 
-    # Extract breaking changes from changelog
-    BREAKING=$(python resources/changelog-generator.py \
-        --from "$FROM_TAG" \
-        --to "$TO_TAG" \
-        --format json | jq -r '.categories.breaking.commits[].description')
+      # Extract breaking changes from changelog
+      BREAKING=$(python resources/changelog-generator.py \
+          --from "$FROM_TAG" \
+          --to "$TO_TAG" \
+          --format json | jq -r '.categories.breaking.commits[].description')
 
-    # Update migration guide with actual breaking changes
-    sed -i "s/VERSION_OLD/$FROM_TAG/g" MIGRATION.md
-    sed -i "s/VERSION_NEW/$VERSION/g" MIGRATION.md
-    sed -i "s/BREAKING_CHANGES_LIST/$BREAKING/g" MIGRATION.md
+      # Update migration guide with actual breaking changes
+      sed -i "s/VERSION_OLD/$FROM_TAG/g" MIGRATION.md
+      sed -i "s/VERSION_NEW/$VERSION/g" MIGRATION.md
+      sed -i "s/BREAKING_CHANGES_LIST/$BREAKING/g" MIGRATION.md
 
-    echo "✅ Migration guide generated: MIGRATION.md"
-fi
-```
+      echo "✅ Migration guide generated: MIGRATION.md"
+
+  fi
+
+````
 
 ## Step 2: Advanced Changelog Configuration
 
@@ -397,7 +403,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-```
+````
 
 ## Step 3: GitHub Actions Integration
 
@@ -434,7 +440,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6.2.0
         with:
           python-version: '3.11'
 
@@ -532,6 +538,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>"
 
 ```markdown
 ## 2.0.0
+
 _2024-01-15_
 
 ### 💥 Breaking Changes
@@ -647,6 +654,7 @@ VERSION=2.0.0 \
 ## Summary
 
 This example demonstrates:
+
 - ✅ Intelligent commit categorization
 - ✅ Breaking change detection
 - ✅ Migration guide generation
@@ -656,6 +664,6 @@ This example demonstrates:
 - ✅ GitHub integration
 - ✅ Multi-format output
 
-
 ---
-*Promise: `<promise>AUTOMATED_CHANGELOGS_VERIX_COMPLIANT</promise>`*
+
+_Promise: `<promise>AUTOMATED_CHANGELOGS_VERIX_COMPLIANT</promise>`_

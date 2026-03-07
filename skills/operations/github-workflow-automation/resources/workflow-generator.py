@@ -141,7 +141,7 @@ class WorkflowGenerator:
                 {"uses": "actions/checkout@v3"},
                 {
                     "name": "Set up Python ${{ matrix.python-version }}",
-                    "uses": "actions/setup-python@v4",
+                    "uses": "actions/setup-python@v6.2.0",
                     "with": {"python-version": "${{ matrix.python-version }}"},
                 },
                 {

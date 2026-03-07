@@ -4,25 +4,25 @@ on:
   push:
     branches: [main, develop]
     paths:
-      - 'cognitive-architecture/**'
-      - '.github/workflows/cognitive-tests.yml'
+      - "cognitive-architecture/**"
+      - ".github/workflows/cognitive-tests.yml"
   pull_request:
     branches: [main]
     paths:
-      - 'cognitive-architecture/**'
+      - "cognitive-architecture/**"
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.10', '3.11', '3.12']
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6.2.0
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -45,12 +45,12 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install linting tools
         run: |

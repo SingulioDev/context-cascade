@@ -1,20 +1,23 @@
 # Test 3: Conditional Branching with Dynamic Path Selection
 
 ## Kanitsal Cerceve (Evidential Frame Activation)
+
 Kaynak dogrulama modu etkin.
 
-
-
 ## Test Objective
+
 Validate conditional workflow branching based on runtime conditions, quality gates, and dynamic path selection.
 
 ## Test Scenario
+
 Execute an adaptive quality workflow that routes through different paths based on code quality scores:
+
 - **High Quality (≥90):** Quick polish → Deploy
 - **Medium Quality (≥70):** Moderate improvements → Verification → Deploy
 - **Low Quality (<70):** Comprehensive audit → Refactoring → Verification → Deploy
 
 ## Prerequisites
+
 - Conditional branch script installed
 - Workflow executor with conditional support
 - Sample codebases with varying quality levels
@@ -238,6 +241,7 @@ python3 ../resources/scripts/workflow_executor.py \
 ## Expected Results
 
 ### Branch Selection
+
 - ✓ High quality code → high_quality branch
 - ✓ Medium quality code → medium_quality branch
 - ✓ Low quality code → low_quality branch (default)
@@ -245,6 +249,7 @@ python3 ../resources/scripts/workflow_executor.py \
 - ✓ Only selected branch executes
 
 ### Condition Evaluation
+
 - ✓ Threshold conditions work (>, <, >=, <=)
 - ✓ Comparison conditions work (==, !=, contains)
 - ✓ Existence checks work (path exists in context)
@@ -252,12 +257,14 @@ python3 ../resources/scripts/workflow_executor.py \
 - ✓ Custom condition scripts work
 
 ### Dynamic Routing
+
 - ✓ Different stages execute per branch
 - ✓ Memory shared across branches
 - ✓ Branch-specific configuration applied
 - ✓ Convergence points work (all branches merge)
 
 ### Quality Gates
+
 - ✓ Quality thresholds enforced
 - ✓ Failed quality gates block progression
 - ✓ Passed quality gates allow continuation
@@ -275,18 +282,18 @@ python3 ../resources/scripts/workflow_executor.py \
 
 ## Condition Types Test Matrix
 
-| Condition Type | Input | Expected | Pass/Fail |
-|---------------|-------|----------|-----------|
-| threshold (>)  | 85 > 80 | true | ✓ |
-| threshold (<)  | 65 < 70 | true | ✓ |
-| threshold (>=) | 90 >= 90 | true | ✓ |
-| threshold (<=) | 70 <= 70 | true | ✓ |
-| comparison (==) | "test" == "test" | true | ✓ |
-| comparison (!=) | "a" != "b" | true | ✓ |
-| comparison (contains) | "hello world" contains "world" | true | ✓ |
-| exists | $.path.exists | true/false | ✓ |
-| regex | "test@example.com" =~ email_pattern | true | ✓ |
-| custom | custom_script() | true/false | ✓ |
+| Condition Type        | Input                               | Expected   | Pass/Fail |
+| --------------------- | ----------------------------------- | ---------- | --------- |
+| threshold (>)         | 85 > 80                             | true       | ✓         |
+| threshold (<)         | 65 < 70                             | true       | ✓         |
+| threshold (>=)        | 90 >= 90                            | true       | ✓         |
+| threshold (<=)        | 70 <= 70                            | true       | ✓         |
+| comparison (==)       | "test" == "test"                    | true       | ✓         |
+| comparison (!=)       | "a" != "b"                          | true       | ✓         |
+| comparison (contains) | "hello world" contains "world"      | true       | ✓         |
+| exists                | $.path.exists                       | true/false | ✓         |
+| regex                 | "test@example.com" =~ email_pattern | true       | ✓         |
+| custom                | custom_script()                     | true/false | ✓         |
 
 ## Failure Scenarios to Test
 
@@ -301,10 +308,11 @@ branches:
   # No default branch
 
 context:
-  score: 50  # Doesn't match any condition
+  score: 50 # Doesn't match any condition
 ```
 
 **Expected:**
+
 - No branch selected
 - Error: "No branch selected and no default branch defined"
 - Cascade fails
@@ -319,10 +327,11 @@ branches:
     condition: { type: threshold, metric: "$.score", threshold: 60, comparison: ">=" }
 
 context:
-  score: 75  # Matches both
+  score: 75 # Matches both
 ```
 
 **Expected:**
+
 - First matching branch selected (branch_a)
 - branch_b not executed
 - Logged: "Multiple branches match, selecting first: branch_a"
@@ -336,6 +345,7 @@ branches:
 ```
 
 **Expected:**
+
 - Error during condition evaluation
 - Message: "Unknown condition type: unknown_type"
 - Cascade fails before execution
@@ -343,16 +353,19 @@ branches:
 ## Performance Benchmarks
 
 ### Branch Selection
+
 - Condition evaluation: <0.01s per condition
 - Variable resolution: <0.001s per variable
 - Branch selection: <0.05s for 10 branches
 
 ### Path-Specific Execution Times
+
 - **High quality path:** ~1.0s (quick polish)
 - **Medium quality path:** ~3.0s (moderate improvements + verification)
 - **Low quality path:** ~8.0s (comprehensive audit + refactoring)
 
 ### Memory Usage
+
 - Context size: ~10KB for typical workflow
 - Branch metadata: ~1KB per branch
 - Total memory: <30MB for conditional workflow
@@ -374,6 +387,7 @@ rm -rf /tmp/cascade-test-conditional
 **Test Duration:** X.XXs
 
 ### Results
+
 - ✓ Branch selection correct for all quality levels
 - ✓ Condition evaluation accurate
 - ✓ Dynamic routing functional
@@ -381,13 +395,15 @@ rm -rf /tmp/cascade-test-conditional
 - ✓ Memory persistence across branches
 
 ### Branch Selection Results
-| Quality Score | Expected Branch | Actual Branch | Pass |
-|--------------|-----------------|---------------|------|
-| 95 | high_quality | high_quality | ✓ |
-| 75 | medium_quality | medium_quality | ✓ |
-| 45 | low_quality | low_quality | ✓ |
+
+| Quality Score | Expected Branch | Actual Branch  | Pass |
+| ------------- | --------------- | -------------- | ---- |
+| 95            | high_quality    | high_quality   | ✓    |
+| 75            | medium_quality  | medium_quality | ✓    |
+| 45            | low_quality     | low_quality    | ✓    |
 
 ### Condition Types Tested
+
 - ✓ Threshold (10/10 tests passed)
 - ✓ Comparison (8/8 tests passed)
 - ✓ Exists (5/5 tests passed)
@@ -395,15 +411,18 @@ rm -rf /tmp/cascade-test-conditional
 - ✓ Custom (2/2 tests passed)
 
 ### Performance
+
 - High quality path: 1.2s
 - Medium quality path: 3.1s
 - Low quality path: 8.5s
 - Branch selection overhead: <0.05s
 
 ### Issues Found
+
 None
 
 ### Recommendations
+
 - Condition evaluation performance excellent
 - Consider caching condition results for repeated evaluations
 - Add more condition types (date ranges, array operations)
@@ -428,9 +447,9 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
@@ -477,7 +496,8 @@ stages:
             condition: "${quality_score}"
             branches:
               - name: high
-                condition: { type: threshold, metric: "$.quality_score", threshold: 80, comparison: ">=" }
+                condition:
+                  { type: threshold, metric: "$.quality_score", threshold: 80, comparison: ">=" }
                 stages: [quick_review]
               - name: low
                 default: true
@@ -498,6 +518,6 @@ stages:
 # Combinations: (small, high), (small, low), (large, high), (large, low)
 ```
 
-
 ---
-*Promise: `<promise>TEST_3_CONDITIONAL_BRANCH_VERIX_COMPLIANT</promise>`*
+
+_Promise: `<promise>TEST_3_CONDITIONAL_BRANCH_VERIX_COMPLIANT</promise>`_

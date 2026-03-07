@@ -1,13 +1,13 @@
 # Example: Multi-Platform Release Pipeline
 
 ## Kanitsal Cerceve (Evidential Frame Activation)
+
 Kaynak dogrulama modu etkin.
-
-
 
 ## CRITICAL: DEPLOYMENT SAFETY GUARDRAILS
 
 **BEFORE any deployment, validate**:
+
 - [ ] All tests passing (unit, integration, E2E, load)
 - [ ] Security scan completed (SAST, DAST, dependency audit)
 - [ ] Infrastructure capacity verified (CPU, memory, disk, network)
@@ -15,6 +15,7 @@ Kaynak dogrulama modu etkin.
 - [ ] Rollback procedure documented with time estimates
 
 **NEVER**:
+
 - Deploy without comprehensive monitoring (metrics, logs, traces)
 - Skip load testing for high-traffic services
 - Deploy breaking changes without backward compatibility
@@ -22,6 +23,7 @@ Kaynak dogrulama modu etkin.
 - Deploy without incident response plan
 
 **ALWAYS**:
+
 - Validate deployment checklist before proceeding
 - Use feature flags for risky changes (gradual rollout)
 - Monitor error rates, latency p99, and saturation metrics
@@ -29,17 +31,18 @@ Kaynak dogrulama modu etkin.
 - Retain deployment artifacts for forensic analysis
 
 **Evidence-Based Techniques for Deployment**:
+
 - **Chain-of-Thought**: Trace deployment flow (code -> artifact -> registry -> cluster -> pods)
 - **Program-of-Thought**: Model deployment as state machine (pre-deploy -> deploy -> post-deploy -> verify)
 - **Reflection**: After deployment, analyze what worked vs assumptions
 - **Retrieval-Augmented**: Query past incidents for similar deployment patterns
-
 
 This example demonstrates a complete multi-platform release workflow with cross-compilation, artifact packaging, and deployment across npm, Docker, and GitHub Releases.
 
 ## Scenario
 
 You're releasing a CLI tool that needs to:
+
 - Build native binaries for Linux, macOS, and Windows
 - Support x64 and arm64 architectures
 - Publish to npm registry
@@ -374,15 +377,15 @@ name: Multi-Platform Release
 on:
   push:
     tags:
-      - 'v*'
+      - "v*"
 
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to release'
+        description: "Version to release"
         required: true
       dry_run:
-        description: 'Dry run (no publishing)'
+        description: "Dry run (no publishing)"
         type: boolean
         default: false
 
@@ -418,7 +421,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@v4
         with:
-          go-version: '1.21'
+          go-version: "1.21"
 
       - name: Extract Version
         id: version
@@ -468,9 +471,9 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Download All Artifacts
         uses: actions/download-artifact@v3
@@ -568,8 +571,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Download All Artifacts
         uses: actions/download-artifact@v3
@@ -599,9 +602,9 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Download Release Assets
         uses: actions/download-artifact@v3
@@ -668,10 +671,10 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to rollback to'
+        description: "Version to rollback to"
         required: true
       reason:
-        description: 'Rollback reason'
+        description: "Rollback reason"
         required: true
 
 jobs:
@@ -741,6 +744,7 @@ git push origin v2.0.0
 ## Summary
 
 This example demonstrates:
+
 - ✅ Multi-platform binary builds (6 platforms)
 - ✅ Docker multi-architecture images
 - ✅ npm package publishing
@@ -750,6 +754,6 @@ This example demonstrates:
 - ✅ Checksum verification
 - ✅ Comprehensive CI/CD
 
-
 ---
-*Promise: `<promise>MULTI_PLATFORM_RELEASES_VERIX_COMPLIANT</promise>`*
+
+_Promise: `<promise>MULTI_PLATFORM_RELEASES_VERIX_COMPLIANT</promise>`_

@@ -305,7 +305,7 @@ jobs:
       affected-packages: ${{ steps.detect.outputs.packages }}
       deployment-plan: ${{ steps.plan.outputs.json }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0  # Full history for accurate diff
 

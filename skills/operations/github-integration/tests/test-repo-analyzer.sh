@@ -44,16 +44,16 @@ setup_test_repo() {
     mkdir -p src tests docs
 
     # Create files
-    cat > README.md <<'EOF'
+    cat >README.md <<'EOF'
 # Test Repository
 A test repository for analyzer validation
 EOF
 
-    cat > LICENSE <<'EOF'
+    cat >LICENSE <<'EOF'
 MIT License
 EOF
 
-    cat > package.json <<'EOF'
+    cat >package.json <<'EOF'
 {
   "name": "test-repo",
   "version": "1.0.0",
@@ -66,14 +66,14 @@ EOF
 }
 EOF
 
-    cat > src/index.js <<'EOF'
+    cat >src/index.js <<'EOF'
 const express = require('express');
 const app = express();
 app.get('/', (req, res) => res.send('Hello'));
 app.listen(3000);
 EOF
 
-    cat > tests/index.test.js <<'EOF'
+    cat >tests/index.test.js <<'EOF'
 const request = require('supertest');
 describe('API', () => {
   test('GET /', () => {});
@@ -82,14 +82,14 @@ EOF
 
     # Create GitHub Actions workflow
     mkdir -p .github/workflows
-    cat > .github/workflows/ci.yml <<'EOF'
+    cat >.github/workflows/ci.yml <<'EOF'
 name: CI
 on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
       - run: npm test
 EOF
 
@@ -99,11 +99,11 @@ EOF
     git tag -a v1.0.0 -m "Release 1.0.0"
 
     # Add more commits
-    echo "// New feature" >> src/index.js
+    echo "// New feature" >>src/index.js
     git add .
     git commit -q -m "feat: add feature"
 
-    echo "// Bug fix" >> src/index.js
+    echo "// Bug fix" >>src/index.js
     git add .
     git commit -q -m "fix: fix bug"
 
@@ -259,7 +259,7 @@ test_health_score() {
     grade=$(echo "$output" | jq -r '.healthScore.grade')
 
     # Health score should be between 0 and 100
-    if (( $(echo "$health_score >= 0 && $health_score <= 100" | bc -l) )); then
+    if (($(echo "$health_score >= 0 && $health_score <= 100" | bc -l))); then
         return 0
     else
         log_error "Invalid health score: $health_score"

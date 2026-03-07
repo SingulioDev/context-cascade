@@ -412,7 +412,7 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
@@ -427,7 +427,7 @@ jobs:
       matrix:
         node-version: [18, 20, 21]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
@@ -441,7 +441,7 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
       - uses: actions/setup-node@v4
         with:
           node-version: '20'

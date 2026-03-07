@@ -1,9 +1,8 @@
 # Skill Creator Agent Resources
 
 ## Kanitsal Cerceve (Evidential Frame Activation)
+
 Kaynak dogrulama modu etkin.
-
-
 
 Supporting production-grade scripts, templates, and utilities for creating Claude Code skills tied to specialist agents using the Claude Agent SDK.
 
@@ -34,6 +33,7 @@ resources/
 **Purpose**: Generate complete skill YAML scaffolding with agent integration structure.
 
 **Usage**:
+
 ```bash
 python skill-generator.py --name "api-documentation" --agent-type "analyst" --domain "API analysis and documentation generation"
 
@@ -45,6 +45,7 @@ python skill-generator.py --name "performance-optimizer" --agent-type "optimizer
 ```
 
 **Features**:
+
 - Creates complete directory structure (skill.md, resources/, tests/, examples/)
 - Generates YAML frontmatter with agent specialization metadata
 - Scaffolds SDK implementation templates (TypeScript/Python)
@@ -54,6 +55,7 @@ python skill-generator.py --name "performance-optimizer" --agent-type "optimizer
 - Includes validation hooks and error handling patterns
 
 **Arguments**:
+
 - `--name`: Skill name (kebab-case)
 - `--agent-type`: Specialist agent type (researcher/coder/analyst/optimizer/coordinator)
 - `--domain`: Domain description for agent expertise
@@ -63,6 +65,7 @@ python skill-generator.py --name "performance-optimizer" --agent-type "optimizer
 - `--permission-mode`: Agent permission mode (default/plan/acceptEdits)
 
 **Output**:
+
 - Complete skill directory with all Gold tier components
 - SDK implementation scaffolding
 - Agent configuration files
@@ -74,6 +77,7 @@ python skill-generator.py --name "performance-optimizer" --agent-type "optimizer
 **Purpose**: Link skills to specialist agents using Claude Agent SDK with proper lifecycle management.
 
 **Usage**:
+
 ```bash
 node agent-integrator.js --skill-path ./api-documentation --agent-prompt ./agents/api-specialist.txt --sdk-config ./sdk-config.json
 
@@ -85,6 +89,7 @@ node agent-integrator.js --skill-path ./performance-optimizer --agent-type optim
 ```
 
 **Features**:
+
 - Validates skill-agent compatibility
 - Generates SDK implementation code (TypeScript/Python)
 - Creates agent spawn logic with context handoff protocol
@@ -95,6 +100,7 @@ node agent-integrator.js --skill-path ./performance-optimizer --agent-type optim
 - Validates communication protocol compliance
 
 **Arguments**:
+
 - `--skill-path`: Path to skill directory
 - `--agent-prompt`: Path to agent system prompt file
 - `--agent-type`: Specialist type (researcher/coder/analyst/optimizer/coordinator)
@@ -105,6 +111,7 @@ node agent-integrator.js --skill-path ./performance-optimizer --agent-type optim
 - `--sdk-config`: Path to SDK configuration JSON
 
 **Output**:
+
 - `index.ts` or `index.py` with SDK implementation
 - `agents/` directory with system prompts
 - `tools/` directory with custom tool definitions
@@ -116,6 +123,7 @@ node agent-integrator.js --skill-path ./performance-optimizer --agent-type optim
 **Purpose**: Comprehensive validation of skill structure, agent configuration, and SDK integration.
 
 **Usage**:
+
 ```bash
 bash validation-suite.sh ./api-documentation
 
@@ -130,6 +138,7 @@ bash validation-suite.sh ./data-analyzer --checks "structure,agent,sdk"
 ```
 
 **Validation Checks**:
+
 1. **Skill Structure** (15 checks)
    - YAML frontmatter format and required fields
    - Directory organization (resources/, tests/, examples/)
@@ -162,6 +171,7 @@ bash validation-suite.sh ./data-analyzer --checks "structure,agent,sdk"
    - Security best practices
 
 **Arguments**:
+
 - `--verbose`: Detailed output with diagnostic information
 - `--json`: JSON formatted output for parsing
 - `--checks`: Comma-separated list of check categories (structure,agent,sdk,quality)
@@ -169,6 +179,7 @@ bash validation-suite.sh ./data-analyzer --checks "structure,agent,sdk"
 - `--report`: Generate HTML validation report
 
 **Exit Codes**:
+
 - 0: All validations passed
 - 1: Structure validation failed
 - 2: Agent configuration validation failed
@@ -180,6 +191,7 @@ bash validation-suite.sh ./data-analyzer --checks "structure,agent,sdk"
 **Purpose**: Auto-generate comprehensive documentation for agent-based skills including SDK usage examples.
 
 **Usage**:
+
 ```bash
 python documentation-builder.py --skill-path ./api-documentation --format markdown
 
@@ -194,6 +206,7 @@ python documentation-builder.py --skill-path ./data-analyzer --api-reference --o
 ```
 
 **Features**:
+
 - Extracts metadata from skill.md and agent configs
 - Generates skill overview and usage guide
 - Documents agent specialization and capabilities
@@ -206,6 +219,7 @@ python documentation-builder.py --skill-path ./data-analyzer --api-reference --o
 - Creates API reference for custom tools
 
 **Arguments**:
+
 - `--skill-path`: Path to skill directory
 - `--format`: Output format (markdown/html/pdf/all)
 - `--output`: Output directory for generated docs
@@ -215,6 +229,7 @@ python documentation-builder.py --skill-path ./data-analyzer --api-reference --o
 - `--output-format`: Format for API reference (markdown/html)
 
 **Generated Documentation**:
+
 - `README.md`: Skill overview and quick start
 - `USAGE.md`: Detailed usage guide with examples
 - `AGENT.md`: Agent specialization documentation
@@ -411,11 +426,13 @@ quality:
 ### Prerequisites
 
 **Python 3.7+** with dependencies:
+
 ```bash
 pip install pyyaml jinja2 markdown
 ```
 
 **Node.js 16+** for JavaScript tools:
+
 ```bash
 npm install -g @anthropic-ai/claude-agent-sdk
 ```
@@ -516,7 +533,7 @@ name: Validate Skills
 on:
   pull_request:
     paths:
-      - 'skills/**'
+      - "skills/**"
 
 jobs:
   validate:
@@ -525,14 +542,14 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.9'
+          python-version: "3.9"
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: "16"
 
       - name: Install dependencies
         run: |
@@ -550,6 +567,7 @@ jobs:
 ## Examples
 
 See the `examples/` directory for:
+
 - `basic-agent-skill.md`: Simple analyst agent skill
 - `multi-agent-skill.md`: Orchestrator with multiple specialists
 - `custom-tools-skill.md`: Skill with domain-specific tools
@@ -575,6 +593,7 @@ bash resources/scripts/validation-suite.sh examples/basic-agent-skill --verbose
 ### Common Issues
 
 **1. Module Import Errors**
+
 ```bash
 # Solution: Install dependencies
 pip install -r resources/requirements.txt
@@ -582,12 +601,14 @@ npm install
 ```
 
 **2. Permission Denied on Scripts**
+
 ```bash
 # Solution: Make executable
 chmod +x resources/scripts/*.sh
 ```
 
 **3. SDK Integration Fails**
+
 ```bash
 # Solution: Check SDK version
 npm list @anthropic-ai/claude-agent-sdk
@@ -595,6 +616,7 @@ npm install @anthropic-ai/claude-agent-sdk@latest
 ```
 
 **4. Validation Suite Hangs**
+
 ```bash
 # Solution: Check Bash version (requires 4.0+)
 bash --version
@@ -623,6 +645,7 @@ brew install bash
 ## Support
 
 For issues or questions:
+
 1. Check examples/ directory for reference implementations
 2. Review validation-suite.sh output for specific errors
 3. Consult agent-creator skill for agent design patterns
@@ -632,6 +655,6 @@ For issues or questions:
 
 **Remember**: Skills coordinate detection and context, agents execute with expertise. Use these tools to build that clean separation systematically.
 
-
 ---
-*Promise: `<promise>README_VERIX_COMPLIANT</promise>`*
+
+_Promise: `<promise>README_VERIX_COMPLIANT</promise>`_

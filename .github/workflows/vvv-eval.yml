@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       skill:
-        description: 'Skill to evaluate'
+        description: "Skill to evaluate"
         required: true
-        default: 'all'
+        default: "all"
         type: choice
         options:
           - all
@@ -14,9 +14,9 @@ on:
           - agent-creator
           - skill-forge
       phase:
-        description: 'VVV Phase'
+        description: "VVV Phase"
         required: true
-        default: 'dogfood'
+        default: "dogfood"
         type: choice
         options:
           - dogfood
@@ -25,20 +25,20 @@ on:
   push:
     branches: [main]
     paths:
-      - 'cognitive-architecture/evals/**'
-      - 'skills/foundry/**'
+      - "cognitive-architecture/evals/**"
+      - "skills/foundry/**"
 
 jobs:
   evaluate:
     runs-on: ubuntu-latest
-    
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install dependencies
         run: |
@@ -65,7 +65,7 @@ jobs:
           echo "- Agent Creator: 50 tasks" >> eval_report.md
           echo "- Skill Forge: 50 tasks" >> eval_report.md
           echo "- **Total: 150 tasks**" >> eval_report.md
-          
+
       - name: Upload evaluation report
         uses: actions/upload-artifact@v4
         with:
@@ -76,14 +76,14 @@ jobs:
   corpus-stats:
     runs-on: ubuntu-latest
     needs: evaluate
-    
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6.2.0
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Calculate corpus statistics
         run: |

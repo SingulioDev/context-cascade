@@ -11,7 +11,7 @@ name: Complete CI/CD Pipeline with Swarm
 
 on:
   push:
-    branches: [main, develop, 'feature/**']
+    branches: [main, develop, "feature/**"]
   pull_request:
     branches: [main]
   release:
@@ -19,12 +19,12 @@ on:
   workflow_dispatch:
     inputs:
       skip-tests:
-        description: 'Skip test execution'
+        description: "Skip test execution"
         required: false
         type: boolean
         default: false
       deployment-environment:
-        description: 'Deployment environment'
+        description: "Deployment environment"
         required: false
         type: choice
         options:
@@ -43,9 +43,9 @@ permissions:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
-  NODE_VERSION: '18.x'
-  PYTHON_VERSION: '3.11'
-  GO_VERSION: '1.21'
+  NODE_VERSION: "18.x"
+  PYTHON_VERSION: "3.11"
+  GO_VERSION: "1.21"
 
 jobs:
   # ========================================
@@ -137,7 +137,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Cache node modules
         uses: actions/cache@v3
@@ -191,13 +191,13 @@ jobs:
     timeout-minutes: 20
     strategy:
       matrix:
-        python-version: ['3.9', '3.10', '3.11']
+        python-version: ["3.9", "3.10", "3.11"]
       fail-fast: false
     steps:
       - uses: actions/checkout@v3
 
       - name: Setup Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6.2.0
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -251,7 +251,7 @@ jobs:
     timeout-minutes: 15
     strategy:
       matrix:
-        go-version: ['1.19', '1.20', '1.21']
+        go-version: ["1.19", "1.20", "1.21"]
       fail-fast: false
     steps:
       - uses: actions/checkout@v3
@@ -315,16 +315,16 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          format: 'sarif'
-          output: 'trivy-results.sarif'
-          severity: 'CRITICAL,HIGH'
+          scan-type: "fs"
+          scan-ref: "."
+          format: "sarif"
+          output: "trivy-results.sarif"
+          severity: "CRITICAL,HIGH"
 
       - name: Upload Trivy results to GitHub Security
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: 'trivy-results.sarif'
+          sarif_file: "trivy-results.sarif"
 
       - name: Dependency review
         if: github.event_name == 'pull_request'
@@ -405,8 +405,8 @@ jobs:
       - name: Setup environment
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          cache: 'npm'
+          node-version: "18.x"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -439,8 +439,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
-          cache: 'npm'
+          node-version: "18.x"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -520,13 +520,13 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}@${{ steps.build.outputs.digest }}
-          format: 'sarif'
-          output: 'container-scan.sarif'
+          format: "sarif"
+          output: "container-scan.sarif"
 
       - name: Upload scan results
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: 'container-scan.sarif'
+          sarif_file: "container-scan.sarif"
 
   # ========================================
   # Phase 6: Deploy (Conditional)
