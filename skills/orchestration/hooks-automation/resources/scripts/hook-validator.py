@@ -23,7 +23,17 @@ class Colors:
 
 class HookValidator:
     def __init__(self, hooks_dir: str = None, verbose: bool = False):
-        self.hooks_dir = Path(hooks_dir or os.path.expanduser("~/.claude-flow/hooks"))
+        # Prefer the modern global hooks dir (~/.claude/hooks) if present,
+        # fall back to legacy ~/.claude-flow/hooks for backwards compatibility.
+        if hooks_dir:
+            self.hooks_dir = Path(hooks_dir)
+        else:
+            preferred = Path(os.path.expanduser("~/.claude/hooks"))
+            fallback = Path(os.path.expanduser("~/.claude-flow/hooks"))
+            if preferred.exists():
+                self.hooks_dir = preferred
+            else:
+                self.hooks_dir = fallback
         self.verbose = verbose
         self.errors: List[str] = []
         self.warnings: List[str] = []
