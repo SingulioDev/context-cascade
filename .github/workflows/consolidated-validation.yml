@@ -16,6 +16,7 @@ on:
     paths:
       - 'cognitive-architecture/**'
       - 'skills/**'
+      - '.github/workflows/**'
   workflow_dispatch:
 permissions:
   contents: read
